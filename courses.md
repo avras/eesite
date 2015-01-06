@@ -4,7 +4,7 @@ title: Courses
 
 #### Current Course
 
-  - [EE 605: Error Correcting Codes](./courses/EE605/Autumn2014.html)
+  - [EE 325: Probability and Random Processes](./courses/EE325/Spring2015.html)
 
 #### Past Courses
 
@@ -19,6 +19,7 @@ title: Courses
     + [Spring 2011](./courses/EE706/Spring2011.html)
     + [Spring 2010](./courses/EE706/Spring2010.html)
   - EE 605: Error Correcting Codes
+    + [Autumn 2014](./courses/EE605/Autumn2014.html)
     + [Autumn 2011](./courses/EE605/Autumn2011.html)
     + [Autumn 2010](./courses/EE605/Autumn2010.html)
   - EE 453/EE 717: Advanced Computing for Electrical Engineers
