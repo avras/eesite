@@ -20,3 +20,6 @@ title: EE 325 Spring 2015
 #### Grading Policy
   - 10% Assignments, 20% Quizzes, 30% Midsem, 40% Endsem
   - Relative grading
+
+#### Slides
+  - [Course Information](./2015/Slides/Outline.pdf)
