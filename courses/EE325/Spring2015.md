@@ -25,3 +25,4 @@ title: EE 325 Spring 2015
   - [Course Information](./2015/Slides/Outline.pdf)
   - [Probability Spaces](./2015/Slides/ProbabilitySpaces.pdf)
   - [Why is the Probability Space a Triple?](./2015/Slides/WhyProbSpaceTriple.pdf)
+  - [Properties of Probability Measures](./2015/Slides/ProbabilityMeasureProperties.pdf)
