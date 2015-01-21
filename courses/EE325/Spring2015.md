@@ -26,3 +26,7 @@ title: EE 325 Spring 2015
   - [Probability Spaces](./2015/Slides/ProbabilitySpaces.pdf)
   - [Why is the Probability Space a Triple?](./2015/Slides/WhyProbSpaceTriple.pdf)
   - [Properties of Probability Measures](./2015/Slides/ProbabilityMeasureProperties.pdf)
+  - [Conditional Probability and Independence](./2015/Slides/CondProbAndIndependence.pdf)
+
+#### Assignments
+  - [Assignment 1](./2015/Assignments/assignment1.pdf)
