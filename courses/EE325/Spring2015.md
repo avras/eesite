@@ -28,6 +28,7 @@ title: EE 325 Spring 2015
   - [Properties of Probability Measures](./2015/Slides/ProbabilityMeasureProperties.pdf)
   - [Conditional Probability and Independence](./2015/Slides/CondProbAndIndependence.pdf)
   - [Combinatorial Probability](./2015/Slides/CombinatorialProbability.pdf)
+  - [Random Variables](./2015/Slides/RandomVariables.pdf)
 
 #### Assignments
   - [Assignment 1](./2015/Assignments/assignment1.pdf)
