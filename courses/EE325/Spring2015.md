@@ -32,3 +32,6 @@ title: EE 325 Spring 2015
 
 #### Assignments
   - [Assignment 1](./2015/Assignments/assignment1.pdf)
+
+#### Exams
+  - [Quiz 1](./2015/Exams/quiz1a.pdf) [Quiz 1](./2015/Exams/quiz1b.pdf)
