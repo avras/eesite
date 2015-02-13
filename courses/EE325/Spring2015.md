@@ -29,6 +29,7 @@ title: EE 325 Spring 2015
   - [Conditional Probability and Independence](./2015/Slides/CondProbAndIndependence.pdf)
   - [Combinatorial Probability](./2015/Slides/CombinatorialProbability.pdf)
   - [Random Variables](./2015/Slides/RandomVariables.pdf)
+  - [Expectation of Random Variables](./2015/Slides/Expectation.pdf)
 
 #### Assignments
   - [Assignment 1](./2015/Assignments/assignment1.pdf)
