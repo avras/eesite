@@ -37,3 +37,4 @@ title: EE 325 Spring 2015
 
 #### Exams
   - [Quiz 1](./2015/Exams/quiz1a.pdf) [Quiz 1](./2015/Exams/quiz1b.pdf)
+  - [Midsem](./2015/Exams/midsem.pdf)
