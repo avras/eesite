@@ -33,11 +33,13 @@ title: EE 325 Spring 2015
   - [Gaussian Random Variables](./2015/Slides/GaussianRV.pdf)
   - [Hypothesis Testing](./2015/Slides/HypothesisTesting.pdf)
   - [Parameter Estimation](./2015/Slides/ParameterEstimation.pdf)
+  - [Generating Random Variables](./2015/Slides/GeneratingRVs.pdf)
 
 #### Assignments
   - [Assignment 1](./2015/Assignments/assignment1.pdf)
   - [Assignment 2](./2015/Assignments/assignment2.pdf)
   - [Assignment 3](./2015/Assignments/assignment3.pdf)
+  - [Assignment 4](./2015/Assignments/assignment4.pdf)
 
 #### Exams
   - [Quiz 1](./2015/Exams/quiz1a.pdf) [Quiz 1](./2015/Exams/quiz1b.pdf)
