@@ -34,6 +34,7 @@ title: EE 325 Spring 2015
   - [Hypothesis Testing](./2015/Slides/HypothesisTesting.pdf)
   - [Parameter Estimation](./2015/Slides/ParameterEstimation.pdf)
   - [Generating Random Variables](./2015/Slides/GeneratingRVs.pdf)
+  - [Convergence of Random Variables](./2015/Slides/ConvergenceOfRVs.pdf)
 
 #### Assignments
   - [Assignment 1](./2015/Assignments/assignment1.pdf)
@@ -44,3 +45,4 @@ title: EE 325 Spring 2015
 #### Exams
   - [Quiz 1](./2015/Exams/quiz1a.pdf) [Quiz 1](./2015/Exams/quiz1b.pdf)
   - [Midsem](./2015/Exams/midsem.pdf)
+  - [Quiz 2](./2015/Exams/quiz2.pdf)
