@@ -4,11 +4,12 @@ title: Courses
 
 #### Current Course
 
-  - [EE 325: Probability and Random Processes](./courses/EE325/Spring2015.html)
+  - EE 605: Error Correcting Codes (Autumn 2015)
 
 #### Past Courses
 
   - EE 325: Probability and Random Processes
+    + [Spring 2015](./courses/EE325/Spring2015.html)
     + [Spring 2014](./courses/EE325/Spring2014.html)
     + [Spring 2013](./courses/EE325/Spring2013.html)
   - EE 703: Digital Message Transmission
