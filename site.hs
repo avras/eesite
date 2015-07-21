@@ -43,7 +43,8 @@ main = hakyll $ do
                 >>= relativizeUrls
 
     match (
-            "courses/EE325/*.md"
+            "courses/EE325/*.md" .||.
+            "courses/EE605/*.md"
           ) $ do
         route   $ setExtension "html"
         compile $ pandocCompiler
