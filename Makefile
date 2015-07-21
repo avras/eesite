@@ -1,14 +1,14 @@
 all:
-	cabal -j --sandbox-config-file=../hakyll-sandbox/cabal.sandbox.config build
+	stack build
 
 build:
-	dist/build/eesite/eesite build
+	.stack-work/install/x86_64-linux/lts-2.19/7.8.4/bin/eesite build
 
 rebuild:
-	dist/build/eesite/eesite rebuild
+	.stack-work/install/x86_64-linux/lts-2.19/7.8.4/bin/eesite rebuild
 
 clean:
-	dist/build/eesite/eesite clean
+	.stack-work/install/x86_64-linux/lts-2.19/7.8.4/bin/eesite clean
 
 watch:
-	dist/build/eesite/eesite watch
+	.stack-work/install/x86_64-linux/lts-2.19/7.8.4/bin/eesite watch
