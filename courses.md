@@ -4,7 +4,7 @@ title: Courses
 
 #### Current Course
 
-  - EE 605: Error Correcting Codes (Autumn 2015)
+  - [EE 605: Error Correcting Codes (Autumn 2015)](./courses/EE605/Autumn2015.html)
 
 #### Past Courses
 
