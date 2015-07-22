@@ -36,4 +36,5 @@ title: EE 605 Spring 2015
   - Relative grading
 
 #### Slides
-  - [Course Information](./2015/Slides/Outline.pdf)
+  - [Course Information](./2015/slides/Outline.pdf)
+  - [Repetition Code](./2015/slides/RepetitionCode.pdf)
