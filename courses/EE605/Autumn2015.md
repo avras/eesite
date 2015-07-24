@@ -38,3 +38,5 @@ title: EE 605 Spring 2015
 #### Slides
   - [Course Information](./2015/slides/Outline.pdf)
   - [Repetition Code](./2015/slides/RepetitionCode.pdf)
+  - [Linear Block Codes](./2015/slides/LinearBlockCodes.pdf)
+  - [Vector Spaces](./2015/slides/VectorSpaces.pdf)
