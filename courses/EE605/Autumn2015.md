@@ -42,6 +42,7 @@ title: EE 605 Spring 2015
   - [Vector Spaces](./2015/slides/VectorSpaces.pdf)
   - [Properties of Linear Block Codes](./2015/slides/PropertiesOfLinearBlockCodes.pdf)
   - [Examples of Linear Block Codes](./2015/slides/ExamplesOfLinearBlockCodes.pdf)
+  - [Cyclic Codes](./2015/slides/CyclicCodes.pdf)
 
 #### Assignments
   - [Problem Set 1](./2015/assignments/problemset1.pdf)
