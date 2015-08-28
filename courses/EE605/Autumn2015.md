@@ -46,3 +46,7 @@ title: EE 605 Spring 2015
 
 #### Assignments
   - [Problem Set 1](./2015/assignments/problemset1.pdf)
+  - [Problem Set 2](./2015/assignments/problemset2.pdf)
+
+#### Exams
+  - [Quiz 1](./2015/exams/quiz1.pdf)
