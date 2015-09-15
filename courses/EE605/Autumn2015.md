@@ -43,6 +43,7 @@ title: EE 605 Spring 2015
   - [Properties of Linear Block Codes](./2015/slides/PropertiesOfLinearBlockCodes.pdf)
   - [Examples of Linear Block Codes](./2015/slides/ExamplesOfLinearBlockCodes.pdf)
   - [Cyclic Codes](./2015/slides/CyclicCodes.pdf)
+  - [Finite Groups](./2015/slides/FiniteGroups.pdf)
 
 #### Assignments
   - [Problem Set 1](./2015/assignments/problemset1.pdf)
@@ -50,3 +51,4 @@ title: EE 605 Spring 2015
 
 #### Exams
   - [Quiz 1](./2015/exams/quiz1.pdf)
+  - [Midsem](./2015/exams/midsem.pdf)
