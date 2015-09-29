@@ -44,10 +44,12 @@ title: EE 605 Spring 2015
   - [Examples of Linear Block Codes](./2015/slides/ExamplesOfLinearBlockCodes.pdf)
   - [Cyclic Codes](./2015/slides/CyclicCodes.pdf)
   - [Finite Groups](./2015/slides/FiniteGroups.pdf)
+  - [Finite Fields](./2015/slides/FiniteFields.pdf)
 
 #### Assignments
   - [Problem Set 1](./2015/assignments/problemset1.pdf)
   - [Problem Set 2](./2015/assignments/problemset2.pdf)
+  - [Problem Set 3](./2015/assignments/problemset3.pdf)
 
 #### Exams
   - [Quiz 1](./2015/exams/quiz1.pdf)
