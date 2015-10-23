@@ -45,12 +45,17 @@ title: EE 605 Spring 2015
   - [Cyclic Codes](./2015/slides/CyclicCodes.pdf)
   - [Finite Groups](./2015/slides/FiniteGroups.pdf)
   - [Finite Fields](./2015/slides/FiniteFields.pdf)
+  - [Minimal Polynomials](./2015/slides/MinimalPolynomials.pdf)
+  - [BCH Codes](./2015/slides/BCHCodes.pdf)
+  - [Convolutional Codes](./2015/slides/ConvolutionalCodes.pdf)
 
 #### Assignments
   - [Problem Set 1](./2015/assignments/problemset1.pdf)
   - [Problem Set 2](./2015/assignments/problemset2.pdf)
   - [Problem Set 3](./2015/assignments/problemset3.pdf)
+  - [Problem Set 4](./2015/assignments/problemset4.pdf)
 
 #### Exams
   - [Quiz 1](./2015/exams/quiz1.pdf)
   - [Midsem](./2015/exams/midsem.pdf)
+  - [Quiz 2](./2015/exams/quiz2.pdf)
