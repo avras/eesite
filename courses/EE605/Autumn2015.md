@@ -48,6 +48,7 @@ title: EE 605 Spring 2015
   - [Minimal Polynomials](./2015/slides/MinimalPolynomials.pdf)
   - [BCH Codes](./2015/slides/BCHCodes.pdf)
   - [Convolutional Codes](./2015/slides/ConvolutionalCodes.pdf)
+  - [Viterbi Algorithm](./2015/slides/ViterbiAlgorithm.pdf)
 
 #### Assignments
   - [Problem Set 1](./2015/assignments/problemset1.pdf)
