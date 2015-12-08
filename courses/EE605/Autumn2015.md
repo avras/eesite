@@ -61,3 +61,5 @@ title: EE 605 Spring 2015
   - [Quiz 1](./2015/exams/quiz1.pdf)
   - [Midsem](./2015/exams/midsem.pdf)
   - [Quiz 2](./2015/exams/quiz2.pdf)
+  - [Quiz 3](./2015/exams/quiz3.pdf)
+  - [Endsem](./2015/exams/endsem.pdf)
