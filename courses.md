@@ -4,7 +4,7 @@ title: Courses
 
 #### Current Course
 
-  - EE 703: Digital Message Transmission (Autumn 2016)
+  - [EE 703: Digital Message Transmission (Autumn 2016)](./courses/EE703/Autumn2016.html)
 
 #### Past Courses
 

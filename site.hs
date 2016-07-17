@@ -44,6 +44,7 @@ main = hakyll $ do
 
     match (
             "courses/EE325/*.md" .||.
+            "courses/EE703/*.md" .||.
             "courses/EE605/*.md"
           ) $ do
         route   $ setExtension "html"
