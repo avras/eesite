@@ -30,3 +30,4 @@ BTech or DD students cannot take this course as its content is almost the same a
 #### Grading Policy
   - 10% Assignments, 20% Quizzes, 25% Midsem, 45% Endsem
   - Relative grading
+  - For AU, final score should be at CC level or above
