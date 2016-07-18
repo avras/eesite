@@ -9,11 +9,10 @@ title: EE 703 Autumn 2016
 
 #### Note
 
-Undergraduates cannot take this course as its content is almost the same as EE328 Digital Communication
+BTech or DD students cannot take this course as its content is almost the same as EE328 Digital Communication
 
 #### Course Content
 
-  - Review of signals and systems
   - Complex baseband representation
   - Digital modulation schemes
   - Gaussian random variables and processes
