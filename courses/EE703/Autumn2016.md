@@ -31,3 +31,7 @@ BTech or DD students cannot take this course as its content is almost the same a
   - 10% Assignments, 20% Quizzes, 25% Midsem, 45% Endsem
   - Relative grading
   - For AU, final score should be at CC level or above
+
+#### Reference Books
+  - [Problem Set 1](./2016/assignments/problemset1.pdf)
+
