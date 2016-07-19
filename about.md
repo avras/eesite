@@ -15,7 +15,7 @@ title: About Me
 
 #### Work Experience
 
-  - 2009 - Present, Assistant Professor, IIT Bombay
+  - 2009 - present, Assistant Professor, IIT Bombay
   - 2007 - 2009, Software Development Engineer in Test, Microsoft, Redmond
   - 2006, Research Intern, EPFL
 
@@ -50,4 +50,4 @@ title: About Me
   1. **SV**, P. K. Bora, D. Ghosh, "Oblivious Image-Adaptive Watermarking using Quantization Index Modulation," *Eighth National Conference On Communications, (NCC 2002)*, India, Jan. 2002.
 
 ##### Preprints
-  - **SV**, T. F. Wong, T. M. Lok, Capacity of the Degraded Half-Duplex Relay Channel, 2007, [arxiv.org/abs/0708.2270](http://arxiv.org/abs/0708.2270)
+  - **SV**, T. F. Wong, T. M. Lok, "Capacity of the Degraded Half-Duplex Relay Channel," 2007, [arxiv.org/abs/0708.2270](http://arxiv.org/abs/0708.2270)
