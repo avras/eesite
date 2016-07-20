@@ -17,7 +17,7 @@ main = hakyll $ do
 
     match (fromList [ "about.md"
                     , "courses.md"
-                    , "resources.md"
+                    , "links.md"
                     ]
           ) $ do
         route   $ setExtension "html"
