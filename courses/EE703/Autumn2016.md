@@ -32,6 +32,8 @@ BTech or DD students cannot take this course as its content is almost the same a
   - Relative grading
   - For AU, final score should be at CC level or above
 
-#### Reference Books
+#### Problem Sets
   - [Problem Set 1](./2016/assignments/problemset1.pdf)
 
+#### Assignments
+  - [Assignment 1](./2016/assignments/assignment1.pdf)
