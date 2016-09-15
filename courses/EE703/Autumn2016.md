@@ -35,7 +35,12 @@ BTech or DD students cannot take this course as its content is almost the same a
 #### Problem Sets
   - [Problem Set 1](./2016/assignments/problemset1.pdf)
   - [Problem Set 2](./2016/assignments/problemset2.pdf)
+  - [Problem Set 3](./2016/assignments/problemset3.pdf)
 
 #### Assignments
   - [Assignment 1](./2016/assignments/assignment1.pdf)
   - [Assignment 2](./2016/assignments/assignment2.pdf)
+
+#### Exams
+  - [Quiz 1](./2016/exams/quiz1.pdf)
+  - [Midsem](./2016/exams/midsem.pdf)
