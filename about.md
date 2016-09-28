@@ -37,6 +37,7 @@ title: About Me
   1. S. Aedudodla, **SV**, T. F. Wong, "Timing Acquisition in Ultra-wideband Communication Systems," *IEEE Transactions on Vehicular Technology*, vol. 54, no. 5, pp. 1570--1583, Sep. 2005. *Invited paper*. [[doi]](http://dx.doi.org/10.1109/TVT.2005.855495)
 
 ##### Conference
+  1. **SV**, "LFSR identification using Groebner bases," *Twenty Second National Conference on Communications (NCC 2016)*, Guwahati, India, Mar. 2016. [[doi]](http://dx.doi.org/10.1109/NCC.2016.7561164)
   1. **SV**, "Identifying block codes using Groebner bases," *IEEE International Conference on Communications (ICC 2015)*, London, UK, Jun. 2015. [[doi]](http://dx.doi.org/10.1109/ICC.2015.7249019)
   1. A. D. Yardi, A. Kumar, **SV**, "Channel-code detection by a third-party receiver via the likelihood ratio test," *IEEE International Symposium on Information Theory (ISIT 2014)*, Honolulu, HI, Jun. 2014. [[doi]](http://dx.doi.org/10.1109/ISIT.2014.6874993)
   1. A. D. Yardi, **SV**, A. Kumar, "Blind Reconstruction of Binary Cyclic Codes," *20th European Wireless Conference (EW 2014)*, Barcelona, Spain, May 2014. [[xplore]](http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=6843189)
