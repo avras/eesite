@@ -40,6 +40,7 @@ BTech or DD students cannot take this course as its content is almost the same a
 #### Assignments
   - [Assignment 1](./2016/assignments/assignment1.pdf)
   - [Assignment 2](./2016/assignments/assignment2.pdf)
+  - [Assignment 3](./2016/assignments/assignment3.pdf)
 
 #### Exams
   - [Quiz 1](./2016/exams/quiz1.pdf)
