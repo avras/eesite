@@ -4,7 +4,7 @@ title: Courses
 
 #### Current Course
 
-  - [EE 703: Digital Message Transmission (Autumn 2016)](./courses/EE703/Autumn2016.html)
+  - None
 
 #### Past Courses
 
@@ -20,6 +20,7 @@ title: Courses
     + [Spring 2014](./courses/EE325/Spring2014.html)
     + [Spring 2013](./courses/EE325/Spring2013.html)
   - EE 703: Digital Message Transmission
+    + [Autumn 2016](./courses/EE703/Autumn2016.html)
     + [Autumn 2013](./courses/EE703/Autumn2013.html)
     + [Autumn 2012](./courses/EE703/Autumn2012.html)
   - EE 706: Communication Networks
