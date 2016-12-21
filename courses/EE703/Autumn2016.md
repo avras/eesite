@@ -47,3 +47,5 @@ BTech or DD students cannot take this course as its content is almost the same a
   - [Quiz 1](./2016/exams/quiz1.pdf)
   - [Midsem](./2016/exams/midsem.pdf)
   - [Quiz 2](./2016/exams/quiz2.pdf)
+  - [Quiz 3](./2016/exams/quiz3.pdf)
+  - [Endsem](./2016/exams/endsem.pdf)
