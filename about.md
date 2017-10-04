@@ -15,9 +15,14 @@ title: About Me
 
 #### Work Experience
 
-  - 2009 - present, Assistant Professor, IIT Bombay
+  - 2017 - present, Associate Professor, EE, IIT Bombay
+  - 2009 - 2017, Assistant Professor, EE, IIT Bombay
   - 2007 - 2009, Software Development Engineer in Test, Microsoft, Redmond
   - 2006, Research Intern, EPFL
+
+#### Awards
+  - Departmental Award for Excellence in Teaching, IIT Bombay, 2017
+  - Dr. Shankar Dayal Sharma Gold Medal, IIT Guwahati, 2001
 
 #### Papers
   - [Google Scholar](https://scholar.google.co.in/citations?user=Q_HoVqAAAAAJ&hl=en)
@@ -25,7 +30,7 @@ title: About Me
 
 ##### Journal
 
-  1. **SV**, "Largest Permutation Codes with the Kendall $\tau$-Metric in $S_5$ and $S_6$," *IEEE Communications Letters*, 2016. [[doi]](http://dx.doi.org/10.1109/LCOMM.2016.2591003)
+  1. **SV**, "Largest Permutation Codes with the Kendall $\tau$-Metric in $S_5$ and $S_6$," *IEEE Communications Letters*, vol. 20, no. 10, pp. 1912--1915, Oct. 2016. [[doi]](http://dx.doi.org/10.1109/LCOMM.2016.2591003)
   1. A. D. Yardi, **SV**, A. Kumar, "Blind Reconstruction of Binary Cyclic Codes From Unsynchronized Bitstream," *IEEE Transactions on Communications*, vol. 64, no. 7, pp. 2693--2706, Jul. 2016. [[doi]](http://dx.doi.org/10.1109/TCOMM.2016.2561931)
   1. **SV**, D. Pal, "On the Minimum Redundancy of SEC-DAEC-TAEC Binary Linear Block Codes," *IEEE Communications Letters*, vol. 20, no. 4, pp. 652--656, Apr. 2016. [[doi]](http://dx.doi.org/10.1109/LCOMM.2016.2532884)
   1. **SV**, Y. Levinbook, T. F. Wong, "Maximum Likelihood Localization of a Diffusive Point Source using Binary Observations," *IEEE Transactions on Signal Processing*, vol. 55, no. 2, pp. 665--676, Feb. 2007. [[doi]](http://dx.doi.org/10.1109/TSP.2006.885770)
