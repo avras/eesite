@@ -20,7 +20,6 @@ title: Links
   - [zathura](https://pwmt.org/projects/zathura/) - A PDF viewer with vi key bindings
   - [solarized](http://ethanschoonover.com/solarized) - A colour palette for gui and terminal applications 
   - [latex-suite (aka vim-latex)](http://vim-latex.sourceforge.net/) - Tools for creating LaTeX documents in vim
-  - [latex-watcher](https://github.com/nicoring/latex-watcher) - A latex file watcher to auto-compile tex files
   - [iterm2](https://www.iterm2.com/) - OS X Terminal replacement
 
 ##### Sites

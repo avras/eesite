@@ -18,6 +18,9 @@ main = hakyll $ do
     match (fromList [ "about.md"
                     , "courses.md"
                     , "links.md"
+                    , "projects.md"
+                    , "students.md"
+                    , "bitcoin.md"
                     ]
           ) $ do
         route   $ setExtension "html"
@@ -25,7 +28,9 @@ main = hakyll $ do
             >>= loadAndApplyTemplate "templates/default.html" defaultContext
             >>= relativizeUrls
 
-    match "static/courses/**" $ do
+    match ( "static/courses/**" .||.
+            "static/bitcoin/**"
+          ) $ do
         route $ (gsubRoute "static/" (const ""))
         compile copyFileCompiler
 
