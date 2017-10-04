@@ -2,13 +2,16 @@ all:
 	stack build
 
 build:
-	.stack-work/install/x86_64-linux/lts-6.1/7.10.3/bin/eesite build
+	stack exec site build
 
 rebuild:
-	.stack-work/install/x86_64-linux/lts-6.1/7.10.3/bin/eesite rebuild
+	stack exec site rebuild
 
 clean:
-	.stack-work/install/x86_64-linux/lts-6.1/7.10.3/bin/eesite clean
+	stack exec site clean
 
 watch:
-	.stack-work/install/x86_64-linux/lts-6.1/7.10.3/bin/eesite watch
+	stack exec site watch
+
+sync:
+	rsync -r -a -v -e ssh --delete ~/my/docs/eesite/_site/ sarva@10.107.1.1:/home/faculty/sarva/public_html/
