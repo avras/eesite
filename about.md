@@ -63,6 +63,7 @@ Indian Institute of Technology Bombay\
   1. **SV**, P. K. Bora, D. Ghosh, "Oblivious Image-Adaptive Watermarking using Quantization Index Modulation," *Eighth National Conference On Communications, (NCC 2002)*, India, Jan. 2002.
 
 #### Miscellaneous
+  - **SV**, [Introduction to Bitcoin](https://speakerdeck.com/sarva/introduction-to-bitcoin), EE Students Reading Group talk slides, 2017
   - **SV**, [An Introduction to Bitcoin](./bitcoin.html), Lecture Notes, 2017
   - **SV**, [Bitcoin Demystified](https://speakerdeck.com/sarva/bitcoin), EE Colloquium Slides, November 2, 2016
   - **SV**, [Introduction to Hadoop](https://speakerdeck.com/sarva/introduction-to-hadoop), NTRO Workshop Slides, April 7, 2016
