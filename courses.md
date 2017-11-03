@@ -4,7 +4,7 @@ title: Courses
 
 #### Current Course
 
-  - None
+  - [One-day CEP course on Bitcoin, November 25th, 2017](./courses/cep/cep-bitcoin-251117.html)
 
 #### Past Courses
 
