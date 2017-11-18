@@ -12,7 +12,7 @@ title: One-Day CEP Course on Bitcoin - 25th November, 2017
     + Industry Participants: Rs 4720
     + Academic and Govt Organization Participants: Rs 3540
     + Student Participants: Rs 1770
-  - **Registration:** See instructions in this [pdf](http://www.cep.iitb.ac.in/brochures/2017/bitcoin-brochure.pdf)
+  - **Registration:** Find this course on this [page](https://portal.iitb.ac.in/ceqipapp/) and click Apply
 
 #### Course Description
 
