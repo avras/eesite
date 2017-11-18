@@ -6,7 +6,7 @@ title: One-Day CEP Course on Bitcoin - 25th November, 2017
 
   - **Instructor:** [Saravanan Vijayakumaran](http://www.ee.iitb.ac.in/~sarva/about.html)
   - **Date:** 25th November, 2017 
-  - **Last Date for Registration:** 17th November, 2017 
+  - **Last Date for Registration:** 23rd November, 2017 
   - **Location:** Jal Vihar Guest House Seminar Hall, IIT Bombay
   - **Course fees:** (inclusive of 18% GST)
     + Industry Participants: Rs 4720
