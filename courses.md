@@ -4,10 +4,12 @@ title: Courses
 
 #### Current Course
 
-  - [One-day CEP course on Bitcoin, November 25th, 2017](./courses/cep/cep-bitcoin-251117.html)
+  - [EE 720: An Introduction to Number Theory and Cryptography](./courses/EE720/Spring2018.html)
 
 #### Past Courses
 
+  - Continuing Education Programme Courses
+    + [One-day course on Bitcoin, November 25th, 2017](./courses/cep/cep-bitcoin-251117.html)
   - EE 754: Advanced Error Correcting Codes
     + Spring 2016
   - EE 605: Error Correcting Codes
