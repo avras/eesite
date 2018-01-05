@@ -9,20 +9,16 @@ title: EE 720 Spring 2018
   - **Office Hours:** 5pm - 6pm, Fridays
 
 ##### Course Content
-
   - Perfectly Secret Encryption
   - Private-Key Encryption
   - Message Authentication Codes
-  - Hash Functions
-  - Stream Ciphers
-  - Block Ciphers
+  - Practical Stream and Block Ciphers
   - Number Theory, Groups, Finite Fields
   - Public-Key Encryption
+  - Hash Functions
   - Digital Signatures
 
-
 ##### Reference Books
-
   - *Introduction to Modern Cryptography*, Jonathan Katz and Yehuda Lindell, CRC Press, 2015 (2nd Edition)
   - *A Course in Number Theory and Cryptography*, Neal Koblitz, 1994 (2nd Edition)
 
@@ -31,3 +27,6 @@ title: EE 720 Spring 2018
   - Relative grading
   - For AU, final score should be at CC level or above
   - 80% attendance required
+
+##### Lecture Outlines
+  - [Lecture 01](/courses/EE720/2018/notes/lecture-01.pdf)
