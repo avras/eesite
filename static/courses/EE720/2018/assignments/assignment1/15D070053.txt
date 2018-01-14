@@ -1,0 +1,61 @@
+EE720 Assignment 1 for 15D070053
+
+1. Decode the following ciphertext which has been encrypted using Caesar's cipher [2 points].
+
+qr rqh fdq pdnh brx ihho lqihulru zlwkrxw brxu frqvhqw. hohdqru urrvhyhow  
+
+
+2. Decode the following ciphertext which has been encrypted using ROT-13 [2 points].
+
+ur xabjf nyy nobhg neg, ohg ur qbrfag xabj jung ur yvxrf. wnzrf guheore  
+
+
+3. Suppose some English plaintext with the following letter frequencies has been encrypted using a substitution cipher.
+a : 0.0780
+b : 0.0188
+c : 0.0269
+d : 0.0363
+e : 0.1196
+f : 0.0242
+g : 0.0215
+h : 0.0477
+i : 0.0739
+j : 0.0047
+k : 0.0087
+l : 0.0531
+m : 0.0202
+n : 0.0719
+o : 0.0914
+p : 0.0134
+q : 0.0007
+r : 0.0618
+s : 0.0524
+t : 0.0840
+u : 0.0336
+v : 0.0134
+w : 0.0215
+x : 0.0000
+y : 0.0208
+z : 0.0013
+Recover the key used to produce the following ciphertext [6 points].
+
+ra pjdwu xcc xydol xml, yol ra edaujl pjdw wrxl ra ckpau. sxtau lromyam  
+wraj k ed gdde, k naac gdde wraj k ed yxe, k naac yxe, xje lrxl ku tz mackgkdj. xymxrxt ckjqdcj  
+nkgrl ndm zdom dfkjkdju, yol ed jdl yackava lrxl lraz qdjlxkj lra wrdca lmolr, dm lra djcz lmolr. qrxmcau x. exjx  
+tz wxz dn sdpkjg ku ld lacc lra lmolr. kl ku lra nojjkaul sdpa kj lra wdmce. gadmga yamjxme urxw  
+uktfckqklz ku lra oclktxla udfrkulkqxlkdj. cadjxmed ex vkjqk  
+udtalktau lra mdxe cauu lmxvacae ku cauu lmxvacae ndm x maxudj. sammz uakjnace  
+k edjl eauamva lrku xwxme, yol k rxva xmlrmklku xje k edjl eauamva lrxl aklram. sxqp yajjz  
+lkta xje ufxqa xma tdeau yz wrkqr wa lrkjp xje jdl qdjeklkdju kj wrkqr wa ckva. xcyaml akjulakj   
+kn zdo wxjl lmocz ld ojeamulxje udtalrkjg, lmz ld qrxjga kl. poml cawkj  
+lra qoma ndm ydmaedt ku qomkduklz. lrama ku jd qoma ndm qomkduklz. accaj fxmm  
+ed jdl cddp wrama zdo nacc, yol wrama zdo uckffae. xnmkqxj fmdvamy  
+xqboxkjlxjqa, j. x famudj wrdt wa pjdw wacc ajdogr ld ydmmdw nmdt, yol jdl wacc ajdogr ld caje ld. xtymdua ykamqa  
+kl ku axukam ld nkgrl ndm djau fmkjqkfcau lrxj ld ckva of ld lrat. xcnmae xecam  
+rdw txjz cagu edau x edg rxva, kn zdo qxcc lra lxkc x cag ndom. qxcckjg x lxkc x cag edaujl txpa kl x cag. xymxrxt ckjqdcj  
+wa qdjnauu dom ckllca nxoclu ld famuoxea fadfca lrxl wa rxva jd cxmga djau. nmxjqdku ea cx mdqrandoqxoce  
+javam xfdcdgkha ndm urdwkjg naackjg. wraj zdo ed ud, zdo xfdcdgkha ndm lmolr. yajsxtkj ekumxack  
+qrxmxqlam ku wrxl zdo rxva canl wraj zdova cdul avamzlrkjg zdo qxj cdua. avxj auxm  
+xcwxzu ya x nkmulmxla vamukdj dn zdomuacn, kjulaxe dn x uaqdjemxla vamukdj dn udtadja acua. soez gxmcxje  
+yakjg kj fdcklkqu ku ckpa yakjg x nddlyxcc qdxqr. zdo rxva ld ya utxml ajdogr ld ojeamulxje lra gxta, xje eoty ajdogr ld lrkjp klu ktfdmlxjl. aogaja tqqxmlrz  
+lra xmgotajl nmdt kjlktkexlkdj ku x qdjnauukdj dn kjlaccaqloxc ktfdlajqa. xzj mxje  

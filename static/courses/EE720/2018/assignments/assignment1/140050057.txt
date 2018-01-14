@@ -1,0 +1,61 @@
+EE720 Assignment 1 for 140050057
+
+1. Decode the following ciphertext which has been encrypted using Caesar's cipher [2 points].
+
+hgxfdwlrq... kdv surgxfhg d ydvw srsxodwlrq deoh wr uhdg exw xqdeoh wr glvwlqjxlvk zkdw lv zruwk uhdglqj. j. p. wuhyhobdq  
+
+
+2. Decode the following ciphertext which has been encrypted using ROT-13 [2 points].
+
+cngevbgvfz vf lbhe pbaivpgvba gung guvf pbhagel vf fhcrevbe gb nyy bgure pbhagevrf orpnhfr lbh jrer obea va vg. trbetr oreaneq funj  
+
+
+3. Suppose some English plaintext with the following letter frequencies has been encrypted using a substitution cipher.
+a : 0.0695
+b : 0.0140
+c : 0.0225
+d : 0.0351
+e : 0.1264
+f : 0.0309
+g : 0.0253
+h : 0.0463
+i : 0.0899
+j : 0.0070
+k : 0.0119
+l : 0.0372
+m : 0.0246
+n : 0.0702
+o : 0.0794
+p : 0.0154
+q : 0.0000
+r : 0.0702
+s : 0.0590
+t : 0.0857
+u : 0.0253
+v : 0.0119
+w : 0.0154
+x : 0.0042
+y : 0.0218
+z : 0.0007
+Recover the key used to produce the following ciphertext [6 points].
+
+n enrs bimr nz lxopncxzso fs. n pxc onz xcy eiir xz nz lim kidmo. asmifs r. asmifs  
+zmdzk iusm kxmficv. exmmv wioonyv   
+zkios xms fv gmncpngeso. nl vid yicz enrs zksf n kxus izksmo. jmidpki fxmq  
+pidmxjs no ciz zks xwoscps il lsxm, wdz mxzksm zks adyjsfscz zkxz oifszkncj seos no fims nfgimzxcz zkxc lsxm. xfwmios msyfiic  
+yi ciz eiir bksms vid lsee, wdz bksms vid oenggsy. xlmnpxc gmiusmw  
+ncoxcnzv yincj zks oxfs zkncj iusm xcy iusm xjxnc xcy sqgspzncj ynllsmscz msodezo. xewsmz sncozsnc  
+fv gsoonfnof sqzscyo zi zks gincz il susc odogspzncj zks oncpsmnzv il zks gsoonfnozo. asxc miozxcy  
+nl n kxus ossc ldmzksm nz no wv ozxcyncj ic zks okideysmo il jnxczo. noxxp csbzic  
+nz no xebxvo fims ynllnpdez zi lnjkz xjxncoz lxnzk zkxc xjxncoz rcibesyjs. xyiel knzesm  
+x jiiy ziie nfgmiuso zks bxv vid bimr. x jmsxz ziie nfgmiuso zks bxv vid zkncr. asll ydczsfxcc  
+n enrs bimr nz lxopncxzso fs. n pxc onz xcy eiir xz nz lim kidmo. asmifs r. asmifs  
+imnjncxenzv no zks lncs xmz il msfsfwsmncj bkxz vid ksxm wdz limjszzncj bksms vid ksxmy nz. exdmscps a. gszsm  
+vid fdoz ws zks pkxcjs vid bnok zi oss nc zks bimey. jxcykn  
+nz no sxonsm zi lnjkz lim icso gmncpngeso zkxc zi enus dg zi zksf. xelmsy xyesm  
+ymsxf xo nl videe enus limsusm. enus xo nl videe yns ziyxv. axfso ysxc  
+x pseswmnzv no x gsmoic bki bimro kxmy xee kno enls zi wspifs bsee rcibc, zksc bsxmo yxmr jexooso zi xuiny wsncj mspijcnhsy. lmsy xeesc  
+nl xz lnmoz vid yicz odppssy, lncy idz nl zks eiosm jszo xcvzkncj. wnee evic  
+ncoxcnzv yincj zks oxfs zkncj iusm xcy iusm xjxnc xcy sqgspzncj ynllsmscz msodezo. xewsmz sncozsnc  
+wslims n jiz fxmmnsy n kxy onq zksimnso xwidz wmncjncj dg pkneymsc  cib n kxus onq pkneymsc xcy ci zksimnso. aikc bnefiz 
+nc zksimv, zksms no ci ynllsmscps wszbssc zksimv xcy gmxpznps nc gmxpznps, zksms no. pkdpr msny  

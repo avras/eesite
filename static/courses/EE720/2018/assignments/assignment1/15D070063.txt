@@ -1,0 +1,61 @@
+EE720 Assignment 1 for 15D070063
+
+1. Decode the following ciphertext which has been encrypted using Caesar's cipher [2 points].
+
+rqh grj edunv dw vrphwklqj. dqg d kxqguhg grjv edun dw wkh vrxqg. fklqhvh suryhue  
+
+
+2. Decode the following ciphertext which has been encrypted using ROT-13 [2 points].
+
+rirel angvba evqvphyrf bgure angvbaf, naq nyy ner evtug. neguhe fpubcraunhre  
+
+
+3. Suppose some English plaintext with the following letter frequencies has been encrypted using a substitution cipher.
+a : 0.0852
+b : 0.0184
+c : 0.0243
+d : 0.0374
+e : 0.1167
+f : 0.0249
+g : 0.0230
+h : 0.0498
+i : 0.0695
+j : 0.0039
+k : 0.0098
+l : 0.0439
+m : 0.0256
+n : 0.0748
+o : 0.0807
+p : 0.0111
+q : 0.0013
+r : 0.0610
+s : 0.0498
+t : 0.0997
+u : 0.0334
+v : 0.0098
+w : 0.0197
+x : 0.0000
+y : 0.0262
+z : 0.0000
+Recover the key used to produce the following ciphertext [6 points].
+
+uxzrgu vlri noxu tu hxg  srgtqi vlri noxu tu pqiu. rvnxkv aqznrkzwuulg 
+x axge ti x czxhr uoxu ntzz zrgv wlq plgrw tm wlq hxg ckldr uoxu wlq vlgu grrv tu. ala olcr  
+grdrk ar xmkxtv ul zxqso xu wlqkirzm, xmurk xzz, wlq hlqzv ar ptiitgs lqu lg uor yler lm uor hrguqkw. vxpr rvgx rdrkxsr  
+hlqkxsr ti skxhr qgvrk ckriiqkr. rkgriu orptgsnxw  
+t krxzzw ntio t nxi zrii lm x uotgetgs pxg xgv plkr lm x mllz glu xmkxtv lm kryrhutlg. atzzw ylrz  
+tv kxuork ztdr ntuo x sllv bqriutlg uoxg x axv xginrk. xkwro mktprk  
+t vl glu mrrz laztsrv ul arztrdr uoxu uor ixpr slv nol oxi rgvlnrv qi ntuo irgir, krxilg, xgv tgurzzrhu oxi tgurgvrv qi ul mlksl uortk qir.  sxztzrl sxztzrt  
+tu ti xznxwi plkr vtmmthqzu ul mtsou xsxtgiu mxtuo uoxg xsxtgiu eglnzrvsr. xvlzm otuzrk  
+glu rdrkwuotgs uoxu hxg ar hlqgurv hlqgui, xgv glu rdrkwuotgs uoxu hlqgui hxg ar hlqgurv. xzarku rtgiurtg  
+tu ti ixtv uoxu clnrk hlkkqcui, aqu xhuqxzzw tui plkr ukqr uoxu clnrk xuukxhui uor hlkkqcutazr. uor ixgr xkr qiqxzzw xuukxhurv aw luork uotgsi uoxg clnrk. vxdtv aktg  
+tdr arrg ukwtgs mlk ilpr utpr ul vrdrzlc x ztmriuwzr uoxu vlrigu krbqtkr pw ckrirghr. sxkw ukqvrxq  
+tg slv nr ukqiu  xzz luorki aktgs vxux. vk. rvnxkvi vrptgs 
+uor krxz cklazrp ti glu noruork pxhotgri uotge aqu noruork prg vl. a. m. ietggrk  
+cxku lm uor tgoqpxgtuw lm uor hlpcqurk ti uoxu, lghr tu ti hlpcrurguzw cklskxpprv xgv nlketgs iplluozw, tu ti hlpczrurzw olgriu. tixxh xitpld  
+t oxdr rglqso plgrw ul zxiu pr uor kriu lm pw ztmr, qgzrii t aqw ilpruotgs. yxhetr pxilg  
+uotge zter x pxg lm xhutlg, xhu zter x pxg lm uolqsou. orgkt arksilg  
+xgluork mzxn tg uor oqpxg hoxkxhurk ti uoxu rdrkwalvw nxgui ul aqtzv xgv glalvw nxgui ul vl pxtgurgxghr. eqku dlggrsqu  
+t qir rplutlg mlk uor pxgw xgv krirkdr krxilg mlk uor mrn. xvlzm otuzrk  
+t krxzzw ntio t nxi zrii lm x uotgetgs pxg xgv plkr lm x mllz glu xmkxtv lm kryrhutlg. atzzw ylrz  
+noruork wlq uotge wlq hxg lk uotge wlq hxgu  wlq xkr ktsou. orgkw mlkv  

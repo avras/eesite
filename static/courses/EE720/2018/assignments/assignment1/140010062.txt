@@ -1,0 +1,61 @@
+EE720 Assignment 1 for 140010062
+
+1. Decode the following ciphertext which has been encrypted using Caesar's cipher [2 points].
+
+wuxob juhdw pdgqhvv fdqqrw eh dfklhyhg zlwkrxw vljqlilfdqw lqwhooljhqfh.  khquln wlnndqhq  
+
+
+2. Decode the following ciphertext which has been encrypted using ROT-13 [2 points].
+
+whfg gur snpg gung fbzr travhfrf jrer ynhturq ng qbrf abg vzcyl gung nyy jub ner ynhturq ng ner travhfrf. gurl ynhturq ng pbyhzohf, gurl ynhturq ng shygba, gurl ynhturq ng gur jevtug oebguref. ohg gurl nyfb ynhturq ng obmb gur pybja. pney fntna  
+
+
+3. Suppose some English plaintext with the following letter frequencies has been encrypted using a substitution cipher.
+a : 0.0816
+b : 0.0187
+c : 0.0237
+d : 0.0287
+e : 0.1235
+f : 0.0121
+g : 0.0276
+h : 0.0513
+i : 0.0843
+j : 0.0039
+k : 0.0088
+l : 0.0380
+m : 0.0265
+n : 0.0783
+o : 0.0711
+p : 0.0182
+q : 0.0000
+r : 0.0601
+s : 0.0540
+t : 0.0954
+u : 0.0309
+v : 0.0077
+w : 0.0221
+x : 0.0022
+y : 0.0303
+z : 0.0011
+Recover the key used to produce the following ciphertext [6 points].
+
+xrz vbksxrz hxnid drbaij gb jxud x ndldxnvj hxe cl gbb hxnid gb hclgdr gb cg. xhxr mxz  
+jbolgxfgdnl hxq cg xhqxzl gxmdl hbridn gjxr zba dwsdvg, dudr qjdr zba gxmd crgb xvvbarg jbolgxfgdnl hxq. fbaihxl jbolgxfgdn  
+dwsdncdrvd cl gjxg kxnudhbal gjcri gjxg drxehdl zba gb ndvbircyd x kclgxmd qjdr zba kxmd cg xixcr. onxrmhcr s. pbrdl  
+c brvd qxrgdf gb edvbkd xr xgjdclg, eag c ixud as  gjdz jxud rb jbhcfxzl. jdrrz zbarikxr  
+c jdxn c obnidg  c ldd c ndkdkedn  c fb c arfdnlgxrf vjcrdld snbudne   
+cg cl lxcf gjxg sbqdn vbnnasgl, eag xvgaxhhz cgl kbnd gnad gjxg sbqdn xggnxvgl gjd vbnnasgcehd. gjd lxrd xnd alaxhhz xggnxvgdf ez bgjdn gjcril gjxr sbqdn. fxucf encr  
+edlcfdl gjd rbehd xng bo idggcri gjcril fbrd, gjdnd cl gjd rbehd xng bo hdxucri gjcril arfbrd. gjd qclfbk bo hcod vbrlclgl cr gjd dhckcrxgcbr bo rbrdlldrgcxhl. hcxr zagxri  
+crlxrcgz cr crfcucfaxhl cl lbkdgjcri nxnd  eag cr inbasl, sxngcdl, rxgcbrl xrf dsbvjl, cg cl gjd nahd. oncdfncvj rcdgylvjd  
+hbicv qchh idg zba onbk x gb e. ckxicrxgcbr qchh gxmd zba dudnzqjdnd. xhedng dcrlgdcr  
+cg cl gjd kxnm bo xr dfavxgdf kcrf gb ed xehd gb drgdngxcr x gjbaijg qcgjbag xvvdsgcri cg. xnclgbghd  
+zba mrbq zband idggcri bhf qjdr zba lgbs gb gcd zban ljbdhxvdl xrf qbrfdn qjxg dhld zba vbahf fb qjchd zband fbqr gjdnd. idbnid eanrl  
+c fbrg mrbq xrzgjcri xebag kalcv. cr kz hcrd zba fbrg jxud gb. dhucl sndlhdz  
+xrz vbksxrz hxnid drbaij gb jxud x ndldxnvj hxe cl gbb hxnid gb hclgdr gb cg. xhxr mxz  
+gjd gjcnfnxgd kcrf cl brhz jxssz qjdr cg cl gjcrmcri qcgj gjd kxpbncgz. gjd ldvbrfnxgd kcrf cl brhz jxssz qjdr cg cl gjcrmcri qcgj gjd kcrbncgz. gjd ocnlgnxgd kcrf cl brhz jxssz qjdr cg cl gjcrmcri. x. x. kchrd  
+x kzgj cl x ndhcicbr cr qjcvj rb brd xrz hbridn edhcdudl. pxkdl odcehdkxr  
+hcod cl hcmd x ixkd bo vxnfl. gjd jxrf gjxg cl fdxhg zba cl fdgdnkcrclk  gjd qxz zba shxz cg cl ondd qchh. pxqxjxnhxh rdjna 
+eandxavnxgl qncgd kdkbnxrfx ebgj edvxald gjdz xssdxn gb ed ealz qjdr gjdz xnd qncgcri xrf edvxald gjd kdkbl, brvd qncggdr, ckkdfcxgdhz edvbkd snbbo gjxg gjdz qdnd ealz. vjxnhdl sdgdnl  
+vbanxid cl inxvd arfdn sndlland. dnrdlg jdkcriqxz  
+ibbf pafikdrg vbkdl onbk dwsdncdrvd, xrf dwsdncdrvd vbkdl onbk exf pafikdrg. exnnz hdsxgrdn  
+dcgjdn qncgd lbkdgjcri qbngj ndxfcri bn fb lbkdgjcri qbngj qncgcri. edrpxkcr onxrmhcr  

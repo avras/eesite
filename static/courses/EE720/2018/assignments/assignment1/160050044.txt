@@ -1,0 +1,61 @@
+EE720 Assignment 1 for 160050044
+
+1. Decode the following ciphertext which has been encrypted using Caesar's cipher [2 points].
+
+krz pdqb ohjv grhv d grj kdyh, li brx fdoo wkh wdlo d ohj irxu. fdoolqj d wdlo d ohj grhvqw pdnh lw d ohj. deudkdp olqfroq  
+
+
+2. Decode the following ciphertext which has been encrypted using ROT-13 [2 points].
+
+ol gur gvzr n zna ernyvmrf gung znlor uvf sngure jnf evtug, ur hfhnyyl unf n fba jub guvaxf urf jebat. puneyrf jnqfjbegu  
+
+
+3. Suppose some English plaintext with the following letter frequencies has been encrypted using a substitution cipher.
+a : 0.0716
+b : 0.0147
+c : 0.0270
+d : 0.0411
+e : 0.1250
+f : 0.0164
+g : 0.0217
+h : 0.0563
+i : 0.0651
+j : 0.0047
+k : 0.0088
+l : 0.0376
+m : 0.0317
+n : 0.0757
+o : 0.0874
+p : 0.0106
+q : 0.0000
+r : 0.0505
+s : 0.0610
+t : 0.0951
+u : 0.0370
+v : 0.0147
+w : 0.0141
+x : 0.0012
+y : 0.0288
+z : 0.0023
+Recover the key used to produce the following ciphertext [6 points].
+
+oaodfrso mlbsiq rn glxskbsk mlo yrduc, jtm sr rso mlbsiq rn glxskbsk lbhqoun. uor mruqmrf  
+bs hxmlohxmbgq frt crsm tscodqmxsc mlbskq. frt ptqm kom tqoc mr mloh. prlxss ars sothxss  
+x grhhbmmoo gxs hxio x cogbqbrs mlxm bq cthjod mlxs xsf rn bmq hohjodq. cxabc grjbmv  
+mlo kdoxmoqm rjqmxguo mr cbqgraodf bq srm bksrdxsgo  bm bq mlo buutqbrs rn isryuocko. cxsbou p. jrrdqmbs  
+mlo hrdo frt isry, mlo hrdo frt doxubqo lry htgl frt crsm isry  mlo uoqq frt isry, mlo hrdo frt mlbsi frt isry. cxabc m. ndoohxs  
+bn frtd wxdosmq soaod lxc glbucdos, glxsgoq xdo frt yrsm, obmlod. cbgi gxaomm  
+oaodf kosodxmbrs uxtklq xm mlo ruc nxqlbrsq, jtm nruuryq doubkbrtquf mlo soy. losdf cxabc mlrdoxt  
+b crsm coqodao mlbq xyxdc, jtm b lxao xdmldbmbq xsc b crsm coqodao mlxm obmlod. pxgi jossf  
+mlodo bq srjrcf qr bddbmxmbsk xq qrhojrcf ybml uoqq bsmouubkosgo xsc hrdo qosqo mlxs yo lxao. crs lodruc  
+qgbosgo bq rdkxsbvoc isryuocko. ybqcrh bq rdkxsbvoc ubno. bhhxstou ixsm  
+wxdm rn mlo bslthxsbmf rn mlo grhwtmod bq mlxm, rsgo bm bq grhwomosmuf wdrkdxhhoc xsc yrdibsk qhrrmluf, bm bq grhwuomouf lrsoqm. bqxxg xqbhra  
+mlo xdkthosm ndrh bsmbhbcxmbrs bq x grsnoqqbrs rn bsmouuogmtxu bhwrmosgo. xfs dxsc  
+ptqm mlo nxgm mlxm qrho kosbtqoq yodo uxtkloc xm croq srm bhwuf mlxm xuu ylr xdo uxtkloc xm xdo kosbtqoq. mlof uxtkloc xm gruthjtq, mlof uxtkloc xm ntumrs, mlof uxtkloc xm mlo ydbklm jdrmlodq. jtm mlof xuqr uxtkloc xm jrvr mlo gurys. gxdu qxkxs  
+qrhombhoq mlo drxc uoqq mdxaouoc bq uoqq mdxaouoc nrd x doxqrs. poddf qobsnouc  
+krrc ptckhosm grhoq ndrh ozwodbosgo, xsc ozwodbosgo grhoq ndrh jxc ptckhosm. jxddf uowxmsod  
+mouoabqbrs osxjuoq frt mr jo osmodmxbsoc bs frtd lrho jf worwuo frt yrtucsm lxao bs frtd lrho. cxabc ndrqm  
+bn frt lxmo x wodqrs, frt lxmo qrhomlbsk bs lbh mlxm bq wxdm rn frtdqoun. ylxm bqsm wxdm rn rtdqouaoq croqsm cbqmtdj tq. lodhxss loqqo  
+nbklm nrd frtd rwbsbrsq, jtm cr srm jouboao mlxm mlof grsmxbs mlo ylruo mdtml, rd mlo rsuf mdtml. glxduoq x. cxsx  
+b rsgo yxsmoc mr jogrho xs xmlobqm, jtm b kxao tw  mlof lxao sr lrubcxfq. lossf frtskhxs  
+mlodoq qr htgl grhocf rs mouoabqbrs. croq mlxm gxtqo grhocf bs mlo qmdoomq cbgi gxaomm  

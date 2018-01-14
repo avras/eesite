@@ -1,0 +1,61 @@
+EE720 Assignment 1 for 14D070018
+
+1. Decode the following ciphertext which has been encrypted using Caesar's cipher [2 points].
+
+wkh idfw wkdw d eholhyhu lv kdsslhu wkdq d vnhswlf lv qr pruh wr wkh srlqw wkdq wkh idfw wkdw d guxqnhq pdq lv kdsslhu wkdq d vrehu rqh. jhrujh ehuqdug vkdz  
+
+
+2. Decode the following ciphertext which has been encrypted using ROT-13 [2 points].
+
+gur avpr cneg nobhg orvat n crffvzvfg vf gung lbh ner pbafgnagyl orvat rvgure cebira evtug be cyrnfnagyl fhecevfrq. trbetr s. jvyy  
+
+
+3. Suppose some English plaintext with the following letter frequencies has been encrypted using a substitution cipher.
+a : 0.0698
+b : 0.0129
+c : 0.0270
+d : 0.0311
+e : 0.1255
+f : 0.0194
+g : 0.0229
+h : 0.0592
+i : 0.0798
+j : 0.0023
+k : 0.0094
+l : 0.0411
+m : 0.0240
+n : 0.0821
+o : 0.0733
+p : 0.0129
+q : 0.0029
+r : 0.0528
+s : 0.0657
+t : 0.0968
+u : 0.0264
+v : 0.0141
+w : 0.0158
+x : 0.0023
+y : 0.0299
+z : 0.0006
+Recover the key used to produce the following ciphertext [6 points].
+
+dxtquowq xa ltp coeaxhse ixw dswqausw ltp lbw dons. dxtquowq xa elcslws sdese ixw eulpasw oa. itddsw uoqualbsp  
+aus xpqtcswa nplc owaocozxaolw oe x ilwnseeolw ln owasddsiatxd ocjlaswis. xkw pxwz  
+klt zlwa qsa xwkauowq idsxw boaulta qsaaowq elcsauowq sdes zopak. isiod mxfasp  
+ausps xps cxwk bul zxps wla hodd auscesdyse nlp nsxp ln buxa aus wsoqumlpe bodd exk. ikpod ilwwlddk  
+lwis aus qxcs oe lysp, aus howq xwz aus jxbw ql mxih ow aus excs mlf. oaxdoxw jplyspm  
+asdsyoeolw swxmdse klt al ms swaspaxowsz ow kltp ulcs mk jsljds klt bltdzwa uxys ow kltp ulcs. zxyoz nplea  
+xdd aptau jxeese aupltqu aupss eaxqse. nopea, oa oe pozoitdsz. esilwz, oa oe yoldswadk ljjlesz. auopz, oa oe xiisjasz xe msowq esdnsyozswa. xpautp eiuljswuxtsp  
+klt ixwa qsa xbxk nplc kltpesdn mk clyowq nplc lws jdxis al xwlausp. auspse wlauowq al auxa. spwsea uscowqbxk  
+x iuodz ln noys bltdz twzspeaxwz auoe. eswz elcslws al nsaiu x iuodz ln noys. qpltiul cxpf  
+aus auopzpxas cowz oe lwdk uxjjk busw oa oe auowhowq boau aus cxglpoak. aus esilwzpxas cowz oe lwdk uxjjk busw oa oe auowhowq boau aus cowlpoak. aus nopeapxas cowz oe lwdk uxjjk busw oa oe auowhowq. x. x. codws  
+ck qpxwzclausp oe lysp soquak xwz eaodd zlsewa wssz qdxeese. zpowhe poqua lta ln aus mlaads. uswwk kltwqcxw  
+ausps oe wl aptau. ausps oe lwdk jspisjaolw. qteaxys ndxtmspa  
+buxa bs auowh, lp buxa bs hwlb, lp buxa bs msdosys oe, ow aus swz, ln doaads ilwesrtswis. aus lwdk ilwesrtswis oe buxa bs zl. gluw ptehow  
+elcsaocse aus plxz dsee apxysdsz oe dsee apxysdsz nlp x psxelw. gsppk esownsdz  
+oys mssw apkowq nlp elcs aocs al zsysdlj x donseakds auxa zlsewa psrtops ck jpseswis. qxpk aptzsxt  
+on kltp jxpswae wsysp uxz iuodzpsw, iuxwise xps klt blwa, soausp. zoih ixysaa  
+on aus dseelwe ln uoealpk asxiu te xwkauowq oa oe auxa wlmlzk dsxpwe aus dseelwe auxa uoealpk asxiuse te. xwlw  
+x ilccoaass ixw cxhs x zsioeolw auxa oe ztcmsp auxw xwk ln oae cscmspe. zxyoz ilmoav  
+oae wl dlwqsp x rtseaolw ln eaxkowq usxdauk. oae x rtseaolw ln nowzowq x eoihwsee klt dohs. gxihos cxelw  
+uoealpk asxiuse te auxa csw xwz wxaolwe msuxys boesdk lwis ausk uxys sfuxteasz xdd lausp xdaspwxaoyse. xmmx smxw  

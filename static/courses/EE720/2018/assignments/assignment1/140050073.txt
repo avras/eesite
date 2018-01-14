@@ -1,0 +1,61 @@
+EE720 Assignment 1 for 140050073
+
+1. Decode the following ciphertext which has been encrypted using Caesar's cipher [2 points].
+
+wkhuh duh pdqb zkr gduh qrw nloo wkhpvhoyhv iru ihdu ri zkdw wkh qhljkeruv zloo vdb. fbulo frqqroob  
+
+
+2. Decode the following ciphertext which has been encrypted using ROT-13 [2 points].
+
+n unccl yvsr vf whfg n fgevat bs unccl zbzragf. ohg zbfg crbcyr qbag nyybj gur unccl zbzrag, orpnhfr gurler fb ohfl gelvat gb trg n unccl yvsr. rfgure uvpxf  
+
+
+3. Suppose some English plaintext with the following letter frequencies has been encrypted using a substitution cipher.
+a : 0.0927
+b : 0.0170
+c : 0.0246
+d : 0.0284
+e : 0.1180
+f : 0.0189
+g : 0.0189
+h : 0.0555
+i : 0.0814
+j : 0.0025
+k : 0.0076
+l : 0.0360
+m : 0.0297
+n : 0.0845
+o : 0.0770
+p : 0.0196
+q : 0.0025
+r : 0.0492
+s : 0.0618
+t : 0.1066
+u : 0.0227
+v : 0.0095
+w : 0.0145
+x : 0.0025
+y : 0.0177
+z : 0.0006
+Recover the key used to produce the following ciphertext [6 points].
+
+hjdzjxmsraxsrda rm suq xjs dk tqqhray ch nrsu iqmsqjvxi. vda lxjbcrm  
+x zdllrssqq zxa lxtq x vqzrmrda suxs rm vclpqj suxa xai dk rsm lqlpqjm. vxgrv zdprso  
+suq surjvjxsq lrav rm dawi uxhhi nuqa rs rm suratray nrsu suq lxedjrsi. suq mqzdavjxsq lrav rm dawi uxhhi nuqa rs rm suratray nrsu suq lradjrsi. suq krjmsjxsq lrav rm dawi uxhhi nuqa rs rm suratray. x. x. lrwaq  
+dazq suq yxlq rm dgqj, suq tray xav suq hxna yd pxzt ra suq mxlq pdf. rsxwrxa hjdgqjp  
+x mraywq bcqmsrda zxa pq ldjq rakwcqasrxw suxa x sudcmxav msxsqlqasm. pd pqaaqss  
+xai zdlhxai wxjyq qadcyu sd uxgq x jqmqxjzu wxp rm sdd wxjyq sd wrmsqa sd rs. xwxa txi  
+nq zdakqmm dcj wrsswq kxcwsm sd hqjmcxvq hqdhwq suxs nq uxgq ad wxjyq daqm. kjxazdrm vq wx jdzuqkdczxcwv  
+nuqa hqdhwq xjq kjqq sd vd xm suqi hwqxmq, suqi cmcxwwi rlrsxsq qxzu dsuqj. qjrz udkkqj  
+sjcsu dgqj uxjldai. wxjji pdmmrvi   
+r uxgq aqgqj lqs x lxa md ryadjxas suxs r zdcwvas wqxja mdlqsuray kjdl url. yxwrwqd yxwrwqr  
+mrlhwrzrsi rm suq cwsrlxsq mdhurmsrzxsrda. wqdaxjvd vx grazr  
+pqmrvqm suq adpwq xjs dk yqssray suraym vdaq, suqjq rm suq adpwq xjs dk wqxgray suraym cavdaq. suq nrmvdl dk wrkq zdamrmsm ra suq qwrlraxsrda dk adaqmmqasrxwm. wrxa icsxay  
+rsm x jxjq hqjmda nud nxasm sd uqxj nuxs uq vdqmas nxas sd uqxj. vrzt zxgqss  
+li hqmmrlrml qfsqavm sd suq hdras dk qgqa mcmhqzsray suq mrazqjrsi dk suq hqmmrlrmsm. eqxa jdmsxav  
+nq xjq nuxs nq jqhqxsqvwi vd qfzqwwqazq, suqa, rm ads xa xzs pcs x uxprs. xjrmsdswq  
+xadsuqj kwxn ra suq uclxa zuxjxzsqj rm suxs qgqjipdvi nxasm sd pcrwv xav adpdvi nxasm sd vd lxrasqaxazq. tcjs gdaaqycs  
+x kraq bcdsxsrda rm x vrxldav da suq krayqj dk x lxa dk nrs, xav x hqppwq ra suq uxav dk x kddw. edmqhu jdcf  
+zdcjxyq rm ads suq xpmqazq dk kqxj, pcs jxsuqj suq ecvyqlqas suxs mdlqsuray qwmq rm ldjq rlhdjsxas suxa kqxj. xlpjdmq jqvldda  
+suq hdras dk bcdsxsrdam rm suxs daq zxa cmq xadsuqjm ndjvm sd pq ramcwsray. xlxavx zjdmm  
+r uxgq lxvq surm wqssqj wdayqj suxa cmcxw pqzxcmq r wxzt suq srlq sd lxtq rs mudjsqj. pwxrmq hxmzxw  

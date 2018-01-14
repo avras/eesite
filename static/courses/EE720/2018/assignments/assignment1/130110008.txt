@@ -1,0 +1,61 @@
+EE720 Assignment 1 for 130110008
+
+1. Decode the following ciphertext which has been encrypted using Caesar's cipher [2 points].
+
+lw lv dozdbv pruh gliilfxow wr iljkw djdlqvw idlwk wkdq djdlqvw nqrzohgjh. dgroi klwohu  
+
+
+2. Decode the following ciphertext which has been encrypted using ROT-13 [2 points].
+
+gur bayl shapgvba bs rpbabzvp sberpnfgvat vf gb znxr nfgebybtl ybbx erfcrpgnoyr. wbua xraargu tnyoenvgu  
+
+
+3. Suppose some English plaintext with the following letter frequencies has been encrypted using a substitution cipher.
+a : 0.0830
+b : 0.0206
+c : 0.0335
+d : 0.0270
+e : 0.1319
+f : 0.0187
+g : 0.0206
+h : 0.0598
+i : 0.0592
+j : 0.0013
+k : 0.0116
+l : 0.0418
+m : 0.0251
+n : 0.0734
+o : 0.0798
+p : 0.0245
+q : 0.0000
+r : 0.0560
+s : 0.0560
+t : 0.0862
+u : 0.0322
+v : 0.0103
+w : 0.0206
+x : 0.0013
+y : 0.0251
+z : 0.0006
+Recover the key used to produce the following ciphertext [6 points].
+
+prm tresm wbezsmg tcpr prm tebsd cj prxp leesj xod lxoxpcyj xbm xstxvj je ymbpxco el prmgjmshmj, xod tcjmb wmewsm je luss el deuzpj. zmbpbxod bujjmss  
+cl veub wxbmopj omhmb rxd yrcsdbmo, yrxoymj xbm veu teop, mcprmb. dcya yxhmpp  
+prm eosv prcoq prxp copmblmbmj tcpr gv smxbocoq cj gv mduyxpceo. xszmbp mcojpmco  
+prejm xbm gv wbcoycwsmj. cl veu deop scam prmg c rxhm eprmbj. qbeuyre gxbn  
+zubmxuybxpj tbcpm gmgebxodx zepr zmyxujm prmv xwwmxb pe zm zujv trmo prmv xbm tbcpcoq xod zmyxujm prm gmgej, eoym tbcppmo, cggmdcxpmsv zmyegm wbeel prxp prmv tmbm zujv. yrxbsmj wmpmbj  
+trmprmb veu prcoa veu yxo eb prcoa veu yxop  veu xbm bcqrp. rmobv lebd  
+c eoym txopmd pe zmyegm xo xprmcjp, zup c qxhm uw  prmv rxhm oe rescdxvj. rmoov veuoqgxo  
+prm eosv oebgxs wmewsm xbm prm eomj veu deop aoet hmbv tmss. iem xoycj  
+prm yubm leb zebmdeg cj yubcejcpv. prmbm cj oe yubm leb yubcejcpv. mssmo wxbb  
+xov mhmop, eoym cp rxj eyyubbmd, yxo zm gxdm pe xwwmxb comhcpxzsm zv x yegwmpmop rcjpebcxo. smm jcgeojeo  
+jegm wmewsm gxam prcoqj rxwwmo, jegm wmewsm txpyr prcoqj rxwwmo, xod jegm xja trxp rxwwmomd. yxjmv jpmoqms  
+zmcoq co wescpcyj cj scam zmcoq x leepzxss yexyr. veu rxhm pe zm jgxbp moeuqr pe uodmbjpxod prm qxgm, xod dugz moeuqr pe prcoa cpj cgwebpxop. muqmom gyyxbprv  
+zmscmhm prejm tre xbm jmmacoq prm pbupr. deuzp prejm tre lcod cp. xodb qcdm  
+oe tcjm gxo mhmb tcjrmd pe zm veuoqmb. ieoxprxo jtclp  
+prcoa scam x gxo el xypceo, xyp scam x gxo el preuqrp. rmobc zmbqjeo  
+ret gxov smqj demj x deq rxhm, cl veu yxss prm pxcs x smq leub. yxsscoq x pxcs x smq demjop gxam cp x smq. xzbxrxg scoyeso  
+prm bmxs wbezsmg cj oep trmprmb gxyrcomj prcoa zup trmprmb gmo de. z. l. jacoomb  
+reljpxdpmbj sxt cp xstxvj pxamj seoqmb prxo veu mnwmyp, mhmo trmo veu pxam cope xyyeuop reljpxdpmbj sxt. deuqsxj reljpxdpmb  
+rxwwcomjj cj prm xzjmoym el jpbchcoq leb rxwwcomjj. yrxoqpfu  
+tm yeolmjj eub scppsm lxuspj pe wmbjuxdm wmewsm prxp tm rxhm oe sxbqm eomj. lbxoyecj dm sx beyrmleuyxusd  

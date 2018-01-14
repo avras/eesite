@@ -1,0 +1,61 @@
+EE720 Assignment 1 for 14D070002
+
+1. Decode the following ciphertext which has been encrypted using Caesar's cipher [2 points].
+
+wlph dqg vsdfh duh prghv eb zklfk zh wklqn dqg qrw frqglwlrqv lq zklfk zh olyh. doehuw hlqvwhlq   
+
+
+2. Decode the following ciphertext which has been encrypted using ROT-13 [2 points].
+
+gurer vf abobql fb veevgngvat nf fbzrobql jvgu yrff vagryyvtrapr naq zber frafr guna jr unir. qba urebyq  
+
+
+3. Suppose some English plaintext with the following letter frequencies has been encrypted using a substitution cipher.
+a : 0.0717
+b : 0.0175
+c : 0.0231
+d : 0.0381
+e : 0.1298
+f : 0.0156
+g : 0.0237
+h : 0.0611
+i : 0.0842
+j : 0.0025
+k : 0.0075
+l : 0.0356
+m : 0.0175
+n : 0.0792
+o : 0.0786
+p : 0.0218
+q : 0.0006
+r : 0.0549
+s : 0.0667
+t : 0.0942
+u : 0.0287
+v : 0.0119
+w : 0.0200
+x : 0.0019
+y : 0.0119
+z : 0.0019
+Recover the key used to produce the following ciphertext [6 points].
+
+vyctyxamefxmecf ea mur xym ck hrrvefz wv oemu jramrysxj. scf ixydwea  
+nrmmry mc yrixef aeprfm xfs nr mucwzum x kccp muxf mc avrxh cwm xfs yriclr xpp scwnm. xnyxuxi peftcpf  
+muryra ac iwtu tcirsj cf mrprleaecf. scra muxm txwar tcirsj ef mur amyrrma seth txlrmm  
+ek e uxlr arrf kwymury em ea nj amxfsefz cf mur aucwpsrya ck zexfma. eaxxt fromcf  
+mur kxtm muxm x nrperlry ea uxvvery muxf x ahrvmet ea fc icyr mc mur vcefm muxf mur kxtm muxm x sywfhrf ixf ea uxvvery muxf x acnry cfr. zrcyzr nryfxys auxo  
+xpp mywmu vxaara muycwzu muyrr amxzra. keyam, em ea yesetwprs. artcfs, em ea lecprfmpj cvvcars. mueys, em ea xttrvmrs xa nrefz arpkrlesrfm. xymuwy atucvrfuxwry  
+vrykrtmecf ea xtuerlrs, fcm ourf muryr ea fcmuefz icyr mc xss, nwm ourf muryr ea fcmuefz prkm mc mxhr xoxj. xfmcefr sr axefmrqwvyj  
+mur xyzwirfm kyci efmeiesxmecf ea x tcfkraaecf ck efmrpprtmwxp eivcmrftr. xjf yxfs  
+ueamcyj mrxtura wa muxm irf xfs fxmecfa nruxlr oearpj cftr murj uxlr rquxwamrs xpp cmury xpmryfxmelra. xnnx rnxf  
+ek zcs pelrs cf rxymu, vrcvpr ocwps nyrxh uea oefscoa. broeau vyclryn  
+efaxfemj ef efseleswxpa ea acirmuefz yxyr  nwm ef zycwva, vxymera, fxmecfa xfs rvctua, em ea mur ywpr. kyersyetu fermgatur  
+mxprfm uema x mxyzrm fc cfr rpar txf uem  zrfewa uema x mxyzrm fc cfr rpar txf arr. xymuwy atucvrfuxwry 
+e sc fcm krrp cnpezrs mc nrperlr muxm mur axir zcs ouc uxa rfscors wa oemu arfar, yrxacf, xfs efmrpprtm uxa efmrfsrs wa mc kcyzc murey war.  zxpeprc zxpepre  
+mur ahepp ck oyemefz ea mc tyrxmr x tcfmrqm ef ouetu cmury vrcvpr txf muefh. rsoef atupcaanryz  
+remury oyemr acirmuefz ocymu yrxsefz cy sc acirmuefz ocymu oyemefz. nrfbxief kyxfhpef  
+jcw iwam nr mur tuxfzr jcw oeau mc arr ef mur ocyps. zxfsue  
+mur praa jcw hfco, mur icyr jcw nrperlr. ncfc  
+frlry xvcpczegr kcy aucoefz krrpefz. ourf jcw sc ac, jcw xvcpczegr kcy mywmu. nrfbxief seayxrpe  
+ek mur uwixf iefs oxa aeivpr rfcwzu mc wfsryamxfs, ors nr mcc aeivpr mc wfsryamxfs em. riryacf vwzu  
+ek zcs pelrs cf rxymu, vrcvpr ocwps nyrxh uea oefscoa. broeau vyclryn  

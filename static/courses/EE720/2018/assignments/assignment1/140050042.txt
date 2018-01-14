@@ -1,0 +1,61 @@
+EE720 Assignment 1 for 140050042
+
+1. Decode the following ciphertext which has been encrypted using Caesar's cipher [2 points].
+
+lpdjlqdwlrq lv wkh rqh zhdsrq lq wkh zdu djdlqvw uhdolwb. mxohv gh jdxowlhu  
+
+
+2. Decode the following ciphertext which has been encrypted using ROT-13 [2 points].
+
+gur jbeyq pna bayl or tenfcrq ol npgvba, abg ol pbagrzcyngvba. wnpbo oebabjfxv  
+
+
+3. Suppose some English plaintext with the following letter frequencies has been encrypted using a substitution cipher.
+a : 0.0759
+b : 0.0229
+c : 0.0222
+d : 0.0315
+e : 0.1275
+f : 0.0172
+g : 0.0251
+h : 0.0487
+i : 0.0731
+j : 0.0057
+k : 0.0115
+l : 0.0372
+m : 0.0365
+n : 0.0781
+o : 0.0895
+p : 0.0158
+q : 0.0000
+r : 0.0530
+s : 0.0580
+t : 0.0852
+u : 0.0337
+v : 0.0129
+w : 0.0158
+x : 0.0000
+y : 0.0201
+z : 0.0029
+Recover the key used to produce the following ciphertext [6 points].
+
+yifzxck jq czxyk fupkz szkqqfzk. kzukqe dknjucrxb  
+edk nxu io wuirmkpck nfqe gk xgmk uie iumb ei miak djq kuknjkq gfe xmqi ei dxek djq ozjkupq. ozjkpzjyd ujketqydk  
+juqsjzxejiu jq oiz xnxekfzq. j vfqe cke ei rizw. ydfyw ymiqk  
+ekmkajqjiu kuxgmkq bif ei gk kuekzexjukp ju bifz dink gb skismk bif rifmpue dxak ju bifz dink. pxajp oziqe  
+j dxak nxpk edjq mkeekz miuckz edxu fqfxm gkyxfqk j mxyw edk ejnk ei nxwk je qdizekz. gmxjqk sxqyxm  
+jo edk sdiuk pikque zjuc, jeq nk. vjnnb gfooke  
+edk iumb uiznxm skismk xzk edk iukq bif piue wuir akzb rkmm. vik xuyjq  
+je jq gxp mfyw ei gk qfskzqejejifq. xupzkr r. nxedjq  
+ediqk rdi gkmjkak ju ekmkwjukejyq, zxjqk nb dxup. wfze aiuukcfe  
+x nxu xmrxbq dxq eri zkxqiuq oiz rdxe dk pikqx ciip iuk, xup edk zkxm iuk. vidu sjkzsiue nizcxu  
+yifzxck jq uie edk xgqkuyk io okxz, gfe zxedkz edk vfpcknkue edxe qinkedjuc kmqk jq nizk jnsizexue edxu okxz. xngziqk zkpniiu  
+kpfyxejiu jq rdxe zknxjuq xoekz iuk dxq oizcieeku rdxe iuk dxq mkxzukp ju qydiim. xmgkze kjuqekju  
+gkjuc ju simjejyq jq mjwk gkjuc x oiiegxmm yixyd. bif dxak ei gk qnxze kuifcd ei fupkzqexup edk cxnk, xup pfng kuifcd ei edjuw jeq jnsizexue. kfckuk nyyxzedb  
+j piue wuir xubedjuc xgife nfqjy. ju nb mjuk bif piue dxak ei. kmajq szkqmkb  
+j piue wuir xubedjuc xgife nfqjy. ju nb mjuk bif piue dxak ei. kmajq szkqmkb  
+x yinnjeekk yxu nxwk x pkyjqjiu edxe jq pfngkz edxu xub io jeq nkngkzq. pxajp yigjet  
+ukakz xsimicjtk oiz qdirjuc okkmjuc. rdku bif pi qi, bif xsimicjtk oiz ezfed. gkuvxnju pjqzxkmj  
+jo aiejuc ydxuckp xubedjuc, edkbp nxwk je jmmkcxm. knnx cimpnxu  
+yifzxck jq uie edk xgqkuyk io okxz, gfe zxedkz edk vfpcknkue edxe qinkedjuc kmqk jq nizk jnsizexue edxu okxz. xngziqk zkpniiu  
+jo cip mjakp iu kxzed, skismk rifmp gzkxw djq rjupirq. vkrjqd sziakzg  

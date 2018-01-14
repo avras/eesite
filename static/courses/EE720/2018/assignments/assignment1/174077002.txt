@@ -1,0 +1,61 @@
+EE720 Assignment 1 for 174077002
+
+1. Decode the following ciphertext which has been encrypted using Caesar's cipher [2 points].
+
+wkh fxuh iru eruhgrp lv fxulrvlwb. wkhuh lv qr fxuh iru fxulrvlwb. hoohq sduu  
+
+
+2. Decode the following ciphertext which has been encrypted using ROT-13 [2 points].
+
+gurer ner crbcyr jub, vafgrnq bs yvfgravat gb jung vf orvat fnvq gb gurz, ner nyernql yvfgravat gb jung gurl ner tbvat gb fnl gurzfryirf. nyoreg thvaba  
+
+
+3. Suppose some English plaintext with the following letter frequencies has been encrypted using a substitution cipher.
+a : 0.0827
+b : 0.0192
+c : 0.0384
+d : 0.0312
+e : 0.1193
+f : 0.0138
+g : 0.0192
+h : 0.0558
+i : 0.0695
+j : 0.0018
+k : 0.0102
+l : 0.0354
+m : 0.0240
+n : 0.0588
+o : 0.0827
+p : 0.0138
+q : 0.0006
+r : 0.0635
+s : 0.0629
+t : 0.0983
+u : 0.0306
+v : 0.0108
+w : 0.0222
+x : 0.0018
+y : 0.0318
+z : 0.0018
+Recover the key used to produce the following ciphertext [6 points].
+
+vws vppvw oxjdi vsxnwsa nwjbgdsl vwxv vwsi nxl asbb cpgi uxdva opd kplsi. gxyjg djnwsdci  
+uspubs nxllpv gjanpysd lst bxlga elvjb vwsi wxys vws npedxms vp bpas ajmwv po vws awpds. xlgd mjgs  
+x npkkjvvss nxl kxrs x gsnjajpl vwxv ja gekcsd vwxl xli po jva kskcsda. gxyjg npcjvz  
+ci vws vjks x kxl dsxbjzsa vwxv kxics wja oxvwsd txa djmwv, ws eaexbbi wxa x apl twp vwjlra wsa tdplm. nwxdbsa txgatpdvw  
+vws gjoosdslns csvtssl x gskpndxni xlg x gjnvxvpdawju ja vwxv jl x gskpndxni ipe ypvs ojdav xlg vxrs pdgsda bxvsd  jl x gjnvxvpdawju ipe gplv wxys vp txavs iped vjks ypvjlm. nwxdbsa cerptarj 
+ipe gplv msv xlivwjlm nbsxl tjvwpev msvvjlm apksvwjlm sbas gjdvi. nsnjb cxqvsd  
+ts awpebg cs vxemwv lpv vp txjv opd jlaujdxvjpl vp avxdv x vwjlm. xnvjpl xbtxia mslsdxvsa jlaujdxvjpl. jlaujdxvjpl asbgpk mslsdxvsa xnvjpl. odxlr vjcpbv  
+x ajlmbs gsxvw ja x vdxmsgi  x kjbbjpl gsxvwa ja x avxvjavjn. hpasuw avxbjl 
+vws kpds ipe rlpt, vws kpds ipe dsxbjas wpt kenw ipe gplv rlpt  vws bsaa ipe rlpt, vws kpds ipe vwjlr ipe rlpt. gxyjg v. odsskxl  
+lsysd cs xodxjg vp bxemw xv ipedasbo, xovsd xbb, ipe npebg cs kjaajlm pev pl vws hprs po vws nslvedi. gxks sglx sysdxms  
+ ja lpv sfexb vp , lpv sysl opd bxdms yxbesa po . mdxcsba bxt  
+vwpas twp csbjsys jl vsbsrjlsvjna, dxjas ki wxlg. redv ypllsmev  
+jlaujdxvjpl ja opd xkxvseda. j heav msv vp tpdr. nwenr nbpas  
+vws csav nxd axosvi gsyjns ja x dsxdyjst kjddpd tjvw x npu jl jv. gegbsi kppds  
+txvnw iped vwpemwva vwsi csnpks tpdga. txvnw iped tpdga vwsi csnpks xnvjpla. txvnw iped xnvjpla vwsi csnpks wxcjva. txvnw iped wxcjva vwsi csnpks nwxdxnvsd. txvnw iped nwxdxnvsd jv csnpksa iped gsavjli.  bxp vzs  
+jv ja cxg benr vp cs aeusdavjvjpea. xlgdst t. kxvwja  
+vws plbi vwjlm vwxv jlvsdosdsa tjvw ki bsxdljlm ja ki sgenxvjpl. xbcsdv sjlavsjl  
+vwsds ja plbi pls aennsaa  vp cs xcbs vp auslg iped bjos jl iped ptl txi. nwdjavpuwsd kpdbsi  
+cbsaasg ja ws twp squsnva lpvwjlm, opd ws awxbb lsysd cs gjaxuupjlvsg. xbsqxlgsd upus  
+xds uspubs kpds yjpbslvbi puupasg vp oed dxvwsd vwxl bsxvwsd csnxeas jva kenw sxajsd vp wxdxaa djnw tpksl vwxl kpvpdninbs mxlma mspdms nxdbjl  

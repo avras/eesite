@@ -1,0 +1,61 @@
+EE720 Assignment 1 for 160050048
+
+1. Decode the following ciphertext which has been encrypted using Caesar's cipher [2 points].
+
+qr zlvh pdq hyhu zlvkhg wr eh brxqjhu. mrqdwkdq vzliw  
+
+
+2. Decode the following ciphertext which has been encrypted using ROT-13 [2 points].
+
+ohernhpengf jevgr zrzbenaqn obgu orpnhfr gurl nccrne gb or ohfl jura gurl ner jevgvat naq orpnhfr gur zrzbf, bapr jevggra, vzzrqvngryl orpbzr cebbs gung gurl jrer ohfl. puneyrf crgref  
+
+
+3. Suppose some English plaintext with the following letter frequencies has been encrypted using a substitution cipher.
+a : 0.0805
+b : 0.0166
+c : 0.0266
+d : 0.0314
+e : 0.1160
+f : 0.0160
+g : 0.0255
+h : 0.0592
+i : 0.0776
+j : 0.0018
+k : 0.0059
+l : 0.0361
+m : 0.0178
+n : 0.0687
+o : 0.0811
+p : 0.0243
+q : 0.0000
+r : 0.0610
+s : 0.0657
+t : 0.0930
+u : 0.0332
+v : 0.0101
+w : 0.0255
+x : 0.0000
+y : 0.0243
+z : 0.0024
+Recover the key used to produce the following ciphertext [6 points].
+
+y xh cxjyevj ryjz wjqcyoyjs tqj vnj ryjz jznwe rzn xae canqo np yj. eoyjz wyjrell  
+snq uvnr snqae dejjyvd nlo rzev snq wjnc jn jye snqa wznelxbew xvo rnvoea rzxj elwe snq bnqlo on rzyle snqae onrv jzeae. denade tqavw  
+bzxaxbjea yw rzxj snq zxfe lepj rzev snqfe lnwj efeasjzyvd snq bxv lnwe. efxv ewxa  
+nve ond txauw xj wnhejzyvd. xvo x zqvoaeo ondw txau xj jze wnqvo. bzyvewe canfeat  
+efeasnve yw x devyqw xj lexwj nvbe x sexa. jze aexl devyqwew wyhcls zxfe jzeya taydzj yoexw blnwea jndejzea. denad bzaywjncz lybzjevtead  
+wqbbeww yw dejjyvd rzxj snq rxvj. zxccyveww yw rxvjyvd rzxj snq dej. oxle bxavedye  
+x hxv yw aybz yv cancnajynv jn jze vqhtea np jzyvdw ze bxv xppnao jn lej xlnve. zevas oxfyo jznaexq  
+jznqdzj yw qwepql rzev yj hnjyfxjew pna xbjynv, xvo x zyvoaxvbe rzev yj wqtwjyjqjew pna xbjynv. tyll axeoea  
+wyhclybyjs yw jze qljyhxje wnczywjybxjynv. lenvxaon ox fyvby  
+re wznqlo te jxqdzj vnj jn rxyj pna yvwcyaxjynv jn wjxaj x jzyvd. xbjynv xlrxsw deveaxjew yvwcyaxjynv. yvwcyaxjynv welonh deveaxjew xbjynv. paxvu jytnlj  
+wnhe cencle hxue jzyvdw zxccev, wnhe cencle rxjbz jzyvdw zxccev, xvo wnhe xwu rzxj zxcceveo. bxwes wjevdel  
+rzev y rxw x tns y rxw jnlo jzxj xvstnos bnqlo tebnhe caewyoevj. vnr yh tedyvvyvd jn telyefe yj. blxaevbe oxaanr  
+xll jaqjz cxwwew jzanqdz jzaee wjxdew. pyawj, yj yw ayoybqleo. webnvo, yj yw fynlevjls nccnweo. jzyao, yj yw xbbecjeo xw teyvd welpefyoevj. xajzqa wbzncevzxqea  
+y zxje hxvuyvo, pna y jzyvu hswelp nve np jze tewj np jzeh, xvo y uvnr znr txo y xh. mnwecz txaejjy  
+vefea xcnlndyie pna wznryvd peelyvd. rzev snq on wn, snq xcnlndyie pna jaqjz. tevmxhyv oywaxely  
+ts jze jyhe x hxv aexlyiew jzxj hxste zyw pxjzea rxw aydzj, ze qwqxlls zxw x wnv rzn jzyvuw zew ranvd. bzxalew rxowrnajz  
+vexals xll hev bxv wjxvo xofeawyjs, tqj yp snq rxvj jn jewj x hxvw bzxaxbjea, dyfe zyh cnrea. xtaxzxh lyvbnlv  
+vn hxjjea rzxj wyoe np jze xadqhevj snq xae nv, snq xlrxsw pyvo cencle nv snqa wyoe jzxj snq rywz reae nv jze njzea. mxwbzx zeypeji  
+jzeae yw vn jaqjz. jzeae yw nvls ceabecjynv. dqwjxfe plxqteaj  
+jze bqae pna tnaeonh yw bqaynwyjs. jzeae yw vn bqae pna bqaynwyjs. ellev cxaa  
