@@ -1,0 +1,61 @@
+EE720 Assignment 1 for 140010011
+
+1. Decode the following ciphertext which has been encrypted using Caesar's cipher [2 points].
+
+wkh shuvrq zkr uhdgv wrr pxfk dqg xvhv klv eudlq wrr olwwoh zloo idoo lqwr odcb kdelwv ri wklqnlqj. doehuw hlqvwhlq  
+
+
+2. Decode the following ciphertext which has been encrypted using ROT-13 [2 points].
+
+fbzr crbcyr znxr guvatf unccra, fbzr crbcyr jngpu guvatf unccra, naq fbzr nfx jung unccrarq. pnfrl fgratry  
+
+
+3. Suppose some English plaintext with the following letter frequencies has been encrypted using a substitution cipher.
+a : 0.0754
+b : 0.0179
+c : 0.0172
+d : 0.0278
+e : 0.1071
+f : 0.0225
+g : 0.0212
+h : 0.0536
+i : 0.0860
+j : 0.0060
+k : 0.0132
+l : 0.0384
+m : 0.0205
+n : 0.0827
+o : 0.0820
+p : 0.0159
+q : 0.0000
+r : 0.0582
+s : 0.0714
+t : 0.0913
+u : 0.0271
+v : 0.0099
+w : 0.0231
+x : 0.0000
+y : 0.0291
+z : 0.0026
+Recover the key used to produce the following ciphertext [6 points].
+
+znjldnl jz pwhxdjflg tdparlghl. ajzgpo jz pwhxdjflg rjml. jooxdulr txde  
+ekjdt rjtl x oxd pm xnejpd, xne rjtl x oxd pm ekpuhke. kldwj slwhzpd  
+lylwcpdl ekjdtz pm nkxdhjdh ekl apwrg, sue dp pdl ekjdtz pm nkxdhjdh kjozlrm. rlp eprzepc  
+ekl ekjwgwxel ojdg jz pdrc kxiic akld je jz ekjdtjdh ajek ekl oxvpwjec. ekl zlnpdgwxel ojdg jz pdrc kxiic akld je jz ekjdtjdh ajek ekl ojdpwjec. ekl mjwzewxel ojdg jz pdrc kxiic akld je jz ekjdtjdh. x. x. ojrdl  
+je jz sxg runt ep sl zuilwzejejpuz. xdgwla a. oxekjz  
+jdzijwxejpd jz mpw xoxeluwz. j vuze hle ep apwt. nkunt nrpzl  
+ewuek pylw kxwopdc. rxwwc spzzjgc   
+jm hpg rjylg pd lxwek, ilpirl apurg swlxt kjz ajdgpaz. vlajzk iwpylws  
+ekl pdrc ekjdh ekxe jdelwmlwlz ajek oc rlxwdjdh jz oc lgunxejpd. xrslwe ljdzeljd  
+ekl ewpusrl ajek sljdh iudneuxr jz ekxe dpspgcz eklwl ep xiiwlnjxel je. mwxdtrjd i. vpdlz  
+x hppg eppr joiwpylz ekl axc cpu apwt. x hwlxe eppr joiwpylz ekl axc cpu ekjdt. vlmm gudeloxdd  
+ekl ilwzpd akp wlxgz epp ounk xdg uzlz kjz swxjd epp rjeerl ajrr mxrr jdep rxfc kxsjez pm ekjdtjdh. xrslwe ljdzeljd  
+xraxcz sl x mjwzewxel ylwzjpd pm cpuwzlrm, jdzelxg pm x zlnpdgwxel ylwzjpd pm zpolpdl lrzl. vugc hxwrxdg  
+jm cpu kxel x ilwzpd, cpu kxel zpolekjdh jd kjo ekxe jz ixwe pm cpuwzlrm. akxe jzde ixwe pm puwzlrylz gplzde gjzeuws uz. klwoxdd klzzl  
+akld lylwcpdl jz xhxjdze cpu, je olxdz ekxe cpu xwl xszpruelrc awpdh pw xszpruelrc wjhke. xrslwe hujdpd  
+rxfjdlzz jz dpekjdh opwl ekxd ekl kxsje pm wlzejdh slmpwl cpu hle ejwlg. vurlz wldxwg  
+xgyjnl jz akxe al xzt mpw akld al xrwlxgc tdpa ekl xdzalw sue ajzk al gjgde. lwjnx vpdh  
+xraxcz sl x mjwzewxel ylwzjpd pm cpuwzlrm, jdzelxg pm x zlnpdgwxel ylwzjpd pm zpolpdl lrzl. vugc hxwrxdg  
+jm ekl rlzzpdz pm kjzepwc elxnk uz xdcekjdh je jz ekxe dpspgc rlxwdz ekl rlzzpdz ekxe kjzepwc elxnklz uz. xdpd  
+xdc lylde, pdnl je kxz pnnuwwlg, nxd sl oxgl ep xiilxw jdlyjexsrl sc x npoilelde kjzepwjxd. rll zjopdzpd  
