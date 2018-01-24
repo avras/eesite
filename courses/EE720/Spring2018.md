@@ -34,6 +34,7 @@ title: EE 720 Spring 2018
   - [Lecture 03](/courses/EE720/2018/notes/lecture-03.pdf)
   - [Lecture 04](/courses/EE720/2018/notes/lecture-04.pdf)
   - [Lecture 05](/courses/EE720/2018/notes/lecture-05.pdf)
+  - [Lecture 06](/courses/EE720/2018/notes/lecture-06.pdf)
 
 ##### Assignments
   - [Assignment 1](/courses/EE720/2018/assignments/assignment1.pdf)
