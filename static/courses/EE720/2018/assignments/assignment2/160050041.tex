@@ -1,0 +1,44 @@
+% EE720 Assignment for 160050041
+
+\documentclass[12pt,a4paper,answers]{exam}
+\usepackage{mathtools}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{hyperref}
+
+\addpoints%
+\bracketedpoints%
+
+\begin{document}
+\pagestyle{head}
+\headrule
+\lhead[Assignment 2: 10 \ \points]{}
+\chead[
+EE 720: Introduction to Number Theory and Cryptography (Spring 2018)\\ 
+Instructor: Saravanan Vijayakumaran\\
+Indian Institute of Technology Bombay\\
+]{}
+\rhead[Date: January 23, 2018]{}%
+
+\cfoot[]{\thepage\ of \numpages}
+\extraheadheight{.4in}%
+\extrafootheight{-0.5in}%
+\extrawidth{0.5in}%
+
+Find the pdf file corresponding to your roll number in the directory \url{https://www.ee.iitb.ac.in/~sarva/courses/EE720/2018/assignments/assignment2/}. Upload the answers as a \textbf{pdf} file in Moodle. Use the tex file provided in the directory to fill in your answers. The \textbf{upload deadline} will be 11:00pm IST on Wednesday, January 31, 2018.
+\begin{questions}
+\question[5] Consider a variant of the one-time pad with message space $\mathcal = \{0,1\}^l$ and keyspace $\mathcal{K}$ restricted to all $l$-bit strings with an even number of $1$'s. Is this scheme perfectly secret? Justify your answer either with a proof or a counterexample.
+  \begin{solution}
+    Write your answer here
+  \end{solution}
+
+  \question[5] State whether the following encryption scheme is perfectly secret or not. Justify your answer either with a proof or a counterexample.
+
+  The message space is $\mathcal{M} = \left\{ m \in \{0,1\}^l \mid \textrm{the last bit of $m$ is 0} \right\}$. Algorith \texttt{Gen} chooses a uniform key from the keyspace $\{0,1\}^{l-1}$. $\texttt{Enc}_k(m) = m \oplus (k \| 0)$ and $\texttt{Dec}_k(c) = c \oplus (k \| 0)$.
+  \begin{solution}
+    Write your answer here
+  \end{solution}
+
+  
+\end{questions}
+\end{document}
+
