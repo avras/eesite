@@ -5,6 +5,7 @@ title: Courses
 #### Current Course
 
   - [EE 720: An Introduction to Number Theory and Cryptography](./courses/EE720/Spring2018.html)
+  - [One-day course on Bitcoin, March 18th, 2018](https://portal.iitb.ac.in/ceqipapp/courseDetails.jsp?c_id=481)
 
 #### Past Courses
 
