@@ -49,10 +49,12 @@ title: EE 720 Spring 2018
   - [Lecture 18](/courses/EE720/2018/notes/lecture-18.pdf)
   - [Lecture 19](/courses/EE720/2018/notes/lecture-19.pdf)
   - [Lecture 20](/courses/EE720/2018/notes/lecture-20.pdf)
+  - [Lecture 21](/courses/EE720/2018/notes/lecture-21.pdf)
 
 ##### Assignments
   - [Assignment 1](/courses/EE720/2018/assignments/assignment1.pdf)
   - [Assignment 2](/courses/EE720/2018/assignments/assignment2.pdf)
+  - [Assignment 3](/courses/EE720/2018/assignments/assignment3.pdf)
 
 ##### Exams
   - [Quiz 1](/courses/EE720/2018/exams/quiz1.pdf)
