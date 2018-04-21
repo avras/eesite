@@ -63,3 +63,4 @@ title: EE 720 Spring 2018
   - [Quiz 1](/courses/EE720/2018/exams/quiz1.pdf)
   - [Midsem](/courses/EE720/2018/exams/midsem.pdf)
   - [Quiz 2](/courses/EE720/2018/exams/quiz2.pdf)
+  - [Quiz 3](/courses/EE720/2018/exams/quiz3.pdf)
