@@ -4,13 +4,15 @@ title: Courses
 
 #### Current Course
 
-  - [EE 720: An Introduction to Number Theory and Cryptography](./courses/EE720/Spring2018.html)
-  - [One-day course on Bitcoin, March 18th, 2018](https://portal.iitb.ac.in/ceqipapp/courseDetails.jsp?c_id=481)
+  - None
 
 #### Past Courses
 
   - Continuing Education Programme Courses
+    + [One-day course on Bitcoin, March 18th, 2018](https://portal.iitb.ac.in/ceqipapp/courseDetails.jsp?c_id=481)
     + [One-day course on Bitcoin, November 25th, 2017](./courses/cep/cep-bitcoin-251117.html)
+  - EE 720: An Introduction to Number Theory and Cryptography
+    + [Spring 2018](./courses/EE720/Spring2018.html)
   - EE 754: Advanced Error Correcting Codes
     + Spring 2016
   - EE 605: Error Correcting Codes
