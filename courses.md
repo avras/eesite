@@ -4,7 +4,7 @@ title: Courses
 
 #### Current Course
 
-  - None
+  - [One-day course on Bitcoin, June 30th, 2018](https://portal.iitb.ac.in/ceqipapp/courseDetails.jsp?c_id=1011)
 
 #### Past Courses
 
