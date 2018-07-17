@@ -52,6 +52,7 @@ main = hakyll $ do
             "courses/EE703/*.md" .||.
             "courses/EE605/*.md" .||.
             "courses/EE720/*.md" .||.
+            "courses/EE465/*.md" .||.
             "courses/cep/*.md"
           ) $ do
         route   $ setExtension "html"
