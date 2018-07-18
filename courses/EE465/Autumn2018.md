@@ -23,3 +23,8 @@ Any **one** of EE 720 or CS 406 or CS 649 or CS 742
 #### MTech Student Enrolment
 
 As per [MTech rules](http://www.iitb.ac.in/newacadhome/MTechRulesupdate201805July.pdf) (MR 3.3), MTech students can take up to two UG courses for credit as long as these are in the DPGC approved list. I have requested EE 465 to be added to this list in EE department. Students from other departments should discuss it with their faculty advisors.
+
+#### Slides
+
+  - [Course Information](./slides/CourseInfo.pdf)
+  - [Cryptographic Hash Functions](./slides/HashFunctions.pdf)
