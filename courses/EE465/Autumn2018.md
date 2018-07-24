@@ -26,5 +26,5 @@ As per [MTech rules](http://www.iitb.ac.in/newacadhome/MTechRulesupdate201805Jul
 
 #### Slides
 
-  - [Course Information](./slides/CourseInfo.pdf)
-  - [Cryptographic Hash Functions](./slides/HashFunctions.pdf)
+  - [Course Information](./2018/slides/CourseInfo.pdf)
+  - [Cryptographic Hash Functions](./2018/slides/HashFunctions.pdf)
