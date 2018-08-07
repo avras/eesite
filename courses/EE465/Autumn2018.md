@@ -30,6 +30,7 @@ As per [MTech rules](http://www.iitb.ac.in/newacadhome/MTechRulesupdate201805Jul
   - [Cryptographic Hash Functions](./2018/slides/HashFunctions.pdf)
   - [Digital Signatures](./2018/slides/DigitalSignatures.pdf)
   - [Bitcoin Introduction](./2018/slides/BitcoinIntroduction.pdf)
+  - [Bitcoin Transactions](./2018/slides/BitcoinTransactions.pdf)
 
 #### Assignments
 
