@@ -31,7 +31,9 @@ As per [MTech rules](http://www.iitb.ac.in/newacadhome/MTechRulesupdate201805Jul
   - [Digital Signatures](./2018/slides/DigitalSignatures.pdf)
   - [Bitcoin Introduction](./2018/slides/BitcoinIntroduction.pdf)
   - [Bitcoin Transactions](./2018/slides/BitcoinTransactions.pdf)
+  - [Bitcoin Smart Contracts](./2018/slides/BitcoinContracts.pdf)
 
 #### Assignments
 
   - [Assignment 1](./2018/assignments/assignment1.pdf)
+  - [Assignment 2](./2018/assignments/assignment2.pdf)
