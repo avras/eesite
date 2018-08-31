@@ -33,6 +33,8 @@ As per [MTech rules](http://www.iitb.ac.in/newacadhome/MTechRulesupdate201805Jul
   - [Bitcoin Transactions](./2018/slides/BitcoinTransactions.pdf)
   - [Bitcoin Smart Contracts](./2018/slides/BitcoinContracts.pdf)
   - [Ethereum Introduction](./2018/slides/EthereumIntroduction.pdf)
+  - [Ethereum Transactions](./2018/slides/EthereumTransactions.pdf)
+  - [Ethereum Blocks](./2018/slides/EthereumBlocks.pdf)
 
 #### Assignments
 
