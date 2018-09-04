@@ -35,6 +35,7 @@ As per [MTech rules](http://www.iitb.ac.in/newacadhome/MTechRulesupdate201805Jul
   - [Ethereum Introduction](./2018/slides/EthereumIntroduction.pdf)
   - [Ethereum Transactions](./2018/slides/EthereumTransactions.pdf)
   - [Ethereum Blocks](./2018/slides/EthereumBlocks.pdf)
+  - [Ethereum Smart Contracts](./2018/slides/EthereumSmartContracts.pdf)
 
 #### Assignments
 
