@@ -36,6 +36,7 @@ As per [MTech rules](http://www.iitb.ac.in/newacadhome/MTechRulesupdate201805Jul
   - [Ethereum Transactions](./2018/slides/EthereumTransactions.pdf)
   - [Ethereum Blocks](./2018/slides/EthereumBlocks.pdf)
   - [Stellar Introduction](./2018/slides/StellarIntroduction.pdf)
+  - [Stellar Transactions](./2018/slides/StellarTransactions.pdf)
 
 #### Assignments
 
