@@ -45,3 +45,4 @@ As per [MTech rules](http://www.iitb.ac.in/newacadhome/MTechRulesupdate201805Jul
   - [Assignment 2](./2018/assignments/assignment2.pdf)
   - [Assignment 3](./2018/assignments/assignment3.pdf)
   - [Assignment 4](./2018/assignments/assignment4.pdf)
+  - [Assignment 5](./2018/assignments/assignment5.pdf)
