@@ -38,6 +38,7 @@ As per [MTech rules](http://www.iitb.ac.in/newacadhome/MTechRulesupdate201805Jul
   - [Stellar Introduction](./2018/slides/StellarIntroduction.pdf)
   - [Stellar Transactions](./2018/slides/StellarTransactions.pdf)
   - [Stellar Consensus Protocol](./2018/slides/StellarConsensus.pdf)
+  - [Monero Introduction](./2018/slides/MoneroIntroduction.pdf)
 
 #### Assignments
 
