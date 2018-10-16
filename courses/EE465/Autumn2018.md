@@ -40,6 +40,7 @@ As per [MTech rules](http://www.iitb.ac.in/newacadhome/MTechRulesupdate201805Jul
   - [Stellar Consensus Protocol](./2018/slides/StellarConsensus.pdf)
   - [Monero Introduction](./2018/slides/MoneroIntroduction.pdf)
   - [Monero Ring Signatures](./2018/slides/MoneroRingSignatures.pdf)
+  - [Zero Knowledge Proofs](./2018/slides/ZeroKnowledgeProofs.pdf)
 
 #### Assignments
 
