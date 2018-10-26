@@ -41,6 +41,7 @@ As per [MTech rules](http://www.iitb.ac.in/newacadhome/MTechRulesupdate201805Jul
   - [Monero Introduction](./2018/slides/MoneroIntroduction.pdf)
   - [Monero Ring Signatures](./2018/slides/MoneroRingSignatures.pdf)
   - [Zero Knowledge Proofs](./2018/slides/ZeroKnowledgeProofs.pdf)
+  - [zkSNARKs](./2018/slides/zkSNARKs.pdf)
 
 #### Assignments
 
