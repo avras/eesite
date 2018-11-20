@@ -35,6 +35,7 @@ As per [MTech rules](http://www.iitb.ac.in/newacadhome/MTechRulesupdate201805Jul
   - [Ethereum Introduction](./2018/slides/EthereumIntroduction.pdf)
   - [Ethereum Transactions](./2018/slides/EthereumTransactions.pdf)
   - [Ethereum Blocks](./2018/slides/EthereumBlocks.pdf)
+  - [Ethereum Smart Contracts](./2018/slides/EthereumSmartContracts.pdf)
   - [Stellar Introduction](./2018/slides/StellarIntroduction.pdf)
   - [Stellar Transactions](./2018/slides/StellarTransactions.pdf)
   - [Stellar Consensus Protocol](./2018/slides/StellarConsensus.pdf)
