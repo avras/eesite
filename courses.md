@@ -4,7 +4,7 @@ title: Courses
 
 #### Current Course
 
-  - [EE 465: Cryptocurrency and Blockchain Technologies](./courses/EE465/Autumn2018.html)
+  - [EE 720: An Introduction to Number Theory and Cryptography](./courses/EE720/Spring2019.html)
 
 #### Past Courses
 
@@ -12,6 +12,8 @@ title: Courses
     + [One-day course on Bitcoin, June 30th, 2018](https://portal.iitb.ac.in/ceqipapp/courseDetails.jsp?c_id=1011)
     + [One-day course on Bitcoin, March 18th, 2018](https://portal.iitb.ac.in/ceqipapp/courseDetails.jsp?c_id=481)
     + [One-day course on Bitcoin, November 25th, 2017](./courses/cep/cep-bitcoin-251117.html)
+  - EE 465: Cryptocurrency and Blockchain Technologies
+    + [Autumn 2018](./courses/EE465/Autumn2018.html)
   - EE 720: An Introduction to Number Theory and Cryptography
     + [Spring 2018](./courses/EE720/Spring2018.html)
   - EE 754: Advanced Error Correcting Codes
