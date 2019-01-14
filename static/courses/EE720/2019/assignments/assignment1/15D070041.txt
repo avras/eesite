@@ -1,0 +1,69 @@
+EE720 Assignment 1 for 15D070041
+
+1. Decode the following ciphertext which has been encrypted using Caesar's cipher [2 points].
+
+wkh lqwhooljhqw pdq ilqgv doprvw hyhubwklqj ulglfxorxv, wkh vhqvleoh pdq kdugob dqbwklqj. mrkdqq zroijdqj yrq jrhwkh  
+
+
+2. Decode the following ciphertext which has been encrypted using ROT-13 [2 points].
+
+nyjnlf or n svefgengr irefvba bs lbhefrys, vafgrnq bs n frpbaqengr irefvba bs fbzrbar ryfr. whql tneynaq  
+
+
+3. Suppose some English plaintext with the following letter frequencies has been encrypted using a substitution cipher.
+a : 0.0726
+b : 0.0207
+c : 0.0182
+d : 0.0351
+e : 0.1171
+f : 0.0194
+g : 0.0301
+h : 0.0551
+i : 0.0927
+j : 0.0013
+k : 0.0119
+l : 0.0445
+m : 0.0157
+n : 0.0820
+o : 0.0676
+p : 0.0150
+q : 0.0000
+r : 0.0576
+s : 0.0645
+t : 0.1002
+u : 0.0250
+v : 0.0075
+w : 0.0250
+x : 0.0013
+y : 0.0175
+z : 0.0025
+Recover the key used to produce the following ciphertext. [6 points].
+The key should be in the following format:
+
+a : x
+b : w
+ ... 
+z : j
+
+Ciphertext begins below:
+
+bk hkxiw grfksauwn kjkiz lxz, xwl hrsg rq sufkg usg saxs baxs bk hkxiwkl sak lxz mkqrik bxg birwn. muhh jxtnaxw  
+biusuwn xmrts ftguo ug huek lxwouwn xmrts xioauskostik. qixwe cxddx  
+sak luqqkikwok mksbkkw nkwutg xwl gstdulusz ug saxs nkwutg axg usg hufusg. xhmkis kuwgskuw  
+baxs hukg uw rti drbki sr lr, hukg uw rti drbki wrs sr lr. xiugsrshk  
+lrws kjki bikgshk busa x dun. zrthh mrsa nks luisz, mts sak dun buhh kwyrz us. oxhk zximrirtna  
+axhq sak frwkz u gdkwl rw xljkisuguwn ug bxgskl  sak sirtmhk ug u lrws ewrb bauoa axhq. yraw bxwxfxeki 
+sak dkigrw bar ikxlg srr ftoa xwl tgkg aug mixuw srr husshk buhh qxhh uwsr hxcz axmusg rq sauweuwn. xhmkis kuwgskuw  
+fz nixwlfrsaki ug rjki kunasz xwl gsuhh lrkgws wkkl nhxggkg. liuweg iunas rts rq sak mrsshk. akwwz zrtwnfxw  
+uq rwhz bkl gsrd sizuwn sr mk axddz bk orthl axjk x dikssz nrrl sufk. klusa baxisrw  
+sak geuhh rq biusuwn ug sr oikxsk x orwskvs uw bauoa rsaki dkrdhk oxw sauwe. klbuw goahrggmkin  
+bakw zrt hrre xs zrtigkhq qirf x twujkigxh gsxwldruws, grfksauwn uwgulk xhbxzg ikfuwlg ri uwqrifg zrt saxs sakik xik munnki xwl mksski sauwng sr briiz xmrts. xhmkis kuwgskuw  
+x okhkmiusz ug x dkigrw bar brieg axil xhh aug huqk sr mkorfk bkhh ewrbw, sakw bkxig lxie nhxggkg sr xjrul mkuwn ikornwuckl. qikl xhhkw  
+uwgxwusz lruwn sak gxfk sauwn rjki xwl rjki xnxuw xwl kvdkosuwn luqqkikws ikgthsg. xhmkis kuwgskuw  
+sauwe huek x fxw rq xosurw, xos huek x fxw rq sartnas. akwiu mkingrw  
+uwgxwusz uw uwlujultxhg ug grfksauwn ixik  mts uw nirtdg, dxisukg, wxsurwg xwl kdroag, us ug sak ithk. qiukliuoa wukscgoak  
+sak luqqkikwok mksbkkw nkwutg xwl gstdulusz ug saxs nkwutg axg usg hufusg. xhmkis kuwgskuw  
+sxhkws ausg x sxinks wr rwk khgk oxw aus  nkwutg ausg x sxinks wr rwk khgk oxw gkk. xisati goardkwaxtki 
+us ug xhbxzg frik luqquoths sr qunas xnxuwgs qxusa saxw xnxuwgs ewrbhklnk. xlrhq aushki  
+sak ikxh dirmhkf ug wrs baksaki fxoauwkg sauwe mts baksaki fkw lr. m. q. geuwwki  
+mkhukjk sargk bar xik gkkeuwn sak sitsa. lrtms sargk bar quwl us. xwli nulk  

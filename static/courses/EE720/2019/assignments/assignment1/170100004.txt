@@ -1,0 +1,69 @@
+EE720 Assignment 1 for 170100004
+
+1. Decode the following ciphertext which has been encrypted using Caesar's cipher [2 points].
+
+sduw ri wkh lqkxpdqlwb ri wkh frpsxwhu lv wkdw, rqfh lw lv frpshwhqwob surjudpphg dqg zrunlqj vprrwkob, lw lv frpsohwhob krqhvw. lvddf dvlpry  
+
+
+2. Decode the following ciphertext which has been encrypted using ROT-13 [2 points].
+
+npdhnvagnapr, a. n crefba jubz jr xabj jryy rabhtu gb obeebj sebz, ohg abg jryy rabhtu gb yraq gb. nzoebfr ovrepr  
+
+
+3. Suppose some English plaintext with the following letter frequencies has been encrypted using a substitution cipher.
+a : 0.0736
+b : 0.0199
+c : 0.0222
+d : 0.0421
+e : 0.1210
+f : 0.0240
+g : 0.0234
+h : 0.0538
+i : 0.0766
+j : 0.0053
+k : 0.0070
+l : 0.0473
+m : 0.0286
+n : 0.0877
+o : 0.0847
+p : 0.0205
+q : 0.0006
+r : 0.0491
+s : 0.0573
+t : 0.0830
+u : 0.0228
+v : 0.0117
+w : 0.0175
+x : 0.0029
+y : 0.0164
+z : 0.0012
+Recover the key used to produce the following ciphertext. [6 points].
+The key should be in the following format:
+
+a : x
+b : w
+ ... 
+z : j
+
+Ciphertext begins below:
+
+b spqj smnmwim jabn xrxws, oyj b axim xwjawbjbn xqs b spqj smnmwim jaxj mbjamw. gxtd omqqc  
+rm kmxwq npemjabqf mimwc sxc, xqs kpjn pl jbemn bjn jaxj raxj rm kmxwqms jam sxc omlpwm rxn rwpqf. obkk ixyfaxq  
+okmnnms bn am rap muzmtjn qpjabqf, lpw am naxkk qmimw om sbnxzzpbqjms. xkmuxqsmw zpzm  
+bl fps kbims pq mxwja, zmpzkm rpyks owmxd abn rbqsprn. gmrbna zwpimwo  
+omnbsmn jam qpokm xwj pl fmjjbqf jabqfn spqm, jamwm bn jam qpokm xwj pl kmxibqf jabqfn yqspqm. jam rbnspe pl kblm tpqnbnjn bq jam mkbebqxjbpq pl qpqmnnmqjbxkn. kbxq cyjxqf  
+spqj om xlwxbs jp jxdm x obf njmz bl pqm bn bqsbtxjms. cpy txqj twpnn x taxne bq jrp nexkk gyezn. sxibs kkpcs fmpwfm  
+bq exjamexjbtn cpy spqj yqsmwnjxqs jabqfn. cpy gynj fmj ynms jp jame. gpaxqq ipq qmyexqq  
+bl cpy txqj om x fpps muxezkm, jamq cpykk gynj axim jp om x apwwbokm rxwqbqf. txjamwbqm xbws  
+ntbmqtm bn pwfxqbhms dqprkmsfm. rbnspe bn pwfxqbhms kblm. beexqymk dxqj  
+x nbqfkm vymnjbpq txq om epwm bqlkymqjbxk jaxq x japynxqs njxjmemqjn. op omqqmjj  
+npem zmpzkm kbdm ec xsibtm np eyta jaxj jamc lwxem bj yzpq jam rxkk bqnjmxs pl ynbqf bj. fpwspq w. sbtdnpq  
+jam bqjmkkbfmqj exq lbqsn xkepnj mimwcjabqf wbsbtykpyn, jam nmqnbokm exq axwskc xqcjabqf. gpaxqq rpklfxqf ipq fpmjam  
+x exq bn wbta bq zwpzpwjbpq jp jam qyeomw pl jabqfn am txq xllpws jp kmj xkpqm. amqwc sxibs japwmxy  
+zxwj pl jam bqayexqbjc pl jam tpezyjmw bn jaxj, pqtm bj bn tpezmjmqjkc zwpfwxeems xqs rpwdbqf neppjakc, bj bn tpezkmjmkc apqmnj. bnxxt xnbepi  
+cpy txq lppk npem pl jam zmpzkm xkk pl jam jbem, xqs xkk pl jam zmpzkm npem pl jam jbem, oyj cpy txq qpj lppk xkk pl jam zmpzkm xkk pl jam jbem. xowxaxe kbqtpkq  
+jamwm bn x fwmxj sbllmwmqtm omjrmmq rpwwc xqs tpqtmwq. x rpwwbms zmwnpq nmmn x zwpokme, xqs x tpqtmwqms zmwnpq npkimn x zwpokme. axwpks njmzamqn  
+omlpwm b fpj exwwbms b axs nbu jampwbmn xopyj owbqfbqf yz tabkswmq  qpr b axim nbu tabkswmq xqs qp jampwbmn. gpaq rbkepj 
+axkl jam epqmc b nzmqs pq xsimwjbnbqf bn rxnjms  jam jwpyokm bn b spqj dqpr rabta axkl. gpaq rxqxexdmw 
+bl xj lbwnj cpy spqj nyttmms, lbqs pyj bl jam kpnmw fmjn xqcjabqf. obkk kcpq  
+jam wmxk zwpokme bn qpj ramjamw extabqmn jabqd oyj ramjamw emq sp. o. l. ndbqqmw  

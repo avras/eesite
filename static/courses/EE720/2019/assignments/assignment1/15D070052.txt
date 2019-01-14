@@ -1,0 +1,69 @@
+EE720 Assignment 1 for 15D070052
+
+1. Decode the following ciphertext which has been encrypted using Caesar's cipher [2 points].
+
+pb zdb ri mrnlqj lv wr whoo wkh wuxwk. lw lv wkh ixqqlhvw mrnh lq wkh zruog. jhrujh ehuqdug vkdz  
+
+
+2. Decode the following ciphertext which has been encrypted using ROT-13 [2 points].
+
+gnyrag uvgf n gnetrg ab bar ryfr pna uvg  travhf uvgf n gnetrg ab bar ryfr pna frr. neguhe fpubcraunhre 
+
+
+3. Suppose some English plaintext with the following letter frequencies has been encrypted using a substitution cipher.
+a : 0.0845
+b : 0.0214
+c : 0.0282
+d : 0.0343
+e : 0.1199
+f : 0.0169
+g : 0.0242
+h : 0.0569
+i : 0.0636
+j : 0.0028
+k : 0.0124
+l : 0.0434
+m : 0.0253
+n : 0.0726
+o : 0.0845
+p : 0.0130
+q : 0.0011
+r : 0.0631
+s : 0.0495
+t : 0.0940
+u : 0.0270
+v : 0.0101
+w : 0.0242
+x : 0.0006
+y : 0.0265
+z : 0.0000
+Recover the key used to produce the following ciphertext. [6 points].
+The key should be in the following format:
+
+a : x
+b : w
+ ... 
+z : j
+
+Ciphertext begins below:
+
+eniunrn zdpmn vdp xqn mnnlugb zdn zqjzd. apjez zdpmn vdp ouga uz. xgaq buan  
+zqwugb zp anznqkugn vdxz um bpugb pg ug zdn vpqia ew qnxaugb gnvmhxhnqm um iuln zqwugb zp znii zdn zukn ew vxzydugb zdn mnypga dxga po x yipyl. eng dnydz  
+xaruyn um vdxz vn xml opq vdng vn xiqnxaw lgpv zdn xgmvnq ejz vumd vn auagz. nquyx fpgb  
+kw bqxgakpzdnq um prnq nubdzw xga mzuii apnmgz gnna bixmmnm. aquglm qubdz pjz po zdn epzzin. dnggw wpjgbkxg  
+oubdz opq wpjq phugupgm, ejz ap gpz eniunrn zdxz zdnw ypgzxug zdn vdpin zqjzd, pq zdn pgiw zqjzd. ydxqinm x. axgx  
+xii kng xqn oqxjam. zdn pgiw auoonqngyn enzvnng zdnk um zdxz mpkn xakuz uz. u kwmnio angw uz. d. i. kngylng  
+zdn vpqia yxg pgiw en bqxmhna ew xyzupg, gpz ew ypgznkhixzupg. fxype eqpgpvmlu  
+xqn hnphin kpqn rupingziw phhpmna zp ojq qxzdnq zdxg inxzdnq enyxjmn uzm kjyd nxmunq zp dxqxmm quyd vpkng zdxg kpzpqywyin bxgbm bnpqbn yxqiug  
+fjmz enyxjmn wpjq rpuyn qnxydnm dxiovxw xqpjga zdn vpqia apnmgz knxg wpj xqn vumnq zdxg vdng uz qnxydna pgiw zp zdn nga po zdn exq. navxqa q. kjqqpv  
+wpj yxgz bnz xvxw oqpk wpjqmnio ew kprugb oqpk pgn hixyn zp xgpzdnq. zdnqnm gpzdugb zp zdxz. nqgnmz dnkugbvxw  
+enzznq zp vquzn opq wpjqmnio xga dxrn gp hjeiuy, zdxg zp vquzn opq zdn hjeiuy xga dxrn gp mnio. ywqui ypggpiiw  
+zp zdn kxg vdp pgiw dxm x dxkknq, nrnqwzdugb dn ngypjgznqm enbugm zp ippl iuln x gxui. xeqxdxk kxmipv  
+zdugl iuln x kxg po xyzupg, xyz iuln x kxg po zdpjbdz. dngqu enqbmpg  
+xii xgukxim xqn nsjxi ejz mpkn xgukxim xqn kpqn nsjxi zdxg pzdnqm. bnpqbn pqvnii  
+zdn auoonqngyn enzvnng x ankpyqxyw xga x auyzxzpqmduh um zdxz ug x ankpyqxyw wpj rpzn ouqmz xga zxln pqanqm ixznq  ug x auyzxzpqmduh wpj apgz dxrn zp vxmzn wpjq zukn rpzugb. ydxqinm ejlpvmlu 
+pgyn zdn bxkn um prnq, zdn lugb xga zdn hxvg bp exyl ug zdn mxkn epc. uzxiuxg hqprnqe  
+najyxzupg... dxm hqpajyna x rxmz hphjixzupg xein zp qnxa ejz jgxein zp aumzugbjumd vdxz um vpqzd qnxaugb. b. k. zqnrniwxg  
+zdnqn xqn hnphin vdp, ugmznxa po iumzngugb zp vdxz um enugb mxua zp zdnk, xqn xiqnxaw iumzngugb zp vdxz zdnw xqn bpugb zp mxw zdnkmnirnm. xienqz bjugpg  
+uz um gp knxmjqn po dnxizd zp en vnii xafjmzna zp x hqpopjgaiw muyl mpyunzw. lqumdgxkjqzu  
+uz um gp knxmjqn po dnxizd zp en vnii xafjmzna zp x hqpopjgaiw muyl mpyunzw. lqumdgxkjqzu  

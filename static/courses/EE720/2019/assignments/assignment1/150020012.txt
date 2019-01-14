@@ -1,0 +1,69 @@
+EE720 Assignment 1 for 150020012
+
+1. Decode the following ciphertext which has been encrypted using Caesar's cipher [2 points].
+
+l kdyh hqrxjk prqhb wr odvw ph wkh uhvw ri pb olih, xqohvv l exb vrphwklqj. mdfnlh pdvrq  
+
+
+2. Decode the following ciphertext which has been encrypted using ROT-13 [2 points].
+
+gurer ner crbcyr jub, vafgrnq bs yvfgravat gb jung vf orvat fnvq gb gurz, ner nyernql yvfgravat gb jung gurl ner tbvat gb fnl gurzfryirf. nyoreg thvaba  
+
+
+3. Suppose some English plaintext with the following letter frequencies has been encrypted using a substitution cipher.
+a : 0.0910
+b : 0.0153
+c : 0.0218
+d : 0.0354
+e : 0.1225
+f : 0.0251
+g : 0.0218
+h : 0.0507
+i : 0.0757
+j : 0.0027
+k : 0.0076
+l : 0.0408
+m : 0.0207
+n : 0.0784
+o : 0.0833
+p : 0.0093
+q : 0.0011
+r : 0.0566
+s : 0.0681
+t : 0.0931
+u : 0.0283
+v : 0.0087
+w : 0.0202
+x : 0.0005
+y : 0.0202
+z : 0.0011
+Recover the key used to produce the following ciphertext. [6 points].
+The key should be in the following format:
+
+a : x
+b : w
+ ... 
+z : j
+
+Ciphertext begins below:
+
+t acxu t pruwcd  t vcc t ucqcqjcu  t hr t gohcuvdxoh fatocvc burzcuj   
+tqxwtoxdtro tv qruc tqbrudxod daxo eorslchwc. pru eorslchwc tv ltqtdch dr xll sc ors eors xoh gohcuvdxoh, satlc tqxwtoxdtro cqjuxfcv dac codtuc srulh, xoh xll dacuc czcu stll jc dr eors xoh gohcuvdxoh. xljcud ctovdcto  
+or qxddcu saxd vthc rp dac xuwgqcod nrg xuc ro, nrg xlsxnv ptoh bcrblc ro nrgu vthc daxd nrg stva scuc ro dac rdacu. mxvfax actpcdy  
+tp dac lcvvrov rp atvdrun dcxfa gv xondatow td tv daxd orjrhn lcxuov dac lcvvrov daxd atvdrun dcxfacv gv. xoro  
+td tv xlsxnv qruc htpptfgld dr ptwad xwxtovd pxtda daxo xwxtovd eorslchwc. xhrlp atdlcu  
+td tv dac qxue rp xo chgfxdch qtoh dr jc xjlc dr codcudxto x dargwad stdargd xffcbdtow td. xutvdrdlc  
+xll dugda bxvvcv daurgwa daucc vdxwcv. ptuvd, td tv uthtfglch. vcfroh, td tv ztrlcodln rbbrvch. datuh, td tv xffcbdch xv jctow vclpczthcod. xudagu vfarbcoaxgcu  
+t gvc cqrdtro pru dac qxon xoh ucvcuzc ucxvro pru dac pcs. xhrlp atdlcu  
+atvdrun dcxfacv gv daxd qco xoh oxdtrov jcaxzc stvcln rofc dacn axzc ciaxgvdch xll rdacu xldcuoxdtzcv. xjjx cjxo  
+x qxo xlsxnv axv dsr ucxvrov pru saxd ac hrcvx wrrh roc, xoh dac ucxl roc. mrao btcubrod qruwxo  
+oczcu jc xpuxth dr lxgwa xd nrguvclp, xpdcu xll, nrg frglh jc qtvvtow rgd ro dac mrec rp dac fcodgun. hxqc chox czcuxwc  
+vftcofc tv pxfdv mgvd xv argvcv xuc qxhc rp vdrocv, vr tv vftcofc qxhc rp pxfdv jgd x btlc rp vdrocv tv ord x argvc xoh x frllcfdtro rp pxfdv tv ord ocfcvvxutln vftcofc. acout brtofxuc  
+x vtowlc kgcvdtro fxo jc qruc toplgcodtxl daxo x dargvxoh vdxdcqcodv. jr jcoocdd  
+hr nrg ucxltyc tp td scucod pru chtvro sch jc sxdfatow dz jn fxohlcltwad xl jrltvex  
+dac qruc nrg eors, dac qruc nrg ucxltvc ars qgfa nrg hrod eors  dac lcvv nrg eors, dac qruc nrg datoe nrg eors. hxzth d. puccqxo  
+dac duxwchn rp ltpc hrcvod ltc to ord ucxfatow nrgu wrxl. dac duxwchn ltcv to axztow or wrxlv dr ucxfa. jcomxqto qxnv  
+czcun wcocuxdtro lxgwav xd dac rlh pxvatrov, jgd prllrsv ucltwtrgvln dac ocs. acoun hxzth darucxg  
+th uxdacu ltzc stda x wrrh kgcvdtro daxo x jxh xovscu. xunca putqcu  
+x stvc qxo wcdv qruc gvc purq atv cocqtcv daxo x prrl purq atv putcohv. jxldxvxu wuxftxo  
+sc varglh jc dxgwad ord dr sxtd pru tovbtuxdtro dr vdxud x datow. xfdtro xlsxnv wcocuxdcv tovbtuxdtro. tovbtuxdtro vclhrq wcocuxdcv xfdtro. puxoe dtjrld  

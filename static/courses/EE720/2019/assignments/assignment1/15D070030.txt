@@ -1,0 +1,69 @@
+EE720 Assignment 1 for 15D070030
+
+1. Decode the following ciphertext which has been encrypted using Caesar's cipher [2 points].
+
+wkh prvw uhpdundeoh wklqj derxw pb prwkhu lv wkdw iru wkluwb bhduv vkh vhuyhg wkh idplob qrwklqj exw ohiwryhuv. wkh ruljlqdo phdo kdv qhyhu ehhq irxqg.  fdoylq wuloolq  
+
+
+2. Decode the following ciphertext which has been encrypted using ROT-13 [2 points].
+
+n tbbq gbby vzcebirf gur jnl lbh jbex. n terng gbby vzcebirf gur jnl lbh guvax. wrss qhagrznaa  
+
+
+3. Suppose some English plaintext with the following letter frequencies has been encrypted using a substitution cipher.
+a : 0.0683
+b : 0.0108
+c : 0.0215
+d : 0.0386
+e : 0.1284
+f : 0.0158
+g : 0.0139
+h : 0.0531
+i : 0.0715
+j : 0.0044
+k : 0.0164
+l : 0.0304
+m : 0.0234
+n : 0.0689
+o : 0.0904
+p : 0.0240
+q : 0.0006
+r : 0.0658
+s : 0.0702
+t : 0.0848
+u : 0.0316
+v : 0.0120
+w : 0.0259
+x : 0.0013
+y : 0.0278
+z : 0.0000
+Recover the key used to produce the following ciphertext. [6 points].
+The key should be in the following format:
+
+a : x
+b : w
+ ... 
+z : j
+
+Ciphertext begins below:
+
+li uwteyd, uwtyt lv ie flmmtytirt gtuctti uwteyd xif qyxrulrt li qyxrulrt, uwtyt lv. rwprk ytlf  
+cwxu bltv li epy qecty ue fe, bltv li epy qecty ieu ue fe. xylvueubt  
+uwt neyt dep kiec, uwt neyt dep ytxblvt wec nprw dep feiu kiec  uwt btvv dep kiec, uwt neyt dep uwlik dep kiec. fxhlf u. myttnxi  
+lm xu mlyvu dep feiu vprrttf, mlif epu lm uwt bevty atuv xiduwlia. glbb bdei  
+zpvu gtrxpvt depy helrt ytxrwtv wxbmcxd xyepif uwt ceybf fetviu ntxi dep xyt clvty uwxi cwti lu ytxrwtf eibd ue uwt tif em uwt gxy. tfcxyf y. npyyec  
+xvklia x ceyklia cyluty cwxu wt uwlikv xgepu rylulrv lv blkt xvklia x bxnqqevu wec lu mttbv xgepu feav. rwylvueqwty wxnquei  
+wxbm uwt neitd l vqtif ei xfhtyulvlia lv cxvutf  uwt uyepgbt lv l feiu kiec cwlrw wxbm. zewi cxixnxkty 
+nd qtvvlnlvn toutifv ue uwt qeliu em thti vpvqtrulia uwt vlirtylud em uwt qtvvlnlvuv. ztxi yevuxif  
+xi lihtiuey lv vlnqbd x mtbbec cwe fetviu uxkt wlv tfprxulei uee vtylepvbd. rwxybtv m. ktuutylia  
+x vliabt ftxuw lv x uyxatfd  x nlbblei ftxuwv lv x vuxulvulr. zevtqw vuxbli 
+qyeryxvulixulei lv uwt xyu em kttqlia pq cluw dtvutyfxd. fei nxyjplv  
+ie eit aevvlqv xgepu euwty qteqbtv vtrytu hlyuptv. gtyuyxif ypvvtbb  
+repyxat lv ayxrt pifty qytvvpyt. tyitvu wtnliacxd  
+uwevt xyt nd qylirlqbtv. lm dep feiu blkt uwtn l wxht euwtyv. ayeprwe nxyo  
+vent qteqbt nxkt uwliav wxqqti, vent qteqbt cxurw uwliav wxqqti, xif vent xvk cwxu wxqqtitf. rxvtd vutiatb  
+l xylvt li uwt neyilia ueyi gtuctti x ftvlyt ue lnqyeht ey vxht uwt ceybf xif x ftvlyt ue tized ey vxhey uwt ceybf. uwlv nxktv lu wxyf ue qbxi uwt fxd. t. g. cwlut  
+utbthlvlei tixgbtv dep ue gt tiutyuxlitf li depy went gd qteqbt dep cepbfiu wxht li depy went. fxhlf myevu  
+l feiu ftvtyht uwlv xcxyf, gpu l wxht xyuwylulv xif l feiu ftvtyht uwxu tluwty. zxrk gtiid  
+xbcxdv gt x mlyvuyxut htyvlei em depyvtbm, livutxf em x vtreifyxut htyvlei em venteit tbvt. zpfd axybxif  
+uwt neyt dep kiec, uwt neyt dep ytxblvt wec nprw dep feiu kiec  uwt btvv dep kiec, uwt neyt dep uwlik dep kiec. fxhlf u. myttnxi  

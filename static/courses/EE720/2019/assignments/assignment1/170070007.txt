@@ -1,0 +1,69 @@
+EE720 Assignment 1 for 170070007
+
+1. Decode the following ciphertext which has been encrypted using Caesar's cipher [2 points].
+
+lq jrg zh wuxvw  doo rwkhuv eulqj gdwd. gu. hgzdugv ghplqj 
+
+
+2. Decode the following ciphertext which has been encrypted using ROT-13 [2 points].
+
+lbh zhfg or gur punatr lbh jvfu gb frr va gur jbeyq. tnaquv  
+
+
+3. Suppose some English plaintext with the following letter frequencies has been encrypted using a substitution cipher.
+a : 0.0803
+b : 0.0150
+c : 0.0318
+d : 0.0312
+e : 0.1240
+f : 0.0252
+g : 0.0180
+h : 0.0455
+i : 0.0677
+j : 0.0036
+k : 0.0078
+l : 0.0461
+m : 0.0276
+n : 0.0773
+o : 0.0941
+p : 0.0162
+q : 0.0000
+r : 0.0581
+s : 0.0599
+t : 0.0797
+u : 0.0270
+v : 0.0114
+w : 0.0198
+x : 0.0000
+y : 0.0318
+z : 0.0012
+Recover the key used to produce the following ciphertext. [6 points].
+The key should be in the following format:
+
+a : x
+b : w
+ ... 
+z : j
+
+Ciphertext begins below:
+
+tcy byrr uoa zqoi, tcy fomy uoa wybsyhy. woqo  
+jart wyexary uoam hosey myxecyr cxbnixu xmoaqd tcy iombd doyrqt fyxq uoa xmy isrym tcxq icyq st myxecyd oqbu to tcy yqd on tcy wxm. ydixmd m. fammoi  
+qo oqy exq fxzy uoa nyyb sqnymsom istcoat uoam eoqryqt. ybyxqom mooryhybt  
+x wxqz sr x gbxey tcxt isbb byqd uoa foqyu sn uoa exq gmohy tcxt uoa doqt qyyd st. wow cogy  
+resyqey sr nxetr jart xr coaryr xmy fxdy on rtoqyr, ro sr resyqey fxdy on nxetr wat x gsby on rtoqyr sr qot x coary xqd x eobbyetsoq on nxetr sr qot qyeyrrxmsbu resyqey. cyqms gosqexmy  
+qo oqy vorrsgr xwoat otcym gyogbyr ryemyt hsmtayr. wymtmxqd marrybb  
+sq tcyomu, tcymy sr qo dsnnymyqey wytiyyq tcyomu xqd gmxetsey sq gmxetsey, tcymy sr. ecaez mysd  
+tcy tmxvydu on bsny doyrqt bsy sq qot myxecsqv uoam voxb. tcy tmxvydu bsyr sq cxhsqv qo voxbr to myxec. wyqjxfsq fxur  
+iy doqt ryy tcsqvr xr tcyu xmy. iy ryy tcsqvr xr iy xmy. xqxsr qsq  
+gxmt on tcy sqcafxqstu on tcy eofgatym sr tcxt, oqey st sr eofgytyqtbu gmovmxffyd xqd iomzsqv rfootcbu, st sr eofgbytybu coqyrt. srxxe xrsfoh  
+tcymy sr qowodu ro smmstxtsqv xr rofywodu istc byrr sqtybbsvyqey xqd fomy ryqry tcxq iy cxhy. doq cymobd  
+qyxmbu xbb fyq exq rtxqd xdhymrstu, wat sn uoa ixqt to tyrt x fxqr ecxmxetym, vshy csf goiym. xwmxcxf bsqeobq  
+qyhym xgobovsky nom rcoisqv nyybsqv. icyq uoa do ro, uoa xgobovsky nom tmatc. wyqjxfsq dsrmxybs  
+tcy dsmyet ary on nomey sr raec x goom robatsoq to xqu gmowbyf, st sr vyqymxbbu yfgbouyd oqbu wu rfxbb ecsbdmyq xqd bxmvy qxtsoqr. dxhsd nmsydfxq  
+wyttym to imsty nom uoamrybn xqd cxhy qo gawbse, tcxq to imsty nom tcy gawbse xqd cxhy qo rybn. eumsb eoqqobbu  
+to tcy fxq ico oqbu cxr x cxffym, yhymutcsqv cy yqeoaqtymr wyvsqr to booz bszy x qxsb. xwmxcxf fxrboi  
+x vood toob sfgmohyr tcy ixu uoa iomz. x vmyxt toob sfgmohyr tcy ixu uoa tcsqz. jynn daqtyfxqq  
+x vood toob sfgmohyr tcy ixu uoa iomz. x vmyxt toob sfgmohyr tcy ixu uoa tcsqz. jynn daqtyfxqq  
+xbb fyq xmy nmxadr. tcy oqbu dsnnymyqey wytiyyq tcyf sr tcxt rofy xdfst st. s furybn dyqu st. c. b. fyqezyq  
+st sr xbixur fomy dsnnseabt to nsvct xvxsqrt nxstc tcxq xvxsqrt zqoibydvy. xdobn cstbym  

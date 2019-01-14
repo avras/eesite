@@ -1,0 +1,69 @@
+EE720 Assignment 1 for 170110017
+
+1. Decode the following ciphertext which has been encrypted using Caesar's cipher [2 points].
+
+d pdq dozdbv kdv wzr uhdvrqv iru zkdw kh grhvd jrrg rqh, dqg wkh uhdo rqh. mrkq slhusrqw prujdq  
+
+
+2. Decode the following ciphertext which has been encrypted using ROT-13 [2 points].
+
+pnershy. jr qbag jnag gb yrnea sebz guvf. ovyy jnggrefba  
+
+
+3. Suppose some English plaintext with the following letter frequencies has been encrypted using a substitution cipher.
+a : 0.0761
+b : 0.0200
+c : 0.0233
+d : 0.0320
+e : 0.1047
+f : 0.0247
+g : 0.0173
+h : 0.0500
+i : 0.0887
+j : 0.0053
+k : 0.0093
+l : 0.0394
+m : 0.0247
+n : 0.0854
+o : 0.0901
+p : 0.0120
+q : 0.0000
+r : 0.0494
+s : 0.0547
+t : 0.0974
+u : 0.0374
+v : 0.0127
+w : 0.0187
+x : 0.0007
+y : 0.0254
+z : 0.0007
+Recover the key used to produce the following ciphertext. [6 points].
+The key should be in the following format:
+
+a : x
+b : w
+ ... 
+z : j
+
+Ciphertext begins below:
+
+axy fxt sk tcppdb. gfdy fd fxt yk bdxi xppiljslkyt, fd lyrdyst tkad. oktd axbsl  
+sfd kyiv sflyw sfxs lysdbpdbdt glsf av idxbylyw lt av dncjxslky. xiqdbs dlytsdly  
+ls lt qxn icje sk qd tcudbtslslkct. xynbdg g. axsflt  
+x qxye lt x uixjd sfxs glii idyn vkc akydv lp vkc jxy ubkrd sfxs vkc nkys yddn ls. qkq fkud  
+x axy lt bljf ly ubkukbslky sk sfd ycaqdb kp sflywt fd jxy xppkbn sk ids xikyd. fdybv nxrln sfkbdxc  
+gblslyw xqkcs actlj lt iled nxyjlyw xqkcs xbjflsdjscbd. pbxye hxuux  
+gfdy vkc tls glsf x yljd wlbi pkb sgk fkcbt, vkc sflye lst kyiv x alycsd. qcs gfdy vkc tls ky x fks tskrd pkb x alycsd, vkc sflye lst sgk fkcbt. sfxst  bdixslrlsv. xiqdbs dlytsdly    
+l bdxiiv gltf l gxt idtt kp x sflyelyw axy xyn akbd kp x pkki yks xpbxln kp bdodjslky. qliiv okdi  
+sbciv wbdxs axnydtt jxyyks qd xjfldrdn glsfkcs tlwylpljxys lysdiilwdyjd.  fdyble sleexydy  
+sdidrltlky dyxqidt vkc sk qd dysdbsxlydn ly vkcb fkad qv udkuid vkc gkcinys fxrd ly vkcb fkad. nxrln pbkts  
+ly axsfdaxsljt vkc nkys cyndbtsxyn sflywt. vkc octs wds ctdn sk sfda. okfxyy rky ydcaxyy  
+sfkcwfs lt ctdpci gfdy ls akslrxsdt pkb xjslky, xyn x flynbxyjd gfdy ls tcqtslscsdt pkb xjslky. qlii bxdndb  
+lp ls gdbdys pkb av ixgvdb, ln tslii qd ly ubltky. ls gdys x iks pxtsdb glsf sgk udkuid nlwwlyw. okd axbsly  
+plwfs pkb vkcb kulylkyt, qcs nk yks qdildrd sfxs sfdv jkysxly sfd gfkid sbcsf, kb sfd kyiv sbcsf. jfxbidt x. nxyx  
+ubkjxtslyxslky lt yks xqkcs yks nklyw lt xqkcs yks nklyw xyn pddilyw jbxuuv. nxrln xiidy  
+gfdy l nk wkkn, l pddi wkkn gfdy l nk qxn, l pddi qxn, xyn sfxs lt av bdilwlky. xqbxfxa ilyjkiy  
+fd gfk xtet lt x pkki pkb plrd alycsdt, qcs fd gfk nkdt yks xte bdaxlyt x pkki pkbdrdb. jflydtd ubkrdbq  
+sfdbdt tk acjf jkadnv ky sdidrltlky. nkdt sfxs jxctd jkadnv ly sfd tsbddst nlje jxrdss  
+l fxrd dykcwf akydv sk ixts ad sfd bdts kp av ilpd, cyidtt l qcv tkadsflyw. oxjeld axtky  
+kyiv sfd adnlkjbd xbd xigxvt xs sfdlb qdts. odxy wlbxcnkcm  

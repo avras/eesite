@@ -1,0 +1,69 @@
+EE720 Assignment 1 for 150020069
+
+1. Decode the following ciphertext which has been encrypted using Caesar's cipher [2 points].
+
+li brx kdwh d shuvrq, brx kdwh vrphwklqj lq klp wkdw lv sduw ri brxuvhoi. zkdw lvqw sduw ri rxuvhoyhv grhvqw glvwxue xv. khupdqq khvvh  
+
+
+2. Decode the following ciphertext which has been encrypted using ROT-13 [2 points].
+
+vg vf fnvq gung cbjre pbeehcgf, ohg npghnyyl vgf zber gehr gung cbjre nggenpgf gur pbeehcgvoyr. gur fnar ner hfhnyyl nggenpgrq ol bgure guvatf guna cbjre. qnivq oeva  
+
+
+3. Suppose some English plaintext with the following letter frequencies has been encrypted using a substitution cipher.
+a : 0.0787
+b : 0.0270
+c : 0.0222
+d : 0.0312
+e : 0.1196
+f : 0.0162
+g : 0.0228
+h : 0.0499
+i : 0.0757
+j : 0.0054
+k : 0.0048
+l : 0.0439
+m : 0.0210
+n : 0.0775
+o : 0.0793
+p : 0.0216
+q : 0.0000
+r : 0.0715
+s : 0.0415
+t : 0.0968
+u : 0.0288
+v : 0.0132
+w : 0.0204
+x : 0.0018
+y : 0.0288
+z : 0.0000
+Recover the key used to produce the following ciphertext. [6 points].
+The key should be in the following format:
+
+a : x
+b : w
+ ... 
+z : j
+
+Ciphertext begins below:
+
+eurqrkxhryv rg ypz nrkz xuy en uzozotzurkq dpxy vel pzxu tly neuqzyyrkq dpzuz vel pzxuf ry. hxluzkmz j. wzyzu  
+ov nurzkfg yzhh oz r pxsz xk rkyroxmv wuethzo. tly ypzv feky uzxhhv iked oz. qxuuv gpxkfhrkq  
+ypz dpehz gzmuzy en hrnz rg ye tz rkyzuzgyzf rk ekz yprkq wuenelkfhv xkf rk x ypelgxkf yprkqg dzhh. peuxmz dxhwehz  
+vel mxk fe xkvyprkq, tly key zszuvyprkq. fxsrf xhhzk  
+r feky iked xkvyprkq xtely olgrm. rk ov hrkz vel feky pxsz ye. zhsrg wuzghzv  
+ekmz ypz qxoz rg eszu, ypz irkq xkf ypz wxdk qe txmi rk ypz gxoz teb. ryxhrxk wueszut  
+geozyrozg ypz uexf hzgg yuxszhzf rg hzgg yuxszhzf neu x uzxgek. jzuuv gzrknzhf  
+x yrorf wzugek rg nurqpyzkzf tzneuz x fxkqzu, x medxuf flurkq ypz yroz, xkf x meluxqzelg wzugek xnyzudxuf. jzxk wxlh urmpyzu  
+ypzuz rg ekhv ekz dxv ye pxwwrkzgg xkf ypxy rg ye mzxgz deuuvrkq xtely yprkqg dprmp xuz tzvekf ypz wedzu en elu drhh. zwryzmylg  
+ypz deuhf mxk ekhv tz quxgwzf tv xmyrek, key tv mekyzowhxyrek. jxmet tuekedgir  
+xkv zszky, ekmz ry pxg emmluuzf, mxk tz oxfz ye xwwzxu rkzsryxthz tv x meowzyzky prgyeurxk. hzz groekgek  
+yzhzsrgrek zkxthzg vel ye tz zkyzuyxrkzf rk velu peoz tv wzewhz vel delhfky pxsz rk velu peoz. fxsrf nuegy  
+rn vel mxky tz x qeef zbxowhz, ypzk velhh jlgy pxsz ye tz x peuurthz dxukrkq. mxypzurkz xruf  
+zrypzu duryz geozyprkq deuyp uzxfrkq eu fe geozyprkq deuyp duryrkq. tzkjxork nuxkihrk  
+rn ry dzuzky neu ov hxdvzu, rf gyrhh tz rk wurgek. ry dzky x hey nxgyzu dryp yde wzewhz frqqrkq. jez oxuyrk  
+ry rg gxrf ypxy wedzu meuulwyg, tly xmylxhhv ryg oeuz yulz ypxy wedzu xyyuxmyg ypz meuulwyrthz. ypz gxkz xuz lglxhhv xyyuxmyzf tv eypzu yprkqg ypxk wedzu. fxsrf turk  
+ypz oegy uzoxuixthz yprkq xtely ov oeypzu rg ypxy neu ypruyv vzxug gpz gzuszf ypz nxorhv keyprkq tly hznyeszug. ypz eurqrkxh ozxh pxg kzszu tzzk nelkf.  mxhsrk yurhhrk  
+rn vel mxky tz x qeef zbxowhz, ypzk velhh jlgy pxsz ye tz x peuurthz dxukrkq. mxypzurkz xruf  
+nrqpy neu velu ewrkrekg, tly fe key tzhrzsz ypxy ypzv mekyxrk ypz dpehz yulyp, eu ypz ekhv yulyp. mpxuhzg x. fxkx  
+ypz yuelthz dryp tzrkq wlkmylxh rg ypxy ketefvg ypzuz ye xwwuzmrxyz ry. nuxkihrk w. jekzg  

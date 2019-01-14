@@ -1,0 +1,69 @@
+EE720 Assignment 1 for 170050068
+
+1. Decode the following ciphertext which has been encrypted using Caesar's cipher [2 points].
+
+fduhixo. zh grqw zdqw wr ohduq iurp wklv. eloo zdwwhuvrq  
+
+
+2. Decode the following ciphertext which has been encrypted using ROT-13 [2 points].
+
+jr fubhyq or gnhtug abg gb jnvg sbe vafcvengvba gb fgneg n guvat. npgvba nyjnlf trarengrf vafcvengvba. vafcvengvba fryqbz trarengrf npgvba. senax gvobyg  
+
+
+3. Suppose some English plaintext with the following letter frequencies has been encrypted using a substitution cipher.
+a : 0.0841
+b : 0.0210
+c : 0.0278
+d : 0.0340
+e : 0.1304
+f : 0.0148
+g : 0.0272
+h : 0.0501
+i : 0.0649
+j : 0.0031
+k : 0.0074
+l : 0.0476
+m : 0.0167
+n : 0.0785
+o : 0.0822
+p : 0.0148
+q : 0.0012
+r : 0.0587
+s : 0.0680
+t : 0.0921
+u : 0.0222
+v : 0.0093
+w : 0.0253
+x : 0.0000
+y : 0.0173
+z : 0.0012
+Recover the key used to produce the following ciphertext. [6 points].
+The key should be in the following format:
+
+a : x
+b : w
+ ... 
+z : j
+
+Ciphertext begins below:
+
+wkmat ckm zxoomw yththqty wkt fxaw xyt zmodthotd wm ytftxw iw. utmyut axowxrxox  
+i ktxy i lmyutw  i att i yththqty  i dm i godtyawxod zkiotat fymetyq   
+dmow qt xlyxid wm wxst x qiu awtf il mot ia iodizxwtd. rmg zxow zymaa x zkxah io wcm ahxvv nghfa. dxeid vvmrd utmyut  
+ckto i cxa x qmr i cxa wmvd wkxw xorqmdr zmgvd qtzmht fytaidtow. omc ih qtuiooiou wm qtvitet iw. zvxytozt dxyymc  
+ftmfvt zxoomw diazmety otc vxoda gowiv wktr kxet wkt zmgyxut wm vmat aiukw ml wkt akmyt. xody uidt  
+ct dmow att wkioua xa wktr xyt. ct att wkioua xa ct xyt. xoxia oio  
+iw ia qtwwty wm somc amht ml wkt bgtawimoa wkxo xvv ml wkt xoactya. nxhta wkgyqty  
+kmc hxor vtua dmta x dmu kxet, il rmg zxvv wkt wxiv x vtu lmgy. zxvviou x wxiv x vtu dmtaow hxst iw x vtu. xqyxkxh viozmvo  
+omw tetyrwkiou wkxw zxo qt zmgowtd zmgowa, xod omw tetyrwkiou wkxw zmgowa zxo qt zmgowtd. xvqtyw tioawtio  
+x ztvtqyiwr ia x ftyamo ckm cmysa kxyd xvv kia vilt wm qtzmht ctvv somco, wkto ctxya dxys uvxaata wm xemid qtiou ytzmuoijtd. lytd xvvto  
+wkt ckmvt fymqvth ciwk wkt cmyvd ia wkxw lmmva xod lxoxwiza xyt xvcxra am ztywxio ml wkthatveta, xod ciaty ftmfvt am lgvv ml dmgqwa. qtywyxod ygaatvv  
+il rmg cxow wygvr wm godtyawxod amhtwkiou, wyr wm zkxout iw. sgyw vtcio  
+wkt ftyamo ckm ytxda wmm hgzk xod gata kia qyxio wmm viwwvt civv lxvv iowm vxjr kxqiwa ml wkiosiou. xvqtyw tioawtio  
+ftmfvt zxoomw diazmety otc vxoda gowiv wktr kxet wkt zmgyxut wm vmat aiukw ml wkt akmyt. xody uidt  
+iw ia qtwwty wm somc amht ml wkt bgtawimoa wkxo xvv ml wkt xoactya. nxhta wkgyqty  
+tetyrmot ia x utoiga xw vtxaw mozt x rtxy. wkt ytxv utoigata aihfvr kxet wktiy qyiukw idtxa zvmaty wmutwkty. utmyu zkyiawmfk vizkwtoqtyu  
+x hxo xvcxra kxa wcm ytxamoa lmy ckxw kt dmtax ummd mot, xod wkt ytxv mot. nmko fityfmow hmyuxo  
+wygvr uytxw hxdotaa zxoomw qt xzkitetd ciwkmgw aiuoilizxow iowtvviutozt.  ktoyis wissxoto  
+wktyt ia movr mot cxr wm kxffiotaa xod wkxw ia wm ztxat cmyyriou xqmgw wkioua ckizk xyt qtrmod wkt fmcty ml mgy civv. tfiwtzwga  
+x ftyamo ckm wygawa om mot zxow qt wygawtd. ntymht qvxwwoty  

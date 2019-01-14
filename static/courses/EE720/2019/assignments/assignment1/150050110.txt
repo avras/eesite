@@ -1,0 +1,69 @@
+EE720 Assignment 1 for 150050110
+
+1. Decode the following ciphertext which has been encrypted using Caesar's cipher [2 points].
+
+wkh rqob qrupdo shrsoh duh wkh rqhv brx grqw nqrz yhub zhoo. mrh dqflv  
+
+
+2. Decode the following ciphertext which has been encrypted using ROT-13 [2 points].
+
+v bapr jnagrq gb orpbzr na ngurvfg, ohg v tnir hc  gurl unir ab ubyvqnlf. uraal lbhatzna  
+
+
+3. Suppose some English plaintext with the following letter frequencies has been encrypted using a substitution cipher.
+a : 0.0814
+b : 0.0250
+c : 0.0196
+d : 0.0351
+e : 0.1075
+f : 0.0083
+g : 0.0232
+h : 0.0582
+i : 0.0737
+j : 0.0036
+k : 0.0089
+l : 0.0434
+m : 0.0178
+n : 0.0701
+o : 0.0856
+p : 0.0149
+q : 0.0000
+r : 0.0600
+s : 0.0559
+t : 0.1022
+u : 0.0357
+v : 0.0119
+w : 0.0261
+x : 0.0006
+y : 0.0303
+z : 0.0012
+Recover the key used to produce the following ciphertext. [6 points].
+The key should be in the following format:
+
+a : x
+b : w
+ ... 
+z : j
+
+Ciphertext begins below:
+
+yevs srp oxws srxs vizp dpcfevpv qpbp hxedrpl xs lipv cis fzuht srxs xhh qri xbp hxedrpl xs xbp dpcfevpv. srpt hxedrpl xs wihezjev, srpt hxedrpl xs oehsic, srpt hxedrpl xs srp qbfdrs jbisrpbv. jes srpt xhvi hxedrpl xs jini srp whiqc. wxbh vxdxc  
+fs fv vxfl srxs uiqpb wibbeusv, jes xwsexhht fsv zibp sbep srxs uiqpb xssbxwsv srp wibbeusfjhp. srp vxcp xbp evexhht xssbxwspl jt isrpb srfcdv srxc uiqpb. lxgfl jbfc  
+srp qibhl wxc icht jp dbxvupl jt xwsfic, cis jt wicspzuhxsfic. yxwij jbiciqvmf  
+x jxcm fv x uhxwp srxs qfhh hpcl tie zicpt fo tie wxc ubigp srxs tie lics cppl fs. jij riup  
+f xbfvp fc srp zibcfcd sibc jpsqppc x lpvfbp si fzubigp ib vxgp srp qibhl xcl x lpvfbp si pcyit ib vxgib srp qibhl. srfv zxmpv fs rxbl si uhxc srp lxt. p. j. qrfsp  
+srpbp xbp upiuhp qri, fcvspxl io hfvspcfcd si qrxs fv jpfcd vxfl si srpz, xbp xhbpxlt hfvspcfcd si qrxs srpt xbp difcd si vxt srpzvphgpv. xhjpbs defcic  
+srpbp fv cijilt vi fbbfsxsfcd xv vizpjilt qfsr hpvv fcsphhfdpcwp xcl zibp vpcvp srxc qp rxgp. lic rpbihl  
+fs fv ci zpxvebp io rpxhsr si jp qphh xlyevspl si x ubioieclht vfwm viwfpst. mbfvrcxzebsf  
+sbesr igpb rxbzict. hxbbt jivvflt   
+sii jxl srp icht upiuhp qri mciq riq si bec srp wiecsbt xbp jevt lbfgfcd wxjv xcl wessfcd rxfb. dpibdp jebcv  
+rp mciqv xhh xjies xbs, jes rp lipvcs mciq qrxs rp hfmpv. yxzpv srebjpb  
+f lics mciq xctsrfcd xjies zevfw. fc zt hfcp tie lics rxgp si. phgfv ubpvhpt  
+qrpc f li diil, f opph diil qrpc f li jxl, f opph jxl, xcl srxs fv zt bphfdfic. xjbxrxz hfcwihc  
+fcvxcfst fc fclfgflexhv fv vizpsrfcd bxbp  jes fc dbieuv, uxbsfpv, cxsficv xcl puiwrv, fs fv srp behp. obfplbfwr cfpsnvwrp  
+tie wxc li xctsrfcd, jes cis pgpbtsrfcd. lxgfl xhhpc  
+fsv x bxbp upbvic qri qxcsv si rpxb qrxs rp lipvcs qxcs si rpxb. lfwm wxgpss  
+srivp xbp zt ubfcwfuhpv. fo tie lics hfmp srpz f rxgp isrpbv. dbiewri zxbk  
+ci qfvp zxc pgpb qfvrpl si jp tiecdpb. yicxsrxc vqfos  
+hidfw qfhh dps tie obiz x si j. fzxdfcxsfic qfhh sxmp tie pgpbtqrpbp. xhjpbs pfcvspfc  
+qrpc tie vfs qfsr x cfwp dfbh oib sqi riebv, tie srfcm fsv icht x zfcesp. jes qrpc tie vfs ic x ris vsigp oib x zfcesp, tie srfcm fsv sqi riebv. srxsv  bphxsfgfst. xhjpbs pfcvspfc    

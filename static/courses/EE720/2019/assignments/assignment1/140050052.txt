@@ -1,0 +1,69 @@
+EE720 Assignment 1 for 140050052
+
+1. Decode the following ciphertext which has been encrypted using Caesar's cipher [2 points].
+
+vlpsolflwb lv wkh xowlpdwh vrsklvwlfdwlrq. ohrqdugr gd ylqfl  
+
+
+2. Decode the following ciphertext which has been encrypted using ROT-13 [2 points].
+
+vg vf orggre gb snvy ng lbhe bja yvsr guna gb fhpprrq ng fbzrbar ryfrf. naqe tvqr  
+
+
+3. Suppose some English plaintext with the following letter frequencies has been encrypted using a substitution cipher.
+a : 0.0726
+b : 0.0231
+c : 0.0283
+d : 0.0360
+e : 0.1118
+f : 0.0231
+g : 0.0199
+h : 0.0508
+i : 0.0720
+j : 0.0032
+k : 0.0109
+l : 0.0360
+m : 0.0206
+n : 0.0656
+o : 0.0977
+p : 0.0174
+q : 0.0006
+r : 0.0649
+s : 0.0559
+t : 0.0900
+u : 0.0398
+v : 0.0096
+w : 0.0180
+x : 0.0026
+y : 0.0289
+z : 0.0006
+Recover the key used to produce the following ciphertext. [6 points].
+The key should be in the following format:
+
+a : x
+b : w
+ ... 
+z : j
+
+Ciphertext begins below:
+
+cmj bjgy ho yto rtxqko cmj azgt ym goo zq yto amule. kxqetz  
+em qmy rmqeobq yto njekoboqy mp xqmytou horxjgo zy ezppoug pumb cmju maq. cmj bxc hmyt ho aumqk. exqeobzg  
+z txfo ymm bjrt uogvory pmu yto zeox mp kme ym bxdo zy uogvmqgzhlo pmu gjrt xq xhgjue amule. komukog ejtxbol  
+to atm xgdg zg x pmml pmu pzfo bzqjyog, hjy to atm emog qmy xgd uobxzqg x pmml pmuofou. rtzqogo vumfouh  
+yto ezppouoqro hoyaooq x eobmruxrc xqe x ezryxymugtzv zg ytxy zq x eobmruxrc cmj fmyo pzugy xqe yxdo mueoug lxyou  zq x ezryxymugtzv cmj emqy txfo ym axgyo cmju yzbo fmyzqk. rtxulog hjdmagdz 
+zp cmj txyo x vougmq, cmj txyo gmboytzqk zq tzb ytxy zg vxuy mp cmjugolp. atxy zgqy vxuy mp mjugolfog emogqy ezgyjuh jg. toubxqq toggo  
+zp cmj xuo qmy ruzyzrzsoe, cmj bxc qmy ho emzqk bjrt. emqxle t. ujbgpole  
+atoytou cmj ytzqd cmj rxq mu ytzqd cmj rxqy  cmj xuo uzkty. toquc pmue  
+atoq ofoucmqo zg xkxzqgy cmj, zy boxqg ytxy cmj xuo xhgmljyolc aumqk mu xhgmljyolc uzkty. xlhouy kjzqmq  
+x hxqd zg x vlxro ytxy azll loqe cmj bmqoc zp cmj rxq vumfo ytxy cmj emqy qooe zy. hmh tmvo  
+zp xy pzugy cmj emqy gjrrooe, pzqe mjy zp yto lmgou koyg xqcytzqk. hzll lcmq  
+yto gdzll mp auzyzqk zg ym ruoxyo x rmqyoiy zq atzrt mytou vomvlo rxq ytzqd. oeazq grtlmgghouk  
+emqy ofou auogylo azyt x vzk. cmjll hmyt koy ezuyc, hjy yto vzk azll oqnmc zy. rxlo cxuhmumjkt  
+z lzdo amud zy pxgrzqxyog bo. z rxq gzy xqe lmmd xy zy pmu tmjug. noumbo d. noumbo  
+hoyyou ym uobxzq gzloqy xqe ho ytmjkty x pmml ytxq ym gvoxd mjy xqe uobmfo xll emjhy. xhuxtxb lzqrmlq  
+vumruxgyzqxyzmq zg yto xuy mp doovzqk jv azyt cogyouexc. emq bxuwjzg  
+vxyuzmyzgb zg cmju rmqfzryzmq ytxy ytzg rmjqyuc zg gjvouzmu ym xll mytou rmjqyuzog horxjgo cmj aouo hmuq zq zy. komuko houqxue gtxa  
+zy zg hoyyou ym pxzl xy cmju maq lzpo ytxq ym gjrrooe xy gmbomqo olgog. xqeu kzeo  
+hloggoe zg to atm oivoryg qmytzqk, pmu to gtxll qofou ho ezgxvvmzqyoe. xloixqeou vmvo  
+zp cmj rxqy ho x kmme oixbvlo, ytoq cmjll njgy txfo ym ho x tmuuzhlo axuqzqk. rxytouzqo xzue  

@@ -1,0 +1,69 @@
+EE720 Assignment 1 for 170050076
+
+1. Decode the following ciphertext which has been encrypted using Caesar's cipher [2 points].
+
+dozdbv eh d iluvwudwh yhuvlrq ri brxuvhoi, lqvwhdg ri d vhfrqgudwh yhuvlrq ri vrphrqh hovh. mxgb jduodqg  
+
+
+2. Decode the following ciphertext which has been encrypted using ROT-13 [2 points].
+
+lbh qbag trg nalguvat pyrna jvgubhg trggvat fbzrguvat ryfr qvegl. prpvy onkgre  
+
+
+3. Suppose some English plaintext with the following letter frequencies has been encrypted using a substitution cipher.
+a : 0.0746
+b : 0.0201
+c : 0.0326
+d : 0.0243
+e : 0.1231
+f : 0.0189
+g : 0.0195
+h : 0.0604
+i : 0.0663
+j : 0.0053
+k : 0.0071
+l : 0.0326
+m : 0.0225
+n : 0.0645
+o : 0.0882
+p : 0.0160
+q : 0.0012
+r : 0.0628
+s : 0.0616
+t : 0.1030
+u : 0.0349
+v : 0.0065
+w : 0.0231
+x : 0.0000
+y : 0.0290
+z : 0.0018
+Recover the key used to produce the following ciphertext. [6 points].
+The key should be in the following format:
+
+a : x
+b : w
+ ... 
+z : j
+
+Ciphertext begins below:
+
+x fmla sxv kacl sega bla nges hml avasmal chxv x neej nges hml ngmavol. wxjcxlxg kgxrmxv  
+x iaglev fhe cgblcl ve eva rxvc wa cgblcao. pagesa wjxccvag  
+mc ml mv lajnjmsmcxcmev chxc x sxlcag nmglc lhefl hmslajn. pehxvv keacha  
+atagzeva chmvyl en rhxvkmvk cha fegjo, wbc ve eva chmvyl en rhxvkmvk hmslajn. jae cejlcez  
+x lmvkja oaxch ml x cgxkaoz  x smjjmev oaxchl ml x lcxcmlcmr. pelaih lcxjmv 
+egmkmvxjmcz ml cha nmva xgc en gasaswagmvk fhxc zeb haxg wbc negkaccmvk fhaga zeb haxgo mc. jxbgavra p. iacag  
+ve sxccag fhxc lmoa en cha xgkbsavc zeb xga ev, zeb xjfxzl nmvo iaeija ev zebg lmoa chxc zeb fmlh faga ev cha echag. pxlrhx hamnacq  
+fhxc fa chmvy, eg fhxc fa yvef, eg fhxc fa wajmata ml, mv cha avo, en jmccja revladbavra. cha evjz revladbavra ml fhxc fa oe. pehv gblymv  
+fxcrh zebg chebkhcl chaz waresa fegol. fxcrh zebg fegol chaz waresa xrcmevl. fxcrh zebg xrcmevl chaz waresa hxwmcl. fxcrh zebg hxwmcl chaz waresa rhxgxrcag. fxcrh zebg rhxgxrcag mc waresal zebg oalcmvz.  jxe cqa  
+cee wxo cha evjz iaeija fhe yvef hef ce gbv cha rebvcgz xga wblz ogmtmvk rxwl xvo rbccmvk hxmg. kaegka wbgvl  
+nmkhc neg zebg eimvmevl, wbc oe vec wajmata chxc chaz revcxmv cha fheja cgbch, eg cha evjz cgbch. rhxgjal x. oxvx  
+chaga xga iaeija fhe, mvlcaxo en jmlcavmvk ce fhxc ml wamvk lxmo ce chas, xga xjgaxoz jmlcavmvk ce fhxc chaz xga kemvk ce lxz chaslajtal. xjwagc kbmvev  
+m hxta avebkh sevaz ce jxlc sa cha galc en sz jmna, bvjall m wbz lesachmvk. pxryma sxlev  
+cha cgebwja fmch wamvk ibvrcbxj ml chxc veweozl chaga ce xiigarmxca mc. ngxvyjmv i. peval  
+mn zeb xga vec rgmcmrmqao, zeb sxz vec wa oemvk sbrh. oevxjo h. gbslnajo  
+cha omnnagavra wacfaav x oasergxrz xvo x omrcxceglhmi ml chxc mv x oasergxrz zeb teca nmglc xvo cxya egoagl jxcag  mv x omrcxceglhmi zeb oevc hxta ce fxlca zebg cmsa tecmvk. rhxgjal wbyeflym 
+chaga ml ve cgbch. chaga ml evjz iagraicmev. kblcxta njxbwagc  
+fhav iaeija xga ngaa ce oe xl chaz ijaxla, chaz blbxjjz msmcxca axrh echag. agmr hennag  
+resibcag lrmavra ml ve sega xwebc resibcagl chxv xlcgevesz ml xwebc cajalreial. a. f. ompylcgx  
+ve eva kellmil xwebc echag iaeijal largac tmgcbal. wagcgxvo gbllajj  

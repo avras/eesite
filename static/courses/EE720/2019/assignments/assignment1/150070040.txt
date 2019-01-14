@@ -1,0 +1,69 @@
+EE720 Assignment 1 for 150070040
+
+1. Decode the following ciphertext which has been encrypted using Caesar's cipher [2 points].
+
+ehvlghv wkh qreoh duw ri jhwwlqj wklqjv grqh, wkhuh lv wkh qreoh duw ri ohdylqj wklqjv xqgrqh. wkh zlvgrp ri olih frqvlvwv lq wkh holplqdwlrq ri qrqhvvhqwldov. oldq bxwdqj  
+
+
+2. Decode the following ciphertext which has been encrypted using ROT-13 [2 points].
+
+arire ncbybtvmr sbe fubjvat srryvat. jura lbh qb fb, lbh ncbybtvmr sbe gehgu. orawnzva qvfenryv  
+
+
+3. Suppose some English plaintext with the following letter frequencies has been encrypted using a substitution cipher.
+a : 0.0783
+b : 0.0213
+c : 0.0227
+d : 0.0309
+e : 0.1133
+f : 0.0151
+g : 0.0330
+h : 0.0446
+i : 0.0611
+j : 0.0034
+k : 0.0048
+l : 0.0453
+m : 0.0117
+n : 0.0659
+o : 0.1085
+p : 0.0275
+q : 0.0000
+r : 0.0680
+s : 0.0563
+t : 0.0893
+u : 0.0330
+v : 0.0117
+w : 0.0275
+x : 0.0000
+y : 0.0247
+z : 0.0021
+Recover the key used to produce the following ciphertext. [6 points].
+The key should be in the following format:
+
+a : x
+b : w
+ ... 
+z : j
+
+Ciphertext begins below:
+
+u kxhz gbb ytck ezrazcg nbe gkz uszx bn dbs gb yxfz ug ezrabmruqlz nbe rtck xm xqrtes obels. dzbedzr stkxyzl  
+sbmg zhze oezrglz ougk x aud. pbtll qbgk dzg suegp, qtg gkz aud oull zmwbp ug. cxlz pxeqbebtdk  
+sbmg zhze oezrglz ougk x aud. pbtll qbgk dzg suegp, qtg gkz aud oull zmwbp ug. cxlz pxeqbebtdk  
+xmp cbyaxmp lxedz zmbtdk gb kxhz x ezrzxeck lxq ur gbb lxedz gb lurgzm gb ug. xlxm fxp  
+x azerbm okb getrgr mb bmz cxmg qz getrgzs. wzebyz qlxggmze  
+gbb qxs gkz bmlp azbalz okb fmbo kbo gb etm gkz cbtmgep xez qtrp seuhumd cxqr xms ctggumd kxue. dzbedz qtemr  
+okxg luzr um bte aboze gb sb, luzr um bte aboze mbg gb sb. xeurgbglz  
+kxaaumzrr ur gkz xqrzmcz bn rgeuhumd nbe kxaaumzrr. ckxmdgit  
+gbb qxs gkz bmlp azbalz okb fmbo kbo gb etm gkz cbtmgep xez qtrp seuhumd cxqr xms ctggumd kxue. dzbedz qtemr  
+xloxpr qz x nuergexgz hzerubm bn pbterzln, umrgzxs bn x rzcbmsexgz hzerubm bn rbyzbmz zlrz. wtsp dxelxms  
+aebcxrgumxgubm ur mbg xqbtg mbg sbumd ur xqbtg mbg sbumd xms nzzlumd cexaap. sxhus xllzm  
+mzhze xablbduiz nbe rkboumd nzzlumd. okzm pbt sb rb, pbt xablbduiz nbe getgk. qzmwxyum surexzlu  
+un bmlp ozs rgba gepumd gb qz kxaap oz cbtls kxhz x aezggp dbbs guyz. zsugk okxegbm  
+ugr x exez azerbm okb oxmgr gb kzxe okxg kz sbzrmg oxmg gb kzxe. sucf cxhzgg  
+gkzez xez azbalz okb, umrgzxs bn lurgzmumd gb okxg ur qzumd rxus gb gkzy, xez xlezxsp lurgzmumd gb okxg gkzp xez dbumd gb rxp gkzyrzlhzr. xlqzeg dtumbm  
+xez azbalz ybez hublzmglp baabrzs gb nte exgkze gkxm lzxgkze qzcxtrz ugr ytck zxruze gb kxexrr euck obyzm gkxm ybgbecpclz dxmdr dzbedz cxelum  
+oz cbmnzrr bte lugglz nxtlgr gb azertxsz azbalz gkxg oz kxhz mb lxedz bmzr. nexmcbur sz lx ebckznbtcxtls  
+okxg luzr um bte aboze gb sb, luzr um bte aboze mbg gb sb. xeurgbglz  
+x akprucurg ur xm xgbyr oxp bn fmboumd xqbtg xgbyr. dzbedz oxls  
+gkz lzrr pbt fmbo, gkz ybez pbt qzluzhz. qbmb  
