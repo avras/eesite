@@ -5,7 +5,7 @@ title: EE 720 Spring 2019
 #### EE 720: An Introduction to Number Theory and Cryptography (Spring 2019)
   - **Instructor:** [Saravanan Vijayakumaran](http://www.ee.iitb.ac.in/~sarva)
   - **Schedule:** Slot 12, Monday and Thursday (5:30pm - 6:55pm) 
-  - **Location:** LC 301
+  - **Location:** LH 301
 
 ##### Course Content
   - Perfectly Secret Encryption
@@ -29,3 +29,4 @@ title: EE 720 Spring 2019
 ##### Lecture Outlines
   - [Lecture 01](/courses/EE720/2019/notes/lecture-01.pdf)
   - [Lecture 02](/courses/EE720/2019/notes/lecture-02.pdf)
+  - [Lecture 03](/courses/EE720/2019/notes/lecture-03.pdf)
