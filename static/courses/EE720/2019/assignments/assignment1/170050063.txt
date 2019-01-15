@@ -1,0 +1,69 @@
+EE720 Assignment 1 for 170050063
+
+1. Decode the following ciphertext which has been encrypted using Caesar's cipher [2 points].
+
+hgxfdwlrq... kdv surgxfhg d ydvw srsxodwlrq deoh wr uhdg exw xqdeoh wr glvwlqjxlvk zkdw lv zruwk uhdglqj. j. p. wuhyhobdq  
+
+
+2. Decode the following ciphertext which has been encrypted using ROT-13 [2 points].
+
+vs ng svefg lbh qbag fhpprrq, svaq bhg vs gur ybfre trgf nalguvat. ovyy ylba  
+
+
+3. Suppose some English plaintext with the following letter frequencies has been encrypted using a substitution cipher.
+a : 0.0793
+b : 0.0174
+c : 0.0368
+d : 0.0368
+e : 0.1322
+f : 0.0123
+g : 0.0355
+h : 0.0438
+i : 0.0741
+j : 0.0013
+k : 0.0129
+l : 0.0426
+m : 0.0200
+n : 0.0806
+o : 0.0729
+p : 0.0213
+q : 0.0000
+r : 0.0548
+s : 0.0613
+t : 0.0741
+u : 0.0309
+v : 0.0155
+w : 0.0181
+x : 0.0019
+y : 0.0200
+z : 0.0039
+Recover the key used to produce the following ciphertext. [6 points].
+The key should be in the following format:
+
+a : x
+b : w
+ ... 
+z : j
+
+Ciphertext begins below:
+
+wsncj nc gienznpo no enrs wsncj x liizwxee pixpk. vid kxus zi ws ofxmz scidjk zi dcysmozxcy zks jxfs, xcy ydfw scidjk zi zkncr nzo nfgimzxcz. sdjscs fppxmzkv  
+zksms no x jmsxz ynllsmscps wszbssc bimmv xcy picpsmc. x bimmnsy gsmoic osso x gmiwesf, xcy x picpsmcsy gsmoic oieuso x gmiwesf. kxmiey ozsgksco  
+kxggncsoo no zks xwoscps il ozmnuncj lim kxggncsoo. pkxcjzhd  
+pidmxjs no jmxps dcysm gmsoodms. smcsoz ksfncjbxv  
+nl vidm gxmsczo csusm kxy pkneymsc, pkxcpso xms vid bicz, snzksm. ynpr pxuszz  
+vid fdoz ws zks pkxcjs vid bnok zi oss nc zks bimey. jxcykn  
+xcv pifgxcv exmjs scidjk zi kxus x msosxmpk exw no zii exmjs zi enozsc zi nz. xexc rxv  
+csusm ws xlmxny zi exdjk xz vidmosel, xlzsm xee, vid pidey ws fnooncj idz ic zks airs il zks psczdmv. yxfs sycx susmxjs  
+ciz susmvzkncj zkxz pxc ws pidczsy pidczo, xcy ciz susmvzkncj zkxz pidczo pxc ws pidczsy. xewsmz sncozsnc  
+zkios bki wsensus nc zsesrncsznpo, mxnos fv kxcy. rdmz uiccsjdz  
+onfges, pesxm gdmgios xcy gmncpngeso jnus mnos zi pifgesq xcy nczseenjscz wskxunim. pifgesq mdeso xcy msjdexznico jnus mnos zi onfges xcy ozdgny wskxunim.  yss kipr  
+vid yicz jsz xcvzkncj pesxc bnzkidz jszzncj oifszkncj seos ynmzv. pspne wxqzsm  
+ymsxf xo nl videe enus limsusm. enus xo nl videe yns ziyxv. axfso ysxc  
+xorncj x bimrncj bmnzsm bkxz ks zkncro xwidz pmnznpo no enrs xorncj x exfggioz kib nz lsseo xwidz yijo. pkmnozigksm kxfgzic  
+n icps bxczsy zi wspifs xc xzksnoz, wdz n jxus dg  zksv kxus ci kienyxvo. ksccv vidcjfxc  
+opnscps no imjxcnhsy rcibesyjs. bnoyif no imjxcnhsy enls. nffxcdse rxcz  
+x pseswmnzv no x gsmoic bki bimro kxmy xee kno enls zi wspifs bsee rcibc, zksc bsxmo yxmr jexooso zi xuiny wsncj mspijcnhsy. lmsy xeesc  
+odppsoo no jszzncj bkxz vid bxcz. kxggncsoo no bxczncj bkxz vid jsz. yxes pxmcsjns  
+opnscps no imjxcnhsy rcibesyjs. bnoyif no imjxcnhsy enls. nffxcdse rxcz  
+gsiges pxcciz ynopiusm csb excyo dczne zksv kxus zks pidmxjs zi eios onjkz il zks okims. xcym jnys  
