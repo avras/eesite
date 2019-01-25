@@ -33,6 +33,7 @@ title: EE 720 Spring 2019
   - [Lecture 04](/courses/EE720/2019/notes/lecture-04.pdf)
   - [Lecture 05](/courses/EE720/2019/notes/lecture-05.pdf)
   - [Lecture 06](/courses/EE720/2019/notes/lecture-06.pdf)
+  - [Lecture 07](/courses/EE720/2019/notes/lecture-07.pdf)
 
 ##### Assignments
   - [Assignment 1](/courses/EE720/2019/assignments/assignment1.pdf)
