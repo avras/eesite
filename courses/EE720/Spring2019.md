@@ -40,3 +40,4 @@ title: EE 720 Spring 2019
 ##### Assignments
   - [Assignment 1](/courses/EE720/2019/assignments/assignment1.pdf)
   - [Assignment 2](/courses/EE720/2019/assignments/assignment2.pdf)
+  - [Assignment 3](/courses/EE720/2019/assignments/assignment3.pdf)
