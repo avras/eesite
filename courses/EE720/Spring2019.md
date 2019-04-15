@@ -50,6 +50,7 @@ title: EE 720 Spring 2019
   - [Lecture 21](/courses/EE720/2019/notes/lecture-21.pdf)
   - [Lecture 22](/courses/EE720/2019/notes/lecture-22.pdf)
   - [Lecture 23](/courses/EE720/2019/notes/lecture-23.pdf)
+  - [Lecture 24](/courses/EE720/2019/notes/lecture-24.pdf)
 
 ##### Assignments
   - [Assignment 1](/courses/EE720/2019/assignments/assignment1.pdf)
@@ -60,3 +61,4 @@ title: EE 720 Spring 2019
 ##### Exams
   - [Quiz 1](/courses/EE720/2019/exams/quiz1.pdf)
   - [Midsem](/courses/EE720/2019/exams/midsem.pdf)
+  - [Quiz 2](/courses/EE720/2019/exams/quiz2.pdf)
