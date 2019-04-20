@@ -24,7 +24,12 @@ title: Projects
     **Co-PIs:** Profs. Sibi Raj B. Pillai and Sachin B. Patkar
 
 #### Consultancy Projects
-    
+
+  1. White Paper on the Security of the Bitcoin Protocol\
+    **Funding Agency:** [Zebpay](https://www.zebpay.com/)\
+    **Duration:** Apr 2018--May 2018\
+    **Abstract:** A gentle introduction to the Bitcoin protocol followed by a discussion of its security properties. [Download PDF](./bitcoin/zebpay-whitepaper.pdf)
+
   1. Consultancy Support for Modernization of the Mumbai Fire Brigade Control and Command Infrastructure\
     **Funding Agency:** Mumbai Fire Brigade\
     **Duration:** Jun 2013--Jun 2017\
