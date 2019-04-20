@@ -62,3 +62,4 @@ title: EE 720 Spring 2019
   - [Quiz 1](/courses/EE720/2019/exams/quiz1.pdf)
   - [Midsem](/courses/EE720/2019/exams/midsem.pdf)
   - [Quiz 2](/courses/EE720/2019/exams/quiz2.pdf)
+  - [Quiz 3](/courses/EE720/2019/exams/quiz3.pdf)
