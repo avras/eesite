@@ -48,7 +48,8 @@ Indian Institute of Technology Bombay\
   1. S. Aedudodla, **SV**, T. F. Wong, "Timing Acquisition in Ultra-wideband Communication Systems," *IEEE Transactions on Vehicular Technology*, vol. 54, no. 5, pp. 1570--1583, Sep. 2005. *Invited paper*. [[doi]](http://dx.doi.org/10.1109/TVT.2005.855495)
 
 ##### Conference
-  1. A. Dutta, **SV**, " MProve: A Proof of Assets Protocol for Monero Exchanges," *IEEE Security & Privacy on the Blockchain (IEEE S&B) 2019*, Stockholm, Sweden, Jun. 2019. [[preprint]](https://eprint.iacr.org/2018/1210)
+  1. A. Dutta, **SV**, "Revelio: A MimbleWimble Proof of Reserves Protocol," *Crypto Valley Conference on Blockchain Technology (CVCBT) 2019*, Zug, Switzerland, Jun. 2019. [[preprint]](https://eprint.iacr.org/2019/684)
+  1. A. Dutta, **SV**, "MProve: A Proof of Assets Protocol for Monero Exchanges," *IEEE Security & Privacy on the Blockchain (IEEE S&B) 2019*, Stockholm, Sweden, Jun. 2019. [[preprint]](https://eprint.iacr.org/2018/1210)
   1. A. Dutta, **SV**, "Rewrite Cost optimal Rank Modulation Codes in $S_4$ and $S_5$," *Twenty Fourth National Conference on Communications (NCC 2018)*, Hyderabad, India, Feb. 2018. [[doi]](https://doi.org/10.1109/NCC.2018.8600115)
   1. **SV**, "LFSR identification using Groebner bases," *Twenty Second National Conference on Communications (NCC 2016)*, Guwahati, India, Mar. 2016. [[doi]](http://dx.doi.org/10.1109/NCC.2016.7561164)
   1. **SV**, "Identifying block codes using Groebner bases," *IEEE International Conference on Communications (ICC 2015)*, London, UK, Jun. 2015. [[doi]](http://dx.doi.org/10.1109/ICC.2015.7249019)
