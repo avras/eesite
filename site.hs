@@ -29,7 +29,8 @@ main = hakyll $ do
             >>= relativizeUrls
 
     match ( "static/courses/**" .||.
-            "static/bitcoin/**"
+            "static/bitcoin/**" .||.
+            "static/monero/**"
           ) $ do
         route $ (gsubRoute "static/" (const ""))
         compile copyFileCompiler
