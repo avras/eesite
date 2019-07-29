@@ -28,3 +28,9 @@ Any **one** of EE 720 or CS 406 or or CS 416 or CS 649 or CS 742
   - 20% Assignments, 50% Exams, 20% Project, 10% Attendance
   - Relative grading
   - No audits
+
+##### Slides
+
+| Lecture Date    | Title | Contents |
+|:-------:|:----- | --------:|
+| Jul 29  | [Course Information](./2019/slides/CourseInfo.pdf) | Syllabus, evaluation policy |
