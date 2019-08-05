@@ -35,3 +35,4 @@ Any **one** of EE 720 or CS 406 or or CS 416 or CS 649 or CS 742
 |:-------:|:----- |
 | Jul 29  | [Course Information](./2019/slides/CourseInfo.pdf) |
 | Jul 30  | [Bitcoin Introduction](./2019/slides/BitcoinIntroduction.pdf) |
+| Aug 05  | [Bitcoin Transactions](./2019/slides/BitcoinTransactions.pdf) |
