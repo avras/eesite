@@ -37,3 +37,7 @@ Any **one** of EE 720 or CS 406 or or CS 416 or CS 649 or CS 742
 | Jul 30  | [Bitcoin Introduction](./2019/slides/BitcoinIntroduction.pdf) |
 | Aug 05  | [Bitcoin Transactions](./2019/slides/BitcoinTransactions.pdf) |
 | Aug 08  | [Elliptic Curve Cryptography in Bitcoin](./2019/slides/BitcoinECC.pdf) |
+
+##### Assignments
+
+  - [Assignment 1](./2019/assignments/assignment1.pdf)
