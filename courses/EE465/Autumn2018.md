@@ -53,3 +53,8 @@ As per [MTech rules](http://www.iitb.ac.in/newacadhome/MTechRulesupdate201805Jul
   - [Assignment 4](./2018/assignments/assignment4.pdf)
   - [Assignment 5](./2018/assignments/assignment5.pdf)
   - [Assignment 6](./2018/assignments/assignment6.pdf)
+
+#### Exams
+
+  - [Midsem](./2018/exams/midsem.pdf)
+  - [Endsem](./2018/exams/endsem.pdf)
