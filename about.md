@@ -22,6 +22,7 @@ Indian Institute of Technology Bombay\
 #### Work Experience
 
   - 2017 - present, Associate Professor, EE, IIT Bombay
+  - May to June 2018, Visiting Researcher, NTU Singapore
   - 2009 - 2017, Assistant Professor, EE, IIT Bombay
   - 2007 - 2009, Software Development Engineer in Test, Microsoft, Redmond
   - 2006, Research Intern, EPFL
@@ -30,12 +31,19 @@ Indian Institute of Technology Bombay\
   - Departmental Award for Excellence in Teaching, IIT Bombay, 2017
   - Dr. Shankar Dayal Sharma Gold Medal, IIT Guwahati, 2001
 
+#### Administrative Activities
+  - Member of DPC (Mar 2019 -- present)
+  - Member of DPGC (Mar 2019 -- present)
+  - Member of IoE committee on Data, Information Science, and Computing (Mar 2019 -- present)
+  - Faculty in-charge of PC lab of EE department (Feb 2010 -- Dec 2016)
+
 #### Papers
   - [Google Scholar](https://scholar.google.co.in/citations?user=Q_HoVqAAAAAJ&hl=en)
   - [ORCID](http://orcid.org/0000-0002-0203-0276)
 
 ##### Journal
 
+  1. A. D. Yardi, **SV**, "Properties of syndrome distribution for blind reconstruction of cyclic codes" *Applicable Algebra in Engineering, Communication and Computing*, Jun. 2019. [[doi]](http://dx.doi.org/10.1007/s00200-019-00392-0)
   1. **SV**, "Largest Permutation Codes with the Kendall $\tau$-Metric in $S_5$ and $S_6$," *IEEE Communications Letters*, vol. 20, no. 10, pp. 1912--1915, Oct. 2016. [[doi]](http://dx.doi.org/10.1109/LCOMM.2016.2591003)
   1. A. D. Yardi, **SV**, A. Kumar, "Blind Reconstruction of Binary Cyclic Codes From Unsynchronized Bitstream," *IEEE Transactions on Communications*, vol. 64, no. 7, pp. 2693--2706, Jul. 2016. [[doi]](http://dx.doi.org/10.1109/TCOMM.2016.2561931)
   1. **SV**, D. Pal, "On the Minimum Redundancy of SEC-DAEC-TAEC Binary Linear Block Codes," *IEEE Communications Letters*, vol. 20, no. 4, pp. 652--656, Apr. 2016. [[doi]](http://dx.doi.org/10.1109/LCOMM.2016.2532884)
@@ -48,8 +56,8 @@ Indian Institute of Technology Bombay\
   1. S. Aedudodla, **SV**, T. F. Wong, "Timing Acquisition in Ultra-wideband Communication Systems," *IEEE Transactions on Vehicular Technology*, vol. 54, no. 5, pp. 1570--1583, Sep. 2005. *Invited paper*. [[doi]](http://dx.doi.org/10.1109/TVT.2005.855495)
 
 ##### Conference
-  1. A. Dutta, **SV**, "Revelio: A MimbleWimble Proof of Reserves Protocol," *Crypto Valley Conference on Blockchain Technology (CVCBT) 2019*, Zug, Switzerland, Jun. 2019. [[preprint]](https://eprint.iacr.org/2019/684)
-  1. A. Dutta, **SV**, "MProve: A Proof of Assets Protocol for Monero Exchanges," *IEEE Security & Privacy on the Blockchain (IEEE S&B) 2019*, Stockholm, Sweden, Jun. 2019. [[preprint]](https://eprint.iacr.org/2018/1210)
+  1. A. Dutta, **SV**, "Revelio: A MimbleWimble Proof of Reserves Protocol," *2019 Crypto Valley Conference on Blockchain Technology (CVCBT)*, Zug, Switzerland, Jun. 2019. [[preprint]](https://eprint.iacr.org/2019/684) [[doi]](https://doi.org/10.1109/CVCBT.2019.000-5)
+  1. A. Dutta, **SV**, "MProve: A Proof of Assets Protocol for Monero Exchanges," *2019 IEEE European Symposium of Security and Privacy Workshops*, Stockholm, Sweden, Jun. 2019. [[preprint]](https://eprint.iacr.org/2018/1210) [[doi]](https://doi.org/10.1109/EuroSPW.2019.00043)
   1. A. Dutta, **SV**, "Rewrite Cost optimal Rank Modulation Codes in $S_4$ and $S_5$," *Twenty Fourth National Conference on Communications (NCC 2018)*, Hyderabad, India, Feb. 2018. [[doi]](https://doi.org/10.1109/NCC.2018.8600115)
   1. **SV**, "LFSR identification using Groebner bases," *Twenty Second National Conference on Communications (NCC 2016)*, Guwahati, India, Mar. 2016. [[doi]](http://dx.doi.org/10.1109/NCC.2016.7561164)
   1. **SV**, "Identifying block codes using Groebner bases," *IEEE International Conference on Communications (ICC 2015)*, London, UK, Jun. 2015. [[doi]](http://dx.doi.org/10.1109/ICC.2015.7249019)
