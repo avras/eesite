@@ -41,6 +41,8 @@ Any **one** of EE 720 or CS 406 or or CS 416 or CS 649 or CS 742
 | Aug 26  | [Bitcoin Contracts](./2019/slides/BitcoinContracts.pdf) |
 | Aug 27  | [Ethereum Introduction](./2019/slides/EthereumIntroduction.pdf) |
 | Aug 29  | [Ethereum Transactions](./2019/slides/EthereumTransactions.pdf) |
+| Sep 03  | [SHA256](./2019/slides/SHA256.pdf) |
+| Sep 03  | [Ethereum Blocks](./2019/slides/EthereumBlocks.pdf) |
 
 ##### Assignments
 
