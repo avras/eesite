@@ -47,6 +47,7 @@ Any **one** of EE 720 or CS 406 or or CS 416 or CS 649 or CS 742
 | Sep 23  | [Monero Transactions](./2019/slides/MoneroTransactions.pdf) |
 | Sep 24  | [Stellar Introduction](./2019/slides/StellarIntroduction.pdf) |
 | Sep 26  | [Stellar Transactions](./2019/slides/StellarTransactions.pdf) |
+| Sep 30  | [Zero Knowledge Proofs](./2019/slides/ZeroKnowledgeProofs.pdf) |
 
 ##### Assignments
 
