@@ -52,6 +52,7 @@ Any **one** of EE 720 or CS 406 or or CS 416 or CS 649 or CS 742
 ##### Assignments
 
   - [Assignment 1](./2019/assignments/assignment1.pdf)
+  - [Assignment 2](./2019/assignments/assignment2.pdf)
 
 ##### Exams
   - [Quiz 1](./2019/exams/quiz1.pdf)
