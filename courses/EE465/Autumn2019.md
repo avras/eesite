@@ -60,3 +60,4 @@ Any **one** of EE 720 or CS 406 or or CS 416 or CS 649 or CS 742
 ##### Exams
   - [Quiz 1](./2019/exams/quiz1.pdf)
   - [Midsem](./2019/exams/midsem.pdf)
+  - [Quiz 2](./2019/exams/quiz2.pdf)
