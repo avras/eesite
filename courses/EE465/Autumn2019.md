@@ -15,9 +15,6 @@ title: EE 465 Autumn 2019
   - zkSNARKs
   - Hyperledger Fabric
   - Quorum
-  - Corda
-  - Blockstack
-  - IPFS
   - Mimblewimble
 
 ##### Prerequisites
