@@ -50,6 +50,7 @@ Any **one** of EE 720 or CS 406 or or CS 416 or CS 649 or CS 742
 | Sep 30  | [Zero-Knowledge Proofs](./2019/slides/ZeroKnowledgeProofs.pdf) |
 | Oct 14  | [Zero-Knowledge Proofs of Knowledge](./2019/slides/ZKProofsOfKnowledge.pdf) |
 | Oct 15  | [zkSNARKs](./2019/slides/zkSNARKs.pdf) |
+| Nov 04  | [Mining Miscellanea](./2019/slides/MiningMisc.pdf) |
 
 ##### Assignments
 
