@@ -56,6 +56,7 @@ Indian Institute of Technology Bombay\
   1. S. Aedudodla, **SV**, T. F. Wong, "Timing Acquisition in Ultra-wideband Communication Systems," *IEEE Transactions on Vehicular Technology*, vol. 54, no. 5, pp. 1570--1583, Sep. 2005. *Invited paper*. [[doi]](http://dx.doi.org/10.1109/TVT.2005.855495)
 
 ##### Conference
+  1. A. Dutta, A. Jana, **SV**, "Nummatus: A Privacy Preserving Proof of Reserves Protocol for Quisquis," *20th International Conference on Cryptology in India (Indocrypt 2019)*, Hyderabad, India, Dec. 2019. [[doi]](https://doi.org/10.1007/978-3-030-35423-7_10)
   1. A. Dutta, **SV**, "Revelio: A MimbleWimble Proof of Reserves Protocol," *2019 Crypto Valley Conference on Blockchain Technology (CVCBT)*, Zug, Switzerland, Jun. 2019. [[preprint]](https://eprint.iacr.org/2019/684) [[doi]](https://doi.org/10.1109/CVCBT.2019.000-5)
   1. A. Dutta, **SV**, "MProve: A Proof of Assets Protocol for Monero Exchanges," *2019 IEEE European Symposium of Security and Privacy Workshops*, Stockholm, Sweden, Jun. 2019. [[preprint]](https://eprint.iacr.org/2018/1210) [[doi]](https://doi.org/10.1109/EuroSPW.2019.00043)
   1. A. Dutta, **SV**, "Rewrite Cost optimal Rank Modulation Codes in $S_4$ and $S_5$," *Twenty Fourth National Conference on Communications (NCC 2018)*, Hyderabad, India, Feb. 2018. [[doi]](https://doi.org/10.1109/NCC.2018.8600115)
