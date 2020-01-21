@@ -25,3 +25,7 @@ title: EE 720 Spring 2020
   - 5% Attendance, 10% Assignments, 20% Quizzes, 25% Midsem, 40% Endsem
   - Relative grading
   - For AU, final score should be at CC level or above
+
+##### Lecture Outlines
+  - [Lecture 01](/courses/EE720/2020/notes/lecture-01.pdf)
+  - [Lecture 02](/courses/EE720/2020/notes/lecture-02.pdf)
