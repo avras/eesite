@@ -1,0 +1,61 @@
+EE720 Assignment 1 for 19V98V001
+
+1. Decode the following ciphertext which has been encrypted using Caesar's cipher [2 points].
+
+li l kdyh vhhq ixuwkhu lw lv eb vwdqglqj rq wkh vkrxoghuv ri jldqwv. lvddf qhzwrq  
+
+
+2. Decode the following ciphertext which has been encrypted using ROT-13 [2 points].
+
+nyy zra ner senhqf. gur bayl qvssrerapr orgjrra gurz vf gung fbzr nqzvg vg. v zlfrys qral vg. u. y. zrapxra  
+
+
+3. Suppose some English plaintext with the following letter frequencies has been encrypted using a substitution cipher.
+a : 0.0770
+b : 0.0216
+c : 0.0233
+d : 0.0350
+e : 0.1225
+f : 0.0146
+g : 0.0239
+h : 0.0455
+i : 0.0782
+j : 0.0018
+k : 0.0128
+l : 0.0414
+m : 0.0251
+n : 0.0823
+o : 0.0805
+p : 0.0117
+q : 0.0006
+r : 0.0589
+s : 0.0543
+t : 0.0968
+u : 0.0338
+v : 0.0070
+w : 0.0245
+x : 0.0018
+y : 0.0245
+z : 0.0006
+Recover the key used to produce the following ciphertext [6 points].
+
+wzumv um dpiuoues us iubz wzumv x nppowxii epxek. rpc kxfz op wz syxao zmpcvk op cmhzasoxmh okz vxyz, xmh hcyw zmpcvk op okumb uos uydpaoxmo. zcvzmz yeexaokr  
+x gusz yxm vzos ypaz csz napy kus zmzyuzs okxm x nppi napy kus nauzmhs. wxioxsxa vaxeuxm  
+oacir vazxo yxhmzss exmmpo wz xekuzfzh guokpco suvmunuexmo umoziiuvzmez.  kzmaub oubbxmzm  
+un rpc xaz mpo eauoueuqzh, rpc yxr mpo wz hpumv ycek. hpmxih k. acysnzih  
+opp wxh okz pmir dzpdiz gkp bmpg kpg op acm okz epcmoar xaz wcsr haufumv exws xmh ecooumv kxua. vzpavz wcams  
+kz bmpgs xii xwpco xao, wco kz hpzsmo bmpg gkxo kz iubzs. lxyzs okcawza  
+okz hunnzazmez wzogzzm vzmucs xmh socduhuor us okxo vzmucs kxs uos iuyuos. xiwzao zumsozum  
+dapeaxsoumxoupm us okz xao pn bzzdumv cd guok rzsozahxr. hpm yxatcus  
+pmir okz yzhupeaz xaz xigxrs xo okzua wzso. lzxm vuaxchpcj  
+gkzm rpc suo guok x muez vuai npa ogp kpcas, rpc okumb uos pmir x yumcoz. wco gkzm rpc suo pm x kpo sopfz npa x yumcoz, rpc okumb uos ogp kpcas. okxos  azixoufuor. xiwzao zumsozum    
+okz huazeo csz pn npaez us scek x dppa spicoupm op xmr dapwizy, uo us vzmzaxiir zydiprzh pmir wr syxii ekuihazm xmh ixavz mxoupms. hxfuh nauzhyxm  
+uyxvumxoupm us ypaz uydpaoxmo okxm bmpgizhvz. npa bmpgizhvz us iuyuozh op xii gz mpg bmpg xmh cmhzasoxmh, gkuiz uyxvumxoupm zywaxezs okz zmouaz gpaih, xmh xii okzaz zfza guii wz op bmpg xmh cmhzasoxmh. xiwzao zumsozum  
+uo us wzooza op nxui xo rpca pgm iunz okxm op sceezzh xo spyzpmz ziszs. xmha vuhz  
+wzooza op gauoz npa rpcaszin xmh kxfz mp dcwiue, okxm op gauoz npa okz dcwiue xmh kxfz mp szin. eraui epmmpiir  
+okz ypaz rpc bmpg, okz ypaz rpc azxiusz kpg ycek rpc hpmo bmpg  okz izss rpc bmpg, okz ypaz rpc okumb rpc bmpg. hxfuh o. nazzyxm  
+okzaz xaz dzpdiz gkp, umsozxh pn iusozmumv op gkxo us wzumv sxuh op okzy, xaz xiazxhr iusozmumv op gkxo okzr xaz vpumv op sxr okzyszifzs. xiwzao vcumpm  
+gz xaz gkxo gz azdzxozhir hp zjeziizmez, okzm, us mpo xm xeo wco x kxwuo. xausopoiz  
+gauoumv us vpph, okumbumv us wzooza. eizfzamzss us vpph, dxouzmez us wzooza kzayxmm kzssz  
+okpsz gkp exmmpo azyzywza okz dxso xaz epmhzymzh op azdzxo uo. vzpavz sxmoxrxmx  
+pmir okz yzhupeaz xaz xigxrs xo okzua wzso. lzxm vuaxchpcj  

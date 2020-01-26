@@ -1,0 +1,61 @@
+EE720 Assignment 1 for 180050015
+
+1. Decode the following ciphertext which has been encrypted using Caesar's cipher [2 points].
+
+wkhuhv vr pxfk frphgb rq whohylvlrq. grhv wkdw fdxvh frphgb lq wkh vwuhhwv glfn fdyhww  
+
+
+2. Decode the following ciphertext which has been encrypted using ROT-13 [2 points].
+
+vq engure yvir jvgu n tbbq dhrfgvba guna n onq nafjre. nelru sevzre  
+
+
+3. Suppose some English plaintext with the following letter frequencies has been encrypted using a substitution cipher.
+a : 0.0826
+b : 0.0210
+c : 0.0252
+d : 0.0322
+e : 0.1141
+f : 0.0189
+g : 0.0273
+h : 0.0532
+i : 0.0854
+j : 0.0049
+k : 0.0056
+l : 0.0427
+m : 0.0238
+n : 0.0770
+o : 0.0721
+p : 0.0168
+q : 0.0007
+r : 0.0630
+s : 0.0623
+t : 0.0896
+u : 0.0273
+v : 0.0112
+w : 0.0168
+x : 0.0014
+y : 0.0238
+z : 0.0007
+Recover the key used to produce the following ciphertext [6 points].
+
+dn qrc areuc becfuq wduh, dqf lc. kdlly pgnncq  
+xuy oelaxuy zxwhc cueghr qe rxvc x wcfcxwor zxp df qee zxwhc qe zdfqcu qe dq. xzxu ixy  
+db wxqrcw zdvc jdqr x heeb mgcfqdeu qrxu x pxb xufjcw. xwycr nwdlcw  
+dq df du fcznzdldqxqdeu qrxq x lxfqcw ndwfq frejf rdlfczn. kerxuu hecqrc  
+jrcu d be heeb, d nccz heeb jrcu d be pxb, d nccz pxb, xub qrxq df ly wczdhdeu. xpwxrxl zduoezu  
+dn yeg rxqc x acwfeu, yeg rxqc felcqrduh du rdl qrxq df axwq en yegwfczn. jrxq dfuq axwq en egwfczvcf becfuq bdfqgwp gf. rcwlxuu rcffc  
+x lyqr df x wczdhdeu du jrdor ue euc xuy zeuhcw pczdcvcf. kxlcf ncdpzclxu  
+qwgqr evcw rxwleuy. zxwwy peffdby   
+qwyduh qe bcqcwlduc jrxq df heduh eu du qrc jewzb py wcxbduh ucjfaxacwf df zdic qwyduh qe qczz qrc qdlc py jxqorduh qrc fcoeub rxub en x ozeoi. pcu rcorq  
+yeg oxu be xuyqrduh, pgq ueq cvcwyqrduh. bxvdb xzzcu  
+ctacwdcuoc df qrxq lxwvczegf qrduh qrxq cuxpzcf yeg qe wcoehudsc x ldfqxic jrcu yeg lxic dq xhxdu. nwxuizdu a. keucf  
+du heb jc qwgfq  xzz eqrcwf pwduh bxqx. bw. cbjxwbf bclduh 
+oxwcngz. jc beuq jxuq qe zcxwu nwel qrdf. pdzz jxqqcwfeu  
+dn yeg oxuq pc x heeb ctxlazc, qrcu yegzz kgfq rxvc qe pc x rewwdpzc jxwuduh. oxqrcwduc xdwb  
+oelagqcw fodcuoc df ue lewc xpegq oelagqcwf qrxu xfqweuely df xpegq qczcfoeacf. c. j. bdkifqwx  
+xzz qwgqr axffcf qrweghr qrwcc fqxhcf. ndwfq, dq df wdbdogzcb. fcoeub, dq df vdezcuqzy eaaefcb. qrdwb, dq df xoocaqcb xf pcduh fczncvdbcuq. xwqrgw foreacurxgcw  
+dn yegw axwcuqf ucvcw rxb ordzbwcu, orxuocf xwc yeg jeuq, cdqrcw. bdoi oxvcqq  
+qreghrq df gfcngz jrcu dq leqdvxqcf new xoqdeu, xub x rdubwxuoc jrcu dq fgpfqdqgqcf new xoqdeu. pdzz wxcbcw  
+x lyqr df x wczdhdeu du jrdor ue euc xuy zeuhcw pczdcvcf. kxlcf ncdpzclxu  
+qrc udoc axwq xpegq pcduh x acffdldfq df qrxq yeg xwc oeufqxuqzy pcduh cdqrcw awevcu wdhrq ew azcxfxuqzy fgwawdfcb. hcewhc n. jdzz  

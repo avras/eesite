@@ -1,0 +1,61 @@
+EE720 Assignment 1 for 160050070
+
+1. Decode the following ciphertext which has been encrypted using Caesar's cipher [2 points].
+
+wkhuh lv d juhdw gliihuhqfh ehwzhhq zruub dqg frqfhuq. d zruulhg shuvrq vhhv d sureohp, dqg d frqfhuqhg shuvrq vroyhv d sureohp. kdurog vwhskhqv  
+
+
+2. Decode the following ciphertext which has been encrypted using ROT-13 [2 points].
+
+lbh pna qvfpbire jung lbhe rarzl srnef zbfg ol bofreivat gur zrnaf ur hfrf gb sevtugra lbh. revp ubssre  
+
+
+3. Suppose some English plaintext with the following letter frequencies has been encrypted using a substitution cipher.
+a : 0.0764
+b : 0.0207
+c : 0.0275
+d : 0.0331
+e : 0.1309
+f : 0.0234
+g : 0.0145
+h : 0.0503
+i : 0.0654
+j : 0.0041
+k : 0.0076
+l : 0.0358
+m : 0.0289
+n : 0.0799
+o : 0.0847
+p : 0.0110
+q : 0.0021
+r : 0.0551
+s : 0.0599
+t : 0.0868
+u : 0.0331
+v : 0.0145
+w : 0.0193
+x : 0.0034
+y : 0.0289
+z : 0.0028
+Recover the key used to produce the following ciphertext [6 points].
+
+skyilryis lpi dkxe giss ldxqigie rs giss ldxqigie okd x dixskt. middf sirtoige  
+r ektl utkj lpi uif lk snzziss, anl lpi uif lk oxrgndi rs ldfrtb lk cgixsi iqidfakef. argg zksaf  
+rt yxlpiyxlrzs fkn ektl nteidslxte lprtbs. fkn mnsl bil nsie lk lpiy. mkpxtt qkt tinyxtt  
+fkn zxt erszkqid jpxl fknd itiyf oixds yksl af kasidqrtb lpi yixts pi nsis lk odrbplit fkn. idrz pkooid  
+prslkdf lixzpis ns lpxl yit xte txlrkts aipxqi jrsigf ktzi lpif pxqi ivpxnslie xgg klpid xglidtxlrqis. xaax iaxt  
+lpi aisl zxd sxoilf eiqrzi rs x dixdqrij yrddkd jrlp x zkc rt rl. enegif ykkdi  
+xzwnxrtlxtzi, t. x cidskt jpky ji utkj jigg itknbp lk akddkj odky, anl tkl jigg itknbp lk gite lk. xyadksi aridzi  
+x srtbgi wnislrkt zxt ai ykdi rtognitlrxg lpxt x lpknsxte slxliyitls. ak aittill  
+lpi ktgf lprtb lpxl rtlidoidis jrlp yf gixdtrtb rs yf ienzxlrkt. xgaidl irtslirt  
+xt rtliggizlnxg rs x cidskt jpk pxs erszkqidie skyilprtb ykdi rtlidislrtb lpxt siv. xgekns pnvgif  
+zpxdxzlid rs jpxl fkn pxqi giol jpit fknqi gksl iqidflprtb fkn zxt gksi. iqxt isxd  
+lkk yxtf cikcgi xdi lprturtb ko sizndrlf rtslixe ko kcckdlntrlf. lpif siiy ykdi xodxre ko groi lpxt eixlp. mxyis o. afdtis  
+cikcgi zxttkl erszkqid tij gxtes ntlrg lpif pxqi lpi zkndxbi lk gksi srbpl ko lpi spkdi. xted brei  
+lpi xdl ko srycgrzrlf rs x cnhhgi ko zkycgivrlf. eknb pkdlkt  
+lpi dixg cdkagiy rs tkl jpilpid yxzprtis lprtu anl jpilpid yit ek. a. o. surttid  
+x orti wnklxlrkt rs x erxykte kt lpi ortbid ko x yxt ko jrl, xte x ciaagi rt lpi pxte ko x okkg. mksicp dknv  
+ro fkn xdi tkl zdrlrzrhie, fkn yxf tkl ai ekrtb ynzp. ektxge p. dnysoige  
+x zkyyrllii zxt yxui x eizrsrkt lpxl rs enyaid lpxt xtf ko rls yiyaids. exqre zkarlh  
+tk kti zxt yxui fkn oiig rtoidrkd jrlpknl fknd zktsitl. igixtkd dkksiqigl  
+xeqrzi rs jpxl ji xsu okd jpit ji xgdixef utkj lpi xtsjid anl jrsp ji eretl. idrzx mktb  

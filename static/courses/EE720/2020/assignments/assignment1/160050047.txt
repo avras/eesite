@@ -1,0 +1,61 @@
+EE720 Assignment 1 for 160050047
+
+1. Decode the following ciphertext which has been encrypted using Caesar's cipher [2 points].
+
+eholhyh wkrvh zkr duh vhhnlqj wkh wuxwk. grxew wkrvh zkr ilqg lw. dqgu jlgh  
+
+
+2. Decode the following ciphertext which has been encrypted using ROT-13 [2 points].
+
+na vagryyrpghny vf n crefba jub unf qvfpbirerq fbzrguvat zber vagrerfgvat guna frk. nyqbhf uhkyrl  
+
+
+3. Suppose some English plaintext with the following letter frequencies has been encrypted using a substitution cipher.
+a : 0.0826
+b : 0.0215
+c : 0.0201
+d : 0.0375
+e : 0.1069
+f : 0.0229
+g : 0.0278
+h : 0.0500
+i : 0.0785
+j : 0.0049
+k : 0.0118
+l : 0.0403
+m : 0.0250
+n : 0.0910
+o : 0.0875
+p : 0.0139
+q : 0.0021
+r : 0.0535
+s : 0.0549
+t : 0.0840
+u : 0.0326
+v : 0.0097
+w : 0.0188
+x : 0.0014
+y : 0.0194
+z : 0.0014
+Recover the key used to produce the following ciphertext [6 points].
+
+x mtzd aeckxktcz ts x jtxqczj cz kid mtzfdr cm x qxz cm ltk, xzj x wdooyd tz kid ixzj cm x mccy. vcsdwi rceg  
+tz fcj ld kresk  xyy ckidrs ortzf jxkx. jr. djlxrjs jdqtzf 
+tk ts odkkdr kc bzcl scqd cm kid aedsktczs kixz xyy cm kid xzsldrs. vxqds kierodr  
+qxz ixs kc semmdr. lidz id ixs zc rdxy xmmytnktczs, id tzpdzks scqd. vcsd qxrkt  
+wrcnxsktzxktcz ts zck xocek zck jctzf ts xocek zck jctzf xzj mddytzf nrxwwu. jxptj xyydz  
+kidrd ts czyu czd senndss  kc od xoyd kc swdzj ucer ytmd tz ucer clz lxu. nirtskcwidr qcrydu  
+kid tzkdyytfdzk qxz mtzjs xyqcsk dpdrukitzf rtjtneyces, kid sdzstoyd qxz ixrjyu xzukitzf. vcixzz lcymfxzf pcz fcdkid  
+kidrd ts zc kreki. kidrd ts czyu wdrndwktcz. feskxpd myxeodrk  
+czd jcf oxrbs xk scqdkitzf. xzj x iezjrdj jcfs oxrb xk kid scezj. nitzdsd wrcpdro  
+ycftn ltyy fdk uce mrcq x kc o. tqxftzxktcz ltyy kxbd uce dpdrulidrd. xyodrk dtzskdtz  
+sntdznd ts crfxzthdj bzclydjfd. ltsjcq ts crfxzthdj ytmd. tqqxzedy bxzk  
+kicsd lic odytdpd tz kdydbtzdktns, rxtsd qu ixzj. berk pczzdfek  
+ixym kid qczdu t swdzj cz xjpdrktstzf ts lxskdj  kid krceoyd ts t jczk bzcl litni ixym. vciz lxzxqxbdr 
+djenxktcz... ixs wrcjendj x pxsk wcweyxktcz xoyd kc rdxj oek ezxoyd kc jtsktzfetsi lixk ts lcrki rdxjtzf. f. q. krdpdyuxz  
+lidkidr uce kitzb uce nxz cr kitzb uce nxzk  uce xrd rtfik. idzru mcrj  
+djenxktcz ts lixk rdqxtzs xmkdr czd ixs mcrfckkdz lixk czd ixs ydxrzdj tz sniccy. xyodrk dtzskdtz  
+tzswtrxktcz ts mcr xqxkders. t vesk fdk kc lcrb. nienb nycsd  
+odtzf tz wcytktns ts ytbd odtzf x mcckoxyy ncxni. uce ixpd kc od sqxrk dzcefi kc ezjdrskxzj kid fxqd, xzj jeqo dzcefi kc kitzb tks tqwcrkxzk. defdzd qnnxrkiu  
+qu mrtdzjs kdyy qd t ixpd xz tzktqxnu wrcoydq. oek kidu jczk rdxyyu bzcl qd. fxrru sixzjytzf  
+x mtzd aeckxktcz ts x jtxqczj cz kid mtzfdr cm x qxz cm ltk, xzj x wdooyd tz kid ixzj cm x mccy. vcsdwi rceg  

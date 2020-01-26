@@ -1,0 +1,61 @@
+EE720 Assignment 1 for 180050013
+
+1. Decode the following ciphertext which has been encrypted using Caesar's cipher [2 points].
+
+wkh rqob wklqj wkdw lqwhuihuhv zlwk pb ohduqlqj lv pb hgxfdwlrq. doehuw hlqvwhlq  
+
+
+2. Decode the following ciphertext which has been encrypted using ROT-13 [2 points].
+
+qbag or nsenvq gb gnxr n ovt fgrc vs bar vf vaqvpngrq. lbh pnag pebff n punfz va gjb fznyy whzcf. qnivq yyblq trbetr  
+
+
+3. Suppose some English plaintext with the following letter frequencies has been encrypted using a substitution cipher.
+a : 0.0718
+b : 0.0237
+c : 0.0205
+d : 0.0321
+e : 0.1263
+f : 0.0199
+g : 0.0282
+h : 0.0449
+i : 0.0821
+j : 0.0045
+k : 0.0135
+l : 0.0474
+m : 0.0244
+n : 0.0744
+o : 0.0801
+p : 0.0154
+q : 0.0013
+r : 0.0641
+s : 0.0628
+t : 0.0910
+u : 0.0237
+v : 0.0090
+w : 0.0224
+x : 0.0000
+y : 0.0147
+z : 0.0019
+Recover the key used to produce the following ciphertext [6 points].
+
+oqanow hwqao gevoanqfz hewan woxtqfz ew te gevoanqfz hewan hwqaqfz. bofdxvqf lwxfrpqf  
+fe hqgo vxf okow hqgnot ae bo iecfzow. defxanxf ghqla  
+x sopobwqai qg x yowgef hne hewrg nxwt xpp nqg pqlo ae bosevo hopp rfehf, anof hoxwg txwr zpxggog ae xkeqt boqfz wosezfqmot. lwot xppof  
+hnof q hxg x bei q hxg aept anxa xfibeti secpt bosevo ywogqtofa. feh qv bozqffqfz ae bopqoko qa. spxwofso txwweh  
+qko boof awiqfz lew gevo aqvo ae tokopey x pqlogaipo anxa teogfa woucqwo vi ywogofso. zxwi awctoxc  
+qa axrog efpi efo twqfr ae zoa vo twcfr. ano awecbpo qg, q sxfa wovovbow ql qag ano anqwaoofan ew ano lecwaoofan. zoewzo bcwfg  
+xgrqfz x hewrqfz hwqaow hnxa no anqfrg xbeca swqaqsg qg pqro xgrqfz x pxvyyega neh qa loopg xbeca tezg. snwqgaeynow nxvyaef  
+q nxko vxto anqg poaaow pefzow anxf cgcxp bosxcgo q pxsr ano aqvo ae vxro qa gnewaow. bpxqgo yxgsxp  
+ano hnepo goswoa el pqlo qg ae bo qfaowogaot qf efo anqfz ywelecftpi xft qf x anecgxft anqfzg hopp. newxso hxpyepo  
+ano awecbpo hqan boqfz ycfsacxp qg anxa febetig anowo ae xyywosqxao qa. lwxfrpqf y. defog  
+q noxw q lewzoa  q goo q wovovbow  q te q cftowgaxft snqfogo ywekowb   
+q nxko fokow voa x vxf ge qzfewxfa anxa q secptfa poxwf gevoanqfz lwev nqv. zxpqpoe zxpqpoq  
+tefa bo xlwxqt ae axro x bqz gaoy ql efo qg qftqsxaot. iec sxfa swegg x snxgv qf ahe gvxpp dcvyg. txkqt ppeit zoewzo  
+pxmqfogg qg feanqfz vewo anxf ano nxbqa el wogaqfz bolewo iec zoa aqwot. dcpog wofxwt  
+x sopobwqai qg x yowgef hne hewrg nxwt xpp nqg pqlo ae bosevo hopp rfehf, anof hoxwg txwr zpxggog ae xkeqt boqfz wosezfqmot. lwot xppof  
+x zeet aeep qvywekog ano hxi iec hewr. x zwoxa aeep qvywekog ano hxi iec anqfr. doll tcfaovxff  
+fe efo zeggqyg xbeca eanow yoeypog goswoa kqwacog. bowawxft wcggopp  
+x gqfzpo ucogaqef sxf bo vewo qflpcofaqxp anxf x anecgxft gaxaovofag. be boffoaa  
+qa qg qf goplpqvqaxaqef anxa x vxgaow lqwga gnehg nqvgopl. denxff zeoano  
+ql xa lqwga iec tefa gcssoot, lqft eca ql ano pegow zoag xfianqfz. bqpp pief  

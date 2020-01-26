@@ -1,0 +1,61 @@
+EE720 Assignment 1 for 180050045
+
+1. Decode the following ciphertext which has been encrypted using Caesar's cipher [2 points].
+
+qr rqh jrvvlsv derxw rwkhu shrsohv vhfuhw yluwxhv. ehuwudqg uxvvhoo  
+
+
+2. Decode the following ciphertext which has been encrypted using ROT-13 [2 points].
+
+fvzcyr, pyrne checbfr naq cevapvcyrf tvir evfr gb pbzcyrk naq vagryyvtrag orunivbe. pbzcyrk ehyrf naq erthyngvbaf tvir evfr gb fvzcyr naq fghcvq orunivbe.  qrr ubpx  
+
+
+3. Suppose some English plaintext with the following letter frequencies has been encrypted using a substitution cipher.
+a : 0.0683
+b : 0.0217
+c : 0.0249
+d : 0.0236
+e : 0.1328
+f : 0.0153
+g : 0.0243
+h : 0.0626
+i : 0.0734
+j : 0.0032
+k : 0.0102
+l : 0.0370
+m : 0.0185
+n : 0.0766
+o : 0.0805
+p : 0.0128
+q : 0.0019
+r : 0.0651
+s : 0.0562
+t : 0.0951
+u : 0.0345
+v : 0.0096
+w : 0.0255
+x : 0.0013
+y : 0.0249
+z : 0.0000
+Recover the key used to produce the following ciphertext [6 points].
+
+x bxsf ay x iwxhu tpxt kaww wusd rlc qlsur an rlc hxs ivlju tpxt rlc dlst suud at. blb pliu  
+x mljuvsqust tpxt ay bam uslcmp tl maju rlc xww rlc kxst ay bam uslcmp tl txfu at xww xkxr. tplqxy gunnuvyls  
+kvatasm ay mlld, tpasfasm ay buttuv. hwujuvsuyy ay mlld, ixtaushu ay buttuv puvqxss puyyu  
+lvamasxwatr ay tpu nasu xvt ln vuquqbuvasm kpxt rlc puxv bct nlvmuttasm kpuvu rlc puxvd at. wxcvushu g. iutuv  
+tpu vuxw ivlbwuq ay slt kputpuv qxhpasuy tpasf bct kputpuv qus dl. b. n. yfassuv  
+gcyt buhxcyu rlcv jlahu vuxhpuy pxwnkxr xvlcsd tpu klvwd dluyst quxs rlc xvu kayuv tpxs kpus at vuxhpud lswr tl tpu usd ln tpu bxv. udkxvd v. qcvvlk  
+tpu yfaww ln kvatasm ay tl hvuxtu x hlstuzt as kpahp ltpuv iuliwu hxs tpasf. udkas yhpwlyybuvm  
+rlc qcyt bu tpu hpxsmu rlc kayp tl yuu as tpu klvwd. mxsdpa  
+pu fslky xww xblct xvt, bct pu dluyst fslk kpxt pu wafuy. gxquy tpcvbuv  
+tplyu xvu qr ivashaiwuy. an rlc dlst wafu tpuq a pxju ltpuvy. mvlchpl qxvz  
+nampt nlv rlcv liasalsy, bct dl slt buwauju tpxt tpur hlstxas tpu kplwu tvctp, lv tpu lswr tvctp. hpxvwuy x. dxsx  
+ujuvr musuvxtals wxcmpy xt tpu lwd nxypalsy, bct nlwwlky vuwamalcywr tpu suk. pusvr dxjad tplvuxc  
+x bxsf ay x iwxhu tpxt kaww wusd rlc qlsur an rlc hxs ivlju tpxt rlc dlst suud at. blb pliu  
+tpu lswr tpasm tpxt astuvnuvuy katp qr wuxvsasm ay qr udchxtals. xwbuvt uasytuas  
+txwust paty x txvmut sl lsu uwyu hxs pat  musacy paty x txvmut sl lsu uwyu hxs yuu. xvtpcv yhpliuspxcuv 
+ixtvaltayq ay rlcv hlsjahtals tpxt tpay hlcstvr ay yciuvalv tl xww ltpuv hlcstvauy buhxcyu rlc kuvu blvs as at. mulvmu buvsxvd ypxk  
+kvatasm ay mlld, tpasfasm ay buttuv. hwujuvsuyy ay mlld, ixtaushu ay buttuv puvqxss puyyu  
+aju buus tvrasm nlv ylqu taqu tl dujuwli x wanuytrwu tpxt dluyst vuecavu qr ivuyushu. mxvr tvcduxc  
+kpxt ku tpasf, lv kpxt ku fslk, lv kpxt ku buwauju ay, as tpu usd, ln wattwu hlsyuecushu. tpu lswr hlsyuecushu ay kpxt ku dl. glps vcyfas  
+x kayu qxs muty qlvu cyu nvlq pay usuqauy tpxs x nllw nvlq pay nvausdy. bxwtxyxv mvxhaxs  

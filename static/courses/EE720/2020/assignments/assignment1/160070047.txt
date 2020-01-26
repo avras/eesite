@@ -1,0 +1,61 @@
+EE720 Assignment 1 for 160070047
+
+1. Decode the following ciphertext which has been encrypted using Caesar's cipher [2 points].
+
+pb judqgprwkhu lv ryhu hljkwb dqg vwloo grhvqw qhhg jodvvhv. gulqnv uljkw rxw ri wkh erwwoh. khqqb brxqjpdq  
+
+
+2. Decode the following ciphertext which has been encrypted using ROT-13 [2 points].
+
+ur jub nfxf vf n sbby sbe svir zvahgrf, ohg ur jub qbrf abg nfx erznvaf n sbby sberire. puvarfr cebireo  
+
+
+3. Suppose some English plaintext with the following letter frequencies has been encrypted using a substitution cipher.
+a : 0.0806
+b : 0.0153
+c : 0.0333
+d : 0.0293
+e : 0.1292
+f : 0.0166
+g : 0.0193
+h : 0.0493
+i : 0.0759
+j : 0.0020
+k : 0.0040
+l : 0.0426
+m : 0.0240
+n : 0.0712
+o : 0.0732
+p : 0.0220
+q : 0.0020
+r : 0.0559
+s : 0.0759
+t : 0.0925
+u : 0.0280
+v : 0.0107
+w : 0.0233
+x : 0.0027
+y : 0.0206
+z : 0.0007
+Recover the key used to produce the following ciphertext [6 points].
+
+yxgamy qfat wsxy py uxm  iampdt qfat wsxy py rdty. aqwxkq edgwakgbyyfm 
+xgg xmprxgt xka ahdxg edy tfra xmprxgt xka rfka ahdxg ysxm fysakt. iafkia fkwagg  
+wa xka wsxy wa kaoaxyaqgb qf azuaggamua, ysam, pt mfy xm xuy edy x sxepy. xkptyfyga  
+ysakat tf rdus ufraqb fm yagalptpfm. qfat ysxy uxdta ufraqb pm ysa tykaayt qpuv uxlayy  
+p sxla malak ray x rxm tf pimfkxmy ysxy p ufdgqmy gaxkm tfrayspmi nkfr spr. ixgpgaf ixgpgap  
+qf mfy gffv wsaka bfd nagg, edy wsaka bfd tgpooaq. xnkpuxm okflake  
+tproga, ugaxk odkofta xmq okpmupogat ipla kpta yf ufrogaz xmq pmyaggpiamy easxlpfk. ufrogaz kdgat xmq kaidgxypfmt ipla kpta yf tproga xmq tydopq easxlpfk.  qaa sfuv  
+ykdys flak sxkrfmb. gxkkb efttpqb   
+tduuatt pt iayypmi wsxy bfd wxmy. sxoopmatt pt wxmypmi wsxy bfd iay. qxga uxkmaipa  
+rb oattprptr azyamqt yf ysa ofpmy fn alam tdtoauypmi ysa tpmuakpyb fn ysa oattprptyt. caxm kftyxmq  
+pn p sxla taam ndkysak py pt eb tyxmqpmi fm ysa tsfdgqakt fn ipxmyt. ptxxu mawyfm  
+py pt axtpak yf npisy nfk fmat okpmupogat ysxm yf gpla do yf ysar. xgnkaq xqgak  
+ypra xmq toxua xka rfqat eb wspus wa yspmv xmq mfy ufmqpypfmt pm wspus wa gpla. xgeaky apmtyapm   
+x tpmiga hdatypfm uxm ea rfka pmngdamypxg ysxm x ysfdtxmq tyxyaramyt. ef eammayy  
+pn fmgb waq tyfo ykbpmi yf ea sxoob wa ufdgq sxla x okayyb iffq ypra. aqpys wsxkyfm  
+tupamua pt nxuyt cdty xt sfdtat xka rxqa fn tyfmat, tf pt tupamua rxqa fn nxuyt edy x opga fn tyfmat pt mfy x sfdta xmq x ufggauypfm fn nxuyt pt mfy mauattxkpgb tupamua. samkp ofpmuxka  
+fkpipmxgpyb pt ysa npma xky fn karareakpmi wsxy bfd saxk edy nfkiayypmi wsaka bfd saxkq py. gxdkamua c. oayak  
+ysaka pt fmgb fma tduuatt  yf ea xega yf toamq bfdk gpna pm bfdk fwm wxb. uskptyfosak rfkgab  
+pyt x kxka oaktfm wsf wxmyt yf saxk wsxy sa qfatmy wxmy yf saxk. qpuv uxlayy  
+eb ysa ypra x rxm kaxgpjat ysxy rxbea spt nxysak wxt kpisy, sa dtdxggb sxt x tfm wsf yspmvt sat wkfmi. usxkgat wxqtwfkys  
