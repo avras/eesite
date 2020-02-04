@@ -37,3 +37,4 @@ title: EE 720 Spring 2020
 
 ##### Assignments
   - [Assignment 1](/courses/EE720/2020/assignments/assignment1.pdf)
+  - [Assignment 2](/courses/EE720/2020/assignments/assignment2.pdf)
