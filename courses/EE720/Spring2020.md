@@ -42,6 +42,7 @@ title: EE 720 Spring 2020
   - [Lecture 13](/courses/EE720/2020/notes/lecture-13.pdf)
   - [Lecture 14](/courses/EE720/2020/notes/lecture-14.pdf)
   - [Lecture 15](/courses/EE720/2020/notes/lecture-15.pdf)
+  - [Lecture 16](/courses/EE720/2020/notes/lecture-16.pdf)
 
 ##### Assignments
   - [Assignment 1](/courses/EE720/2020/assignments/assignment1.pdf)
