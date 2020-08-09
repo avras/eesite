@@ -3,8 +3,7 @@ title: Courses
 ---
 
 #### Current Course
-
-  - [EE 720: An Introduction to Number Theory and Cryptography](./courses/EE720/Spring2020.html)
+  - [EE 703: Digital Message Transmission](./courses/EE703/Autumn2020.html)
 
 #### Past Courses
 
@@ -16,6 +15,7 @@ title: Courses
     + [Autumn 2019](./courses/EE465/Autumn2019.html)
     + [Autumn 2018](./courses/EE465/Autumn2018.html)
   - EE 720: An Introduction to Number Theory and Cryptography
+    + [Spring 2020](./courses/EE720/Spring2020.html)
     + [Spring 2019](./courses/EE720/Spring2019.html)
     + [Spring 2018](./courses/EE720/Spring2018.html)
   - EE 754: Advanced Error Correcting Codes
