@@ -6,7 +6,7 @@ title: Links
 
   - [EE1 MTech Guide](http://www.ee.iitb.ac.in/~sarva/ee1mtech/)
   - [Telephone Directory](http://portal.iitb.ac.in/TelephoneDirectory/)
-  - [Academic Calendar (2016-2017)](http://www.iitb.ac.in/newacadhome/AcadCal201617May.pdf)
+  - [Academic Calendar](http://www.iitb.ac.in/newacadhome/toacadcalender.jsp)
   - [IITB Rules and Regulations](http://www.iitb.ac.in/newacadhome/rules.jsp)
   - [EE Timetable](https://www.ee.iitb.ac.in/web/schedule/timetable)
 
@@ -19,13 +19,9 @@ title: Links
   - [ranger](http://ranger.nongnu.org/) - A console file manager with vi key bindings
   - [zathura](https://pwmt.org/projects/zathura/) - A PDF viewer with vi key bindings
   - [solarized](http://ethanschoonover.com/solarized) - A colour palette for gui and terminal applications 
-  - [latex-suite (aka vim-latex)](http://vim-latex.sourceforge.net/) - Tools for creating LaTeX documents in vim
-  - [iterm2](https://www.iterm2.com/) - OS X Terminal replacement
+  - [vimtex](https://github.com/lervag/vimtex) - Tool for creating LaTeX documents in vim
 
 ##### Sites
 
-  - [news.ycombinator](https://news.ycombinator.com/) - Tech news (with Silicon Valley bias)
-  - [bitbucket](https://bitbucket.org/) - Free private git and mercurial repositories
-  - [github](https://github.com/) - Free public git repositories
-  - [gitlab](https://about.gitlab.com/) - Free private git repositories
-  - [speakerdeck](https://speakerdeck.com/) - Share presentations online
+  - [news.ycombinator](https://news.ycombinator.com/) - Tech articles
+  - [github](https://github.com/) - Free public and private git repositories
