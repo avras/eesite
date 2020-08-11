@@ -4,7 +4,7 @@ title: Links
 
 #### IIT Bombay pages
 
-  - [EE1 MTech Guide](http://sharada.ee.iitb.ac.in/~sarva/ee1mtech/)
+  - [EE1 MTech Guide](http://www.ee.iitb.ac.in/~sarva/ee1mtech/)
   - [Telephone Directory](http://portal.iitb.ac.in/TelephoneDirectory/)
   - [Academic Calendar (2016-2017)](http://www.iitb.ac.in/newacadhome/AcadCal201617May.pdf)
   - [IITB Rules and Regulations](http://www.iitb.ac.in/newacadhome/rules.jsp)

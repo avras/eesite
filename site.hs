@@ -30,7 +30,8 @@ main = hakyll $ do
 
     match ( "static/courses/**" .||.
             "static/bitcoin/**" .||.
-            "static/monero/**"
+            "static/monero/**" .||.
+            "static/ee1mtech/**"
           ) $ do
         route $ (gsubRoute "static/" (const ""))
         compile copyFileCompiler
