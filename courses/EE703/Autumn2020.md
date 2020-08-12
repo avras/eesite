@@ -32,3 +32,6 @@ BTech or DD students cannot take this course as its content is almost the same a
   - 20% Assignments, 20% Quizzes, 20% Midsem, 40% Endsem
   - Relative grading
   - For AU, final score should be at CC level or above
+
+#### Slides
+  - [Course Introduction](/courses/EE703/2020/slides/Outline.pdf)
