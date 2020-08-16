@@ -35,3 +35,5 @@ BTech or DD students cannot take this course as its content is almost the same a
 
 #### Slides
   - [Course Introduction](/courses/EE703/2020/slides/Outline.pdf)
+  - [Preliminaries and Notation](/courses/EE703/2020/slides/Preliminaries.pdf)
+  - [Fourier Transform](/courses/EE703/2020/slides/FourierTransform.pdf)
