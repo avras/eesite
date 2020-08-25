@@ -38,3 +38,4 @@ BTech or DD students cannot take this course as its content is almost the same a
   - [Preliminaries and Notation](/courses/EE703/2020/slides/Preliminaries.pdf)
   - [Fourier Transform](/courses/EE703/2020/slides/FourierTransform.pdf)
   - [Complex Baseband Representation](/courses/EE703/2020/slides/ComplexBaseband.pdf)
+  - [Random Processes](/courses/EE703/2020/slides/RandomProcesses.pdf)
