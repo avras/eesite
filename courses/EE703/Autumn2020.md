@@ -39,3 +39,4 @@ BTech or DD students cannot take this course as its content is almost the same a
   - [Fourier Transform](/courses/EE703/2020/slides/FourierTransform.pdf)
   - [Complex Baseband Representation](/courses/EE703/2020/slides/ComplexBaseband.pdf)
   - [Random Processes](/courses/EE703/2020/slides/RandomProcesses.pdf)
+  - [PSD of Modulated Signals](/courses/EE703/2020/slides/PSDofModulatedSignals.pdf)
