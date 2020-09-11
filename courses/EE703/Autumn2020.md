@@ -41,6 +41,7 @@ BTech or DD students cannot take this course as its content is almost the same a
   - [Random Processes](/courses/EE703/2020/slides/RandomProcesses.pdf)
   - [PSD of Modulated Signals](/courses/EE703/2020/slides/PSDofModulatedSignals.pdf)
   - [Gaussian Random Variables](/courses/EE703/2020/slides/GaussianRV.pdf)
+  - [Hypothesis Testing](/courses/EE703/2020/slides/HypothesisTesting.pdf)
 
 #### Assignments
   - [Assignment 1](/courses/EE703/2020/assignments/assignment1.pdf)
