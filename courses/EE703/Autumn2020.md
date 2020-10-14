@@ -43,6 +43,7 @@ BTech or DD students cannot take this course as its content is almost the same a
   - [Gaussian Random Variables](/courses/EE703/2020/slides/GaussianRV.pdf)
   - [Hypothesis Testing](/courses/EE703/2020/slides/HypothesisTesting.pdf)
   - [Optimal Receiver in AWGN](/courses/EE703/2020/slides/OptimalReceiverInAWGN.pdf)
+  - [Optimal Receiver in AWGN using Complex Envelopes](/courses/EE703/2020/slides/OptimalReceiverInAWGNComplex.pdf)
 
 #### Assignments
   - [Assignment 1](/courses/EE703/2020/assignments/assignment1.pdf)
