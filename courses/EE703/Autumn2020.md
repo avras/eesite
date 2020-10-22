@@ -45,6 +45,7 @@ BTech or DD students cannot take this course as its content is almost the same a
   - [Optimal Receiver in AWGN](/courses/EE703/2020/slides/OptimalReceiverInAWGN.pdf)
   - [Optimal Receiver in AWGN using Complex Envelopes](/courses/EE703/2020/slides/OptimalReceiverInAWGNComplex.pdf)
   - [Performance of ML Receiver for Binary Signaling](/courses/EE703/2020/slides/PerfMLBinarySignaling.pdf)
+  - [Performance of ML Receiver for M-ary Signaling](/courses/EE703/2020/slides/PerfMLMarySignaling.pdf)
 
 #### Assignments
   - [Assignment 1](/courses/EE703/2020/assignments/assignment1.pdf)
