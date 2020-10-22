@@ -55,3 +55,4 @@ BTech or DD students cannot take this course as its content is almost the same a
 
 #### Exams
   - [Quiz 1](/courses/EE703/2020/exams/quiz1.pdf)
+  - [Midsem Exam](/courses/EE703/2020/exams/midsem.pdf)
