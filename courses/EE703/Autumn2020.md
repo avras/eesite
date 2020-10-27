@@ -53,6 +53,7 @@ BTech or DD students cannot take this course as its content is almost the same a
   - [Assignment 2](/courses/EE703/2020/assignments/assignment2.pdf)
   - [Assignment 3](/courses/EE703/2020/assignments/assignment3.pdf)
   - [Assignment 4](/courses/EE703/2020/assignments/assignment4.pdf)
+  - [Assignment 5](/courses/EE703/2020/assignments/assignment5.pdf)
 
 #### Exams
   - [Quiz 1](/courses/EE703/2020/exams/quiz1.pdf)
