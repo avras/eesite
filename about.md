@@ -43,7 +43,7 @@ Indian Institute of Technology Bombay\
 
 ##### Journal
 
-  1. A. D. Yardi, **SV**, "Properties of syndrome distribution for blind reconstruction of cyclic codes" *Applicable Algebra in Engineering, Communication and Computing*, Jun. 2019. [[doi]](http://dx.doi.org/10.1007/s00200-019-00392-0)
+  1. A. D. Yardi, **SV**, "Properties of syndrome distribution for blind reconstruction of cyclic codes" *Applicable Algebra in Engineering, Communication and Computing* 31, pp. 23--41, 2020. [[doi]](http://dx.doi.org/10.1007/s00200-019-00392-0)
   1. **SV**, "Largest Permutation Codes with the Kendall $\tau$-Metric in $S_5$ and $S_6$," *IEEE Communications Letters*, vol. 20, no. 10, pp. 1912--1915, Oct. 2016. [[doi]](http://dx.doi.org/10.1109/LCOMM.2016.2591003)
   1. A. D. Yardi, **SV**, A. Kumar, "Blind Reconstruction of Binary Cyclic Codes From Unsynchronized Bitstream," *IEEE Transactions on Communications*, vol. 64, no. 7, pp. 2693--2706, Jul. 2016. [[doi]](http://dx.doi.org/10.1109/TCOMM.2016.2561931)
   1. **SV**, D. Pal, "On the Minimum Redundancy of SEC-DAEC-TAEC Binary Linear Block Codes," *IEEE Communications Letters*, vol. 20, no. 4, pp. 652--656, Apr. 2016. [[doi]](http://dx.doi.org/10.1109/LCOMM.2016.2532884)
@@ -60,7 +60,7 @@ Indian Institute of Technology Bombay\
   1. S. Bagad, **SV**, "On the Confidentiality of Amounts in Grin," *2020 Crypto Valley Conference on Blockchain Technology (CVCBT)*, Rotkreuz, Switzerland, Jun. 2020. [[preprint]](https://eprint.iacr.org/2020/723) [[doi]](https://doi.org/10.1109/CVCBT50464.2020.00012)
   1. A. Dutta, A. Jana, **SV**, "Nummatus: A Privacy Preserving Proof of Reserves Protocol for Quisquis," *20th International Conference on Cryptology in India (Indocrypt 2019)*, Hyderabad, India, Dec. 2019. [[doi]](https://doi.org/10.1007/978-3-030-35423-7_10)
   1. A. Dutta, **SV**, "Revelio: A MimbleWimble Proof of Reserves Protocol," *2019 Crypto Valley Conference on Blockchain Technology (CVCBT)*, Zug, Switzerland, Jun. 2019. [[preprint]](https://eprint.iacr.org/2019/684) [[doi]](https://doi.org/10.1109/CVCBT.2019.000-5)
-  1. A. Dutta, **SV**, "MProve: A Proof of Assets Protocol for Monero Exchanges," *2019 IEEE European Symposium of Security and Privacy Workshops*, Stockholm, Sweden, Jun. 2019. [[preprint]](https://eprint.iacr.org/2018/1210) [[doi]](https://doi.org/10.1109/EuroSPW.2019.00043)
+  1. A. Dutta, **SV**, "MProve: A Proof of Reserves Protocol for Monero Exchanges," *2019 IEEE European Symposium of Security and Privacy Workshops*, Stockholm, Sweden, Jun. 2019. [[preprint]](https://eprint.iacr.org/2018/1210) [[doi]](https://doi.org/10.1109/EuroSPW.2019.00043)
   1. A. Dutta, **SV**, "Rewrite Cost optimal Rank Modulation Codes in $S_4$ and $S_5$," *Twenty Fourth National Conference on Communications (NCC 2018)*, Hyderabad, India, Feb. 2018. [[doi]](https://doi.org/10.1109/NCC.2018.8600115)
   1. **SV**, "LFSR identification using Groebner bases," *Twenty Second National Conference on Communications (NCC 2016)*, Guwahati, India, Mar. 2016. [[doi]](http://dx.doi.org/10.1109/NCC.2016.7561164)
   1. **SV**, "Identifying block codes using Groebner bases," *IEEE International Conference on Communications (ICC 2015)*, London, UK, Jun. 2015. [[doi]](http://dx.doi.org/10.1109/ICC.2015.7249019)
