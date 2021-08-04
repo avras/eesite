@@ -50,3 +50,6 @@ BTech or DD students cannot take this course as its content is almost the same a
   - [Parameter Estimation](/courses/EE703/2021/slides/ParameterEstimation.pdf)
   - [ML Estimation of Signal Parameters](/courses/EE703/2021/slides/MLEstimationOfSignalParameters.pdf)
   - [Phase and Timing Synchronization](/courses/EE703/2021/slides/PhaseAndTimingSynchronization.pdf)
+
+#### Assignments
+  - [Assignment 1](/courses/EE703/2021/assignments/assignment1.pdf)
