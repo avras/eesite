@@ -4,7 +4,7 @@ title: Students
 
 #### PhD students
 
-  1. Arijit Dutta (Ongoing)
+  1. [Arijit Dutta](https://arijitdutta67.github.io/homepage/) (Graduated Aug 2021, Currently cryptography consultant at [Aztec Protocol](https://aztec.network/))
   1. [Arti D. Yardi](https://www.iiitb.ac.in/faculty/arti-dilip-yardi) (Graduated Jan 2017, Currently DST-Inspire Faculty Fellow at IIIT Bangalore)
 
 #### MTech/DD students (incomplete list)

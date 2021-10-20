@@ -6,7 +6,7 @@ title: Projects
 
   1. Micro-contracting on the Blockchain\
     **Client:** [Viacom18](https://www.viacom18.com/)\
-    **Duration:** Dec 2019--present
+    **Duration:** Dec 2019--Dec 2020
 
   1. White Paper on the Security of the Bitcoin Protocol\
     **Client:** [Zebpay](https://www.zebpay.com/)\
