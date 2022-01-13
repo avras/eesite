@@ -3,17 +3,18 @@ title: Courses
 ---
 
 #### Current Course
-  - [EE 703: Digital Message Transmission](./courses/EE703/Autumn2021.html)
+  - [EE 337: Microprocessors Lab](https://ee337.github.io)
 
 #### Past Courses
 
-  - EE 337: Microprocessors Lab
-    + [Spring 2021](https://ee337.github.io)
   - EE 703: Digital Message Transmission
+    + [Autumn 2021](./courses/EE703/Autumn2021.html)
     + [Autumn 2020](./courses/EE703/Autumn2020.html)
     + [Autumn 2016](./courses/EE703/Autumn2016.html)
     + [Autumn 2013](./courses/EE703/Autumn2013.html)
     + [Autumn 2012](./courses/EE703/Autumn2012.html)
+  - EE 337: Microprocessors Lab
+    + [Spring 2021](https://ee337.github.io/2021/index.html)
   - EE 720: An Introduction to Number Theory and Cryptography
     + [Spring 2020](./courses/EE720/Spring2020.html)
     + [Spring 2019](./courses/EE720/Spring2019.html)

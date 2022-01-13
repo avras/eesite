@@ -62,3 +62,5 @@ BTech or DD students cannot take this course as its content is almost the same a
 #### Exams
   - [Quiz 1](/courses/EE703/2021/exams/quiz1.pdf)
   - [Midsem Exam](/courses/EE703/2021/exams/midsem.pdf)
+  - [Quiz 2](/courses/EE703/2021/exams/quiz2.pdf)
+  - [Endsem Exam](/courses/EE703/2021/exams/endsem.pdf)
