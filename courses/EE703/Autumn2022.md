@@ -34,3 +34,5 @@ BTech or DD students cannot take this course. This is a core course for EE1 MTec
 
 #### Slides
   - [Course Introduction](/courses/EE703/2022/slides/Outline.pdf)
+  - [Preliminaries and Notation](/courses/EE703/2022/slides/Preliminaries.pdf)
+  - [Fourier Transform](/courses/EE703/2022/slides/FourierTransform.pdf)
