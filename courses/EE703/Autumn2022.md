@@ -40,3 +40,4 @@ BTech or DD students cannot take this course. This is a core course for EE1 MTec
 
 #### Assignments
   - [Assignment 1](/courses/EE703/2022/assignments/assignment1.pdf)
+  - [Assignment 2](/courses/EE703/2022/assignments/assignment2.pdf)
