@@ -38,6 +38,7 @@ BTech or DD students cannot take this course. This is a core course for EE1 MTec
   - [Fourier Transform](/courses/EE703/2022/slides/FourierTransform.pdf)
   - [Complex Baseband Representation](/courses/EE703/2022/slides/ComplexBaseband.pdf)
   - [Random Processes](/courses/EE703/2022/slides/RandomProcesses.pdf)
+  - [PSD of Modulated Signals](/courses/EE703/2022/slides/PSDofModulatedSignals.pdf)
 
 #### Assignments
   - [Assignment 1](/courses/EE703/2022/assignments/assignment1.pdf)
