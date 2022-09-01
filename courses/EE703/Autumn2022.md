@@ -40,6 +40,7 @@ BTech or DD students cannot take this course. This is a core course for EE1 MTec
   - [Random Processes](/courses/EE703/2022/slides/RandomProcesses.pdf)
   - [PSD of Modulated Signals](/courses/EE703/2022/slides/PSDofModulatedSignals.pdf)
   - [Gaussian Random Variables](/courses/EE703/2022/slides/GaussianRV.pdf)
+  - [Hypothesis Testing](/courses/EE703/2022/slides/HypothesisTesting.pdf)
 
 #### Assignments
   - [Assignment 1](/courses/EE703/2022/assignments/assignment1.pdf)
