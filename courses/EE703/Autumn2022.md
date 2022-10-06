@@ -41,7 +41,9 @@ BTech or DD students cannot take this course. This is a core course for EE1 MTec
   - [PSD of Modulated Signals](/courses/EE703/2022/slides/PSDofModulatedSignals.pdf)
   - [Gaussian Random Variables](/courses/EE703/2022/slides/GaussianRV.pdf)
   - [Hypothesis Testing](/courses/EE703/2022/slides/HypothesisTesting.pdf)
-  - [Optimal Receiver in AWGN](/courses/EE703/2021/slides/OptimalReceiverInAWGN.pdf)
+  - [Optimal Receiver in AWGN](/courses/EE703/2022/slides/OptimalReceiverInAWGN.pdf)
+  - [Optimal Receiver in AWGN using Complex Envelopes](/courses/EE703/2022/slides/OptimalReceiverInAWGNComplex.pdf)
+  - [Performance of ML Receiver for Binary Signaling](/courses/EE703/2022/slides/PerfMLBinarySignaling.pdf)
 
 #### Assignments
   - [Assignment 1](/courses/EE703/2022/assignments/assignment1.pdf)
