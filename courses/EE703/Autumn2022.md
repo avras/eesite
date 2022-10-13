@@ -44,6 +44,8 @@ BTech or DD students cannot take this course. This is a core course for EE1 MTec
   - [Optimal Receiver in AWGN](/courses/EE703/2022/slides/OptimalReceiverInAWGN.pdf)
   - [Optimal Receiver in AWGN using Complex Envelopes](/courses/EE703/2022/slides/OptimalReceiverInAWGNComplex.pdf)
   - [Performance of ML Receiver for Binary Signaling](/courses/EE703/2022/slides/PerfMLBinarySignaling.pdf)
+  - [Performance of ML Receiver for M-ary Signaling](/courses/EE703/2022/slides/PerfMLMarySignaling.pdf)
+  - [BER Performance of ML Receiver](/courses/EE703/2022/slides/BERPerfOfML.pdf)
 
 #### Assignments
   - [Assignment 1](/courses/EE703/2022/assignments/assignment1.pdf)
