@@ -47,6 +47,8 @@ BTech or DD students cannot take this course. This is a core course for EE1 MTec
   - [Performance of ML Receiver for M-ary Signaling](/courses/EE703/2022/slides/PerfMLMarySignaling.pdf)
   - [BER Performance of ML Receiver](/courses/EE703/2022/slides/BERPerfOfML.pdf)
   - [Parameter Estimation](/courses/EE703/2022/slides/ParameterEstimation.pdf)
+  - [ML Estimation of Signal Parameters](/courses/EE703/2022/slides/MLEstimationOfSignalParameters.pdf)
+  - [Phase and Timing Synchronization](/courses/EE703/2022/slides/PhaseAndTimingSynchronization.pdf)
 
 #### Assignments
   - [Assignment 1](/courses/EE703/2022/assignments/assignment1.pdf)
