@@ -61,3 +61,5 @@ BTech or DD students cannot take this course. This is a core course for EE1 MTec
 #### Exams
   - [Quiz 1](/courses/EE703/2022/exams/quiz1.pdf)
   - [Midsem Exam](/courses/EE703/2022/exams/midsem.pdf)
+  - [Quiz 2](/courses/EE703/2022/exams/quiz2.pdf)
+  - [Endsem Exam](/courses/EE703/2022/exams/endsem.pdf)
