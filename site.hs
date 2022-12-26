@@ -31,6 +31,7 @@ main = hakyll $ do
     match ( "static/courses/**" .||.
             "static/bitcoin/**" .||.
             "static/monero/**" .||.
+            "static/ethlab/**" .||.
             "static/ee1mtech/**"
           ) $ do
         route $ (gsubRoute "static/" (const ""))
