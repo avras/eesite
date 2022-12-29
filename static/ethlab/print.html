@@ -656,7 +656,7 @@ The new message is: Hello World 3!
 <p>The full ERC-20 token specification can be found in <a href="https://eips.ethereum.org/EIPS/eip-20">Ethereum Improvement Proposal 20 (EIP-20)</a>.</p>
 <p>In this chapter, you will be deploying your own ERC-20 token on Goerli testnet.</p>
 <blockquote>
-<p>Acknowledgment: The contents on this chapter are based on the <a href="https://docs.alchemy.com/docs/how-to-create-an-erc-20-token-4-steps">How to Create an ERC-20 Token</a> tutorial by Alchemy.</p>
+<p><strong>Acknowledgment</strong>: The contents on this chapter are based on the <a href="https://docs.alchemy.com/docs/how-to-create-an-erc-20-token-4-steps">How to Create an ERC-20 Token</a> tutorial by Alchemy.</p>
 </blockquote>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="setting-up-the-erc-20-project"><a class="header" href="#setting-up-the-erc-20-project">Setting up the ERC-20 Project</a></h1>
 <p>To setup a project that uses Hardhat for ERC-20 contract development, do the following:</p>
@@ -1210,22 +1210,6 @@ main().catch((error) =&gt; {
 
         </div>
 
-        <!-- Livereload script (if served using the cli tool) -->
-        <script>
-            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
-            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
-            const socket = new WebSocket(wsAddress);
-            socket.onmessage = function (event) {
-                if (event.data === "reload") {
-                    socket.close();
-                    location.reload();
-                }
-            };
-
-            window.onbeforeunload = function() {
-                socket.close();
-            }
-        </script>
 
 
 
