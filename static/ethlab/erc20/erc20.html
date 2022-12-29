@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="en" class="sidebar-visible no-js light">
+<html lang="en" class="sidebar-visible no-js dark">
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
@@ -37,7 +37,7 @@
         <!-- Provide site root to javascript -->
         <script>
             var path_to_root = "../";
-            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "ayu" : "dark";
         </script>
 
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
@@ -63,7 +63,7 @@
             if (theme === null || theme === undefined) { theme = default_theme; }
             var html = document.querySelector('html');
             html.classList.remove('no-js')
-            html.classList.remove('light')
+            html.classList.remove('dark')
             html.classList.add(theme);
             html.classList.add('js');
         </script>
@@ -147,10 +147,13 @@
 <p>The <a href="https://ethereum.org/en/developers/docs/standards/tokens/erc-20/">ERC-20 token standard</a> is a specification for <strong>fungible tokens</strong> on Ethereum. A token is said to be fungible if one unit of the token can be replaced with any other unit.</p>
 <p>For example, a 10 rupee note is fungible in the sense it can be exchanged for any other 10 rupee note. Ether is itself a fungible token. Each unit of a non-fungible token (NFTs) has a unique identifier and cannot be exchanged for another unit.</p>
 <blockquote>
-<p>NOTE: The ERC in ERC-20 stands for <strong>Ethereum Request for Comments</strong>. They are Ethereum's analog of <a href="https://www.ietf.org/standards/rfcs/">Request for Comments (RFCs)</a>, that are used to specify Internet standards. When the Github issue to discuss the fungible token standard was created in the <a href="https://github.com/ethereum/EIPs">Ethereum Improvement Proposals repository</a>, it was assigned <a href="https://github.com/ethereum/EIPs/issues/20">issue number 20</a>. Hence the name ERC-20.</p>
+<p><strong>Note</strong>: The ERC in ERC-20 stands for <strong>Ethereum Request for Comments</strong>. They are Ethereum's analog of <a href="https://www.ietf.org/standards/rfcs/">Request for Comments (RFCs)</a>, that are used to specify Internet standards. When the Github issue to discuss the fungible token standard was created in the <a href="https://github.com/ethereum/EIPs">Ethereum Improvement Proposals repository</a>, it was assigned <a href="https://github.com/ethereum/EIPs/issues/20">issue number 20</a>. Hence the name ERC-20.</p>
 </blockquote>
 <p>The full ERC-20 token specification can be found in <a href="https://eips.ethereum.org/EIPS/eip-20">Ethereum Improvement Proposal 20 (EIP-20)</a>.</p>
 <p>In this chapter, you will be deploying your own ERC-20 token on Goerli testnet.</p>
+<blockquote>
+<p>Acknowledgment: The contents on this chapter are based on the <a href="https://docs.alchemy.com/docs/how-to-create-an-erc-20-token-4-steps">How to Create an ERC-20 Token</a> tutorial by Alchemy.</p>
+</blockquote>
 
                     </main>
 

@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="en" class="sidebar-visible no-js light">
+<html lang="en" class="sidebar-visible no-js dark">
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
@@ -37,7 +37,7 @@
         <!-- Provide site root to javascript -->
         <script>
             var path_to_root = "../";
-            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "ayu" : "dark";
         </script>
 
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
@@ -63,7 +63,7 @@
             if (theme === null || theme === undefined) { theme = default_theme; }
             var html = document.querySelector('html');
             html.classList.remove('no-js')
-            html.classList.remove('light')
+            html.classList.remove('dark')
             html.classList.add(theme);
             html.classList.add('js');
         </script>
@@ -146,7 +146,7 @@
                         <h1 id="hardhat-workflow"><a class="header" href="#hardhat-workflow">Hardhat Workflow</a></h1>
 <p><a href="https://hardhat.org/">Hardhat</a> is a development environment for Ethereum smart contract development. It has a rich ecosystem of tools and plugins which have made it a popular choice among developers. The Hardhat documentation can be found at <a href="https://hardhat.org/docs">https://hardhat.org/docs</a>.</p>
 <blockquote>
-<p>NOTE: The contents on this chapter are based on the <a href="https://docs.alchemy.com/docs/hello-world-smart-contract">Hello World smart contract tutorial</a> by Alchemy.</p>
+<p><strong>Acknowledgment</strong>: The contents on this chapter are based on the <a href="https://docs.alchemy.com/docs/hello-world-smart-contract">Hello World smart contract tutorial</a> by Alchemy.</p>
 </blockquote>
 
                     </main>

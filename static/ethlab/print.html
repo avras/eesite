@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="en" class="sidebar-visible no-js light">
+<html lang="en" class="sidebar-visible no-js dark">
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
@@ -38,7 +38,7 @@
         <!-- Provide site root to javascript -->
         <script>
             var path_to_root = "";
-            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "ayu" : "dark";
         </script>
 
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
@@ -64,7 +64,7 @@
             if (theme === null || theme === undefined) { theme = default_theme; }
             var html = document.querySelector('html');
             html.classList.remove('no-js')
-            html.classList.remove('light')
+            html.classList.remove('dark')
             html.classList.add(theme);
             html.classList.add('js');
         </script>
@@ -146,6 +146,8 @@
                     <main>
                         <h1 id="introduction"><a class="header" href="#introduction">Introduction</a></h1>
 <p>This guide is an introduction to Ethereum smart contract development. It was created by <a href="https://www.ee.iitb.ac.in/~sarva">Saravanan Vijayakumaran</a> for the participants of the <a href="https://trustlab.iitb.ac.in/event/winter-school-2022">2022 ACM Winter School on Digital Trust</a> organized by <a href="https://trustlab.iitb.ac.in/">IITB Trust Lab</a>.</p>
+<h2 id="acknowledgment"><a class="header" href="#acknowledgment">Acknowledgment</a></h2>
+<p>The content in the <a href="./hardhat/hardhat.html">hardhat workflow</a>, <a href="./erc20/erc20.html">ERC-20</a>, and <a href="./erc721/erc721.html">NFT</a> chapters is based on tutorials in the <a href="https://docs.alchemy.com/docs">Alchemy Docs</a>.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="prerequisites"><a class="header" href="#prerequisites">Prerequisites</a></h1>
 <h2 id="ethereum-testnets"><a class="header" href="#ethereum-testnets">Ethereum Testnets</a></h2>
 <p>Ethereum smart contracts are programs that are installed on the Ethereum blockchain. Installing a smart contract is also called <strong>deployment</strong>. Deploying smart contracts on Ethereum costs ether. The amount of ether required depends on the size of the smart contract.</p>
@@ -376,7 +378,7 @@ contract SimpleStorage {
 <div style="break-before: page; page-break-before: always;"></div><h1 id="hardhat-workflow"><a class="header" href="#hardhat-workflow">Hardhat Workflow</a></h1>
 <p><a href="https://hardhat.org/">Hardhat</a> is a development environment for Ethereum smart contract development. It has a rich ecosystem of tools and plugins which have made it a popular choice among developers. The Hardhat documentation can be found at <a href="https://hardhat.org/docs">https://hardhat.org/docs</a>.</p>
 <blockquote>
-<p>NOTE: The contents on this chapter are based on the <a href="https://docs.alchemy.com/docs/hello-world-smart-contract">Hello World smart contract tutorial</a> by Alchemy.</p>
+<p><strong>Acknowledgment</strong>: The contents on this chapter are based on the <a href="https://docs.alchemy.com/docs/hello-world-smart-contract">Hello World smart contract tutorial</a> by Alchemy.</p>
 </blockquote>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="setting-up-a-hardhat-project"><a class="header" href="#setting-up-a-hardhat-project">Setting up a Hardhat Project</a></h1>
 <p>To setup a project that uses Hardhat for Ethereum contract development, do the following:</p>
@@ -649,10 +651,13 @@ The new message is: Hello World 3!
 <p>The <a href="https://ethereum.org/en/developers/docs/standards/tokens/erc-20/">ERC-20 token standard</a> is a specification for <strong>fungible tokens</strong> on Ethereum. A token is said to be fungible if one unit of the token can be replaced with any other unit.</p>
 <p>For example, a 10 rupee note is fungible in the sense it can be exchanged for any other 10 rupee note. Ether is itself a fungible token. Each unit of a non-fungible token (NFTs) has a unique identifier and cannot be exchanged for another unit.</p>
 <blockquote>
-<p>NOTE: The ERC in ERC-20 stands for <strong>Ethereum Request for Comments</strong>. They are Ethereum's analog of <a href="https://www.ietf.org/standards/rfcs/">Request for Comments (RFCs)</a>, that are used to specify Internet standards. When the Github issue to discuss the fungible token standard was created in the <a href="https://github.com/ethereum/EIPs">Ethereum Improvement Proposals repository</a>, it was assigned <a href="https://github.com/ethereum/EIPs/issues/20">issue number 20</a>. Hence the name ERC-20.</p>
+<p><strong>Note</strong>: The ERC in ERC-20 stands for <strong>Ethereum Request for Comments</strong>. They are Ethereum's analog of <a href="https://www.ietf.org/standards/rfcs/">Request for Comments (RFCs)</a>, that are used to specify Internet standards. When the Github issue to discuss the fungible token standard was created in the <a href="https://github.com/ethereum/EIPs">Ethereum Improvement Proposals repository</a>, it was assigned <a href="https://github.com/ethereum/EIPs/issues/20">issue number 20</a>. Hence the name ERC-20.</p>
 </blockquote>
 <p>The full ERC-20 token specification can be found in <a href="https://eips.ethereum.org/EIPS/eip-20">Ethereum Improvement Proposal 20 (EIP-20)</a>.</p>
 <p>In this chapter, you will be deploying your own ERC-20 token on Goerli testnet.</p>
+<blockquote>
+<p>Acknowledgment: The contents on this chapter are based on the <a href="https://docs.alchemy.com/docs/how-to-create-an-erc-20-token-4-steps">How to Create an ERC-20 Token</a> tutorial by Alchemy.</p>
+</blockquote>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="setting-up-the-erc-20-project"><a class="header" href="#setting-up-the-erc-20-project">Setting up the ERC-20 Project</a></h1>
 <p>To setup a project that uses Hardhat for ERC-20 contract development, do the following:</p>
 <ol>
@@ -884,10 +889,13 @@ npx hardhat run scripts/deploy.js --network goerli
 <div style="break-before: page; page-break-before: always;"></div><h1 id="erc-721-tokens-aka-non-fungible-tokens"><a class="header" href="#erc-721-tokens-aka-non-fungible-tokens">ERC-721 Tokens aka Non-Fungible Tokens</a></h1>
 <p>The <a href="https://ethereum.org/en/developers/docs/standards/tokens/erc-721/">ERC-721 token standard</a> is a specification for <strong>non-fungible tokens (NFTs)</strong> on Ethereum. A token is said to be non-fungible if each unit of the token has a unique identifier and cannot be exchanged for another unit.</p>
 <blockquote>
-<p>NOTE: The ERC in ERC-721 stands for <strong>Ethereum Request for Comments</strong>. They are Ethereum's analog of <a href="https://www.ietf.org/standards/rfcs/">Request for Comments (RFCs)</a>, that are used to specify Internet standards. When the Github issue to discuss the non-fungible token standard was created in the <a href="https://github.com/ethereum/EIPs">Ethereum Improvement Proposals repository</a>, it was assigned <a href="https://github.com/ethereum/EIPs/issues/721">issue number 721</a>. Hence the name ERC-721.</p>
+<p><strong>Note</strong>: The ERC in ERC-721 stands for <strong>Ethereum Request for Comments</strong>. They are Ethereum's analog of <a href="https://www.ietf.org/standards/rfcs/">Request for Comments (RFCs)</a>, that are used to specify Internet standards. When the Github issue to discuss the non-fungible token standard was created in the <a href="https://github.com/ethereum/EIPs">Ethereum Improvement Proposals repository</a>, it was assigned <a href="https://github.com/ethereum/EIPs/issues/721">issue number 721</a>. Hence the name ERC-721.</p>
 </blockquote>
 <p>The full ERC-721 token specification can be found in <a href="https://eips.ethereum.org/EIPS/eip-721">Ethereum Improvement Proposal 721 (EIP-721)</a>.</p>
 <p>In this chapter, you will be deploying your own NFT on Goerli testnet.</p>
+<blockquote>
+<p><strong>Acknowledgment</strong>: The contents on this chapter are based on the <a href="https://docs.alchemy.com/docs/how-to-create-an-nft">How to Create an NFT on Ethereum Tutorial</a> by Alchemy.</p>
+</blockquote>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="setting-up-the-erc-721-project"><a class="header" href="#setting-up-the-erc-721-project">Setting up the ERC-721 Project</a></h1>
 <p>To setup a project that uses Hardhat for ERC-721 contract development, do the following:</p>
 <ol>
