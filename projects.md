@@ -4,9 +4,16 @@ title: Projects
 
 #### Consultancy Projects
 
+  1. Rollups for Scaling Application-Specific Blockchains\
+    **Client:** [Arcana Network](https://www.arcana.network/)\
+    **Duration:** Jan 2022--Nov 2022\
+    **Abstract:** In this report, we explored the possibility of using rollups originally developed for Ethereum to scale sovereign application-specific blockchains. After a brief survey of Ethereum rollups, we list the infrastructure required to implement rollups on a sovereign blockchain.\
+    [Download PDF](./reports/rollups_for_scaling_asbs.pdf)
+
   1. Micro-contracting on the Blockchain\
     **Client:** [Viacom18](https://www.viacom18.com/)\
-    **Duration:** Dec 2019--Dec 2020
+    **Duration:** Dec 2019--Dec 2020\
+    **Abstract:** PoC implementations of a content rights management application in Quorum, Corda, and Hyperledger Fabric
 
   1. White Paper on the Security of the Bitcoin Protocol\
     **Client:** [Zebpay](https://www.zebpay.com/)\
