@@ -21,8 +21,8 @@ title: EE 720 Spring 2023
 
 ##### Reference Books
 
--   [*Introduction to Modern Cryptography*](https://www.cs.umd.edu/~jkatz/imc.html){target="_blank"}, Jonathan Katz, Yehuda Lindell, CRC Press, 2015 (3rd Edition).
--   [Cryptography: Theory and Practice](https://cs.uwaterloo.ca/~dstinson/CTAP4.html){target="_blank"}, Douglas R. Stinson, Maura B. Paterson, CRC Press, 2018 (4th Edition)
+-   [*Introduction to Modern Cryptography*](https://www.cs.umd.edu/~jkatz/imc.html){target="_blank"}, Jonathan Katz, Yehuda Lindell, CRC Press, 2021 (3rd Edition).
+-   [*Cryptography: Theory and Practice*](https://cs.uwaterloo.ca/~dstinson/CTAP4.html){target="_blank"}, Douglas R. Stinson, Maura B. Paterson, CRC Press, 2018 (4th Edition)
 -   *A Computational Introduction to Number Theory and Algebra*, Victor Shoup, Cambridge University Press, 2008 (2nd edition). [Free pdf](https://www.shoup.net/ntb/){target="_blank"}
 
 **Note**: We will be using the book by Katz & Lindell as the main textbook. The other two books will be used for specific topics.
