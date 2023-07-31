@@ -6,7 +6,7 @@ title: EE 720 Spring 2023
 
 -   **Instructor:** [Saravanan Vijayakumaran](http://www.ee.iitb.ac.in/~sarva)
 -   **Schedule:** Slot 5, Wednesday and Friday (9:30am - 10:55am)
--   **Location:** TBA
+-   **Location:** EEG002, Ground Floor, Girish Gaitonde Building
 
 ##### Course Content
 
