@@ -36,3 +36,7 @@ title: EE 720 Spring 2023
 ##### Note for CSE students
 
 EE720 has significant overlap with **CS 406 Cryptography and Network Security** which runs in the Spring semesters. Please consult your faculty advisor before tagging EE720 as a department elective.
+
+##### Slides
+- [Course Overview](./2023/slides/course-overview.html){target="_blank"}
+- [Introduction](./2023/slides/introduction.html){target="_blank"}
