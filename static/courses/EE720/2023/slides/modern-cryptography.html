@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-<script src="introduction_files/libs/clipboard/clipboard.min.js"></script>
-<script src="introduction_files/libs/quarto-html/tabby.min.js"></script>
-<script src="introduction_files/libs/quarto-html/popper.min.js"></script>
-<script src="introduction_files/libs/quarto-html/tippy.umd.min.js"></script>
-<link href="introduction_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="introduction_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="introduction_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
-<link href="introduction_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+<script src="modern-cryptography_files/libs/clipboard/clipboard.min.js"></script>
+<script src="modern-cryptography_files/libs/quarto-html/tabby.min.js"></script>
+<script src="modern-cryptography_files/libs/quarto-html/popper.min.js"></script>
+<script src="modern-cryptography_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="modern-cryptography_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="modern-cryptography_files/libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="modern-cryptography_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
+<link href="modern-cryptography_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.3.433">
 
   <meta name="author" content="Saravanan Vijayakumaran">
-  <meta name="dcterms.date" content="2023-08-02">
-  <title>Introduction and Classical Cryptography</title>
+  <meta name="dcterms.date" content="2023-08-04">
+  <title>Principles of Modern Cryptography</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="introduction_files/libs/revealjs/dist/reset.css">
-  <link rel="stylesheet" href="introduction_files/libs/revealjs/dist/reveal.css">
+  <link rel="stylesheet" href="modern-cryptography_files/libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="modern-cryptography_files/libs/revealjs/dist/reveal.css">
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -31,11 +31,11 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="introduction_files/libs/revealjs/dist/theme/quarto.css">
-  <link href="introduction_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
-  <link href="introduction_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
-  <link href="introduction_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
-  <link href="introduction_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <link rel="stylesheet" href="modern-cryptography_files/libs/revealjs/dist/theme/quarto.css">
+  <link href="modern-cryptography_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="modern-cryptography_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="modern-cryptography_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="modern-cryptography_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
   <style type="text/css">
 
   .callout {
@@ -327,7 +327,7 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Introduction and Classical Cryptography</h1>
+  <h1 class="title">Principles of Modern Cryptography</h1>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -340,52 +340,32 @@ Saravanan Vijayakumaran
     </div>
 </div>
 
-  <p class="date">August 2, 2023</p>
+  <p class="date">August 4, 2023</p>
 </section>
-<section id="lecture-plan" class="slide level2">
-<h2>Lecture Plan</h2>
+<section id="classical-cryptography" class="slide level2">
+<h2>Classical Cryptography</h2>
 <ul>
-<li>Describe the difference between modern and classical cryptography</li>
-<li>Describe the syntax of private-key encryption</li>
-<li>Describe some classical ciphers – Caesar cipher, Substitution cipher, Vigenère cipher</li>
-</ul>
-</section>
-<section id="cryptography" class="slide level2">
-<h2>Cryptography</h2>
-<ul>
-<li><p>Dictionary definition: “<strong><em>the art of writing or solving codes</em></strong>”</p>
-<ul>
-<li><p>Historically accurate but does not convey the current breadth of the field</p></li>
-<li><p>Codes refers to schemes used for secret communication (encryption)</p></li>
-</ul></li>
-<li><p>In addition to encryption, cryptography today deals with</p>
-<ul>
-<li><p>mechanisms for ensuring integrity,</p></li>
-<li><p>techniques for exchanging secret keys,</p></li>
-<li><p>protocols for authenticating users,</p></li>
-<li><p>electronic voting,</p></li>
-<li><p>cryptocurrency, and more.</p></li>
-</ul></li>
-<li><p>Modern definition: <strong><em>the study of mathematical techniques for securing digital information, systems, and distributed computations against adversarial attacks.</em></strong></p></li>
+<li class="fragment"><p>Cryptographic scheme design was based on heuristics</p></li>
+<li class="fragment"><p>If any attacks were found on a scheme, it would be modified to resist the attack</p></li>
+<li class="fragment"><p>Easy to say that a scheme was not secure, but no way to argue that a scheme was secure</p></li>
 </ul>
 </section>
 <section id="modern-cryptography" class="slide level2">
 <h2>Modern Cryptography</h2>
 <ul>
-<li>Modern cryptography = post-1980s cryptography</li>
-<li>In the 1970s and 1980s, a rich theory emerged changing cryptography from an art to a science</li>
-<li>Modern approach to cryptography
+<li class="fragment"><p>Modern approach to cryptography</p>
 <ul>
-<li><p>Formal definitions</p></li>
-<li><p>Precise assumptions</p></li>
-<li><p>Proofs of security</p></li>
+<li class="fragment"><p>Formal definitions</p></li>
+<li class="fragment"><p>Precise assumptions</p></li>
+<li class="fragment"><p>Proofs of security</p></li>
 </ul></li>
+<li class="fragment"><p>Ultimate goal is to prove that a given construction is secure</p></li>
 </ul>
-<aside class="notes">
+<aside class="notes smaller">
 <ul>
-<li><p><strong>The central role of definitions:</strong> A key intellectual contribution of modern cryptography has been the recognition that <em>formal definitions of security are an essential first step in the design of any cryptographic primitive or protocol</em>. The reason, in retrospect, is simple: if you don’t know what it is you are trying to achieve, how can you hope to know when you have achieved it?</p></li>
-<li><p><strong>The importance of precise assumptions:</strong> As will be explained in Chapters 2 and 3, many cryptographic constructions cannot currently be proven secure unconditionally. Security, instead, generally relies on some widely believed (though unproven) assumption(s). The modern cryptographic approach dictates that <em>any such assumptions must be clearly stated and unambiguously defined</em>. This not only allows for objective evaluation of the assumptions but, more importantly, enables rigorous proofs of security (as described next).</p></li>
-<li><p><strong>The possibility of proofs of security:</strong> The previous two principles serve as the basis for the idea that <em>cryptographic constructions can be proven secure</em> with respect to clearly stated definitions of security and relative to well-defined cryptographic assumptions. This concept is the essence of modern cryptography, and is what has transformed the field from an art to a science.</p></li>
+<li><p>An emphasis on definitions, assumptions, and proofs distinguishes modern cryptography from classical cryptography</p></li>
+<li><p>pin down exactly what “secure” means</p></li>
+<li><p>rely on <strong>currently unproven</strong> assumptions about the algorithmic hardness of certain mathematical problems; to be made <strong>explicit and be stated precisely</strong></p></li>
 </ul>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -399,298 +379,196 @@ Saravanan Vijayakumaran
           display:block!important;
       }</style></aside>
 </section>
-<section id="private-key-encryption-setting" class="slide level2">
-<h2>Private-key Encryption Setting</h2>
-<ul>
-<li><p>Two parties want to communicate over a channel which is monitored by an eavesdropper</p></li>
-<li><p>They want to keep their messages hidden from the eavesdropper</p></li>
-<li><p>A secret (<strong>the key)</strong> is shared by the communicating parties in advance and unknown to the eavesdropper</p></li>
-<li><p>The workflow</p>
-<ul>
-<li><p>When a party wants to send a message (<strong>plaintext</strong>) to the other, they use the shared key to <strong>encrypt</strong> the message and obtain a <strong>ciphertext</strong></p></li>
-<li><p>The ciphertext is transmitted over the channel and observed by the eavesdropper</p></li>
-<li><p>The receiver uses the same shared key to <strong>decrypt</strong> the ciphertext and recover the plaintext</p></li>
-<li><p>The same key is used for both encryption and decryption; so this setting is also called the <strong>symmetric-key setting</strong></p></li>
-</ul></li>
-<li><p>Communicating parties could be separated in space or time</p>
-<ul>
-<li>Key sharing becomes trivial in the latter situation</li>
-</ul></li>
-</ul>
-</section>
-<section id="the-syntax-of-encryption" class="slide level2">
-<h2>The Syntax of Encryption</h2>
-<ul>
-<li>A private-key encryption scheme is defined by specifying a message space <span class="math inline">\(\mathcal{M}\)</span> along with three algorithms:
-<ul>
-<li>A procedure for generating keys (<span class="math inline">\(\texttt{Gen}\)</span>),</li>
-<li>A procedure for encrypting (<span class="math inline">\(\texttt{Enc}\)</span>)</li>
-<li>A procedure for decrypting (<span class="math inline">\(\texttt{Dec}\)</span>)</li>
-</ul></li>
-<li>The message space <span class="math inline">\(\mathcal{M}\)</span> defines the set of allowed messages</li>
-<li>The algorithms of the scheme have the following functionality:
-<ol type="1">
-<li><span class="math inline">\(\texttt{Gen}\)</span> is a probabilistic algorithm that outputs a key <span class="math inline">\(k\)</span> chosen according to some distribution.</li>
-<li><span class="math inline">\(\texttt{Enc}\)</span> takes as input a key <span class="math inline">\(k\)</span> and a message <span class="math inline">\(m\)</span> and outputs a ciphertext <span class="math inline">\(c\)</span>.
-<ul>
-<li><span class="math inline">\(\texttt{Enc}_k (m)\)</span> denotes the encryption of the plaintext <span class="math inline">\(m\)</span> using the key <span class="math inline">\(k\)</span></li>
-</ul></li>
-<li><span class="math inline">\(\texttt{Dec}\)</span> takes as input a key <span class="math inline">\(k\)</span> and a ciphertext <span class="math inline">\(c\)</span> and outputs a plaintext <span class="math inline">\(m\)</span>.
-<ul>
-<li><span class="math inline">\(\texttt{Dec}_k (c)\)</span> denotes the decryption of the ciphertext <span class="math inline">\(c\)</span> using the key <span class="math inline">\(k\)</span></li>
-</ul></li>
-</ol></li>
-<li>An encryption scheme must satisfy the following correctness requirement: for every key <span class="math inline">\(k\)</span> output by <span class="math inline">\(\texttt{Gen}\)</span> and every message <span class="math inline">\(m \in M\)</span>, it holds that <span class="math display">\[\texttt{Dec}_k (\texttt{Enc}_k (m)) = m.\]</span></li>
-<li>The set of all possible keys <span class="math inline">\(\mathcal{K}\)</span> is called the key space
-<ul>
-<li>Almost always, <span class="math inline">\(\texttt{Gen}\)</span> chooses a key uniformly from <span class="math inline">\(\mathcal{K}\)</span></li>
-</ul></li>
-</ul>
-</section>
-<section id="kerckhoffs-principle" class="slide level2">
-<h2>Kerckhoffs’ Principle</h2>
-<ul>
-<li><p>The communicating parties must keep the key <span class="math inline">\(k\)</span> secret</p></li>
-<li><p>Should they also keep the details of the encryption and decryption also a secret?</p></li>
-<li><p>In the late 19th century, Auguste Kerckhoffs argued against doing this</p>
-<blockquote>
-<p><strong><em>The cipher method must not be required to be secret, and it must be able to fall into the hands of the enemy without inconvenience.</em></strong></p>
-</blockquote></li>
-<li><p><strong>Kerckhoffs’ Principle:</strong> Security relies solely on secrecy of key</p></li>
-<li><p>Three reasons</p>
-<ul>
-<li><p>Easier to keep a short key secret than to keep an algorithm secret</p></li>
-<li><p>Easier to change key than encryption scheme</p></li>
-<li><p>Standardization is easier</p></li>
-</ul></li>
-</ul>
-</section>
 <section>
-<section id="historical-ciphers" class="title-slide slide level1 center">
-<h1>Historical Ciphers</h1>
-
-</section>
-<section id="caesars-cipher" class="slide level2">
-<h2>Caesar’s Cipher</h2>
+<section id="formal-definitions" class="title-slide slide level1 center">
+<h1>Formal Definitions</h1>
 <ul>
-<li><p>Julius Caesar encrypted by shifting the letters of the alphabet 3 places forward</p>
-<ul>
-<li><p>a was replaced with D, b with E, and so on</p></li>
-<li><p>In the rest of this lecture, we will use lower case letter for plaintext and uppercase letter for ciphertext</p></li>
-</ul></li>
-<li><p>Encryption of the message <code>begin the attack now</code> gives <code>EHJLQWKHDWWDFNQRZ</code></p></li>
-<li><p>There is no key. Anyone learning how it works can ecrypt effortlessly</p></li>
-<li><p>A variant of this cipher called ROT-13 is used nowadays in social media</p>
-<ul>
-<li>Used to make information like movie spoilers unintelligible for casual readers</li>
-</ul></li>
-</ul>
-</section>
-<section id="the-shift-cipher" class="slide level2">
-<h2>The Shift Cipher</h2>
-<ul>
-<li><p>Keyed variant of Caesar’s cipher</p></li>
-<li><p>Key <span class="math inline">\(k\)</span> is a number between 0 and 25</p></li>
-<li><p><span class="math inline">\(\texttt{Gen}\)</span> outputs a uniform key <span class="math inline">\(k \in \{0, . . . , 25\}\)</span></p></li>
-<li><p><span class="math inline">\(\texttt{Enc}\)</span> takes a key <span class="math inline">\(k\)</span> and a plaintext and shifts each letter of the plaintext forward <span class="math inline">\(k\)</span> positions (wrapping around at the end of the alphabet)</p></li>
-<li><p><span class="math inline">\(\texttt{Dec}\)</span> takes a key <span class="math inline">\(k\)</span> and a ciphertext and shifts every letter of the ciphertext <em>backward</em> <span class="math inline">\(k\)</span> positions.</p></li>
-</ul>
-</section>
-<section id="mathematical-description-of-the-shift-cipher" class="slide level2">
-<h2>Mathematical Description of the Shift Cipher</h2>
-<ul>
-<li><p>Equate the English alphabet with the set <span class="math inline">\(\{0, . . . , 25\}\)</span> (so <span class="math inline">\(a = 0, b = 1\)</span>, etc.).</p></li>
-<li><p>Message space <span class="math inline">\(\mathcal{M}\)</span> is then any finite sequence of integers from this set.</p></li>
-<li><p>Encryption of the message <span class="math inline">\(m = m_1 \cdots m_l\)</span> (where <span class="math inline">\(m_i \in \{0, . . . , 25\}\)</span>) using key <span class="math inline">\(k\)</span> is given by <span class="math display">\[\texttt{Enc}_k (m_1 \cdots m_l ) = c_1 \cdots c_l, \\ \ \ \ \ \ \ \ \ \ \ \ \ \  \text{ where } c_i = [(m_i + k) \bmod 26].\]</span></p></li>
-<li><p>The notation <span class="math inline">\([a \bmod N ]\)</span> denotes the remainder of <span class="math inline">\(a\)</span> upon division by <span class="math inline">\(N\)</span> , with <span class="math inline">\(0 \leq [a \bmod N ] &lt; N\)</span>.</p></li>
-<li><p>We refer to the process mapping <span class="math inline">\(a\)</span> to <span class="math inline">\([a \bmod N]\)</span> as <em>reduction modulo</em> <span class="math inline">\(N\)</span>.</p></li>
-<li><p>Decryption of a ciphertext <span class="math inline">\(c = c_1 \cdots c_l\)</span> where key <span class="math inline">\(k\)</span> is given by <span class="math display">\[\texttt{Dec}_k (c_1 \cdots c_l ) = m_1 \cdots m_l, \\ \ \ \ \ \ \ \ \ \ \ \ \ \ \text{ where } m_i = [(c_i - k) \bmod 26].\]</span></p></li>
-</ul>
-</section>
-<section id="the-sufficient-key-space-principle" class="slide level2">
-<h2>The Sufficient Key-Space Principle</h2>
-<ul>
-<li><p>Is the shift cipher secure? Is it possible to recover the message without knowing <span class="math inline">\(k\)</span>?</p></li>
-<li><p>Yes! Because that there are only 26 possible keys.</p></li>
-<li><p>Try every possible key and choose the plaintext that “makes sense”</p></li>
-<li><p>An attack that involves trying every possible key is called a <em>brute-force</em> or <em>exhaustive-search</em> attack. Clearly, for an encryption scheme to be secure it must not be vulnerable to such an attack.</p></li>
-<li><p><strong>The sufficient key-space principle</strong>:</p>
+<li class="fragment"><p>Essential for the proper design and evaluation of cryptographic primitives</p>
 <blockquote>
-<p><strong><em>Any secure encryption scheme must have a key space that is sufficiently large to make an exhaustive-search attack infeasible.</em></strong></p>
+<p><em>If you don’t understand what you want to achieve, how can you possibly know when (or if ) you have achieved it?</em></p>
 </blockquote></li>
-<li><p>What is considered “infeasible”? Key space should have size at least <span class="math inline">\(2^{80}\)</span></p></li>
-<li><p>Above principle gives a <em>necessary</em> condition for security, but not a <em>sufficient</em> one.</p></li>
-</ul>
-</section>
-<section id="the-mono-alphabetic-substitution-cipher" class="slide level2">
-<h2>The Mono-alphabetic Substitution Cipher</h2>
+<li class="fragment"><p>A security definition has two components</p>
 <ul>
-<li><p>In the shift cipher, the key defines a map from each letter of the alphabet to some letter of the alphabet, where the map is a fixed shift</p></li>
-<li><p>In the mono-alphabetic substitution cipher, the key is a bijection from <span class="math inline">\(\{a,b,\ldots,z\}\)</span> to <span class="math inline">\(\{a,b,\ldots,z\}\)</span></p></li>
-<li><p>The key space thus consists of all bijections, or permutations, of the alphabet.</p></li>
-<li><p>So, for example, the key that defines the following permutation</p>
-<table style="width:100%;">
-<colgroup>
-<col style="width: 7%">
-<col style="width: 7%">
-<col style="width: 7%">
-<col style="width: 7%">
-<col style="width: 7%">
-<col style="width: 7%">
-<col style="width: 7%">
-<col style="width: 7%">
-<col style="width: 7%">
-<col style="width: 7%">
-<col style="width: 7%">
-<col style="width: 7%">
-<col style="width: 7%">
-</colgroup>
-<tbody>
-<tr class="odd">
-<td>a</td>
-<td>b</td>
-<td>c</td>
-<td>d</td>
-<td>e</td>
-<td>f</td>
-<td>g</td>
-<td>h</td>
-<td>i</td>
-<td>j</td>
-<td>k</td>
-<td>l</td>
-<td>m</td>
-</tr>
-<tr class="even">
-<td>X</td>
-<td>E</td>
-<td>U</td>
-<td>A</td>
-<td>D</td>
-<td>N</td>
-<td>B</td>
-<td>K</td>
-<td>V</td>
-<td>M</td>
-<td>R</td>
-<td>O</td>
-<td>C</td>
-</tr>
-<tr class="odd">
-<td>n</td>
-<td>o</td>
-<td>p</td>
-<td>q</td>
-<td>r</td>
-<td>s</td>
-<td>t</td>
-<td>u</td>
-<td>v</td>
-<td>w</td>
-<td>x</td>
-<td>y</td>
-<td>z</td>
-</tr>
-<tr class="even">
-<td>Q</td>
-<td>F</td>
-<td>S</td>
-<td>Y</td>
-<td>H</td>
-<td>W</td>
-<td>G</td>
-<td>L</td>
-<td>Z</td>
-<td>I</td>
-<td>J</td>
-<td>P</td>
-<td>T</td>
-</tr>
-</tbody>
-</table></li>
-<li><p>The message <code>helloworld</code> would be encrypted as <code>KDOOFIFHOA</code></p></li>
-<li><p>The key space is of size <span class="math inline">\(26! = 26 · 25 · 24 · · · 2 · 1 \approx 2^{88}\)</span>. So a brute-force attack is infeasible.</p></li>
-<li><p>This, however, does not mean the cipher is secure!</p></li>
-</ul>
-</section>
-<section id="breaking-the-substitution-cipher" class="slide level2">
-<h2>Breaking the Substitution Cipher</h2>
-<ul>
-<li><p>Assume English-language text is being encrypted (i.e., grammatically correct English writing)</p></li>
-<li><p>The attack uses statistical properties of the English language.</p></li>
-<li><p>The frequency distribution of individual letters in English-language text is known</p>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="images/letter_freq.png" width="480"></p>
-<figcaption>Average letter frequencies for English-language text. Source: Wikipedia</figcaption>
-</figure>
-</div></li>
-<li><p>Calculate frequency of letters in the ciphertext and try guessing the bijection</p></li>
-</ul>
-</section>
-<section id="the-vigenère-cipher" class="slide level2">
-<h2>The Vigenère Cipher</h2>
-<ul>
-<li><p>The statistical attack on the mono-alphabetic substitution cipher works because the key defines a fixed mapping</p></li>
-<li><p>Such an attack fails against poly-alphabetic substitution cipher; apply mapping to <em>blocks</em> of plaintext</p></li>
-<li><p>The Vigenère cipher, is a type of poly-alphabetic shift cipher</p></li>
-<li><p>The key is as a string of letters</p></li>
-<li><p>Encryption is done by shifting each plaintext character by the amount indicated by the next character of the key, wrapping around in the key when necessary.</p></li>
-<li><p>For example, encryption of the message <code>tellhimaboutme</code> using the key <code>cafe</code> would work as follows:<br>
-<br>
-</p>
-<table>
-<caption>Vigenère cipher example</caption>
-<tbody>
-<tr class="odd">
-<td>Plaintext</td>
-<td><code>tellhimaboutme</code></td>
-</tr>
-<tr class="even">
-<td>Key (repeated)</td>
-<td><code>cafecafecafeca</code></td>
-</tr>
-<tr class="odd">
-<td>Ciphertext</td>
-<td><code>VEQPJIREDOZXOE</code></td>
-</tr>
-</tbody>
-</table></li>
-<li><p>Was considered to be “unbreakable”</p></li>
-<li><p>Invented in the 16th century; a systematic attack was only devised hundreds of years later</p></li>
-</ul>
-</section>
-<section id="attacking-the-vigenère-cipher" class="slide level2">
-<h2>Attacking the Vigenère cipher</h2>
-<ul>
-<li><p>Observation: If the length of the key is known then attacking the cipher is relatively easy</p></li>
-<li><p>Let the length of the key, also called the period, be <span class="math inline">\(t\)</span>.</p></li>
-<li><p>Write the key <span class="math inline">\(k\)</span> as <span class="math inline">\(k = k_1 \cdots k_t\)</span> where each <span class="math inline">\(k_i\)</span> is a letter of the alphabet.</p></li>
-<li><p>An observed ciphertext <span class="math inline">\(c = c_1 c_2 \cdots\)</span> can be divided into <span class="math inline">\(t\)</span> parts where each part can be viewed as having been encrypted using the shift cipher.</p></li>
-<li><p>Apply the shift cipher attack on each of the <span class="math inline">\(t\)</span> streams.</p></li>
-<li><p>What if the key length is unknown?</p></li>
-<li><p>As long as the maximum length <span class="math inline">\(T\)</span> of the key is not too large, repeat the above attack <span class="math inline">\(T\)</span> times</p>
-<ul>
-<li>Once for each possible value <span class="math inline">\(t \in \{1, . . . , T \}\)</span>)</li>
+<li class="fragment"><p><strong>A security guarantee:</strong> What the scheme is intended to prevent the attacker from doing?</p></li>
+<li class="fragment"><p><strong>A threat model:</strong> What is the power of the attacker?</p></li>
 </ul></li>
-<li><p>Kasiski’s method, published in the mid-19th century, is a better method</p></li>
+</ul>
+</section>
+<section id="security-guarantee-for-encryption" class="slide level2">
+<h2>Security Guarantee for Encryption</h2>
+<ul>
+<li class="fragment"><p>What should a secure encryption scheme guarantee?</p>
+<ul>
+<li class="fragment"><p>It should be impossible for an attacker to recover the key</p></li>
+<li class="fragment"><p>It should be impossible for an attacker to recover the plaintext from the ciphertext</p></li>
+<li class="fragment"><p>It should be impossible for an attacker to recover any character of the plaintext from the ciphertext</p></li>
+</ul></li>
+</ul>
+<aside class="notes">
+<ul>
+<li><p><span class="math inline">\(\texttt{Enc}_k(m) = m\)</span>. Easy to make scheme where key is secure but scheme is insecure</p></li>
+<li><p>This definition would consider an encryption scheme secure if its ciphertexts revealed 90% of the plaintext, as long as 10% of the plaintext remained hard to figure out</p></li>
+<li><p>we would not consider an encryption scheme secure if it reveals whether an employee’s salary is more than or less than $100,000</p></li>
+<li><p>Another issue is how to formalize what it means for an adversary to “recover a character of the plaintext.” What if an attacker correctly guesses, through sheer luck or external information, that the least significant digit of someone’s salary is 0? Clearly that should not render an encryption scheme insecure, and so any viable definition must somehow rule out such behavior from qualifying as a successful attack.</p></li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="security-guarantee-for-encryption-1" class="slide level2">
+<h2>Security Guarantee for Encryption</h2>
+<h3 id="the-right-answer">The “Right” Answer</h3>
+<ul>
+<li class="fragment"><p><em>Regardless of any information an attacker already has, a ciphertext should leak no <strong>additional</strong> information about the underlying plaintext.</em></p></li>
+<li class="fragment"><p>What is missing here is a precise mathematical formulation.</p>
+<ul>
+<li class="fragment"><p>How should we capture an attacker’s prior knowledge about the plaintext?</p></li>
+<li class="fragment"><p>And what does it mean to not leak information?</p></li>
+</ul></li>
+<li class="fragment"><p>Answers in upcoming lectures</p></li>
+</ul>
+</section>
+<section id="threat-models-for-encryption" class="slide level2">
+<h2>Threat Models for Encryption</h2>
+<ul>
+<li class="fragment"><p>Specifies what “power” the attacker is assumed to have</p></li>
+<li class="fragment"><p>Does not place any restrictions on the adversary’s strategy</p></li>
+<li class="fragment"><p>Standard threat models in order of increasing power of the attacker</p>
+<ul>
+<li class="fragment"><p>Ciphertext-only attack</p></li>
+<li class="fragment"><p>Known-plaintext attack</p></li>
+<li class="fragment"><p>Chosen-plaintext attack</p></li>
+<li class="fragment"><p>Chosen-ciphertext attack</p></li>
+</ul></li>
+</ul>
+<aside class="notes">
+<ul>
+<li><p>we specify what we assume about the adversary’s abilities, but we do <strong>not</strong> assume anything about <strong>how it uses</strong> those abilities</p></li>
+<li><p><strong>impossible to foresee</strong> what strategies might be used in an attack</p></li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="ciphertext-only-attack" class="slide level2">
+<h2>Ciphertext-only attack</h2>
+<ul>
+<li class="fragment"><p>Models the weakest adversary</p></li>
+<li class="fragment"><p>The adversary just observes one or more ciphertexts</p></li>
+<li class="fragment"><p>Adversary then attempts to recover information about the underlying plaintexts</p></li>
+<li class="fragment"><p>This is the threat model assumed in our discussion of classical cryptography</p></li>
+</ul>
+</section>
+<section id="known-plaintext-attack" class="slide level2">
+<h2>Known-plaintext attack</h2>
+<ul>
+<li class="fragment"><p>Adversary is able to learn one or more plaintext/ciphertext pairs generated using some key</p></li>
+<li class="fragment"><p>Adversary then attempts to recover information about the underlying plaintext of some <strong>other</strong> ciphertext produced using the <strong>same</strong> key</p></li>
+</ul>
+<aside class="notes">
+<p>Why some <strong>other</strong> ciphertext? Why same key?</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="chosen-plaintext-attack" class="slide level2">
+<h2>Chosen-plaintext attack</h2>
+<ul>
+<li class="fragment"><p>Similar to known-plaintext attack but now the adversary obtains plaintext/ciphertext pairs for plaintexts <strong>it chooses</strong></p></li>
+<li class="fragment"><p>For completeness, here is the threat model</p>
+<ul>
+<li class="fragment"><p>Adversary is able to learn one or more plaintext/ciphertext pairs generated using some key where it can choose the plaintext</p></li>
+<li class="fragment"><p>Adversary then attempts to recover information about the underlying plaintext of some <strong>other</strong> ciphertext produced using the <strong>same</strong> key</p></li>
+</ul></li>
+</ul>
+<aside class="notes">
+<ul>
+<li><p>Imagine a situation where an encryption device of a hostile entity is captured. The key may be hard to recover but the device can be used to encrypt messages</p></li>
+<li><p>Why is CPA adversary more powerful than KPA adversary?</p>
+<ul>
+<li>CPA adversary can become a KPA adversary by randomly choosing the message</li>
+</ul></li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="chosen-ciphertext-attack" class="slide level2">
+<h2>Chosen-ciphertext attack</h2>
+<ul>
+<li class="fragment"><p>In addition to CPA abilities, the adversary is able to obtain the <strong>decryption</strong>&nbsp;of ciphertexts of its choice</p></li>
+<li class="fragment"><p>Adversary then attempts to recover information about the underlying plaintext of some <strong>other</strong> ciphertext produced using the <strong>same</strong> key</p></li>
+<li class="fragment"><p>Models an adversary that can tamper with the ciphertexts passing through the channel</p></li>
 </ul>
 </section></section>
-<section id="conclusions" class="title-slide slide level1 center">
-<h1>Conclusions</h1>
+<section id="precise-assumptions" class="title-slide slide level1 center">
+<h1>Precise Assumptions</h1>
 <ul>
-<li><p>Designing secure ciphers is hard</p></li>
-<li><p>A complex scheme is not necessarily secure</p></li>
-<li><p>All historical schemes have been broken.</p></li>
+<li class="fragment"><p>Most modern cryptographic schemes cannot be proven secure unconditionally</p></li>
+<li class="fragment"><p>Proofs of security have to rely on assumptions</p></li>
+<li class="fragment"><p>These assumptions are widely believed to be true based on theoretical and empirical evidence</p></li>
 </ul>
+</section>
+
+<section id="proofs-of-security" class="title-slide slide level1 center">
+<h1>Proofs of Security</h1>
+<ul>
+<li class="fragment"><p>Formal definitions and precise assumptions allow us to give proofs of security</p></li>
+<li class="fragment"><p>A proof of security guarantees that no attacker will succeed, under the security definition and threat model</p></li>
+<li class="fragment"><p>In the past, unproven schemes have been eventually broken</p></li>
+</ul>
+<div class="fragment">
+<div class="callout callout-warning callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Warning</strong></p>
+</div>
+<div class="callout-content">
+<p>If the security guarantee does not match what is needed, or if the threat model does not capture the adversary’s true abilities, the proof may be irrelevant.</p>
+</div>
+</div>
+</div>
+</div>
 </section>
 
 <section id="further-reading" class="title-slide slide level1 center">
 <h1>Further Reading</h1>
-<ul>
-<li><p>Preface and Sections 1.1, 1.2 from Katz/Lindell</p></li>
-<li><p>Attacks on the Vigenére cipher in Section 1.3 from Katz/Lindell</p></li>
-</ul>
+<p>Section 1.4 from Katz &amp; Lindell</p>
 <div class="footer footer-default">
 
 </div>
@@ -699,19 +577,19 @@ Saravanan Vijayakumaran
   </div>
 
   <script>window.backupDefine = window.define; window.define = undefined;</script>
-  <script src="introduction_files/libs/revealjs/dist/reveal.js"></script>
+  <script src="modern-cryptography_files/libs/revealjs/dist/reveal.js"></script>
   <!-- reveal.js plugins -->
-  <script src="introduction_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
-  <script src="introduction_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
-  <script src="introduction_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
-  <script src="introduction_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
-  <script src="introduction_files/libs/revealjs/plugin/quarto-support/support.js"></script>
+  <script src="modern-cryptography_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="modern-cryptography_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="modern-cryptography_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="modern-cryptography_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="modern-cryptography_files/libs/revealjs/plugin/quarto-support/support.js"></script>
   
 
-  <script src="introduction_files/libs/revealjs/plugin/notes/notes.js"></script>
-  <script src="introduction_files/libs/revealjs/plugin/search/search.js"></script>
-  <script src="introduction_files/libs/revealjs/plugin/zoom/zoom.js"></script>
-  <script src="introduction_files/libs/revealjs/plugin/math/math.js"></script>
+  <script src="modern-cryptography_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="modern-cryptography_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="modern-cryptography_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="modern-cryptography_files/libs/revealjs/plugin/math/math.js"></script>
   <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
 
   <script>

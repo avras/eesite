@@ -40,3 +40,5 @@ EE720 has significant overlap with **CS 406 Cryptography and Network Security** 
 ##### Slides
 - [Course Overview](./2023/slides/course-overview.html){target="_blank"}
 - [Introduction](./2023/slides/introduction.html){target="_blank"}
+- [Modern Cryptography](./2023/slides/modern-cryptography.html){target="_blank"}
+- [Perfectly Secret Encryption](./2023/slides/perfectly-secret-encryption.html){target="_blank"}
