@@ -244,6 +244,7 @@
     }
     .reveal .slide:not(.center) {
       height: 100%;
+      overflow-y: auto;
     }
     .reveal .slide.scrollable {
       overflow-y: auto;
@@ -405,7 +406,7 @@ Saravanan Vijayakumaran
 <li>Consult your faculty advisor before tagging EE720 as a department elective</li>
 </ul>
 </section>
-<section id="course-webpage" class="slide level2">
+<section id="course-webpage" class="slide level2 smaller">
 <h2>Course Webpage</h2>
 
 <img data-src="images/course-webpage-qr-code.png" alt="https://www.ee.iitb.ac.in/~sarva/courses/EE720/Autumn2023.html" width="500" class="r-stretch quarto-figure-center"><p><a href="https://www.ee.iitb.ac.in/~sarva/courses/EE720/Autumn2023.html" class="uri">https://www.ee.iitb.ac.in/~sarva/courses/EE720/Autumn2023.html</a></p>
@@ -430,7 +431,6 @@ Saravanan Vijayakumaran
   <script src="course-overview_files/libs/revealjs/plugin/notes/notes.js"></script>
   <script src="course-overview_files/libs/revealjs/plugin/search/search.js"></script>
   <script src="course-overview_files/libs/revealjs/plugin/zoom/zoom.js"></script>
-  <script src="course-overview_files/libs/revealjs/plugin/math/math.js"></script>
   <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
 
   <script>
@@ -438,7 +438,7 @@ Saravanan Vijayakumaran
       // Full list of configuration options available at:
       // https://revealjs.com/config/
       Reveal.initialize({
-'controlsAuto': true,
+'controlsAuto': false,
 'previewLinksAuto': false,
 'smaller': false,
 'pdfSeparateFragments': false,
@@ -449,7 +449,7 @@ Saravanan Vijayakumaran
 'smaller': false,
  
         // Display controls in the bottom right corner
-        controls: false,
+        controls: true,
 
         // Help the user learn the controls by providing hints, for example by
         // bouncing the down arrow when they first encounter a vertical slide
@@ -598,27 +598,9 @@ Saravanan Vijayakumaran
         // Factor of the display size that should remain empty around the content
         margin: 0.1,
 
-        math: {
-          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js',
-          config: 'TeX-AMS_HTML-full',
-          tex2jax: {
-            inlineMath: [['\\(','\\)']],
-            displayMath: [['\\[','\\]']],
-            balanceBraces: true,
-            processEscapes: false,
-            processRefs: true,
-            processEnvironments: true,
-            preview: 'TeX',
-            skipTags: ['script','noscript','style','textarea','pre','code'],
-            ignoreClass: 'tex2jax_ignore',
-            processClass: 'tex2jax_process'
-          },
-        },
-
         // reveal.js plugins
         plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
 
-          RevealMath,
           RevealNotes,
           RevealSearch,
           RevealZoom

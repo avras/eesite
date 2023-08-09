@@ -32,6 +32,22 @@
     }
   </style>
   <link rel="stylesheet" href="introduction_files/libs/revealjs/dist/theme/quarto.css">
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css">
   <link href="introduction_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="introduction_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="introduction_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -381,23 +397,6 @@ Saravanan Vijayakumaran
 <li><p>Proofs of security</p></li>
 </ul></li>
 </ul>
-<aside class="notes">
-<ul>
-<li><p><strong>The central role of definitions:</strong> A key intellectual contribution of modern cryptography has been the recognition that <em>formal definitions of security are an essential first step in the design of any cryptographic primitive or protocol</em>. The reason, in retrospect, is simple: if you don’t know what it is you are trying to achieve, how can you hope to know when you have achieved it?</p></li>
-<li><p><strong>The importance of precise assumptions:</strong> As will be explained in Chapters 2 and 3, many cryptographic constructions cannot currently be proven secure unconditionally. Security, instead, generally relies on some widely believed (though unproven) assumption(s). The modern cryptographic approach dictates that <em>any such assumptions must be clearly stated and unambiguously defined</em>. This not only allows for objective evaluation of the assumptions but, more importantly, enables rigorous proofs of security (as described next).</p></li>
-<li><p><strong>The possibility of proofs of security:</strong> The previous two principles serve as the basis for the idea that <em>cryptographic constructions can be proven secure</em> with respect to clearly stated definitions of security and relative to well-defined cryptographic assumptions. This concept is the essence of modern cryptography, and is what has transformed the field from an art to a science.</p></li>
-</ul>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
 </section>
 <section id="private-key-encryption-setting" class="slide level2">
 <h2>Private-key Encryption Setting</h2>
@@ -421,36 +420,36 @@ Saravanan Vijayakumaran
 <section id="the-syntax-of-encryption" class="slide level2">
 <h2>The Syntax of Encryption</h2>
 <ul>
-<li>A private-key encryption scheme is defined by specifying a message space <span class="math inline">\(\mathcal{M}\)</span> along with three algorithms:
+<li>A private-key encryption scheme is defined by specifying a message space <span class="math inline">\mathcal{M}</span> along with three algorithms:
 <ul>
-<li>A procedure for generating keys (<span class="math inline">\(\texttt{Gen}\)</span>),</li>
-<li>A procedure for encrypting (<span class="math inline">\(\texttt{Enc}\)</span>)</li>
-<li>A procedure for decrypting (<span class="math inline">\(\texttt{Dec}\)</span>)</li>
+<li>A procedure for generating keys (<span class="math inline">\texttt{Gen}</span>),</li>
+<li>A procedure for encrypting (<span class="math inline">\texttt{Enc}</span>)</li>
+<li>A procedure for decrypting (<span class="math inline">\texttt{Dec}</span>)</li>
 </ul></li>
-<li>The message space <span class="math inline">\(\mathcal{M}\)</span> defines the set of allowed messages</li>
+<li>The message space <span class="math inline">\mathcal{M}</span> defines the set of allowed messages</li>
 <li>The algorithms of the scheme have the following functionality:
 <ol type="1">
-<li><span class="math inline">\(\texttt{Gen}\)</span> is a probabilistic algorithm that outputs a key <span class="math inline">\(k\)</span> chosen according to some distribution.</li>
-<li><span class="math inline">\(\texttt{Enc}\)</span> takes as input a key <span class="math inline">\(k\)</span> and a message <span class="math inline">\(m\)</span> and outputs a ciphertext <span class="math inline">\(c\)</span>.
+<li><span class="math inline">\texttt{Gen}</span> is a probabilistic algorithm that outputs a key <span class="math inline">k</span> chosen according to some distribution.</li>
+<li><span class="math inline">\texttt{Enc}</span> takes as input a key <span class="math inline">k</span> and a message <span class="math inline">m</span> and outputs a ciphertext <span class="math inline">c</span>.
 <ul>
-<li><span class="math inline">\(\texttt{Enc}_k (m)\)</span> denotes the encryption of the plaintext <span class="math inline">\(m\)</span> using the key <span class="math inline">\(k\)</span></li>
+<li><span class="math inline">\texttt{Enc}_k (m)</span> denotes the encryption of the plaintext <span class="math inline">m</span> using the key <span class="math inline">k</span></li>
 </ul></li>
-<li><span class="math inline">\(\texttt{Dec}\)</span> takes as input a key <span class="math inline">\(k\)</span> and a ciphertext <span class="math inline">\(c\)</span> and outputs a plaintext <span class="math inline">\(m\)</span>.
+<li><span class="math inline">\texttt{Dec}</span> takes as input a key <span class="math inline">k</span> and a ciphertext <span class="math inline">c</span> and outputs a plaintext <span class="math inline">m</span>.
 <ul>
-<li><span class="math inline">\(\texttt{Dec}_k (c)\)</span> denotes the decryption of the ciphertext <span class="math inline">\(c\)</span> using the key <span class="math inline">\(k\)</span></li>
+<li><span class="math inline">\texttt{Dec}_k (c)</span> denotes the decryption of the ciphertext <span class="math inline">c</span> using the key <span class="math inline">k</span></li>
 </ul></li>
 </ol></li>
-<li>An encryption scheme must satisfy the following correctness requirement: for every key <span class="math inline">\(k\)</span> output by <span class="math inline">\(\texttt{Gen}\)</span> and every message <span class="math inline">\(m \in M\)</span>, it holds that <span class="math display">\[\texttt{Dec}_k (\texttt{Enc}_k (m)) = m.\]</span></li>
-<li>The set of all possible keys <span class="math inline">\(\mathcal{K}\)</span> is called the key space
+<li>An encryption scheme must satisfy the following correctness requirement: for every key <span class="math inline">k</span> output by <span class="math inline">\texttt{Gen}</span> and every message <span class="math inline">m \in M</span>, it holds that <span class="math display">\texttt{Dec}_k (\texttt{Enc}_k (m)) = m.</span></li>
+<li>The set of all possible keys <span class="math inline">\mathcal{K}</span> is called the key space
 <ul>
-<li>Almost always, <span class="math inline">\(\texttt{Gen}\)</span> chooses a key uniformly from <span class="math inline">\(\mathcal{K}\)</span></li>
+<li>Almost always, <span class="math inline">\texttt{Gen}</span> chooses a key uniformly from <span class="math inline">\mathcal{K}</span></li>
 </ul></li>
 </ul>
 </section>
 <section id="kerckhoffs-principle" class="slide level2">
 <h2>Kerckhoffs’ Principle</h2>
 <ul>
-<li><p>The communicating parties must keep the key <span class="math inline">\(k\)</span> secret</p></li>
+<li><p>The communicating parties must keep the key <span class="math inline">k</span> secret</p></li>
 <li><p>Should they also keep the details of the encryption and decryption also a secret?</p></li>
 <li><p>In the late 19th century, Auguste Kerckhoffs argued against doing this</p>
 <blockquote>
@@ -490,27 +489,27 @@ Saravanan Vijayakumaran
 <h2>The Shift Cipher</h2>
 <ul>
 <li><p>Keyed variant of Caesar’s cipher</p></li>
-<li><p>Key <span class="math inline">\(k\)</span> is a number between 0 and 25</p></li>
-<li><p><span class="math inline">\(\texttt{Gen}\)</span> outputs a uniform key <span class="math inline">\(k \in \{0, . . . , 25\}\)</span></p></li>
-<li><p><span class="math inline">\(\texttt{Enc}\)</span> takes a key <span class="math inline">\(k\)</span> and a plaintext and shifts each letter of the plaintext forward <span class="math inline">\(k\)</span> positions (wrapping around at the end of the alphabet)</p></li>
-<li><p><span class="math inline">\(\texttt{Dec}\)</span> takes a key <span class="math inline">\(k\)</span> and a ciphertext and shifts every letter of the ciphertext <em>backward</em> <span class="math inline">\(k\)</span> positions.</p></li>
+<li><p>Key <span class="math inline">k</span> is a number between 0 and 25</p></li>
+<li><p><span class="math inline">\texttt{Gen}</span> outputs a uniform key <span class="math inline">k \in \{0, . . . , 25\}</span></p></li>
+<li><p><span class="math inline">\texttt{Enc}</span> takes a key <span class="math inline">k</span> and a plaintext and shifts each letter of the plaintext forward <span class="math inline">k</span> positions (wrapping around at the end of the alphabet)</p></li>
+<li><p><span class="math inline">\texttt{Dec}</span> takes a key <span class="math inline">k</span> and a ciphertext and shifts every letter of the ciphertext <em>backward</em> <span class="math inline">k</span> positions.</p></li>
 </ul>
 </section>
 <section id="mathematical-description-of-the-shift-cipher" class="slide level2">
 <h2>Mathematical Description of the Shift Cipher</h2>
 <ul>
-<li><p>Equate the English alphabet with the set <span class="math inline">\(\{0, . . . , 25\}\)</span> (so <span class="math inline">\(a = 0, b = 1\)</span>, etc.).</p></li>
-<li><p>Message space <span class="math inline">\(\mathcal{M}\)</span> is then any finite sequence of integers from this set.</p></li>
-<li><p>Encryption of the message <span class="math inline">\(m = m_1 \cdots m_l\)</span> (where <span class="math inline">\(m_i \in \{0, . . . , 25\}\)</span>) using key <span class="math inline">\(k\)</span> is given by <span class="math display">\[\texttt{Enc}_k (m_1 \cdots m_l ) = c_1 \cdots c_l, \\ \ \ \ \ \ \ \ \ \ \ \ \ \  \text{ where } c_i = [(m_i + k) \bmod 26].\]</span></p></li>
-<li><p>The notation <span class="math inline">\([a \bmod N ]\)</span> denotes the remainder of <span class="math inline">\(a\)</span> upon division by <span class="math inline">\(N\)</span> , with <span class="math inline">\(0 \leq [a \bmod N ] &lt; N\)</span>.</p></li>
-<li><p>We refer to the process mapping <span class="math inline">\(a\)</span> to <span class="math inline">\([a \bmod N]\)</span> as <em>reduction modulo</em> <span class="math inline">\(N\)</span>.</p></li>
-<li><p>Decryption of a ciphertext <span class="math inline">\(c = c_1 \cdots c_l\)</span> where key <span class="math inline">\(k\)</span> is given by <span class="math display">\[\texttt{Dec}_k (c_1 \cdots c_l ) = m_1 \cdots m_l, \\ \ \ \ \ \ \ \ \ \ \ \ \ \ \text{ where } m_i = [(c_i - k) \bmod 26].\]</span></p></li>
+<li><p>Equate the English alphabet with the set <span class="math inline">\{0, . . . , 25\}</span> (so <span class="math inline">a = 0, b = 1</span>, etc.).</p></li>
+<li><p>Message space <span class="math inline">\mathcal{M}</span> is then any finite sequence of integers from this set.</p></li>
+<li><p>Encryption of the message <span class="math inline">m = m_1 \cdots m_l</span> (where <span class="math inline">m_i \in \{0, . . . , 25\}</span>) using key <span class="math inline">k</span> is given by <span class="math display">\texttt{Enc}_k (m_1 \cdots m_l ) = c_1 \cdots c_l, \\ \ \ \ \ \ \ \ \ \ \ \ \ \  \text{ where } c_i = [(m_i + k) \bmod 26].</span></p></li>
+<li><p>The notation <span class="math inline">[a \bmod N ]</span> denotes the remainder of <span class="math inline">a</span> upon division by <span class="math inline">N</span> , with <span class="math inline">0 \leq [a \bmod N ] &lt; N</span>.</p></li>
+<li><p>We refer to the process mapping <span class="math inline">a</span> to <span class="math inline">[a \bmod N]</span> as <em>reduction modulo</em> <span class="math inline">N</span>.</p></li>
+<li><p>Decryption of a ciphertext <span class="math inline">c = c_1 \cdots c_l</span> where key <span class="math inline">k</span> is given by <span class="math display">\texttt{Dec}_k (c_1 \cdots c_l ) = m_1 \cdots m_l, \\ \ \ \ \ \ \ \ \ \ \ \ \ \ \text{ where } m_i = [(c_i - k) \bmod 26].</span></p></li>
 </ul>
 </section>
 <section id="the-sufficient-key-space-principle" class="slide level2">
 <h2>The Sufficient Key-Space Principle</h2>
 <ul>
-<li><p>Is the shift cipher secure? Is it possible to recover the message without knowing <span class="math inline">\(k\)</span>?</p></li>
+<li><p>Is the shift cipher secure? Is it possible to recover the message without knowing <span class="math inline">k</span>?</p></li>
 <li><p>Yes! Because that there are only 26 possible keys.</p></li>
 <li><p>Try every possible key and choose the plaintext that “makes sense”</p></li>
 <li><p>An attack that involves trying every possible key is called a <em>brute-force</em> or <em>exhaustive-search</em> attack. Clearly, for an encryption scheme to be secure it must not be vulnerable to such an attack.</p></li>
@@ -518,7 +517,7 @@ Saravanan Vijayakumaran
 <blockquote>
 <p><strong><em>Any secure encryption scheme must have a key space that is sufficiently large to make an exhaustive-search attack infeasible.</em></strong></p>
 </blockquote></li>
-<li><p>What is considered “infeasible”? Key space should have size at least <span class="math inline">\(2^{80}\)</span></p></li>
+<li><p>What is considered “infeasible”? Key space should have size at least <span class="math inline">2^{80}</span></p></li>
 <li><p>Above principle gives a <em>necessary</em> condition for security, but not a <em>sufficient</em> one.</p></li>
 </ul>
 </section>
@@ -526,7 +525,7 @@ Saravanan Vijayakumaran
 <h2>The Mono-alphabetic Substitution Cipher</h2>
 <ul>
 <li><p>In the shift cipher, the key defines a map from each letter of the alphabet to some letter of the alphabet, where the map is a fixed shift</p></li>
-<li><p>In the mono-alphabetic substitution cipher, the key is a bijection from <span class="math inline">\(\{a,b,\ldots,z\}\)</span> to <span class="math inline">\(\{a,b,\ldots,z\}\)</span></p></li>
+<li><p>In the mono-alphabetic substitution cipher, the key is a bijection from <span class="math inline">\{a,b,\ldots,z\}</span> to <span class="math inline">\{a,b,\ldots,z\}</span></p></li>
 <li><p>The key space thus consists of all bijections, or permutations, of the alphabet.</p></li>
 <li><p>So, for example, the key that defines the following permutation</p>
 <table style="width:100%;">
@@ -609,7 +608,7 @@ Saravanan Vijayakumaran
 </tbody>
 </table></li>
 <li><p>The message <code>helloworld</code> would be encrypted as <code>KDOOFIFHOA</code></p></li>
-<li><p>The key space is of size <span class="math inline">\(26! = 26 · 25 · 24 · · · 2 · 1 \approx 2^{88}\)</span>. So a brute-force attack is infeasible.</p></li>
+<li><p>The key space is of size <span class="math inline">26! = 26 · 25 · 24 · · · 2 · 1 \approx 2^{88}</span>. So a brute-force attack is infeasible.</p></li>
 <li><p>This, however, does not mean the cipher is secure!</p></li>
 </ul>
 </section>
@@ -664,14 +663,14 @@ Saravanan Vijayakumaran
 <h2>Attacking the Vigenère cipher</h2>
 <ul>
 <li><p>Observation: If the length of the key is known then attacking the cipher is relatively easy</p></li>
-<li><p>Let the length of the key, also called the period, be <span class="math inline">\(t\)</span>.</p></li>
-<li><p>Write the key <span class="math inline">\(k\)</span> as <span class="math inline">\(k = k_1 \cdots k_t\)</span> where each <span class="math inline">\(k_i\)</span> is a letter of the alphabet.</p></li>
-<li><p>An observed ciphertext <span class="math inline">\(c = c_1 c_2 \cdots\)</span> can be divided into <span class="math inline">\(t\)</span> parts where each part can be viewed as having been encrypted using the shift cipher.</p></li>
-<li><p>Apply the shift cipher attack on each of the <span class="math inline">\(t\)</span> streams.</p></li>
+<li><p>Let the length of the key, also called the period, be <span class="math inline">t</span>.</p></li>
+<li><p>Write the key <span class="math inline">k</span> as <span class="math inline">k = k_1 \cdots k_t</span> where each <span class="math inline">k_i</span> is a letter of the alphabet.</p></li>
+<li><p>An observed ciphertext <span class="math inline">c = c_1 c_2 \cdots</span> can be divided into <span class="math inline">t</span> parts where each part can be viewed as having been encrypted using the shift cipher.</p></li>
+<li><p>Apply the shift cipher attack on each of the <span class="math inline">t</span> streams.</p></li>
 <li><p>What if the key length is unknown?</p></li>
-<li><p>As long as the maximum length <span class="math inline">\(T\)</span> of the key is not too large, repeat the above attack <span class="math inline">\(T\)</span> times</p>
+<li><p>As long as the maximum length <span class="math inline">T</span> of the key is not too large, repeat the above attack <span class="math inline">T</span> times</p>
 <ul>
-<li>Once for each possible value <span class="math inline">\(t \in \{1, . . . , T \}\)</span>)</li>
+<li>Once for each possible value <span class="math inline">t \in \{1, . . . , T \}</span>)</li>
 </ul></li>
 <li><p>Kasiski’s method, published in the mid-19th century, is a better method</p></li>
 </ul>
@@ -711,7 +710,6 @@ Saravanan Vijayakumaran
   <script src="introduction_files/libs/revealjs/plugin/notes/notes.js"></script>
   <script src="introduction_files/libs/revealjs/plugin/search/search.js"></script>
   <script src="introduction_files/libs/revealjs/plugin/zoom/zoom.js"></script>
-  <script src="introduction_files/libs/revealjs/plugin/math/math.js"></script>
   <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
 
   <script>
@@ -719,7 +717,7 @@ Saravanan Vijayakumaran
       // Full list of configuration options available at:
       // https://revealjs.com/config/
       Reveal.initialize({
-'controlsAuto': true,
+'controlsAuto': false,
 'previewLinksAuto': false,
 'smaller': false,
 'pdfSeparateFragments': false,
@@ -730,7 +728,7 @@ Saravanan Vijayakumaran
 'smaller': false,
  
         // Display controls in the bottom right corner
-        controls: false,
+        controls: true,
 
         // Help the user learn the controls by providing hints, for example by
         // bouncing the down arrow when they first encounter a vertical slide
@@ -879,27 +877,9 @@ Saravanan Vijayakumaran
         // Factor of the display size that should remain empty around the content
         margin: 0.1,
 
-        math: {
-          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js',
-          config: 'TeX-AMS_HTML-full',
-          tex2jax: {
-            inlineMath: [['\\(','\\)']],
-            displayMath: [['\\[','\\]']],
-            balanceBraces: true,
-            processEscapes: false,
-            processRefs: true,
-            processEnvironments: true,
-            preview: 'TeX',
-            skipTags: ['script','noscript','style','textarea','pre','code'],
-            ignoreClass: 'tex2jax_ignore',
-            processClass: 'tex2jax_process'
-          },
-        },
-
         // reveal.js plugins
         plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
 
-          RevealMath,
           RevealNotes,
           RevealSearch,
           RevealZoom
