@@ -47,3 +47,6 @@ EE720 has significant overlap with **CS 406 Cryptography and Network Security** 
 ##### Supplementary Notes
 
 [Course Notes](./2023/notes/ee720-notes.pdf){target="_blank"}
+
+##### Assignments
+  - [Assignment 1](/courses/EE720/2023/assignments/assignment1.pdf)
