@@ -390,7 +390,7 @@ Saravanan Vijayakumaran
 <li><p>Upper bounds the success probability of an adversary running for some specified time</p></li>
 <li><p>A concrete definition of security takes the following form</p>
 <blockquote>
-<p><em>A scheme is</em> <span class="math inline">(t,\epsilon)\texttt{-secure}</span> is any adversary running for time at most t succeeds in breaking the scheme with probability at most <span class="math inline">\epsilon</span>.</p>
+<p><em>A scheme is</em> <span class="math inline">(t,\epsilon)\textsf{-secure}</span> is any adversary running for time at most t succeeds in breaking the scheme with probability at most <span class="math inline">\epsilon</span>.</p>
 </blockquote></li>
 <li><p><strong>Example</strong>: A (200 years, <span class="math inline">2^{-60}</span>)-secure scheme would guarantee that no adversary running for at most 200 years can break the scheme with probability better than <span class="math inline">2^{-60}</span></p></li>
 <li><p>More convenient to measure running time in terms of CPU cycles, as in (<span class="math inline">2^{80}</span> cycles, <span class="math inline">2^{-60}</span>)</p></li>
@@ -411,6 +411,19 @@ Saravanan Vijayakumaran
 <li>An event that occurs with probability <span class="math inline">2^{-60}</span> each second is expected to occur once every 10 billion years</li>
 <li>In general, precise concrete guarantees are difficult to provide</li>
 </ul>
+<aside class="notes">
+<p>Number of atoms in the universe is about <span class="math inline">10^{80}</span></p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="the-asymptotic-approach" class="slide level2">
 <h2>The Asymptotic Approach</h2>
@@ -436,21 +449,21 @@ Saravanan Vijayakumaran
 <section id="probabilistic-algorithm" class="slide level2">
 <h2>Probabilistic Algorithm</h2>
 <ul>
-<li>Algorithms having access to a sequence of unbiased, independent random bits</li>
-<li>Random bits can be represented as <span class="math inline">r \leftarrow \{0,1\}^*</span></li>
-<li>An algorithm <span class="math inline">A</span> runs in polynomial time if there exists a polynomial <span class="math inline">p</span> such that, for every input <span class="math inline">x \in \{0,1\}^*</span> and <span class="math inline">r \leftarrow \{0,1\}^*</span>, the computation of <span class="math inline">A(x,r)</span> terminates within at most <span class="math inline">p(|x \| r|)</span> steps where <span class="math inline">|x \| r|</span> denotes the length of <span class="math inline">x</span> concatenated with <span class="math inline">r</span></li>
+<li><p>Algorithms having access to a sequence of unbiased, independent random bits</p></li>
+<li><p>Random bits can be represented as <span class="math inline">r \leftarrow \{0,1\}^*</span></p></li>
+<li><p>An algorithm <span class="math inline">A</span> runs in polynomial time if there exists a polynomial <span class="math inline">p</span> such that, for every input <span class="math inline">x \in \{0,1\}^*</span> and <span class="math inline">r \leftarrow \{0,1\}^*</span>, the computation of <span class="math inline">A(x,r)</span> terminates within at most <span class="math inline">p(|x| +|r|)</span> steps</p></li>
 </ul>
 </section>
 <section id="negligible-probabilities" class="slide level2">
 <h2>Negligible Probabilities</h2>
 <ul>
-<li>Small probabilities of success are modeled by probabilities <strong>smaller than any inverse polynomial in</strong> <span class="math inline">n</span>
+<li><p>Small probabilities of success are modeled by probabilities <strong>smaller than any inverse polynomial in</strong> <span class="math inline">n</span></p>
 <ul>
 <li>Called <strong>negligible</strong> probabilities</li>
 </ul></li>
-<li><strong>Definition</strong>: A function <span class="math inline">f</span> from the natural numbers to the non-negative real numbers is <strong>negligible</strong> if for every positive polynomial <span class="math inline">p</span> there is an <span class="math inline">N</span> such that for all integers <span class="math inline">n &gt; N</span> it holds that <span class="math inline">f(n) &lt; \frac{1}{p(n)}</span>.</li>
-<li><strong>Examples:</strong> <span class="math inline">2^{-n}, 2^{-\sqrt{n}}, n^{-\log n}</span></li>
-<li>An arbitrary negligible function is denoted by <span class="math inline">\texttt{negl}</span></li>
+<li><p><strong>Definition</strong>: A function <span class="math inline">f</span> from the natural numbers to the non-negative real numbers is <strong>negligible</strong> if for every positive polynomial <span class="math inline">p</span> there is an <span class="math inline">N</span> such that for all integers <span class="math inline">n &gt; N</span> it holds that <span class="math inline">f(n) &lt; \frac{1}{p(n)}</span>.</p></li>
+<li><p><strong>Examples:</strong> <span class="math inline">2^{-n}, 2^{-\sqrt{n}}, n^{-\log n}</span></p></li>
+<li><p>An arbitrary negligible function is denoted by <span class="math inline">\textsf{negl}</span></p></li>
 </ul>
 <aside class="notes">
 <p>Compare to <span class="math inline">\frac{1}{n^5}</span>. <span class="math inline">N</span> has to be at least 23, 3500, 33 respectively.</p>
@@ -469,28 +482,12 @@ Saravanan Vijayakumaran
 <section id="properties-of-negligible-probabilities" class="slide level2">
 <h2>Properties of Negligible Probabilities</h2>
 <ul>
-<li>Let <span class="math inline">\texttt{negl}_1</span> and <span class="math inline">\texttt{negl}_2</span> be negligible functions.
+<li>Let <span class="math inline">\textsf{negl}_1</span> and <span class="math inline">\textsf{negl}_2</span> be negligible functions.
 <ul>
-<li>The function <span class="math inline">\texttt{negl}_3</span> defined by <span class="math display">\texttt{negl}_3(n) = \texttt{negl}_1(n) + \texttt{negl}_2(n)</span> is negligible.</li>
-<li>For any positive polynomial <span class="math inline">p</span>, the function <span class="math inline">\texttt{negl}_4</span> defined by <span class="math display">\texttt{negl}_4(n) = p(n) \cdot \texttt{negl}_1(n)</span> is negligible.</li>
+<li>The function <span class="math inline">\textsf{negl}_3</span> defined by <span class="math display">\textsf{negl}_3(n) = \textsf{negl}_1(n) + \textsf{negl}_2(n)</span> is negligible.</li>
+<li>For any positive polynomial <span class="math inline">p</span>, the function <span class="math inline">\textsf{negl}_4</span> defined by <span class="math display">\textsf{negl}_4(n) = p(n) \cdot \textsf{negl}_1(n)</span> is negligible.</li>
 </ul></li>
 </ul>
-<aside class="notes">
-<ul>
-<li>The second part of the above proposition implies that if a certain event occurs with only negligible probability in some experiment, then the event occurs with negligible probability even if that experiment is repeated polynomially many times. This relies on the union bound</li>
-<li>For example, the probability that n fair coin flips all come up “heads” is <span class="math inline">2^{−n}</span>, which is negligible. This means that even if we repeat the experiment of flip- ping n coins polynomially many times, the probability that even one of those experiments results in n heads is still negligible.</li>
-</ul>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
 </section>
 <section id="general-framework-for-asymptotic-security-definitions" class="slide level2">
 <h2>General Framework for Asymptotic Security Definitions</h2>
@@ -507,7 +504,7 @@ Saravanan Vijayakumaran
 <li>For <span class="math inline">n \le 40</span>, this adversary can run for <span class="math inline">40^3</span> minutes (about 6 weeks) and break the scheme with probability <span class="math inline">1</span></li>
 <li>For <span class="math inline">n = 50</span>, this adversary can run for <span class="math inline">50^3</span> minutes (about 3 months) and break the scheme with probability <span class="math inline">\frac{1}{1000}</span></li>
 <li>For <span class="math inline">n = 500</span>, this adversary running for 200 years can break the scheme with probability <span class="math inline">\approx 2^{-500}</span></li>
-<li>Security parameter allows us to “tune” security level of the scheme to a desired level</li>
+<li>Security parameter allows us to “tune” the security level of the scheme to a desired level</li>
 </ul>
 </section>
 <section id="choices-made-in-defining-asymptotic-security" class="slide level2">
@@ -537,7 +534,7 @@ Saravanan Vijayakumaran
 <ul>
 <li>As <span class="math inline">|\mathcal{K}| &lt; |\mathcal{M}|</span>, there is information leakage.</li>
 </ul></li>
-<li>Given ciphertexts <span class="math inline">c_1,c_2,\ldots,c_l</span> corresponding to <em>known</em> messages <span class="math inline">m_1, m_2,\ldots,m_l</span>, an adversary can <strong>guess</strong> a uniform key <span class="math inline">k \in \mathcal{K}</span> and check <span class="math inline">\texttt{Dec}_k(c_i) = m_i</span> for all <span class="math inline">i</span>.
+<li>Given ciphertexts <span class="math inline">c_1,c_2,\ldots,c_l</span> corresponding to <em>known</em> messages <span class="math inline">m_1, m_2,\ldots,m_l</span>, an adversary can <strong>guess</strong> a uniform key <span class="math inline">k \in \mathcal{K}</span> and check <span class="math inline">\textsf{Dec}_k(c_i) = m_i</span> for all <span class="math inline">i</span>.
 <ul>
 <li>If checks pass, adversary can use <span class="math inline">k</span> to decrypt subsequent ciphertexts</li>
 <li>Adversary runs in constant time and succeeds with probability <span class="math inline">\frac{1}{|\mathcal{K}|}</span></li>
@@ -558,19 +555,34 @@ Saravanan Vijayakumaran
 <section id="private-key-encryption" class="slide level2">
 <h2>Private-key Encryption</h2>
 <ul>
-<li><p>A <strong>private-key encryption scheme</strong> is a triple of PPT algorithms <span class="math inline">(\texttt{Gen}, \texttt{Enc}, \texttt{Dec})</span> such that:</p>
+<li><p>A <strong>private-key encryption scheme</strong> is a triple of PPT algorithms <span class="math inline">(\textsf{Gen}, \textsf{Enc}, \textsf{Dec})</span> such that:</p>
 <ol type="1">
-<li><span class="math inline">k \leftarrow \texttt{Gen}(1^n)</span>.</li>
-<li>For <span class="math inline">m \in \left\{ 0,1 \right\}^*</span>, <span class="math inline">c \leftarrow \texttt{Enc}_k(m)</span>.</li>
-<li><span class="math inline">\texttt{Dec}_k(c) = m</span> or error indicator <span class="math inline">\perp</span>.</li>
+<li><span class="math inline">k \leftarrow \textsf{Gen}(1^n)</span>.</li>
+<li>For <span class="math inline">m \in \left\{ 0,1 \right\}^*</span>, <span class="math inline">c \leftarrow \textsf{Enc}_k(m)</span>.</li>
+<li><span class="math inline">\textsf{Dec}_k(c) = m</span> or error indicator <span class="math inline">\perp</span>.</li>
 </ol></li>
-<li><p>For every <span class="math inline">m, c, k</span>, we have <span class="math inline">\texttt{Dec}_k\left( \texttt{Enc}_k\left( m \right) \right) = m</span></p></li>
+<li><p>For every <span class="math inline">m, c, k</span>, we have <span class="math inline">\textsf{Dec}_k\left( \textsf{Enc}_k\left( m \right) \right) = m</span></p></li>
 </ul>
+<aside class="notes">
+<ul>
+<li>Why is <span class="math inline">1^n</span> input to <span class="math inline">\textsf{Gen}</span> instead of <span class="math inline">n</span>?</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="indistinguishability-in-the-presence-of-an-eavesdropper" class="slide level2">
 <h2>Indistinguishability in the presence of an eavesdropper</h2>
 <ul>
-<li>We consider the ciphertext-only attack where the adversary observes a single ciphertext</li>
+<li>We consider the ciphertext-only attack where the adversary observes a <strong>single</strong> ciphertext</li>
 <li>Our definition will resemble perfect indistinguishability definition except for two differences
 <ul>
 <li>The experiment is parametrized by <span class="math inline">n</span></li>
@@ -589,30 +601,207 @@ Saravanan Vijayakumaran
 <section id="adversarial-indistinguishability-experiment" class="slide level2">
 <h2>Adversarial Indistinguishability Experiment</h2>
 <ul>
-<li>Consider the following experiment <span class="math inline">\texttt{PrivK}^{\texttt{eav}}_{\mathcal{A}, \Pi}(n)</span>:
+<li>Consider the following experiment <span class="math inline">\textsf{PrivK}^{\textsf{eav}}_{\mathcal{A}, \Pi}(n)</span>:
 <ul>
 <li><span class="math inline">\mathcal{A}</span> is given <span class="math inline">1^n</span> and outputs arbitrary <span class="math inline">m_0, m_1 \in \mathcal{M}</span> with <span class="math inline">|m_0| = |m_1|</span>.</li>
 <li>A key <span class="math inline">k</span> is generated using , and a uniform bit <span class="math inline">b \in \{0,1\}</span> is chosen.</li>
-<li>Ciphertext <span class="math inline">c \leftarrow \texttt{Enc}_k(m_b)</span> is computed and given to <span class="math inline">\mathcal{A}</span>.</li>
+<li>Ciphertext <span class="math inline">c \leftarrow \textsf{Enc}_k(m_b)</span> is computed and given to <span class="math inline">\mathcal{A}</span>.</li>
 <li>This ciphertext <span class="math inline">c</span> is called the <strong>challenge ciphertext</strong></li>
 <li><span class="math inline">\mathcal{A}</span> outputs a bit <span class="math inline">b'</span>.</li>
 <li>The output of the experiment is defined to be 1 if <span class="math inline">b' = b</span>, and 0 otherwise.</li>
 </ul></li>
-<li>We write <span class="math inline">\texttt{PrivK}^{\texttt{eav}}_{\mathcal{A}, \Pi}(n) = 1</span> if the output of the experiment is 1 and say that <span class="math inline">\mathcal{A}</span> succeeds</li>
+<li>We write <span class="math inline">\textsf{PrivK}^{\textsf{eav}}_{\mathcal{A}, \Pi}(n) = 1</span> if the output of the experiment is 1 and say that <span class="math inline">\mathcal{A}</span> succeeds</li>
 </ul>
 </section>
 <section id="security-definition" class="slide level2">
 <h2>Security Definition</h2>
 <ul>
-<li>A private-key encryption scheme <span class="math inline">\Pi = (\texttt{Gen}, \texttt{Enc}, \texttt{Dec})</span> has <strong>indistinguishable encryptions in the presence of an eavesdropper</strong>, or is <strong>EAV-secure</strong>, if for all PPT adversaries <span class="math inline">\mathcal{A}</span> there is a negligible function <span class="math inline">\texttt{negl}</span> such that, for all <span class="math inline">n</span>, <span class="math display">\begin{equation*}
-\Pr\left[ \texttt{PrivK}^{\texttt{eav}}_{\mathcal{A},\Pi}(n) =  1\right] \le \frac{1}{2} + \texttt{negl}(n).
-  \end{equation*}</span></li>
-<li>An perfectly secure scheme is also EAV-secure</li>
+<li><p>A private-key encryption scheme <span class="math inline">\Pi = (\textsf{Gen}, \textsf{Enc}, \textsf{Dec})</span> has <strong>indistinguishable encryptions in the presence of an eavesdropper</strong>, or is <strong>EAV-secure</strong>, if for all PPT adversaries <span class="math inline">\mathcal{A}</span> there is a negligible function <span class="math inline">\textsf{negl}</span> such that, for all <span class="math inline">n</span>, <span class="math display">
+\Pr\left[ \textsf{PrivK}^{\textsf{eav}}_{\mathcal{A},\Pi}(n) =  1\right] \le \frac{1}{2} + \textsf{negl}(n).</span></p></li>
+<li><p>An perfectly secure scheme is also EAV-secure</p></li>
 </ul>
+</section>
+<section id="alternative-definition-of-eav-security" class="slide level2">
+<h2>Alternative Definition of EAV-Security</h2>
+<ul>
+<li>Let <span class="math inline">\textsf{out}_{\mathcal{A}}\left( \textsf{PrivK}^{\textsf{eav}}_{\mathcal{A}, \Pi}(n,b)\right)</span> denote the ouput <span class="math inline">b'</span> of <span class="math inline">\mathcal{A}</span> when <span class="math inline">m_b</span> is encrypted</li>
+<li>A private-key encryption scheme <span class="math inline">\Pi = (\textsf{Gen}, \textsf{Enc}, \textsf{Dec})</span> is <strong>EAV-secure</strong>, if for all PPT adversaries <span class="math inline">\mathcal{A}</span> there is a negligible function <span class="math inline">\textsf{negl}</span> such that, for all <span class="math inline">n</span>, <span class="math display">\begin{align*}
+&amp; \left| \Pr\left[ \textsf{out}_{\mathcal{A}}\left( \textsf{PrivK}^{\textsf{eav}}_{\mathcal{A}, \Pi}(n,0)\right)= 1\right] \right. \\
+&amp; \quad\quad \left. - \Pr\left[ \textsf{out}_{\mathcal{A}}\left( \textsf{PrivK}^{\textsf{eav}}_{\mathcal{A}, \Pi}(n,1)\right)= 1\right]\right| \\
+&amp; \quad\quad\quad\quad \le \textsf{negl}(n).
+\end{align*}</span></li>
+<li>Adversary “behaves the same” irrespective of whether it observes an encryption of <span class="math inline">m_0</span> or of <span class="math inline">m_1</span></li>
+</ul>
+</section></section>
+<section>
+<section id="semantic-security" class="title-slide slide level1 center">
+<h1>Semantic Security</h1>
+<ul>
+<li>Can we define computationally secure encryption without an experiment?</li>
+<li>Definition needs to be the analog of perfect secrecy for computationally bounded adversaries</li>
+<li>Semantic security is that analog
+<ul>
+<li>First definition of computationally secure encryption to be proposed</li>
+<li>Difficult to work with</li>
+<li>EAV-security and semantic security are equivalent</li>
+</ul></li>
+</ul>
+</section>
+<section id="semantic-security-definition" class="slide level2">
+<h2>Semantic Security Definition</h2>
+<ul>
+<li>A private-key encryption scheme <span class="math inline">\Pi = (\textsf{Enc}, \textsf{Dec})</span> is <strong>semantically secure in the presence of an eavesdropper</strong> if for every PPT algorithm <span class="math inline">\mathcal{A}</span> there exists a PPT algorithm <span class="math inline">\mathcal{A}'</span> such that for any PPT algorithm <span class="math inline">\textsf{Samp}</span> and polynomial-time computable functions <span class="math inline">f</span> and <span class="math inline">h</span>, the following is negligible: <span class="math display">\begin{align*}
+&amp; \bigg| \Pr\left[ \mathcal{A}\left( 1^n, \textsf{Enc}_k(m), h(m)\right) =f(m) \right] \\
+&amp; \quad\quad - \Pr\left[ \mathcal{A}'\left( 1^n, |m|, h(m) \right) =f(m) \right] \bigg|
+\end{align*}</span></li>
+<li>where
+<ul>
+<li><span class="math inline">k</span> is chosen uniformly from <span class="math inline">\{0,1\}^n</span></li>
+<li><span class="math inline">m \leftarrow \textsf{Samp}(1^n)</span></li>
+<li><span class="math inline">h(m)</span> accounts for any external information about <span class="math inline">m</span></li>
+</ul></li>
+</ul>
+</section>
+<section id="semantic-security-and-eav-security-are-equivalent" class="slide level2">
+<h2>Semantic Security and EAV-Security are Equivalent</h2>
+<ul>
+<li>A private-key encryption scheme is EAV-secure if and only if it is semantically secure in the presence of an eavesdropper</li>
+<li>EAV-security is simpler and easier to work with</li>
+<li>We will follow a similar strategy for other definitions of secure encryption</li>
+</ul>
+</section></section>
+<section>
+<section id="constructing-an-eav-secure-encryption-scheme" class="title-slide slide level1 center">
+<h1>Constructing an EAV-Secure Encryption Scheme</h1>
+<p>Strategy</p>
+<ol type="1">
+<li>Define pseudorandom generators</li>
+<li>Construct an encryption scheme using a pseudorandom generator</li>
+<li>Prove that the existence of an attacker that can “break” the encryption scheme implies that the generator is not pseudorandom</li>
+</ol>
+</section>
+<section id="pseudorandom-generators" class="slide level2">
+<h2>Pseudorandom Generators</h2>
+<ul>
+<li><p>A pseudorandom generator is an efficient (polynomial-time), deterministic algorithm for transforming a short, uniform bitstring called the <strong>seed</strong> into a longer, “uniform-looking” or “pseudorandom” output string.</p></li>
+<li><p>Pseudorandomness is a property of a <strong>distribution</strong> on strings</p></li>
+<li><p>Some desirable properties of a pseudorandom generator:</p>
+<ul>
+<li>Any bit of the output should be equal to 1 with probability close to <span class="math inline">\frac{1}{2}</span>.</li>
+<li>The parity of any subset of the output bits should be equal to 1 with probability close to <span class="math inline">\frac{1}{2}</span>.</li>
+</ul></li>
+</ul>
+</section>
+<section id="good-pseudorandom-generators" class="slide level2">
+<h2>Good Pseudorandom Generators</h2>
+<ul>
+<li>A good pseudorandom generator should pass all efficient statistical tests</li>
+<li>For any efficient statistical test or <strong>distinguisher</strong> <span class="math inline">D</span>, the probability that <span class="math inline">D</span> returns 1 given the output of the pseudorandom generator should be close to the probability that <span class="math inline">D</span> returns 1 when given a uniform string of the same length.</li>
+</ul>
+</section>
+<section id="pseudorandom-generator-definition" class="slide level2">
+<h2>Pseudorandom Generator Definition</h2>
+<ul>
+<li><p>Let <span class="math inline">l</span> be a polynomial and let <span class="math inline">G</span> be a deterministic polynomial-time algorithm such that for any <span class="math inline">n</span> and <span class="math inline">s \in \{0,1\}^n</span>, we have <span class="math inline">|G(s)| = l(n)</span></p></li>
+<li><p><span class="math inline">G</span> is a <strong>pseudorandom generator</strong> if the following conditions hold:</p>
+<ol type="1">
+<li><strong>Expansion:</strong> For every <span class="math inline">n</span> it holds that <span class="math inline">l(n) &gt; n</span>.</li>
+<li><strong>Pseudorandomness:</strong> For any PPT algorithm <span class="math inline">D</span>, there is a negligible function <span class="math inline">\textsf{negl}</span> such that <span class="math display">\begin{equation*}
+\left| \Pr\left[ D\left( G(s) \right) = 1 \right] - \Pr\left[ D(r) = 1 \right] \right| \le \textsf{negl}(n),
+\end{equation*}</span> where
+<ul>
+<li><p>the first probability is taken over uniform choice of <span class="math inline">s \in \{0,1\}^n</span> and the randomness of <span class="math inline">D</span></p></li>
+<li><p>the second probability is taken over uniform choice of <span class="math inline">r \in \{0,1\}^{l(n)}</span> and the randomness of <span class="math inline">D</span>.</p></li>
+</ul></li>
+</ol></li>
+<li><p>We call <span class="math inline">l</span> the <strong>expansion factor</strong> of <span class="math inline">G</span>.</p></li>
+</ul>
+</section>
+<section id="understanding-the-definition" class="slide level2">
+<h2>Understanding the Definition</h2>
+<ul>
+<li>Example of a <strong>non-pseudorandom generator</strong>: Define <span class="math inline">G : \{0,1\}^n \rightarrow \{0,1\}^{n+1}</span> as <span class="math inline">G(s) = s \| \left(\oplus_{i=1}^{n} s_i \right)</span>
+<ul>
+<li>The <span class="math inline">\|</span> operator represents string concatenation</li>
+</ul></li>
+<li>What happens if remove the restriction that <span class="math inline">D</span> is polynomial time?</li>
+</ul>
+</section>
+<section id="stream-ciphers" class="slide level2">
+<h2>Stream Ciphers</h2>
+<ul>
+<li><p>Stream ciphers are practical systems which behave like pseudorandom generator</p></li>
+<li><p><strong>Example</strong>: A5/1</p>
+<p><img data-src="images/a51.png" class="center" width="800"></p></li>
+</ul>
+<aside class="notes">
+<ul>
+<li>Used to provide voice encryption in the GSM cellular system.</li>
+<li>Developed in 1987. Reverse engineered in 1999.</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="a-secure-fixed-length-encryption-scheme" class="slide level2">
+<h2>A Secure Fixed-Length Encryption Scheme</h2>
+<ul>
+<li>Let <span class="math inline">G</span> be a PG with expansion factor <span class="math inline">l</span></li>
+<li>Define a private-key encryption scheme for messages of length <span class="math inline">l</span> as follows:
+<ul>
+<li><span class="math inline">\textsf{Gen}</span>: On input <span class="math inline">1^n</span>, choose <span class="math inline">k</span> uniformly from <span class="math inline">\{0,1\}^n</span>.</li>
+<li><span class="math inline">\textsf{Enc}</span>: Given <span class="math inline">k \in \{0,1\}^n</span> and message <span class="math inline">m \in \{0,1\}^{l(n)}</span>, output the ciphertext <span class="math display">\begin{equation*}
+  c := G(k) \oplus m.
+\end{equation*}</span></li>
+<li><span class="math inline">\textsf{Dec}</span>: Given <span class="math inline">k \in \{0,1\}^n</span> and ciphertext <span class="math inline">c \in \{0,1\}^{l(n)}</span>, output the message <span class="math display">\begin{equation*}
+  m \coloneqq G(k) \oplus c.
+\end{equation*}</span></li>
+</ul></li>
+</ul>
+</section>
+<section id="security-of-construction" class="slide level2">
+<h2>Security of Construction</h2>
+<ul>
+<li>If <span class="math inline">G</span> is a pseudorandom generator, then the construction is <strong>EAV-secure</strong>, i.e.&nbsp;for any PPT adversary <span class="math inline">\mathcal{A}</span> there is a negligible function <span class="math inline">\textsf{negl}</span> such that <span class="math display">\begin{equation*}
+  \Pr\left[ \textsf{PrivK}^{\textsf{eav}}_{\mathcal{A},\Pi}(n) =  1\right] \le \frac{1}{2} + \textsf{negl}(n).
+\end{equation*}</span></li>
+</ul>
+</section>
+<section id="security-proof-overview" class="slide level2">
+<h2>Security Proof Overview</h2>
+<ul>
+<li><strong>Note</strong>: If a one-time pad is used instead of <span class="math inline">G(k)</span>, the system is EAV-secure</li>
+<li><strong>Key idea</strong>: If a PPT adversary <span class="math inline">\mathcal{A}</span> can distinguish between the encryptions of <span class="math inline">m_0</span> and <span class="math inline">m_1</span>, then it can distinguish between <span class="math inline">G(k)</span> and a uniformly random bitstring</li>
+<li>We will construct a distinguisher <span class="math inline">\mathcal{D}</span> that uses <span class="math inline">\mathcal{A}</span> as a subroutine</li>
+</ul>
+</section>
+<section id="distinguisher-definition" class="slide level2">
+<h2>Distinguisher Definition</h2>
+<ul>
+<li><p><span class="math inline">D</span> is given a string <span class="math inline">w \in \{0,1\}^{l(n)}</span></p>
+<ul>
+<li>Run <span class="math inline">\mathcal{A}(1^n)</span> to obtain a pair of messages <span class="math inline">m_0, m_1 \in \{0,1\}^{l(n)}</span></li>
+<li>Choose a uniform bit <span class="math inline">b \in \{0,1\}</span>. Set <span class="math inline">c:= w \oplus m_b</span>.</li>
+<li>Give <span class="math inline">c</span> to <span class="math inline">\mathcal{A}</span> and get <span class="math inline">b'</span>. If <span class="math inline">b = b'</span> output 1 and output 0 otherwise.</li>
+</ul></li>
+<li><p>If <span class="math inline">\mathcal{A}</span> succeeds, <span class="math inline">D</span> decides that <span class="math inline">w</span> is a pseudorandom string and if <span class="math inline">\mathcal{A}</span> fails <span class="math inline">D</span> decides <span class="math inline">w</span> is a random string.</p></li>
+</ul>
+</section></section>
+<section id="further-reading" class="title-slide slide level1 center">
+<h1>Further Reading</h1>
+<p>Sections 3.1, 3.2, 3.3 from Katz &amp; Lindell</p>
 <div class="footer footer-default">
 
 </div>
-</section></section>
+</section>
     </div>
   </div>
 
