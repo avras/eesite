@@ -603,12 +603,12 @@ Saravanan Vijayakumaran
 <ul>
 <li>Consider the following experiment <span class="math inline">\textsf{PrivK}^{\textsf{eav}}_{\mathcal{A}, \Pi}(n)</span>:
 <ul>
-<li><span class="math inline">\mathcal{A}</span> is given <span class="math inline">1^n</span> and outputs arbitrary <span class="math inline">m_0, m_1 \in \mathcal{M}</span> with <span class="math inline">|m_0| = |m_1|</span>.</li>
-<li>A key <span class="math inline">k</span> is generated using , and a uniform bit <span class="math inline">b \in \{0,1\}</span> is chosen.</li>
-<li>Ciphertext <span class="math inline">c \leftarrow \textsf{Enc}_k(m_b)</span> is computed and given to <span class="math inline">\mathcal{A}</span>.</li>
+<li><span class="math inline">\mathcal{A}</span> is given <span class="math inline">1^n</span> and outputs arbitrary <span class="math inline">m_0, m_1 \in \mathcal{M}</span> with <span class="math inline">|m_0| = |m_1|</span></li>
+<li>A key <span class="math inline">k</span> is generated using <span class="math inline">\textsf{Gen}</span>, and a uniform bit <span class="math inline">b \in \{0,1\}</span> is chosen</li>
+<li>Ciphertext <span class="math inline">c \leftarrow \textsf{Enc}_k(m_b)</span> is computed and given to <span class="math inline">\mathcal{A}</span></li>
 <li>This ciphertext <span class="math inline">c</span> is called the <strong>challenge ciphertext</strong></li>
-<li><span class="math inline">\mathcal{A}</span> outputs a bit <span class="math inline">b'</span>.</li>
-<li>The output of the experiment is defined to be 1 if <span class="math inline">b' = b</span>, and 0 otherwise.</li>
+<li><span class="math inline">\mathcal{A}</span> outputs a bit <span class="math inline">b'</span></li>
+<li>The output of the experiment is defined to be 1 if <span class="math inline">b' = b</span>, and 0 otherwise</li>
 </ul></li>
 <li>We write <span class="math inline">\textsf{PrivK}^{\textsf{eav}}_{\mathcal{A}, \Pi}(n) = 1</span> if the output of the experiment is 1 and say that <span class="math inline">\mathcal{A}</span> succeeds</li>
 </ul>
@@ -624,7 +624,7 @@ Saravanan Vijayakumaran
 <section id="alternative-definition-of-eav-security" class="slide level2">
 <h2>Alternative Definition of EAV-Security</h2>
 <ul>
-<li>Let <span class="math inline">\textsf{out}_{\mathcal{A}}\left( \textsf{PrivK}^{\textsf{eav}}_{\mathcal{A}, \Pi}(n,b)\right)</span> denote the ouput <span class="math inline">b'</span> of <span class="math inline">\mathcal{A}</span> when <span class="math inline">m_b</span> is encrypted</li>
+<li>Let <span class="math inline">\textsf{out}_{\mathcal{A}}\left( \textsf{PrivK}^{\textsf{eav}}_{\mathcal{A}, \Pi}(n,b)\right)</span> denote the output <span class="math inline">b'</span> of <span class="math inline">\mathcal{A}</span> when <span class="math inline">m_b</span> is encrypted</li>
 <li>A private-key encryption scheme <span class="math inline">\Pi = (\textsf{Gen}, \textsf{Enc}, \textsf{Dec})</span> is <strong>EAV-secure</strong>, if for all PPT adversaries <span class="math inline">\mathcal{A}</span> there is a negligible function <span class="math inline">\textsf{negl}</span> such that, for all <span class="math inline">n</span>, <span class="math display">\begin{align*}
 &amp; \left| \Pr\left[ \textsf{out}_{\mathcal{A}}\left( \textsf{PrivK}^{\textsf{eav}}_{\mathcal{A}, \Pi}(n,0)\right)= 1\right] \right. \\
 &amp; \quad\quad \left. - \Pr\left[ \textsf{out}_{\mathcal{A}}\left( \textsf{PrivK}^{\textsf{eav}}_{\mathcal{A}, \Pi}(n,1)\right)= 1\right]\right| \\
@@ -683,12 +683,12 @@ Saravanan Vijayakumaran
 <section id="pseudorandom-generators" class="slide level2">
 <h2>Pseudorandom Generators</h2>
 <ul>
-<li><p>A pseudorandom generator is an efficient (polynomial-time), deterministic algorithm for transforming a short, uniform bitstring called the <strong>seed</strong> into a longer, “uniform-looking” or “pseudorandom” output string.</p></li>
+<li><p>A pseudorandom generator is a <strong>polynomial-time deterministic</strong> algorithm for transforming a short, uniform bitstring called the <strong>seed</strong> into a longer, “uniform-looking” output string.</p></li>
 <li><p>Pseudorandomness is a property of a <strong>distribution</strong> on strings</p></li>
 <li><p>Some desirable properties of a pseudorandom generator:</p>
 <ul>
 <li>Any bit of the output should be equal to 1 with probability close to <span class="math inline">\frac{1}{2}</span>.</li>
-<li>The parity of any subset of the output bits should be equal to 1 with probability close to <span class="math inline">\frac{1}{2}</span>.</li>
+<li>The parity of any subset of the output bits should be even with probability close to <span class="math inline">\frac{1}{2}</span>.</li>
 </ul></li>
 </ul>
 </section>
@@ -720,8 +720,9 @@ Saravanan Vijayakumaran
 <section id="understanding-the-definition" class="slide level2">
 <h2>Understanding the Definition</h2>
 <ul>
-<li>Example of a <strong>non-pseudorandom generator</strong>: Define <span class="math inline">G : \{0,1\}^n \rightarrow \{0,1\}^{n+1}</span> as <span class="math inline">G(s) = s \| \left(\oplus_{i=1}^{n} s_i \right)</span>
+<li>Example of a <strong>non-pseudorandom generator</strong>
 <ul>
+<li>Define <span class="math inline">G : \{0,1\}^n \rightarrow \{0,1\}^{n+1}</span> as <span class="math display">G(s) = s \| \left(\oplus_{i=1}^{n} s_i \right)</span></li>
 <li>The <span class="math inline">\|</span> operator represents string concatenation</li>
 </ul></li>
 <li>What happens if remove the restriction that <span class="math inline">D</span> is polynomial time?</li>
@@ -794,10 +795,215 @@ Saravanan Vijayakumaran
 </ul></li>
 <li><p>If <span class="math inline">\mathcal{A}</span> succeeds, <span class="math inline">D</span> decides that <span class="math inline">w</span> is a pseudorandom string and if <span class="math inline">\mathcal{A}</span> fails <span class="math inline">D</span> decides <span class="math inline">w</span> is a random string.</p></li>
 </ul>
+</section>
+<section id="view-of-the-adversary" class="slide level2">
+<h2>View of the Adversary</h2>
+<ul>
+<li>Let <span class="math inline">\tilde{\Pi}</span> be the one-time pad scheme with length <span class="math inline">l(n)</span></li>
+<li>When <span class="math inline">w</span> is chosen uniformly from <span class="math inline">\{0,1\}^{l(n)}</span>, then the view of <span class="math inline">\mathcal{A}</span> is identical to the view of <span class="math inline">\mathcal{A}</span> in <span class="math inline">\textsf{PrivK}^{\textsf{eav}}_{\mathcal{A},\tilde{\Pi}}(n)</span></li>
+<li>When <span class="math inline">w</span> generated by choosing <span class="math inline">k</span> uniformly from <span class="math inline">\{0,1\}^{n}</span> and setting <span class="math inline">w \coloneqq G(k)</span>, then the view of <span class="math inline">\mathcal{A}</span> is identical to the view of <span class="math inline">\mathcal{A}</span> in <span class="math inline">\textsf{PrivK}^{\textsf{eav}}_{\mathcal{A},\Pi}(n)</span></li>
+</ul>
+</section></section>
+<section>
+<section id="stronger-security-notions" class="title-slide slide level1 center">
+<h1>Stronger Security Notions</h1>
+<ul>
+<li>Security for Multiple Encryptions</li>
+<li>CPA-Security</li>
+<li>CPA-Security for Multiple Encryptions</li>
+</ul>
+</section>
+<section id="multiple-message-eavesdropping-experiment" class="slide level2">
+<h2>Multiple-Message Eavesdropping Experiment</h2>
+<ul>
+<li>Consider the following experiment <span class="math inline">\textsf{PrivK}^{\textsf{mult}}_{\mathcal{A}, \Pi}(n)</span>:
+<ul>
+<li><span class="math inline">\mathcal{A}</span> is given <span class="math inline">1^n</span> and outputs a pair of equal-length lists of messages <span class="math inline">\vec{M}_0 = (m_{0,t},\ldots, m_{0,t})</span> and <span class="math inline">\vec{M}_1 = (m_{1,t},\ldots, m_{1,t})</span> with <span class="math inline">|m_{0,i}| = |m_{1,i}|</span> for all <span class="math inline">i</span></li>
+<li>A key <span class="math inline">k</span> is generated using <span class="math inline">\textsf{Gen}</span>, and a uniform bit <span class="math inline">b \in \{0,1\}</span> is chosen</li>
+<li>Ciphertext vector <span class="math inline">\vec{C} = (c_1,\ldots,c_t)</span> is given to <span class="math inline">\mathcal{A}</span> where <span class="math inline">c_i \leftarrow \textsf{Enc}_k(m_{b,i})</span></li>
+<li><span class="math inline">\mathcal{A}</span> outputs a bit <span class="math inline">b'</span></li>
+<li>The output of the experiment is defined to be 1 if <span class="math inline">b' = b</span>, and 0 otherwise</li>
+</ul></li>
+<li>We write <span class="math inline">\textsf{PrivK}^{\textsf{mult}}_{\mathcal{A}, \Pi}(n) = 1</span> if the output of the experiment is 1 and say that <span class="math inline">\mathcal{A}</span> succeeds</li>
+</ul>
+</section>
+<section id="security-definition-1" class="slide level2">
+<h2>Security Definition</h2>
+<ul>
+<li><p>A private-key encryption scheme <span class="math inline">\Pi = (\textsf{Gen}, \textsf{Enc}, \textsf{Dec})</span> has <strong>indistinguishable multiple encryptions in the presence of an eavesdropper</strong> if for all PPT adversaries <span class="math inline">\mathcal{A}</span> there is a negligible function <span class="math inline">\textsf{negl}</span> such that, <span class="math display">
+\Pr\left[ \textsf{PrivK}^{\textsf{mult}}_{\mathcal{A},\Pi}(n) =  1\right] \le \frac{1}{2} + \textsf{negl}(n).</span></p></li>
+<li><p>The one-time pad does not have indistinguishable multiple encryptions in the presence of an eavesdropper</p></li>
+</ul>
+</section>
+<section id="chosen-plaintext-attacks" class="slide level2">
+<h2>Chosen-Plaintext Attacks</h2>
+<ul>
+<li><p>Adversary can influence the honest parties sharing the key to encrypt messages of its choice and send it over the public channel</p></li>
+<li><p>Chosen-plaintext attacks in the real world</p>
+<ul>
+<li>In WW2, British placed mines knowing that the Germans would encrypt and transmit the mine locations</li>
+<li>Battle of Midway</li>
+</ul></li>
+<li><p>How can we model such an adversary?</p></li>
+</ul>
+</section>
+<section id="the-encryption-oracle" class="slide level2">
+<h2>The Encryption Oracle</h2>
+<ul>
+<li>Chosen-plaintext attacks are modeled by giving the adversary <span class="math inline">\mathcal{A}</span> access to an encryption oracle</li>
+<li><strong>Oracle</strong>: <em>a place where people could go to ask the gods for advice and information about the future</em></li>
+<li><span class="math inline">\mathcal{A}</span> has access to <span class="math inline">\textsf{Enc}_k(\cdot)</span> as a black box for an unknown <span class="math inline">k</span></li>
+<li>When <span class="math inline">\mathcal{A}</span> queries this oracle with a message <span class="math inline">m</span> as input, the oracle returns a ciphertext <span class="math inline">c \leftarrow \textsf{Enc}_k(m)</span></li>
+</ul>
+</section>
+<section id="cpa-indistinguishability-experiment" class="slide level2">
+<h2>CPA Indistinguishability Experiment</h2>
+<ul>
+<li>Consider the following experiment <span class="math inline">\textsf{PrivK}^{\textsf{cpa}}_{\mathcal{A}, \Pi}(n)</span>:
+<ul>
+<li>A key <span class="math inline">k</span> is generated using <span class="math inline">\textsf{Gen}(1^n)</span></li>
+<li><span class="math inline">\mathcal{A}</span> is given <span class="math inline">1^n</span> and oracle access to <span class="math inline">\textsf{Enc}_k(\cdot)</span>, and outputs pair of messages <span class="math inline">m_0, m_1</span> of the same length</li>
+<li>A uniform bit <span class="math inline">b \in \{0,1\}</span> is chosen</li>
+<li>Ciphertext <span class="math inline">c \leftarrow \textsf{Enc}_k(m_b)</span> is computed and given to <span class="math inline">\mathcal{A}</span></li>
+<li><span class="math inline">\mathcal{A}</span> continues to have oracle access to <span class="math inline">\textsf{Enc}_k(\cdot)</span>, and outputs a bit <span class="math inline">b'</span></li>
+<li>The output of the experiment is 1 if <span class="math inline">b' = b</span>, and 0 otherwise</li>
+</ul></li>
+</ul>
+</section>
+<section id="security-definition-2" class="slide level2">
+<h2>Security Definition</h2>
+<ul>
+<li>A private-key encryption scheme <span class="math inline">\Pi = (\textsf{Gen}, \textsf{Enc}, \textsf{Dec})</span> has <strong>indistinguishable encryptions under a chosen-plaintext attack</strong>, or is <strong>CPA-secure</strong>, if for all PPT adversaries <span class="math inline">\mathcal{A}</span> there is a negligible function <span class="math inline">\textsf{negl}</span> such that <span class="math display">
+\Pr\left[ \textsf{PrivK}^{\textsf{cpa}}_{\mathcal{A},\Pi}(n) =  1\right] \le \frac{1}{2} + \textsf{negl}(n).</span></li>
+</ul>
+</section>
+<section id="cpa-security-for-multiple-encryptions" class="slide level2">
+<h2>CPA-Security for Multiple Encryptions</h2>
+<ul>
+<li>We could extend the CPA indistinguishability experiment to multiple encryptions using lists of plaintexts</li>
+<li>We take a different approach that models attackers that can <strong>adaptively</strong> choose its input to the encryption oracle</li>
+<li>Instead of <span class="math inline">\textsf{Enc}_k(\cdot)</span> we give the adversary access to a <strong>left-or-right</strong> oracle <span class="math inline">\textsf{LR}_{k,b}</span></li>
+<li>On input <span class="math inline">m_0, m_1</span>, the oracle gives <span class="math inline">\textsf{LR}_{k,b}(m_0, m_1) = \textsf{Enc}_k(m_b)</span></li>
+</ul>
+</section>
+<section id="lr-oracle-experiment" class="slide level2">
+<h2>LR-Oracle Experiment</h2>
+<ul>
+<li>Consider the following experiment <span class="math inline">\textsf{PrivK}^{\textsf{LR-cpa}}_{\mathcal{A}, \Pi}(n)</span>:
+<ul>
+<li>A key <span class="math inline">k</span> is generated using <span class="math inline">\textsf{Gen}(1^n)</span></li>
+<li>A uniform bit <span class="math inline">b \in \{0,1\}</span> is chosen</li>
+<li><span class="math inline">\mathcal{A}</span> is given <span class="math inline">1^n</span> and oracle access to <span class="math inline">\textsf{LR}_{k,b}(\cdot,\cdot)</span></li>
+<li><span class="math inline">\mathcal{A}</span> outputs a bit <span class="math inline">b'</span></li>
+<li>The output of the experiment is 1 if <span class="math inline">b' = b</span>, and 0 otherwise</li>
+</ul></li>
+</ul>
+</section>
+<section id="security-definition-3" class="slide level2">
+<h2>Security Definition</h2>
+<ul>
+<li>A private-key encryption scheme <span class="math inline">\Pi = (\textsf{Gen}, \textsf{Enc}, \textsf{Dec})</span> has <strong>indistinguishable multiple encryptions under a chosen-plaintext attack</strong>, or is <strong>CPA-secure for multiple encryptions</strong>, if for all PPT adversaries <span class="math inline">\mathcal{A}</span> there is a negligible function <span class="math inline">\textsf{negl}</span> such that <span class="math display">
+\Pr\left[ \textsf{PrivK}^{\textsf{LR-cpa}}_{\mathcal{A},\Pi}(n) =  1\right] \le \frac{1}{2} + \textsf{negl}(n).</span></li>
+</ul>
+</section>
+<section id="equivalence-of-cpa-security-notions" class="slide level2">
+<h2>Equivalence of CPA-Security Notions</h2>
+<ul>
+<li>We have seen three security notions stronger than EAV-security
+<ul>
+<li>Security for Multiple Encryptions</li>
+<li>CPA-Security</li>
+<li>CPA-Security for Multiple Encryptions</li>
+</ul></li>
+<li>CPA-Security for Multiple Encryptions <span class="math inline">\implies</span> Security for Multiple Encryptions</li>
+<li><strong>Theorem</strong>: CPA-Security <span class="math inline">\implies</span> CPA-Security for Multiple Encryptions</li>
+</ul>
+</section></section>
+<section>
+<section id="constructing-an-cpa-secure-encryption-scheme" class="title-slide slide level1 center">
+<h1>Constructing an CPA-Secure Encryption Scheme</h1>
+<p>Strategy</p>
+<ol type="1">
+<li>Define pseudorandom functions</li>
+<li>Construct an encryption scheme using a pseudorandom function</li>
+<li>Prove that the existence of an attacker that can “break” the encryption scheme implies that the function is not pseudorandom</li>
+</ol>
+</section>
+<section id="pseudorandom-functions" class="slide level2">
+<h2>Pseudorandom Functions</h2>
+<ul>
+<li>Pseudorandom functions are “random-looking” functions</li>
+<li>In this case, pseudorandomness will be a property of a <strong>distribution over functions</strong></li>
+<li>Given a security parameter <span class="math inline">n</span>, a keyed function <span class="math display">F : \{0,1\}^{l_{key}(n)} \times \{0,1\}^{l_{in}(n)} \rightarrow \{0,1\}^{l_{out}(n)}</span> is a two-input function, where the first input is called the key and is denoted by <span class="math inline">k</span></li>
+<li>We will only consider keyed functions</li>
+<li>If the key <span class="math inline">k</span> is fixed, we get a single-input function <span class="math display">F_k: \{0,1\}^{l_{in}(n)} \rightarrow \{0,1\}^{l_{out}(n)}</span> defined by <span class="math inline">F_k(x) = F(k,x)</span>.</li>
+<li><span class="math inline">F</span> is said to be when <span class="math inline">l_{key}(n) = l_{in}(n) = l_{out}(n) = n</span>.</li>
+<li>For simplicity, assume that <span class="math inline">F</span> is length-preserving</li>
+</ul>
+</section>
+<section id="uniformly-choosing-a-function" class="slide level2">
+<h2>Uniformly Choosing a Function</h2>
+<ul>
+<li>Let $<span class="math inline">\textsf{Func}_n</span> be the set of all functions with domain and range equal to <span class="math inline">\{0,1\}^n</span></li>
+<li>A keyed function <span class="math inline">F</span> is said to be <strong>pseudorandom</strong> if the function <span class="math inline">F_k</span> (for a uniform key <span class="math inline">k</span>) is indistinguishable from a function chosen uniformly from $_n$</li>
+<li>Note that <span class="math inline">\left| \textsf{Func}_n\right| = 2^{n \cdot 2^n}</span></li>
+<li>For a length-preserving <span class="math inline">F_k</span>, choosing <span class="math inline">k \leftarrow \{0,1\}^n</span> induces a distribution over at most <span class="math inline">2^n</span> functions with domain and range equal <span class="math inline">\{0,1\}^n</span>.</li>
+</ul>
+</section>
+<section id="distinguisher-for-pseudorandom-functions" class="slide level2">
+<h2>Distinguisher for Pseudorandom Functions</h2>
+<ul>
+<li>The distinguisher should be allowed to query the function</li>
+<li><span class="math inline">D</span> is given access to an <span class="math inline">\mathcal{O}</span> which is either equal to <span class="math inline">F_k</span> (for uniform <span class="math inline">k</span>) or <span class="math inline">f</span> (for uniform <span class="math inline">f</span> from <span class="math inline">\textsf{Func}_n</span>)</li>
+<li><span class="math inline">D</span> can query the oracle <span class="math inline">\mathcal{O}</span> at any point <span class="math inline">x \in \{0,1\}^n</span> and the oracle returns <span class="math inline">\mathcal{O}(x)</span></li>
+<li><span class="math inline">D</span> can adaptively query the oracle but can ask only polynomially many queries.</li>
+</ul>
+</section>
+<section id="pseudorandom-function-definition" class="slide level2">
+<h2>Pseudorandom Function Definition</h2>
+<ul>
+<li><p>Let <span class="math inline">F</span> be an efficient, length-preserving, keyed function. <span class="math inline">F</span> is a <strong>pseudorandom function</strong> if for all PPT distinguishers <span class="math inline">D</span>, there is a negligible function <span class="math inline">\textsf{negl}</span> such that: <span class="math display">\begin{align*}
+&amp; \bigg| \Pr\left[ D^{F_k(\cdot)}(1^n) = 1 \right] - \Pr\left[ D^{f(\cdot)}(1^n) = 1 \right]\bigg| \\
+&amp; \quad\quad\quad\quad \le \textsf{negl}(n),
+  \end{align*}</span> where</p>
+<ul>
+<li><p>the first probability is taken over uniform choice of <span class="math inline">k \in \{0,1\}^n</span> and the randomness of <span class="math inline">D</span>, and</p></li>
+<li><p>the second probability is taken over uniform choice of <span class="math inline">f \in \textsf{Func}_n</span> and the randomness of <span class="math inline">D</span></p></li>
+</ul></li>
+</ul>
+</section>
+<section id="distinguisher-does-not-know-the-key" class="slide level2">
+<h2>Distinguisher does not know the Key</h2>
+<ul>
+<li><span class="math inline">D</span> is <strong>not</strong> given access to the key <span class="math inline">k</span></li>
+<li>If <span class="math inline">k</span> is known, it is easy to construct a distinguisher which succeeds with non-negligible probability</li>
+</ul>
+</section>
+<section id="example-of-a-non-pseudorandom-function" class="slide level2">
+<h2>Example of a Non-Pseudorandom Function</h2>
+<ul>
+<li>Example of a non-pseudorandom, length-preserving, keyed function <span class="math display">F(k,x) = k \oplus x</span></li>
+</ul>
+</section>
+<section id="cpa-secure-encryption-from-pseudorandom-functions" class="slide level2">
+<h2>CPA-Secure Encryption from Pseudorandom Functions</h2>
+<ul>
+<li>Let <span class="math inline">F</span> be a pseudorandom function</li>
+<li>Define a private-key encryption scheme for messages of length <span class="math inline">n</span> as follows:
+<ul>
+<li><span class="math inline">\textsf{Gen}</span>: On input <span class="math inline">1^n</span>, choose <span class="math inline">k</span> uniformly from <span class="math inline">\{0,1\}^n</span>.</li>
+<li><span class="math inline">\textsf{Enc}</span>: Given <span class="math inline">k \in \{0,1\}^n</span> and message <span class="math inline">m \in \{0,1\}^{n}</span>, choose uniform <span class="math inline">r \in \{0,1\}^n</span> and output the ciphertext <span class="math display">\begin{equation*}
+c := \langle r, F_k(r) \oplus m \rangle.
+   \end{equation*}</span></li>
+<li><span class="math inline">\textsf{Dec}</span>: Given <span class="math inline">k \in \{0,1\}^n</span> and ciphertext <span class="math inline">c = \langle r, s \rangle</span>, output the plaintext message <span class="math display">\begin{equation*}
+m := F_k(r) \oplus s.
+   \end{equation*}</span></li>
+</ul></li>
+</ul>
 </section></section>
 <section id="further-reading" class="title-slide slide level1 center">
 <h1>Further Reading</h1>
-<p>Sections 3.1, 3.2, 3.3 from Katz &amp; Lindell</p>
+<p>Sections 3.1 — 3.5 from Katz &amp; Lindell</p>
 <div class="footer footer-default">
 
 </div>
