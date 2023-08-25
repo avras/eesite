@@ -673,7 +673,10 @@ Saravanan Vijayakumaran
 <section>
 <section id="constructing-an-eav-secure-encryption-scheme" class="title-slide slide level1 center">
 <h1>Constructing an EAV-Secure Encryption Scheme</h1>
-<p>Strategy</p>
+
+</section>
+<section id="strategy" class="slide level2">
+<h2>Strategy</h2>
 <ol type="1">
 <li>Define pseudorandom generators</li>
 <li>Construct an encryption scheme using a pseudorandom generator</li>
@@ -920,9 +923,12 @@ Saravanan Vijayakumaran
 </ul>
 </section></section>
 <section>
-<section id="constructing-an-cpa-secure-encryption-scheme" class="title-slide slide level1 center">
-<h1>Constructing an CPA-Secure Encryption Scheme</h1>
-<p>Strategy</p>
+<section id="constructing-a-cpa-secure-encryption-scheme" class="title-slide slide level1 center">
+<h1>Constructing a CPA-Secure Encryption Scheme</h1>
+
+</section>
+<section id="strategy-1" class="slide level2">
+<h2>Strategy</h2>
 <ol type="1">
 <li>Define pseudorandom functions</li>
 <li>Construct an encryption scheme using a pseudorandom function</li>
@@ -935,26 +941,26 @@ Saravanan Vijayakumaran
 <li>Pseudorandom functions are “random-looking” functions</li>
 <li>In this case, pseudorandomness will be a property of a <strong>distribution over functions</strong></li>
 <li>Given a security parameter <span class="math inline">n</span>, a keyed function <span class="math display">F : \{0,1\}^{l_{key}(n)} \times \{0,1\}^{l_{in}(n)} \rightarrow \{0,1\}^{l_{out}(n)}</span> is a two-input function, where the first input is called the key and is denoted by <span class="math inline">k</span></li>
-<li>We will only consider keyed functions</li>
+<li>We will only consider <strong>efficient</strong> keyed functions</li>
 <li>If the key <span class="math inline">k</span> is fixed, we get a single-input function <span class="math display">F_k: \{0,1\}^{l_{in}(n)} \rightarrow \{0,1\}^{l_{out}(n)}</span> defined by <span class="math inline">F_k(x) = F(k,x)</span>.</li>
-<li><span class="math inline">F</span> is said to be when <span class="math inline">l_{key}(n) = l_{in}(n) = l_{out}(n) = n</span>.</li>
+<li><span class="math inline">F</span> is said to be <strong>length-preserving</strong> when <span class="math inline">l_{key}(n) = l_{in}(n) = l_{out}(n) = n</span>.</li>
 <li>For simplicity, assume that <span class="math inline">F</span> is length-preserving</li>
 </ul>
 </section>
 <section id="uniformly-choosing-a-function" class="slide level2">
 <h2>Uniformly Choosing a Function</h2>
 <ul>
-<li>Let $<span class="math inline">\textsf{Func}_n</span> be the set of all functions with domain and range equal to <span class="math inline">\{0,1\}^n</span></li>
-<li>A keyed function <span class="math inline">F</span> is said to be <strong>pseudorandom</strong> if the function <span class="math inline">F_k</span> (for a uniform key <span class="math inline">k</span>) is indistinguishable from a function chosen uniformly from $_n$</li>
+<li>Let <span class="math inline">\textsf{Func}_n</span> be the set of all functions with domain and range equal to <span class="math inline">\{0,1\}^n</span></li>
+<li>A keyed function <span class="math inline">F</span> is said to be <strong>pseudorandom</strong> if the function <span class="math inline">F_k</span> (for a uniform key <span class="math inline">k</span>) is indistinguishable from a function chosen uniformly from <span class="math inline">\textsf{Func}_n</span></li>
 <li>Note that <span class="math inline">\left| \textsf{Func}_n\right| = 2^{n \cdot 2^n}</span></li>
-<li>For a length-preserving <span class="math inline">F_k</span>, choosing <span class="math inline">k \leftarrow \{0,1\}^n</span> induces a distribution over at most <span class="math inline">2^n</span> functions with domain and range equal <span class="math inline">\{0,1\}^n</span>.</li>
+<li>For a length-preserving <span class="math inline">F_k</span>, choosing <span class="math inline">k \leftarrow \{0,1\}^n</span> induces a distribution over at most <span class="math inline">2^n</span> functions with domain and range equal <span class="math inline">\{0,1\}^n</span></li>
 </ul>
 </section>
 <section id="distinguisher-for-pseudorandom-functions" class="slide level2">
 <h2>Distinguisher for Pseudorandom Functions</h2>
 <ul>
 <li>The distinguisher should be allowed to query the function</li>
-<li><span class="math inline">D</span> is given access to an <span class="math inline">\mathcal{O}</span> which is either equal to <span class="math inline">F_k</span> (for uniform <span class="math inline">k</span>) or <span class="math inline">f</span> (for uniform <span class="math inline">f</span> from <span class="math inline">\textsf{Func}_n</span>)</li>
+<li><span class="math inline">D</span> is given access to an <strong>oracle</strong> <span class="math inline">\mathcal{O}</span> which is either equal to <span class="math inline">F_k</span> (for uniform <span class="math inline">k</span>) or <span class="math inline">f</span> (for uniform <span class="math inline">f</span> from <span class="math inline">\textsf{Func}_n</span>)</li>
 <li><span class="math inline">D</span> can query the oracle <span class="math inline">\mathcal{O}</span> at any point <span class="math inline">x \in \{0,1\}^n</span> and the oracle returns <span class="math inline">\mathcal{O}(x)</span></li>
 <li><span class="math inline">D</span> can adaptively query the oracle but can ask only polynomially many queries.</li>
 </ul>
@@ -1000,14 +1006,241 @@ m := F_k(r) \oplus s.
    \end{equation*}</span></li>
 </ul></li>
 </ul>
+</section>
+<section id="security-claim" class="slide level2">
+<h2>Security Claim</h2>
+<ul>
+<li><p><strong>Theorem</strong>: If <span class="math inline">F</span> is a pseudorandom function, then the above construction is a CPA-secure private-key encryption scheme for messages of length <span class="math inline">n</span></p></li>
+<li><p>Security Proof Overview</p>
+<ul>
+<li><strong>Key idea</strong>: If a PPT adversary <span class="math inline">\mathcal{A}</span> can distinguish between message encryptions using <span class="math inline">f</span> and <span class="math inline">F_k</span>, then it can be used to distinguish between <span class="math inline">f</span> and <span class="math inline">F_k</span></li>
+<li>We will construct a distinguisher <span class="math inline">\mathcal{D}</span> that uses <span class="math inline">\mathcal{A}</span> as a subroutine</li>
+</ul></li>
+</ul>
+</section></section>
+<section>
+<section id="proof-of-security-for-cpa-secure-scheme" class="title-slide slide level1 center">
+<h1>Proof of Security for CPA-Secure Scheme</h1>
+
+</section>
+<section id="replacing-the-pseudorandom-function-with-a-random-function" class="slide level2">
+<h2>Replacing the Pseudorandom Function with a Random Function</h2>
+<ul>
+<li>Let <span class="math inline">\widetilde{\Pi} = (\widetilde{\textsf{Gen}}, \widetilde{\textsf{Enc}}, \widetilde{\textsf{Dec}})</span> be the same as <span class="math inline">\Pi = (\textsf{Gen}, \textsf{Enc}, \textsf{Dec})</span> with <span class="math inline">F_k</span> replaced with <span class="math inline">f \leftarrow \textsf{Func}_n</span></li>
+<li><span class="math inline">\widetilde{\textsf{Gen}}(1^n)</span> chooses a uniform <span class="math inline">f</span> from <span class="math inline">\textsf{Func}_n</span>
+<ul>
+<li>Not practical but can be defined for the sake of the proof</li>
+</ul></li>
+<li>Let <span class="math inline">\mathcal{A}</span> be any PPT adversary which uses at most <span class="math inline">q(n)</span> encryption oracle queries</li>
+<li>We will show that <span class="math display">\begin{align*}
+  &amp; \bigg| \Pr\left[ \textsf{PrivK}_{\mathcal{A}, \Pi}^{\textsf{cpa}}(n) = 1 \right] -  \Pr\left[ \textsf{PrivK}_{\mathcal{A}, \widetilde{\Pi}}^{\textsf{cpa}}(n) = 1 \right]\bigg| \\
+  &amp; \quad\quad\quad\quad \le \textsf{negl}(n),
+    \end{align*}</span></li>
+</ul>
+</section>
+<section id="distinguisher-definition-13" class="slide level2">
+<h2>Distinguisher Definition (1/3)</h2>
+<p><span class="math inline">D</span> is given <span class="math inline">1^n</span> and access to an oracle <span class="math inline">\mathcal{O}: \{0,1\}^n \rightarrow \{0,1\}^n</span>. It uses <span class="math inline">\mathcal{A}</span> as a subroutine</p>
+<ol type="1">
+<li><p>Whenever <span class="math inline">\mathcal{A}</span> queries the encryption oracle on message <span class="math inline">m\in \{0,1\}^n</span>, answer as follows</p>
+<ol type="i">
+<li>Choose uniform <span class="math inline">r\in \{0,1\}^n</span></li>
+<li>Query <span class="math inline">\mathcal{O}(r)</span> and obtain response <span class="math inline">y</span></li>
+<li>Return the ciphertext <span class="math inline">\langle r, y \oplus m \rangle</span> to <span class="math inline">\mathcal{A}</span></li>
+</ol></li>
+</ol>
+</section>
+<section id="distinguisher-definition-23" class="slide level2">
+<h2>Distinguisher Definition (2/3)</h2>
+<ol start="2" type="1">
+<li><p>When <span class="math inline">\mathcal{A}</span> outputs messages <span class="math inline">m_0, m_1 \in \{0,1\}^n</span>, choose a uniform bit <span class="math inline">b \in \{0,1\}</span> and then</p>
+<ol type="i">
+<li>Choose uniform <span class="math inline">r\in \{0,1\}^n</span></li>
+<li>Query <span class="math inline">\mathcal{O}(r)</span> and obtain response <span class="math inline">y</span></li>
+<li>Return the ciphertext <span class="math inline">\langle r, y \oplus m_b \rangle</span> to <span class="math inline">\mathcal{A}</span></li>
+</ol></li>
+</ol>
+</section>
+<section id="distinguisher-definition-33" class="slide level2">
+<h2>Distinguisher Definition (3/3)</h2>
+<ol start="3" type="1">
+<li>Continue answering encryption oracle queries of <span class="math inline">\mathcal{A}</span></li>
+<li>Once <span class="math inline">\mathcal{A}</span> outputs a bit <span class="math inline">b'</span>, output <span class="math inline">1</span> if <span class="math inline">b=b'</span> and <span class="math inline">0</span> otherwise.</li>
+</ol>
+</section>
+<section id="finishing-the-proof" class="slide level2">
+<h2>Finishing the Proof</h2>
+<ul>
+<li>We have <span class="math display">\begin{align*}
+    &amp; \bigg| \Pr\left[ \textsf{PrivK}_{\mathcal{A}, \Pi}^{\textsf{cpa}}(n) = 1 \right] -  \Pr\left[ \textsf{PrivK}_{\mathcal{A}, \widetilde{\Pi}}^{\textsf{cpa}}(n) = 1 \right]\bigg| \\
+= &amp; \bigg| \Pr\left[ D^{F_k(\cdot)}(1^n) = 1 \right] - \Pr\left[ D^{f(\cdot)}(1^n) = 1 \right]\bigg| \\
+    &amp; \quad\quad\quad\quad \le \textsf{negl}(n),
+      \end{align*}</span></li>
+<li>We will show that <span class="math display"> \Pr\left[ \textsf{PrivK}_{\mathcal{A}, \widetilde{\Pi}}^{\textsf{cpa}}(n) = 1 \right] \le \frac{1}{2} + \frac{q(n)}{2^n}</span></li>
+</ul>
+</section>
+<section id="upperbound-on-the-adversarys-success-probability-12" class="slide level2">
+<h2>Upperbound on the Adversary’s Success Probability (1/2)</h2>
+<ul>
+<li>In <span class="math inline">\textsf{PrivK}_{\mathcal{A}, \widetilde{\Pi}}^{\textsf{cpa}}(n)</span> the ciphertext corresponding to <span class="math inline">m</span> is <span class="math inline">\langle r, f(r) \oplus m \rangle</span></li>
+<li>Let <span class="math inline">r^*</span> be the randomness used when generating the challenge ciphertext <span class="math inline">\langle r^*, f(r^*) \oplus m_b \rangle</span></li>
+<li>Two possibilities
+<ul>
+<li><span class="math inline">r^*</span> is <strong>never used</strong> when answering any of <span class="math inline">\mathcal{A}</span>’s encryption-oracle queries</li>
+<li><span class="math inline">r^*</span> is used when answering <strong>at least one</strong> of <span class="math inline">\mathcal{A}</span>’s encryption-oracle queries</li>
+</ul></li>
+</ul>
+</section>
+<section id="upperbound-on-the-adversarys-success-probability-22" class="slide level2">
+<h2>Upperbound on the Adversary’s Success Probability (2/2)</h2>
+<ul>
+<li><p>Let <span class="math inline">\textsf{repeat}</span> denote the event that <span class="math inline">r^*</span> was used by the oracle to answer at least one of <span class="math inline">\mathcal{A}</span>’s queries</p></li>
+<li><p>Let <span class="math inline">\textsf{repeat}^c</span> be the complement of <span class="math inline">\textsf{repeat}</span>. Then we have <span class="math display">\begin{align*}
+&amp; \Pr\left[ \textsf{PrivK}_{\mathcal{A}, \widetilde{\Pi}}^{\textsf{cpa}}(n) = 1 \right] \\     &amp; = \Pr\left[ \textsf{PrivK}_{\mathcal{A}, \widetilde{\Pi}}^{\textsf{cpa}}(n) = 1 \bigcap \textsf{repeat}\right] \\      &amp; \quad + \Pr\left[ \textsf{PrivK}_{\mathcal{A}, \widetilde{\Pi}}^{\textsf{cpa}}(n) = 1 \bigcap \textsf{repeat}^c\right] \\     &amp; \le \frac{q(n)}{2^n} + \frac{1}{2}.     
+\end{align*}</span></p></li>
+<li><p>Finally, we have <span class="math display"> \Pr\left[ \textsf{PrivK}_{\mathcal{A}, \Pi}^{\textsf{cpa}}(n) = 1 \right] \le \frac{1}{2} + \frac{q(n)}{2^n} + \textsf{negl}(n)</span></p></li>
+</ul>
+</section></section>
+<section>
+<section id="pseudorandom-permutations" class="title-slide slide level1 center">
+<h1>Pseudorandom Permutations</h1>
+<ul>
+<li>In practice, constructions of pseudorandom permutations are used instead of pseudorandom functions</li>
+<li>We will consider pseudorandom permutations abstractly for now</li>
+<li>Practical candidate constructions will be described later</li>
+</ul>
+</section>
+<section id="pseudorandom-permutations-1" class="slide level2">
+<h2>Pseudorandom Permutations</h2>
+<ul>
+<li>Let <span class="math inline">\texttt{Perm}_n</span> be the set of all permutations (bijections) on <span class="math inline">\{0,1\}^n</span></li>
+<li><span class="math inline">\left|\texttt{Perm}_n \right| = \left( 2^n \right)!</span></li>
+<li>A function <span class="math display">F : \{0,1\}^{l_{key}(n)} \times \{0,1\}^{l_{in}(n)} \rightarrow \{0,1\}^{l_{in}(n)}</span> is called a <strong>keyed permutation</strong> if for all <span class="math inline">k \in \{0,1\}^{l_{key}(n)}</span>, <span class="math inline">F_k</span> is a permutation.</li>
+<li><span class="math inline">F</span> is said to be <strong>efficient</strong> if both <span class="math inline">F_k(x)</span> and <span class="math inline">F_k^{-1}(y)</span> have polynomial-time algorithms for all <span class="math inline">k,x,y</span>.</li>
+<li><span class="math inline">l_{in}(n)</span> is called the <strong>block length</strong> of <span class="math inline">F</span>.</li>
+<li><span class="math inline">F</span> is <strong>length-preserving</strong> if <span class="math inline">l_{key}(n) = l_{in}(n) = n</span>.</li>
+</ul>
+<aside class="notes">
+<ul>
+<li>An <span class="math inline">f \in \texttt{Perm}_n</span> can be seen as a lookup table where any two distinct rows must be different</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="definition-of-pseudorandom-permutation" class="slide level2">
+<h2>Definition of Pseudorandom Permutation</h2>
+<ul>
+<li><p>A <strong>pseudorandom permutation</strong> is a permutation which cannot be efficiently distinguished from a random permutation</p></li>
+<li><p>Let <span class="math inline">F</span> be an efficient, length-preserving, keyed permutation. <span class="math inline">F</span> is a <strong>pseudorandom permutation</strong> if for all PPT distinguishers <span class="math inline">D</span>, there is a negligible function <span class="math inline">\textsf{negl}</span> such that: <span class="math display">\begin{align*}
+&amp; \bigg| \Pr\left[ D^{F_k(\cdot)}(1^n) = 1 \right] - \Pr\left[ D^{f(\cdot)}(1^n) = 1 \right]\bigg| \\
+&amp; \quad\quad\quad\quad \le \textsf{negl}(n),
+  \end{align*}</span> where</p>
+<ul>
+<li><p>the first probability is taken over uniform choice of <span class="math inline">k \in \{0,1\}^n</span> and the randomness of <span class="math inline">D</span>, and</p></li>
+<li><p>the second probability is taken over uniform choice of <span class="math inline">f \in \textsf{Perm}_n</span> and the randomness of <span class="math inline">D</span></p></li>
+</ul></li>
+</ul>
+</section>
+<section id="strong-pseudorandom-permutations" class="slide level2">
+<h2>Strong Pseudorandom Permutations</h2>
+<ul>
+<li><p>A <strong>strong pseudorandom permutation</strong> is a permutation which cannot be efficiently distinguished from a random permutation <strong>even if the distinguisher is given oracle access to the inverse of the permutation</strong></p></li>
+<li><p>In practice, constructions of strong pseudorandom permutations are called <strong>block ciphers</strong></p></li>
+</ul>
+</section>
+<section id="definition-of-strong-pseudorandom-permutation" class="slide level2">
+<h2>Definition of Strong Pseudorandom Permutation</h2>
+<ul>
+<li><p>Let <span class="math inline">F</span> be an efficient, length-preserving, keyed permutation. <span class="math inline">F</span> is a <strong>strong pseudorandom permutation</strong> if for all PPT distinguishers <span class="math inline">D</span>, there is a negligible function <span class="math inline">\textsf{negl}</span> such that: <span class="math display">\begin{align*}
+&amp; \bigg| \Pr\left[ D^{F_k(\cdot),F_k^{-1}(\cdot)}(1^n) = 1 \right] \\
+&amp;\quad\quad - \Pr\left[ D^{f(\cdot),f^{-1}(\cdot)}(1^n) = 1 \right]\bigg| \\
+&amp; \quad\quad\quad\quad \le \textsf{negl}(n),
+  \end{align*}</span> where</p>
+<ul>
+<li><p>the first probability is taken over uniform choice of <span class="math inline">k \in \{0,1\}^n</span> and the randomness of <span class="math inline">D</span>, and</p></li>
+<li><p>the second probability is taken over uniform choice of <span class="math inline">f \in \textsf{Perm}_n</span> and the randomness of <span class="math inline">D</span></p></li>
+</ul></li>
+</ul>
+</section></section>
+<section>
+<section id="block-cipher-modes-of-operation" class="title-slide slide level1 center">
+<h1>Block Cipher Modes of Operation</h1>
+<ul>
+<li>Our CPA-secure construction has ciphertext length which is double the plaintext length</li>
+<li>Fortunately, there exist secure constructions based on block ciphers that have lower overheads</li>
+</ul>
+</section>
+<section id="electronic-code-book-ecb-mode" class="slide level2">
+<h2>Electronic Code Book (ECB) Mode</h2>
+<ul>
+<li><p><strong>Insecure</strong>: Should not be used in practice!</p></li>
+<li><p>Let <span class="math inline">\vec{m} = \langle m_1,m_2,\ldots,m_l\rangle</span> where <span class="math inline">m_i \in \{0,1\}^n</span>.</p></li>
+<li><p>Let <span class="math inline">F</span> be a block cipher with block length <span class="math inline">n</span>.</p></li>
+<li><p><span class="math inline">\vec{c} \coloneqq \langle F_k(m_1), F_k(m_2),\ldots,F_k(m_l) \rangle</span><br>
+</p>
+<p><img data-src="images/ecb.svg" width="400"></p></li>
+<li><p>ECB is deterministic and cannot be CPA-secure.</p></li>
+</ul>
+</section>
+<section id="ecb-example" class="slide level2">
+<h2>ECB Example</h2>
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img data-src="images/Tux.png" width="220" alt="Tux"> <img data-src="images/Tux_ECB.png" width="220" alt="Tux ECB"></p>
+</div>
+</div>
+</div>
+<p>Image encrypted using ECB mode<sup>1</sup></p>
+<aside><ol class="aside-footnotes"><li id="fn1"><p>Encrypted Image Attribution: Larry Ewing, lewing@isc.tamu.edu</p></li></ol></aside></section>
+<section id="cipher-block-chaining-cbc-mode" class="slide level2">
+<h2>Cipher Block Chaining (CBC) Mode</h2>
+<ul>
+<li><p>Let <span class="math inline">m = m_1,m_2,\ldots,m_l</span> where <span class="math inline">m_i \in \{0,1\}^n</span>.</p></li>
+<li><p>Let <span class="math inline">F</span> be a length-preserving block cipher with block length <span class="math inline">n</span>.</p></li>
+<li><p>A uniform <strong>initialization vector (IV)</strong> of length <span class="math inline">n</span> is chosen.</p></li>
+<li><p><span class="math inline">c_0 = IV</span>. For <span class="math inline">i = 1,\ldots,l</span>, <span class="math inline">c_i \coloneqq F_k(c_{i-1}\oplus m_i)</span></p>
+<p><img data-src="images/cbc.svg" width="600"></p></li>
+<li><p>For <span class="math inline">i = 1,2,\ldots,l</span>, <span class="math inline">m_i \coloneqq F_k^{-1}(c_i)\oplus c_{i-1}</span>.</p></li>
+<li><p>Ciphertext is larger than the plaintext by <span class="math inline">n</span> bits</p></li>
+<li><p>Decryption is faster than encryption</p></li>
+<li><p>If <span class="math inline">F</span> is a pseudorandom permutation, then the CBC-mode encryption is CPA-secure.</p></li>
+</ul>
+</section>
+<section id="counter-ctr-mode" class="slide level2">
+<h2>Counter (CTR) Mode</h2>
+<ul>
+<li><p>Let <span class="math inline">\vec{m} = m_1,m_2,\ldots,m_l</span> where <span class="math inline">m_i \in \{0,1\}^n</span></p></li>
+<li><p>Let <span class="math inline">F</span> be a length-preserving block cipher with length <span class="math inline">n</span></p></li>
+<li><p>To encrypt a message of length <span class="math inline">l &lt; 2^{n/4}</span> blocks, a uniform <span class="math inline">IV</span> of length <span class="math inline">3n/4</span> is chosen</p></li>
+<li><p><span class="math inline">c_0 = IV</span>. For <span class="math inline">i = 1,\ldots,l</span>, <span class="math inline">c_i \coloneqq F_k(IV \| i) \oplus m_i</span>.</p>
+<p><img data-src="images/ctr.svg" width="700"></p></li>
+<li><p>For <span class="math inline">i = 1,2,\ldots,l</span>, <span class="math inline">m_i \coloneqq F_k(IV \| i)\oplus c_{i}</span>.</p></li>
+<li><p>Ciphertext is larger than the plaintext by <span class="math inline">3n/4</span> bits</p></li>
+<li><p>Both encryption and decryption can be parallelized</p></li>
+<li><p>The generated stream can be truncated to exactly the plaintext length</p></li>
+<li><p><span class="math inline">F</span> does not need to be a permutation</p></li>
+<li><p>If <span class="math inline">F</span> is a pseudorandom function, then the CTR-mode encryption is CPA-secure.</p></li>
+</ul>
 </section></section>
 <section id="further-reading" class="title-slide slide level1 center">
 <h1>Further Reading</h1>
-<p>Sections 3.1 — 3.5 from Katz &amp; Lindell</p>
+<p>Sections 3.1 — 3.6 from Katz &amp; Lindell</p>
 <div class="footer footer-default">
 
 </div>
 </section>
+
+
     </div>
   </div>
 

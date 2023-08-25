@@ -43,6 +43,7 @@ EE720 has significant overlap with **CS 406 Cryptography and Network Security** 
 - [Modern Cryptography](./2023/slides/modern-cryptography.html){target="_blank"}
 - [Perfectly Secret Encryption](./2023/slides/perfectly-secret-encryption.html){target="_blank"}
 - [Private-Key Encryption](./2023/slides/private-key-encryption.html){target="_blank"}
+- [Message Authentication Codes](./2023/slides/message-authentication-codes.html){target="_blank"}
 
 ##### Supplementary Notes
 
