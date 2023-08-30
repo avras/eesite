@@ -439,7 +439,7 @@ Saravanan Vijayakumaran
 <h2>Security Definition</h2>
 <ul>
 <li><p>A MAC is secure if no efficient adversary can succeed in the above experiment with non-negligible probability</p></li>
-<li><p>A message authentication code <span class="math inline">\Pi = (\textsf{Gen}, \textsf{Mac}, \textsf{Vrfy})</span> is <strong>existentially unforgeable under an adaptive chosen-message attack</strong>, or just <strong>secure</strong>, if for all PPT adversaries <span class="math inline">\mathcal{A}</span>, there is a negligible function such that <span class="math display">\begin{equation*} \Pr\left[ \textsf{Mac-forge}_{\mathcal{A}, \Pi}(n) = 1\right] \le \textsf{negl}(n). \end{equation*}</span></p></li>
+<li><p>A message authentication code <span class="math inline">\Pi = (\textsf{Gen}, \textsf{Mac}, \textsf{Vrfy})</span> is <strong>existentially unforgeable under an adaptive chosen-message attack</strong>, or just <strong>secure</strong>, if for all PPT adversaries <span class="math inline">\mathcal{A}</span>, there is a negligible function such that <span class="math display"> \Pr\left[ \textsf{Mac-forge}_{\mathcal{A}, \Pi}(n) = 1\right] \le \textsf{negl}(n).</span></p></li>
 </ul>
 </section>
 <section id="replay-attacks" class="slide level2">
@@ -485,7 +485,15 @@ Saravanan Vijayakumaran
           display:block!important;
       }</style></aside>
 </section>
-<section id="fixed-length-mac-construction" class="slide level2">
+<section>
+<section id="fixed-length-mac-construction" class="title-slide slide level1 center">
+<h1>Fixed-Length MAC Construction</h1>
+<ul>
+<li>We will construct a MAC for messages of length <span class="math inline">n</span> using a pseudorandom function <span class="math inline">F</span></li>
+<li>Security of the MAC will follow from the assumption that <span class="math inline">F</span> is pseudorandom</li>
+</ul>
+</section>
+<section id="fixed-length-mac-construction-1" class="slide level2">
 <h2>Fixed-Length MAC Construction</h2>
 <ul>
 <li>Let <span class="math inline">F</span> be a length-preserving pseudorandom function</li>
@@ -505,13 +513,211 @@ Saravanan Vijayakumaran
 <li>Let <span class="math inline">\widetilde{\Pi} = (\widetilde{\textsf{Gen}}, \widetilde{\textsf{Mac}}, \widetilde{\textsf{Vrfy}})</span> be the same as <span class="math inline">\Pi = (\textsf{Gen}, \textsf{Mac}, \textsf{Vrfy})</span> with <span class="math inline">F_k</span> replaced with <span class="math inline">f \leftarrow \textsf{Func}_n</span></li>
 <li>Construct a distinguisher <span class="math inline">D</span> that uses <span class="math inline">\mathcal{A}</span> as a subroutine and show that <span class="math display">\begin{align*} &amp; \bigg| \Pr\left[ \textsf{Mac-forge}_{\mathcal{A}, \Pi}(n) = 1 \right] \\
 &amp; \quad\quad -  \Pr\left[ \textsf{Mac-forge}_{\mathcal{A}, \widetilde{\Pi}}(n) = 1 \right]\bigg| \le \textsf{negl}(n) \end{align*}</span></li>
-<li>Then show that <span class="math display"> \Pr\left[ \textsf{Mac-forge}_{\mathcal{A}, \widetilde{\Pi}}(n) = 1 \right] \le 2^{-n}</span></li>
+<li>Then show that <span class="math display"> \Pr\left[ \textsf{Mac-forge}_{\mathcal{A}, \widetilde{\Pi}}(n) = 1 \right] = 2^{-n}</span></li>
 </ul></li>
 </ul>
 </section>
+<section id="distinguisher-definition" class="slide level2">
+<h2>Distinguisher Definition</h2>
+<p><span class="math inline">D</span> is given <span class="math inline">1^n</span> and access to an oracle <span class="math inline">\mathcal{O}: \{0,1\}^n \rightarrow \{0,1\}^n</span>. It uses <span class="math inline">\mathcal{A}</span> as a subroutine</p>
+<ol type="1">
+<li><p>Whenever <span class="math inline">\mathcal{A}</span> queries its MAC oracle on message <span class="math inline">m\in \{0,1\}^n</span>, answer as follows</p>
+<ul>
+<li>Query <span class="math inline">\mathcal{O}</span> with <span class="math inline">m</span> and obtain response <span class="math inline">t</span>; return <span class="math inline">t</span> to <span class="math inline">\mathcal{A}</span></li>
+</ul></li>
+<li><p>When <span class="math inline">\mathcal{A}</span> outputs <span class="math inline">(m,t)</span>:</p>
+<ul>
+<li>Query <span class="math inline">\mathcal{O}</span> with <span class="math inline">m</span> and obtain response <span class="math inline">t'</span></li>
+<li>If <span class="math inline">t'=t</span> and <span class="math inline">m \not\in \mathcal{Q}</span>, then output 1. Else, output 0.</li>
+</ul></li>
+</ol>
+</section>
+<section id="finishing-the-proof" class="slide level2">
+<h2>Finishing the Proof</h2>
+<ul>
+<li><span class="math inline">\Pr\left[ D^{F_k(\cdot)}(1^n) = 1 \right] = \Pr\left[ \textsf{Mac-forge}_{\mathcal{A}, \Pi}(n) = 1 \right]</span></li>
+<li><span class="math inline">\Pr\left[ D^{f(\cdot)}(1^n) = 1 \right] = \Pr\left[ \textsf{Mac-forge}_{\mathcal{A}, \widetilde{\Pi}}(n) = 1 \right]</span></li>
+<li>Since <span class="math inline">F</span> is pseudorandom <span class="math display">\bigg| \Pr\left[ D^{F_k(\cdot)}(1^n) = 1 \right] - \Pr\left[ D^{f(\cdot)}(1^n) = 1 \right] \bigg| \\ \quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad \le \textsf{negl}(n) </span></li>
+<li><span class="math inline">\Pr\left[ \textsf{Mac-forge}_{\mathcal{A}, \widetilde{\Pi}}(n) = 1 \right] = 2^{-n}</span></li>
+<li><span class="math inline">\Pr\left[ \textsf{Mac-forge}_{\mathcal{A}, \Pi}(n) = 1 \right] \le 2^{-n} + \textsf{negl}(n)</span></li>
+</ul>
+</section></section>
+<section>
+<section id="domain-extension-for-macs" class="title-slide slide level1 center">
+<h1>Domain Extension for MACs</h1>
+<ul>
+<li>The secure MAC construction we saw can only handle messages of length <span class="math inline">n</span></li>
+<li>How can we authenticate arbitrary-length messages?</li>
+<li>Before seeing a secure construction, let us reject some insecure ones</li>
+</ul>
+</section>
+<section id="insecure-mac-1" class="slide level2">
+<h2>Insecure MAC 1</h2>
+<ul>
+<li>Suppose message <span class="math inline">m</span> can be broken up into <span class="math inline">d</span> blocks <span class="math inline">m_1, m_2, \ldots, m_d \in \{0,1\}^n</span></li>
+<li>Ignore efficiency in terms of the tag length for now</li>
+<li>Let <span class="math inline">\Pi' = (\textsf{Mac}', \textsf{Vrfy}')</span> be a secure fixed-length MAC for messages of length <span class="math inline">n</span></li>
+<li>We want to construct a secure MAC <span class="math inline">\Pi = (\textsf{Mac}, \textsf{Vrfy})</span> for messages of length <span class="math inline">dn</span></li>
+<li>Suppose we compute a per-block tag <span class="math inline">t_i = \textsf{Mac}'_k(m_i)</span> and output <span class="math inline">\langle t_1,\ldots,t_d\rangle</span> as the tag for <span class="math inline">m</span></li>
+<li>An adversary can perform a <strong>block reordering attack</strong></li>
+</ul>
+</section>
+<section id="insecure-mac-2" class="slide level2">
+<h2>Insecure MAC 2</h2>
+<ul>
+<li><p>Block reordering attacks can be prevented by authenticating the block index</p></li>
+<li><p>After reducing the size of the blocks, we can compute <span class="math inline">t_i= \textsf{Mac}'_k( i \| m_i)</span></p></li>
+<li><p>But this does not prevent a <strong>truncation attack</strong></p></li>
+<li><p>An attacker can simply drops blocks from the end of the message</p></li>
+</ul>
+</section>
+<section id="insecure-mac-3" class="slide level2">
+<h2>Insecure MAC 3</h2>
+<ul>
+<li><p>Truncation attacks can be prevented by authenticating the message length</p></li>
+<li><p>After further reducing the size of the blocks, we compute <span class="math inline">t_i = \textsf{Mac}'_k(l \| i \| m_i)</span> and output <span class="math inline">\langle t_1,\ldots,t_d\rangle</span> as the tag for <span class="math inline">m</span></p>
+<ul>
+<li>Here <span class="math inline">l</span> is the length of the message in bits</li>
+</ul></li>
+<li><p>This is still vulnerable to a <strong>mix-and-match attack</strong></p></li>
+</ul>
+</section></section>
+<section>
+<section id="secure-mac-construction" class="title-slide slide level1 center">
+<h1>Secure MAC Construction</h1>
+<ul>
+<li>To prevent mix-and-match attacks, we include a random <strong>message identifier</strong> in the authentication of each block</li>
+</ul>
+</section>
+<section id="secure-mac-construction-1" class="slide level2">
+<h2>Secure MAC Construction</h2>
+<ul>
+<li><p>The following is a secure MAC if <span class="math inline">\Pi'</span> is a secure MAC.</p>
+<ul>
+<li>Let <span class="math inline">m \in \{0,1\}^*</span> be a message of length <span class="math inline">l &lt; 2^{n/4}</span></li>
+<li>Parse <span class="math inline">m</span> into <span class="math inline">d</span> blocks <span class="math inline">m_1, m_2, \ldots, m_d</span> of length <span class="math inline">n/4</span> bits each</li>
+<li>Choose <span class="math inline">r</span> uniformly from <span class="math inline">\{0,1\}^{n/4}</span></li>
+<li>For <span class="math inline">i=1,2,\dots,d</span>, compute <span class="math display">t_i \leftarrow \textsf{Mac}'_k(r \| l \| i \| m_i)</span> where <span class="math inline">i</span> and <span class="math inline">l</span> are encoded as <span class="math inline">n/4</span>-bit strings</li>
+<li>Output the tag <span class="math inline">t \coloneqq \langle r, t_1, t_2, \dots, t_d \rangle</span></li>
+</ul></li>
+</ul>
+</section>
+<section id="the-birthday-problem" class="slide level2">
+<h2>The Birthday Problem</h2>
+<ul>
+<li>If we choose <span class="math inline">q</span> elements <span class="math inline">y_1,\ldots,y_q</span> uniformly from a set of size <span class="math inline">N</span>, what is the probability of collision?
+<ul>
+<li>By collision, we mean the event when <span class="math inline">y_i = y_j</span> for distinct <span class="math inline">i,j</span></li>
+<li>Let <span class="math inline">\textsf{coll}(q, N)</span> denote the collision probability</li>
+</ul></li>
+<li><strong>Birthday problem</strong>: How many people do we need such that with probability <span class="math inline">\frac{1}{2}</span> we can find a pair who share a birthday?</li>
+<li>It turns out that <span class="math inline">\textsf{coll}(q, 365) \ge \frac{1}{2}</span> for <span class="math inline">q \ge 23</span></li>
+</ul>
+</section>
+<section id="birthday-problem-lemma" class="slide level2">
+<h2>Birthday Problem Lemma</h2>
+<ul>
+<li><p><strong>Lemma</strong>: Fix a positive integer <span class="math inline">N</span>, and let <span class="math inline">q \le \sqrt{2N}</span>. IF <span class="math inline">y_1, y_2, \ldots, y_q</span> are chosen uniformly and independently from a set of size <span class="math inline">N</span>. Then <span class="math display"> \frac{q(q-1)}{4N} \le  \textsf{coll}(q, N) \le \frac{q(q-1)}{2N}. </span></p></li>
+<li><p>See section A.4 of Katz &amp; Lindell for the proof</p></li>
+</ul>
+</section>
+<section id="security-proof-15" class="slide level2">
+<h2>Security Proof (1/5)</h2>
+<ul>
+<li>We need to show that <span class="math inline">\Pr\left[ \textsf{Mac-forge}_{\mathcal{A}, \Pi}(n) = 1\right]</span> is negligible</li>
+<li>Let <span class="math inline">\textsf{repeat}</span> denote the event that the same random identifier appears in more than one MAC oracle response</li>
+<li>Let <span class="math inline">\mathcal{A}</span>’s final output be <span class="math inline">(m,t)</span> where <span class="math inline">m = \langle m_1, m_2, \ldots, m_d \rangle</span> and <span class="math inline">t = \langle r, t_1, \ldots, t_d \rangle</span></li>
+<li>Let <span class="math inline">\textsf{NewBlock}</span> denote the event that at least one of the blocks <span class="math inline">r \| l \|i \| m_i</span> was never previously authenticated by <span class="math inline">\textsf{Mac}'</span> while answering <span class="math inline">\mathcal{A}</span>’s queries</li>
+</ul>
+</section>
+<section id="security-proof-25" class="slide level2">
+<h2>Security Proof (2/5)</h2>
+<ul>
+<li>Let <span class="math inline">\textsf{Forge}</span> denote the event <span class="math inline">\textsf{Mac-forge}_{\mathcal{A}, \Pi}(n) = 1</span></li>
+<li>We have <span class="math display">\begin{align*}
+  &amp; \Pr\left[ \textsf{Mac-forge}_{\mathcal{A}, \Pi}(n) = 1\right] = \\
+  %&amp; =\Pr\left[ \textsf{Forge} \bigcap \textsf{repeat}\right] +\Pr\left[ \textsf{Forge} \bigcap \textsf{repeat}^c\right] \\
+  &amp; =\Pr\left[ \textsf{Forge} \bigcap \textsf{repeat}\right] \\
+  &amp;\quad+\Pr\left[ \textsf{Forge} \bigcap \textsf{repeat}^c \bigcap \textsf{NewBlock}\right] \\
+  &amp;\quad+\Pr\left[ \textsf{Forge} \bigcap \textsf{repeat}^c \bigcap \textsf{NewBlock}^c\right] \\
+  &amp; \le \Pr\left[\textsf{repeat}\right] \\
+  &amp;\quad+\Pr\left[ \textsf{Forge} \bigcap \textsf{NewBlock}\right] \\
+  &amp;\quad+\Pr\left[ \textsf{Forge} \bigcap \textsf{repeat}^c \bigcap \textsf{NewBlock}^c\right]
+  \end{align*}</span></li>
+</ul>
+</section>
+<section id="security-proof-35" class="slide level2">
+<h2>Security Proof (3/5)</h2>
+<ul>
+<li><span class="math inline">\Pr[\textsf{repeat}] \le \frac{[q(n)]^2}{2^{\frac{n}{4}+1}}</span> where <span class="math inline">q(n)</span> is the number of MAC oracle queries</li>
+<li><strong>Claim</strong>: <span class="math inline">\Pr\left[ \textsf{Forge} \bigcap \textsf{repeat}^c \bigcap \textsf{NewBlock}^c\right] = 0</span></li>
+<li>In words, if the adversary succeeds and <span class="math inline">\textsf{repeat}</span> did not occur, then <span class="math inline">\textsf{NewBlock}</span> must have occurred</li>
+<li>If <span class="math inline">\textsf{repeat}</span> does not occur then the values <span class="math inline">r_1,\ldots,r_q</span> are distinct</li>
+<li>If <span class="math inline">r \notin \{r_1,\ldots,r_q\}</span>, then <span class="math inline">\textsf{NewBlock}</span> clearly occurs</li>
+</ul>
+</section>
+<section id="security-proof-45" class="slide level2">
+<h2>Security Proof (4/5)</h2>
+<ul>
+<li>If <span class="math inline">r \in \{r_1,\ldots,r_q\}</span>, then <span class="math inline">r = r_j</span> for a unique <span class="math inline">j</span></li>
+<li>Only the <span class="math inline">j</span>th query to the MAC oracle could have authenticated one of <span class="math inline">r\| l \| 1 \| m_1,\ldots, r\| l \| d \| m_d</span></li>
+<li>Let <span class="math inline">m^{(j)}</span> be the message that <span class="math inline">\mathcal{A}</span> used in its <span class="math inline">j</span>th oracle query</li>
+<li>Let <span class="math inline">l_j</span> be the length of <span class="math inline">m^{(j)}</span>
+<ul>
+<li><strong>Case 1</strong>: <span class="math inline">l \neq l_j</span></li>
+<li><strong>Case 2</strong>: <span class="math inline">l = l_j</span></li>
+</ul></li>
+</ul>
+</section>
+<section id="security-proof-55" class="slide level2">
+<h2>Security Proof (5/5)</h2>
+<ul>
+<li>We need to show that <span class="math inline">\Pr\left[ \textsf{Forge} \bigcap \textsf{NewBlock}\right]</span> is negligible</li>
+<li>We construct an adversary <span class="math inline">\mathcal{A}'</span> that attacks <span class="math inline">\Pi'</span> by using <span class="math inline">\mathcal{A}</span> as a subroutine</li>
+<li>We will have <span class="math display">\Pr\left[ \textsf{Mac-forge}_{\mathcal{A}, \Pi}(n) = 1 \bigcap \textsf{NewBlock}\right] \\ \le  \Pr\left[ \textsf{Mac-forge}_{\mathcal{A}', \Pi'}(n) = 1 \right]</span></li>
+<li>Since <span class="math inline">\Pi'</span> is secure, the RHS is negligible</li>
+</ul>
+</section></section>
+<section>
+<section id="cbc-mac" class="title-slide slide level1 center">
+<h1>CBC-MAC</h1>
+<ul>
+<li>The previous construction is inefficient because the tag is more than four times longer than the message length</li>
+<li>CBC-MAC is a secure MAC with tag length equal to message block length</li>
+</ul>
+</section>
+<section id="cbc-mac-for-fixed-length-messages" class="slide level2">
+<h2>CBC-MAC for Fixed-Length Messages</h2>
+<ul>
+<li><p>Let <span class="math inline">F</span> be a length-preserving pseudorandom function with length <span class="math inline">n</span> bits</p></li>
+<li><p>Let <span class="math inline">m \in \{0,1\}^{dn}</span> be a message for a fixed <span class="math inline">d &gt; 0</span>.</p></li>
+<li><p><span class="math inline">\textsf{Mac}</span>:</p>
+<ol type="1">
+<li><p>Parse the message <span class="math inline">m</span> in to <span class="math inline">d</span> blocks <span class="math inline">m_1,\dots,m_d</span> of length <span class="math inline">n</span> bits each.</p></li>
+<li><p>Set <span class="math inline">t_0 = 0^n</span>. For <span class="math inline">i=1,\dots,d</span>, set <span class="math display">t_i = F_k(t_{i-1} \oplus m_i).</span></p></li>
+<li><p>Output <span class="math inline">t_d</span> as the tag.</p></li>
+</ol></li>
+<li><p><span class="math inline">\textsf{Vrfy}</span>: For a message-tag pair <span class="math inline">(m,t)</span> output 0, if the message is not of length <span class="math inline">dn</span>.</p>
+<p>Otherwise, output 1 if and only if <span class="math inline">t = \textsf{Mac}_k(m)</span>.</p></li>
+</ul>
+</section>
+<section id="cbc-mac-for-fixed-length-messages-1" class="slide level2">
+<h2>CBC-MAC for Fixed-Length Messages</h2>
+
+<img data-src="images/cbc-mac-fl.svg" style="width:100.0%" class="r-stretch"><ul>
+<li><strong>Theorem</strong>: If <span class="math inline">d = l(n)</span> for some polynomial <span class="math inline">l</span> and <span class="math inline">F</span> is a pseudorandom function, then the above construction is secure for messages of length <span class="math inline">dn</span>.</li>
+</ul>
+</section>
+<section id="cbc-mac-for-arbitrary-length-messages" class="slide level2">
+<h2>CBC-MAC for Arbitrary Length Messages</h2>
+
+<img data-src="images/cbc-mac-al.svg" style="width:100.0%" class="r-stretch"></section></section>
 <section id="further-reading" class="title-slide slide level1 center">
 <h1>Further Reading</h1>
-<p>Sections 4.1 — 4.3 from Katz &amp; Lindell</p>
+<ul>
+<li>Sections 4.1 — 4.3 from Katz &amp; Lindell</li>
+<li>Section A.4 from Katz &amp; Lindell</li>
+</ul>
 <div class="footer footer-default">
 
 </div>
