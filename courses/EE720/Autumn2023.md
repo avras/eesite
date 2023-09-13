@@ -45,6 +45,7 @@ EE720 has significant overlap with **CS 406 Cryptography and Network Security** 
 - [Private-Key Encryption](./2023/slides/private-key-encryption.html){target="_blank"}
 - [Message Authentication Codes](./2023/slides/message-authentication-codes.html){target="_blank"}
 - [CCA-Security and Authenticated Encryption](./2023/slides/cca-security.html){target="_blank"}
+- [Hash Functions](./2023/slides/hash-functions.html){target="_blank"}
 
 ##### Supplementary Notes
 
