@@ -623,12 +623,83 @@ W_j =
 <h2>Merkle Trees</h2>
 
 <img data-src="images/merkle.svg" class="r-stretch quarto-figure-center"></section>
-<section id="other-applications" class="slide level2">
-<h2>Other applications</h2>
+<section id="password-hashing" class="slide level2">
+<h2>Password Hashing</h2>
 <ul>
-<li>Password hashing</li>
-<li>Commitment schemes</li>
-<li>Hashcash</li>
+<li>Web servers store hashes of passwords instead of the passwords in plaintext</li>
+<li>Even if a web server is breached, the attacker has to find hash function preimages to recover the password</li>
+<li>Passwords are <strong>salted</strong> before hashing to make preimages harder to find</li>
+<li>For some random salt <span class="math inline">r \leftarrow \{0,1\}^n</span>, the server will store <span class="math display"> \langle r, H(r \| \textsf{password})\rangle </span></li>
+</ul>
+</section>
+<section id="commitment-schemes" class="slide level2">
+<h2>Commitment Schemes</h2>
+<ul>
+<li><p>Commitment schemes allow a user to <strong>commit</strong> to a secret that can be revealed at a later time</p></li>
+<li><p>A commitment scheme is a pair of PPT algorithms <span class="math inline">(\textsf{Gen}, \textsf{Com})</span></p>
+<ul>
+<li><span class="math inline">\textsf{Gen}</span> takes <span class="math inline">1^n</span> as input and outputs public parameters <span class="math inline">\textsf{params}</span></li>
+<li><span class="math inline">\textsf{Com}</span> takes <span class="math inline">\textsf{params}</span>, a message <span class="math inline">m</span>, and randomness <span class="math inline">r</span> as inputs and outputs a <strong>commitment</strong> <span class="math display">\textsf{com} = \textsf{Com}(\textsf{params}, m; r)</span></li>
+</ul></li>
+</ul>
+</section>
+<section id="commitment-scheme-workflow" class="slide level2">
+<h2>Commitment Scheme Workflow</h2>
+<ul>
+<li><p>The committer creates <span class="math inline">\textsf{com}</span> and sends it to a receiver</p></li>
+<li><p>The committer can later reveal <span class="math inline">m</span> by sending <span class="math inline">m</span> and <span class="math inline">r</span> to the receiver</p></li>
+<li><p>The receiver can verify the commitment by checking that <span class="math inline">\textsf{com} = \textsf{Com}(\textsf{params}, m; r)</span></p></li>
+</ul>
+</section>
+<section id="desirable-properties-of-commitment-schemes" class="slide level2">
+<h2>Desirable Properties of Commitment Schemes</h2>
+<ul>
+<li><strong>Hiding</strong>: The commitment <span class="math inline">\textsf{com}</span> reveals nothing about <span class="math inline">m</span></li>
+<li><strong>Binding</strong>: It is infeasible for the committer to create a commitment <span class="math inline">\textsf{com}</span> that can be opened later to two different messages <span class="math inline">m, m'</span></li>
+</ul>
+</section>
+<section id="commitment-schemes-using-hash-functions" class="slide level2">
+<h2>Commitment Schemes using Hash Functions</h2>
+<ul>
+<li><span class="math inline">\textsf{Gen}</span> = Choosing a hash function of appropriate output length; <span class="math inline">\textsf{params}</span> = Hash function <span class="math inline">H</span>
+<ul>
+<li>Recall that a hash function with <span class="math inline">l(n)</span>-bit output requires <span class="math inline">\mathcal{O}(2^{l(n)/2})</span> operations to find collisions</li>
+</ul></li>
+<li><span class="math inline">\textsf{Com}(\textsf{params}, m; r) = H(r \| m)</span>
+<ul>
+<li>Randomness <span class="math inline">r</span> should be long enough to prevent a PPT adversary from finding its value by exhaustive search</li>
+</ul></li>
+</ul>
+</section>
+<section id="hashcash" class="slide level2">
+<h2>Hashcash</h2>
+<ul>
+<li><p>Proposed in 1997 to combat email spam</p></li>
+<li><p>Suppose a client wants to send an email to an email server</p></li>
+<li><p>Client and server agree upon a hash function <span class="math inline">H</span></p></li>
+<li><p>Email server sends the client a challenge string <span class="math inline">c</span></p></li>
+</ul>
+</section>
+<section id="hashcash-1" class="slide level2">
+<h2>Hashcash</h2>
+<ul>
+<li><p>Client needs to find a string <span class="math inline">r</span> such that <span class="math inline">H(c \| r)</span> <strong>begins with</strong> <span class="math inline">k</span> zeros</p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/hashcash.svg" style="width:70.0%"></p>
+</figure>
+</div></li>
+<li><p>Server accepts the email only if the client finds such an <span class="math inline">r</span></p></li>
+</ul>
+</section>
+<section id="hashcash-2" class="slide level2">
+<h2>Hashcash</h2>
+<ul>
+<li><p>If <span class="math inline">H</span> is modeled as a random function, the probability of success in a single trial is <span class="math inline">\frac{1}{2^k}</span></p></li>
+<li><p>Around <span class="math inline">2^k</span> trials are required to find a satisfactory <span class="math inline">r</span></p></li>
+<li><p>The <span class="math inline">r</span> corresponding to <span class="math inline">c</span> is a <strong>proof-of-work (PoW)</strong></p></li>
+<li><p>PoW is difficult to generate but easy to verify</p></li>
+<li><p>Demo</p></li>
 </ul>
 </section></section>
 <section id="further-reading" class="title-slide slide level1 center">
