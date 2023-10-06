@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-<script src="hash-functions_files/libs/clipboard/clipboard.min.js"></script>
-<script src="hash-functions_files/libs/quarto-html/tabby.min.js"></script>
-<script src="hash-functions_files/libs/quarto-html/popper.min.js"></script>
-<script src="hash-functions_files/libs/quarto-html/tippy.umd.min.js"></script>
-<link href="hash-functions_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="hash-functions_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="hash-functions_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
-<link href="hash-functions_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+<script src="hardness-assumptions_files/libs/clipboard/clipboard.min.js"></script>
+<script src="hardness-assumptions_files/libs/quarto-html/tabby.min.js"></script>
+<script src="hardness-assumptions_files/libs/quarto-html/popper.min.js"></script>
+<script src="hardness-assumptions_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="hardness-assumptions_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="hardness-assumptions_files/libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="hardness-assumptions_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
+<link href="hardness-assumptions_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.3.450">
 
   <meta name="author" content="Saravanan Vijayakumaran">
-  <meta name="dcterms.date" content="2023-09-13">
-  <title>Hash Functions</title>
+  <meta name="dcterms.date" content="2023-10-06">
+  <title>Cryptographic Hardness Assumptions</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="hash-functions_files/libs/revealjs/dist/reset.css">
-  <link rel="stylesheet" href="hash-functions_files/libs/revealjs/dist/reveal.css">
+  <link rel="stylesheet" href="hardness-assumptions_files/libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="hardness-assumptions_files/libs/revealjs/dist/reveal.css">
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -31,7 +31,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="hash-functions_files/libs/revealjs/dist/theme/quarto.css">
+  <link rel="stylesheet" href="hardness-assumptions_files/libs/revealjs/dist/theme/quarto.css">
   <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
   <script>document.addEventListener("DOMContentLoaded", function () {
  var mathElements = document.getElementsByClassName("math");
@@ -48,10 +48,10 @@
 }}});
   </script>
   <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css">
-  <link href="hash-functions_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
-  <link href="hash-functions_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
-  <link href="hash-functions_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
-  <link href="hash-functions_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <link href="hardness-assumptions_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="hardness-assumptions_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="hardness-assumptions_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="hardness-assumptions_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
   <style type="text/css">
 
   .callout {
@@ -343,7 +343,7 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Hash Functions</h1>
+  <h1 class="title">Cryptographic Hardness Assumptions</h1>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -356,375 +356,264 @@ Saravanan Vijayakumaran
     </div>
 </div>
 
-  <p class="date">September 13, 2023</p>
+  <p class="date">October 6, 2023</p>
 </section>
-<section>
-<section id="cryptographic-hash-functions" class="title-slide slide level1 center">
-<h1>Cryptographic Hash Functions</h1>
+<section id="the-factoring-problem" class="slide level2">
+<h2>The Factoring Problem</h2>
 <ul>
-<li>Methods for <strong>deterministically</strong> mapping a long input string to a shorter output called a <strong>digest</strong></li>
-<li>Primary requirement is that it should be infeasible to find <strong>collisions</strong>, i.e.&nbsp;two distinct inputs having same digest</li>
+<li><p>Given a composite integer <span class="math inline">N</span>, the factoring problem is to find integers <span class="math inline">p,q &gt;1</span> such that <span class="math inline">pq = N</span></p></li>
+<li><p>Can be solved in <strong>exponential</strong> time</p>
+<ul>
+<li>Trial division runs in <span class="math inline">\mathcal{O}\left( \sqrt{N} \cdot \textsf{polylog}(N) \right)</span> time</li>
+</ul></li>
+<li><p><strong>No polynomial-time</strong> algorithm is known for factoring</p></li>
 </ul>
 </section>
-<section id="non-cryptographic-hash-functions" class="slide level2">
-<h2>Non-Cryptographic Hash Functions</h2>
+<section id="generating-hard-instances-of-the-factoring-problem" class="slide level2">
+<h2>Generating Hard Instances of the Factoring Problem</h2>
 <ul>
-<li><p>Used to build <strong>hash tables</strong> — key-value stores with <span class="math inline">\mathcal{O}(1)</span> lookup time</p></li>
-<li><p><strong>Example:</strong> Multiplicative hashing</p>
+<li>Instance = An integer <span class="math inline">N</span> which needs to be factored</li>
+<li>Picking random <span class="math inline">n</span>-bit integers <span class="math inline">x_1, x_2</span> and giving <span class="math inline">N = x_1 x_2</span> can result in easy instances</li>
+<li>Instead, pick a pair of random <span class="math inline">n</span>-bit <strong>primes</strong> <span class="math inline">p,q</span> and output their product <span class="math inline">N = pq</span></li>
+<li>How can we generate random primes?</li>
+</ul>
+</section>
+<section id="generating-random-primes" class="slide level2">
+<h2>Generating Random Primes</h2>
 <ul>
-<li>Let <span class="math inline">M</span> be the size of the hash table</li>
-<li>Let <span class="math inline">a,W \in \mathbb{N}</span> be positive integers such that <span class="math inline">W &gt; M</span> and <span class="math inline">\gcd(a,W) = 1</span></li>
-<li>A integer key <span class="math inline">x</span> is mapped to <span class="math inline">\{0,1,\ldots, M-1\}</span> as <span class="math display">h_a(x) = \left\lfloor \frac{a x \bmod W}{W} M \right\rfloor</span></li>
-<li>Special case of <span class="math inline">W = 2^w</span> and <span class="math inline">M = 2^m</span> can be implemented as <span class="math display">h_a(x) = ax \gg (w-m)</span> if <span class="math inline">w</span> is the machine word size</li>
+<li><p>Algorithm for generating an <span class="math inline">n</span>-bit prime</p></li>
+<li><p><strong>Input</strong>: Length <span class="math inline">n</span>, loop count <span class="math inline">t</span></p></li>
+<li><p><strong>Output</strong>: A uniform <span class="math inline">n</span>-bit prime <span class="math display">\begin{align*}
+&amp; \textbf{for } i=1 \text{ to } t:\\
+&amp;\quad p' \leftarrow \{0,1\}^{n-1}\\
+&amp;\quad p \coloneqq 1 || p' \\
+&amp;\quad \textbf{if } p \text{ is prime } \textbf{return } p\\
+&amp;\textbf{return } \textsf{fail}
+\end{align*}</span></p></li>
+<li><p>We need to clarify two points</p>
+<ul>
+<li>The probability that a uniform <span class="math inline">n</span>-bit integer is a prime</li>
+<li>How can we efficiently check whether a given integer is a prime?</li>
 </ul></li>
 </ul>
 </section>
-<section id="collision-avoidance" class="slide level2">
-<h2>Collision Avoidance</h2>
+<section id="distribution-of-primes" class="slide level2">
+<h2>Distribution of Primes</h2>
 <ul>
-<li>A <strong>collision</strong> is said to occur if <span class="math inline">h(x) = h(x')</span> for <span class="math inline">x \neq x'</span></li>
-<li>For non-cryptographic hash functions, the goal is to <strong>minimize</strong> collisions</li>
-<li>For cryptographic hash functions, the goal is to <strong>completely avoid</strong> collisions
-<ul>
-<li>Achieved by defining a large co-domain for <span class="math inline">h</span></li>
-</ul></li>
+<li><p><strong>Theorem</strong>: For any <span class="math inline">n &gt; 1</span>, the fraction of <span class="math inline">n</span>-bit integers that are prime is at least <span class="math inline">\frac{1}{3n}</span></p></li>
+<li><p>Set the loop count <span class="math inline">t = 3n^2</span></p></li>
+<li><p>The probability that a prime is <strong>not</strong> chosen in all <span class="math inline">t</span> iterations is at most <span class="math display">
+\left(1-\frac{1}{3n}\right)^t \leq e^{-n}
+</span></p></li>
 </ul>
 </section>
-<section id="co-domain-for-256-bit-output-length" class="slide level2">
-<h2>Co-Domain for 256-bit Output Length</h2>
-
-<img data-src="images/codomain-256.svg" class="r-stretch quarto-figure-center"></section></section>
 <section>
-<section id="sha-256" class="title-slide slide level1 center">
-<h1>SHA-256</h1>
-<ul>
-<li>SHA = Secure Hash Algorithm, 256-bit output length</li>
-<li>Accepts bit strings of length upto <span class="math inline">2^{64}-1</span></li>
-<li>Announced in 2001 by NIST</li>
-</ul>
-</section>
-<section id="two-stages" class="slide level2">
-<h2>Two Stages</h2>
-<ul>
-<li>Output calculation has two stages
-<ul>
-<li>Preprocessing</li>
-<li>Hash Computation</li>
-</ul></li>
-</ul>
-</section>
-<section id="preprocessing" class="slide level2">
-<h2>Preprocessing</h2>
-<ul>
-<li>The input <span class="math inline">M</span> is padded to a multiple of 512 bits</li>
-<li>A 256-bit state variable <span class="math inline">H^{(0)}</span> is set to <span class="math display">\begin{align*}
-\begin{split}
-   H_0^{(0)} = \texttt{0x6A09E667},&amp; \quad H_1^{(0)} = \texttt{0xBB67AE85},\\
-   H_2^{(0)} = \texttt{0x3C6EF372},&amp; \quad H_3^{(0)} = \texttt{0xA54FF53A},\\
-   H_4^{(0)} = \texttt{0x510E527F},&amp; \quad H_5^{(0)} = \texttt{0x9B05688C},\\
-   H_6^{(0)} = \texttt{0x1F83D9AB},&amp; \quad H_7^{(0)} = \texttt{0x5BE0CD19}.
-\end{split}
-   \end{align*}</span></li>
-<li>First 32 bits in the fractional parts of the square roots of the first eight primes</li>
-<li>NUMS = Nothing Up My Sleeve</li>
-</ul>
-</section>
-<section id="hash-computation" class="slide level2">
-<h2>Hash Computation</h2>
-<ul>
-<li><p>A function <span class="math inline">f: \{0,1\}^{768} \times \{0,1\}^{256} \rightarrow \{0,1\}^{256}</span> is used. It is called the <strong>compression function</strong></p></li>
-<li><p>Padded input is split into <span class="math inline">N</span> 512-bit blocks <span class="math inline">M^{(1)}, M^{(2)}, \ldots, M^{(N)}</span></p></li>
-<li><p>Given <span class="math inline">H^{(i-1)}</span>, the next <span class="math inline">H^{(i)}</span> is calculated as <span class="math display">\begin{equation*}
-  H^{(i)} = f(M^{(i)}, H^{(i-1)}), \quad 1 \le i \le N.
-\end{equation*}</span></p>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="images/sha256.svg" style="width:100.0%"></p>
-</figure>
-</div></li>
-<li><p><span class="math inline">H^{(N)}</span> is the output of SHA-256 for input <span class="math inline">M</span></p></li>
-</ul>
-</section>
-<section id="building-blocks-of-f" class="slide level2 smaller">
-<h2>Building Blocks of <span class="math inline">f</span></h2>
-<ul>
-<li><span class="math inline">U</span>, <span class="math inline">V</span>, <span class="math inline">W</span> are 32-bit words</li>
-<li><span class="math inline">U \land V, U \lor V</span>, <span class="math inline">U \oplus V</span> denote bitwise AND, OR, XOR</li>
-<li><span class="math inline">U + V</span> denotes integer sum modulo <span class="math inline">2^{32}</span></li>
-<li><span class="math inline">\lnot U</span> denotes bitwise complement</li>
-<li>For <span class="math inline">1 \le n \le 32</span>, the shift right and rotate right operations <span class="math display">\begin{align*}
-\textsf{SHR}^n(U) &amp; = \underbrace{000 \cdots 000}_{n \textrm{ zeros}} u_0 u_1 \cdots u_{30-n} u_{31-n}, \\
-\textsf{ROTR}^n(U) &amp; =  u_{31-n+1} u_{31-n+2} \cdots u_{30} u_{31} u_0 u_1 \cdots u_{30-n} u_{31-n},
-  \end{align*}</span></li>
-</ul>
-</section>
-<section id="building-blocks-of-f-1" class="slide level2 smaller">
-<h2>Building Blocks of <span class="math inline">f</span></h2>
-<ul>
-<li>Bitwise choice and majority functions <span class="math display">\begin{align*}
-\textsf{Ch}(U,V,W) &amp; = (U \land V) \oplus (\lnot U \land W), \\
-\textsf{Maj}(U,V,W) &amp; = (U \land V) \oplus (U \land W) \oplus (V \land W),
-  \end{align*}</span></li>
-<li>Let <span class="math display">\begin{align*}
-\Sigma_0(U) &amp; = \textsf{ROTR}^{2}(U) \oplus \textsf{ROTR}^{13}(U) \oplus \textsf{ROTR}^{22}(U) \\
-\Sigma_1(U) &amp; = \textsf{ROTR}^{6}(U) \oplus \textsf{ROTR}^{11}(U) \oplus \textsf{ROTR}^{25}(U) \\
-\sigma_0(U) &amp; = \textsf{ROTR}^{7}(U) \oplus \textsf{ROTR}^{18}(U) \oplus \textsf{SHR}^{3}(U) \\
-\sigma_1(U) &amp; = \textsf{ROTR}^{17}(U) \oplus \textsf{ROTR}^{19}(U) \oplus \textsf{SHR}^{10}(U)
-  \end{align*}</span></li>
-</ul>
-</section>
-<section id="f-calculation" class="slide level2 smaller">
-<h2><span class="math inline">f</span> Calculation</h2>
-<ul>
-<li>Maintains internal state of 64 words <span class="math display">\{W_j \mid j = 0,1,\ldots,63\}</span></li>
-<li>Uses 64 constant words <span class="math inline">K_0, K_1, \ldots, K_{63}</span> derived from the first 64 primes</li>
-<li><span class="math inline">f(M^{(i)}, H^{(i-1)})</span> proceeds as follows
-<ol type="1">
-<li>Internal state initialization <span class="math display">\begin{equation*}
-W_j =
-\begin{cases}
-  M_j^{(i)} &amp; 0 \le j \le 15, \\
-  \sigma_1(W_{j-2}) + W_{j-7} + \sigma_0(W_{j-15}) + W_{j-16} &amp; 16 \le j \le 63.
-\end{cases}
-  \end{equation*}</span></li>
-<li>Initialize eight 32-bit words <span class="math display">\begin{equation*}
-(A,B,C,D,E,F,G,H) = \left(H_0^{(i-1)}, H_1^{(i-1)}, \ldots, H_6^{(i-1)}, H_7^{(i-1)}\right).
-  \end{equation*}</span></li>
-<li>For <span class="math inline">j = 0,1,\ldots,63</span>, iteratively update <span class="math inline">A,B,\ldots,H</span> <span class="math display">\begin{align*}
-\begin{split}
-  &amp; T_1  = H + \Sigma_1(E) + \textsf{Ch}(E,F,G) + K_j + W_j \\
-  &amp; T_2  = \Sigma_0(A) + \textsf{Maj}(A,B,C) \\
-  &amp; (A,B,C,D,E,F,G,H)  = (T_1+T_2, A, B, C, D+T_1, E, F, G)
-\end{split}
-  \end{align*}</span></li>
-<li>Calculate <span class="math inline">H^{(i)}</span> from <span class="math inline">H^{(i-1)}</span> <span class="math display">\begin{equation*}
-(H_0^{(i)}, H_1^{(i)}, \ldots, H_7^{(i)}) = \left(A+H_0^{(i-1)}, B+H_1^{(i-1)}, \ldots, H+H_7^{(i-1)}\right).
-  \end{equation*}</span></li>
-</ol></li>
-<li>Demo: <a href="https://sha256algorithm.com/" class="uri">https://sha256algorithm.com/</a></li>
-</ul>
-</section>
-<section id="observations" class="slide level2">
-<h2>Observations</h2>
-<ul>
-<li>SHA-256 is complicated but can be computed easily</li>
-<li>Difficult to invert</li>
-<li>Difficult to find collisions</li>
-</ul>
-</section>
-<section id="collision-probabilities-for-random-functions" class="slide level2">
-<h2>Collision Probabilities for Random Functions</h2>
-<ul>
-<li>If a random function with co-domain of size <span class="math inline">M</span> is queried <span class="math inline">Q</span> times, the probability of at least one collision is <span class="math display">\epsilon \approx 1 - e^{-\frac{Q(Q-1)}{2M}} \implies Q \approx \sqrt{2M \ln \frac{1}{1-\epsilon}}</span></li>
-<li>For <span class="math inline">\epsilon = 0.5</span>, <span class="math inline">Q \approx 1.17 \sqrt{M}</span></li>
-<li>For <span class="math inline">M = 2^{256}</span>, we require approximately <span class="math inline">2^{128}</span> queries</li>
-<li>To find collisions for CHFs with <span class="math inline">n</span>-bit outputs, adversaries require <span class="math inline">\mathcal{O}(2^{n/2})</span> evaluations</li>
-</ul>
-</section></section>
-<section>
-<section id="formal-definitions" class="title-slide slide level1 center">
-<h1>Formal Definitions</h1>
+<section id="primality-testing" class="title-slide slide level1 center">
+<h1>Primality Testing</h1>
 
 </section>
-<section id="need-for-keyed-hash-functions" class="slide level2">
-<h2>Need for Keyed Hash Functions</h2>
+<section id="primality-testing-1" class="slide level2">
+<h2>Primality Testing</h2>
 <ul>
-<li><p>A hash function is a deterministic function <span class="math display">H : \{0,1\}^* \rightarrow \{0,1\}^l</span></p></li>
-<li><p>For any such <span class="math inline">H</span>, there is <strong>always</strong> a constant-time algorithm that outputs a collision</p>
+<li><p>First efficient algorithms were developed in the 70s</p></li>
+<li><p><strong>Probabilistic algorithms</strong> with following guarantees</p>
 <ul>
-<li>The algorithm simply outputs a colliding pair <span class="math inline">(x,x')</span> hardcoded in the algorithm itself</li>
+<li>If input <span class="math inline">p</span> is a prime, the algorithms <strong>always</strong> output “prime”</li>
+<li>If <span class="math inline">p</span> is composite, the algorithms <strong>might</strong> output “prime” with a negligible probability</li>
 </ul></li>
-<li><p>In practice, finding a colliding pair may be hard but we <strong>cannot</strong> define collision resistance for all PPT adversaries</p></li>
-<li><p>We define <strong>keyed</strong> hash functions are used as a workaround</p></li>
+<li><p>A <strong>deterministic</strong> polynomial-time algorithm was found in 2002 by Agrawal, Kayal, Saxena (AKS)</p>
+<ul>
+<li>Not used in practice due to slower running time</li>
+</ul></li>
 </ul>
 </section>
-<section id="hash-function-definition" class="slide level2">
-<h2>Hash Function Definition</h2>
+<section id="a-primality-test-based-on-flt" class="slide level2">
+<h2>A Primality Test Based on FLT</h2>
 <ul>
-<li><p>A <strong>hash function</strong> with output length <span class="math inline">l(n)</span> is a pair of PPT algorithms <span class="math inline">(\textsf{Gen}, H)</span> such that</p>
+<li><p><strong>Fermat’s little theorem:</strong> If <span class="math inline">p</span> is a prime and <span class="math inline">a</span> is any integer not divisible by <span class="math inline">p</span>, then <span class="math inline">a^{p-1} = 1 \bmod p</span>.</p></li>
+<li><p><strong>The Primality Test</strong></p>
 <ul>
-<li><span class="math inline">\textsf{Gen}</span> takes <span class="math inline">1^n</span> as input and outputs a key <span class="math inline">s</span>. We assume <span class="math inline">s</span> depends on <span class="math inline">n</span>.</li>
-<li><span class="math inline">H</span> is a deterministic algorithm that takes key <span class="math inline">s</span> and <span class="math inline">x \in \{0,1\}^*</span> as inputs and outputs a string <span class="math inline">H^s(x) \in \{0,1\}^{l(n)}</span></li>
+<li>Choose a random integer <span class="math inline">a</span> from <span class="math inline">\{1,2,3,\ldots,N-1\}</span></li>
+<li>Compute <span class="math inline">a^{N-1} \bmod N</span></li>
+<li>If <span class="math inline">a^{N-1} \neq 1 \bmod N</span>, then <span class="math inline">N</span> is not a prime. Such an <span class="math inline">a</span> is called a <strong>witness</strong> for the compositeness of <span class="math inline">N</span>.</li>
 </ul></li>
-<li><p>If <span class="math inline">H^s</span> is defined only for inputs <span class="math inline">x</span> of length <span class="math inline">l'(n) &gt; l(n)</span>, then we call <span class="math inline">H</span> a <strong>compression function</strong></p></li>
+<li><p>If <span class="math inline">a^{N-1} = 1 \bmod N</span>, we get no information about the primality of <span class="math inline">N</span></p></li>
 </ul>
 </section>
-<section id="collision-finding-experiment" class="slide level2">
-<h2>Collision-finding Experiment</h2>
+<section id="everything-in-leftmathbbz_n-rightc-is-a-witness" class="slide level2">
+<h2>Everything in <span class="math inline">\left(\mathbb{Z}_N^* \right)^c</span> is a Witness</h2>
 <ul>
-<li><p>For hash function <span class="math inline">\mathcal{H} = (\textsf{Gen}, H)</span> and adversary <span class="math inline">\mathcal{A}</span>, consider the following experiment <span class="math inline">\textsf{Hash-coll}_{\mathcal{A}, \mathcal{H}}(n)</span></p>
+<li><p>Suppose <span class="math inline">a \in \{1,2,\ldots,N-1\}</span> and <span class="math inline">a \notin \mathbb{Z}_N^*</span></p>
+<ul>
+<li><span class="math inline">\gcd(a, N) \neq 1</span> implies <span class="math inline">\gcd(a^{N-1}, N) \neq 1</span></li>
+<li>Then <span class="math inline">a^{N-1} \neq 1 \bmod N</span></li>
+<li>Such an <span class="math inline">a</span> is a witness for the compositeness of <span class="math inline">N</span></li>
+</ul></li>
+</ul>
+</section>
+<section id="leftmathbbz_n-rightc-is-a-small-set" class="slide level2">
+<h2><span class="math inline">\left(\mathbb{Z}_N^* \right)^c</span> is a Small Set</h2>
+<ul>
+<li><p>Integers in <span class="math inline">\{1,\ldots,N-1\}</span> <strong>not</strong> belonging to <span class="math inline">\mathbb{Z}_N^*</span> are rare</p></li>
+<li><p>If <span class="math inline">N</span> is prime, then there are no such integers</p></li>
+<li><p>For composite <span class="math inline">N = p_1^{e_1} \cdots p_k^{e_k}</span>, we have <span class="math display">|\mathbb{Z}_N^*| =\phi(N) =\prod_i p_i^{e_i-1}(p_i-1)</span></p></li>
+<li><p>If <span class="math inline">p_1,p_2,\ldots,p_k</span> are large primes, then the fraction of <span class="math inline">\{1,2,\ldots,N-1\}</span> in <span class="math inline">\mathbb{Z}_N^*</span> is close to 1</p></li>
+</ul>
+</section>
+<section id="witnesses-for-compositeness-in-mathbbz_n" class="slide level2">
+<h2>Witnesses for Compositeness in <span class="math inline">\mathbb{Z}_N^*</span></h2>
+<ul>
+<li><p>We say that an integer <span class="math inline">a \in \mathbb{Z}_N^*</span> is a <strong>witness for compositeness of</strong> <span class="math inline">N</span> if <span class="math inline">a^{N-1} \neq 1 \bmod N</span></p></li>
+<li><p><span class="math inline">\gcd(a, N) = 1 \implies \gcd(a^{N-1}, N) = 1</span></p>
+<ul>
+<li><span class="math inline">Xa^{N-1} + YN =1</span> for some integers <span class="math inline">X,Y</span></li>
+<li>So <span class="math inline">Xa^{N-1} = 1 \bmod N</span></li>
+<li>But <span class="math inline">a^{N-1} \bmod N</span> may or may not be equal to 1</li>
+</ul></li>
+<li><p>So the <span class="math inline">a</span>’s in <span class="math inline">\mathbb{Z}_N^*</span> may or may not be witnesses</p></li>
+</ul>
+</section>
+<section id="testing-primality-when-at-least-one-witness-exists" class="slide level2">
+<h2>Testing Primality When At Least One Witness Exists</h2>
+<ul>
+<li><p><strong>Theorem</strong> If there exists a witness in <span class="math inline">\mathbb{Z}_N^*</span> that <span class="math inline">N</span> is composite, then at least half the elements of <span class="math inline">\mathbb{Z}_N^*</span> are witnesses that <span class="math inline">N</span> is composite</p></li>
+<li><p>If a witness exists, the following primality test fails to detect the compositeness of <span class="math inline">N</span> with probability at most <span class="math inline">2^{-t}</span></p>
 <ol type="1">
-<li>A key is generated by running <span class="math inline">\textsf{Gen}(1^n)</span></li>
-<li><span class="math inline">\mathcal{A}</span> is given <span class="math inline">s</span>, and outputs <span class="math inline">x, x'</span> from the domain of <span class="math inline">H</span></li>
-<li>The output of the experiment is 1 iff <span class="math inline">x \neq x'</span> and <span class="math inline">H^s(x) = H^s(x')</span>. In this case, we say <span class="math inline">\mathcal{A}</span> has found a <strong>collision</strong>.</li>
+<li>For <span class="math inline">i=1,2,\ldots,t</span>, repeat steps 2 and 3.</li>
+<li>Pick <span class="math inline">a</span> uniformly from <span class="math inline">\{1,2,\ldots,N-1\}</span>.</li>
+<li>If <span class="math inline">a^{N-1} \neq 1 \bmod N</span>, return “composite’”</li>
+<li>If all the <span class="math inline">t</span> iterations had <span class="math inline">a^{N-1} = 1 \bmod N</span>, return “prime”</li>
 </ol></li>
 </ul>
 </section>
-<section id="collision-resistance-definition" class="slide level2">
-<h2>Collision Resistance Definition</h2>
+<section id="carmichael-numbers" class="slide level2">
+<h2>Carmichael Numbers</h2>
 <ul>
-<li>A hash function <span class="math inline">\mathcal{H} = (\textsf{Gen}, H)</span> is <strong>collision resistant</strong> if for all PPT adversaries <span class="math inline">\mathcal{A}</span> there is a negligible function <span class="math inline">\textsf{negl}</span> such that <span class="math display">\Pr[\textsf{Hash-coll}_{\mathcal{A}, \mathcal{H}}(n) = 1] \le \textsf{negl}(n).</span></li>
+<li>Composite numbers for which <span class="math inline">a^{N-1} = 1 \bmod N</span> for all integers <span class="math inline">a \in \mathbb{Z}_N^*</span></li>
+<li>There are infinitely many Carmichael numbers</li>
+<li>Example: <span class="math inline">561= 3 \cdot 11 \cdot 17</span></li>
+<li>We cannot rely on the existence of at least one witness in constructing our primality test</li>
 </ul>
 </section>
-<section id="weaker-notions-of-security" class="slide level2">
-<h2>Weaker Notions of Security</h2>
+<section id="square-roots-of-unity-modulo-a-prime" class="slide level2">
+<h2>Square Roots of Unity Modulo a Prime</h2>
 <ul>
-<li><p>Security requirements weaker than collision resistance</p>
+<li><p>We say that <span class="math inline">x \in \mathbb{Z}_N^*</span> is a <strong>square root of 1 modulo</strong> <span class="math inline">N</span> if <span class="math inline">x^2 = 1 \bmod N</span>.</p></li>
+<li><p><strong>Lemma:</strong> If <span class="math inline">N</span> is an odd prime, then the only square roots of <span class="math inline">1</span> modulo <span class="math inline">N</span> are <span class="math inline">\pm 1 \bmod N</span>.</p></li>
+</ul>
+</section>
+<section id="the-sequence-of-square-roots-of-1" class="slide level2">
+<h2>The Sequence of Square Roots of 1</h2>
 <ul>
-<li><strong>Second-preimage resistance</strong>: A hash function is said to be second-preimage resistant if given <span class="math inline">s</span> and a uniform <span class="math inline">x</span> it is infeasible for a PPT adversary to find <span class="math inline">x' \neq x</span> such that <span class="math inline">H^s(x') = H^s(x)</span></li>
-<li><strong>Preimage resistance</strong>: A hash function is said to be second-preimage resistant if given <span class="math inline">s</span> and <span class="math inline">y = H^s(x)</span> for a uniform <span class="math inline">x</span> it is infeasible for a PPT adversary to find <span class="math inline">x'</span> such that <span class="math inline">H^s(x') = y</span></li>
+<li><p>For an odd prime <span class="math inline">N</span>, we have <span class="math inline">N-1 = 2^r u</span> where <span class="math inline">r \ge 1</span> and <span class="math inline">u</span> is odd</p></li>
+<li><p>If <span class="math inline">a \in \mathbb{Z}_N^*</span>, then <span class="math inline">a^{N-1} = a^{2^ru} = 1 \bmod N</span></p></li>
+<li><p>Consider the sequence <span class="math display">a^u \bmod N,a^{2u} \bmod N, \ldots, a^{2^r u} \bmod N</span></p>
+<ul>
+<li>Either <span class="math inline">a^u = \pm 1 \bmod N</span>. In this case, the remaining sequence has only ones.</li>
+<li>Or one of <span class="math inline">a^{2u} \bmod N,\  a^{2^2 u} \bmod N,\  a^{2^3 u} \bmod N,\  \dots,\  a^{2^{r-1} u} \bmod N</span> is equal to <span class="math inline">-1</span>.</li>
 </ul></li>
+</ul>
+</section>
+<section id="strong-witnesses" class="slide level2">
+<h2>Strong Witnesses</h2>
+<ul>
+<li><p>We say that <span class="math inline">a \in \mathbb{Z}_N^*</span> is a <strong>strong witness that</strong> <span class="math inline">N</span> is composite if</p>
+<ul>
+<li><p><span class="math inline">a^u \neq \pm 1 \bmod N</span> and</p></li>
+<li><p><span class="math inline">a^{2^i u} \neq -1 \bmod N</span> for all <span class="math inline">i \in \{1,2,\ldots,r-1\}</span>.</p></li>
+</ul></li>
+<li><p>If we can find even one strong witness, we can conclude that <span class="math inline">N</span> is composite.</p></li>
+<li><p><strong>Theorem</strong> Let <span class="math inline">N</span> be an odd number that is not a prime power. Then at least half the elements of <span class="math inline">\mathbb{Z}_N^*</span> are strong witnesses that <span class="math inline">N</span> is composite.</p></li>
+</ul>
+</section>
+<section id="miller-rabin-primality-test" class="slide level2">
+<h2>Miller-Rabin Primality Test</h2>
+<ul>
+<li><p><strong>Input</strong>: Odd integer <span class="math inline">N &gt; 1</span> and parameter <span class="math inline">1^t</span></p></li>
+<li><p><strong>Output</strong>: A decision as to whether <span class="math inline">N</span> is prime or composite <span class="math display">\begin{align*}
+&amp; \text{{Compute $r \ge 1$ and odd $u$ such that $N-1 = 2^ru$}}\\
+&amp; \textbf{if } \text{$N$ is a perfect power, \textbf{return} ``composite''}\\
+                                                                                                                &amp; \textbf{for } j=1 \text{ to } t:\\
+                                                                                                                &amp;\quad a \leftarrow \{1,\ldots,N-1\}\\
+                                                                                                                &amp;\quad  \textbf{if } \text{$a^u \neq \pm 1 \bmod N$ and}\\
+                                                                                                                &amp;\quad \quad \text{$a^{2^iu} \neq -1 \bmod N$ for $i \in \{1,\ldots,r-1\}$ } \\
+                                                                                                                &amp;\quad \quad \text{\textbf{return} ``composite''}\\
+&amp;\quad \textbf{end if } \\
+&amp;\textbf{end for } \\
+&amp; \textbf{return } \text{``prime''}
+\end{align*}</span></p></li>
 </ul>
 </section></section>
 <section>
-<section id="applications-of-hash-functions" class="title-slide slide level1 center">
-<h1>Applications of Hash Functions</h1>
+<section id="the-factoring-assumption" class="title-slide slide level1 center">
+<h1>The Factoring Assumption</h1>
 
 </section>
-<section id="hash-and-mac" class="slide level2">
-<h2>Hash-and-MAC</h2>
+<section id="the-factoring-experiment" class="slide level2">
+<h2>The Factoring Experiment</h2>
 <ul>
-<li>Suppose we have a fixed-length secure MAC for <span class="math inline">l(n)</span>-bit messages and a collision-resistant hash function with <span class="math inline">l(n)</span>-bit output length</li>
-<li>We can construct a secure MAC for an arbitrary-length message <span class="math inline">m</span> by authenticating the hash of <span class="math inline">m</span></li>
-<li>For key <span class="math inline">(k,s)</span> and message <span class="math inline">m \in \{0,1\}^*</span>, the tag is <span class="math display">t \leftarrow \textsf{Mac}_k(H^s(m))</span></li>
-</ul>
-</section>
-<section id="fingerprinting-and-deduplication" class="slide level2">
-<h2>Fingerprinting and Deduplication</h2>
+<li><p>Let <span class="math inline">\textsf{GenModulus}</span> be a PPT algorithm that, on input <span class="math inline">1^n</span>, outputs <span class="math inline">(N,p,q)</span> where <span class="math inline">N = pq</span>, and <span class="math inline">p</span> and <span class="math inline">q</span> are <span class="math inline">n</span>-bit primes except with probability negligible in <span class="math inline">n</span>.</p></li>
+<li><p><strong>The factoring experiment</strong> <span class="math inline">\textsf{Factor}_{\mathcal{A}, \textsf{GenModulus}}(n)</span>:</p>
 <ul>
-<li>Virus fingerprinting
-<ul>
-<li>Virus scanners can identify viruses by comparing hashes of incoming files to hashes of known viruses</li>
+<li>Run <span class="math inline">\textsf{GenModulus}(1^n)</span> to obtain <span class="math inline">(N,p,q)</span>.</li>
+<li><span class="math inline">\mathcal{A}</span> is given <span class="math inline">N</span>, and outputs <span class="math inline">p',q' &gt; 1</span>.</li>
+<li>The output of the experiment is <span class="math inline">1</span> if <span class="math inline">N = p'q'</span>, and <span class="math inline">0</span> otherwise.</li>
 </ul></li>
-<li>Deduplication
-<ul>
-<li>Cloud storage providers can identify duplicate files by comparing their hashes</li>
-<li>User first uploads hash of a file; the file itself is uploaded only if it is not in the cloud</li>
-</ul></li>
-<li>P2P file sharing
-<ul>
-<li>Hashes of files are used as unique identifiers for advertising</li>
-<li>Called content-based addressing</li>
-</ul></li>
+<li><p>We use <span class="math inline">p', q'</span> in the above experiment because it is possible that <span class="math inline">\textsf{GenModulus}</span> returns composite integers <span class="math inline">p, q</span> albeit with negligible probability</p></li>
 </ul>
 </section>
-<section id="fingerprinting-multiple-files" class="slide level2">
-<h2>Fingerprinting Multiple Files</h2>
+<section id="the-factoring-assumption-1" class="slide level2">
+<h2>The Factoring Assumption</h2>
 <ul>
-<li>Suppose a user upload a file <span class="math inline">x</span> to a server and retains <span class="math inline">H(x)</span></li>
-<li>When user retrieves <span class="math inline">x</span>, she checks if the hash matches</li>
-<li>What if the user wants to store multiple files <span class="math inline">x_1, \ldots, x_t</span>?</li>
-<li>User needs to store as many as hashes as files</li>
-<li>One option is to store <span class="math inline">h = H(x_1, x_2, \ldots, x_t)</span></li>
-<li><strong>Merkle</strong> trees are a better option</li>
-</ul>
-</section>
-<section id="merkle-trees" class="slide level2">
-<h2>Merkle Trees</h2>
-
-<img data-src="images/merkle.svg" class="r-stretch quarto-figure-center"></section>
-<section id="password-hashing" class="slide level2">
-<h2>Password Hashing</h2>
-<ul>
-<li>Web servers store hashes of passwords instead of the passwords in plaintext</li>
-<li>Even if a web server is breached, the attacker has to find hash function preimages to recover the password</li>
-<li>Passwords are <strong>salted</strong> before hashing to make preimages harder to find</li>
-<li>For some random salt <span class="math inline">r \leftarrow \{0,1\}^n</span>, the server will store <span class="math display"> \langle r, H(r \| \textsf{password})\rangle </span></li>
-</ul>
-</section>
-<section id="commitment-schemes" class="slide level2">
-<h2>Commitment Schemes</h2>
-<ul>
-<li><p>Commitment schemes allow a user to <strong>commit</strong> to a secret that can be revealed at a later time</p></li>
-<li><p>A commitment scheme is a pair of PPT algorithms <span class="math inline">(\textsf{Gen}, \textsf{Com})</span></p>
-<ul>
-<li><span class="math inline">\textsf{Gen}</span> takes <span class="math inline">1^n</span> as input and outputs public parameters <span class="math inline">\textsf{params}</span></li>
-<li><span class="math inline">\textsf{Com}</span> takes <span class="math inline">\textsf{params}</span>, a message <span class="math inline">m</span>, and randomness <span class="math inline">r</span> as inputs and outputs a <strong>commitment</strong> <span class="math display">\textsf{com} = \textsf{Com}(\textsf{params}, m; r)</span></li>
-</ul></li>
-</ul>
-</section>
-<section id="commitment-scheme-workflow" class="slide level2">
-<h2>Commitment Scheme Workflow</h2>
-<ul>
-<li><p>The committer creates <span class="math inline">\textsf{com}</span> and sends it to a receiver</p></li>
-<li><p>The committer can later reveal <span class="math inline">m</span> by sending <span class="math inline">m</span> and <span class="math inline">r</span> to the receiver</p></li>
-<li><p>The receiver can verify the commitment by checking that <span class="math inline">\textsf{com} = \textsf{Com}(\textsf{params}, m; r)</span></p></li>
-</ul>
-</section>
-<section id="desirable-properties-of-commitment-schemes" class="slide level2">
-<h2>Desirable Properties of Commitment Schemes</h2>
-<ul>
-<li><strong>Hiding</strong>: The commitment <span class="math inline">\textsf{com}</span> reveals nothing about <span class="math inline">m</span></li>
-<li><strong>Binding</strong>: It is infeasible for the committer to create a commitment <span class="math inline">\textsf{com}</span> that can be opened later to two different messages <span class="math inline">m, m'</span></li>
-</ul>
-</section>
-<section id="commitment-schemes-using-hash-functions" class="slide level2">
-<h2>Commitment Schemes using Hash Functions</h2>
-<ul>
-<li><span class="math inline">\textsf{Gen}</span> = Choosing a hash function of appropriate output length; <span class="math inline">\textsf{params}</span> = Hash function <span class="math inline">H</span>
-<ul>
-<li>Recall that a hash function with <span class="math inline">l(n)</span>-bit output requires <span class="math inline">\mathcal{O}(2^{l(n)/2})</span> operations to find collisions</li>
-</ul></li>
-<li><span class="math inline">\textsf{Com}(\textsf{params}, m; r) = H(r \| m)</span>
-<ul>
-<li>Randomness <span class="math inline">r</span> should be long enough to prevent a PPT adversary from finding its value by exhaustive search</li>
-</ul></li>
-</ul>
-</section>
-<section id="hashcash" class="slide level2">
-<h2>Hashcash</h2>
-<ul>
-<li><p>Proposed in 1997 to combat email spam</p></li>
-<li><p>Suppose a client wants to send an email to an email server</p></li>
-<li><p>Client and server agree upon a hash function <span class="math inline">H</span></p></li>
-<li><p>Email server sends the client a challenge string <span class="math inline">c</span></p></li>
-</ul>
-</section>
-<section id="hashcash-1" class="slide level2">
-<h2>Hashcash</h2>
-<ul>
-<li><p>Client needs to find a string <span class="math inline">r</span> such that <span class="math inline">H(c \| r)</span> <strong>begins with</strong> <span class="math inline">k</span> zeros</p>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="images/hashcash.svg" style="width:70.0%"></p>
-</figure>
-</div></li>
-<li><p>Server accepts the email only if the client finds such an <span class="math inline">r</span></p></li>
-</ul>
-</section>
-<section id="hashcash-2" class="slide level2">
-<h2>Hashcash</h2>
-<ul>
-<li><p>If <span class="math inline">H</span> is modeled as a random function, the probability of success in a single trial is <span class="math inline">\frac{1}{2^k}</span></p></li>
-<li><p>Around <span class="math inline">2^k</span> trials are required to find a satisfactory <span class="math inline">r</span></p></li>
-<li><p>The <span class="math inline">r</span> corresponding to <span class="math inline">c</span> is a <strong>proof-of-work (PoW)</strong></p></li>
-<li><p>PoW is difficult to generate but easy to verify</p></li>
-<li><p>Demo</p></li>
+<li><p><strong>Definition:</strong> Factoring is hard relative to <span class="math inline">\textsf{GenModulus}</span> if for all PPT algorithms <span class="math inline">\mathcal{A}</span> there exists a negligible function <span class="math inline">\textsf{negl}</span> such that <span class="math display">\Pr[\textsf{Factor}_{\mathcal{A}, \textsf{GenModulus}}(n) = 1] \le \textsf{negl}(n).</span></p></li>
+<li><p>The <strong>factoring assumption</strong> states that there exists a <span class="math inline">\textsf{GenModulus}</span> relative to which factoring is hard.</p></li>
 </ul>
 </section></section>
-<section id="further-reading" class="title-slide slide level1 center">
-<h1>Further Reading</h1>
-<p>Sections 6.1, 6.3.1, 6.6 of Katz and Lindell</p>
+<section>
+<section id="rsa" class="title-slide slide level1 center">
+<h1>RSA</h1>
+
+</section>
+<section id="plain-rsa" class="slide level2">
+<h2>Plain RSA</h2>
+<ul>
+<li><p>Let <span class="math inline">\textsf{GenRSA}</span> be a PPT algorithm that on input <span class="math inline">1^n</span>, outputs a modulus <span class="math inline">N</span> that is the product of two <span class="math inline">n</span>-bit primes, along with integers <span class="math inline">e,d &gt; 1</span> satisfying <span class="math inline">ed = 1 \bmod \phi(N)</span></p></li>
+<li><p>Define a public-key encryption scheme as follows:</p>
+<ul>
+<li><span class="math inline">\textsf{Gen:}</span> On input <span class="math inline">1^n</span>, run <span class="math inline">\textsf{GenRSA}(1^n)</span> to obtain <span class="math inline">N</span>, <span class="math inline">e</span>, and <span class="math inline">d</span>.
+<ul>
+<li>The public key is <span class="math inline">\langle N,e \rangle</span> and the private key is <span class="math inline">\langle N,d \rangle</span>.</li>
+</ul></li>
+<li><span class="math inline">\textsf{Enc:}</span> On input a public key <span class="math inline">pk = \langle N,e \rangle</span> and message <span class="math inline">m \in \mathbb{Z}_N^*</span>, compute the ciphertext <span class="math inline">c = m^e \bmod N</span>.</li>
+<li><span class="math inline">\textsf{Dec:}</span> On input a private key <span class="math inline">sk = \langle N, d \rangle</span> and ciphertext <span class="math inline">c \in \mathbb{Z}_N^*</span>, output <span class="math inline">\hat{m} = c^d \bmod N</span>.</li>
+</ul></li>
+</ul>
+</section>
+<section id="further-reading" class="slide level2">
+<h2>Further reading</h2>
+<ul>
+<li>Section 9.2 of Katz and Lindell</li>
+</ul>
 <div class="footer footer-default">
 
 </div>
-</section>
+</section></section>
     </div>
   </div>
 
   <script>window.backupDefine = window.define; window.define = undefined;</script>
-  <script src="hash-functions_files/libs/revealjs/dist/reveal.js"></script>
+  <script src="hardness-assumptions_files/libs/revealjs/dist/reveal.js"></script>
   <!-- reveal.js plugins -->
-  <script src="hash-functions_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
-  <script src="hash-functions_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
-  <script src="hash-functions_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
-  <script src="hash-functions_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
-  <script src="hash-functions_files/libs/revealjs/plugin/quarto-support/support.js"></script>
+  <script src="hardness-assumptions_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="hardness-assumptions_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="hardness-assumptions_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="hardness-assumptions_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="hardness-assumptions_files/libs/revealjs/plugin/quarto-support/support.js"></script>
   
 
-  <script src="hash-functions_files/libs/revealjs/plugin/notes/notes.js"></script>
-  <script src="hash-functions_files/libs/revealjs/plugin/search/search.js"></script>
-  <script src="hash-functions_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="hardness-assumptions_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="hardness-assumptions_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="hardness-assumptions_files/libs/revealjs/plugin/zoom/zoom.js"></script>
   <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
 
   <script>
