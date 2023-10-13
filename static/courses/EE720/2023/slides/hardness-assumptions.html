@@ -427,6 +427,21 @@ Saravanan Vijayakumaran
 </ul></li>
 </ul>
 </section>
+<section id="group-exponentiation" class="slide level2">
+<h2>Group Exponentiation</h2>
+<ul>
+<li>Computing <span class="math inline">a^b \bmod N</span> for <span class="math inline">a \in \mathbb{Z}_N</span> and exponent <span class="math inline">b</span> can be done in <span class="math inline">\mathcal{O}(\| b \|)</span> time</li>
+<li>The square and multiply algorithm <span class="math display">\begin{align*}
+&amp; x \leftarrow a, t \leftarrow 1 \\
+&amp; \textbf{while } b &gt; 0\\
+&amp; \quad \textbf{if } b \text{ is odd}\\
+&amp;\quad \quad t \leftarrow t \cdot x \bmod N,  \quad b \leftarrow b-1\\
+&amp; \quad \textbf{end if }\\
+&amp; \quad x \leftarrow x^2 \bmod N, \quad b \leftarrow b/2\\
+&amp; \textbf{return } t
+\end{align*}</span></li>
+</ul>
+</section>
 <section id="a-primality-test-based-on-flt" class="slide level2">
 <h2>A Primality Test Based on FLT</h2>
 <ul>
@@ -486,6 +501,20 @@ Saravanan Vijayakumaran
 </ol></li>
 </ul>
 </section>
+<section id="number-of-witnesses-when-at-least-one-witness-exists" class="slide level2">
+<h2>Number of Witnesses When At Least One Witness Exists</h2>
+<ul>
+<li><p><strong>Theorem</strong>: Suppose there exists a witness that <span class="math inline">N</span> is composite. Then at least half the elements of <span class="math inline">\mathbb{Z}_N^*</span> are witnesses that <span class="math inline">N</span> is composite.</p></li>
+<li><p><strong>Proof</strong></p>
+<ul>
+<li>Let <span class="math inline">\textsf{Bad}</span> be the subset of <span class="math inline">\mathbb{Z}_N^*</span> that are <strong>not</strong> witnesses</li>
+<li><span class="math inline">\textsf{Bad}</span> is a subgroup of <span class="math inline">\mathbb{Z}_N^*</span></li>
+<li>By the hypothesis, it is a <strong>strict</strong> subgroup of <span class="math inline">\mathbb{Z}_N^*</span></li>
+<li>By Lagrange’s theorem, <span class="math inline">|\textsf{Bad}| \le |\mathbb{Z}_N^*|/2</span></li>
+<li>So <span class="math inline">|\textsf{Bad}^c| \ge |\mathbb{Z}_N^*|/2</span></li>
+</ul></li>
+</ul>
+</section>
 <section id="carmichael-numbers" class="slide level2">
 <h2>Carmichael Numbers</h2>
 <ul>
@@ -502,15 +531,28 @@ Saravanan Vijayakumaran
 <li><p><strong>Lemma:</strong> If <span class="math inline">N</span> is an odd prime, then the only square roots of <span class="math inline">1</span> modulo <span class="math inline">N</span> are <span class="math inline">\pm 1 \bmod N</span>.</p></li>
 </ul>
 </section>
-<section id="the-sequence-of-square-roots-of-1" class="slide level2">
-<h2>The Sequence of Square Roots of 1</h2>
+<section id="the-sequence-of-square-roots-of-unity-modulo-an-odd-prime" class="slide level2">
+<h2>The Sequence of Square Roots of Unity Modulo an Odd Prime</h2>
 <ul>
 <li><p>For an odd prime <span class="math inline">N</span>, we have <span class="math inline">N-1 = 2^r u</span> where <span class="math inline">r \ge 1</span> and <span class="math inline">u</span> is odd</p></li>
 <li><p>If <span class="math inline">a \in \mathbb{Z}_N^*</span>, then <span class="math inline">a^{N-1} = a^{2^ru} = 1 \bmod N</span></p></li>
-<li><p>Consider the sequence <span class="math display">a^u \bmod N,a^{2u} \bmod N, \ldots, a^{2^r u} \bmod N</span></p>
+<li><p>Consider the sequence <span class="math display">a^u \bmod N,a^{2u} \bmod N, \ldots, a^{2^r u} \bmod N</span></p></li>
+<li><p>It can only be in one of the following forms</p>
 <ul>
-<li>Either <span class="math inline">a^u = \pm 1 \bmod N</span>. In this case, the remaining sequence has only ones.</li>
-<li>Or one of <span class="math inline">a^{2u} \bmod N,\  a^{2^2 u} \bmod N,\  a^{2^3 u} \bmod N,\  \dots,\  a^{2^{r-1} u} \bmod N</span> is equal to <span class="math inline">-1</span>.</li>
+<li><span class="math inline">1,1,1,1,\ldots,1</span></li>
+<li><span class="math inline">-1,1,1,\ldots,1</span></li>
+<li><span class="math inline">\star,\star,\ldots,\star,-1,1,1,\ldots,1</span></li>
+</ul></li>
+<li><p>If for an odd integer <span class="math inline">N</span>, we do not observe this sequence then <span class="math inline">N</span> is composite</p></li>
+</ul>
+</section>
+<section id="the-sequence-of-square-roots-of-unity-modulo-an-odd-prime-1" class="slide level2">
+<h2>The Sequence of Square Roots of Unity Modulo an Odd Prime</h2>
+<ul>
+<li><p>In other words, when <span class="math inline">N</span> is an odd prime, the sequence <span class="math display">a^u \bmod N,a^{2u} \bmod N, \ldots, a^{2^r u} \bmod N</span> satisfies the following conditions</p>
+<ul>
+<li>Either <span class="math inline">a^u = 1 \bmod N</span></li>
+<li>Or one of <span class="math inline">a^u \bmod N, a^{2u} \bmod N,\  a^{2^2 u} \bmod N,\  \dots,\  a^{2^{r-1} u} \bmod N</span> is equal to <span class="math inline">-1</span>.</li>
 </ul></li>
 </ul>
 </section>
@@ -519,11 +561,41 @@ Saravanan Vijayakumaran
 <ul>
 <li><p>We say that <span class="math inline">a \in \mathbb{Z}_N^*</span> is a <strong>strong witness that</strong> <span class="math inline">N</span> is composite if</p>
 <ul>
-<li><p><span class="math inline">a^u \neq \pm 1 \bmod N</span> and</p></li>
-<li><p><span class="math inline">a^{2^i u} \neq -1 \bmod N</span> for all <span class="math inline">i \in \{1,2,\ldots,r-1\}</span>.</p></li>
+<li><p><span class="math inline">a^u \neq 1 \bmod N</span> and</p></li>
+<li><p><span class="math inline">a^{2^i u} \neq -1 \bmod N</span> for all <span class="math inline">i \in \{0,1,2,\ldots,r-1\}</span>.</p></li>
 </ul></li>
 <li><p>If we can find even one strong witness, we can conclude that <span class="math inline">N</span> is composite.</p></li>
-<li><p><strong>Theorem</strong> Let <span class="math inline">N</span> be an odd number that is not a prime power. Then at least half the elements of <span class="math inline">\mathbb{Z}_N^*</span> are strong witnesses that <span class="math inline">N</span> is composite.</p></li>
+<li><p><strong>Theorem</strong> Let <span class="math inline">N</span> be an odd number that is not a prime power. Then at least half the elements of <span class="math inline">\mathbb{Z}_N^*</span> are strong witnesses that <span class="math inline">N</span> is composite.</p>
+<ul>
+<li>A prime power is of the form <span class="math inline">p^r</span> where <span class="math inline">p</span> is a prime and <span class="math inline">r \ge 1</span></li>
+</ul></li>
+</ul>
+</section>
+<section id="strategy-for-proving-strong-witness-count" class="slide level2">
+<h2>Strategy for Proving Strong Witness Count</h2>
+<ul>
+<li><p>Let <span class="math inline">\textsf{Bad} \subseteq \mathbb{Z}_N^*</span> be the set of elements that are <strong>not</strong> strong witnesses</p></li>
+<li><p>We can define a set <span class="math inline">\textsf{Bad}'</span> such that</p>
+<ul>
+<li><span class="math inline">\textsf{Bad} \subseteq \textsf{Bad}'</span></li>
+<li><span class="math inline">\textsf{Bad}'</span> is a strict subgroup of <span class="math inline">\mathbb{Z}_N^*</span></li>
+<li>By Lagrange’s theorem, <span class="math inline">|\textsf{Bad}| \le |\textsf{Bad}'| \le |\mathbb{Z}_N^*|/2</span></li>
+<li>Hence, at least half of <span class="math inline">\mathbb{Z}_N^*</span> are strong witnesses</li>
+</ul></li>
+<li><p>See proof of Theorem 9.40 in Katz &amp; Lindell</p></li>
+</ul>
+</section>
+<section id="textsfbad-subsetneq-mathbbz_n" class="slide level2">
+<h2><span class="math inline">\textsf{Bad}' \subsetneq \mathbb{Z}_N^*</span></h2>
+<ul>
+<li>For <span class="math inline">N-1 = 2^r u</span>, let <span class="math inline">i \in \{0,1,\ldots,r-1\}</span> be the largest integer for which there exists an <span class="math inline">a \in \textsf{Bad}</span> with <span class="math display">a^{2^iu} = -1 \bmod N.</span></li>
+<li>Let <span class="math inline">\textsf{Bad}' = \{ a \in \mathbb{Z}_N^* \mid a^{2^iu} = \pm 1 \bmod N \}</span></li>
+<li>Since <span class="math inline">N</span> is an odd composite integer that is not a prime power, we have <span class="math display">N = N_1 N_2 \text{ for } N_1, N_2 &gt; 1 \text{ and } \gcd(N_1, N_2) = 1</span></li>
+<li>By CRT, <span class="math inline">\mathbb{Z}_N^* \simeq \mathbb{Z}_{N_1}^* \times \mathbb{Z}_{N_2}^*</span></li>
+<li>Let <span class="math inline">a \in \textsf{Bad}'</span> be such that <span class="math inline">a^{2^i u} = -1 \bmod N</span></li>
+<li>Let <span class="math inline">a \leftrightarrow (a_1, a_2)</span>, then <span class="math display">a_1^{2^i u} = -1 \bmod N_1 \text{ and } a_2^{2^i u} = -1 \bmod N_2</span></li>
+<li>Let <span class="math inline">b \in \mathbb{Z}_N^*</span> such that <span class="math inline">b \leftrightarrow (a_1, 1)</span>. Then <span class="math display">b^{2^i u} \leftrightarrow (a_1, 1)^{2^iu} = (-1,1) \not\leftrightarrow \pm 1</span></li>
+<li>So <span class="math inline">b \not\in \textsf{Bad}' \implies \textsf{Bad}' \subsetneq \mathbb{Z}_N^*</span></li>
 </ul>
 </section>
 <section id="miller-rabin-primality-test" class="slide level2">
@@ -533,11 +605,11 @@ Saravanan Vijayakumaran
 <li><p><strong>Output</strong>: A decision as to whether <span class="math inline">N</span> is prime or composite <span class="math display">\begin{align*}
 &amp; \text{{Compute $r \ge 1$ and odd $u$ such that $N-1 = 2^ru$}}\\
 &amp; \textbf{if } \text{$N$ is a perfect power, \textbf{return} ``composite''}\\
-                                                                                                                &amp; \textbf{for } j=1 \text{ to } t:\\
-                                                                                                                &amp;\quad a \leftarrow \{1,\ldots,N-1\}\\
-                                                                                                                &amp;\quad  \textbf{if } \text{$a^u \neq \pm 1 \bmod N$ and}\\
-                                                                                                                &amp;\quad \quad \text{$a^{2^iu} \neq -1 \bmod N$ for $i \in \{1,\ldots,r-1\}$ } \\
-                                                                                                                &amp;\quad \quad \text{\textbf{return} ``composite''}\\
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                &amp; \textbf{for } j=1 \text{ to } t:\\
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                &amp;\quad a \leftarrow \{1,\ldots,N-1\}\\
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                &amp;\quad  \textbf{if } \text{$a^u \neq \pm 1 \bmod N$ and}\\
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                &amp;\quad \quad \text{$a^{2^iu} \neq -1 \bmod N$ for $i \in \{1,\ldots,r-1\}$ } \\
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                &amp;\quad \quad \text{\textbf{return} ``composite''}\\
 &amp;\quad \textbf{end if } \\
 &amp;\textbf{end for } \\
 &amp; \textbf{return } \text{``prime''}
@@ -589,10 +661,320 @@ Saravanan Vijayakumaran
 </ul></li>
 </ul>
 </section>
+<section id="the-rsa-experiment" class="slide level2">
+<h2>The RSA Experiment</h2>
+<ul>
+<li><p><span class="math inline">\textsf{RSA-inv}_{\mathcal{A}, \textsf{GenRSA}}(n)</span>:</p>
+<ul>
+<li>Run <span class="math inline">\textsf{GenRSA}(1^n)</span> to obtain <span class="math inline">(N,e,d)</span></li>
+<li>Choose a uniform <span class="math inline">y \in \mathbb{Z}_N^*</span></li>
+<li><span class="math inline">\mathcal{A}</span> is given <span class="math inline">N,e,y</span>, and outputs <span class="math inline">x \in \mathbb{Z}_N^*</span></li>
+<li>The output of the experiment is <span class="math inline">1</span> if <span class="math inline">x^e = y \bmod N</span>, and <span class="math inline">0</span> otherwise.</li>
+</ul></li>
+</ul>
+</section>
+<section id="the-rsa-assumption" class="slide level2">
+<h2>The RSA Assumption</h2>
+<ul>
+<li><p><strong>Definition:</strong> The RSA problem is hard relative to <span class="math inline">\textsf{GenRSA}</span> if for all PPT algorithms <span class="math inline">\mathcal{A}</span> there exists a negligible function <span class="math inline">\textsf{negl}</span> such that <span class="math display">\Pr[\textsf{RSA-inv}_{\mathcal{A}, \textsf{GenRSA}}(n) = 1] \le \textsf{negl}(n).</span></p></li>
+<li><p>The <strong>RSA assumption</strong> states that there exists a <span class="math inline">\textsf{GenRSA}</span> relative to which RSA is hard.</p></li>
+<li><p>The RSA assumption is a <strong>stronger</strong> assumption than the factoring assumption</p></li>
+</ul>
+</section></section>
+<section>
+<section id="cyclic-groups" class="title-slide slide level1 center">
+<h1>Cyclic Groups</h1>
+
+</section>
+<section id="cyclic-groups-1" class="slide level2">
+<h2>Cyclic Groups</h2>
+<ul>
+<li><p><strong>Definition</strong>: Let <span class="math inline">G</span> be a finite group. For <span class="math inline">g \in G</span>, the <strong>subgroup generated by</strong> <span class="math inline">g</span> is given by <span class="math display">\langle g \rangle = \{g, g^2, \ldots \}.</span></p></li>
+<li><p><strong>Definition</strong>: Let <span class="math inline">G</span> be a finite group. We call <span class="math inline">G</span> a <strong>cyclic group</strong> if there exists a <span class="math inline">g \in G</span> such that <span class="math inline">G = \langle g \rangle</span>. Such a <span class="math inline">g</span> is called a <strong>generator</strong> of <span class="math inline">G</span>.</p></li>
+<li><p><strong>Examples</strong></p>
+<ul>
+<li><span class="math inline">1</span> is a generator of <span class="math inline">\mathbb{Z}_N</span> for all <span class="math inline">N &gt; 1</span></li>
+<li><span class="math inline">3</span> and <span class="math inline">5</span> are generators of <span class="math inline">\mathbb{Z}_7^*</span></li>
+</ul></li>
+</ul>
+</section>
+<section id="order-of-elements-in-a-finite-group" class="slide level2">
+<h2>Order of Elements in a Finite Group</h2>
+<ul>
+<li><p><strong>Definition</strong>: Let <span class="math inline">G</span> be a finite group and <span class="math inline">g \in G</span>. The <strong>order</strong> of <span class="math inline">g</span> is the smallest positive integer <span class="math inline">i</span> for which <span class="math inline">g^i = 1</span>.</p></li>
+<li><p><strong>Proposition</strong>: In a finite group <span class="math inline">G</span>, the order of an element <span class="math inline">g</span> equals the order of the subgroup <span class="math inline">\langle g \rangle</span>.</p></li>
+<li><p><strong>Corollary</strong>: If <span class="math inline">G</span> is a group of prime order <span class="math inline">p</span>, then <span class="math inline">G</span> is cyclic. Furthermore, all elements of <span class="math inline">G</span> except the identity are generators of <span class="math inline">G</span>.</p>
+<ul>
+<li>In <span class="math inline">\mathbb{Z}_p</span>, all the integers other than 0 are generators.</li>
+</ul></li>
+</ul>
+</section>
+<section id="mathbbz_p-is-cyclic-for-prime-p" class="slide level2">
+<h2><span class="math inline">\mathbb{Z}_p^*</span> is Cyclic for Prime <span class="math inline">p</span></h2>
+<ul>
+<li><p><strong>Theorem</strong>: If <span class="math inline">p</span> is a prime, then <span class="math inline">Z_p^*</span> is a cyclic group of order <span class="math inline">p-1</span></p></li>
+<li><p>Proof can be found in <a href="https://web.stanford.edu/~marykw/classes/CS250_W19/readings/Forney_Introduction_to_Finite_Fields.pdf">Prof.&nbsp;Forney’s notes</a></p></li>
+</ul>
+</section></section>
+<section>
+<section id="the-discrete-logarithm-assumption" class="title-slide slide level1 center">
+<h1>The Discrete-Logarithm Assumption</h1>
+
+</section>
+<section id="the-discrete-logarithm" class="slide level2">
+<h2>The Discrete Logarithm</h2>
+<ul>
+<li>If <span class="math inline">G</span> is a cyclic group of order <span class="math inline">q</span> with generator <span class="math inline">g</span>, then we can write <span class="math display">G = \{g^0, g^1, g^2,\ldots, g^{q-1}\}</span> where <span class="math inline">g^0 = e</span></li>
+<li>For every <span class="math inline">h \in G</span>, there is a <strong>unique</strong> <span class="math inline">x \in \mathbb{Z}_q</span> such that <span class="math inline">g^x = h</span></li>
+<li>We call this <span class="math inline">x</span> the <strong>discrete logarithm of</strong> <span class="math inline">h</span> with respect to <span class="math inline">g</span> and write <span class="math inline">x = \log_g h</span></li>
+</ul>
+</section>
+<section id="the-discrete-logarithm-experiment" class="slide level2">
+<h2>The Discrete-Logarithm Experiment</h2>
+<ul>
+<li><p>Let <span class="math inline">\mathcal{G}</span> denote a polynomial-time, <strong>cyclic group generation algorithm</strong> which outputs a group, its order, and a generator</p></li>
+<li><p>The discrete-logarithm experiment <span class="math inline">\textsf{DLog}_{\mathcal{A},\mathcal{G}}(n)</span></p>
+<ol type="1">
+<li>Run <span class="math inline">\mathcal{G}(1^n)</span> to obtain <span class="math inline">(G,q,g)</span>, where <span class="math inline">G</span> is a cyclic group of order <span class="math inline">q</span> (with <span class="math inline">\| q \| = n</span>), and <span class="math inline">g</span> is a generator of <span class="math inline">G</span></li>
+<li>Choose a uniform <span class="math inline">h \in G</span></li>
+<li><span class="math inline">\mathcal{A}</span> is given <span class="math inline">G, q, g, h</span>, and outputs <span class="math inline">x \in \mathbb{Z}_q</span></li>
+<li>The output of the experiment is 1 if <span class="math inline">g^x = h</span>, and 0 otherwise</li>
+</ol></li>
+</ul>
+</section>
+<section id="the-discrete-logarithm-assumption-1" class="slide level2">
+<h2>The Discrete-Logarithm Assumption</h2>
+<ul>
+<li><p><strong>Definition</strong>: We say the <strong>discrete-logarithm problem is hard relative to</strong> <span class="math inline">\mathcal{G}</span> if for all PPT algorithms <span class="math inline">\mathcal{A}</span> there exists a negligible function <span class="math inline">\textsf{negl}</span> such that <span class="math display">\Pr[\textsf{DLog}_{\mathcal{A}, \mathcal{G}}(n) = 1] \le \textsf{negl}(n).</span></p></li>
+<li><p>The <strong>discrete-logarithm assumption</strong> states that there exists a <span class="math inline">\mathcal{G}</span> relative to which the discrete-logarithm problem is hard</p>
+<ul>
+<li>We will see two examples of <span class="math inline">\mathcal{G}</span> later</li>
+</ul></li>
+</ul>
+</section></section>
+<section>
+<section id="the-diffie-hellman-assumptions" class="title-slide slide level1 center">
+<h1>The Diffie-Hellman Assumptions</h1>
+
+</section>
+<section id="diffie-hellman-protocol" class="slide level2">
+<h2>Diffie-Hellman Protocol</h2>
+
+<img data-src="images/diffie-hellman.svg" width="600" class="r-stretch quarto-figure-center"></section>
+<section id="the-diffie-hellman-problems" class="slide level2">
+<h2>The Diffie-Hellman Problems</h2>
+<ul>
+<li><p>Related to the problem of computing discrete logarithms, but not known to be equivalent to it</p></li>
+<li><p>Two important variants</p>
+<ul>
+<li>Computational Diffie-Hellman (CDH) Problem</li>
+<li>Decisional Diffie-Hellman (DDH) Problem</li>
+</ul></li>
+</ul>
+</section>
+<section id="computational-diffie-hellman-cdh-problem" class="slide level2">
+<h2>Computational Diffie-Hellman (CDH) Problem</h2>
+<ul>
+<li>Consider a cyclic group <span class="math inline">G</span> with a generator <span class="math inline">g</span></li>
+<li>Given <span class="math inline">h_1, h_2 \in G</span>, define <span class="math display">\textsf{DH}_g(h_1, h_2) = g^{\log_g h_1 \cdot \log_g h_2}</span></li>
+<li>That is, if <span class="math inline">h_1 = g^{x_1}</span> and <span class="math inline">h_2=g^{x_2}</span> then <span class="math display">\textsf{DH}_g(h_1, h_2) = g^{x_1\cdot x_2} = h_1^{x_2} = h_2^{x_1}</span></li>
+</ul>
+</section>
+<section id="the-cdh-experiment" class="slide level2">
+<h2>The CDH Experiment</h2>
+<ul>
+<li><p>Let <span class="math inline">\mathcal{G}</span> denote a polynomial-time, cyclic group generation algorithm</p></li>
+<li><p>The CDH experiment <span class="math inline">\textsf{CDH}_{\mathcal{A},\mathcal{G}}(n)</span></p>
+<ol type="1">
+<li>Run <span class="math inline">\mathcal{G}(1^n)</span> to obtain <span class="math inline">(G,q,g)</span>, where <span class="math inline">G</span> is a cyclic group of order <span class="math inline">q</span> (with <span class="math inline">\| q \| = n</span>), and <span class="math inline">g</span> is a generator of <span class="math inline">G</span></li>
+<li>Choose uniform <span class="math inline">x_1, x_2 \in \mathbb{Z}_q</span> and compute <span class="math inline">h_1 = g^{x_1}, h_2 = g^{x_2}</span></li>
+<li><span class="math inline">\mathcal{A}</span> is given <span class="math inline">G, q, g, h_1, h_2</span>, and outputs <span class="math inline">h \in G</span></li>
+<li>The output of the experiment is 1 if <span class="math inline">h = g^{x_1 x_2}</span>, and 0 otherwise</li>
+</ol></li>
+</ul>
+</section>
+<section id="the-cdh-assumption" class="slide level2">
+<h2>The CDH Assumption</h2>
+<ul>
+<li><p><strong>Definition</strong>: We say the <strong>CDH problem is hard relative to</strong> <span class="math inline">\mathcal{G}</span> if for all PPT algorithms <span class="math inline">\mathcal{A}</span> there exists a negligible function <span class="math inline">\textsf{negl}</span> such that <span class="math display">\Pr[\textsf{CDH}_{\mathcal{A}, \mathcal{G}}(n) = 1] \le \textsf{negl}(n).</span></p></li>
+<li><p>The <strong>CDH assumption</strong> states that there exists a <span class="math inline">\mathcal{G}</span> relative to which the CDH problem is hard</p></li>
+</ul>
+</section>
+<section id="relation-between-the-dl-and-cdh-problems" class="slide level2">
+<h2>Relation between the DL and CDH Problems</h2>
+<ul>
+<li>If discrete logarithms are easy to calculate in a group, then the CDH is also easy</li>
+<li>So the CDH assumption is a <strong>stronger</strong> assumption than the DL assumption</li>
+</ul>
+</section>
+<section id="the-ddh-assumption" class="slide level2">
+<h2>The DDH Assumption</h2>
+<ul>
+<li><p>Let <span class="math inline">\mathcal{G}</span> denote a polynomial-time, cyclic group generation algorithm</p></li>
+<li><p><strong>Definition</strong>: We say the <strong>DDH problem is hard relative to</strong> <span class="math inline">\mathcal{G}</span> if for all PPT algorithms <span class="math inline">\mathcal{A}</span> there exists a negligible function <span class="math inline">\textsf{negl}</span> such that <span class="math display">\begin{align*}
+&amp;\bigg| \Pr[\mathcal{A}(G,q,g,g^x,g^y,g^z) = 1]   \\
+&amp;\ \  - \Pr[\mathcal{A}(G,q,g,g^x,g^y,g^{xy}) = 1]\bigg| \le \textsf{negl}(n)\end{align*}</span> where <span class="math inline">x,y,z\in \mathbb{Z}_q</span> are uniformly chosen</p></li>
+<li><p>The <strong>DDH assumption</strong> states that there exists a <span class="math inline">\mathcal{G}</span> relative to which the DDH problem is hard</p></li>
+</ul>
+</section>
+<section id="prime-order-cyclic-groups" class="slide level2">
+<h2>Prime-Order Cyclic Groups</h2>
+<ul>
+<li><p>Cyclic groups of prime order are preferred because the DL problem is hardest in such groups</p>
+<ul>
+<li>DL problem in a group of order <span class="math inline">q</span> becomes easier if <span class="math inline">q</span> has small prime factors</li>
+</ul></li>
+<li><p>Finding generators in prime-order cyclic groups is trivial</p></li>
+<li><p>Subgroups of <span class="math inline">\mathbb{Z}_p^*</span> and elliptic curves are two sources of prime-order cyclic groups</p></li>
+</ul>
+</section></section>
+<section>
+<section id="prime-order-subgroups-of-mathbbz_p" class="title-slide slide level1 center">
+<h1>Prime-Order Subgroups of <span class="math inline">\mathbb{Z}_p^*</span></h1>
+
+</section>
+<section id="finding-a-prime-order-subgroup" class="slide level2">
+<h2>Finding a Prime-Order Subgroup</h2>
+<ul>
+<li>Suppose we want to generate a subgroup of <span class="math inline">\mathbb{Z}_p^*</span> whose order is an <span class="math inline">n</span>-bit prime</li>
+<li>First, find an <span class="math inline">n</span>-bit prime <span class="math inline">q</span></li>
+<li>Then for <span class="math inline">r \in \{1,2,\ldots\}</span> check if <span class="math inline">rq+1</span> is a prime</li>
+<li>If such an <span class="math inline">r</span> is found, set <span class="math inline">p= rq+1</span>. Then <span class="math display">G = \{ h^r \bmod p \mid h \in \mathbb{Z}_p^*\}</span> is a subgroup of <span class="math inline">\mathbb{Z}_p^*</span> of order <span class="math inline">q</span>.</li>
+</ul>
+</section>
+<section id="subgroup-of-rth-residues" class="slide level2">
+<h2>Subgroup of <span class="math inline">r</span>th Residues</h2>
+<ul>
+<li><p><strong>Theorem</strong>: Let <span class="math inline">p=rq+1</span> with <span class="math inline">p,q</span> prime. Then <span class="math display">G = \{ h^r \bmod p \mid h \in \mathbb{Z}_p^*\}</span> is a subgroup of <span class="math inline">\mathbb{Z}_p^*</span> of order <span class="math inline">q</span>.</p></li>
+<li><p>Proof</p>
+<ul>
+<li>The function <span class="math inline">f_r(g) = [g^r \bmod p]</span> is an <span class="math inline">r</span>-to-1 function in <span class="math inline">\mathbb{Z}_p^*</span></li>
+<li>As <span class="math inline">|\mathbb{Z}_p^*| = p-1 = rq</span>, we have <span class="math inline">|G| = q</span></li>
+</ul></li>
+</ul>
+<aside class="notes">
+<ul>
+<li>All elements of Zp^* are of the for g^0, …, g^(p-2)</li>
+<li>For j in {0,1,…,q-1}, f_r(g^i) for i in {j, j+q, …, j+ (r-1)q} give the same element</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="finding-a-generator-of-the-subgroup" class="slide level2">
+<h2>Finding a Generator of the Subgroup</h2>
+<ul>
+<li><p><span class="math inline">G = \{ h^r \bmod p \mid h \in \mathbb{Z}_p^*\}</span></p></li>
+<li><p>A generator of the subgroup <span class="math inline">G</span> can be found as follows</p>
+<ol type="1">
+<li>For <span class="math inline">p = rq+1</span>, choose a uniform <span class="math inline">h \in \mathbb{Z}_p^*</span></li>
+<li>If <span class="math inline">h^q = 1</span>, then <span class="math inline">h</span> is a generator of <span class="math inline">G</span></li>
+</ol></li>
+</ul>
+</section>
+<section id="how-large-should-pq-be" class="slide level2">
+<h2>How large should <span class="math inline">p,q</span> be?</h2>
+<ul>
+<li><p>Let <span class="math inline">n = \| q \|</span> and <span class="math inline">l = \|p\|</span></p></li>
+<li><p>Two types of algorithms are known for computing discrete logarithms in order-<span class="math inline">q</span> subgroups of <span class="math inline">\mathbb{Z}_p^*</span></p>
+<ul>
+<li>First type runs in time <span class="math inline">\mathcal{O}(\sqrt{p}) = \mathcal{O}(2^{n/2})</span></li>
+<li>Second type runs in time <span class="math display">2^{\mathcal{O}\left((\log p)^{1/3}\cdot (\log\log p)^{2/3} \right)} = 2^{\mathcal{O}\left( l^{1/3} \cdot (\log l)^{2/3}\right)}</span></li>
+</ul></li>
+<li><p>For a fixed security level, say <span class="math inline">2^{128}</span> operations, <span class="math inline">n</span> and <span class="math inline">l</span> should be chosen as small as possible</p></li>
+</ul>
+</section></section>
+<section>
+<section id="elliptic-curves" class="title-slide slide level1 center">
+<h1>Elliptic Curves</h1>
+<ul>
+<li>A source of prime-order groups where DL is hard</li>
+<li>More efficient than other groups at any given level of security</li>
+</ul>
+</section>
+<section id="recommended-key-lengths" class="slide level2">
+<h2>Recommended Key Lengths</h2>
+<ul>
+<li><p>Effective key length is a value <span class="math inline">n</span> such that the best known algorithm takes roughly <span class="math inline">2^n</span> time</p></li>
+<li><p>NIST recommended key lengths</p></li>
+</ul>
+
+<img data-src="images/key-length.svg" class="r-stretch quarto-figure-center"></section>
+<section id="elliptic-curves-over-reals" class="slide level2">
+<h2>Elliptic Curves over Reals</h2>
+<p>The set <span class="math inline">E</span> of real solutions <span class="math inline">(x,y)</span> of <span class="math display">\begin{equation*}
+    y^2 = x^3 + ax + b
+  \end{equation*}</span> along with a “point at infinity” <span class="math inline">\mathcal{O}</span> where <span class="math inline">4a^3 + 27b^2 \neq 0</span></p>
+
+<img data-src="images/ecc-real.png" width="600" class="r-stretch quarto-figure-center"></section>
+<section id="point-addition-13" class="slide level2">
+<h2>Point Addition (1/3)</h2>
+
+<img data-src="images/ecc-pt-add1.png" class="r-stretch quarto-figure-center"></section>
+<section id="point-addition-23" class="slide level2">
+<h2>Point Addition (2/3)</h2>
+
+<img data-src="images/ecc-pt-add2.png" class="r-stretch quarto-figure-center"></section>
+<section id="point-addition-33" class="slide level2">
+<h2>Point Addition (3/3)</h2>
+
+<img data-src="images/ecc-pt-add3.png" class="r-stretch quarto-figure-center"></section>
+<section id="finite-fields" class="slide level2">
+<h2>Finite Fields</h2>
+<ul>
+<li><p>A set <span class="math inline">F</span> together with two binary operations <span class="math inline">+</span> and <span class="math inline">\ast</span> is a field if</p>
+<ul>
+<li><span class="math inline">F</span> is an abelian group under <span class="math inline">+</span> whose identity is called <span class="math inline">0</span></li>
+<li><span class="math inline">F^* = F \setminus \{0\}</span> is an abelian group under <span class="math inline">\ast</span> whose identity is called <span class="math inline">1</span></li>
+<li>For any <span class="math inline">a,b,c \in F</span> <span class="math display">\begin{equation*}
+  a \ast (b + c) = a \ast b + a \ast c
+\end{equation*}</span></li>
+</ul></li>
+<li><p>A <strong>finite field</strong> is a field with a finite cardinality.</p></li>
+<li><p><span class="math inline">\mathbb{Z}_p</span> is a finite field for prime <span class="math inline">p</span></p></li>
+</ul>
+</section>
+<section id="elliptic-curves-over-mathbbz_p" class="slide level2">
+<h2>Elliptic Curves over <span class="math inline">\mathbb{Z}_p</span></h2>
+<p>For <span class="math inline">p \ge 5</span>, the set of solutions <span class="math inline">(x,y)</span> in <span class="math inline">\mathbb{Z}_p^2</span> of <span class="math display">\begin{equation*}
+    y^2 = x^3 + ax + b
+  \end{equation*}</span> along with a “point at infinity” <span class="math inline">\mathcal{O}</span> where <span class="math inline">4a^3 + 27b^2 \neq 0</span></p>
+
+<img data-src="images/ecc-zp.png" width="600" class="r-stretch quarto-figure-center"></section>
+<section id="point-addition-for-finite-field-curves" class="slide level2">
+<h2>Point Addition for Finite Field Curves</h2>
+<ul>
+<li><p>Point addition formulas derives from the reals are used</p></li>
+<li><p><strong>Example</strong>: <span class="math inline">y^2 = x^3+10x+2</span> over <span class="math inline">\mathbb{F}_{11}</span></p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/ecc-pt-add-table.png" width="1024"></p>
+</figure>
+</div></li>
+</ul>
+</section>
+<section id="finding-elliptic-curve-groups-of-prime-order" class="slide level2">
+<h2>Finding Elliptic Curve Groups of Prime Order</h2>
+<ul>
+<li><p>There is a polytime-time algorithm for counting the number of points on an elliptic curve over <span class="math inline">\mathbb{Z}_p</span></p></li>
+<li><p>Choose values for <span class="math inline">a,b</span> in the equations <span class="math inline">y^2 = x^3 + ax+b</span> and check if <span class="math inline">|E|</span> is prime or <span class="math inline">r</span> times a prime</p></li>
+<li><p>In the latter case, choose <span class="math inline">G = \{rP \mid P \in E\}</span></p></li>
+</ul>
+</section>
 <section id="further-reading" class="slide level2">
 <h2>Further reading</h2>
 <ul>
-<li>Section 9.2 of Katz and Lindell</li>
+<li><p>Sections 9.2, 9.3 of Katz and Lindell</p></li>
+<li><p>Section 10.4 of Katz and Lindell</p></li>
+<li><p>Chapter 2 of my Bitcoin notes <a href="https://www.ee.iitb.ac.in/~sarva/bitcoin.html" class="uri">https://www.ee.iitb.ac.in/~sarva/bitcoin.html</a></p></li>
 </ul>
 <div class="footer footer-default">
 
