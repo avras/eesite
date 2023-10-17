@@ -605,11 +605,11 @@ Saravanan Vijayakumaran
 <li><p><strong>Output</strong>: A decision as to whether <span class="math inline">N</span> is prime or composite <span class="math display">\begin{align*}
 &amp; \text{{Compute $r \ge 1$ and odd $u$ such that $N-1 = 2^ru$}}\\
 &amp; \textbf{if } \text{$N$ is a perfect power, \textbf{return} ``composite''}\\
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                &amp; \textbf{for } j=1 \text{ to } t:\\
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                &amp;\quad a \leftarrow \{1,\ldots,N-1\}\\
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                &amp;\quad  \textbf{if } \text{$a^u \neq \pm 1 \bmod N$ and}\\
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                &amp;\quad \quad \text{$a^{2^iu} \neq -1 \bmod N$ for $i \in \{1,\ldots,r-1\}$ } \\
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                &amp;\quad \quad \text{\textbf{return} ``composite''}\\
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        &amp; \textbf{for } j=1 \text{ to } t:\\
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        &amp;\quad a \leftarrow \{1,\ldots,N-1\}\\
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        &amp;\quad  \textbf{if } \text{$a^u \neq \pm 1 \bmod N$ and}\\
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        &amp;\quad \quad \text{$a^{2^iu} \neq -1 \bmod N$ for $i \in \{1,\ldots,r-1\}$ } \\
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        &amp;\quad \quad \text{\textbf{return} ``composite''}\\
 &amp;\quad \textbf{end if } \\
 &amp;\textbf{end for } \\
 &amp; \textbf{return } \text{``prime''}
@@ -904,15 +904,26 @@ Saravanan Vijayakumaran
 <h2>Recommended Key Lengths</h2>
 <ul>
 <li><p>Effective key length is a value <span class="math inline">n</span> such that the best known algorithm takes roughly <span class="math inline">2^n</span> time</p></li>
-<li><p>NIST recommended key lengths</p></li>
+<li><p>NIST recommended key lengths</p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/key-length.svg" width="1024"></p>
+</figure>
+</div></li>
 </ul>
-
-<img data-src="images/key-length.svg" class="r-stretch quarto-figure-center"></section>
+</section>
 <section id="elliptic-curves-over-reals" class="slide level2">
 <h2>Elliptic Curves over Reals</h2>
-<p>The set <span class="math inline">E</span> of real solutions <span class="math inline">(x,y)</span> of <span class="math display">\begin{equation*}
-    y^2 = x^3 + ax + b
-  \end{equation*}</span> along with a “point at infinity” <span class="math inline">\mathcal{O}</span> where <span class="math inline">4a^3 + 27b^2 \neq 0</span></p>
+<ul>
+<li><p>The set <span class="math inline">E</span> of real solutions <span class="math inline">(x,y)</span> of <span class="math display">\begin{equation*}
+  y^2 = x^3 + ax + b
+\end{equation*}</span> along with a “point at infinity” <span class="math inline">\mathcal{O}</span> where <span class="math inline">4a^3 + 27b^2 \neq 0</span></p></li>
+<li><p><strong>Weierstrass representation</strong> of an elliptic curve</p></li>
+<li><p>Elliptic curves form a group under point addition</p></li>
+</ul>
+</section>
+<section id="elliptic-curve-examples" class="slide level2">
+<h2>Elliptic Curve Examples</h2>
 
 <img data-src="images/ecc-real.png" width="600" class="r-stretch quarto-figure-center"></section>
 <section id="point-addition-13" class="slide level2">
@@ -944,11 +955,17 @@ Saravanan Vijayakumaran
 </section>
 <section id="elliptic-curves-over-mathbbz_p" class="slide level2">
 <h2>Elliptic Curves over <span class="math inline">\mathbb{Z}_p</span></h2>
-<p>For <span class="math inline">p \ge 5</span>, the set of solutions <span class="math inline">(x,y)</span> in <span class="math inline">\mathbb{Z}_p^2</span> of <span class="math display">\begin{equation*}
-    y^2 = x^3 + ax + b
-  \end{equation*}</span> along with a “point at infinity” <span class="math inline">\mathcal{O}</span> where <span class="math inline">4a^3 + 27b^2 \neq 0</span></p>
-
-<img data-src="images/ecc-zp.png" width="600" class="r-stretch quarto-figure-center"></section>
+<ul>
+<li><p>For <span class="math inline">p \ge 5</span>, the set of solutions <span class="math inline">(x,y)</span> in <span class="math inline">\mathbb{Z}_p^2</span> of <span class="math display">\begin{equation*}
+  y^2 = x^3 + ax + b
+\end{equation*}</span> along with a “point at infinity” <span class="math inline">\mathcal{O}</span> where <span class="math inline">4a^3 + 27b^2 \neq 0</span></p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/ecc-zp.png" width="900"></p>
+</figure>
+</div></li>
+</ul>
+</section>
 <section id="point-addition-for-finite-field-curves" class="slide level2">
 <h2>Point Addition for Finite Field Curves</h2>
 <ul>
@@ -964,7 +981,7 @@ Saravanan Vijayakumaran
 <section id="finding-elliptic-curve-groups-of-prime-order" class="slide level2">
 <h2>Finding Elliptic Curve Groups of Prime Order</h2>
 <ul>
-<li><p>There is a polytime-time algorithm for counting the number of points on an elliptic curve over <span class="math inline">\mathbb{Z}_p</span></p></li>
+<li><p>There is a polynomial-time algorithm for counting the number of points on an elliptic curve over <span class="math inline">\mathbb{Z}_p</span></p></li>
 <li><p>Choose values for <span class="math inline">a,b</span> in the equations <span class="math inline">y^2 = x^3 + ax+b</span> and check if <span class="math inline">|E|</span> is prime or <span class="math inline">r</span> times a prime</p></li>
 <li><p>In the latter case, choose <span class="math inline">G = \{rP \mid P \in E\}</span></p></li>
 </ul>

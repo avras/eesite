@@ -48,6 +48,7 @@ EE720 has significant overlap with **CS 406 Cryptography and Network Security** 
 - [Hash Functions](./2023/slides/hash-functions.html){target="_blank"}
 - [Number Theory](./2023/slides/number-theory.html){target="_blank"}
 - [Cryptographic Hardness Assumptions](./2023/slides/hardness-assumptions.html){target="_blank"}
+- [Key Exchange Protocols](./2023/slides/key-exchange.html){target="_blank"}
 
 ##### Supplementary Notes
 
