@@ -49,6 +49,7 @@ EE720 has significant overlap with **CS 406 Cryptography and Network Security** 
 - [Number Theory](./2023/slides/number-theory.html){target="_blank"}
 - [Cryptographic Hardness Assumptions](./2023/slides/hardness-assumptions.html){target="_blank"}
 - [Key Exchange Protocols](./2023/slides/key-exchange.html){target="_blank"}
+- [Public-Key Encryption](./2023/slides/public-key-encryption.html){target="_blank"}
 
 ##### Supplementary Notes
 

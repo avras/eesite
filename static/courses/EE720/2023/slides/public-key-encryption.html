@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-<script src="key-exchange_files/libs/clipboard/clipboard.min.js"></script>
-<script src="key-exchange_files/libs/quarto-html/tabby.min.js"></script>
-<script src="key-exchange_files/libs/quarto-html/popper.min.js"></script>
-<script src="key-exchange_files/libs/quarto-html/tippy.umd.min.js"></script>
-<link href="key-exchange_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="key-exchange_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="key-exchange_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
-<link href="key-exchange_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+<script src="public-key-encryption_files/libs/clipboard/clipboard.min.js"></script>
+<script src="public-key-encryption_files/libs/quarto-html/tabby.min.js"></script>
+<script src="public-key-encryption_files/libs/quarto-html/popper.min.js"></script>
+<script src="public-key-encryption_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="public-key-encryption_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="public-key-encryption_files/libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="public-key-encryption_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
+<link href="public-key-encryption_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.3.450">
 
   <meta name="author" content="Saravanan Vijayakumaran">
   <meta name="dcterms.date" content="2023-10-18">
-  <title>Key Exchange Protocols</title>
+  <title>Public-Key Encryption</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="key-exchange_files/libs/revealjs/dist/reset.css">
-  <link rel="stylesheet" href="key-exchange_files/libs/revealjs/dist/reveal.css">
+  <link rel="stylesheet" href="public-key-encryption_files/libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="public-key-encryption_files/libs/revealjs/dist/reveal.css">
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -31,7 +31,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="key-exchange_files/libs/revealjs/dist/theme/quarto.css">
+  <link rel="stylesheet" href="public-key-encryption_files/libs/revealjs/dist/theme/quarto.css">
   <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
   <script>document.addEventListener("DOMContentLoaded", function () {
  var mathElements = document.getElementsByClassName("math");
@@ -48,10 +48,10 @@
 }}});
   </script>
   <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css">
-  <link href="key-exchange_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
-  <link href="key-exchange_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
-  <link href="key-exchange_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
-  <link href="key-exchange_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <link href="public-key-encryption_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="public-key-encryption_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="public-key-encryption_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="public-key-encryption_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
   <style type="text/css">
 
   .callout {
@@ -343,7 +343,7 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Key Exchange Protocols</h1>
+  <h1 class="title">Public-Key Encryption</h1>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -358,119 +358,299 @@ Saravanan Vijayakumaran
 
   <p class="date">October 18, 2023</p>
 </section>
-<section id="the-setting" class="slide level2">
-<h2>The Setting</h2>
+<section id="public-key-encryption-workflow" class="slide level2">
+<h2>Public-Key Encryption Workflow</h2>
 <ul>
-<li>Alice and Bob start with a security parameter <span class="math inline">1^n</span></li>
-<li>They run a probabilistic protocol <span class="math inline">\Pi</span> using independent random bits</li>
-<li>At the end of <span class="math inline">\Pi</span>, they output keys <span class="math inline">k_A, k_B \in \{0,1\}^n</span></li>
-<li><strong>Correctness requirement</strong>: <span class="math inline">k_A = k_B</span></li>
-</ul>
-</section>
-<section id="defining-security-of-key-exchange-protocols" class="slide level2">
-<h2>Defining Security of Key-Exchange Protocols</h2>
+<li><p>Suppose Bob wants to send a message to Alice</p></li>
+<li><p>Alice will generate a public-private key-pair <span class="math inline">(pk_A, sk_A)</span></p>
 <ul>
-<li><p>How can we define security of a key-exchange protocol?</p></li>
-<li><p>Intuitively, a key-exchange protocol is secure if an adversary cannot distinguish between</p>
-<ul>
-<li>the key output by the protocol and</li>
-<li>a uniform bitstring of same length</li>
+<li>The private key is also called the secret key</li>
 </ul></li>
+<li><p>Alice will share <span class="math inline">pk_A</span> with Bob over the public channel</p></li>
+<li><p>Bob will encrypt a message <span class="math inline">m</span> as <span class="math inline">c \leftarrow \textsf{Enc}_{pk_A}(m)</span> and send <span class="math inline">c</span> to Alice over the public channel</p></li>
+<li><p>Alice will decrypt <span class="math inline">c</span> using her private key <span class="math inline">sk_A</span></p></li>
 </ul>
 </section>
-<section id="the-key-exchange-experiment" class="slide level2">
-<h2>The Key-Exchange Experiment</h2>
+<section id="why-bother-with-private-key-encryption" class="slide level2">
+<h2>Why bother with private-key encryption?</h2>
 <ul>
-<li><p><strong>The key-exchange experiment</strong> <span class="math inline">\textsf{KE}_{\mathcal{A},\Pi}^{\textsf{eav}}(n)</span>:</p>
+<li><p>Public-key encryption is <strong>2-3 orders of magnitude slower</strong> than private-key encryption</p></li>
+<li><p>Hybrid encryption is often used in practice</p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/hybrid-enc.svg" width="400"></p>
+</figure>
+</div></li>
+<li><p>Here <span class="math inline">\textsf{Enc}</span> is a public-key encryption scheme and <span class="math inline">\textsf{Enc}'</span> is a private-key encryption scheme</p></li>
+</ul>
+</section>
+<section id="public-key-encryption-schemes" class="slide level2">
+<h2>Public-Key Encryption Schemes</h2>
+<ul>
+<li><p>A <strong>public-key encryption scheme</strong> is a triple of PPT algorithms <span class="math inline">(\textsf{Gen}, \textsf{Enc}, \textsf{Dec})</span> such that:</p>
 <ol type="1">
-<li><p>Two parties holding <span class="math inline">1^n</span> execute protocol <span class="math inline">\Pi</span>. This results in a</p>
+<li><p><span class="math inline">(pk,sk) \leftarrow \textsf{Gen}(1^n)</span></p>
 <ul>
-<li>transcript <span class="math inline">\textsf{trans}</span> containing all the messages sent by the parties, and</li>
-<li>a key <span class="math inline">k</span> output by each of the parties.</li>
+<li><span class="math inline">pk</span> is the public key and <span class="math inline">sk</span> is the private key</li>
+<li>The public key defines a message space <span class="math inline">\mathcal{M}_{pk}</span></li>
 </ul></li>
-<li><p>A uniform bit <span class="math inline">b \in \{0,1\}</span> is chosen.</p>
-<ul>
-<li>If <span class="math inline">b = 0</span>, set <span class="math inline">\hat{k} \coloneqq k</span></li>
-<li>If <span class="math inline">b=1</span>, then choose uniform <span class="math inline">\hat{k} \in \{0,1\}^n</span>.</li>
-</ul></li>
-<li><p><span class="math inline">\mathcal{A}</span> is given <span class="math inline">\textsf{trans}</span> and <span class="math inline">\hat{k}</span>, and outputs a bit <span class="math inline">b'</span></p></li>
-<li><p>The output of the experiment is defined to be 1 if <span class="math inline">b=b'</span>, and other 0 otherwise.</p></li>
+<li><p>For <span class="math inline">m \in \mathcal{M}_{pk}</span>, <span class="math inline">c \leftarrow \textsf{Enc}_{pk}(m)</span>.</p></li>
+<li><p><span class="math inline">m \coloneqq \textsf{Dec}_{sk}(c)</span>, where <span class="math inline">m \in \mathcal{M}_{pk} \cup \{\perp\}</span>.</p></li>
 </ol></li>
+<li><p>It is required that <span class="math inline">\textsf{Dec}_{sk}\left( \textsf{Enc}_{pk}\left( m \right) \right) = m</span> for any message <span class="math inline">m \in \mathcal{M}_{pk}</span>, except with negligible probability over the randomness of <span class="math inline">\textsf{Enc}</span> and <span class="math inline">\textsf{Dec}</span></p></li>
+</ul>
+</section>
+<section>
+<section id="cpa-security" class="title-slide slide level1 center">
+<h1>CPA Security</h1>
+
+</section>
+<section id="eavesdropping-indistinguishability-experiment" class="slide level2">
+<h2>Eavesdropping Indistinguishability Experiment</h2>
+<ul>
+<li>Consider the following experiment <span class="math inline">\textsf{PubK}^{\textsf{eav}}_{\mathcal{A}, \Pi}(n)</span>:
+<ul>
+<li><span class="math inline">\textsf{Gen}(1^n)</span> is run to obtain keys <span class="math inline">(pk, sk)</span></li>
+<li><span class="math inline">\mathcal{A}</span> is given <span class="math inline">pk</span> and outputs a pair of equal-length messages <span class="math inline">m_0, m_1 \in \mathcal{M}_{pk}</span></li>
+<li>A uniform bit <span class="math inline">b \in \{0,1\}</span> is chosen</li>
+<li>Challenge ciphertext <span class="math inline">c \leftarrow \textsf{Enc}_k(m_b)</span> is computed and given to <span class="math inline">\mathcal{A}</span></li>
+<li><span class="math inline">\mathcal{A}</span> outputs a bit <span class="math inline">b'</span></li>
+<li>The output of the experiment is defined to be 1 if <span class="math inline">b' = b</span>, and 0 otherwise</li>
+</ul></li>
 </ul>
 </section>
 <section id="security-definition" class="slide level2">
 <h2>Security Definition</h2>
 <ul>
-<li><span class="math inline">\mathcal{A}</span> is given <span class="math inline">\textsf{trans}</span> to capture the fact that <span class="math inline">\mathcal{A}</span> eavesdrops on the entire execution of the protocol</li>
-<li><span class="math inline">\mathcal{A}</span> is given <span class="math inline">\hat{k}</span> only to define security</li>
-<li><strong>Definition</strong>: A key-exchange protocol <span class="math inline">\Pi</span> is <strong>secure in the presence of an eavesdropper</strong> if for all PPT adversaries <span class="math inline">\mathcal{A}</span> there is a negligible function <span class="math inline">\textsf{negl}</span> such that <span class="math display">\Pr \left[\textsf{KE}^{\textsf{eav}}_{\mathcal{A},\Pi}(n) = 1 \right] \le \frac{1}{2} + \textsf{negl}(n).</span></li>
+<li>A public-key encryption scheme <span class="math inline">\Pi = (\textsf{Gen}, \textsf{Enc}, \textsf{Dec})</span> has <strong>indistinguishable encryptions in the presence of an eavesdropper</strong>, or is <strong>EAV-secure</strong>, if for all PPT adversaries <span class="math inline">\mathcal{A}</span> there is a negligible function <span class="math inline">\textsf{negl}</span> such that, for all <span class="math inline">n</span>, <span class="math display">
+\Pr\left[ \textsf{PubK}^{\textsf{eav}}_{\mathcal{A},\Pi}(n) =  1\right] \le \frac{1}{2} + \textsf{negl}(n).</span></li>
 </ul>
 </section>
-<section>
-<section id="diffie-hellman-key-exchange-protocol" class="title-slide slide level1 center">
-<h1>Diffie-Hellman Key-Exchange Protocol</h1>
-
-</section>
-<section id="diffie-hellman-key-exchange-protocol-1" class="slide level2">
-<h2>Diffie-Hellman Key-Exchange Protocol</h2>
-
-<img data-src="images/diffie-hellman.svg" width="600" class="r-stretch quarto-figure-center"></section>
-<section id="assumptions-required-to-prove-security-of-the-dh-protocol" class="slide level2">
-<h2>Assumptions Required to Prove Security of the DH Protocol</h2>
+<section id="cpa-security-for-public-key-encryption" class="slide level2">
+<h2>CPA-Security for Public-Key Encryption</h2>
 <ul>
-<li>Diffie and Hellman did not prove the security of their protocol</li>
-<li>Minimal requirement is that the DLP be hard in the group</li>
-<li>However, it is not sufficient for DLP to be hard</li>
-<li>We will require the DDH assumption</li>
+<li><p>In public-key encryption, the adversary always has access to an encryption oracle</p></li>
+<li><p><strong>Proposition</strong>: If a public-key encryption scheme has indistinguishable encryptions in the presence of an eavesdropper, it is CPA-secure</p></li>
 </ul>
-<aside class="notes">
-<ul>
-<li>We want to exclude situations where an adversary may not be able to compute <span class="math inline">g^{xy}</span>, but may extract some information about it</li>
-</ul>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
 </section>
-<section id="security-of-the-dh-protocol" class="slide level2">
-<h2>Security of the DH Protocol</h2>
+<section id="el-gamal-encryption-12" class="slide level2">
+<h2>El Gamal Encryption (1/2)</h2>
 <ul>
-<li><p>We modify the security definition a little</p>
+<li><p>In 1985, Taher El Gamal constructed a public-key encryption scheme based on the Diffie-Hellman protocol</p></li>
+<li><p><span class="math inline">\textsf{Gen}</span>:</p>
 <ul>
-<li>We require that the shared key to be indistinguishable from a <strong>uniform group element</strong></li>
+<li>Run <span class="math inline">\mathcal{G}(1^n)</span> to get <span class="math inline">(G, q, g)</span>.</li>
+<li>Choose a uniform <span class="math inline">x \in \mathbb{Z}_q</span> and compute <span class="math inline">h \coloneqq g^x</span>.</li>
+<li>The public key is <span class="math inline">\langle G, q, g, h \rangle</span> and the private key is <span class="math inline">\langle G, q, g, x\rangle</span>.</li>
+<li>The message space is <span class="math inline">G</span></li>
 </ul></li>
-<li><p>Let <span class="math inline">\widehat{KE}_{\mathcal{A}, \Pi}^{\textsf{eav}}</span> denote the modified experiment</p></li>
-<li><p><strong>Theorem</strong>: If the DDH problem is hard relative to <span class="math inline">\mathcal{G}</span>, then the Diffie-Hellman key-exchange protocol <span class="math inline">\Pi</span> is secure in the presence of an eavesdropper</p></li>
 </ul>
 </section>
-<section id="key-derivation-function" class="slide level2">
-<h2>Key-Derivation Function</h2>
+<section id="el-gamal-encryption-22" class="slide level2">
+<h2>El Gamal Encryption (2/2)</h2>
 <ul>
-<li>The DH protocol gives a key that is indistinguishable from a uniform group element</li>
-<li>Private-key cryptography requires a key indistinguishable from a uniform bit-string</li>
-<li>The solution is to hash the DH key using a cryptographic hash function</li>
+<li><p><span class="math inline">\textsf{Enc}</span>:</p>
+<ul>
+<li>For public key <span class="math inline">pk =\langle G, q, g, h \rangle</span> and message <span class="math inline">m \in G</span>, choose a uniform <span class="math inline">y \in \mathbb{Z}_q</span></li>
+<li>Output the ciphertext as <span class="math inline">\langle g^y, h^y \cdot m \rangle</span></li>
+</ul></li>
+<li><p><span class="math inline">\textsf{Dec}</span>:</p>
+<ul>
+<li>For public key <span class="math inline">pk =\langle G, q, g, h \rangle</span> and ciphertext <span class="math inline">\langle c_1, c_2 \rangle</span>, output <span class="math inline">\hat{m} = c_2 \cdot c_1^{-x}.</span></li>
+</ul></li>
 </ul>
 </section>
-<section id="active-adversaries" class="slide level2">
-<h2>Active Adversaries</h2>
+<section id="cpa-security-of-el-gamal-encryption" class="slide level2">
+<h2>CPA-Security of El Gamal Encryption</h2>
 <ul>
-<li>Passive adversaries only eavesdrop</li>
-<li>Active adversaries can send messages to both parties</li>
-<li>The Diffie-Hellman protocol is <strong>insecure</strong> against <strong>man-in-the-middle</strong> attacks</li>
-<li>MitM attacks are avoided using certificates and public-key infrastructure</li>
+<li><p><strong>Theorem</strong>: If the DDH problem is hard relative to <span class="math inline">\mathcal{G}</span>, then the El Gamal encryption scheme is CPA-secure.</p></li>
+<li><p>Proof</p>
+<ul>
+<li>Consider a modified “encryption scheme” <span class="math inline">\widetilde{\Pi}</span> where the encryption of message <span class="math inline">m</span> wrt public key <span class="math inline">\langle G, q, g, h \rangle</span> is as follows</li>
+<li>Choose uniform <span class="math inline">y,z \in \mathbb{Z}_q</span> and output ciphertext <span class="math display">\langle g^y, g^z \cdot m \rangle.</span></li>
+</ul></li>
+</ul>
+</section>
+<section id="cpa-security-of-el-gamal-encryption-1" class="slide level2">
+<h2>CPA-Security of El Gamal Encryption</h2>
+<ul>
+<li><p>Consider the following PPT algorithm <span class="math inline">D</span> that attempts to solve the DDH problem</p>
+<ol type="1">
+<li><span class="math inline">D</span> is given <span class="math inline">(G, q, g, h_1, h_2, h_3)</span> as input</li>
+<li>Set <span class="math inline">pk = \langle G, q, g, h_1 \rangle</span> and run <span class="math inline">\mathcal{A}(pk)</span> to obtain two messages <span class="math inline">m_0, m_1 \in G</span></li>
+<li>Choose a uniform bit <span class="math inline">b</span></li>
+<li>Set <span class="math inline">c_1 \coloneqq h_2</span> and <span class="math inline">c_2 \coloneqq h_3 \cdot m_b</span></li>
+<li>Give the ciphertext <span class="math inline">\langle c_1, c_2 \rangle</span> to <span class="math inline">\mathcal{A}</span> and obtain a bit <span class="math inline">b'</span>.</li>
+<li>If <span class="math inline">b' = b</span>, output 1; otherwise, output 0.</li>
+</ol></li>
+</ul>
+</section>
+<section id="cpa-security-of-el-gamal-encryption-2" class="slide level2">
+<h2>CPA-Security of El Gamal Encryption</h2>
+<ul>
+<li><p><strong>Case 1:</strong> <span class="math inline">h_3 = g^z</span> for uniform <span class="math inline">z \in \mathbb{Z}_q</span></p>
+<ul>
+<li><span class="math inline">\langle c_1, c_2 \rangle = \langle g^y, g^z \cdot m_b \rangle</span></li>
+<li><span class="math inline">\mathcal{A}</span> experiences the experiment <span class="math inline">\textsf{PubK}^{\textsf{eav}}_{\mathcal{A},\widetilde{\Pi}}(n)</span></li>
+<li>Since <span class="math inline">D</span> outputs 1 exactly when <span class="math inline">b' = b</span>, we have <span class="math display">\begin{align*}&amp; \Pr\left[ D(G, q, g, g^x, g^y, g^z) =1 \right] \\&amp;= \Pr \left[ \textsf{PubK}^{\textsf{eav}}_{\mathcal{A}, \widetilde{\Pi}}(n)=1\right]\\ &amp;= \frac{1}{2}\end{align*}</span></li>
+</ul></li>
+</ul>
+</section>
+<section id="cpa-security-of-el-gamal-encryption-3" class="slide level2">
+<h2>CPA-Security of El Gamal Encryption</h2>
+<ul>
+<li><p><strong>Case 2:</strong> <span class="math inline">h_3 = g^{xy}</span></p>
+<ul>
+<li><span class="math inline">\langle c_1, c_2 \rangle = \langle g^y, g^{xy} \cdot m_b \rangle</span></li>
+<li><span class="math inline">\mathcal{A}</span> experiences the experiment <span class="math inline">\textsf{PubK}^{\textsf{eav}}_{\mathcal{A},\Pi}(n)</span></li>
+<li>Since <span class="math inline">D</span> outputs 1 exactly when <span class="math inline">b' = b</span>, we have <span class="math display">\begin{align*}&amp; \Pr\left[ D(G, q, g, g^x, g^y, g^z) =1 \right] \\&amp;= \Pr \left[ \textsf{PubK}^{\textsf{eav}}_{\mathcal{A}, \widetilde{\Pi}}(n)=1\right]\end{align*}</span></li>
+</ul></li>
+</ul>
+</section></section>
+<section>
+<section id="multiple-encryptions" class="title-slide slide level1 center">
+<h1>Multiple Encryptions</h1>
+<ul>
+<li>Can we guarantee security when the same key is used to encrypt multiple messages?</li>
+<li>Surprisingly, CPA-security for one message implies CPA-security for multiple messages</li>
+</ul>
+</section>
+<section id="defining-cpa-security-for-multiple-encryptions" class="slide level2">
+<h2>Defining CPA-Security for Multiple Encryptions</h2>
+<ul>
+<li><p>We would define an experiment as follows</p>
+<ul>
+<li>An adversary <span class="math inline">\mathcal{A}</span> picks two lists of messages <span class="math inline">\vec{m}_0 = \langle m_{0,1}, m_{0,2},\ldots,m_{0,l} \rangle</span> and <span class="math inline">\vec{m}_1 = \langle m_{1,1}, m_{1,2},\ldots,m_{1,l} \rangle</span></li>
+<li>A uniform bit <span class="math inline">b</span> is chosen</li>
+<li>The challenge ciphertext is the encryption of <span class="math inline">\vec{m}_b</span></li>
+</ul></li>
+<li><p>But this does not allow <span class="math inline">\mathcal{A}</span> to adaptively choose the messages</p></li>
+</ul>
+</section>
+<section id="the-left-or-right-oracle" class="slide level2">
+<h2>The Left-or-Right Oracle</h2>
+<ul>
+<li>On input a pair of equal-length messages <span class="math inline">m_0, m_1</span>, oracle <span class="math inline">\textsf{LR}_{pk,b}(\cdot, \cdot)</span> returns the ciphertext <span class="math inline">c \leftarrow \textsf{Enc}_{pk}(m_b)</span></li>
+<li>Access to this oracle allows <span class="math inline">\mathcal{A}</span> to adaptively choose the messages that are used to produce challenge ciphertext</li>
+</ul>
+</section>
+<section id="lr-oracle-experiment" class="slide level2">
+<h2>LR-Oracle Experiment</h2>
+<ul>
+<li>Consider the following experiment <span class="math inline">\textsf{PubK}^{\textsf{LR-cpa}}_{\mathcal{A}, \Pi}(n)</span>:
+<ul>
+<li>A keypair <span class="math inline">(pk,sk)</span> is generated using <span class="math inline">\textsf{Gen}(1^n)</span></li>
+<li>A uniform bit <span class="math inline">b \in \{0,1\}</span> is chosen</li>
+<li><span class="math inline">\mathcal{A}</span> is given <span class="math inline">1^n</span> and oracle access to <span class="math inline">\textsf{LR}_{pk,b}(\cdot,\cdot)</span></li>
+<li><span class="math inline">\mathcal{A}</span> outputs a bit <span class="math inline">b'</span></li>
+<li>The output of the experiment is 1 if <span class="math inline">b' = b</span>, and 0 otherwise</li>
+</ul></li>
+</ul>
+</section>
+<section id="security-definition-1" class="slide level2">
+<h2>Security Definition</h2>
+<ul>
+<li>A public-key encryption scheme <span class="math inline">\Pi = (\textsf{Gen}, \textsf{Enc}, \textsf{Dec})</span> has <strong>indistinguishable multiple encryptions</strong> if for all PPT adversaries <span class="math inline">\mathcal{A}</span> there is a negligible function <span class="math inline">\textsf{negl}</span> such that <span class="math display">
+\Pr\left[ \textsf{PubK}^{\textsf{LR-cpa}}_{\mathcal{A},\Pi}(n) =  1\right] \le \frac{1}{2} + \textsf{negl}(n).</span></li>
+</ul>
+</section>
+<section id="cpa-security-implies-indistinguishable-multiple-encryptions" class="slide level2">
+<h2>CPA-Security <span class="math inline">\implies</span> Indistinguishable Multiple Encryptions</h2>
+<ul>
+<li><p><strong>Theorem</strong>: If public-key encryption scheme <span class="math inline">\Pi</span> is CPA-secure, then it also has indistinguishable multiple encryptions</p></li>
+<li><p>Consequently, all the following security definitions are equivalent</p>
+<ol type="1">
+<li>Indistinguishable encryptions in the presence of an eavesdropper</li>
+<li>CPA-security</li>
+<li>Indistinguishable multiple encryptions</li>
+</ol></li>
+</ul>
+</section>
+<section id="proof-17" class="slide level2">
+<h2>Proof (1/7)</h2>
+<ul>
+<li>Let <span class="math inline">\Pi</span> be a CPA-secure public-key encryption scheme</li>
+<li>Let <span class="math inline">\mathcal{A}</span> be an arbitrary PPT adversary in the <span class="math inline">\textsf{PubK}^{\textsf{LR-cpa}}_{\mathcal{A},\Pi}(n)</span> experiment</li>
+<li>We want to show that <span class="math display">\Pr\left[ \textsf{PubK}^{\textsf{LR-cpa}}_{\mathcal{A},\Pi}(n) =1\right] \le \frac{1}{2} + \textsf{negl}(n)</span></li>
+</ul>
+</section>
+<section id="proof-27" class="slide level2">
+<h2>Proof (2/7)</h2>
+<ul>
+<li><p>Let <span class="math inline">t = t(n)</span> be the number of oracle queries made by <span class="math inline">\mathcal{A}</span></p></li>
+<li><p>For <span class="math inline">0 \le i \le t</span>, let <span class="math inline">\textsf{LR}_{pk}^i</span> be the oracle that on input <span class="math inline">(m_0, m_1)</span></p>
+<ul>
+<li>Returns <span class="math inline">\textsf{Enc}_{pk}(m_0)</span> for the first <span class="math inline">i</span> queries</li>
+<li>Returns <span class="math inline">\textsf{Enc}_{pk}(m_1)</span> for the next <span class="math inline">t-i</span> queries</li>
+</ul></li>
+<li><p>Note that <span class="math display">\Pr\left[ \textsf{PubK}^{\textsf{LR-cpa}}_{\mathcal{A},\Pi}(n) =1\right] = \frac{1}{2} \Pr\left[\mathcal{A}^{\textsf{LR}_{pk}^t}(pk) = 0\right] \\+\frac{1}{2} \Pr\left[\mathcal{A}^{\textsf{LR}_{pk}^0}(pk) = 1\right]</span></p></li>
+<li><p>It is enough to show that <span class="math display">\bigg| \Pr\left[\mathcal{A}^{\textsf{LR}_{pk}^t}(pk) = 1\right] - \Pr\left[\mathcal{A}^{\textsf{LR}_{pk}^0}(pk) = 1\right]\bigg|\\ \le \textsf{negl}(n)</span></p></li>
+</ul>
+</section>
+<section id="proof-37" class="slide level2">
+<h2>Proof (3/7)</h2>
+<ul>
+<li><p>Consider an adversary <span class="math inline">\mathcal{A}'</span> that eavesdrops on the encryption of a <strong>single</strong> message</p></li>
+<li><p>It will use the adversary <span class="math inline">\mathcal{A}</span> of the <span class="math inline">\textsf{PubK}^{\textsf{LR-cpa}}_{\mathcal{A},\Pi}(n)</span> experiment as a subroutine</p></li>
+<li><p>Note the IO interfaces of the two adversaries</p>
+<ul>
+<li><span class="math inline">\mathcal{A}</span> queries the <span class="math inline">\textsf{LR}_{pk,b}(\cdot, \cdot)</span> oracle <span class="math inline">t</span> times. It then outputs a bit</li>
+<li><span class="math inline">\mathcal{A}'</span> outputs a pair of messages <span class="math inline">(m_0, m_1)</span> and receives the encryption of one of them as a challenge ciphertext. It then outputs a bit.</li>
+</ul></li>
+</ul>
+</section>
+<section id="proof-47" class="slide level2">
+<h2>Proof (4/7)</h2>
+<ul>
+<li><p>Consider an adversary <span class="math inline">\mathcal{A}'</span> that does the following</p>
+<ol type="1">
+<li><p><span class="math inline">\mathcal{A}'</span>, given <span class="math inline">pk</span>, chooses a uniform index <span class="math inline">i \leftarrow \{1,\ldots,t\}</span></p></li>
+<li><p><span class="math inline">\mathcal{A}'</span> runs <span class="math inline">\mathcal{A}(pk)</span>, answering its <span class="math inline">j</span>th oracle query <span class="math inline">(m_{j,0}, m_{j,1})</span> as follows:</p>
+<ol type="a">
+<li>For <span class="math inline">j &lt;i</span>, adversary <span class="math inline">\mathcal{A}'</span> computes <span class="math inline">c_j \leftarrow \textsf{Enc}_{pk}(m_{j,0})</span> and returns <span class="math inline">c_j</span> to <span class="math inline">\mathcal{A}</span> as the response from its oracle</li>
+<li>For <span class="math inline">j =i</span>, adversary <span class="math inline">\mathcal{A}'</span> outputs <span class="math inline">(m_{j,0}, m_{j,1})</span> and receives a challenge ciphertext <span class="math inline">c_j</span>. This is returned to <span class="math inline">\mathcal{A}</span> as the response from its oracle</li>
+<li>For <span class="math inline">j &gt;i</span>, adversary <span class="math inline">\mathcal{A}'</span> computes <span class="math inline">c_j \leftarrow \textsf{Enc}_{pk}(m_{j,1})</span> and returns <span class="math inline">c_j</span> to <span class="math inline">\mathcal{A}</span> as the response from its oracle</li>
+</ol></li>
+<li><p><span class="math inline">\mathcal{A}'</span> outputs the bit <span class="math inline">b'</span> that is output by <span class="math inline">A</span></p></li>
+</ol></li>
+</ul>
+</section>
+<section id="proof-57" class="slide level2">
+<h2>Proof (5/7)</h2>
+<ul>
+<li><p>Consider the experiment <span class="math inline">\textsf{PubK}^{\textsf{eav}}_{\mathcal{A}',\Pi}</span></p></li>
+<li><p>Fixing some <span class="math inline">i=i^*</span>, not that if <span class="math inline">c_{i^*}</span> is the encryption of <span class="math inline">m_{i^*,0}</span> then <span class="math inline">\mathcal{A}</span> is interacting with <span class="math inline">\textsf{LR}_{pk}^{i^*}</span></p></li>
+<li><p>Then we have <span class="math display">\begin{align*}
+&amp; \Pr \left[ \mathcal{A}' \text{ outputs } 1 \mid b = 0\right] \\
+  &amp;  = \sum_{i^*=1}^t \Pr[i=i^*]\Pr \left[ \mathcal{A}' \text{ outputs } 1 \mid b = 0 \cap i = i^*\right] \\
+  &amp;  = \sum_{i^*=1}^t \frac{1}{t}\Pr \left[ \mathcal{A}^{\textsf{LR}_{pk}^{i^*}}(pk)=1\right] \\
+\end{align*}</span></p></li>
+</ul>
+</section>
+<section id="proof-67" class="slide level2">
+<h2>Proof (6/7)</h2>
+<ul>
+<li><p>If <span class="math inline">c_{i^*}</span> is the encryption of <span class="math inline">m_{i^*,1}</span> then <span class="math inline">\mathcal{A}</span> is interacting with <span class="math inline">\textsf{LR}_{pk}^{i^*-1}</span></p></li>
+<li><p>Then we have <span class="math display">\begin{align*}
+&amp; \Pr \left[ \mathcal{A}' \text{ outputs } 1 \mid b = 1\right] \\
+  &amp;  = \sum_{i^*=1}^t \Pr[i=i^*]\Pr \left[ \mathcal{A}' \text{ outputs } 1 \mid b = 1 \cap i = i^*\right] \\
+  &amp;  = \sum_{i^*=1}^t \frac{1}{t}\Pr \left[ \mathcal{A}^{\textsf{LR}_{pk}^{i^*-1}}(pk)=1\right] \\
+  &amp;  = \sum_{i^*=0}^{t-1} \frac{1}{t}\Pr \left[ \mathcal{A}^{\textsf{LR}_{pk}^{i^*}}(pk)=1\right] \\
+\end{align*}</span></p></li>
+</ul>
+</section>
+<section id="proof-77" class="slide level2">
+<h2>Proof (7/7)</h2>
+<ul>
+<li><p>Since <span class="math inline">\Pi</span> is CPA-secure, we have <span class="math display">\begin{align*}&amp;\bigg| \Pr\left[ \mathcal{A}' \text{ outputs } 1 \mid b=0\right] \\
+&amp;\quad - \Pr\left[ \mathcal{A}' \text{ outputs } 1 \mid b=1\right]\bigg| \le \textsf{negl}(n)\end{align*}</span></p></li>
+<li><p>This gives us <span class="math display">\bigg| \Pr\left[\mathcal{A}^{\textsf{LR}_{pk}^t}(pk) = 1\right] - \Pr\left[\mathcal{A}^{\textsf{LR}_{pk}^0}(pk) = 1\right]\bigg|\\ \le t \cdot \textsf{negl}(n)</span></p></li>
 </ul>
 </section>
 <section id="further-reading" class="slide level2">
-<h2>Further reading</h2>
+<h2>Further Reading</h2>
 <ul>
-<li>Section 11.3 of Katz &amp; Lindell</li>
+<li>Section 12.1, 12.2.1, 12.2.2, 12.4.1 of Katz &amp; Lindell</li>
 </ul>
 <div class="footer footer-default">
 
@@ -480,18 +660,18 @@ Saravanan Vijayakumaran
   </div>
 
   <script>window.backupDefine = window.define; window.define = undefined;</script>
-  <script src="key-exchange_files/libs/revealjs/dist/reveal.js"></script>
+  <script src="public-key-encryption_files/libs/revealjs/dist/reveal.js"></script>
   <!-- reveal.js plugins -->
-  <script src="key-exchange_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
-  <script src="key-exchange_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
-  <script src="key-exchange_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
-  <script src="key-exchange_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
-  <script src="key-exchange_files/libs/revealjs/plugin/quarto-support/support.js"></script>
+  <script src="public-key-encryption_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="public-key-encryption_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="public-key-encryption_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="public-key-encryption_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="public-key-encryption_files/libs/revealjs/plugin/quarto-support/support.js"></script>
   
 
-  <script src="key-exchange_files/libs/revealjs/plugin/notes/notes.js"></script>
-  <script src="key-exchange_files/libs/revealjs/plugin/search/search.js"></script>
-  <script src="key-exchange_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="public-key-encryption_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="public-key-encryption_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="public-key-encryption_files/libs/revealjs/plugin/zoom/zoom.js"></script>
   <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
 
   <script>
