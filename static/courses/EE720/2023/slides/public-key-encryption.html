@@ -492,7 +492,7 @@ Saravanan Vijayakumaran
 <ul>
 <li><span class="math inline">\langle c_1, c_2 \rangle = \langle g^y, g^z \cdot m_b \rangle</span></li>
 <li><span class="math inline">\mathcal{A}</span> experiences the experiment <span class="math inline">\textsf{PubK}^{\textsf{eav}}_{\mathcal{A},\widetilde{\Pi}}(n)</span></li>
-<li>Since <span class="math inline">D</span> outputs 1 exactly when <span class="math inline">b' = b</span>, we have <span class="math display">\begin{align*}&amp; \Pr\left[ D(G, q, g, g^x, g^y, g^z) =1 \right] \\&amp;= \Pr \left[ \textsf{PubK}^{\textsf{eav}}_{\mathcal{A}, \widetilde{\Pi}}(n)=1\right]\\ &amp;= \frac{1}{2}\end{align*}</span></li>
+<li>Since <span class="math inline">D</span> outputs 1 exactly when <span class="math inline">b' = b</span>, we have \begin{align*}&amp; \Pr\left[ D(G, q, g, g^x, g^y, g^z) =1 \right] \\&amp;= \Pr \left[ \textsf{PubK}^{\textsf{eav}}_{\mathcal{A}, \widetilde{\Pi}}(n)=1\right]\\ &amp;= \frac{1}{2}\end{align*}</li>
 </ul></li>
 </ul>
 </section>
@@ -503,7 +503,7 @@ Saravanan Vijayakumaran
 <ul>
 <li><span class="math inline">\langle c_1, c_2 \rangle = \langle g^y, g^{xy} \cdot m_b \rangle</span></li>
 <li><span class="math inline">\mathcal{A}</span> experiences the experiment <span class="math inline">\textsf{PubK}^{\textsf{eav}}_{\mathcal{A},\Pi}(n)</span></li>
-<li>Since <span class="math inline">D</span> outputs 1 exactly when <span class="math inline">b' = b</span>, we have <span class="math display">\begin{align*}&amp; \Pr\left[ D(G, q, g, g^x, g^y, g^z) =1 \right] \\&amp;= \Pr \left[ \textsf{PubK}^{\textsf{eav}}_{\mathcal{A}, \widetilde{\Pi}}(n)=1\right]\end{align*}</span></li>
+<li>Since <span class="math inline">D</span> outputs 1 exactly when <span class="math inline">b' = b</span>, we have \begin{align*}&amp; \Pr\left[ D(G, q, g, g^x, g^y, g^z) =1 \right] \\&amp;= \Pr \left[ \textsf{PubK}^{\textsf{eav}}_{\mathcal{A}, \widetilde{\Pi}}(n)=1\right]\end{align*}</li>
 </ul></li>
 </ul>
 </section></section>
@@ -646,11 +646,164 @@ Saravanan Vijayakumaran
 &amp;\quad - \Pr\left[ \mathcal{A}' \text{ outputs } 1 \mid b=1\right]\bigg| \le \textsf{negl}(n)\end{align*}</span></p></li>
 <li><p>This gives us <span class="math display">\bigg| \Pr\left[\mathcal{A}^{\textsf{LR}_{pk}^t}(pk) = 1\right] - \Pr\left[\mathcal{A}^{\textsf{LR}_{pk}^0}(pk) = 1\right]\bigg|\\ \le t \cdot \textsf{negl}(n)</span></p></li>
 </ul>
+</section></section>
+<section>
+<section id="plain-rsa" class="title-slide slide level1 center">
+<h1>Plain RSA</h1>
+
+</section>
+<section id="plain-rsa-key-generation" class="slide level2">
+<h2>Plain RSA Key Generation</h2>
+<ul>
+<li><p>Let <span class="math inline">\textsf{GenRSA}</span> be a PPT algorithm that on input <span class="math inline">1^n</span>, outputs a modulus <span class="math inline">N</span> that is the product of two <span class="math inline">n</span>-bit primes, along with integers <span class="math inline">e,d &gt; 1</span> satisfying <span class="math inline">ed = 1 \bmod \phi(N)</span></p></li>
+<li><p><span class="math inline">\textsf{Gen:}</span> On input <span class="math inline">1^n</span>, run <span class="math inline">\textsf{GenRSA}(1^n)</span> to obtain <span class="math inline">N</span>, <span class="math inline">e</span>, and <span class="math inline">d</span></p>
+<ul>
+<li>The public key is <span class="math inline">\langle N,e \rangle</span> and the private key is <span class="math inline">\langle N,d \rangle</span>.</li>
+</ul></li>
+</ul>
+</section>
+<section id="plain-rsa-encryption-and-decryption" class="slide level2">
+<h2>Plain RSA Encryption and Decryption</h2>
+<ul>
+<li><span class="math inline">\textsf{Enc:}</span> On input a public key <span class="math inline">pk = \langle N,e \rangle</span> and message <span class="math inline">m \in \mathbb{Z}_N^*</span>, compute the ciphertext <span class="math display">c = m^e \bmod N</span></li>
+<li><span class="math inline">\textsf{Dec:}</span> On input a private key <span class="math inline">sk = \langle N, d \rangle</span> and ciphertext <span class="math inline">c \in \mathbb{Z}_N^*</span>, output <span class="math display">\hat{m} = c^d \bmod N</span></li>
+</ul>
+</section>
+<section id="the-rsa-experiment" class="slide level2">
+<h2>The RSA Experiment</h2>
+<ul>
+<li><p><span class="math inline">\textsf{RSA-inv}_{\mathcal{A}, \textsf{GenRSA}}(n)</span>:</p>
+<ul>
+<li>Run <span class="math inline">\textsf{GenRSA}(1^n)</span> to obtain <span class="math inline">(N,e,d)</span></li>
+<li>Choose a uniform <span class="math inline">y \in \mathbb{Z}_N^*</span></li>
+<li><span class="math inline">\mathcal{A}</span> is given <span class="math inline">N,e,y</span>, and outputs <span class="math inline">x \in \mathbb{Z}_N^*</span></li>
+<li>The output of the experiment is <span class="math inline">1</span> if <span class="math inline">x^e = y \bmod N</span>, and <span class="math inline">0</span> otherwise.</li>
+</ul></li>
+</ul>
+</section>
+<section id="the-rsa-assumption" class="slide level2">
+<h2>The RSA Assumption</h2>
+<ul>
+<li><p><strong>Definition:</strong> The RSA problem is hard relative to <span class="math inline">\textsf{GenRSA}</span> if for all PPT algorithms <span class="math inline">\mathcal{A}</span> there exists a negligible function <span class="math inline">\textsf{negl}</span> such that <span class="math display">\Pr[\textsf{RSA-inv}_{\mathcal{A}, \textsf{GenRSA}}(n) = 1] \le \textsf{negl}(n).</span></p></li>
+<li><p>The <strong>RSA assumption</strong> states that there exists a <span class="math inline">\textsf{GenRSA}</span> relative to which RSA is hard.</p></li>
+</ul>
+</section></section>
+<section>
+<section id="attacks-on-plain-rsa" class="title-slide slide level1 center">
+<h1>Attacks on Plain RSA</h1>
+<ul>
+<li>Plain RSA is deterministic and hence not CPA-secure</li>
+<li>It is insecure even if used to encrypt “random messages”</li>
+</ul>
+</section>
+<section id="quadratic-improvement-in-recovering-message-12" class="slide level2">
+<h2>Quadratic Improvement in Recovering Message (1/2)</h2>
+<ul>
+<li><p>Suppose an attacker knows that <span class="math inline">m &lt; B</span></p></li>
+<li><p>Given ciphertext <span class="math inline">c</span>, the attacker can always determine <span class="math inline">m</span> in <span class="math inline">\mathcal{O}(B)</span> time</p></li>
+<li><p>There is a better attack that recovers <span class="math inline">m</span> in <span class="math inline">\mathcal{O}(\sqrt{B})</span> with high probability</p>
+<ul>
+<li>Can be the difference between <span class="math inline">2^{80}</span> and <span class="math inline">2^{40}</span></li>
+</ul></li>
+<li><p><strong>Lemma</strong>: For appropriate <span class="math inline">\alpha \approx \frac{1}{2}</span>, if <span class="math inline">m</span> is a uniform <span class="math inline">n</span>-bit integer then with high probability there exist <span class="math inline">r,s</span> with <span class="math inline">1 &lt; r \le s \le 2^{\alpha n}</span> for which <span class="math inline">m = r \cdot s</span></p></li>
+</ul>
+</section>
+<section id="quadratic-improvement-in-recovering-message-22" class="slide level2">
+<h2>Quadratic Improvement in Recovering Message (2/2)</h2>
+<ul>
+<li><strong>Input</strong>: Public key <span class="math inline">\langle N, e \rangle</span>; ciphertext <span class="math inline">c</span>; bound <span class="math inline">2^n</span></li>
+<li><strong>Output</strong>: <span class="math inline">m &lt; 2^n</span> such that <span class="math inline">m^e = c \bmod N</span> <span class="math display">\begin{align*}
+
+&amp;\textbf{set } T \coloneqq 2^{\alpha n}\\
+&amp;\textbf{for } r = 1 \text{ to } T:\\
+&amp;\quad x_r \coloneqq [c/r^e \bmod N]\\
+&amp;\textbf{sort } \text{the pairs } \{(r,x_r)\}_{r=1}^T \text{ by } x_r\\
+&amp;\textbf{for } s = 1 \text{ to } T:\\
+&amp;\quad \textbf{if } [s^e \bmod N] \overset{?}{=} x_r \text{ for some } r\\
+&amp;\quad \quad \textbf{return } [r \cdot s \bmod N]
+\end{align*}</span></li>
+</ul>
+</section>
+<section id="encrypting-short-messages-using-small-e" class="slide level2">
+<h2>Encrypting Short Messages Using Small <span class="math inline">e</span></h2>
+<ul>
+<li>Suppose <span class="math inline">m &lt; N^{1/e}</span></li>
+<li>Raising <span class="math inline">m</span> to the <span class="math inline">e</span>th power involves no modular reduction</li>
+<li>Give <span class="math inline">c</span>, message <span class="math inline">m = c^{1/e}</span> can be computed <strong>over the integers</strong> in <span class="math inline">\textsf{poly}(\| N \|)</span> time</li>
+<li>Suppose <span class="math inline">e = 3</span> and <span class="math inline">\| N \| = 2048</span> bits; then the attack works when <span class="math inline">m</span> is a 256-bit string</li>
+</ul>
+</section>
+<section id="encrypting-related-messages" class="slide level2">
+<h2>Encrypting Related Messages</h2>
+<ul>
+<li>Suppose a sender encrypts two related messages to the same receiver</li>
+<li>Suppose the messages are <span class="math inline">m</span> and <span class="math inline">m+\delta</span> where <span class="math inline">\delta</span> is known but <span class="math inline">m</span> is not</li>
+<li>Given two ciphertexts <span class="math inline">c_1 = [m^e \bmod N]</span> and <span class="math inline">c_2 = [(m+\delta)^e \bmod N]</span>, attacker defines two polynomials <span class="math display">\begin{align*} f_1(x) &amp; = x^e -c_1 \\
+f_2(x) &amp; = (x+\delta)^e -c_2\end{align*}</span></li>
+<li><span class="math inline">m</span> is root of both polynomials <span class="math inline">\implies x-m</span> is a factor of both polynomials</li>
+<li>If <span class="math inline">\textsf{gcd}(f_1(x), f_2(x))</span> is a linear polynomial, it reveals <span class="math inline">m</span></li>
+</ul>
+</section>
+<section id="sending-the-same-message-to-multiple-receivers-12" class="slide level2">
+<h2>Sending the Same Message to Multiple Receivers (1/2)</h2>
+<ul>
+<li>Suppose <span class="math inline">e = 3</span></li>
+<li>Suppose the same message <span class="math inline">m</span> is encrypted to three receivers having public keys <span class="math inline">pk_1 = \langle N_1, 3 \rangle</span>, <span class="math inline">pk_2 = \langle N_2, 3 \rangle</span>, <span class="math inline">pk_3 = \langle N_3, 3 \rangle</span></li>
+<li>Assume <span class="math inline">\gcd(N_i, N_j) = 1</span> for <span class="math inline">i \neq j</span></li>
+</ul>
+</section>
+<section id="sending-the-same-message-to-multiple-receivers-22" class="slide level2">
+<h2>Sending the Same Message to Multiple Receivers (2/2)</h2>
+<ul>
+<li>Eavesdropper observes <span class="math inline">c_1 = [m^3 \bmod N_1]</span>, <span class="math inline">c_2 = [m^3 \bmod N_2]</span>, <span class="math inline">c_3 = [m^3 \bmod N_3]</span></li>
+<li>For <span class="math inline">N^* = N_1N_2N_3</span>, by CRT there exists a unique <span class="math inline">\hat{c} &lt; N^*</span> such that <span class="math display">\hat{c} =c_1 \bmod N_1\\ \hat{c} = c_2 \bmod N_2\\\hat{c} = c_3 \bmod N_3</span></li>
+<li>As <span class="math inline">m &lt; \min\{N_1, N_2, N_3\}</span>, we have <span class="math inline">m^3 &lt; N^*</span></li>
+<li>Then <span class="math inline">\hat{c} = m^3</span> <strong>over the integers</strong></li>
+<li>Message <span class="math inline">m</span> can be recovered by computing the integer cube root of <span class="math inline">\hat{c}</span></li>
+</ul>
+</section></section>
+<section>
+<section id="rsa-oaep" class="title-slide slide level1 center">
+<h1>RSA-OAEP</h1>
+<ul>
+<li>OAEP = Optimal Asymmetric Encryption Padding</li>
+<li>CCA-secure encryption scheme from RSA</li>
+<li>RSA-OAEP has been standardized (see <a href="https://www.rfc-editor.org/rfc/rfc8017.html">RFC 8017</a>)</li>
+</ul>
+</section>
+<section id="rsa-oaep-1" class="slide level2">
+<h2>RSA-OAEP</h2>
+<ul>
+<li>Let <span class="math inline">l, k \in \mathbb{N}</span> such that <span class="math inline">2k+l &lt; \| N \|</span></li>
+<li>Suppose a message <span class="math inline">m \in \{0,1\}^l</span> is to be encrypted</li>
+<li>It is mapped to a message <span class="math inline">\hat{m} \in \{0,1\}^{2k+l}</span></li>
+<li><span class="math inline">\hat{m}</span> is encrypted using plain RSA</li>
+<li>Let <span class="math inline">G: \{0,1\}^k \mapsto \{0,1\}^{l+k}</span> and <span class="math inline">H: \{0,1\}^{l+k} \mapsto \{0,1\}^k</span> be hash functions</li>
+<li>Let <span class="math inline">m' = m \| 0^k</span></li>
+<li><span class="math inline">\hat{m} = s \| t</span> where <span class="math inline">t = m' \oplus G(r)</span> and <span class="math inline">s = r \oplus H(t)</span></li>
+</ul>
+</section>
+<section id="rsa-oaep-2" class="slide level2">
+<h2>RSA-OAEP</h2>
+
+<img data-src="images/rsa-oaep.png" class="r-stretch quarto-figure-center"><ul>
+<li><span class="math inline">\hat{m} = s \| t</span> where <span class="math inline">t = m' \oplus G(r)</span> and <span class="math inline">s = r \oplus H(t)</span></li>
+<li>To get <span class="math inline">m</span> from <span class="math inline">\hat{m}</span>, compute <span class="math display">r = H(t) \oplus s \text{ and } m'= G(r) \oplus t</span></li>
+</ul>
+</section>
+<section id="rsa-keys-should-be-chosen-carefully" class="slide level2">
+<h2>RSA Keys Should be Chosen Carefully</h2>
+<ul>
+<li>Suppose all employees in a company share the same RSA modulus <span class="math inline">N</span></li>
+<li>Suppose two employees have encryption exponents <span class="math inline">e_1, e_2</span> such that <span class="math inline">e_1 \neq e_2</span> and <span class="math inline">\gcd(e_1, e_2) = 1</span></li>
+<li>Suppose the same message <span class="math inline">m</span> is encrypted to give <span class="math display">c_1 = m^{e_1} \bmod N \text{ and } c_2 = m^{e_2} \bmod N</span></li>
+<li>Then <span class="math inline">m</span> can be recovered</li>
+</ul>
 </section>
 <section id="further-reading" class="slide level2">
 <h2>Further Reading</h2>
 <ul>
-<li>Section 12.1, 12.2.1, 12.2.2, 12.4.1 of Katz &amp; Lindell</li>
+<li>Section 12.1, 12.2.1, 12.2.2, 12.4.1, 12.5.1, 12.5.4 of Katz &amp; Lindell</li>
 </ul>
 <div class="footer footer-default">
 
