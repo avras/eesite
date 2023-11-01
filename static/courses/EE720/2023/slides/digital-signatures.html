@@ -404,15 +404,28 @@ Saravanan Vijayakumaran
 </section>
 <section id="digital-signature-scheme" class="slide level2">
 <h2>Digital Signature Scheme</h2>
+<div class="panel-tabset">
+<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1"><span class="math inline">\textsf{Gen}</span></a></li><li><a href="#tabset-1-2"><span class="math inline">\textsf{Sign}</span></a></li><li><a href="#tabset-1-3"><span class="math inline">\textsf{Vrfy}</span></a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1">
+<p>A <strong>digital signature scheme</strong> consists of three PPT algorithms <span class="math inline">(\textsf{Gen}, \textsf{Sign}, \textsf{Vrfy})</span></p>
+<p>The <strong>key-generation algorithm</strong> <span class="math inline">\textsf{Gen}</span> takes as input the security parameter <span class="math inline">1^n</span> and outputs a pair of keys <span class="math inline">(pk, sk)</span>.</p>
+</div>
+<div id="tabset-1-2">
 <ul>
-<li>A <strong>digital signature scheme</strong> consists of three PPT algorithms <span class="math inline">(\textsf{Gen}, \textsf{Sign}, \textsf{Vrfy})</span> such that:
-<ol type="1">
-<li>The <strong>key-generation algorithm</strong> <span class="math inline">\textsf{Gen}</span> takes as input the security parameter <span class="math inline">1^n</span> and outputs a pair of keys <span class="math inline">(pk, sk)</span>.</li>
-<li>The <strong>signing algorithm</strong> <span class="math inline">\textsf{Sign}</span> takes as input a private key <span class="math inline">sk</span> and a message <span class="math inline">m</span> from some message space (that may depend on <span class="math inline">pk</span>). It outputs a signature <span class="math inline">\sigma</span>, and we write this as <span class="math inline">\sigma \leftarrow \textsf{Sign}_{sk}(m)</span>.</li>
-<li>The deterministic <strong>verification algorithm</strong> <span class="math inline">\textsf{Vrfy}</span> takes as input a public key <span class="math inline">pk</span>, a message <span class="math inline">m</span>, and a signature <span class="math inline">\sigma</span>. It outputs a bit <span class="math inline">b</span>, with <span class="math inline">b=1</span> meaning <strong>valid</strong> and <span class="math inline">b=0</span> meaning <strong>invalid</strong>. We write this as <span class="math inline">b = \textsf{Vrfy}_{pk}(m,\sigma)</span>.</li>
-</ol></li>
-<li>It is required that except with negligible probability over <span class="math inline">(pk, sk)</span> output by <span class="math inline">\textsf{Gen}(1^n)</span>, it holds that <span class="math inline">\textsf{Vrfy}_{pk}(m, \textsf{Sign}_{sk}(m))=1</span> for every (legal) message <span class="math inline">m</span>.</li>
+<li><p>The <strong>signing algorithm</strong> <span class="math inline">\textsf{Sign}</span> takes as input a private key <span class="math inline">sk</span> and a message <span class="math inline">m</span> from some message space (that may depend on <span class="math inline">pk</span>)</p></li>
+<li><p>It outputs a signature <span class="math inline">\sigma</span>, and we write this as <span class="math inline">\sigma \leftarrow \textsf{Sign}_{sk}(m)</span>.</p></li>
 </ul>
+</div>
+<div id="tabset-1-3">
+<ul>
+<li><p>The deterministic <strong>verification algorithm</strong> <span class="math inline">\textsf{Vrfy}</span> takes as input <span class="math inline">pk</span>, <span class="math inline">m</span>, and <span class="math inline">\sigma</span></p></li>
+<li><p>It outputs a bit <span class="math inline">b</span>, with <span class="math inline">b=1</span> meaning <strong>valid</strong> and <span class="math inline">b=0</span> meaning <strong>invalid</strong>. We write this as <span class="math inline">b = \textsf{Vrfy}_{pk}(m,\sigma)</span>.</p></li>
+<li><p>It is required that except with negligible probability over <span class="math inline">(pk, sk)</span> output by <span class="math inline">\textsf{Gen}(1^n)</span>, it holds that <span class="math display">\textsf{Vrfy}_{pk}(m, \textsf{Sign}_{sk}(m))=1</span> for every (legal) message <span class="math inline">m</span></p></li>
+</ul>
+</div>
+</div>
+</div>
 </section>
 <section id="digital-signature-experiment" class="slide level2">
 <h2>Digital Signature Experiment</h2>
@@ -455,22 +468,339 @@ Saravanan Vijayakumaran
 <section id="attacks-on-plain-rsa" class="slide level2">
 <h2>Attacks on Plain RSA</h2>
 <ul>
-<li><p><strong>A no-message attack:</strong></p>
+<li><p><strong>A no-message attack</strong></p>
 <ul>
 <li>Given an public key <span class="math inline">\langle N, e \rangle</span>, adversary chooses a uniform <span class="math inline">\sigma \in \mathbb{Z}_N^*</span> and computes <span class="math inline">m = \sigma^e \bmod N</span></li>
 <li>He then outputs <span class="math inline">(m, \sigma)</span> as a forgery</li>
 </ul></li>
-<li><p><strong>Attack using two signatures:</strong></p>
+<li><p><strong>Attack using two signatures</strong></p>
 <ul>
 <li>Suppose the adversary can make the signer sign two messages <span class="math inline">m_1, m_2 \in \mathbb{Z}_N^*</span> and get the corresponding signatures <span class="math inline">\sigma_1, \sigma_2</span></li>
 <li>The adversary outputs <span class="math inline">(m_1m_2, \sigma_1 \sigma_2)</span> as the forgery.</li>
 </ul></li>
 </ul>
 </section>
+<section id="rsa-full-domain-hash" class="slide level2">
+<h2>RSA Full-Domain Hash</h2>
+<div class="panel-tabset">
+<ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1"><span class="math inline">\textsf{Gen}</span></a></li><li><a href="#tabset-2-2"><span class="math inline">\textsf{Sign}</span> and <span class="math inline">\textsf{Vrfy}</span></a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1">
+<ul>
+<li><p><span class="math inline">\textsf{Gen:}</span> On input <span class="math inline">1^n</span> run <span class="math inline">\textsf{GenRSA}(1^n)</span> to obtain <span class="math inline">N</span>, <span class="math inline">e</span>, <span class="math inline">d</span>. The public key is <span class="math inline">\langle N,e \rangle</span> and the private key is <span class="math inline">\langle N,d \rangle</span>.</p>
+<ul>
+<li>A cryptographic hash function <span class="math inline">H : \{0,1\}^* \mapsto \mathbb{Z}_N^*</span> is chosen</li>
+</ul></li>
+</ul>
+</div>
+<div id="tabset-2-2">
+<ul>
+<li><p><span class="math inline">\textsf{Sign:}</span> On input a private key <span class="math inline">sk = \langle N, d \rangle</span> and message <span class="math inline">m \in \{0,1\}^*</span>, compute the signature <span class="math display">\begin{equation*}
+\sigma \coloneqq \left[\left(H(m)\right)^d \bmod N \right].
+   \end{equation*}</span></p></li>
+<li><p><span class="math inline">\textsf{Vrfy:}</span> On input a public key <span class="math inline">pk = \langle N, e \rangle</span>, a message <span class="math inline">m</span>, and a signature <span class="math inline">\sigma</span>, output <span class="math inline">1</span> if and only if <span class="math display">\begin{equation*}
+     \sigma^e = H(m) \bmod N.
+       \end{equation*}</span></p></li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="how-to-choose-h" class="slide level2">
+<h2>How to Choose <span class="math inline">H</span>?</h2>
+<div class="panel-tabset">
+<ul id="tabset-3" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-3-1">Collisions</a></li><li><a href="#tabset-3-2">No message</a></li><li><a href="#tabset-3-3">Multiplication</a></li></ul>
+<div class="tab-content">
+<div id="tabset-3-1">
+<ul>
+<li>It must be hard to find collisions in <span class="math inline">H</span></li>
+<li>If <span class="math inline">H(m_1) = H(m_2)</span> for <span class="math inline">m_1 \neq m_2</span>, then <span class="math inline">m_1</span> and <span class="math inline">m_2</span> have the same signature</li>
+</ul>
+</div>
+<div id="tabset-3-2">
+<ul>
+<li>To prevent no-message attacks, it should be infeasible to find <span class="math inline">m</span> such that <span class="math display">H(m) = \hat{m}</span> where <span class="math inline">\hat{m} \coloneqq \left[\sigma^e \bmod N\right]</span> for any <span class="math inline">\sigma \in \mathbb{Z}_N^*</span></li>
+</ul>
+</div>
+<div id="tabset-3-3">
+<ul>
+<li><p><span class="math inline">H</span> should not admit “multiplicative relations”</p></li>
+<li><p>It should be infeasible to find three messages <span class="math inline">m, m_1, m_2</span> with <span class="math display">H(m) = H(m_1) \cdot H(m_2) \bmod N</span></p></li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="security-of-rsa-fdh" class="slide level2">
+<h2>Security of RSA-FDH</h2>
+<ul>
+<li><p><strong>Theorem</strong>: If the RSA problem is hard relative to <span class="math inline">\textsf{GenRSA}</span> and <span class="math inline">H</span> is modeled as a <strong>random oracle</strong>, then the RSA-FDH signature scheme is secure</p></li>
+<li><p>What is a random oracle?</p></li>
+</ul>
+</section>
+<section id="the-random-oracle-model" class="slide level2">
+<h2>The Random-Oracle Model</h2>
+<ul>
+<li><p>Idealized model of hash functions used to prove security of cryptographic schemes</p></li>
+<li><p>If <span class="math inline">H</span> is modeled as a random oracle, then</p>
+<ul>
+<li>If <span class="math inline">x</span> has not been queried to <span class="math inline">H</span>, then the value of <span class="math inline">H(x)</span> is uniformly chosen and returned</li>
+<li>If <span class="math inline">x</span> has already been queried to <span class="math inline">H</span>, then the same value of <span class="math inline">H(x)</span> is returned</li>
+</ul></li>
+<li><p>RO assumption is controversial; no unanimous agreement</p></li>
+</ul>
+</section></section>
+<section>
+<section id="signatures-from-the-discrete-logarithm-problem" class="title-slide slide level1 center">
+<h1>Signatures from the Discrete-Logarithm Problem</h1>
+<ul>
+<li>Identification Schemes <span class="math inline">\rightarrow</span> Fiat-Shamir Transform <span class="math inline">\rightarrow</span> Signature Schemes</li>
+</ul>
+</section>
+<section id="identification-schemes" class="slide level2">
+<h2>Identification Schemes</h2>
+<ul>
+<li><p>Interactive protocols that allow a party to prove its identity</p>
+<ul>
+<li>Identity = Knowledge of private key corresponding to a public key</li>
+</ul></li>
+<li><p>The party proving identity is called the <strong>prover</strong></p></li>
+<li><p>The party verifying the identity is called the <strong>verifier</strong></p></li>
+<li><p>We will consider only three-round identification protocols</p>
+<ul>
+<li>Three PPT algorithms <span class="math inline">\mathcal{P}_1, \mathcal{P}_2, \mathcal{V}</span></li>
+</ul></li>
+</ul>
+</section>
+<section id="round-identification-scheme" class="slide level2">
+<h2>3-Round Identification Scheme</h2>
+
+<img data-src="images/ident-proto.svg" class="r-stretch quarto-figure-center"></section>
+<section id="schnorr-identification-scheme" class="slide level2">
+<h2>Schnorr Identification Scheme</h2>
+<ul>
+<li>Let <span class="math inline">\mathcal{G}</span> denote a polynomial-time, cyclic group generation algorithm</li>
+<li>Prover runs <span class="math inline">\mathcal{G}(1^n)</span> to obtain <span class="math inline">(G,q,g)</span>, chooses uniform <span class="math inline">x \in \mathbb{Z}_q</span>, and sets <span class="math inline">y \coloneqq g^x</span></li>
+<li>Public key is <span class="math inline">\langle G, q, g, y \rangle</span> and private key is <span class="math inline">x</span></li>
+</ul>
+</section>
+<section id="schnorr-identification-scheme-1" class="slide level2">
+<h2>Schnorr Identification Scheme</h2>
+
+<img data-src="images/schnorr.svg" style="width:87.0%" class="r-stretch quarto-figure-center"></section>
+<section id="schnorr-identification-scheme-security" class="slide level2">
+<h2>Schnorr Identification Scheme Security</h2>
+<p><strong>Theorem</strong>: If the discrete-logarithm problem is hard relative to <span class="math inline">\mathcal{G}</span>, then the Schnorr identification scheme is secure</p>
+</section>
+<section id="non-degenerate-schemes" class="slide level2">
+<h2>Non-degenerate Schemes</h2>
+<ul>
+<li><p>We only consider identification schemes that are <strong>non-degenerate</strong></p>
+<ul>
+<li>Many possible initial messages and none has a high probability of being sent</li>
+</ul></li>
+<li><p><strong>Definition</strong>: An identification scheme is <strong>non-degenerate</strong> if for every private key <span class="math inline">sk</span> and any fixed initial message <span class="math inline">I</span>, the probability that <span class="math inline">\mathcal{P}_1(sk)</span> outputs <span class="math inline">I</span> is negligible.</p></li>
+</ul>
+</section>
+<section id="identification-experiment" class="slide level2">
+<h2>Identification Experiment</h2>
+<div class="panel-tabset">
+<ul id="tabset-4" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-4-1">Setting</a></li><li><a href="#tabset-4-2">Experiment</a></li></ul>
+<div class="tab-content">
+<div id="tabset-4-1">
+<ul>
+<li><p>Let <span class="math inline">\Pi = (\textsf{Gen}, \mathcal{P}_1, \mathcal{P}_2, \mathcal{V})</span> be an identification scheme</p></li>
+<li><p>A PPT adversary who does not know the prover’s secret key should be unable to fool the verifier into accepting</p></li>
+<li><p>Adversary is allowed to observe multiple executions of the protocol</p>
+<ul>
+<li>Formalized by access to a transcript oracle <span class="math inline">\textsf{Trans}_{sk}</span> that returns <span class="math inline">(I,r,s)</span></li>
+</ul></li>
+</ul>
+</div>
+<div id="tabset-4-2">
+<ul>
+<li><p>The identification experiment <span class="math inline">\textsf{Ident}_{\mathcal{A}, \Pi}(n)</span>:</p>
+<ol type="1">
+<li><p><span class="math inline">\textsf{Gen}(1^n)</span> is run to obtain keys <span class="math inline">(pk, sk)</span></p></li>
+<li><p>Adversary <span class="math inline">\mathcal{A}</span> is given <span class="math inline">pk</span> and access to an oracle <span class="math inline">\textsf{Trans}_{sk}</span> that it can query</p></li>
+<li><p>At any point in the experiment,</p>
+<ul>
+<li><span class="math inline">\mathcal{A}</span> outputs a message <span class="math inline">I</span>.</li>
+<li>A uniform challenge <span class="math inline">r \in \Omega_{pk}</span> is chosen and given to <span class="math inline">\mathcal{A}</span></li>
+<li><span class="math inline">\mathcal{A}</span> responds with some <span class="math inline">s</span></li>
+</ul></li>
+<li><p>The experiment outputs 1 if and only if <span class="math inline">\mathcal{V}(pk,r,s) \overset{?}{=} I</span></p></li>
+</ol></li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="security-definition-1" class="slide level2">
+<h2>Security Definition</h2>
+<ul>
+<li><p>An identification scheme <span class="math inline">\Pi = (\textsf{Gen},\mathcal{P}_1, \mathcal{P}_2, \mathcal{V})</span> is <strong>secure against a passive attack</strong>, or just <strong>secure</strong>, if for all PPT adversaries <span class="math inline">\mathcal{A}</span>, there is a negligible function such that: <span class="math display">\begin{equation*}
+  \Pr\left[ \textsf{Ident}_{\mathcal{A}, \Pi}(n) = 1\right] \le \textsf{negl}(n).
+\end{equation*}</span></p></li>
+<li><p>Note that we are <strong>not</strong> considering <strong>active</strong> attacks where the adversary can impersonate the verifier and send maliciouly chosen values for <span class="math inline">r</span></p></li>
+</ul>
+</section>
+<section id="fiat-shamir-transform" class="slide level2">
+<h2>Fiat-Shamir Transform</h2>
+<ul>
+<li><p>Popular technique to convert interactive protocols into non-interactive cryptographic schemes</p></li>
+<li><p>Uniformly chosen challenges in the interactive protocol <span class="math inline">\rightarrow</span> Cryptographic hash of the transcript values up to that point</p></li>
+<li><p>Identification schemes can be converted to signature schemes by including message into transcript</p></li>
+</ul>
+</section>
+<section id="from-identification-schemes-to-signatures" class="slide level2">
+<h2>From Identification Schemes to Signatures</h2>
+<div class="panel-tabset">
+<ul id="tabset-5" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-5-1">Idea</a></li><li><a href="#tabset-5-2"><span class="math inline">\textsf{Gen}</span></a></li><li><a href="#tabset-5-3"><span class="math inline">\textsf{Sign}</span></a></li><li><a href="#tabset-5-4"><span class="math inline">\textsf{Vrfy}</span></a></li><li><a href="#tabset-5-5">Security</a></li></ul>
+<div class="tab-content">
+<div id="tabset-5-1">
+<ul>
+<li>The signer acts as a prover, running the identification protocol by itself</li>
+<li>Replaces random challenge <span class="math inline">r</span> with a hash of the message and <span class="math inline">I</span></li>
+</ul>
+</div>
+<div id="tabset-5-2">
+<ul>
+<li><p>Let <span class="math inline">(\textsf{Gen}_{\textsf{id}}, \mathcal{P}_1, \mathcal{P}_2, \mathcal{V})</span> be an identification scheme</p></li>
+<li><p>On input <span class="math inline">1^n</span>, simply run <span class="math inline">\textsf{Gen}_{\textsf{id}}(1^n)</span> to obtain keys <span class="math inline">pk, sk</span></p>
+<ul>
+<li>The public key <span class="math inline">pk</span> specifies a set of challenges <span class="math inline">\Omega_{pk}</span></li>
+</ul></li>
+<li><p>As part of key generation, a function <span class="math inline">H: \{0,1\}^* \mapsto \Omega_{pk}</span> is specified</p></li>
+</ul>
+</div>
+<div id="tabset-5-3">
+<ul>
+<li><p>On input a private key <span class="math inline">sk</span> and a message <span class="math inline">m \in \{0,1\}^*</span></p>
+<ol type="1">
+<li>Compute <span class="math inline">(I, \textsf{st}) \leftarrow \mathcal{P}_1(sk)</span></li>
+<li>Compute <span class="math inline">r\coloneqq H(I, m)</span></li>
+<li>Compute <span class="math inline">s\coloneqq \mathcal{P}_2(sk, \textsf{st}, r)</span></li>
+</ol></li>
+<li><p>Output the signature <span class="math inline">(r,s)</span></p></li>
+</ul>
+</div>
+<div id="tabset-5-4">
+<ul>
+<li>On input public key <span class="math inline">pk</span>, a message <span class="math inline">m</span>, and a signature <span class="math inline">(r,s)</span>, compute <span class="math inline">I \coloneqq \mathcal{V}(pk, r, s)</span> and output 1 if and only if <span class="math display">H(I,m) \overset{?}{=} r</span></li>
+</ul>
+</div>
+<div id="tabset-5-5">
+<ul>
+<li><p><strong>Theorem</strong>: Let <span class="math inline">\Pi</span> be an identification scheme, and let <span class="math inline">\Pi'</span> be the signature scheme that results by applying the Fiat-Shamir transform to it.</p>
+<p>If <span class="math inline">\Pi</span> is secure and <span class="math inline">H</span> is modeled as a random oracle, then <span class="math inline">\Pi'</span> is secure.</p></li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="digital-signature-algorithm-and-elliptic-curve-digital-signature-algorithm" class="slide level2">
+<h2>Digital Signature Algorithm and Elliptic Curve Digital Signature Algorithm</h2>
+<ul>
+<li>DSA used in prime order subgroups of <span class="math inline">\mathbb{Z}_p^*</span></li>
+<li>ECDSA used in elliptic curve groups</li>
+<li>Have been around since 1991</li>
+<li>ECDSA used in Bitcoin, Ethereum</li>
+<li>Alleged workarounds to avoid the Schnorr patent</li>
+<li>Have no proofs of security</li>
+</ul>
+</section>
+<section id="identification-scheme-underlying-dsa" class="slide level2">
+<h2>Identification Scheme Underlying DSA</h2>
+
+<img data-src="images/dsa.svg" class="r-stretch quarto-figure-center"></section>
+<section id="obtaining-challenges-in-dsaecdsa" class="slide level2">
+<h2>Obtaining Challenges in DSA/ECDSA</h2>
+<ul>
+<li><p>Set <span class="math inline">\alpha \coloneqq H(m)</span> for a message <span class="math inline">m</span> where <span class="math inline">H</span> is a cryptographic hash function</p></li>
+<li><p>Set <span class="math inline">r \coloneqq F(I)</span> for a function <span class="math inline">F: G \mapsto \mathbb{Z}_q</span></p>
+<ul>
+<li>In DSA, <span class="math inline">G</span> is a order-<span class="math inline">q</span> subgroup of <span class="math inline">\mathbb{Z}_p^*</span> and <span class="math inline">F(I) = I \bmod q</span></li>
+<li>In ECDSA, <span class="math inline">G</span> is a order-<span class="math inline">q</span> subgroup of an elliptic curve group over <span class="math inline">\mathbb{Z}_p</span>. For <span class="math inline">I = (x,y) \in \mathbb{Z}_p \times \mathbb{Z}_p</span>, set <span class="math inline">F(I) = x \bmod q</span></li>
+</ul></li>
+</ul>
+</section></section>
+<section>
+<section id="certificates-and-public-key-infrastructure" class="title-slide slide level1 center">
+<h1>Certificates and Public-Key Infrastructure</h1>
+
+</section>
+<section id="how-to-distribute-public-keys" class="slide level2">
+<h2>How to distribute public keys?</h2>
+<ul>
+<li><p>Public-key cryptography can be used once public keys are securely distributed</p></li>
+<li><p>Digital signatures are used to securely distribute public keys</p></li>
+<li><p>Users have to trust one public key first, which can then authenticate other public keys</p></li>
+<li><p>The “first” public keys can be embedded in browsers or operating systems</p></li>
+</ul>
+</section>
+<section id="digital-certificates" class="slide level2">
+<h2>Digital Certificates</h2>
+<ul>
+<li>A signature binding an entity to a public key</li>
+<li>Suppose Charlie has a key-pair <span class="math inline">(pk_C, sk_C)</span></li>
+<li>Charlie knows that <span class="math inline">pk_B</span> is Bob’s public key</li>
+<li>Charlie can generate a digital certificate as <span class="math display">\textsf{cert}_{C \rightarrow B} = \textsf{Sign}_{sk_C} \left(``\text{Bob's key is } pk_B "\right)</span></li>
+</ul>
+</section>
+<section id="using-digital-certificates" class="slide level2">
+<h2>Using Digital Certificates</h2>
+<ul>
+<li>Suppose Bob wants to communicate with Alice</li>
+<li>Alice knows Charlie’s public key <span class="math inline">pk_C</span></li>
+<li>Bob sends <span class="math inline">(pk_B, \textsf{cert}_{C \rightarrow B})</span> to Alice</li>
+<li>If Alice trusts Charlie, she will accept <span class="math inline">pk_B</span> as Bob’s public key</li>
+<li>Charlie is called a <strong>certificate authority (CA)</strong></li>
+</ul>
+</section>
+<section id="certificates-cannot-be-forever" class="slide level2">
+<h2>Certificates Cannot Be Forever</h2>
+<ul>
+<li><p>Certificates may need to be revoked</p>
+<ul>
+<li>An employee who was issued a certificate may quit the company</li>
+<li>A private key might be stolen</li>
+</ul></li>
+<li><p>One solution is to include an <strong>expiry date</strong> in the signed message<span class="math display">\textsf{cert}_{C \rightarrow B} = \textsf{Sign}_{sk_C} \left(``\text{Bob's key is } pk_B ", \text{date}\right)</span></p></li>
+<li><p>This involves a delay in expiry</p></li>
+</ul>
+</section>
+<section id="certificate-revocation-lists" class="slide level2">
+<h2>Certificate Revocation Lists</h2>
+<div class="panel-tabset">
+<ul id="tabset-6" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-6-1">Setting</a></li><li><a href="#tabset-6-2">Verification</a></li></ul>
+<div class="tab-content">
+<div id="tabset-6-1">
+<ul>
+<li><p>CAs can explicitly <strong>revoke</strong> a certificate</p></li>
+<li><p>CA includes a serial number in every certificate it issues<span class="math display">\textsf{cert}_{C \rightarrow B} = \textsf{Sign}_{sk_C} \left(``\text{Bob's key is } pk_B ", \texttt{\#\#\#}\right)</span></p></li>
+<li><p>To revoke a certificate, CAs will add its serial number to <strong>certificate revocation list (CRL)</strong> and sign the list and current date</p></li>
+<li><p>The signed CRL is widely distributed by the CA</p></li>
+</ul>
+</div>
+<div id="tabset-6-2">
+<ul>
+<li><p>Certificate verification now involves</p>
+<ul>
+<li>Checking signature in the certificate is valid</li>
+<li>Checking that serial number does not appear in latest CRL</li>
+<li>Checking the signature on the CRL itself</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+</section>
 <section id="further-reading" class="slide level2">
 <h2>Further Reading</h2>
 <ul>
-<li>Section 13.1, 13.4.1 of Katz &amp; Lindell</li>
+<li>Section 13.1, 13.4, 13.5, 13.6 of Katz &amp; Lindell</li>
+<li>Section 6.5 of Katz &amp; Lindell</li>
 </ul>
 <div class="footer footer-default">
 
