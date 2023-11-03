@@ -51,6 +51,7 @@ EE720 has significant overlap with **CS 406 Cryptography and Network Security** 
 - [Key Exchange Protocols](./2023/slides/key-exchange.html){target="_blank"}
 - [Public-Key Encryption](./2023/slides/public-key-encryption.html){target="_blank"}
 - [Digital Signatures](./2023/slides/digital-signatures.html){target="_blank"}
+- [Advanced Topics in PKC](./2023/slides/advanced-topics.html){target="_blank"}
 
 ##### Supplementary Notes
 
