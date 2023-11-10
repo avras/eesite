@@ -52,6 +52,7 @@ EE720 has significant overlap with **CS 406 Cryptography and Network Security** 
 - [Public-Key Encryption](./2023/slides/public-key-encryption.html){target="_blank"}
 - [Digital Signatures](./2023/slides/digital-signatures.html){target="_blank"}
 - [Advanced Topics in PKC](./2023/slides/advanced-topics.html){target="_blank"}
+- [Zero-Knowledge Proofs](./2023/slides/zk-proofs.html){target="_blank"}
 
 ##### Supplementary Notes
 
