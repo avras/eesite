@@ -68,3 +68,4 @@ EE720 has significant overlap with **CS 406 Cryptography and Network Security** 
   - [Midsem](/courses/EE720/2023/exams/midsem.pdf)
   - [Quiz 2](/courses/EE720/2023/exams/quiz2.pdf)
   - [Quiz 3](/courses/EE720/2023/exams/quiz3.pdf)
+  - [Endsem](/courses/EE720/2023/exams/endsem.pdf)
