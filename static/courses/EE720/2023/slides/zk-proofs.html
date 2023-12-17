@@ -399,7 +399,7 @@ Saravanan Vijayakumaran
 <ul>
 <li>Suppose Alice tosses a fair coin and sends the outcome to Bob</li>
 <li>Bob gains one bit of information (in the information-theoretic sense)</li>
-<li>We say Bob has not gained any knowledge as he could have tossed a coin himself</li>
+<li>We say Bob has <strong>not</strong> gained any knowledge as he could have tossed a coin himself</li>
 </ul>
 </section>
 <section id="existence-of-simulator-zk" class="slide level2">
@@ -409,10 +409,11 @@ Saravanan Vijayakumaran
 <li><p>The set of messages exchanged by the prover and verifier is called a <strong>transcript</strong></p></li>
 <li><p>An interactive protocol is ZK if there is a PPT simulator who can <strong>simulate</strong> the transcript</p>
 <ul>
-<li>Simulation = Generation of identically<sup>1</sup> distributed transcript without knowledge of prover’s secret</li>
+<li><p>Simulation = Generation of identically distributed transcript without knowledge of prover’s secret</p></li>
+<li><p>Distributions can also be negligibly different</p></li>
 </ul></li>
 </ul>
-<aside><ol class="aside-footnotes"><li id="fn1"><p>This corresponds to perfect ZK. The distributions can also be negligibly different.</p></li></ol></aside></section>
+</section>
 <section id="modeling-statements" class="slide level2">
 <h2>Modeling Statements</h2>
 <ul>
@@ -512,26 +513,25 @@ Saravanan Vijayakumaran
 </section>
 <section id="graph-isomorphism" class="slide level2">
 <h2>Graph Isomorphism</h2>
-<p>Graphs <span class="math inline">G_1 = (V_1, E_1)</span> and <span class="math inline">G_2 = (V_2, E_2)</span> are isomorphic if there exists a bijection <span class="math inline">\pi : V_1 \mapsto V_2</span> such that <span class="math inline">(u,v) \in E_1 \iff (\pi(u), \pi(v)) \in E_2</span></p>
+<ul>
+<li><p>Graphs <span class="math inline">G_1 = (V_1, E_1)</span> and <span class="math inline">G_2 = (V_2, E_2)</span> are isomorphic if there exists a bijection <span class="math inline">\pi : V_1 \mapsto V_2</span> such that <span class="math inline">(u,v) \in E_1 \iff (\pi(u), \pi(v)) \in E_2</span></p></li>
+<li><p>Example</p>
 <div class="quarto-layout-panel">
 <div class="quarto-layout-row quarto-layout-valign-top">
-<div class="quarto-layout-cell" style="flex-basis: 32.0%;justify-content: center;">
-<div class="quarto-figure quarto-figure-center">
+<div class="quarto-figure quarto-figure-center" style="flex-basis: 32.0%;justify-content: center;">
 <figure>
-<p><img data-src="images/Graph1.png" width="141"></p>
+<p><a href="https://en.wikipedia.org/wiki/Graph_isomorphism"><img data-src="images/Graph1.png" width="141"></a></p>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center" style="flex-basis: 68.0%;justify-content: center;">
+<figure>
+<p><a href="https://en.wikipedia.org/wiki/Graph_isomorphism"><img data-src="images/Graph2.png" width="300"></a></p>
+<figcaption>Image source: Wikipedia</figcaption>
 </figure>
 </div>
 </div>
-<div class="quarto-layout-cell" style="flex-basis: 68.0%;justify-content: center;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="images/Graph2.png" width="300"></p>
-<figcaption>Image source: <a href="https://en.wikipedia.org/wiki/Graph_isomorphism">Wikipedia</a></figcaption>
-</figure>
-</div>
-</div>
-</div>
-</div>
+</div></li>
+</ul>
 </section>
 <section id="proving-graph-isomorphism-and-non-isomorphism" class="slide level2">
 <h2>Proving Graph Isomorphism and Non-Isomorphism</h2>
@@ -543,7 +543,7 @@ Saravanan Vijayakumaran
 </ul></li>
 <li><p>How can we prove that two graphs <span class="math inline">G_1, G_2</span> are non-isomorphic?</p>
 <ul>
-<li>Checking all bijections will need exponential-time verifier</li>
+<li>Checking all bijections <span class="math inline">\implies</span> exponential-time verifier</li>
 </ul></li>
 </ul>
 </section>
@@ -574,7 +574,7 @@ Saravanan Vijayakumaran
 </div>
 </section>
 <section id="zero-knowledge-interactive-proofs" class="slide level2">
-<h2>Zero Knowledge Interactive Proofs</h2>
+<h2>Zero-Knowledge Interactive Proofs</h2>
 <ul>
 <li><p><strong>Informal definition</strong>: An interactive proof system is <strong>zero-knowledge</strong> if whatever can be efficiently computed <strong>after interaction</strong> with <span class="math inline">P</span> on input <span class="math inline">x</span> can also be efficiently computed from <span class="math inline">x</span> (<strong>without interaction</strong>)</p></li>
 <li><p>Let <span class="math inline">\text{view}^P_{V^*}(x)</span> denote the verifier’s view of the protocol</p>
@@ -599,7 +599,7 @@ Saravanan Vijayakumaran
 <ul>
 <li><p><strong>Definition</strong>: We say that <span class="math inline">(P,V)</span> is <strong>perfect zero-knowledge</strong> if for every PPT interactive machine <span class="math inline">V^*</span> there exists a PPT algorithm <span class="math inline">M^*</span> such that for every <span class="math inline">x \in L</span> the following two conditions hold:</p>
 <ul>
-<li>With probability at most <span class="math inline">\frac{1}{2}</span>, machine <span class="math inline">M^*</span> outputs a special symbol <span class="math inline">\perp</span></li>
+<li>With probability at most <span class="math inline">\frac{1}{2}</span>, algorithm <span class="math inline">M^*</span> outputs a special symbol <span class="math inline">\perp</span></li>
 <li>Let <span class="math inline">m^*(x)</span> be the random variable describing the distribution of <span class="math inline">M^*(x)</span> conditioned on <span class="math inline">M^*(x) \neq \perp</span>. Then the random variables <span class="math inline">\text{view}^P_{V^*}(x)</span> and <span class="math inline">m^*(x)</span> are <strong>identically distributed</strong></li>
 </ul></li>
 </ul>
@@ -613,10 +613,10 @@ Saravanan Vijayakumaran
 <li><p>On the average it requires two runs</p></li>
 </ul>
 </section>
-<section id="zk-proof-of-graph-non-isomorphism" class="slide level2">
-<h2>ZK Proof of Graph Non-Isomorphism</h2>
+<section id="hvzk-proof-of-graph-non-isomorphism" class="slide level2">
+<h2>HVZK Proof of Graph Non-Isomorphism</h2>
 <div class="panel-tabset">
-<ul id="tabset-4" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-4-1">Protocol</a></li><li><a href="#tabset-4-2">Simulator</a></li></ul>
+<ul id="tabset-4" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-4-1">Protocol</a></li><li><a href="#tabset-4-2">Simulator</a></li><li><a href="#tabset-4-3">HVZK</a></li></ul>
 <div class="tab-content">
 <div id="tabset-4-1">
 <ul>
@@ -627,9 +627,17 @@ Saravanan Vijayakumaran
 </div>
 <div id="tabset-4-2">
 <ul>
-<li><p><span class="math inline">\text{view}^P_{V^*} = (\sigma, G', \tau)</span> where <span class="math inline">G' = \pi(G_\sigma)</span> and <span class="math inline">\tau = \sigma</span></p></li>
-<li><p>A simulator <span class="math inline">M^*</span> can pick <span class="math inline">\sigma</span> randomly, set <span class="math inline">\tau=\sigma</span>, and set <span class="math inline">G'</span> to a random permutation of <span class="math inline">G_\sigma</span></p></li>
-<li><p>Even if <span class="math inline">V^*</span> were to choose <span class="math inline">G'</span> in some other way, the simulator can generate an identically distributed transcript</p></li>
+<li><p><span class="math inline">\text{view}^P_{V^*} = (\sigma, \pi, G', \tau)</span> where <span class="math inline">G' = \pi(G_\sigma)</span> and <span class="math inline">\tau = \sigma</span></p></li>
+<li><p>A simulator <span class="math inline">M^*</span> can pick <span class="math inline">\sigma</span> and <span class="math inline">\pi</span> randomly, set <span class="math inline">\tau=\sigma</span>, and set <span class="math inline">G' = \pi(G_\sigma)</span></p></li>
+</ul>
+</div>
+<div id="tabset-4-3">
+<ul>
+<li>HVZK = Honest Verifier Zero-Knowledge</li>
+<li>This protocol is only ZK when the verifier follows the protocol honestly</li>
+<li>Suppose there is a third graph <span class="math inline">G_3</span> which the verifier wants to check for isomorphism with <span class="math inline">G_1</span> or <span class="math inline">G_2</span></li>
+<li>The verifier can set <span class="math inline">G' = G_3</span> and use the prover’s response to gain knowledge it could not have calculated by itself</li>
+<li>See <a href="https://users-cs.au.dk/~ivan/CPT1.pdf">this note</a> for a ZK protocol</li>
 </ul>
 </div>
 </div>
@@ -817,7 +825,6 @@ Saravanan Vijayakumaran
 
 </div>
 </section>
-
     </div>
   </div>
 
