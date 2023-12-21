@@ -21,6 +21,7 @@ main = hakyll $ do
                     , "projects.md"
                     , "students.md"
                     , "bitcoin.md"
+                    , "zk.md"
                     ]
           ) $ do
         route   $ setExtension "html"
@@ -32,6 +33,7 @@ main = hakyll $ do
             "static/bitcoin/**" .||.
             "static/monero/**" .||.
             "static/ethlab/**" .||.
+            "static/zk/**" .||.
             "static/reports/**" .||.
             "static/ee1mtech/**"
           ) $ do
