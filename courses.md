@@ -3,7 +3,7 @@ title: Courses
 ---
 
 #### Current Course
-  - [EE 720: An Introduction to Number Theory and Cryptography](./courses/EE720/Autumn2023.html)
+  - [EE 465: Cryptocurrency and Blockchain Technologies](./courses/EE465/Spring2024.html)
 
 #### Past Courses
 
@@ -22,6 +22,7 @@ title: Courses
     + [Spring 2020](./courses/EE720/Spring2020.html)
     + [Spring 2019](./courses/EE720/Spring2019.html)
     + [Spring 2018](./courses/EE720/Spring2018.html)
+    + [Autumn 2023](./courses/EE720/Autumn2023.html)
   - EE 465: Cryptocurrency and Blockchain Technologies
     + [Autumn 2019](./courses/EE465/Autumn2019.html)
     + [Autumn 2018](./courses/EE465/Autumn2018.html)
