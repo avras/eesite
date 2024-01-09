@@ -7,6 +7,10 @@ title: EE 465 Spring 2024
   - **Schedule:** Slot 4, Monday (11:30am - 12:25pm), Tuesday (8:30am - 9:25am), and Thursday (9:30am - 10:25am) 
   - **Location:** EEG 401 (Collaborative Classroom)
 
+##### Slides
+  
+  - [Bitcoin Introduction](./2024/slides/BitcoinIntroduction.pdf)
+
 ##### Course Content
   - Bitcoin
   - Ethereum
