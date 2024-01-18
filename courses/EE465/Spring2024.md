@@ -10,6 +10,8 @@ title: EE 465 Spring 2024
 ##### Slides
   
   - [Bitcoin Introduction](./2024/slides/BitcoinIntroduction.pdf)
+  - [Bitcoin Transactions](./2024/slides/BitcoinTransactions.pdf)
+  - [Elliptic Curves](./2024/slides/EllipticCurves.pdf)
 
 ##### Course Content
   - Bitcoin
