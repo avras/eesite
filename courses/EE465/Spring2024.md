@@ -11,6 +11,8 @@ title: EE 465 Spring 2024
   
   - [Bitcoin Introduction](./2024/slides/BitcoinIntroduction.pdf)
   - [Bitcoin Transactions](./2024/slides/BitcoinTransactions.pdf)
+  - [Group Theory](./2024/slides/GroupTheory.pdf)
+  - [Projective Geometry](./2024/slides/ProjectiveGeometry.pdf)
   - [Elliptic Curves](./2024/slides/EllipticCurves.pdf)
 
 ##### Course Content
