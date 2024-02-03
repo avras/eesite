@@ -879,7 +879,7 @@ f(n-1)+f(n-2) &amp; \text{ if } n &gt; 2.
 <span id="cb30-16"><a href="#cb30-16"></a>    <span class="op">}</span></span>
 <span id="cb30-17"><a href="#cb30-17"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
-<li>Suppose we wanted to test that this implementation</li>
+<li>Suppose we wanted to test this implementation</li>
 </ul>
 </section>
 <section id="unit-tests" class="slide level2">
@@ -1239,13 +1239,14 @@ f(n-1)+f(n-2) &amp; \text{ if } n &gt; 2.
 <span id="cb49-17"><a href="#cb49-17"></a></span>
 <span id="cb49-18"><a href="#cb49-18"></a>    <span class="cf">match</span> s<span class="op">.</span>program <span class="op">{</span></span>
 <span id="cb49-19"><a href="#cb49-19"></a>        <span class="pp">Degree::</span>BTech <span class="op">=&gt;</span> <span class="pp">println!</span>(<span class="st">"{} is a UG student"</span><span class="op">,</span> s<span class="op">.</span>name)<span class="op">,</span></span>
-<span id="cb49-20"><a href="#cb49-20"></a>        <span class="pp">Degree::</span>MTech <span class="op">|</span> <span class="pp">Degree::</span>PhD <span class="op">=&gt;</span> <span class="pp">println!</span>(<span class="st">"{} is a PG student"</span><span class="op">,</span> s<span class="op">.</span>name)<span class="op">,</span></span>
-<span id="cb49-21"><a href="#cb49-21"></a>    <span class="op">}</span></span>
-<span id="cb49-22"><a href="#cb49-22"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb49-20"><a href="#cb49-20"></a>        <span class="pp">Degree::</span>MTech <span class="op">|</span> <span class="pp">Degree::</span>PhD <span class="op">=&gt;</span></span>
+<span id="cb49-21"><a href="#cb49-21"></a>            <span class="pp">println!</span>(<span class="st">"{} is a PG student"</span><span class="op">,</span> s<span class="op">.</span>name)<span class="op">,</span></span>
+<span id="cb49-22"><a href="#cb49-22"></a>    <span class="op">}</span></span>
+<span id="cb49-23"><a href="#cb49-23"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="enums-can-hold-data" class="slide level2">
 <h2>Enums can hold data</h2>
-<div class="sourceCode" id="cb50" data-code-line-numbers="|1-4|8|17-22"><pre class="sourceCode numberSource rust number-lines code-with-copy"><code class="sourceCode rust"><span id="cb50-1"><a href="#cb50-1"></a><span class="kw">enum</span> CampusAddress <span class="op">{</span></span>
+<div class="sourceCode" id="cb50" data-code-line-numbers="|1-4|8|17-22|"><pre class="sourceCode numberSource rust number-lines code-with-copy"><code class="sourceCode rust"><span id="cb50-1"><a href="#cb50-1"></a><span class="kw">enum</span> CampusAddress <span class="op">{</span></span>
 <span id="cb50-2"><a href="#cb50-2"></a>    Hostel(<span class="dt">u8</span>)<span class="op">,</span></span>
 <span id="cb50-3"><a href="#cb50-3"></a>    Building(<span class="dt">String</span>)<span class="op">,</span></span>
 <span id="cb50-4"><a href="#cb50-4"></a><span class="op">}</span></span>
@@ -1524,7 +1525,7 @@ f(n-1)+f(n-2) &amp; \text{ if } n &gt; 2.
 </section>
 <section id="multiple-trait-implementations" class="slide level2">
 <h2>Multiple Trait Implementations</h2>
-<div class="sourceCode" id="cb64"><pre class="sourceCode numberSource rust number-lines code-with-copy"><code class="sourceCode rust"><span id="cb64-1"><a href="#cb64-1"></a><span class="kw">pub</span> <span class="kw">trait</span> Area <span class="op">{</span></span>
+<div class="sourceCode" id="cb64" data-code-line-numbers="|1-3|5-14|16-24|26-35|"><pre class="sourceCode numberSource rust number-lines code-with-copy"><code class="sourceCode rust"><span id="cb64-1"><a href="#cb64-1"></a><span class="kw">pub</span> <span class="kw">trait</span> Area <span class="op">{</span></span>
 <span id="cb64-2"><a href="#cb64-2"></a>    <span class="kw">fn</span> area(<span class="op">&amp;</span><span class="kw">self</span>) <span class="op">-&gt;</span> <span class="dt">f64</span><span class="op">;</span></span>
 <span id="cb64-3"><a href="#cb64-3"></a><span class="op">}</span></span>
 <span id="cb64-4"><a href="#cb64-4"></a></span>
@@ -1801,9 +1802,11 @@ f(n-1)+f(n-2) &amp; \text{ if } n &gt; 2.
 <div class="sourceCode" id="cb83"><pre class="sourceCode numberSource rust number-lines code-with-copy"><code class="sourceCode rust"><span id="cb83-1"><a href="#cb83-1"></a><span class="kw">pub</span> <span class="kw">struct</span> Asparagus <span class="op">{}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
 </ul>
 </section></section>
-<section id="further-reading" class="title-slide slide level1 center">
-<h1>Further Reading</h1>
+<section id="resources" class="title-slide slide level1 center">
+<h1>Resources</h1>
 <ul>
+<li><p>Slides: <a href="https://www.ee.iitb.ac.in/~sarva/rust">https://www.ee.iitb.ac.in/~sarva/rust</a></p></li>
+<li><p>Code: <a href="https://github.com/avras/rust-tutorial-files">https://github.com/avras/rust-tutorial-files</a></p></li>
 <li><p>Go to <a href="https://www.rust-lang.org/learn">https://www.rust-lang.org/learn</a></p>
 <ul>
 <li><a href="https://doc.rust-lang.org/book/">Rust book</a></li>
