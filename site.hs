@@ -34,6 +34,7 @@ main = hakyll $ do
             "static/monero/**" .||.
             "static/ethlab/**" .||.
             "static/zk/**" .||.
+            "static/rust/**" .||.
             "static/reports/**" .||.
             "static/ee1mtech/**"
           ) $ do

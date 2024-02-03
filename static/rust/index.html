@@ -1,0 +1,2171 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="index_files/libs/clipboard/clipboard.min.js"></script>
+<script src="index_files/libs/quarto-html/tabby.min.js"></script>
+<script src="index_files/libs/quarto-html/popper.min.js"></script>
+<script src="index_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="index_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="index_files/libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="index_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
+<link href="index_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.3.450">
+
+  <meta name="author" content="Saravanan Vijayakumaran">
+  <meta name="dcterms.date" content="2024-02-03">
+  <title>Rust Tutorial</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="index_files/libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="index_files/libs/revealjs/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="index_files/libs/revealjs/dist/theme/quarto.css">
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css">
+  <link href="index_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="index_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="index_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="index_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+
+  .callout {
+    margin-top: 1em;
+    margin-bottom: 1em;  
+    border-radius: .25rem;
+  }
+
+  .callout.callout-style-simple { 
+    padding: 0em 0.5em;
+    border-left: solid #acacac .3rem;
+    border-right: solid 1px silver;
+    border-top: solid 1px silver;
+    border-bottom: solid 1px silver;
+    display: flex;
+  }
+
+  .callout.callout-style-default {
+    border-left: solid #acacac .3rem;
+    border-right: solid 1px silver;
+    border-top: solid 1px silver;
+    border-bottom: solid 1px silver;
+  }
+
+  .callout .callout-body-container {
+    flex-grow: 1;
+  }
+
+  .callout.callout-style-simple .callout-body {
+    font-size: 1rem;
+    font-weight: 400;
+  }
+
+  .callout.callout-style-default .callout-body {
+    font-size: 0.9rem;
+    font-weight: 400;
+  }
+
+  .callout.callout-titled.callout-style-simple .callout-body {
+    margin-top: 0.2em;
+  }
+
+  .callout:not(.callout-titled) .callout-body {
+      display: flex;
+  }
+
+  .callout:not(.no-icon).callout-titled.callout-style-simple .callout-content {
+    padding-left: 1.6em;
+  }
+
+  .callout.callout-titled .callout-header {
+    padding-top: 0.2em;
+    margin-bottom: -0.2em;
+  }
+
+  .callout.callout-titled .callout-title  p {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+  }
+    
+  .callout.callout-titled.callout-style-simple .callout-content  p {
+    margin-top: 0;
+  }
+
+  .callout.callout-titled.callout-style-default .callout-content  p {
+    margin-top: 0.7em;
+  }
+
+  .callout.callout-style-simple div.callout-title {
+    border-bottom: none;
+    font-size: .9rem;
+    font-weight: 600;
+    opacity: 75%;
+  }
+
+  .callout.callout-style-default  div.callout-title {
+    border-bottom: none;
+    font-weight: 600;
+    opacity: 85%;
+    font-size: 0.9rem;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+
+  .callout.callout-style-default div.callout-content {
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+
+  .callout.callout-style-simple .callout-icon::before {
+    height: 1rem;
+    width: 1rem;
+    display: inline-block;
+    content: "";
+    background-repeat: no-repeat;
+    background-size: 1rem 1rem;
+  }
+
+  .callout.callout-style-default .callout-icon::before {
+    height: 0.9rem;
+    width: 0.9rem;
+    display: inline-block;
+    content: "";
+    background-repeat: no-repeat;
+    background-size: 0.9rem 0.9rem;
+  }
+
+  .callout-title {
+    display: flex
+  }
+    
+  .callout-icon::before {
+    margin-top: 1rem;
+    padding-right: .5rem;
+  }
+
+  .callout.no-icon::before {
+    display: none !important;
+  }
+
+  .callout.callout-titled .callout-body > .callout-content > :last-child {
+    margin-bottom: 0.5rem;
+  }
+
+  .callout.callout-titled .callout-icon::before {
+    margin-top: .5rem;
+    padding-right: .5rem;
+  }
+
+  .callout:not(.callout-titled) .callout-icon::before {
+    margin-top: 1rem;
+    padding-right: .5rem;
+  }
+
+  /* Callout Types */
+
+  div.callout-note {
+    border-left-color: #4582ec !important;
+  }
+
+  div.callout-note .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAEU0lEQVRYCcVXTWhcVRQ+586kSUMMxkyaElstCto2SIhitS5Ek8xUKV2poatCcVHtUlFQk8mbaaziwpWgglJwVaquitBOfhQXFlqlzSJpFSpIYyXNjBNiTCck7x2/8/LeNDOZxDuEkgOXe++553zfefee+/OYLOXFk3+1LLrRdiO81yNqZ6K9cG0P3MeFaMIQjXssE8Z1JzLO9ls20MBZX7oG8w9GxB0goaPrW5aNMp1yOZIa7Wv6o2ykpLtmAPs/vrG14Z+6d4jpbSKuhdcSyq9wGMPXjonwmESXrriLzFGOdDBLB8Y6MNYBu0dRokSygMA/mrun8MGFN3behm6VVAwg4WR3i6FvYK1T7MHo9BK7ydH+1uurECoouk5MPRyVSBrBHMYwVobG2aOXM07sWrn5qgB60rc6mcwIDJtQrnrEr44kmy+UO9r0u9O5/YbkS9juQckLed3DyW2XV/qWBBB3ptvI8EUY3I9p/67OW+g967TNr3Sotn3IuVlfMLVnsBwH4fsnebJvyGm5GeIUA3jljERmrv49SizPYuq+z7c2H/jlGC+Ghhupn/hcapqmcudB9jwJ/3jvnvu6vu5lVzF1fXyZuZZ7U8nRmVzytvT+H3kilYvH09mLWrQdwFSsFEsxFVs5fK7A0g8gMZjbif4ACpKbjv7gNGaD8bUrlk8x+KRflttr22JEMRUbTUwwDQScyzPgedQHZT0xnx7ujw2jfVfExwYHwOsDTjLdJ2ebmeQIlJ7neo41s/DrsL3kl+W2lWvAga0tR3zueGr6GL78M3ifH0rGXrBC2aAR8uYcIA5gwV8zIE8onoh8u0Fca/ciF7j1uOzEnqcIm59sEXoGc0+z6+H45V1CvAvHcD7THztu669cnp+L0okAeIc6zjbM/24LgGM1gZk7jnRu1aQWoU9sfUOuhrmtaPIO3YY1KLLWZaEO5TKUbMY5zx8W9UJ6elpLwKXbsaZ4EFl7B4bMtDv0iRipKoDQT2sNQI9b1utXFdYisi+wzZ/ri/1m7QfDgEuvgUUEIJPq3DhX/5DWNqIXDOweC2wvIR90Oq3lDpdMIgD2r0dXvGdsEW5H6x6HLRJYU7C69VefO1x8Gde1ZFSJLfWS1jbCnhtOPxmpfv2LXOA2Xk2tvnwKKPFuZ/oRmwBwqRQDcKNeVQkYcOjtWVBuM/JuYw5b6isojIkYxyYAFn5K7ZBF10fea52y8QltAg6jnMqNHFBmGkQ1j+U43HMi2xMar1Nv0zGsf1s8nUsmUtPOOrbFIR8bHFDMB5zL13Gmr/kGlCkUzedTzzmzsaJXhYawnA3UmARpiYj5ooJZiUoxFRtK3X6pgNPv+IZVPcnwbOl6f+aBaO1CNvPW9n9LmCp01nuSaTRF2YxHqZ8DYQT6WsXT+RD6eUztwYLZ8rM+rcPxamv1VQzFUkzFXvkiVrySGQgJNvXHJAxiU3/NwiC03rSf05VBaPtu/Z7/B8Yn/w7eguloAAAAAElFTkSuQmCC');
+  }
+
+  div.callout-note.callout-style-default .callout-title {
+    background-color: #dae6fb
+  }
+
+  div.callout-important {
+    border-left-color: #d9534f !important;
+  }
+
+  div.callout-important .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAEKklEQVRYCcVXTWhcVRS+575MJym48A+hSRFr00ySRQhURRfd2HYjk2SSTokuBCkU2o0LoSKKraKIBTcuFCoidGFD08nkBzdREbpQ1EDNIv8qSGMFUboImMSZd4/f9zJv8ibJMC8xJQfO3HPPPef7zrvvvnvviIkpC9nsw0UttFunbUhpFzFtarSd6WJkStVMw5xyVqYTvkwfzuf/5FgtkVoB0729j1rjXwThS7Vio+Mo6DNnvLfahoZ+i/o32lULuJ3NNiz7q6+pyAUkJaFF6JwaM2lUJlV0MlnQn5aTRbEu0SEqHUa0A4AdiGuB1kFXRfVyg5d87+Dg4DL6m2TLAub60ilj7A1Ec4odSAc8X95sHh7+ZRPCFo6Fnp7HfU/fBng/hi10CjCnWnJjsxvDNxWw0NfV6Rv5GgP3I3jGWXumdTD/3cbEOP2ZbOZp69yniG3FQ9z1jD7bnBu9Fc2tKGC2q+uAJOQHBDRiZX1x36o7fWBs7J9ownbtO+n0/qWkvW7UPIfc37WgT6ZGR++EOJyeQDSb9UB+DZ1G6DdLDzyS+b/kBCYGsYgJbSQHuThGKRcw5xdeQf8YdNHsc6ePXrlSYMBuSIAFTGAtQo+VuALo4BX83N190NWZWbynBjhOHsmNfFWLeL6v+ynsA58zDvvAC8j5PkbOcXCMg2PZFk3q8MjI7WAG/Dp9AwP7jdGBOOQkAvlFUB+irtm16I1Zw9YBcpGTGXYmk3kQIC/Cds55l+iMI3jqhjAuaoe+am2Jw5GT3Nbz3CkE12NavmzN5+erJW7046n/CH1RO/RVa8lBLozXk9uqykkGAyRXLWlLv5jyp4RFsG5vGVzpDLnIjTWgnRy2Rr+tDKvRc7Y8AyZq10jj8DqXdnIRNtFZb+t/ZRtXcDiVnzpqx8mPcDWxgARUqx0W1QB9MeUZiNrV4qP+Ehc+BpNgATsTX8ozYKL2NtFYAHc84fG7ndxUPr+AR/iQSns7uSUufAymwDOb2+NjK27lEFocm/EE2WpyIy/Hi66MWuMKJn8RvxIcj87IM5Vh9663ziW36kR0HNenXuxmfaD8JC7tfKbrhFr7LiZCrMjrzTeGx+PmkosrkNzW94ObzwocJ7A1HokLolY+AvkTiD/q1H0cN48c5EL8Crkttsa/AXQVDmutfyku0E7jShx49XqV3MFK8IryDhYVbj7Sj2P2eBxwcXoe8T8idsKKPRcnZw1b+slFTubwUwhktrfnAt7J++jwQtLZcm3sr9LQrjRzz6cfMv9aLvgmnAGvpoaGLxM4mAEaLV7iAzQ3oU0IvD5x9ix3yF2RAAuYAOO2f7PEFWCXZ4C9Pb2UsgDeVnFSpbFK7/IWu7TPTvBqzbGdCHOJQSxiEjt6IyZmxQyEJHv6xyQsYk//moVFsN2zP6fRImjfq7/n/wFDguUQFNEwugAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-important.callout-style-default .callout-title {
+    background-color: #f7dddc
+  }
+
+  div.callout-warning {
+    border-left-color: #f0ad4e !important;
+  }
+
+  div.callout-warning .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAETklEQVRYCeVWW2gcVRg+58yaTUnizqbipZeX4uWhBEniBaoUX1Ioze52t7sRq6APio9V9MEaoWlVsFasRq0gltaAPuxms8lu0gcviE/FFOstVbSIxgcv6SU7EZqmdc7v9+9mJtNks51NTUH84ed889/PP+cmxP+d5FIbMJmNbpREu4WUkiTtCicKny0l1pIKmBzovF2S+hIJHX8iEu3hZJ5lNZGqyRrGSIQpq15AzF28jgpeY6yk6GVdrfFqdrD6Iw+QlB8g0YS2g7dyQmXM/IDhBhT0UCiRf59lfqmmDvzRt6kByV/m4JjtzuaujMUM2c5Z2d6JdKrRb3K2q6mA+oYVz8JnDdKPmmNthzkAk/lN63sYPgevrguc72aZX/L9C6x09GYyxBgCX4NlvyGUHOKELlm5rXeR1kchuChJt4SSwyddZRXgvwMGvYo4QSlk3/zkHD8UHxwVJA6zjZZqP8v8kK8OWLnIZtLyCAJagYC4rTGW/9Pqj92N/c+LUaAj27movwbi19tk/whRCIE7Q9vyI6yvRpftAKVTdUjOW40X3h5OXsKCdmFcx0xlLJoSuQngnrJe7Kcjm4OMq9FlC7CMmScQANuNvjfP3PjGXDBaUQmbp296S5L4DrpbrHN1T87ZVEZVCzg1FF0Ft+dKrlLukI+/c9ENo+TvlTDbYFvuKPtQ9+l052rXrgKoWkDAFnvh0wTOmYn8R5f4k/jN/fZiCM1tQx9jQQ4ANhqG4hiL0qIFTGViG9DKB7GYzgubnpofgYRwO+DFjh0Zin2m4b/97EDkXkc+f6xYAPX0KK2I/7fUQuwzuwo/L3AkcjugPNixC8cHf0FyPjWlItmLxWw4Ou9YsQCr5fijMGoD/zpdRy95HRysyXA74MWOnscpO4j2y3HAVisw85hX5+AFBRSHt4ShfLFkIMXTqyKFc46xdzQM6XbAi702a7sy04J0+feReMFKp5q9esYLCqAZYw/k14E/xcLLsFElaornTuJB0svMuJINy8xkIYuL+xPAlWRceH6+HX7THJ0djLUom46zREu7tTkxwmf/FdOZ/sh6Q8qvEAiHpm4PJ4a/doJe0gH1t+aHRgCzOvBvJedEK5OFE5jpm4AGP2a8Dxe3gGJ/pAutug9Gp6he92CsSsWBaEcxGx0FHytmIpuqGkOpldqNYQK8cSoXvd+xLxXADw0kf6UkJNFtdo5MOgaLjiQOQHcn+A6h5NuL2s0qsC2LOM75PcF3yr5STuBSAcGG+meA14K/CI21HcS4LBT6tv0QAh8Dr5l93AhZzG5ZJ4VxAqdZUEl9z7WJ4aN+svMvwHHL21UKTd1mqvChH7/Za5xzXBBKrUcB0TQ+Ulgkfbi/H/YT5EptrGzsEK7tR1B7ln9BBwckYfMiuSqklSznIuoIIOM42MQO+QnduCoFCI0bpkzjCjddHPN/F+2Yu+sd9bKNpVwHhbS3LluK/0zgfwD0xYI5dXuzlQAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-warning.callout-style-default .callout-title {
+    background-color: #fcefdc
+  }
+
+  div.callout-tip {
+    border-left-color: #02b875 !important;
+  }
+
+  div.callout-tip .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAADr0lEQVRYCe1XTWgTQRj9ZjZV8a9SPIkKgj8I1bMHsUWrqYLVg4Ue6v9BwZOxSYsIerFao7UiUryIqJcqgtpimhbBXoSCVxUFe9CTiogUrUp2Pt+3aUI2u5vdNh4dmMzOzHvvezuz8xNFM0mjnbXaNu1MvFWRXkXEyE6aYOYJpdW4IXuA4r0fo8qqSMDBU0v1HJUgVieAXxzCsdE/YJTdFcVIZQNMyhruOMJKXYFoLfIfIvVIMWdsrd+Rpd86ZmyzzjJmLStqRn0v8lzkb4rVIXvnpScOJuAn2ACC65FkPzEdEy4TPWRLJ2h7z4cArXzzaOdKlbOvKKX25Wl00jSnrwVxAg3o4dRxhO13RBSdNvH0xSARv3adTXbBdTf64IWO2vH0LT+cv4GR1DJt+DUItaQogeBX/chhbTBxEiZ6gftlDNXTrvT7co4ub5A6gp9HIcHvzTa46OS5fBeP87Qm0fQkr4FsYgVQ7Qg+ZayaDg9jhg1GkWj8RG6lkeSacrrHgDaxdoBiZPg+NXV/KifMuB6//JmYH4CntVEHy/keA6x4h4CU5oFy8GzrBS18cLJMXcljAKB6INjWsRcuZBWVaS3GDrqB7rdapVIeA+isQ57Eev9eCqzqOa81CY05VLd6SamW2wA2H3SiTbnbSxmzfp7WtKZkqy4mdyAlGx7ennghYf8voqp9cLSgKdqNfa6RdRsAAkPwRuJZNbpByn+RrJi1RXTwdi8RQF6ymDwGMAtZ6TVE+4uoKh+MYkcLsT0Hk8eAienbiGdjJHZTpmNjlbFJNKDVAp2fJlYju6IreQxQ08UJDNYdoLSl6AadO+fFuCQqVMB1NJwPm69T04Wv5WhfcWyfXQB+wXRs1pt+nCknRa0LVzSA/2B+a9+zQJadb7IyyV24YAxKp2Jqs3emZTuNnKxsah+uabKbMk7CbTgJx/zIgQYErIeTKRQ9yD9wxVof5YolPHqaWo7TD6tJlh7jQnK5z2n3+fGdggIOx2kaa2YI9QWarc5Ce1ipNWMKeSG4DysFF52KBmTNMmn5HqCFkwy34rDg05gDwgH3bBi+sgFhN/e8QvRn8kbamCOhgrZ9GJhFDgfcMHzFb6BAtjKpFhzTjwv1KCVuxHvCbsSiEz4CANnj84cwHdFXAbAOJ4LTSAawGWFn5tDhLMYz6nWeU2wJfIhmIJBefcd/A5FWQWGgrWzyORZ3Q6HuV+Jf0Bj+BTX69fm1zWgK7By1YTXchFDORywnfQ7GpzOo6S+qECrsx2ifVQAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-tip.callout-style-default .callout-title {
+    background-color: #ccf1e3
+  }
+
+  div.callout-caution {
+    border-left-color: #fd7e14 !important;
+  }
+
+  div.callout-caution .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAACV0lEQVRYCdVWzWoUQRCuqp2ICBLJXgITZL1EfQDBW/bkzUMUD7klD+ATSHBEfAIfQO+iXsWDxJsHL96EHAwhgzlkg8nBg25XWb0zIb0zs9muYYWkoKeru+vn664fBqElyZNuyh167NXJ8Ut8McjbmEraKHkd7uAnAFku+VWdb3reSmRV8PKSLfZ0Gjn3a6Xlcq9YGb6tADjn+lUfTXtVmaZ1KwBIvFI11rRXlWlatwIAAv2asaa9mlB9wwygiDX26qaw1yYPzFXg2N1GgG0FMF8Oj+VIx7E/03lHx8UhvYyNZLN7BwSPgekXXLribw7w5/c8EF+DBK5idvDVYtEEwMeYefjjLAdEyQ3M9nfOkgnPTEkYU+sxMq0BxNR6jExrAI31H1rzvLEfRIdgcv1XEdj6QTQAS2wtstEALLG1yEZ3QhH6oDX7ExBSFEkFINXH98NTrme5IOaaA7kIfiu2L8A3qhH9zRbukdCqdsA98TdElyeMe5BI8Rs2xHRIsoTSSVFfCFCWGPn9XHb4cdobRIWABNf0add9jakDjQJpJ1bTXOJXnnRXHRf+dNL1ZV1MBRCXhMbaHqGI1JkKIL7+i8uffuP6wVQAzO7+qVEbF6NbS0LJureYcWXUUhH66nLR5rYmva+2tjRFtojkM2aD76HEGAD3tPtKM309FJg5j/K682ywcWJ3PASCcycH/22u+Bh7Aa0ehM2Fu4z0SAE81HF9RkB21c5bEn4Dzw+/qNOyXr3DCTQDMBOdhi4nAgiFDGCinIa2owCEChUwD8qzd03PG+qdW/4fDzjUMcE1ZpIAAAAASUVORK5CYII=');
+  }
+
+  div.callout-caution.callout-style-default .callout-title {
+    background-color: #ffe5d0
+  }
+
+  </style>
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" class="quarto-title-block center">
+  <h1 class="title">Rust Tutorial</h1>
+
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+Saravanan Vijayakumaran 
+</div>
+        <p class="quarto-title-affiliation">
+            Department of Electrical Engineering, IIT Bombay
+          </p>
+    </div>
+</div>
+
+  <p class="date">February 3, 2024</p>
+</section>
+<section id="hello-world" class="slide level2">
+<h2>Hello World</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource rust number-lines code-with-copy"><code class="sourceCode rust"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw">fn</span> main() <span class="op">{</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a>    <span class="pp">println!</span>(<span class="st">"Hello, world!"</span>)<span class="op">;</span></span>
+<span id="cb1-3"><a href="#cb1-3"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li><code>fn</code> specifies a function</li>
+<li><code>println!</code> prints the string with a newline at the end</li>
+<li>Semicolon <code>;</code> needed at the end of a statement</li>
+<li>Compilation: <code>rustc hello.rs</code></li>
+</ul>
+</section>
+<section id="cargo" class="slide level2">
+<h2>cargo</h2>
+<ul>
+<li><p>Rust’s build system and package manager</p></li>
+<li><p>Creating a new project: <code>cargo new hello_world</code></p></li>
+<li><p>Project contents</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource console number-lines code-with-copy"><code class="sourceCode"><span id="cb2-1"><a href="#cb2-1"></a>hello_world/</span>
+<span id="cb2-2"><a href="#cb2-2"></a>├── Cargo.toml</span>
+<span id="cb2-3"><a href="#cb2-3"></a>└── src</span>
+<span id="cb2-4"><a href="#cb2-4"></a>    └── main.rs</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p><code>Cargo.toml</code></p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource toml number-lines code-with-copy"><code class="sourceCode toml"><span id="cb3-1"><a href="#cb3-1"></a><span class="kw">[</span><span class="dt">package</span><span class="kw">]</span></span>
+<span id="cb3-2"><a href="#cb3-2"></a><span class="dt">name</span> <span class="op">=</span> <span class="st">"hello_world"</span></span>
+<span id="cb3-3"><a href="#cb3-3"></a><span class="dt">version</span> <span class="op">=</span> <span class="st">"0.1.0"</span></span>
+<span id="cb3-4"><a href="#cb3-4"></a><span class="dt">edition</span> <span class="op">=</span> <span class="st">"2021"</span></span>
+<span id="cb3-5"><a href="#cb3-5"></a></span>
+<span id="cb3-6"><a href="#cb3-6"></a><span class="kw">[</span><span class="dt">dependencies</span><span class="kw">]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p><code>main.rs</code></p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource rust number-lines code-with-copy"><code class="sourceCode rust"><span id="cb4-1"><a href="#cb4-1"></a><span class="kw">fn</span> main() <span class="op">{</span></span>
+<span id="cb4-2"><a href="#cb4-2"></a>    <span class="pp">println!</span>(<span class="st">"Hello, world!"</span>)<span class="op">;</span></span>
+<span id="cb4-3"><a href="#cb4-3"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+</ul>
+</section>
+<section id="using-cargo-to-compile-and-execute" class="slide level2">
+<h2>Using cargo to compile and execute</h2>
+<ul>
+<li><p>Run <code>cargo build</code> in the project directory</p>
+<ul>
+<li><p>Output</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource console number-lines code-with-copy"><code class="sourceCode"><span id="cb5-1"><a href="#cb5-1"></a>$ cargo build</span>
+<span id="cb5-2"><a href="#cb5-2"></a> Compiling hello_world v0.1.0 (/home/sarva/rust/hello_world)</span>
+<span id="cb5-3"><a href="#cb5-3"></a>  Finished dev [unoptimized + debuginfo] target(s) in 0.15s</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>Can be shortened to <code>cargo b</code></p></li>
+<li><p>By default, debug symbols are embedded</p></li>
+</ul></li>
+<li><p>Use <code>cargo build --release</code> to get faster executable</p>
+<ul>
+<li><p>Output</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource console number-lines code-with-copy"><code class="sourceCode"><span id="cb6-1"><a href="#cb6-1"></a>$ cargo build --release</span>
+<span id="cb6-2"><a href="#cb6-2"></a> Compiling hello_world v0.1.0 (/home/sarva/rust/hello_world)</span>
+<span id="cb6-3"><a href="#cb6-3"></a>  Finished release [optimized] target(s) in 0.12s</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>Can be shortened to <code>cargo b -r</code></p></li>
+</ul></li>
+<li><p>Execute with <code>cargo run</code> or <code>cargo run -r</code></p></li>
+</ul>
+</section>
+<section id="contents-of-project-directory" class="slide level2">
+<h2>Contents of project directory</h2>
+<div class="sourceCode" id="cb7" data-code-line-numbers="1-6,8,12,15,19"><pre class="sourceCode numberSource console number-lines code-with-copy"><code class="sourceCode"><span id="cb7-1"><a href="#cb7-1"></a>hello_world/</span>
+<span id="cb7-2"><a href="#cb7-2"></a>├── Cargo.lock</span>
+<span id="cb7-3"><a href="#cb7-3"></a>├── Cargo.toml</span>
+<span id="cb7-4"><a href="#cb7-4"></a>├── src</span>
+<span id="cb7-5"><a href="#cb7-5"></a>│   └── main.rs</span>
+<span id="cb7-6"><a href="#cb7-6"></a>└── target</span>
+<span id="cb7-7"><a href="#cb7-7"></a>    ├── CACHEDIR.TAG</span>
+<span id="cb7-8"><a href="#cb7-8"></a>    ├── debug</span>
+<span id="cb7-9"><a href="#cb7-9"></a>    │   ├── build</span>
+<span id="cb7-10"><a href="#cb7-10"></a>    │   ├── deps</span>
+<span id="cb7-11"><a href="#cb7-11"></a>    │   ├── examples</span>
+<span id="cb7-12"><a href="#cb7-12"></a>    │   ├── hello_world</span>
+<span id="cb7-13"><a href="#cb7-13"></a>    │   ├── hello_world.d</span>
+<span id="cb7-14"><a href="#cb7-14"></a>    │   └── incremental</span>
+<span id="cb7-15"><a href="#cb7-15"></a>    └── release</span>
+<span id="cb7-16"><a href="#cb7-16"></a>        ├── build</span>
+<span id="cb7-17"><a href="#cb7-17"></a>        ├── deps</span>
+<span id="cb7-18"><a href="#cb7-18"></a>        ├── examples</span>
+<span id="cb7-19"><a href="#cb7-19"></a>        ├── hello_world</span>
+<span id="cb7-20"><a href="#cb7-20"></a>        ├── hello_world.d</span>
+<span id="cb7-21"><a href="#cb7-21"></a>        └── incremental</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="multiple-programs-in-a-single-project" class="slide level2">
+<h2>Multiple programs in a single project</h2>
+<ul>
+<li><p>Project structure</p>
+<pre><code>multibin/
+├── Cargo.toml
+└── src
+    └── bin
+        ├── alpha.rs
+        └── beta.rs</code></pre></li>
+<li><p>Run <code>alpha.rs</code> with <code>cargo run --bin alpha</code></p></li>
+<li><p>Run <code>beta.rs</code> with <code>cargo run --bin beta</code></p></li>
+</ul>
+</section>
+<section>
+<section id="variables" class="title-slide slide level1 center">
+<h1>Variables</h1>
+
+</section>
+<section id="variable-declaration" class="slide level2">
+<h2>Variable Declaration</h2>
+<ul>
+<li><p>Rust is a <strong>statically typed language</strong></p>
+<ul>
+<li>Compiler must know the types of all variables at compile time</li>
+</ul></li>
+<li><p>Declaring variables</p>
+<ul>
+<li><p><code>let x: u32 = 5;</code></p></li>
+<li><p>The type of the variable is specified after the colon <code>:</code></p></li>
+<li><p>If the type is not specified, Rust will try inferring it</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource rust number-lines code-with-copy"><code class="sourceCode rust"><span id="cb9-1"><a href="#cb9-1"></a><span class="kw">fn</span> main() <span class="op">{</span></span>
+<span id="cb9-2"><a href="#cb9-2"></a>    <span class="kw">let</span> x <span class="op">=</span> <span class="dv">5</span><span class="op">;</span></span>
+<span id="cb9-3"><a href="#cb9-3"></a>    <span class="kw">let</span> y<span class="op">:</span> <span class="dt">u32</span> <span class="op">=</span> <span class="dv">10</span><span class="op">;</span></span>
+<span id="cb9-4"><a href="#cb9-4"></a>    <span class="pp">println!</span>(<span class="st">"{}"</span><span class="op">,</span> x<span class="op">+</span>y)<span class="op">;</span></span>
+<span id="cb9-5"><a href="#cb9-5"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>The type of <code>x</code> is inferred as <code>u32</code></p></li>
+</ul></li>
+</ul>
+</section>
+<section id="variables-are-immutable-by-default" class="slide level2">
+<h2>Variables are Immutable by Default</h2>
+<ul>
+<li><p>The following code does not compile</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource rust number-lines code-with-copy"><code class="sourceCode rust"><span id="cb10-1"><a href="#cb10-1"></a><span class="kw">fn</span> main() <span class="op">{</span></span>
+<span id="cb10-2"><a href="#cb10-2"></a>    <span class="kw">let</span> x <span class="op">=</span> <span class="dv">4</span><span class="op">;</span></span>
+<span id="cb10-3"><a href="#cb10-3"></a>    <span class="pp">println!</span>(<span class="st">"{x}"</span>)<span class="op">;</span></span>
+<span id="cb10-4"><a href="#cb10-4"></a>    x <span class="op">=</span> <span class="dv">5</span><span class="op">;</span></span>
+<span id="cb10-5"><a href="#cb10-5"></a>    <span class="pp">println!</span>(<span class="st">"{x}"</span>)<span class="op">;</span></span>
+<span id="cb10-6"><a href="#cb10-6"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>Mutable variables need to be labeled with <code>mut</code></p>
+<div class="sourceCode" id="cb11" data-code-line-numbers="2"><pre class="sourceCode numberSource rust number-lines code-with-copy"><code class="sourceCode rust"><span id="cb11-1"><a href="#cb11-1"></a><span class="kw">fn</span> main() <span class="op">{</span></span>
+<span id="cb11-2"><a href="#cb11-2"></a>    <span class="kw">let</span> <span class="kw">mut</span> x <span class="op">=</span> <span class="dv">4</span><span class="op">;</span></span>
+<span id="cb11-3"><a href="#cb11-3"></a>    <span class="pp">println!</span>(<span class="st">"{x}"</span>)<span class="op">;</span></span>
+<span id="cb11-4"><a href="#cb11-4"></a>    x <span class="op">=</span> <span class="dv">5</span><span class="op">;</span></span>
+<span id="cb11-5"><a href="#cb11-5"></a>    <span class="pp">println!</span>(<span class="st">"{x}"</span>)<span class="op">;</span></span>
+<span id="cb11-6"><a href="#cb11-6"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p><strong>Note:</strong> <code>println!("{}", x)</code> and <code>println!("{x}")</code> are equivalent</p>
+<ul>
+<li>But the latter form does not allow expressions like <code>x+y</code> inside the <code>{}</code></li>
+</ul></li>
+</ul>
+</section></section>
+<section>
+<section id="data-types" class="title-slide slide level1 center">
+<h1>Data Types</h1>
+
+</section>
+<section id="integer-types" class="slide level2">
+<h2>Integer Types</h2>
+<table>
+<thead>
+<tr class="header">
+<th>Length</th>
+<th>Signed</th>
+<th>Unsigned</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>8-bit</td>
+<td><code>i8</code></td>
+<td><code>u8</code></td>
+</tr>
+<tr class="even">
+<td>16-bit</td>
+<td><code>i16</code></td>
+<td><code>u16</code></td>
+</tr>
+<tr class="odd">
+<td>32-bit</td>
+<td><code>i32</code></td>
+<td><code>u32</code></td>
+</tr>
+<tr class="even">
+<td>64-bit</td>
+<td><code>i64</code></td>
+<td><code>u64</code></td>
+</tr>
+<tr class="odd">
+<td>128-bit</td>
+<td><code>i128</code></td>
+<td><code>u128</code></td>
+</tr>
+<tr class="even">
+<td>arch</td>
+<td><code>isize</code></td>
+<td><code>usize</code></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><p><code>arch</code> implies architecture dependent; usually 64-bit</p></li>
+<li><p><code>usize</code> is usually used to indexing arrays or other collections</p></li>
+<li><p>An integer literal of a specific length can be specified by appending the type</p>
+<ul>
+<li>For example, <code>5u8</code> or <code>25i32</code></li>
+</ul></li>
+</ul>
+</section>
+<section id="floating-point-types" class="slide level2">
+<h2>Floating-Point Types</h2>
+<ul>
+<li><p><code>f32</code> and <code>f64</code> are the single-precision and double-precision floating-point types</p></li>
+<li><p>Operations between different types fail</p></li>
+<li><p>The following code does not compile</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode numberSource rust number-lines code-with-copy"><code class="sourceCode rust"><span id="cb12-1"><a href="#cb12-1"></a><span class="kw">fn</span> main() <span class="op">{</span></span>
+<span id="cb12-2"><a href="#cb12-2"></a>    <span class="kw">let</span> x <span class="op">=</span> <span class="dv">5.5f32</span><span class="op">;</span></span>
+<span id="cb12-3"><a href="#cb12-3"></a>    <span class="kw">let</span> y <span class="op">=</span> <span class="dv">4.5f64</span><span class="op">;</span></span>
+<span id="cb12-4"><a href="#cb12-4"></a>    <span class="pp">println!</span>(<span class="st">"{}"</span><span class="op">,</span> x<span class="op">+</span>y)<span class="op">;</span> <span class="co">// Adding an f32 and an f64</span></span>
+<span id="cb12-5"><a href="#cb12-5"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>The following code works</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode numberSource rust number-lines code-with-copy"><code class="sourceCode rust"><span id="cb13-1"><a href="#cb13-1"></a><span class="kw">fn</span> main() <span class="op">{</span></span>
+<span id="cb13-2"><a href="#cb13-2"></a>    <span class="kw">let</span> x <span class="op">=</span> <span class="dv">5.5f32</span><span class="op">;</span></span>
+<span id="cb13-3"><a href="#cb13-3"></a>    <span class="kw">let</span> y <span class="op">=</span> <span class="dv">4.5f64</span><span class="op">;</span></span>
+<span id="cb13-4"><a href="#cb13-4"></a>    <span class="pp">println!</span>(<span class="st">"{}"</span><span class="op">,</span> (x <span class="kw">as</span> <span class="dt">f64</span>) <span class="op">+</span> y)<span class="op">;</span></span>
+<span id="cb13-5"><a href="#cb13-5"></a>    <span class="pp">println!</span>(<span class="st">"{}"</span><span class="op">,</span> x <span class="op">+</span> (y <span class="kw">as</span> <span class="dt">f32</span>))<span class="op">;</span></span>
+<span id="cb13-6"><a href="#cb13-6"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+</ul>
+</section>
+<section id="boolean-and-character-types" class="slide level2">
+<h2>Boolean and Character Types</h2>
+<ul>
+<li><p><code>bool</code> represents the boolean type which can take values <code>true</code> and <code>false</code></p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode numberSource rust number-lines code-with-copy"><code class="sourceCode rust"><span id="cb14-1"><a href="#cb14-1"></a><span class="kw">fn</span> main() <span class="op">{</span></span>
+<span id="cb14-2"><a href="#cb14-2"></a>    <span class="kw">let</span> x <span class="op">=</span> <span class="cn">false</span><span class="op">;</span></span>
+<span id="cb14-3"><a href="#cb14-3"></a>    <span class="kw">let</span> y <span class="op">=</span> <span class="cn">true</span><span class="op">;</span></span>
+<span id="cb14-4"><a href="#cb14-4"></a>    <span class="pp">println!</span>(<span class="st">"{}"</span><span class="op">,</span> x <span class="op">&amp;</span> y)<span class="op">;</span></span>
+<span id="cb14-5"><a href="#cb14-5"></a>    <span class="pp">println!</span>(<span class="st">"{}"</span><span class="op">,</span> x <span class="op">|</span> y)<span class="op">;</span></span>
+<span id="cb14-6"><a href="#cb14-6"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p><code>char</code> is a 4-byte type which can represent any Unicode code point</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode numberSource rust number-lines code-with-copy"><code class="sourceCode rust"><span id="cb15-1"><a href="#cb15-1"></a><span class="kw">fn</span> main() <span class="op">{</span></span>
+<span id="cb15-2"><a href="#cb15-2"></a>    <span class="kw">let</span> x <span class="op">=</span> <span class="ch">'a'</span><span class="op">;</span></span>
+<span id="cb15-3"><a href="#cb15-3"></a>    <span class="kw">let</span> exploding_head <span class="op">=</span> <span class="ch">'🤯'</span><span class="op">;</span></span>
+<span id="cb15-4"><a href="#cb15-4"></a>    <span class="pp">println!</span>(<span class="st">"{x} {exploding_head}"</span>)<span class="op">;</span></span>
+<span id="cb15-5"><a href="#cb15-5"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+</ul>
+</section>
+<section id="compound-types" class="slide level2">
+<h2>Compound Types</h2>
+<ul>
+<li><p><strong>Tuple types</strong> are useful for grouping a fixed number of variables with different types</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode numberSource rust number-lines code-with-copy"><code class="sourceCode rust"><span id="cb16-1"><a href="#cb16-1"></a><span class="kw">fn</span> main() <span class="op">{</span></span>
+<span id="cb16-2"><a href="#cb16-2"></a>    <span class="kw">let</span> x<span class="op">:</span> (<span class="dt">u8</span><span class="op">,</span> <span class="dt">f32</span><span class="op">,</span> <span class="dt">bool</span>) <span class="op">=</span> (<span class="dv">38</span><span class="op">,</span> <span class="dv">5.5</span><span class="op">,</span> <span class="cn">true</span>)<span class="op">;</span></span>
+<span id="cb16-3"><a href="#cb16-3"></a></span>
+<span id="cb16-4"><a href="#cb16-4"></a>    <span class="co">// Note the {:?}</span></span>
+<span id="cb16-5"><a href="#cb16-5"></a>    <span class="pp">println!</span>(<span class="st">"{:?}"</span><span class="op">,</span> x)<span class="op">;</span></span>
+<span id="cb16-6"><a href="#cb16-6"></a>    <span class="pp">println!</span>(<span class="st">"{} {} {}"</span><span class="op">,</span> x<span class="op">.</span><span class="dv">0</span><span class="op">,</span> x<span class="op">.</span><span class="dv">1</span><span class="op">,</span> x<span class="op">.</span><span class="dv">2</span>)<span class="op">;</span></span>
+<span id="cb16-7"><a href="#cb16-7"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>Later we will use structures to group disparate types</li>
+</ul></li>
+<li><p><strong>Arrays</strong> are useful for grouping a fixed number of variables of the same type</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode numberSource rust number-lines code-with-copy"><code class="sourceCode rust"><span id="cb17-1"><a href="#cb17-1"></a><span class="kw">fn</span> main() <span class="op">{</span></span>
+<span id="cb17-2"><a href="#cb17-2"></a>    <span class="kw">let</span> a <span class="op">=</span> [<span class="dv">1</span><span class="op">,</span> <span class="dv">2</span><span class="op">,</span> <span class="dv">3</span><span class="op">,</span> <span class="dv">4</span><span class="op">,</span> <span class="dv">5</span>]<span class="op">;</span></span>
+<span id="cb17-3"><a href="#cb17-3"></a></span>
+<span id="cb17-4"><a href="#cb17-4"></a>    <span class="kw">let</span> first <span class="op">=</span> a[<span class="dv">0</span>]<span class="op">;</span></span>
+<span id="cb17-5"><a href="#cb17-5"></a>    <span class="kw">let</span> second <span class="op">=</span> a[<span class="dv">1</span>]<span class="op">;</span></span>
+<span id="cb17-6"><a href="#cb17-6"></a>    <span class="pp">println!</span>(<span class="st">"{first} {second}"</span>)<span class="op">;</span></span>
+<span id="cb17-7"><a href="#cb17-7"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+</ul>
+</section></section>
+<section>
+<section id="functions" class="title-slide slide level1 center">
+<h1>Functions</h1>
+
+</section>
+<section id="defining-and-calling-functions" class="slide level2">
+<h2>Defining and Calling Functions</h2>
+<ul>
+<li><p>Function syntax</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode numberSource rust number-lines code-with-copy"><code class="sourceCode rust"><span id="cb18-1"><a href="#cb18-1"></a><span class="kw">fn</span> function_name(parameters) <span class="op">-&gt;</span> return_type <span class="op">{</span></span>
+<span id="cb18-2"><a href="#cb18-2"></a>   <span class="co">// Body</span></span>
+<span id="cb18-3"><a href="#cb18-3"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>Example</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode numberSource rust number-lines code-with-copy"><code class="sourceCode rust"><span id="cb19-1"><a href="#cb19-1"></a><span class="kw">fn</span> main() <span class="op">{</span></span>
+<span id="cb19-2"><a href="#cb19-2"></a>    <span class="kw">let</span> x <span class="op">=</span> increment(<span class="dv">5</span>)<span class="op">;</span></span>
+<span id="cb19-3"><a href="#cb19-3"></a></span>
+<span id="cb19-4"><a href="#cb19-4"></a>    <span class="pp">println!</span>(<span class="st">"The value of x is: {x}"</span>)<span class="op">;</span></span>
+<span id="cb19-5"><a href="#cb19-5"></a><span class="op">}</span></span>
+<span id="cb19-6"><a href="#cb19-6"></a></span>
+<span id="cb19-7"><a href="#cb19-7"></a><span class="kw">fn</span> increment(x<span class="op">:</span> <span class="dt">i32</span>) <span class="op">-&gt;</span> <span class="dt">i32</span> <span class="op">{</span></span>
+<span id="cb19-8"><a href="#cb19-8"></a>    <span class="cf">return</span> x <span class="op">+</span> <span class="dv">1</span><span class="op">;</span></span>
+<span id="cb19-9"><a href="#cb19-9"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>The function can be defined before or after calling location</li>
+</ul></li>
+</ul>
+</section>
+<section id="returning-without-return" class="slide level2">
+<h2>Returning without <code>return</code></h2>
+<ul>
+<li><p>If a function ends with an expression and has no semicolon at the end, the expression value is returned</p></li>
+<li><p>Example</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode numberSource rust number-lines code-with-copy"><code class="sourceCode rust"><span id="cb20-1"><a href="#cb20-1"></a><span class="kw">fn</span> main() <span class="op">{</span></span>
+<span id="cb20-2"><a href="#cb20-2"></a>    <span class="kw">let</span> x <span class="op">=</span> increment(<span class="dv">5</span>)<span class="op">;</span></span>
+<span id="cb20-3"><a href="#cb20-3"></a></span>
+<span id="cb20-4"><a href="#cb20-4"></a>    <span class="pp">println!</span>(<span class="st">"The value of x is: {x}"</span>)<span class="op">;</span></span>
+<span id="cb20-5"><a href="#cb20-5"></a><span class="op">}</span></span>
+<span id="cb20-6"><a href="#cb20-6"></a></span>
+<span id="cb20-7"><a href="#cb20-7"></a><span class="kw">fn</span> increment(x<span class="op">:</span> <span class="dt">i32</span>) <span class="op">-&gt;</span> <span class="dt">i32</span> <span class="op">{</span></span>
+<span id="cb20-8"><a href="#cb20-8"></a>    x <span class="op">+</span> <span class="dv">1</span></span>
+<span id="cb20-9"><a href="#cb20-9"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>An expression that ends with a semicolon evaluates to <code>()</code>, the unit type</p></li>
+</ul>
+</section></section>
+<section>
+<section id="control-flow" class="title-slide slide level1 center">
+<h1>Control Flow</h1>
+
+</section>
+<section id="if-statements" class="slide level2">
+<h2><code>if</code> statements</h2>
+<div class="sourceCode" id="cb21"><pre class="sourceCode numberSource rust number-lines code-with-copy"><code class="sourceCode rust"><span id="cb21-1"><a href="#cb21-1"></a><span class="kw">fn</span> main() <span class="op">{</span></span>
+<span id="cb21-2"><a href="#cb21-2"></a>    <span class="kw">let</span> number <span class="op">=</span> <span class="dv">6</span><span class="op">;</span></span>
+<span id="cb21-3"><a href="#cb21-3"></a></span>
+<span id="cb21-4"><a href="#cb21-4"></a>    <span class="cf">if</span> number <span class="op">%</span> <span class="dv">4</span> <span class="op">==</span> <span class="dv">0</span> <span class="op">{</span></span>
+<span id="cb21-5"><a href="#cb21-5"></a>        <span class="pp">println!</span>(<span class="st">"number is divisible by 4"</span>)<span class="op">;</span></span>
+<span id="cb21-6"><a href="#cb21-6"></a>    <span class="op">}</span> <span class="cf">else</span> <span class="cf">if</span> number <span class="op">%</span> <span class="dv">3</span> <span class="op">==</span> <span class="dv">0</span> <span class="op">{</span></span>
+<span id="cb21-7"><a href="#cb21-7"></a>        <span class="pp">println!</span>(<span class="st">"number is divisible by 3"</span>)<span class="op">;</span></span>
+<span id="cb21-8"><a href="#cb21-8"></a>    <span class="op">}</span> <span class="cf">else</span> <span class="cf">if</span> number <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span> <span class="op">{</span></span>
+<span id="cb21-9"><a href="#cb21-9"></a>        <span class="pp">println!</span>(<span class="st">"number is divisible by 2"</span>)<span class="op">;</span></span>
+<span id="cb21-10"><a href="#cb21-10"></a>    <span class="op">}</span> <span class="cf">else</span> <span class="op">{</span></span>
+<span id="cb21-11"><a href="#cb21-11"></a>        <span class="pp">println!</span>(<span class="st">"number is not divisible by 4, 3, or 2"</span>)<span class="op">;</span></span>
+<span id="cb21-12"><a href="#cb21-12"></a>    <span class="op">}</span></span>
+<span id="cb21-13"><a href="#cb21-13"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="using-if-in-a-let-statement" class="slide level2">
+<h2>Using <code>if</code> in a <code>let</code> statement</h2>
+<ul>
+<li><p>If the semicolons at the end of the <code>if</code> blocks are omitted, it can be used in a <code>let</code> assignment</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode numberSource rust number-lines code-with-copy"><code class="sourceCode rust"><span id="cb22-1"><a href="#cb22-1"></a><span class="kw">fn</span> main() <span class="op">{</span></span>
+<span id="cb22-2"><a href="#cb22-2"></a>    <span class="kw">let</span> condition <span class="op">=</span> <span class="cn">true</span><span class="op">;</span></span>
+<span id="cb22-3"><a href="#cb22-3"></a>    <span class="kw">let</span> number <span class="op">=</span> <span class="cf">if</span> condition <span class="op">{</span> <span class="dv">5</span> <span class="op">}</span> <span class="cf">else</span> <span class="op">{</span> <span class="dv">6</span> <span class="op">};</span></span>
+<span id="cb22-4"><a href="#cb22-4"></a></span>
+<span id="cb22-5"><a href="#cb22-5"></a>    <span class="pp">println!</span>(<span class="st">"The value of number is: {number}"</span>)<span class="op">;</span></span>
+<span id="cb22-6"><a href="#cb22-6"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>All branches should return the same type</p></li>
+<li><p>The following code does not compile</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode numberSource rust number-lines code-with-copy"><code class="sourceCode rust"><span id="cb23-1"><a href="#cb23-1"></a><span class="kw">fn</span> main() <span class="op">{</span></span>
+<span id="cb23-2"><a href="#cb23-2"></a>    <span class="kw">let</span> condition <span class="op">=</span> <span class="cn">true</span><span class="op">;</span></span>
+<span id="cb23-3"><a href="#cb23-3"></a>    <span class="kw">let</span> number <span class="op">=</span> <span class="cf">if</span> condition <span class="op">{</span> <span class="dv">5</span> <span class="op">}</span> <span class="cf">else</span> <span class="op">{</span> <span class="st">"six"</span> <span class="op">};</span></span>
+<span id="cb23-4"><a href="#cb23-4"></a></span>
+<span id="cb23-5"><a href="#cb23-5"></a>    <span class="pp">println!</span>(<span class="st">"The value of number is: {number}"</span>)<span class="op">;</span></span>
+<span id="cb23-6"><a href="#cb23-6"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+</ul>
+</section>
+<section id="while-loop" class="slide level2">
+<h2><code>while</code> loop</h2>
+<div class="sourceCode" id="cb24"><pre class="sourceCode numberSource rust number-lines code-with-copy"><code class="sourceCode rust"><span id="cb24-1"><a href="#cb24-1"></a><span class="kw">fn</span> main() <span class="op">{</span></span>
+<span id="cb24-2"><a href="#cb24-2"></a>    <span class="kw">let</span> <span class="kw">mut</span> number <span class="op">=</span> <span class="dv">10</span><span class="op">;</span></span>
+<span id="cb24-3"><a href="#cb24-3"></a></span>
+<span id="cb24-4"><a href="#cb24-4"></a>    <span class="cf">while</span> number <span class="op">!=</span> <span class="dv">0</span> <span class="op">{</span></span>
+<span id="cb24-5"><a href="#cb24-5"></a>        <span class="pp">println!</span>(<span class="st">"{number}"</span>)<span class="op">;</span></span>
+<span id="cb24-6"><a href="#cb24-6"></a></span>
+<span id="cb24-7"><a href="#cb24-7"></a>        number <span class="op">-=</span> <span class="dv">1</span><span class="op">;</span></span>
+<span id="cb24-8"><a href="#cb24-8"></a>    <span class="op">}</span></span>
+<span id="cb24-9"><a href="#cb24-9"></a></span>
+<span id="cb24-10"><a href="#cb24-10"></a>    <span class="pp">println!</span>(<span class="st">"Lift Off!"</span>)<span class="op">;</span></span>
+<span id="cb24-11"><a href="#cb24-11"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="for-loop" class="slide level2">
+<h2><code>for</code> loop</h2>
+<ul>
+<li><p>Simple <code>for</code> loop</p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode numberSource rust number-lines code-with-copy"><code class="sourceCode rust"><span id="cb25-1"><a href="#cb25-1"></a><span class="kw">fn</span> main() <span class="op">{</span></span>
+<span id="cb25-2"><a href="#cb25-2"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="dv">0</span><span class="op">..</span><span class="dv">4</span> <span class="op">{</span></span>
+<span id="cb25-3"><a href="#cb25-3"></a>        <span class="pp">println!</span>(<span class="st">"{i}"</span>)<span class="op">;</span></span>
+<span id="cb25-4"><a href="#cb25-4"></a>    <span class="op">}</span></span>
+<span id="cb25-5"><a href="#cb25-5"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>Syntax for including upper range limit</p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode numberSource rust number-lines code-with-copy"><code class="sourceCode rust"><span id="cb26-1"><a href="#cb26-1"></a><span class="kw">fn</span> main() <span class="op">{</span></span>
+<span id="cb26-2"><a href="#cb26-2"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="dv">0</span><span class="op">..=</span><span class="dv">4</span> <span class="op">{</span></span>
+<span id="cb26-3"><a href="#cb26-3"></a>        <span class="pp">println!</span>(<span class="st">"{i}"</span>)<span class="op">;</span></span>
+<span id="cb26-4"><a href="#cb26-4"></a>    <span class="op">}</span></span>
+<span id="cb26-5"><a href="#cb26-5"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>Iterating over the elements of a collection</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode numberSource rust number-lines code-with-copy"><code class="sourceCode rust"><span id="cb27-1"><a href="#cb27-1"></a><span class="kw">fn</span> main() <span class="op">{</span></span>
+<span id="cb27-2"><a href="#cb27-2"></a>    <span class="kw">let</span> a <span class="op">=</span> [<span class="dv">10</span><span class="op">,</span> <span class="dv">20</span><span class="op">,</span> <span class="dv">30</span><span class="op">,</span> <span class="dv">40</span><span class="op">,</span> <span class="dv">50</span>]<span class="op">;</span></span>
+<span id="cb27-3"><a href="#cb27-3"></a></span>
+<span id="cb27-4"><a href="#cb27-4"></a>    <span class="cf">for</span> element <span class="kw">in</span> a <span class="op">{</span></span>
+<span id="cb27-5"><a href="#cb27-5"></a>        <span class="pp">println!</span>(<span class="st">"the value is: {element}"</span>)<span class="op">;</span></span>
+<span id="cb27-6"><a href="#cb27-6"></a>    <span class="op">}</span></span>
+<span id="cb27-7"><a href="#cb27-7"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+</ul>
+</section></section>
+<section>
+<section id="fibonacci-example" class="title-slide slide level1 center">
+<h1>Fibonacci Example</h1>
+
+</section>
+<section id="fibonacci-sequence" class="slide level2">
+<h2>Fibonacci sequence</h2>
+<ul>
+<li><p>Sequence of numbers <span class="math inline">f(n)</span> for <span class="math inline">n \in \mathbb{N}</span> such that <span class="math display">
+f(n) = \begin{cases}
+1 &amp; \text{ if } n=1,2\\
+f(n-1)+f(n-2) &amp; \text{ if } n &gt; 2.
+\end{cases}
+</span></p></li>
+<li><p>1, 1, 2, 3, 5, 8, 13, 21, 34, 55, …</p></li>
+<li><p>First attempt</p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode numberSource rust number-lines code-with-copy"><code class="sourceCode rust"><span id="cb28-1"><a href="#cb28-1"></a><span class="kw">fn</span> main() <span class="op">{</span></span>
+<span id="cb28-2"><a href="#cb28-2"></a>    <span class="kw">let</span> n <span class="op">=</span> <span class="dv">10</span><span class="op">;</span></span>
+<span id="cb28-3"><a href="#cb28-3"></a>    <span class="pp">println!</span>(<span class="st">"{}"</span><span class="op">,</span> fibonacci_rec(n))<span class="op">;</span></span>
+<span id="cb28-4"><a href="#cb28-4"></a><span class="op">}</span></span>
+<span id="cb28-5"><a href="#cb28-5"></a></span>
+<span id="cb28-6"><a href="#cb28-6"></a><span class="kw">fn</span> fibonacci_rec(n<span class="op">:</span> <span class="dt">u64</span>) <span class="op">-&gt;</span> <span class="dt">u64</span> <span class="op">{</span></span>
+<span id="cb28-7"><a href="#cb28-7"></a>    <span class="cf">if</span> n <span class="op">==</span> <span class="dv">1</span> <span class="op">||</span> n <span class="op">==</span> <span class="dv">2</span> <span class="op">{</span></span>
+<span id="cb28-8"><a href="#cb28-8"></a>        <span class="dv">1</span></span>
+<span id="cb28-9"><a href="#cb28-9"></a>    <span class="op">}</span> <span class="cf">else</span> <span class="op">{</span></span>
+<span id="cb28-10"><a href="#cb28-10"></a>        fibonacci_rec(n<span class="op">-</span><span class="dv">1</span>) <span class="op">+</span> fibonacci_rec(n<span class="op">-</span><span class="dv">2</span>)</span>
+<span id="cb28-11"><a href="#cb28-11"></a>    <span class="op">}</span></span>
+<span id="cb28-12"><a href="#cb28-12"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+</ul>
+</section>
+<section id="using-match-instead-of-if" class="slide level2">
+<h2>Using <code>match</code> instead of <code>if</code></h2>
+<ul>
+<li><p>Second attempt</p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode numberSource rust number-lines code-with-copy"><code class="sourceCode rust"><span id="cb29-1"><a href="#cb29-1"></a><span class="kw">fn</span> main() <span class="op">{</span></span>
+<span id="cb29-2"><a href="#cb29-2"></a>    <span class="kw">let</span> n <span class="op">=</span> <span class="dv">10</span><span class="op">;</span></span>
+<span id="cb29-3"><a href="#cb29-3"></a>    <span class="pp">println!</span>(<span class="st">"{}"</span><span class="op">,</span> fibonacci_rec(n))<span class="op">;</span></span>
+<span id="cb29-4"><a href="#cb29-4"></a><span class="op">}</span></span>
+<span id="cb29-5"><a href="#cb29-5"></a></span>
+<span id="cb29-6"><a href="#cb29-6"></a><span class="kw">fn</span> fibonacci_rec(n<span class="op">:</span> <span class="dt">u64</span>) <span class="op">-&gt;</span> <span class="dt">u64</span> <span class="op">{</span></span>
+<span id="cb29-7"><a href="#cb29-7"></a>    <span class="cf">match</span> n <span class="op">{</span></span>
+<span id="cb29-8"><a href="#cb29-8"></a>        <span class="dv">1</span> <span class="op">|</span> <span class="dv">2</span> <span class="op">=&gt;</span> <span class="dv">1</span><span class="op">,</span></span>
+<span id="cb29-9"><a href="#cb29-9"></a>        _ <span class="op">=&gt;</span> fibonacci_rec(n <span class="op">-</span> <span class="dv">1</span>) <span class="op">+</span> fibonacci_rec(n <span class="op">-</span> <span class="dv">2</span>)<span class="op">,</span></span>
+<span id="cb29-10"><a href="#cb29-10"></a>    <span class="op">}</span></span>
+<span id="cb29-11"><a href="#cb29-11"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>Both the <code>if</code> and <code>match</code> implementations are easy to check but repeat computations</p></li>
+</ul>
+</section>
+<section id="fibonaccci-without-recursion" class="slide level2">
+<h2>Fibonaccci without recursion</h2>
+<div class="sourceCode" id="cb30"><pre class="sourceCode numberSource rust number-lines code-with-copy"><code class="sourceCode rust"><span id="cb30-1"><a href="#cb30-1"></a><span class="kw">fn</span> fibonacci_nonrec(n<span class="op">:</span> <span class="dt">u64</span>) <span class="op">-&gt;</span> <span class="dt">u64</span> <span class="op">{</span></span>
+<span id="cb30-2"><a href="#cb30-2"></a>    <span class="cf">match</span> n <span class="op">{</span></span>
+<span id="cb30-3"><a href="#cb30-3"></a>        <span class="dv">1</span> <span class="op">|</span> <span class="dv">2</span> <span class="op">=&gt;</span> <span class="dv">1</span><span class="op">,</span></span>
+<span id="cb30-4"><a href="#cb30-4"></a>        _ <span class="op">=&gt;</span> <span class="op">{</span></span>
+<span id="cb30-5"><a href="#cb30-5"></a>            <span class="kw">let</span> <span class="kw">mut</span> curr <span class="op">=</span> <span class="dv">1</span><span class="op">;</span></span>
+<span id="cb30-6"><a href="#cb30-6"></a>            <span class="kw">let</span> <span class="kw">mut</span> prev <span class="op">=</span> <span class="dv">1</span><span class="op">;</span></span>
+<span id="cb30-7"><a href="#cb30-7"></a>            <span class="kw">let</span> <span class="kw">mut</span> sum <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb30-8"><a href="#cb30-8"></a>            </span>
+<span id="cb30-9"><a href="#cb30-9"></a>            <span class="cf">for</span> _i <span class="kw">in</span> <span class="dv">2</span><span class="op">..</span>n <span class="op">{</span></span>
+<span id="cb30-10"><a href="#cb30-10"></a>                sum <span class="op">=</span> curr <span class="op">+</span> prev<span class="op">;</span></span>
+<span id="cb30-11"><a href="#cb30-11"></a>                prev <span class="op">=</span> curr<span class="op">;</span></span>
+<span id="cb30-12"><a href="#cb30-12"></a>                curr <span class="op">=</span> sum<span class="op">;</span></span>
+<span id="cb30-13"><a href="#cb30-13"></a>            <span class="op">}</span></span>
+<span id="cb30-14"><a href="#cb30-14"></a>            sum</span>
+<span id="cb30-15"><a href="#cb30-15"></a>        <span class="op">}</span></span>
+<span id="cb30-16"><a href="#cb30-16"></a>    <span class="op">}</span></span>
+<span id="cb30-17"><a href="#cb30-17"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>Suppose we wanted to test that this implementation</li>
+</ul>
+</section>
+<section id="unit-tests" class="slide level2">
+<h2>Unit Tests</h2>
+<ul>
+<li><p>Simple tests for checking functionality of small parts of code</p></li>
+<li><p>In Rust, unit tests can be included in the same file</p></li>
+<li><p>Tests are run using <code>cargo test</code></p></li>
+<li><p>Unit test syntax</p>
+<div class="sourceCode" id="cb31" data-code-line-numbers="|9|10,18|11|13|14-17|15|16"><pre class="sourceCode numberSource rust number-lines code-with-copy"><code class="sourceCode rust"><span id="cb31-1"><a href="#cb31-1"></a><span class="kw">fn</span> main() <span class="op">{</span></span>
+<span id="cb31-2"><a href="#cb31-2"></a>  <span class="op">&lt;</span>snip<span class="op">&gt;</span></span>
+<span id="cb31-3"><a href="#cb31-3"></a><span class="op">}</span></span>
+<span id="cb31-4"><a href="#cb31-4"></a></span>
+<span id="cb31-5"><a href="#cb31-5"></a><span class="kw">fn</span> fibonacci_nonrec(n<span class="op">:</span> <span class="dt">u64</span>) <span class="op">-&gt;</span> <span class="dt">u64</span> <span class="op">{</span></span>
+<span id="cb31-6"><a href="#cb31-6"></a>  <span class="op">&lt;</span>snip<span class="op">&gt;</span></span>
+<span id="cb31-7"><a href="#cb31-7"></a><span class="op">}</span></span>
+<span id="cb31-8"><a href="#cb31-8"></a></span>
+<span id="cb31-9"><a href="#cb31-9"></a><span class="at">#[</span>cfg<span class="at">(</span>test<span class="at">)]</span></span>
+<span id="cb31-10"><a href="#cb31-10"></a><span class="kw">mod</span> fibtests <span class="op">{</span></span>
+<span id="cb31-11"><a href="#cb31-11"></a>    <span class="kw">use</span> <span class="kw">super</span><span class="pp">::</span><span class="op">*;</span></span>
+<span id="cb31-12"><a href="#cb31-12"></a></span>
+<span id="cb31-13"><a href="#cb31-13"></a>    <span class="at">#[</span>test<span class="at">]</span></span>
+<span id="cb31-14"><a href="#cb31-14"></a>    <span class="kw">fn</span> test_basecases() <span class="op">{</span></span>
+<span id="cb31-15"><a href="#cb31-15"></a>        <span class="pp">assert_eq!</span>(fibonacci_nonrec(<span class="dv">1</span>)<span class="op">,</span> <span class="dv">1</span>)<span class="op">;</span></span>
+<span id="cb31-16"><a href="#cb31-16"></a>        <span class="pp">assert_eq!</span>(fibonacci_nonrec(<span class="dv">2</span>)<span class="op">,</span> <span class="dv">1</span>)<span class="op">;</span></span>
+<span id="cb31-17"><a href="#cb31-17"></a>    <span class="op">}</span></span>
+<span id="cb31-18"><a href="#cb31-18"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+</ul>
+</section>
+<section id="multiple-unit-tests" class="slide level2">
+<h2>Multiple Unit Tests</h2>
+<ul>
+<li><p>The same test module can have multiple unit tests</p>
+<div class="sourceCode" id="cb32" data-code-line-numbers="|5-9|11-14"><pre class="sourceCode numberSource rust number-lines code-with-copy"><code class="sourceCode rust"><span id="cb32-1"><a href="#cb32-1"></a><span class="at">#[</span>cfg<span class="at">(</span>test<span class="at">)]</span></span>
+<span id="cb32-2"><a href="#cb32-2"></a><span class="kw">mod</span> fibtests <span class="op">{</span></span>
+<span id="cb32-3"><a href="#cb32-3"></a>    <span class="kw">use</span> <span class="kw">super</span><span class="pp">::</span><span class="op">*;</span></span>
+<span id="cb32-4"><a href="#cb32-4"></a></span>
+<span id="cb32-5"><a href="#cb32-5"></a>    <span class="at">#[</span>test<span class="at">]</span></span>
+<span id="cb32-6"><a href="#cb32-6"></a>    <span class="kw">fn</span> test_basecases() <span class="op">{</span></span>
+<span id="cb32-7"><a href="#cb32-7"></a>        <span class="pp">assert_eq!</span>(fibonacci_nonrec(<span class="dv">1</span>)<span class="op">,</span> <span class="dv">1</span>)<span class="op">;</span></span>
+<span id="cb32-8"><a href="#cb32-8"></a>        <span class="pp">assert_eq!</span>(fibonacci_nonrec(<span class="dv">2</span>)<span class="op">,</span> <span class="dv">1</span>)<span class="op">;</span></span>
+<span id="cb32-9"><a href="#cb32-9"></a>    <span class="op">}</span></span>
+<span id="cb32-10"><a href="#cb32-10"></a></span>
+<span id="cb32-11"><a href="#cb32-11"></a>    <span class="at">#[</span>test<span class="at">]</span></span>
+<span id="cb32-12"><a href="#cb32-12"></a>    <span class="kw">fn</span> test_fib10() <span class="op">{</span></span>
+<span id="cb32-13"><a href="#cb32-13"></a>        <span class="pp">assert_eq!</span>(fibonacci_nonrec(<span class="dv">10</span>)<span class="op">,</span> <span class="dv">55</span>)<span class="op">;</span></span>
+<span id="cb32-14"><a href="#cb32-14"></a>    <span class="op">}</span></span>
+<span id="cb32-15"><a href="#cb32-15"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>Tests can be selectively run by specifying their names (fully or partially)</p>
+<div class="sourceCode" id="cb33" data-code-line-numbers="|1|2"><pre class="sourceCode numberSource console number-lines code-with-copy"><code class="sourceCode"><span id="cb33-1"><a href="#cb33-1"></a>$ cargo test base --bin fibmultitest</span>
+<span id="cb33-2"><a href="#cb33-2"></a>$ cargo test fib10 --bin fibmultitest</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+</ul>
+</section></section>
+<section>
+<section id="ownership" class="title-slide slide level1 center">
+<h1>Ownership</h1>
+
+</section>
+<section id="ownership-in-rust" class="slide level2">
+<h2>Ownership in Rust</h2>
+<ul>
+<li><p>Rust decides when to free unused memory during program compilation</p></li>
+<li><p>Python and Go make this decision during program execution</p></li>
+<li><p>Ownership rules in Rust (from <a href="https://doc.rust-lang.org/book/ch04-01-what-is-ownership.html">Rust book Chapter 4</a>)</p>
+<ul>
+<li>Each value in Rust has an <em>owner</em></li>
+<li>There can only be one owner at a time</li>
+<li>When the owner goes out of scope, the value will be dropped</li>
+</ul></li>
+</ul>
+</section>
+<section id="ownership-is-tricky-for-allocated-variables" class="slide level2">
+<h2>Ownership is Tricky for Allocated Variables</h2>
+<ul>
+<li><p>The following program compiles</p>
+<div class="sourceCode" id="cb34"><pre class="sourceCode numberSource rust number-lines code-with-copy"><code class="sourceCode rust"><span id="cb34-1"><a href="#cb34-1"></a><span class="kw">fn</span> main() <span class="op">{</span></span>
+<span id="cb34-2"><a href="#cb34-2"></a>    <span class="kw">let</span> x1 <span class="op">=</span> <span class="dv">5</span><span class="op">;</span></span>
+<span id="cb34-3"><a href="#cb34-3"></a>    <span class="kw">let</span> x2 <span class="op">=</span> x1<span class="op">;</span></span>
+<span id="cb34-4"><a href="#cb34-4"></a>    <span class="pp">println!</span>(<span class="st">"{x1} {x2}"</span>)<span class="op">;</span></span>
+<span id="cb34-5"><a href="#cb34-5"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>The following program also compiles</p>
+<div class="sourceCode" id="cb35"><pre class="sourceCode numberSource rust number-lines code-with-copy"><code class="sourceCode rust"><span id="cb35-1"><a href="#cb35-1"></a><span class="kw">fn</span> main() <span class="op">{</span></span>
+<span id="cb35-2"><a href="#cb35-2"></a>    <span class="kw">let</span> s1 <span class="op">=</span> <span class="st">"hello"</span><span class="op">;</span></span>
+<span id="cb35-3"><a href="#cb35-3"></a>    <span class="kw">let</span> s2 <span class="op">=</span> s1<span class="op">;</span></span>
+<span id="cb35-4"><a href="#cb35-4"></a>    <span class="pp">println!</span>(<span class="st">"{s1} {s2}"</span>)<span class="op">;</span></span>
+<span id="cb35-5"><a href="#cb35-5"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>The following program does not compile</p>
+<div class="sourceCode" id="cb36"><pre class="sourceCode numberSource rust number-lines code-with-copy"><code class="sourceCode rust"><span id="cb36-1"><a href="#cb36-1"></a><span class="kw">fn</span> main() <span class="op">{</span></span>
+<span id="cb36-2"><a href="#cb36-2"></a>    <span class="kw">let</span> s1 <span class="op">=</span> <span class="dt">String</span><span class="pp">::</span>from(<span class="st">"hello"</span>)<span class="op">;</span></span>
+<span id="cb36-3"><a href="#cb36-3"></a>    <span class="kw">let</span> s2 <span class="op">=</span> s1<span class="op">;</span></span>
+<span id="cb36-4"><a href="#cb36-4"></a>    <span class="pp">println!</span>(<span class="st">"{s1} {s2}"</span>)<span class="op">;</span></span>
+<span id="cb36-5"><a href="#cb36-5"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+</ul>
+</section>
+<section id="the-compilation-error" class="slide level2">
+<h2>The compilation error</h2>
+<div class="sourceCode" id="cb37" data-code-line-numbers="|7-8|9-10|11-12|14-16"><pre class="sourceCode numberSource console number-lines code-with-copy"><code class="sourceCode"><span id="cb37-1"><a href="#cb37-1"></a>$ cargo run --bin string</span>
+<span id="cb37-2"><a href="#cb37-2"></a>   Compiling ownership v0.1.0 (/home/sarva/rust/prog/ownership)</span>
+<span id="cb37-3"><a href="#cb37-3"></a>error[E0382]: borrow of moved value: `s1`</span>
+<span id="cb37-4"><a href="#cb37-4"></a> --&gt; src/bin/string.rs:4:15</span>
+<span id="cb37-5"><a href="#cb37-5"></a>  |</span>
+<span id="cb37-6"><a href="#cb37-6"></a>2 |     let s1 = String::from("hello");</span>
+<span id="cb37-7"><a href="#cb37-7"></a>  |         -- move occurs because `s1` has type `String`, which does</span>
+<span id="cb37-8"><a href="#cb37-8"></a>              not implement the `Copy` trait</span>
+<span id="cb37-9"><a href="#cb37-9"></a>3 |     let s2 = s1;</span>
+<span id="cb37-10"><a href="#cb37-10"></a>  |              -- value moved here</span>
+<span id="cb37-11"><a href="#cb37-11"></a>4 |     println!("{s1} {s2}");</span>
+<span id="cb37-12"><a href="#cb37-12"></a>  |               ^^^^ value borrowed here after move</span>
+<span id="cb37-13"><a href="#cb37-13"></a>  |</span>
+<span id="cb37-14"><a href="#cb37-14"></a>help: consider cloning the value if the performance cost is acceptable</span>
+<span id="cb37-15"><a href="#cb37-15"></a>  |</span>
+<span id="cb37-16"><a href="#cb37-16"></a>3 |     let s2 = s1.clone();</span>
+<span id="cb37-17"><a href="#cb37-17"></a>  |                ++++++++</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="questions" class="slide level2">
+<h2>Questions</h2>
+<ul>
+<li><p>What does it mean to implement the <code>Copy</code> trait?</p>
+<ul>
+<li>Assignment <code>x = y</code> results in <code>x</code> being an exact copy of <code>y</code></li>
+</ul></li>
+<li><p>Why does <code>String</code> not implement <code>Copy</code>?</p>
+<ul>
+<li>Because copying is expensive; not done by default</li>
+<li>Can be explicitly done using <code>let s2 = s1.clone()</code></li>
+</ul></li>
+<li><p>Why did the following program not give an error?</p>
+<div class="sourceCode" id="cb38"><pre class="sourceCode numberSource rust number-lines code-with-copy"><code class="sourceCode rust"><span id="cb38-1"><a href="#cb38-1"></a><span class="kw">fn</span> main() <span class="op">{</span></span>
+<span id="cb38-2"><a href="#cb38-2"></a>    <span class="kw">let</span> s1 <span class="op">=</span> <span class="st">"hello"</span><span class="op">;</span></span>
+<span id="cb38-3"><a href="#cb38-3"></a>    <span class="kw">let</span> s2 <span class="op">=</span> s1<span class="op">;</span></span>
+<span id="cb38-4"><a href="#cb38-4"></a>    <span class="pp">println!</span>(<span class="st">"{s1} {s2}"</span>)<span class="op">;</span></span>
+<span id="cb38-5"><a href="#cb38-5"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li><code>"hello"</code> is a string literal; size is known at compile time</li>
+<li>String literals are hardcoded into the program binary; no memory allocated during execution</li>
+</ul></li>
+</ul>
+</section>
+<section id="string-assignment-changes-ownership" class="slide level2">
+<h2><code>String</code> Assignment Changes Ownership</h2>
+<div class="panel-tabset">
+<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Code</a></li><li><a href="#tabset-1-2">Init</a></li><li><a href="#tabset-1-3">Assign</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1">
+<p>What does the following code do?</p>
+<div class="sourceCode" id="cb39"><pre class="sourceCode numberSource rust number-lines code-with-copy"><code class="sourceCode rust"><span id="cb39-1"><a href="#cb39-1"></a><span class="kw">let</span> s1 <span class="op">=</span> <span class="dt">String</span><span class="pp">::</span>from(<span class="st">"hello"</span>)<span class="op">;</span></span>
+<span id="cb39-2"><a href="#cb39-2"></a><span class="kw">let</span> s2 <span class="op">=</span> s1<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="tabset-1-2">
+<p><code>let s1 = String::from("hello");</code></p>
+<p><img data-src="images/trpl04-01.svg" width="350"></p>
+<p>Image credit: <a href="https://doc.rust-lang.org/book/ch04-01-what-is-ownership.html">Rust book Chapter 4</a></p>
+</div>
+<div id="tabset-1-3">
+<p><code>let s2 = s1;</code></p>
+<p><img data-src="images/trpl04-04.svg" width="350"></p>
+<p>Image credit: <a href="https://doc.rust-lang.org/book/ch04-01-what-is-ownership.html">Rust book Chapter 4</a></p>
+</div>
+</div>
+</div>
+</section>
+<section id="avoiding-ownership-errors" class="slide level2">
+<h2>Avoiding Ownership Errors</h2>
+<ul>
+<li><p>Cloning the value is one solution</p>
+<div class="sourceCode" id="cb40"><pre class="sourceCode numberSource rust number-lines code-with-copy"><code class="sourceCode rust"><span id="cb40-1"><a href="#cb40-1"></a><span class="kw">fn</span> main() <span class="op">{</span></span>
+<span id="cb40-2"><a href="#cb40-2"></a>    <span class="kw">let</span> s1 <span class="op">=</span> <span class="dt">String</span><span class="pp">::</span>from(<span class="st">"hello"</span>)<span class="op">;</span></span>
+<span id="cb40-3"><a href="#cb40-3"></a>    <span class="kw">let</span> s2 <span class="op">=</span> s1<span class="op">.</span>clone()<span class="op">;</span></span>
+<span id="cb40-4"><a href="#cb40-4"></a>    <span class="pp">println!</span>(<span class="st">"{s1} {s2}"</span>)<span class="op">;</span></span>
+<span id="cb40-5"><a href="#cb40-5"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>Cloning is expensive as it performs a deep copy</p></li>
+<li><p>In many cases, <strong>references</strong> can be used to avoid ownership errors</p></li>
+</ul>
+</section>
+<section id="another-ownership-error" class="slide level2">
+<h2>Another Ownership Error</h2>
+<ul>
+<li><p>The following program does not compile</p>
+<div class="sourceCode" id="cb41"><pre class="sourceCode numberSource rust number-lines code-with-copy"><code class="sourceCode rust"><span id="cb41-1"><a href="#cb41-1"></a><span class="kw">fn</span> main() <span class="op">{</span></span>
+<span id="cb41-2"><a href="#cb41-2"></a>    <span class="kw">let</span> s1 <span class="op">=</span> <span class="dt">String</span><span class="pp">::</span>from(<span class="st">"hello"</span>)<span class="op">;</span></span>
+<span id="cb41-3"><a href="#cb41-3"></a>    <span class="kw">let</span> len <span class="op">=</span> calculate_length(s1)<span class="op">;</span></span>
+<span id="cb41-4"><a href="#cb41-4"></a>    <span class="pp">println!</span>(<span class="st">"The length of '{}' is {}."</span><span class="op">,</span> s1<span class="op">,</span> len)<span class="op">;</span></span>
+<span id="cb41-5"><a href="#cb41-5"></a><span class="op">}</span></span>
+<span id="cb41-6"><a href="#cb41-6"></a></span>
+<span id="cb41-7"><a href="#cb41-7"></a><span class="kw">fn</span> calculate_length(s<span class="op">:</span> <span class="dt">String</span>) <span class="op">-&gt;</span> <span class="dt">usize</span> <span class="op">{</span></span>
+<span id="cb41-8"><a href="#cb41-8"></a>    s<span class="op">.</span>len()</span>
+<span id="cb41-9"><a href="#cb41-9"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>The parameter <code>s</code> of the function <code>calculate_length</code> takes ownership of <code>s1</code></p></li>
+<li><p><code>s1</code> cannot be used in the <code>println</code> statement</p></li>
+</ul>
+</section>
+<section id="references" class="slide level2">
+<h2>References</h2>
+<ul>
+<li><p>References allow access to data values without taking ownership</p></li>
+<li><p>Prefixing a variable with <code>&amp;</code> creates a reference to it</p></li>
+<li><p>The following program works</p>
+<div class="sourceCode" id="cb42" data-code-line-numbers="|3,7"><pre class="sourceCode numberSource rust number-lines code-with-copy"><code class="sourceCode rust"><span id="cb42-1"><a href="#cb42-1"></a><span class="kw">fn</span> main() <span class="op">{</span></span>
+<span id="cb42-2"><a href="#cb42-2"></a>    <span class="kw">let</span> s1 <span class="op">=</span> <span class="dt">String</span><span class="pp">::</span>from(<span class="st">"hello"</span>)<span class="op">;</span></span>
+<span id="cb42-3"><a href="#cb42-3"></a>    <span class="kw">let</span> len <span class="op">=</span> calculate_length(<span class="op">&amp;</span>s1)<span class="op">;</span></span>
+<span id="cb42-4"><a href="#cb42-4"></a>    <span class="pp">println!</span>(<span class="st">"The length of '{}' is {}."</span><span class="op">,</span> s1<span class="op">,</span> len)<span class="op">;</span></span>
+<span id="cb42-5"><a href="#cb42-5"></a><span class="op">}</span></span>
+<span id="cb42-6"><a href="#cb42-6"></a></span>
+<span id="cb42-7"><a href="#cb42-7"></a><span class="kw">fn</span> calculate_length(s<span class="op">:</span> <span class="op">&amp;</span><span class="dt">String</span>) <span class="op">-&gt;</span> <span class="dt">usize</span> <span class="op">{</span></span>
+<span id="cb42-8"><a href="#cb42-8"></a>    s<span class="op">.</span>len()</span>
+<span id="cb42-9"><a href="#cb42-9"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>Creating a reference is called <strong>borrowing</strong></p></li>
+</ul>
+</section>
+<section id="mutable-references" class="slide level2">
+<h2>Mutable References</h2>
+<ul>
+<li><p>Mutable references enable modifications to borrowed values</p></li>
+<li><p>Prefixing a variable with <code>&amp;mut</code> creates a mutable reference to it</p></li>
+<li><p>The following program works</p>
+<div class="sourceCode" id="cb43"><pre class="sourceCode numberSource rust number-lines code-with-copy"><code class="sourceCode rust"><span id="cb43-1"><a href="#cb43-1"></a><span class="kw">fn</span> main() <span class="op">{</span></span>
+<span id="cb43-2"><a href="#cb43-2"></a>    <span class="kw">let</span> <span class="kw">mut</span> s <span class="op">=</span> <span class="dt">String</span><span class="pp">::</span>from(<span class="st">"hello"</span>)<span class="op">;</span></span>
+<span id="cb43-3"><a href="#cb43-3"></a></span>
+<span id="cb43-4"><a href="#cb43-4"></a>    change(<span class="op">&amp;</span><span class="kw">mut</span> s)<span class="op">;</span></span>
+<span id="cb43-5"><a href="#cb43-5"></a><span class="op">}</span></span>
+<span id="cb43-6"><a href="#cb43-6"></a></span>
+<span id="cb43-7"><a href="#cb43-7"></a><span class="kw">fn</span> change(some_string<span class="op">:</span> <span class="op">&amp;</span><span class="kw">mut</span> <span class="dt">String</span>) <span class="op">{</span></span>
+<span id="cb43-8"><a href="#cb43-8"></a>    some_string<span class="op">.</span>push_str(<span class="st">", world"</span>)<span class="op">;</span></span>
+<span id="cb43-9"><a href="#cb43-9"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+</ul>
+</section></section>
+<section>
+<section id="structs" class="title-slide slide level1 center">
+<h1>Structs</h1>
+
+</section>
+<section id="structs-1" class="slide level2">
+<h2>Structs</h2>
+<ul>
+<li><p>Structs allow grouping of related data</p></li>
+<li><p>Example</p>
+<div class="sourceCode" id="cb44" data-code-line-numbers=""><pre class="sourceCode numberSource rust number-lines code-with-copy"><code class="sourceCode rust"><span id="cb44-1"><a href="#cb44-1"></a><span class="kw">struct</span> Rectangle <span class="op">{</span></span>
+<span id="cb44-2"><a href="#cb44-2"></a>    width<span class="op">:</span> <span class="dt">u32</span><span class="op">,</span></span>
+<span id="cb44-3"><a href="#cb44-3"></a>    height<span class="op">:</span> <span class="dt">u32</span><span class="op">,</span></span>
+<span id="cb44-4"><a href="#cb44-4"></a><span class="op">}</span></span>
+<span id="cb44-5"><a href="#cb44-5"></a></span>
+<span id="cb44-6"><a href="#cb44-6"></a><span class="kw">fn</span> main() <span class="op">{</span></span>
+<span id="cb44-7"><a href="#cb44-7"></a>    <span class="kw">let</span> rect1 <span class="op">=</span> Rectangle <span class="op">{</span></span>
+<span id="cb44-8"><a href="#cb44-8"></a>        width<span class="op">:</span> <span class="dv">30</span><span class="op">,</span></span>
+<span id="cb44-9"><a href="#cb44-9"></a>        height<span class="op">:</span> <span class="dv">50</span><span class="op">,</span></span>
+<span id="cb44-10"><a href="#cb44-10"></a>    <span class="op">};</span></span>
+<span id="cb44-11"><a href="#cb44-11"></a></span>
+<span id="cb44-12"><a href="#cb44-12"></a>    <span class="pp">println!</span>(</span>
+<span id="cb44-13"><a href="#cb44-13"></a>        <span class="st">"The area of the rectangle is {} square pixels."</span><span class="op">,</span></span>
+<span id="cb44-14"><a href="#cb44-14"></a>        rect1<span class="op">.</span>width <span class="op">*</span> rect1<span class="op">.</span>height</span>
+<span id="cb44-15"><a href="#cb44-15"></a>    )<span class="op">;</span></span>
+<span id="cb44-16"><a href="#cb44-16"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+</ul>
+</section>
+<section id="methods" class="slide level2">
+<h2>Methods</h2>
+<ul>
+<li>Methods are functions which are associated with a struct</li>
+<li>Rust does not have classes</li>
+<li>Methods can be used to link data and functions</li>
+<li>The first argument to a method is always <code>self</code> or <code>&amp;self</code>, which refers to the associated struct</li>
+</ul>
+</section>
+<section id="rectangle-struct-with-methods" class="slide level2">
+<h2>Rectangle <code>struct</code> with methods</h2>
+<div class="sourceCode" id="cb45" data-code-line-numbers="|7-11|21"><pre class="sourceCode numberSource rust number-lines code-with-copy"><code class="sourceCode rust"><span id="cb45-1"><a href="#cb45-1"></a><span class="at">#[</span>derive<span class="at">(</span><span class="bu">Debug</span><span class="at">)]</span></span>
+<span id="cb45-2"><a href="#cb45-2"></a><span class="kw">struct</span> Rectangle <span class="op">{</span></span>
+<span id="cb45-3"><a href="#cb45-3"></a>    width<span class="op">:</span> <span class="dt">u32</span><span class="op">,</span></span>
+<span id="cb45-4"><a href="#cb45-4"></a>    height<span class="op">:</span> <span class="dt">u32</span><span class="op">,</span></span>
+<span id="cb45-5"><a href="#cb45-5"></a><span class="op">}</span></span>
+<span id="cb45-6"><a href="#cb45-6"></a></span>
+<span id="cb45-7"><a href="#cb45-7"></a><span class="kw">impl</span> Rectangle <span class="op">{</span></span>
+<span id="cb45-8"><a href="#cb45-8"></a>    <span class="kw">fn</span> area(<span class="op">&amp;</span><span class="kw">self</span>) <span class="op">-&gt;</span> <span class="dt">u32</span> <span class="op">{</span></span>
+<span id="cb45-9"><a href="#cb45-9"></a>        <span class="kw">self</span><span class="op">.</span>width <span class="op">*</span> <span class="kw">self</span><span class="op">.</span>height</span>
+<span id="cb45-10"><a href="#cb45-10"></a>    <span class="op">}</span></span>
+<span id="cb45-11"><a href="#cb45-11"></a><span class="op">}</span></span>
+<span id="cb45-12"><a href="#cb45-12"></a></span>
+<span id="cb45-13"><a href="#cb45-13"></a><span class="kw">fn</span> main() <span class="op">{</span></span>
+<span id="cb45-14"><a href="#cb45-14"></a>    <span class="kw">let</span> rect1 <span class="op">=</span> Rectangle <span class="op">{</span></span>
+<span id="cb45-15"><a href="#cb45-15"></a>        width<span class="op">:</span> <span class="dv">30</span><span class="op">,</span></span>
+<span id="cb45-16"><a href="#cb45-16"></a>        height<span class="op">:</span> <span class="dv">50</span><span class="op">,</span></span>
+<span id="cb45-17"><a href="#cb45-17"></a>    <span class="op">};</span></span>
+<span id="cb45-18"><a href="#cb45-18"></a></span>
+<span id="cb45-19"><a href="#cb45-19"></a>    <span class="pp">println!</span>(</span>
+<span id="cb45-20"><a href="#cb45-20"></a>        <span class="st">"The area of the rectangle is {} square pixels."</span><span class="op">,</span></span>
+<span id="cb45-21"><a href="#cb45-21"></a>        rect1<span class="op">.</span>area()</span>
+<span id="cb45-22"><a href="#cb45-22"></a>    )<span class="op">;</span></span>
+<span id="cb45-23"><a href="#cb45-23"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="multiple-methods-in-an-impl-block" class="slide level2">
+<h2>Multiple methods in an <code>impl</code> block</h2>
+<ul>
+<li><p>Multiple methods can be defined in the same <code>impl</code> block</p>
+<div class="sourceCode" id="cb46"><pre class="sourceCode numberSource rust number-lines code-with-copy"><code class="sourceCode rust"><span id="cb46-1"><a href="#cb46-1"></a><span class="kw">impl</span> Rectangle <span class="op">{</span></span>
+<span id="cb46-2"><a href="#cb46-2"></a>    <span class="kw">fn</span> area(<span class="op">&amp;</span><span class="kw">self</span>) <span class="op">-&gt;</span> <span class="dt">u32</span> <span class="op">{</span></span>
+<span id="cb46-3"><a href="#cb46-3"></a>        <span class="kw">self</span><span class="op">.</span>width <span class="op">*</span> <span class="kw">self</span><span class="op">.</span>height</span>
+<span id="cb46-4"><a href="#cb46-4"></a>    <span class="op">}</span></span>
+<span id="cb46-5"><a href="#cb46-5"></a></span>
+<span id="cb46-6"><a href="#cb46-6"></a>    <span class="kw">fn</span> is_square(<span class="op">&amp;</span><span class="kw">self</span>) <span class="op">-&gt;</span> <span class="dt">bool</span> <span class="op">{</span></span>
+<span id="cb46-7"><a href="#cb46-7"></a>        <span class="kw">self</span><span class="op">.</span>width <span class="op">==</span> <span class="kw">self</span><span class="op">.</span>height</span>
+<span id="cb46-8"><a href="#cb46-8"></a>    <span class="op">}</span></span>
+<span id="cb46-9"><a href="#cb46-9"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+</ul>
+</section>
+<section id="multiple-impl-blocks" class="slide level2">
+<h2>Multiple <code>impl</code> blocks</h2>
+<ul>
+<li><p>Multiple <code>impl</code> blocks can define methods of a <code>struct</code></p>
+<div class="sourceCode" id="cb47"><pre class="sourceCode numberSource rust number-lines code-with-copy"><code class="sourceCode rust"><span id="cb47-1"><a href="#cb47-1"></a><span class="kw">impl</span> Rectangle <span class="op">{</span></span>
+<span id="cb47-2"><a href="#cb47-2"></a>    <span class="kw">fn</span> area(<span class="op">&amp;</span><span class="kw">self</span>) <span class="op">-&gt;</span> <span class="dt">u32</span> <span class="op">{</span></span>
+<span id="cb47-3"><a href="#cb47-3"></a>        <span class="kw">self</span><span class="op">.</span>width <span class="op">*</span> <span class="kw">self</span><span class="op">.</span>height</span>
+<span id="cb47-4"><a href="#cb47-4"></a>    <span class="op">}</span></span>
+<span id="cb47-5"><a href="#cb47-5"></a><span class="op">}</span></span>
+<span id="cb47-6"><a href="#cb47-6"></a></span>
+<span id="cb47-7"><a href="#cb47-7"></a><span class="kw">impl</span> Rectangle <span class="op">{</span></span>
+<span id="cb47-8"><a href="#cb47-8"></a>    <span class="kw">fn</span> is_square(<span class="op">&amp;</span><span class="kw">self</span>) <span class="op">-&gt;</span> <span class="dt">bool</span> <span class="op">{</span></span>
+<span id="cb47-9"><a href="#cb47-9"></a>        <span class="kw">self</span><span class="op">.</span>width <span class="op">==</span> <span class="kw">self</span><span class="op">.</span>height</span>
+<span id="cb47-10"><a href="#cb47-10"></a>    <span class="op">}</span></span>
+<span id="cb47-11"><a href="#cb47-11"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+</ul>
+</section></section>
+<section>
+<section id="enums" class="title-slide slide level1 center">
+<h1>Enums</h1>
+
+</section>
+<section id="enums-1" class="slide level2">
+<h2>Enums</h2>
+<ul>
+<li><p>Enums (aka enumerations) allow defining a type by enumerating its possible variants</p></li>
+<li><p>Example</p>
+<div class="sourceCode" id="cb48"><pre class="sourceCode numberSource rust number-lines code-with-copy"><code class="sourceCode rust"><span id="cb48-1"><a href="#cb48-1"></a><span class="kw">enum</span> Degree <span class="op">{</span></span>
+<span id="cb48-2"><a href="#cb48-2"></a>    BTech<span class="op">,</span></span>
+<span id="cb48-3"><a href="#cb48-3"></a>    MTech<span class="op">,</span></span>
+<span id="cb48-4"><a href="#cb48-4"></a>    PhD<span class="op">,</span></span>
+<span id="cb48-5"><a href="#cb48-5"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+</ul>
+</section>
+<section id="example-usage-of-enums" class="slide level2">
+<h2>Example Usage of Enums</h2>
+<div class="sourceCode" id="cb49"><pre class="sourceCode numberSource rust number-lines code-with-copy"><code class="sourceCode rust"><span id="cb49-1"><a href="#cb49-1"></a><span class="kw">enum</span> Degree <span class="op">{</span></span>
+<span id="cb49-2"><a href="#cb49-2"></a>    BTech<span class="op">,</span></span>
+<span id="cb49-3"><a href="#cb49-3"></a>    MTech<span class="op">,</span></span>
+<span id="cb49-4"><a href="#cb49-4"></a>    PhD<span class="op">,</span></span>
+<span id="cb49-5"><a href="#cb49-5"></a><span class="op">}</span></span>
+<span id="cb49-6"><a href="#cb49-6"></a></span>
+<span id="cb49-7"><a href="#cb49-7"></a><span class="kw">struct</span> Student <span class="op">{</span></span>
+<span id="cb49-8"><a href="#cb49-8"></a>    name<span class="op">:</span> <span class="dt">String</span><span class="op">,</span></span>
+<span id="cb49-9"><a href="#cb49-9"></a>    program<span class="op">:</span> Degree<span class="op">,</span></span>
+<span id="cb49-10"><a href="#cb49-10"></a><span class="op">}</span></span>
+<span id="cb49-11"><a href="#cb49-11"></a></span>
+<span id="cb49-12"><a href="#cb49-12"></a><span class="kw">fn</span> main() <span class="op">{</span></span>
+<span id="cb49-13"><a href="#cb49-13"></a>    <span class="kw">let</span> s <span class="op">=</span> Student <span class="op">{</span></span>
+<span id="cb49-14"><a href="#cb49-14"></a>        name<span class="op">:</span> <span class="dt">String</span><span class="pp">::</span>from(<span class="st">"John Doe"</span>)<span class="op">,</span></span>
+<span id="cb49-15"><a href="#cb49-15"></a>        program<span class="op">:</span> <span class="pp">Degree::</span>BTech<span class="op">,</span></span>
+<span id="cb49-16"><a href="#cb49-16"></a>    <span class="op">};</span></span>
+<span id="cb49-17"><a href="#cb49-17"></a></span>
+<span id="cb49-18"><a href="#cb49-18"></a>    <span class="cf">match</span> s<span class="op">.</span>program <span class="op">{</span></span>
+<span id="cb49-19"><a href="#cb49-19"></a>        <span class="pp">Degree::</span>BTech <span class="op">=&gt;</span> <span class="pp">println!</span>(<span class="st">"{} is a UG student"</span><span class="op">,</span> s<span class="op">.</span>name)<span class="op">,</span></span>
+<span id="cb49-20"><a href="#cb49-20"></a>        <span class="pp">Degree::</span>MTech <span class="op">|</span> <span class="pp">Degree::</span>PhD <span class="op">=&gt;</span> <span class="pp">println!</span>(<span class="st">"{} is a PG student"</span><span class="op">,</span> s<span class="op">.</span>name)<span class="op">,</span></span>
+<span id="cb49-21"><a href="#cb49-21"></a>    <span class="op">}</span></span>
+<span id="cb49-22"><a href="#cb49-22"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="enums-can-hold-data" class="slide level2">
+<h2>Enums can hold data</h2>
+<div class="sourceCode" id="cb50" data-code-line-numbers="|1-4|8|17-22"><pre class="sourceCode numberSource rust number-lines code-with-copy"><code class="sourceCode rust"><span id="cb50-1"><a href="#cb50-1"></a><span class="kw">enum</span> CampusAddress <span class="op">{</span></span>
+<span id="cb50-2"><a href="#cb50-2"></a>    Hostel(<span class="dt">u8</span>)<span class="op">,</span></span>
+<span id="cb50-3"><a href="#cb50-3"></a>    Building(<span class="dt">String</span>)<span class="op">,</span></span>
+<span id="cb50-4"><a href="#cb50-4"></a><span class="op">}</span></span>
+<span id="cb50-5"><a href="#cb50-5"></a></span>
+<span id="cb50-6"><a href="#cb50-6"></a><span class="kw">struct</span> CampusResident <span class="op">{</span></span>
+<span id="cb50-7"><a href="#cb50-7"></a>    name<span class="op">:</span> <span class="dt">String</span><span class="op">,</span></span>
+<span id="cb50-8"><a href="#cb50-8"></a>    address<span class="op">:</span> CampusAddress<span class="op">,</span></span>
+<span id="cb50-9"><a href="#cb50-9"></a><span class="op">}</span></span>
+<span id="cb50-10"><a href="#cb50-10"></a></span>
+<span id="cb50-11"><a href="#cb50-11"></a><span class="kw">fn</span> main() <span class="op">{</span></span>
+<span id="cb50-12"><a href="#cb50-12"></a>    <span class="kw">let</span> c <span class="op">=</span> CampusResident <span class="op">{</span></span>
+<span id="cb50-13"><a href="#cb50-13"></a>        name<span class="op">:</span> <span class="dt">String</span><span class="pp">::</span>from(<span class="st">"John Doe"</span>)<span class="op">,</span></span>
+<span id="cb50-14"><a href="#cb50-14"></a>        address<span class="op">:</span> <span class="pp">CampusAddress::</span>Hostel(<span class="dv">16</span>)<span class="op">,</span></span>
+<span id="cb50-15"><a href="#cb50-15"></a>    <span class="op">};</span></span>
+<span id="cb50-16"><a href="#cb50-16"></a></span>
+<span id="cb50-17"><a href="#cb50-17"></a>    <span class="cf">match</span> c<span class="op">.</span>address <span class="op">{</span></span>
+<span id="cb50-18"><a href="#cb50-18"></a>        <span class="pp">CampusAddress::</span>Hostel(n) <span class="op">=&gt;</span></span>
+<span id="cb50-19"><a href="#cb50-19"></a>            <span class="pp">println!</span>(<span class="st">"{} lives in hostel {n}"</span><span class="op">,</span> c<span class="op">.</span>name)<span class="op">,</span></span>
+<span id="cb50-20"><a href="#cb50-20"></a>        <span class="pp">CampusAddress::</span>Building(s) <span class="op">=&gt;</span></span>
+<span id="cb50-21"><a href="#cb50-21"></a>            <span class="pp">println!</span>(<span class="st">"{} lives in building {s}"</span><span class="op">,</span> c<span class="op">.</span>name)<span class="op">,</span></span>
+<span id="cb50-22"><a href="#cb50-22"></a>    <span class="op">}</span></span>
+<span id="cb50-23"><a href="#cb50-23"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section></section>
+<section>
+<section id="generic-types" class="title-slide slide level1 center">
+<h1>Generic Types</h1>
+
+</section>
+<section id="generics-enable-code-resuse" class="slide level2">
+<h2>Generics enable code resuse</h2>
+<ul>
+<li><p>Consider the following structs for a 2D point</p>
+<div class="sourceCode" id="cb51"><pre class="sourceCode numberSource rust number-lines code-with-copy"><code class="sourceCode rust"><span id="cb51-1"><a href="#cb51-1"></a><span class="kw">struct</span> IntPoint <span class="op">{</span></span>
+<span id="cb51-2"><a href="#cb51-2"></a>  x<span class="op">:</span> <span class="dt">i64</span><span class="op">,</span></span>
+<span id="cb51-3"><a href="#cb51-3"></a>  y<span class="op">:</span> <span class="dt">i64</span><span class="op">,</span></span>
+<span id="cb51-4"><a href="#cb51-4"></a><span class="op">}</span></span>
+<span id="cb51-5"><a href="#cb51-5"></a></span>
+<span id="cb51-6"><a href="#cb51-6"></a><span class="kw">struct</span> FloatPoint <span class="op">{</span></span>
+<span id="cb51-7"><a href="#cb51-7"></a>  x<span class="op">:</span> <span class="dt">f64</span><span class="op">,</span></span>
+<span id="cb51-8"><a href="#cb51-8"></a>  y<span class="op">:</span> <span class="dt">f64</span><span class="op">,</span></span>
+<span id="cb51-9"><a href="#cb51-9"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>They can be combined into a generic type</p>
+<div class="sourceCode" id="cb52"><pre class="sourceCode numberSource rust number-lines code-with-copy"><code class="sourceCode rust"><span id="cb52-1"><a href="#cb52-1"></a><span class="kw">struct</span> Point<span class="op">&lt;</span>T<span class="op">&gt;</span> <span class="op">{</span></span>
+<span id="cb52-2"><a href="#cb52-2"></a>    x<span class="op">:</span> T<span class="op">,</span></span>
+<span id="cb52-3"><a href="#cb52-3"></a>    y<span class="op">:</span> T<span class="op">,</span></span>
+<span id="cb52-4"><a href="#cb52-4"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+</ul>
+</section>
+<section id="methods-for-generic-types" class="slide level2">
+<h2>Methods for generic types</h2>
+<div class="panel-tabset">
+<ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">1st attempt</a></li><li><a href="#tabset-2-2">Num</a></li><li><a href="#tabset-2-3">2nd attempt</a></li><li><a href="#tabset-2-4">3rd attempt</a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1">
+<div class="sourceCode" id="cb53"><pre class="sourceCode numberSource rust number-lines code-with-copy"><code class="sourceCode rust"><span id="cb53-1"><a href="#cb53-1"></a><span class="kw">struct</span> Point<span class="op">&lt;</span>T<span class="op">&gt;</span> <span class="op">{</span></span>
+<span id="cb53-2"><a href="#cb53-2"></a>    x<span class="op">:</span> T<span class="op">,</span></span>
+<span id="cb53-3"><a href="#cb53-3"></a>    y<span class="op">:</span> T<span class="op">,</span></span>
+<span id="cb53-4"><a href="#cb53-4"></a><span class="op">}</span></span>
+<span id="cb53-5"><a href="#cb53-5"></a></span>
+<span id="cb53-6"><a href="#cb53-6"></a><span class="kw">impl</span><span class="op">&lt;</span>T<span class="op">&gt;</span> Point<span class="op">&lt;</span>T<span class="op">&gt;</span></span>
+<span id="cb53-7"><a href="#cb53-7"></a><span class="op">{</span></span>
+<span id="cb53-8"><a href="#cb53-8"></a>    <span class="kw">fn</span> square_distance_from_origin(<span class="op">&amp;</span><span class="kw">self</span>) <span class="op">-&gt;</span> T <span class="op">{</span></span>
+<span id="cb53-9"><a href="#cb53-9"></a>        <span class="kw">self</span><span class="op">.</span>x <span class="op">*</span> <span class="kw">self</span><span class="op">.</span>x <span class="op">+</span> <span class="kw">self</span><span class="op">.</span>y <span class="op">*</span> <span class="kw">self</span><span class="op">.</span>y</span>
+<span id="cb53-10"><a href="#cb53-10"></a>    <span class="op">}</span></span>
+<span id="cb53-11"><a href="#cb53-11"></a><span class="op">}</span></span>
+<span id="cb53-12"><a href="#cb53-12"></a></span>
+<span id="cb53-13"><a href="#cb53-13"></a><span class="kw">fn</span> main() <span class="op">{</span></span>
+<span id="cb53-14"><a href="#cb53-14"></a>    <span class="kw">let</span> p <span class="op">=</span> Point <span class="op">{</span> x<span class="op">:</span> <span class="dv">1</span><span class="op">,</span> y<span class="op">:</span> <span class="dv">5</span> <span class="op">};</span></span>
+<span id="cb53-15"><a href="#cb53-15"></a>    <span class="pp">println!</span>(<span class="st">"Distance = {}"</span><span class="op">,</span> p<span class="op">.</span>square_distance_from_origin())<span class="op">;</span></span>
+<span id="cb53-16"><a href="#cb53-16"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="tabset-2-2">
+<ul>
+<li><p>The type <code>T</code> needs to support additions and multiplications</p></li>
+<li><p>The <code>Num</code> trait exactly captures this behavior</p>
+<ul>
+<li>Implemented in the <code>num-traits</code> crate</li>
+</ul></li>
+<li><p>Add the crate using <code>cargo add num-traits</code></p></li>
+<li><p>Cargo.toml</p>
+<div class="sourceCode" id="cb54"><pre class="sourceCode numberSource toml number-lines code-with-copy"><code class="sourceCode toml"><span id="cb54-1"><a href="#cb54-1"></a><span class="kw">[</span><span class="dt">package</span><span class="kw">]</span></span>
+<span id="cb54-2"><a href="#cb54-2"></a><span class="dt">name</span> <span class="op">=</span> <span class="st">"generics"</span></span>
+<span id="cb54-3"><a href="#cb54-3"></a><span class="dt">version</span> <span class="op">=</span> <span class="st">"0.1.0"</span></span>
+<span id="cb54-4"><a href="#cb54-4"></a><span class="dt">edition</span> <span class="op">=</span> <span class="st">"2021"</span></span>
+<span id="cb54-5"><a href="#cb54-5"></a></span>
+<span id="cb54-6"><a href="#cb54-6"></a><span class="kw">[</span><span class="dt">dependencies</span><span class="kw">]</span></span>
+<span id="cb54-7"><a href="#cb54-7"></a><span class="dt">num-traits</span> <span class="op">=</span> <span class="st">"0.2.17"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+</ul>
+</div>
+<div id="tabset-2-3">
+<div class="sourceCode" id="cb55" data-code-line-numbers="|1|9-10|13"><pre class="sourceCode numberSource rust number-lines code-with-copy"><code class="sourceCode rust"><span id="cb55-1"><a href="#cb55-1"></a><span class="kw">use</span> <span class="pp">num_traits::</span>Num<span class="op">;</span></span>
+<span id="cb55-2"><a href="#cb55-2"></a></span>
+<span id="cb55-3"><a href="#cb55-3"></a><span class="kw">struct</span> Point<span class="op">&lt;</span>T<span class="op">&gt;</span> <span class="op">{</span></span>
+<span id="cb55-4"><a href="#cb55-4"></a>    x<span class="op">:</span> T<span class="op">,</span></span>
+<span id="cb55-5"><a href="#cb55-5"></a>    y<span class="op">:</span> T<span class="op">,</span></span>
+<span id="cb55-6"><a href="#cb55-6"></a><span class="op">}</span></span>
+<span id="cb55-7"><a href="#cb55-7"></a></span>
+<span id="cb55-8"><a href="#cb55-8"></a><span class="kw">impl</span><span class="op">&lt;</span>T<span class="op">&gt;</span> Point<span class="op">&lt;</span>T<span class="op">&gt;</span></span>
+<span id="cb55-9"><a href="#cb55-9"></a><span class="kw">where</span></span>
+<span id="cb55-10"><a href="#cb55-10"></a>    T<span class="op">:</span> Num<span class="op">,</span></span>
+<span id="cb55-11"><a href="#cb55-11"></a><span class="op">{</span></span>
+<span id="cb55-12"><a href="#cb55-12"></a>    <span class="kw">fn</span> square_distance_from_origin(<span class="op">&amp;</span><span class="kw">self</span>) <span class="op">-&gt;</span> T <span class="op">{</span></span>
+<span id="cb55-13"><a href="#cb55-13"></a>        <span class="kw">self</span><span class="op">.</span>x <span class="op">*</span> <span class="kw">self</span><span class="op">.</span>x <span class="op">+</span> <span class="kw">self</span><span class="op">.</span>y <span class="op">*</span> <span class="kw">self</span><span class="op">.</span>y</span>
+<span id="cb55-14"><a href="#cb55-14"></a>    <span class="op">}</span></span>
+<span id="cb55-15"><a href="#cb55-15"></a><span class="op">}</span></span>
+<span id="cb55-16"><a href="#cb55-16"></a></span>
+<span id="cb55-17"><a href="#cb55-17"></a><span class="kw">fn</span> main() <span class="op">{</span></span>
+<span id="cb55-18"><a href="#cb55-18"></a>    <span class="kw">let</span> p <span class="op">=</span> Point <span class="op">{</span> x<span class="op">:</span> <span class="dv">1</span><span class="op">,</span> y<span class="op">:</span> <span class="dv">5</span> <span class="op">};</span></span>
+<span id="cb55-19"><a href="#cb55-19"></a>    <span class="pp">println!</span>(<span class="st">"Distance = {}"</span><span class="op">,</span> p<span class="op">.</span>square_distance_from_origin())<span class="op">;</span></span>
+<span id="cb55-20"><a href="#cb55-20"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="tabset-2-4">
+<div class="sourceCode" id="cb56" data-code-line-numbers="|9-10"><pre class="sourceCode numberSource rust number-lines code-with-copy"><code class="sourceCode rust"><span id="cb56-1"><a href="#cb56-1"></a><span class="kw">use</span> <span class="pp">num_traits::</span>Num<span class="op">;</span></span>
+<span id="cb56-2"><a href="#cb56-2"></a></span>
+<span id="cb56-3"><a href="#cb56-3"></a><span class="kw">struct</span> Point<span class="op">&lt;</span>T<span class="op">&gt;</span> <span class="op">{</span></span>
+<span id="cb56-4"><a href="#cb56-4"></a>    x<span class="op">:</span> T<span class="op">,</span></span>
+<span id="cb56-5"><a href="#cb56-5"></a>    y<span class="op">:</span> T<span class="op">,</span></span>
+<span id="cb56-6"><a href="#cb56-6"></a><span class="op">}</span></span>
+<span id="cb56-7"><a href="#cb56-7"></a></span>
+<span id="cb56-8"><a href="#cb56-8"></a><span class="kw">impl</span><span class="op">&lt;</span>T<span class="op">&gt;</span> Point<span class="op">&lt;</span>T<span class="op">&gt;</span></span>
+<span id="cb56-9"><a href="#cb56-9"></a><span class="kw">where</span></span>
+<span id="cb56-10"><a href="#cb56-10"></a>    T<span class="op">:</span> Num <span class="op">+</span> <span class="bu">Copy</span><span class="op">,</span></span>
+<span id="cb56-11"><a href="#cb56-11"></a><span class="op">{</span></span>
+<span id="cb56-12"><a href="#cb56-12"></a>    <span class="kw">fn</span> square_distance_from_origin(<span class="op">&amp;</span><span class="kw">self</span>) <span class="op">-&gt;</span> T <span class="op">{</span></span>
+<span id="cb56-13"><a href="#cb56-13"></a>        <span class="kw">self</span><span class="op">.</span>x <span class="op">*</span> <span class="kw">self</span><span class="op">.</span>x <span class="op">+</span> <span class="kw">self</span><span class="op">.</span>y <span class="op">*</span> <span class="kw">self</span><span class="op">.</span>y</span>
+<span id="cb56-14"><a href="#cb56-14"></a>    <span class="op">}</span></span>
+<span id="cb56-15"><a href="#cb56-15"></a><span class="op">}</span></span>
+<span id="cb56-16"><a href="#cb56-16"></a></span>
+<span id="cb56-17"><a href="#cb56-17"></a><span class="kw">fn</span> main() <span class="op">{</span></span>
+<span id="cb56-18"><a href="#cb56-18"></a>    <span class="kw">let</span> p <span class="op">=</span> Point <span class="op">{</span> x<span class="op">:</span> <span class="dv">1</span><span class="op">,</span> y<span class="op">:</span> <span class="dv">5</span> <span class="op">};</span></span>
+<span id="cb56-19"><a href="#cb56-19"></a>    <span class="pp">println!</span>(<span class="st">"Distance = {}"</span><span class="op">,</span> p<span class="op">.</span>square_distance_from_origin())<span class="op">;</span></span>
+<span id="cb56-20"><a href="#cb56-20"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="option" class="slide level2">
+<h2><code>Option</code></h2>
+<ul>
+<li><p><code>Option</code> is defined in the Rust standard library</p>
+<div class="sourceCode" id="cb57"><pre class="sourceCode numberSource rust number-lines code-with-copy"><code class="sourceCode rust"><span id="cb57-1"><a href="#cb57-1"></a><span class="kw">enum</span> <span class="dt">Option</span><span class="op">&lt;</span>T<span class="op">&gt;</span> <span class="op">{</span></span>
+<span id="cb57-2"><a href="#cb57-2"></a>    <span class="cn">None</span><span class="op">,</span></span>
+<span id="cb57-3"><a href="#cb57-3"></a>    <span class="cn">Some</span>(T)<span class="op">,</span></span>
+<span id="cb57-4"><a href="#cb57-4"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>Rust does not have a null pointer or reference</p></li>
+<li><p><code>Option</code> captures the notion of variables that are in one of two states: null or not null</p></li>
+</ul>
+</section>
+<section id="result" class="slide level2">
+<h2><code>Result</code></h2>
+<ul>
+<li><p><code>Result</code> is also defined in the Rust standard library</p>
+<div class="sourceCode" id="cb58"><pre class="sourceCode numberSource rust number-lines code-with-copy"><code class="sourceCode rust"><span id="cb58-1"><a href="#cb58-1"></a><span class="kw">enum</span> <span class="dt">Result</span><span class="op">&lt;</span>T<span class="op">,</span> E<span class="op">&gt;</span> <span class="op">{</span></span>
+<span id="cb58-2"><a href="#cb58-2"></a>    <span class="cn">Ok</span>(T)<span class="op">,</span></span>
+<span id="cb58-3"><a href="#cb58-3"></a>    <span class="cn">Err</span>(E)<span class="op">,</span></span>
+<span id="cb58-4"><a href="#cb58-4"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>It is generic over two types: <code>T</code> and <code>E</code></p></li>
+<li><p>Used to model the result of an operation which might fail</p>
+<ul>
+<li><code>T</code> is the return value on success</li>
+<li><code>E</code> is the return value on error</li>
+</ul></li>
+</ul>
+</section>
+<section id="result-example" class="slide level2">
+<h2><code>Result</code> example</h2>
+<div class="sourceCode" id="cb59"><pre class="sourceCode numberSource rust number-lines code-with-copy"><code class="sourceCode rust"><span id="cb59-1"><a href="#cb59-1"></a><span class="kw">use</span> <span class="pp">std::fs::</span>File<span class="op">;</span></span>
+<span id="cb59-2"><a href="#cb59-2"></a></span>
+<span id="cb59-3"><a href="#cb59-3"></a><span class="kw">fn</span> main() <span class="op">{</span></span>
+<span id="cb59-4"><a href="#cb59-4"></a>    <span class="kw">let</span> greeting_file_result <span class="op">=</span> <span class="pp">File::</span>open(<span class="st">"hello.txt"</span>)<span class="op">;</span></span>
+<span id="cb59-5"><a href="#cb59-5"></a></span>
+<span id="cb59-6"><a href="#cb59-6"></a>    <span class="kw">let</span> greeting_file <span class="op">=</span> <span class="cf">match</span> greeting_file_result <span class="op">{</span></span>
+<span id="cb59-7"><a href="#cb59-7"></a>        <span class="cn">Ok</span>(file) <span class="op">=&gt;</span> file<span class="op">,</span></span>
+<span id="cb59-8"><a href="#cb59-8"></a>        <span class="cn">Err</span>(error) <span class="op">=&gt;</span> <span class="pp">panic!</span>(<span class="st">"Problem opening the file: {:?}"</span><span class="op">,</span> error)<span class="op">,</span></span>
+<span id="cb59-9"><a href="#cb59-9"></a>    <span class="op">};</span></span>
+<span id="cb59-10"><a href="#cb59-10"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li><code>greeting_file_result</code> has type <code>Result&lt;std::fs::File, std::io::Error&gt;</code></li>
+</ul>
+</section></section>
+<section>
+<section id="propagating-errors" class="title-slide slide level1 center">
+<h1>Propagating Errors</h1>
+
+</section>
+<section id="propagating-errors-1" class="slide level2">
+<h2>Propagating Errors</h2>
+<ul>
+<li><p>Suppose a function implementation can encounter errors</p></li>
+<li><p>In many cases, it is better to let the function caller handle the error</p>
+<ul>
+<li>Because the function caller may have more context about how to handle the error</li>
+</ul></li>
+<li><p>This design principle is called <strong>propagating the error</strong></p></li>
+</ul>
+</section>
+<section id="example-of-error-propagation" class="slide level2">
+<h2>Example of Error Propagation</h2>
+<div class="sourceCode" id="cb60" data-code-line-numbers="|5|7-10|9|14-17|"><pre class="sourceCode numberSource rust number-lines code-with-copy"><code class="sourceCode rust"><span id="cb60-1"><a href="#cb60-1"></a><span class="kw">use</span> <span class="pp">std::fs::</span>File<span class="op">;</span></span>
+<span id="cb60-2"><a href="#cb60-2"></a><span class="kw">use</span> <span class="pp">std::io::</span><span class="op">{</span><span class="kw">self</span><span class="op">,</span> <span class="bu">Read</span><span class="op">};</span></span>
+<span id="cb60-3"><a href="#cb60-3"></a></span>
+<span id="cb60-4"><a href="#cb60-4"></a><span class="kw">fn</span> read_username_from_file() <span class="op">-&gt;</span> <span class="dt">Result</span><span class="op">&lt;</span><span class="dt">String</span><span class="op">,</span> <span class="pp">io::</span><span class="bu">Error</span><span class="op">&gt;</span> <span class="op">{</span></span>
+<span id="cb60-5"><a href="#cb60-5"></a>    <span class="kw">let</span> username_file_result <span class="op">=</span> <span class="pp">File::</span>open(<span class="st">"hello.txt"</span>)<span class="op">;</span></span>
+<span id="cb60-6"><a href="#cb60-6"></a></span>
+<span id="cb60-7"><a href="#cb60-7"></a>    <span class="kw">let</span> <span class="kw">mut</span> username_file <span class="op">=</span> <span class="cf">match</span> username_file_result <span class="op">{</span></span>
+<span id="cb60-8"><a href="#cb60-8"></a>        <span class="cn">Ok</span>(file) <span class="op">=&gt;</span> file<span class="op">,</span></span>
+<span id="cb60-9"><a href="#cb60-9"></a>        <span class="cn">Err</span>(e) <span class="op">=&gt;</span> <span class="cf">return</span> <span class="cn">Err</span>(e)<span class="op">,</span></span>
+<span id="cb60-10"><a href="#cb60-10"></a>    <span class="op">};</span></span>
+<span id="cb60-11"><a href="#cb60-11"></a></span>
+<span id="cb60-12"><a href="#cb60-12"></a>    <span class="kw">let</span> <span class="kw">mut</span> username <span class="op">=</span> <span class="dt">String</span><span class="pp">::</span>new()<span class="op">;</span></span>
+<span id="cb60-13"><a href="#cb60-13"></a></span>
+<span id="cb60-14"><a href="#cb60-14"></a>    <span class="cf">match</span> username_file<span class="op">.</span>read_to_string(<span class="op">&amp;</span><span class="kw">mut</span> username) <span class="op">{</span></span>
+<span id="cb60-15"><a href="#cb60-15"></a>        <span class="cn">Ok</span>(_) <span class="op">=&gt;</span> <span class="cn">Ok</span>(username)<span class="op">,</span></span>
+<span id="cb60-16"><a href="#cb60-16"></a>        <span class="cn">Err</span>(e) <span class="op">=&gt;</span> <span class="cn">Err</span>(e)<span class="op">,</span></span>
+<span id="cb60-17"><a href="#cb60-17"></a>    <span class="op">}</span></span>
+<span id="cb60-18"><a href="#cb60-18"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="a-shortcut-for-propagating-errors" class="slide level2">
+<h2>A Shortcut for Propagating Errors</h2>
+<ul>
+<li><p>The <code>?</code> operator is shorter syntax for error propagation</p>
+<div class="sourceCode" id="cb61" data-code-line-numbers="|6|10|"><pre class="sourceCode numberSource rust number-lines code-with-copy"><code class="sourceCode rust"><span id="cb61-1"><a href="#cb61-1"></a><span class="kw">use</span> <span class="pp">std::fs::</span>File<span class="op">;</span></span>
+<span id="cb61-2"><a href="#cb61-2"></a><span class="kw">use</span> <span class="pp">std::io::</span><span class="op">{</span><span class="kw">self</span><span class="op">,</span> <span class="bu">Read</span><span class="op">};</span></span>
+<span id="cb61-3"><a href="#cb61-3"></a></span>
+<span id="cb61-4"><a href="#cb61-4"></a><span class="kw">fn</span> read_username_from_file() <span class="op">-&gt;</span> <span class="dt">Result</span><span class="op">&lt;</span><span class="dt">String</span><span class="op">,</span> <span class="pp">io::</span><span class="bu">Error</span><span class="op">&gt;</span> <span class="op">{</span></span>
+<span id="cb61-5"><a href="#cb61-5"></a></span>
+<span id="cb61-6"><a href="#cb61-6"></a>    <span class="kw">let</span> <span class="kw">mut</span> username_file <span class="op">=</span> <span class="pp">File::</span>open(<span class="st">"hello.txt"</span>)<span class="op">?;</span></span>
+<span id="cb61-7"><a href="#cb61-7"></a></span>
+<span id="cb61-8"><a href="#cb61-8"></a>    <span class="kw">let</span> <span class="kw">mut</span> username <span class="op">=</span> <span class="dt">String</span><span class="pp">::</span>new()<span class="op">;</span></span>
+<span id="cb61-9"><a href="#cb61-9"></a></span>
+<span id="cb61-10"><a href="#cb61-10"></a>    username_file<span class="op">.</span>read_to_string(<span class="op">&amp;</span><span class="kw">mut</span> username)<span class="op">?;</span></span>
+<span id="cb61-11"><a href="#cb61-11"></a>    <span class="cn">Ok</span>(username)</span>
+<span id="cb61-12"><a href="#cb61-12"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+</ul>
+</section></section>
+<section>
+<section id="traits" class="title-slide slide level1 center">
+<h1>Traits</h1>
+
+</section>
+<section id="traits-1" class="slide level2">
+<h2>Traits</h2>
+<ul>
+<li><p>Traits are a way for different types to have the same behavior</p></li>
+<li><p>A trait is a collection of function declarations</p></li>
+<li><p>Example</p>
+<div class="sourceCode" id="cb62"><pre class="sourceCode numberSource rust number-lines code-with-copy"><code class="sourceCode rust"><span id="cb62-1"><a href="#cb62-1"></a><span class="kw">pub</span> <span class="kw">trait</span> Area <span class="op">{</span></span>
+<span id="cb62-2"><a href="#cb62-2"></a>  <span class="kw">fn</span> area(<span class="op">&amp;</span><span class="kw">self</span>) <span class="op">-&gt;</span> <span class="dt">f64</span><span class="op">;</span></span>
+<span id="cb62-3"><a href="#cb62-3"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+</ul>
+</section>
+<section id="implementing-traits" class="slide level2">
+<h2>Implementing Traits</h2>
+<div class="sourceCode" id="cb63" data-code-line-numbers="|1-3|10-14|"><pre class="sourceCode numberSource rust number-lines code-with-copy"><code class="sourceCode rust"><span id="cb63-1"><a href="#cb63-1"></a><span class="kw">pub</span> <span class="kw">trait</span> Area <span class="op">{</span></span>
+<span id="cb63-2"><a href="#cb63-2"></a>    <span class="kw">fn</span> area(<span class="op">&amp;</span><span class="kw">self</span>) <span class="op">-&gt;</span> <span class="dt">f64</span><span class="op">;</span></span>
+<span id="cb63-3"><a href="#cb63-3"></a><span class="op">}</span></span>
+<span id="cb63-4"><a href="#cb63-4"></a></span>
+<span id="cb63-5"><a href="#cb63-5"></a><span class="kw">struct</span> Rectangle <span class="op">{</span></span>
+<span id="cb63-6"><a href="#cb63-6"></a>    width<span class="op">:</span> <span class="dt">f64</span><span class="op">,</span></span>
+<span id="cb63-7"><a href="#cb63-7"></a>    height<span class="op">:</span> <span class="dt">f64</span><span class="op">,</span></span>
+<span id="cb63-8"><a href="#cb63-8"></a><span class="op">}</span></span>
+<span id="cb63-9"><a href="#cb63-9"></a></span>
+<span id="cb63-10"><a href="#cb63-10"></a><span class="kw">impl</span> Area <span class="cf">for</span> Rectangle <span class="op">{</span></span>
+<span id="cb63-11"><a href="#cb63-11"></a>    <span class="kw">fn</span> area(<span class="op">&amp;</span><span class="kw">self</span>) <span class="op">-&gt;</span> <span class="dt">f64</span> <span class="op">{</span></span>
+<span id="cb63-12"><a href="#cb63-12"></a>        <span class="kw">self</span><span class="op">.</span>width <span class="op">*</span> <span class="kw">self</span><span class="op">.</span>height</span>
+<span id="cb63-13"><a href="#cb63-13"></a>    <span class="op">}</span></span>
+<span id="cb63-14"><a href="#cb63-14"></a><span class="op">}</span></span>
+<span id="cb63-15"><a href="#cb63-15"></a></span>
+<span id="cb63-16"><a href="#cb63-16"></a><span class="kw">fn</span> main() <span class="op">{</span></span>
+<span id="cb63-17"><a href="#cb63-17"></a>    <span class="kw">let</span> r <span class="op">=</span> Rectangle <span class="op">{</span></span>
+<span id="cb63-18"><a href="#cb63-18"></a>        width<span class="op">:</span> <span class="dv">3.0</span><span class="op">,</span></span>
+<span id="cb63-19"><a href="#cb63-19"></a>        height<span class="op">:</span> <span class="dv">4.0</span><span class="op">,</span></span>
+<span id="cb63-20"><a href="#cb63-20"></a>    <span class="op">};</span></span>
+<span id="cb63-21"><a href="#cb63-21"></a>    <span class="pp">println!</span>(<span class="st">"Rectangle has area {}"</span><span class="op">,</span> r<span class="op">.</span>area())<span class="op">;</span></span>
+<span id="cb63-22"><a href="#cb63-22"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="multiple-trait-implementations" class="slide level2">
+<h2>Multiple Trait Implementations</h2>
+<div class="sourceCode" id="cb64"><pre class="sourceCode numberSource rust number-lines code-with-copy"><code class="sourceCode rust"><span id="cb64-1"><a href="#cb64-1"></a><span class="kw">pub</span> <span class="kw">trait</span> Area <span class="op">{</span></span>
+<span id="cb64-2"><a href="#cb64-2"></a>    <span class="kw">fn</span> area(<span class="op">&amp;</span><span class="kw">self</span>) <span class="op">-&gt;</span> <span class="dt">f64</span><span class="op">;</span></span>
+<span id="cb64-3"><a href="#cb64-3"></a><span class="op">}</span></span>
+<span id="cb64-4"><a href="#cb64-4"></a></span>
+<span id="cb64-5"><a href="#cb64-5"></a><span class="kw">struct</span> Rectangle <span class="op">{</span></span>
+<span id="cb64-6"><a href="#cb64-6"></a>    width<span class="op">:</span> <span class="dt">f64</span><span class="op">,</span></span>
+<span id="cb64-7"><a href="#cb64-7"></a>    height<span class="op">:</span> <span class="dt">f64</span><span class="op">,</span></span>
+<span id="cb64-8"><a href="#cb64-8"></a><span class="op">}</span></span>
+<span id="cb64-9"><a href="#cb64-9"></a></span>
+<span id="cb64-10"><a href="#cb64-10"></a><span class="kw">impl</span> Area <span class="cf">for</span> Rectangle <span class="op">{</span></span>
+<span id="cb64-11"><a href="#cb64-11"></a>    <span class="kw">fn</span> area(<span class="op">&amp;</span><span class="kw">self</span>) <span class="op">-&gt;</span> <span class="dt">f64</span> <span class="op">{</span></span>
+<span id="cb64-12"><a href="#cb64-12"></a>        <span class="kw">self</span><span class="op">.</span>width <span class="op">*</span> <span class="kw">self</span><span class="op">.</span>height</span>
+<span id="cb64-13"><a href="#cb64-13"></a>    <span class="op">}</span></span>
+<span id="cb64-14"><a href="#cb64-14"></a><span class="op">}</span></span>
+<span id="cb64-15"><a href="#cb64-15"></a></span>
+<span id="cb64-16"><a href="#cb64-16"></a><span class="kw">struct</span> Circle <span class="op">{</span></span>
+<span id="cb64-17"><a href="#cb64-17"></a>    radius<span class="op">:</span> <span class="dt">f64</span><span class="op">,</span></span>
+<span id="cb64-18"><a href="#cb64-18"></a><span class="op">}</span></span>
+<span id="cb64-19"><a href="#cb64-19"></a></span>
+<span id="cb64-20"><a href="#cb64-20"></a><span class="kw">impl</span> Area <span class="cf">for</span> Circle <span class="op">{</span></span>
+<span id="cb64-21"><a href="#cb64-21"></a>    <span class="kw">fn</span> area(<span class="op">&amp;</span><span class="kw">self</span>) <span class="op">-&gt;</span> <span class="dt">f64</span> <span class="op">{</span></span>
+<span id="cb64-22"><a href="#cb64-22"></a>        <span class="dv">3.14</span> <span class="op">*</span> <span class="kw">self</span><span class="op">.</span>radius <span class="op">*</span> <span class="kw">self</span><span class="op">.</span>radius</span>
+<span id="cb64-23"><a href="#cb64-23"></a>    <span class="op">}</span></span>
+<span id="cb64-24"><a href="#cb64-24"></a><span class="op">}</span></span>
+<span id="cb64-25"><a href="#cb64-25"></a></span>
+<span id="cb64-26"><a href="#cb64-26"></a><span class="kw">fn</span> main() <span class="op">{</span></span>
+<span id="cb64-27"><a href="#cb64-27"></a>    <span class="kw">let</span> r <span class="op">=</span> Rectangle <span class="op">{</span></span>
+<span id="cb64-28"><a href="#cb64-28"></a>        width<span class="op">:</span> <span class="dv">3.0</span><span class="op">,</span></span>
+<span id="cb64-29"><a href="#cb64-29"></a>        height<span class="op">:</span> <span class="dv">4.0</span><span class="op">,</span></span>
+<span id="cb64-30"><a href="#cb64-30"></a>    <span class="op">};</span></span>
+<span id="cb64-31"><a href="#cb64-31"></a>    <span class="pp">println!</span>(<span class="st">"Rectangle has area {}"</span><span class="op">,</span> r<span class="op">.</span>area())<span class="op">;</span></span>
+<span id="cb64-32"><a href="#cb64-32"></a></span>
+<span id="cb64-33"><a href="#cb64-33"></a>    <span class="kw">let</span> c <span class="op">=</span> Circle <span class="op">{</span> radius<span class="op">:</span> <span class="dv">1.0</span> <span class="op">};</span></span>
+<span id="cb64-34"><a href="#cb64-34"></a>    <span class="pp">println!</span>(<span class="st">"Circle has area {}"</span><span class="op">,</span> c<span class="op">.</span>area())<span class="op">;</span></span>
+<span id="cb64-35"><a href="#cb64-35"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section></section>
+<section>
+<section id="vectors" class="title-slide slide level1 center">
+<h1>Vectors</h1>
+
+</section>
+<section id="vectors-1" class="slide level2">
+<h2>Vectors</h2>
+<ul>
+<li><p>Vectors are resizable lists of same type objects</p></li>
+<li><p>Vector initialization</p>
+<div class="sourceCode" id="cb65"><pre class="sourceCode numberSource rust number-lines code-with-copy"><code class="sourceCode rust"><span id="cb65-1"><a href="#cb65-1"></a><span class="kw">fn</span> main() <span class="op">{</span></span>
+<span id="cb65-2"><a href="#cb65-2"></a>    <span class="kw">let</span> <span class="kw">mut</span> v<span class="op">:</span> <span class="dt">Vec</span><span class="op">&lt;</span><span class="dt">i32</span><span class="op">&gt;</span> <span class="op">=</span> <span class="dt">Vec</span><span class="pp">::</span>new()<span class="op">;</span></span>
+<span id="cb65-3"><a href="#cb65-3"></a></span>
+<span id="cb65-4"><a href="#cb65-4"></a>    v<span class="op">.</span>push(<span class="dv">10</span>)<span class="op">;</span></span>
+<span id="cb65-5"><a href="#cb65-5"></a>    v<span class="op">.</span>push(<span class="dv">11</span>)<span class="op">;</span></span>
+<span id="cb65-6"><a href="#cb65-6"></a>    <span class="pp">println!</span>(<span class="st">"{:?}"</span><span class="op">,</span> v)<span class="op">;</span></span>
+<span id="cb65-7"><a href="#cb65-7"></a></span>
+<span id="cb65-8"><a href="#cb65-8"></a>    v <span class="op">=</span> <span class="pp">vec!</span>[<span class="dv">4</span><span class="op">,</span> <span class="dv">5</span><span class="op">,</span> <span class="dv">6</span>]<span class="op">;</span></span>
+<span id="cb65-9"><a href="#cb65-9"></a>    <span class="pp">println!</span>(<span class="st">"{:?}"</span><span class="op">,</span> v)<span class="op">;</span></span>
+<span id="cb65-10"><a href="#cb65-10"></a></span>
+<span id="cb65-11"><a href="#cb65-11"></a>    v <span class="op">=</span> <span class="pp">vec!</span>[<span class="dv">10</span><span class="op">;</span> <span class="dv">5</span>]<span class="op">;</span></span>
+<span id="cb65-12"><a href="#cb65-12"></a>    <span class="pp">println!</span>(<span class="st">"{:?}"</span><span class="op">,</span> v)<span class="op">;</span></span>
+<span id="cb65-13"><a href="#cb65-13"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+</ul>
+</section>
+<section id="accessing-vector-elements" class="slide level2">
+<h2>Accessing vector elements</h2>
+<ul>
+<li><p>Vector elements can be accessed using square brackets</p>
+<div class="sourceCode" id="cb66"><pre class="sourceCode numberSource rust number-lines code-with-copy"><code class="sourceCode rust"><span id="cb66-1"><a href="#cb66-1"></a><span class="kw">let</span> v <span class="op">=</span> <span class="pp">vec!</span>[<span class="dv">4</span><span class="op">,</span> <span class="dv">5</span><span class="op">,</span> <span class="dv">6</span>]<span class="op">;</span></span>
+<span id="cb66-2"><a href="#cb66-2"></a><span class="pp">println!</span>(<span class="st">"{} {}"</span><span class="op">,</span> v[<span class="dv">0</span>]<span class="op">,</span> v[<span class="dv">1</span>])<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>Iterating over a vector using a reference</p>
+<div class="sourceCode" id="cb67"><pre class="sourceCode numberSource rust number-lines code-with-copy"><code class="sourceCode rust"><span id="cb67-1"><a href="#cb67-1"></a><span class="kw">let</span> v <span class="op">=</span> <span class="pp">vec!</span>[<span class="dv">100</span><span class="op">,</span> <span class="dv">32</span><span class="op">,</span> <span class="dv">57</span>]<span class="op">;</span></span>
+<span id="cb67-2"><a href="#cb67-2"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="op">&amp;</span>v <span class="op">{</span></span>
+<span id="cb67-3"><a href="#cb67-3"></a>    <span class="pp">println!</span>(<span class="st">"{i}"</span>)<span class="op">;</span></span>
+<span id="cb67-4"><a href="#cb67-4"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>Iterating over a vector using a mutable reference</p>
+<div class="sourceCode" id="cb68"><pre class="sourceCode numberSource rust number-lines code-with-copy"><code class="sourceCode rust"><span id="cb68-1"><a href="#cb68-1"></a><span class="kw">let</span> <span class="kw">mut</span> v <span class="op">=</span> <span class="pp">vec!</span>[<span class="dv">100</span><span class="op">,</span> <span class="dv">32</span><span class="op">,</span> <span class="dv">57</span>]<span class="op">;</span></span>
+<span id="cb68-2"><a href="#cb68-2"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="op">&amp;</span><span class="kw">mut</span> v <span class="op">{</span></span>
+<span id="cb68-3"><a href="#cb68-3"></a>    <span class="op">*</span>i <span class="op">+=</span> <span class="dv">50</span><span class="op">;</span></span>
+<span id="cb68-4"><a href="#cb68-4"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+</ul>
+</section>
+<section id="many-useful-methods-available" class="slide level2">
+<h2>Many useful methods available</h2>
+<ul>
+<li><p>Full list at <a href="https://doc.rust-lang.org/std/vec/struct.Vec.html">https://doc.rust-lang.org/std/vec/struct.Vec.html</a></p></li>
+<li><p><code>len</code>, <code>pop</code>, <code>clear</code>, <code>insert</code>, <code>is_empty</code>, <code>resize</code>, <code>truncate</code>, <code>dedup</code>, <code>retain</code></p></li>
+<li><p>Example</p>
+<div class="sourceCode" id="cb69"><pre class="sourceCode numberSource rust number-lines code-with-copy"><code class="sourceCode rust"><span id="cb69-1"><a href="#cb69-1"></a><span class="kw">fn</span> main() <span class="op">{</span></span>
+<span id="cb69-2"><a href="#cb69-2"></a>    <span class="kw">let</span> <span class="kw">mut</span> vec <span class="op">=</span> <span class="pp">vec!</span>[<span class="dv">1</span><span class="op">,</span> <span class="dv">2</span><span class="op">,</span> <span class="dv">3</span><span class="op">,</span> <span class="dv">4</span>]<span class="op">;</span></span>
+<span id="cb69-3"><a href="#cb69-3"></a>    vec<span class="op">.</span>retain(<span class="op">|&amp;</span>x<span class="op">|</span> x <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span>)<span class="op">;</span></span>
+<span id="cb69-4"><a href="#cb69-4"></a>    <span class="pp">assert_eq!</span>(vec<span class="op">,</span> [<span class="dv">2</span><span class="op">,</span> <span class="dv">4</span>])<span class="op">;</span></span>
+<span id="cb69-5"><a href="#cb69-5"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+</ul>
+</section></section>
+<section>
+<section id="iterators" class="title-slide slide level1 center">
+<h1>Iterators</h1>
+
+</section>
+<section id="iterators-1" class="slide level2">
+<h2>Iterators</h2>
+<ul>
+<li><p>Iterators allow us to perform task on a sequence of items</p></li>
+<li><p>Any object that implements the <code>Iterator</code> trait can have an iterator</p>
+<div class="sourceCode" id="cb70"><pre class="sourceCode numberSource rust number-lines code-with-copy"><code class="sourceCode rust"><span id="cb70-1"><a href="#cb70-1"></a><span class="kw">pub</span> <span class="kw">trait</span> <span class="bu">Iterator</span> <span class="op">{</span></span>
+<span id="cb70-2"><a href="#cb70-2"></a>  <span class="kw">type</span> Item<span class="op">;</span></span>
+<span id="cb70-3"><a href="#cb70-3"></a></span>
+<span id="cb70-4"><a href="#cb70-4"></a>  <span class="kw">fn</span> next(<span class="op">&amp;</span><span class="kw">mut</span> <span class="kw">self</span>) <span class="op">-&gt;</span> <span class="dt">Option</span><span class="op">&lt;</span><span class="dt">Self</span><span class="pp">::</span>Item<span class="op">&gt;;</span></span>
+<span id="cb70-5"><a href="#cb70-5"></a>  <span class="co">// methods with default implementations elided</span></span>
+<span id="cb70-6"><a href="#cb70-6"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>Vectors have iterators</p>
+<div class="sourceCode" id="cb71"><pre class="sourceCode numberSource rust number-lines code-with-copy"><code class="sourceCode rust"><span id="cb71-1"><a href="#cb71-1"></a><span class="kw">fn</span> main() <span class="op">{</span></span>
+<span id="cb71-2"><a href="#cb71-2"></a>    <span class="kw">let</span> v <span class="op">=</span> <span class="pp">vec!</span>[<span class="dv">1</span><span class="op">,</span> <span class="dv">2</span><span class="op">,</span> <span class="dv">3</span>]<span class="op">;</span></span>
+<span id="cb71-3"><a href="#cb71-3"></a>    <span class="kw">let</span> v_iter <span class="op">=</span> v<span class="op">.</span>iter()<span class="op">;</span></span>
+<span id="cb71-4"><a href="#cb71-4"></a></span>
+<span id="cb71-5"><a href="#cb71-5"></a>    <span class="kw">let</span> s<span class="op">:</span> <span class="dt">u32</span> <span class="op">=</span> v_iter<span class="op">.</span>sum()<span class="op">;</span></span>
+<span id="cb71-6"><a href="#cb71-6"></a>    <span class="pp">println!</span>(<span class="st">"Sum: {}"</span><span class="op">,</span> s)<span class="op">;</span></span>
+<span id="cb71-7"><a href="#cb71-7"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+</ul>
+</section>
+<section id="example-course-credits" class="slide level2">
+<h2>Example: Course Credits</h2>
+<ul>
+<li><p>Consider the <code>Course</code> struct</p>
+<div class="sourceCode" id="cb72"><pre class="sourceCode numberSource rust number-lines code-with-copy"><code class="sourceCode rust"><span id="cb72-1"><a href="#cb72-1"></a><span class="at">#[</span>derive<span class="at">(</span><span class="bu">PartialEq</span><span class="at">)]</span></span>
+<span id="cb72-2"><a href="#cb72-2"></a><span class="kw">enum</span> CourseType <span class="op">{</span></span>
+<span id="cb72-3"><a href="#cb72-3"></a>    Core<span class="op">,</span></span>
+<span id="cb72-4"><a href="#cb72-4"></a>    Elective<span class="op">,</span></span>
+<span id="cb72-5"><a href="#cb72-5"></a><span class="op">}</span></span>
+<span id="cb72-6"><a href="#cb72-6"></a></span>
+<span id="cb72-7"><a href="#cb72-7"></a><span class="kw">struct</span> Course <span class="op">{</span></span>
+<span id="cb72-8"><a href="#cb72-8"></a>    credits<span class="op">:</span> <span class="dt">u32</span><span class="op">,</span></span>
+<span id="cb72-9"><a href="#cb72-9"></a>    category<span class="op">:</span> CourseType<span class="op">,</span></span>
+<span id="cb72-10"><a href="#cb72-10"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>Given a vector <code>Vec&lt;Course&gt;</code>, suppose we want to add up the credits in the core courses</p></li>
+</ul>
+</section>
+<section id="example-course-credits-1" class="slide level2">
+<h2>Example: Course Credits</h2>
+<div class="sourceCode" id="cb73" data-code-line-numbers="|2-16|18-22|"><pre class="sourceCode numberSource rust number-lines code-with-copy"><code class="sourceCode rust"><span id="cb73-1"><a href="#cb73-1"></a><span class="kw">fn</span> main() <span class="op">{</span></span>
+<span id="cb73-2"><a href="#cb73-2"></a>    <span class="kw">let</span> <span class="kw">mut</span> courses<span class="op">:</span> <span class="dt">Vec</span><span class="op">&lt;</span>Course<span class="op">&gt;</span> <span class="op">=</span> <span class="pp">vec!</span>[]<span class="op">;</span></span>
+<span id="cb73-3"><a href="#cb73-3"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="dv">0</span><span class="op">..</span><span class="dv">10</span> <span class="op">{</span></span>
+<span id="cb73-4"><a href="#cb73-4"></a>        <span class="kw">let</span> c <span class="op">=</span> <span class="cf">if</span> i <span class="op">%</span> <span class="dv">3</span> <span class="op">==</span> <span class="dv">0</span> <span class="op">{</span></span>
+<span id="cb73-5"><a href="#cb73-5"></a>            Course <span class="op">{</span></span>
+<span id="cb73-6"><a href="#cb73-6"></a>                credits<span class="op">:</span> <span class="dv">8</span><span class="op">,</span></span>
+<span id="cb73-7"><a href="#cb73-7"></a>                category<span class="op">:</span> <span class="pp">CourseType::</span>Core<span class="op">,</span></span>
+<span id="cb73-8"><a href="#cb73-8"></a>            <span class="op">}</span></span>
+<span id="cb73-9"><a href="#cb73-9"></a>        <span class="op">}</span> <span class="cf">else</span> <span class="op">{</span></span>
+<span id="cb73-10"><a href="#cb73-10"></a>            Course <span class="op">{</span></span>
+<span id="cb73-11"><a href="#cb73-11"></a>                credits<span class="op">:</span> <span class="dv">6</span><span class="op">,</span></span>
+<span id="cb73-12"><a href="#cb73-12"></a>                category<span class="op">:</span> <span class="pp">CourseType::</span>Elective<span class="op">,</span></span>
+<span id="cb73-13"><a href="#cb73-13"></a>            <span class="op">}</span></span>
+<span id="cb73-14"><a href="#cb73-14"></a>        <span class="op">};</span></span>
+<span id="cb73-15"><a href="#cb73-15"></a>        courses<span class="op">.</span>push(c)<span class="op">;</span></span>
+<span id="cb73-16"><a href="#cb73-16"></a>    <span class="op">}</span></span>
+<span id="cb73-17"><a href="#cb73-17"></a></span>
+<span id="cb73-18"><a href="#cb73-18"></a>    <span class="kw">let</span> core_credits<span class="op">:</span> <span class="dt">u32</span> <span class="op">=</span> courses</span>
+<span id="cb73-19"><a href="#cb73-19"></a>        <span class="op">.</span>iter()</span>
+<span id="cb73-20"><a href="#cb73-20"></a>        <span class="op">.</span>filter(<span class="op">|</span>c<span class="op">|</span> c<span class="op">.</span>category <span class="op">==</span> <span class="pp">CourseType::</span>Core)</span>
+<span id="cb73-21"><a href="#cb73-21"></a>        <span class="op">.</span>map(<span class="op">|</span>c<span class="op">|</span> c<span class="op">.</span>credits)</span>
+<span id="cb73-22"><a href="#cb73-22"></a>        <span class="op">.</span>sum()<span class="op">;</span></span>
+<span id="cb73-23"><a href="#cb73-23"></a>    <span class="pp">println!</span>(<span class="st">"Core credits = {core_credits}"</span>)<span class="op">;</span></span>
+<span id="cb73-24"><a href="#cb73-24"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="example-counting-identical-components" class="slide level2">
+<h2>Example: Counting Identical Components</h2>
+<ul>
+<li><p>Suppose we want to count the number of identical components in two vectors</p>
+<div class="sourceCode" id="cb74"><pre class="sourceCode numberSource rust number-lines code-with-copy"><code class="sourceCode rust"><span id="cb74-1"><a href="#cb74-1"></a><span class="kw">let</span> v1 <span class="op">=</span> <span class="pp">vec!</span>[<span class="dv">15</span><span class="op">,</span> <span class="dv">23</span><span class="op">,</span> <span class="dv">44</span><span class="op">,</span> <span class="dv">19</span><span class="op">,</span> <span class="dv">56</span><span class="op">,</span> <span class="dv">83</span><span class="op">,</span> <span class="dv">33</span><span class="op">,</span> <span class="dv">19</span><span class="op">,</span> <span class="dv">76</span><span class="op">,</span> <span class="dv">10</span>]<span class="op">;</span></span>
+<span id="cb74-2"><a href="#cb74-2"></a><span class="kw">let</span> v2 <span class="op">=</span> <span class="pp">vec!</span>[<span class="dv">76</span><span class="op">,</span> <span class="dv">23</span><span class="op">,</span> <span class="dv">27</span><span class="op">,</span> <span class="dv">20</span><span class="op">,</span> <span class="dv">56</span><span class="op">,</span> <span class="dv">83</span><span class="op">,</span> <span class="dv">39</span><span class="op">,</span> <span class="dv">19</span><span class="op">,</span> <span class="dv">92</span><span class="op">,</span> <span class="dv">60</span>]<span class="op">;</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>Solution using <code>zip</code> and <code>map</code></p>
+<div class="sourceCode" id="cb75"><pre class="sourceCode numberSource rust number-lines code-with-copy"><code class="sourceCode rust"><span id="cb75-1"><a href="#cb75-1"></a><span class="kw">let</span> matches<span class="op">:</span> <span class="dt">u32</span> <span class="op">=</span> v1</span>
+<span id="cb75-2"><a href="#cb75-2"></a>    <span class="op">.</span>iter()</span>
+<span id="cb75-3"><a href="#cb75-3"></a>    <span class="op">.</span>zip(v2<span class="op">.</span>iter())</span>
+<span id="cb75-4"><a href="#cb75-4"></a>    <span class="op">.</span>map(<span class="op">|</span>(a<span class="op">,</span> b)<span class="op">|</span> <span class="cf">if</span> a <span class="op">==</span> b <span class="op">{</span> <span class="dv">1</span> <span class="op">}</span> <span class="cf">else</span> <span class="op">{</span> <span class="dv">0</span> <span class="op">}</span>)</span>
+<span id="cb75-5"><a href="#cb75-5"></a>    <span class="op">.</span>sum()<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+</ul>
+</section>
+<section id="many-useful-methods-available-1" class="slide level2">
+<h2>Many useful methods available</h2>
+<ul>
+<li>Full list at <a href="https://doc.rust-lang.org/stable/std/iter/trait.Iterator.html">https://doc.rust-lang.org/stable/std/iter/trait.Iterator.html</a></li>
+<li><code>cycle</code>, <code>count</code>, <code>enumerate</code>, <code>filter_map</code>, <code>find</code>, <code>fold</code>, <code>for_each</code>, <code>reduce</code>, <code>skip</code>, <code>take</code></li>
+<li>Using these methods can result in elegant code which is easier to read</li>
+</ul>
+</section></section>
+<section>
+<section id="organizing-projects" class="title-slide slide level1 center">
+<h1>Organizing Projects</h1>
+
+</section>
+<section id="crates" class="slide level2">
+<h2>Crates</h2>
+<ul>
+<li><p>A crate is the smallest amount of code the Rust compiler can compile</p></li>
+<li><p>Crates can be <strong>binary</strong> crates or <strong>library</strong> crates</p></li>
+<li><p>Binary crates have executables</p></li>
+<li><p>Library crates have code that can be shared with multiple projects</p></li>
+<li><p>Simple binary crate</p>
+<div class="sourceCode" id="cb76"><pre class="sourceCode numberSource console number-lines code-with-copy"><code class="sourceCode"><span id="cb76-1"><a href="#cb76-1"></a>.</span>
+<span id="cb76-2"><a href="#cb76-2"></a>├── Cargo.toml</span>
+<span id="cb76-3"><a href="#cb76-3"></a>└── src</span>
+<span id="cb76-4"><a href="#cb76-4"></a>    └── main.rs</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+</ul>
+</section>
+<section id="binary-crate-with-modules" class="slide level2">
+<h2>Binary crate with modules</h2>
+<ul>
+<li><p>Modules are logical partitions of the code in the project</p></li>
+<li><p>Example of a binary crate with modules</p>
+<div class="sourceCode" id="cb77"><pre class="sourceCode numberSource console number-lines code-with-copy"><code class="sourceCode"><span id="cb77-1"><a href="#cb77-1"></a>backyard</span>
+<span id="cb77-2"><a href="#cb77-2"></a>├── Cargo.toml</span>
+<span id="cb77-3"><a href="#cb77-3"></a>└── src</span>
+<span id="cb77-4"><a href="#cb77-4"></a>    ├── garden</span>
+<span id="cb77-5"><a href="#cb77-5"></a>    │&nbsp;&nbsp; └── vegetables.rs</span>
+<span id="cb77-6"><a href="#cb77-6"></a>    ├── garden.rs</span>
+<span id="cb77-7"><a href="#cb77-7"></a>    └── main.rs</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p><code>main.rs</code> defines a module <code>garden</code></p>
+<div class="sourceCode" id="cb78"><pre class="sourceCode numberSource rust number-lines code-with-copy"><code class="sourceCode rust"><span id="cb78-1"><a href="#cb78-1"></a><span class="kw">use</span> <span class="kw">crate</span><span class="pp">::garden::vegetables::</span>Asparagus<span class="op">;</span></span>
+<span id="cb78-2"><a href="#cb78-2"></a></span>
+<span id="cb78-3"><a href="#cb78-3"></a><span class="kw">mod</span> garden<span class="op">;</span></span>
+<span id="cb78-4"><a href="#cb78-4"></a></span>
+<span id="cb78-5"><a href="#cb78-5"></a><span class="kw">fn</span> main() <span class="op">{</span></span>
+<span id="cb78-6"><a href="#cb78-6"></a>    <span class="kw">let</span> plant <span class="op">=</span> Asparagus <span class="op">{};</span></span>
+<span id="cb78-7"><a href="#cb78-7"></a>    <span class="pp">println!</span>(<span class="st">"I'm growing {:?}!"</span><span class="op">,</span> plant)<span class="op">;</span></span>
+<span id="cb78-8"><a href="#cb78-8"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p><code>garden.rs</code> defines a submodule <code>vegetables</code></p>
+<div class="sourceCode" id="cb79"><pre class="sourceCode numberSource rust number-lines code-with-copy"><code class="sourceCode rust"><span id="cb79-1"><a href="#cb79-1"></a><span class="kw">pub</span> <span class="kw">mod</span> vegetables<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p><code>vegetables.rs</code> defines a struct <code>Asparagus</code></p>
+<div class="sourceCode" id="cb80"><pre class="sourceCode numberSource rust number-lines code-with-copy"><code class="sourceCode rust"><span id="cb80-1"><a href="#cb80-1"></a><span class="kw">pub</span> <span class="kw">struct</span> Asparagus <span class="op">{}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+</ul>
+</section>
+<section id="location-of-modules" class="slide level2">
+<h2>Location of modules</h2>
+<ul>
+<li><p><code>backyard</code> crate</p>
+<div class="sourceCode" id="cb81"><pre class="sourceCode numberSource console number-lines code-with-copy"><code class="sourceCode"><span id="cb81-1"><a href="#cb81-1"></a>backyard</span>
+<span id="cb81-2"><a href="#cb81-2"></a>├── Cargo.toml</span>
+<span id="cb81-3"><a href="#cb81-3"></a>└── src</span>
+<span id="cb81-4"><a href="#cb81-4"></a>    ├── garden</span>
+<span id="cb81-5"><a href="#cb81-5"></a>    │&nbsp;&nbsp; └── vegetables.rs</span>
+<span id="cb81-6"><a href="#cb81-6"></a>    ├── garden.rs</span>
+<span id="cb81-7"><a href="#cb81-7"></a>    └── main.rs</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>Seeing the line <code>mod garden</code> in <code>main.rs</code>, the compiler will look for module’s code in the following places</p>
+<ul>
+<li>In a <code>{ }</code> block immediately after <code>mod garden</code></li>
+<li>In the file <code>src/garden.rs</code></li>
+<li>In the file <code>src/garden/mod.rs</code></li>
+</ul></li>
+</ul>
+</section>
+<section id="location-of-modules-1" class="slide level2">
+<h2>Location of modules</h2>
+<ul>
+<li><p><code>backyard</code> crate</p>
+<div class="sourceCode" id="cb82"><pre class="sourceCode numberSource console number-lines code-with-copy"><code class="sourceCode"><span id="cb82-1"><a href="#cb82-1"></a>backyard</span>
+<span id="cb82-2"><a href="#cb82-2"></a>├── Cargo.toml</span>
+<span id="cb82-3"><a href="#cb82-3"></a>└── src</span>
+<span id="cb82-4"><a href="#cb82-4"></a>    ├── garden</span>
+<span id="cb82-5"><a href="#cb82-5"></a>    │&nbsp;&nbsp; └── vegetables.rs</span>
+<span id="cb82-6"><a href="#cb82-6"></a>    ├── garden.rs</span>
+<span id="cb82-7"><a href="#cb82-7"></a>    └── main.rs</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>Seeing the line <code>pub mod vegetables</code> in <code>garden.rs</code>, the compiler will look for module’s code in the following places</p>
+<ul>
+<li>In a <code>{ }</code> block immediately after <code>mod vegetables</code></li>
+<li>In the file <code>src/vegetables.rs</code></li>
+<li>In the file <code>src/vegetables/mod.rs</code></li>
+</ul></li>
+</ul>
+</section>
+<section id="visibility-of-modules-and-their-contents" class="slide level2">
+<h2>Visibility of modules and their contents</h2>
+<ul>
+<li><p>Code in a module is private from its parent modules by default</p></li>
+<li><p>Seeing the line <code>pub mod vegetables</code>, the compiler interprets <code>vegetables</code> as a public module</p></li>
+<li><p>Individual functions and types in a public module can be exposed using <code>pub</code> prefix</p>
+<div class="sourceCode" id="cb83"><pre class="sourceCode numberSource rust number-lines code-with-copy"><code class="sourceCode rust"><span id="cb83-1"><a href="#cb83-1"></a><span class="kw">pub</span> <span class="kw">struct</span> Asparagus <span class="op">{}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+</ul>
+</section></section>
+<section id="further-reading" class="title-slide slide level1 center">
+<h1>Further Reading</h1>
+<ul>
+<li><p>Go to <a href="https://www.rust-lang.org/learn">https://www.rust-lang.org/learn</a></p>
+<ul>
+<li><a href="https://doc.rust-lang.org/book/">Rust book</a></li>
+<li><a href="https://doc.rust-lang.org/rust-by-example/">Rust by Example</a></li>
+</ul></li>
+</ul>
+<div class="footer footer-default">
+
+</div>
+</section>
+    </div>
+  </div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="index_files/libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="index_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="index_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="index_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="index_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="index_files/libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="index_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="index_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="index_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': false,
+'previewLinksAuto': false,
+'smaller': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: true,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'none',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1050,
+
+        height: 700,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
+
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    <script id="quarto-html-after-body" type="application/javascript">
+    window.document.addEventListener("DOMContentLoaded", function (event) {
+      const toggleBodyColorMode = (bsSheetEl) => {
+        const mode = bsSheetEl.getAttribute("data-mode");
+        const bodyEl = window.document.querySelector("body");
+        if (mode === "dark") {
+          bodyEl.classList.add("quarto-dark");
+          bodyEl.classList.remove("quarto-light");
+        } else {
+          bodyEl.classList.add("quarto-light");
+          bodyEl.classList.remove("quarto-dark");
+        }
+      }
+      const toggleBodyColorPrimary = () => {
+        const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+        if (bsSheetEl) {
+          toggleBodyColorMode(bsSheetEl);
+        }
+      }
+      toggleBodyColorPrimary();  
+      const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+      tabsets.forEach(function(tabset) {
+        const tabby = new Tabby('#' + tabset.id);
+      });
+      const isCodeAnnotation = (el) => {
+        for (const clz of el.classList) {
+          if (clz.startsWith('code-annotation-')) {                     
+            return true;
+          }
+        }
+        return false;
+      }
+      const clipboard = new window.ClipboardJS('.code-copy-button', {
+        text: function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+        }
+      });
+      clipboard.on('success', function(e) {
+        // button target
+        const button = e.trigger;
+        // don't keep focus
+        button.blur();
+        // flash "checked"
+        button.classList.add('code-copy-button-checked');
+        var currentTitle = button.getAttribute("title");
+        button.setAttribute("title", "Copied!");
+        let tooltip;
+        if (window.bootstrap) {
+          button.setAttribute("data-bs-toggle", "tooltip");
+          button.setAttribute("data-bs-placement", "left");
+          button.setAttribute("data-bs-title", "Copied!");
+          tooltip = new bootstrap.Tooltip(button, 
+            { trigger: "manual", 
+              customClass: "code-copy-button-tooltip",
+              offset: [0, -8]});
+          tooltip.show();    
+        }
+        setTimeout(function() {
+          if (tooltip) {
+            tooltip.hide();
+            button.removeAttribute("data-bs-title");
+            button.removeAttribute("data-bs-toggle");
+            button.removeAttribute("data-bs-placement");
+          }
+          button.setAttribute("title", currentTitle);
+          button.classList.remove('code-copy-button-checked');
+        }, 1000);
+        // clear code selection
+        e.clearSelection();
+      });
+      function tippyHover(el, contentFn) {
+        const config = {
+          allowHTML: true,
+          content: contentFn,
+          maxWidth: 500,
+          delay: 100,
+          arrow: false,
+          appendTo: function(el) {
+              return el.closest('section.slide') || el.parentElement;
+          },
+          interactive: true,
+          interactiveBorder: 10,
+          theme: 'light-border',
+          placement: 'bottom-start'
+        };
+          config['offset'] = [0,0];
+          config['maxWidth'] = 700;
+        window.tippy(el, config); 
+      }
+      const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+      for (var i=0; i<noterefs.length; i++) {
+        const ref = noterefs[i];
+        tippyHover(ref, function() {
+          // use id or data attribute instead here
+          let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+          try { href = new URL(href).hash; } catch {}
+          const id = href.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          return note.innerHTML;
+        });
+      }
+      const findCites = (el) => {
+        const parentEl = el.parentElement;
+        if (parentEl) {
+          const cites = parentEl.dataset.cites;
+          if (cites) {
+            return {
+              el,
+              cites: cites.split(' ')
+            };
+          } else {
+            return findCites(el.parentElement)
+          }
+        } else {
+          return undefined;
+        }
+      };
+      var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+      for (var i=0; i<bibliorefs.length; i++) {
+        const ref = bibliorefs[i];
+        const citeInfo = findCites(ref);
+        if (citeInfo) {
+          tippyHover(citeInfo.el, function() {
+            var popup = window.document.createElement('div');
+            citeInfo.cites.forEach(function(cite) {
+              var citeDiv = window.document.createElement('div');
+              citeDiv.classList.add('hanging-indent');
+              citeDiv.classList.add('csl-entry');
+              var biblioDiv = window.document.getElementById('ref-' + cite);
+              if (biblioDiv) {
+                citeDiv.innerHTML = biblioDiv.innerHTML;
+              }
+              popup.appendChild(citeDiv);
+            });
+            return popup.innerHTML;
+          });
+        }
+      }
+        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+          var filterRegex = new RegExp('/' + window.location.host + '/');
+        var isInternal = (href) => {
+            return filterRegex.test(href) || localhostRegex.test(href);
+        }
+        // Inspect non-navigation links and adorn them if external
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
+        for (var i=0; i<links.length; i++) {
+          const link = links[i];
+          if (!isInternal(link.href)) {
+              // target, if specified
+              link.setAttribute("target", "_blank");
+          }
+        }
+    });
+    </script>
+    
+
+</body></html>
