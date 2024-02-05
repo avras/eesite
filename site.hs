@@ -35,6 +35,7 @@ main = hakyll $ do
             "static/ethlab/**" .||.
             "static/zk/**" .||.
             "static/rust/**" .||.
+            "static/bellpepper/**" .||.
             "static/reports/**" .||.
             "static/ee1mtech/**"
           ) $ do
