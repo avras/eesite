@@ -14,6 +14,8 @@ title: EE 465 Spring 2024
   - [Group Theory](./2024/slides/GroupTheory.pdf)
   - [Projective Geometry](./2024/slides/ProjectiveGeometry.pdf)
   - [Elliptic Curves](./2024/slides/EllipticCurves.pdf)
+  - [Are Cryptocurrencies Useful?](./2024/slides/IsCryptoUseful.pdf)
+  - [Mining Miscellanea](./2024/slides/MiningMisc.pdf)
 
 ##### Course Content
   - Bitcoin
