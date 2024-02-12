@@ -16,6 +16,7 @@ title: EE 465 Spring 2024
   - [Elliptic Curves](./2024/slides/EllipticCurves.pdf)
   - [Are Cryptocurrencies Useful?](./2024/slides/IsCryptoUseful.pdf)
   - [Mining Miscellanea](./2024/slides/MiningMisc.pdf)
+  - [Ethereum Introduction](./2024/slides/EthereumIntroduction.pdf)
 
 ##### Course Content
   - Bitcoin
