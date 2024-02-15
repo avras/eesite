@@ -17,6 +17,8 @@ title: EE 465 Spring 2024
   - [Are Cryptocurrencies Useful?](./2024/slides/IsCryptoUseful.pdf)
   - [Mining Miscellanea](./2024/slides/MiningMisc.pdf)
   - [Ethereum Introduction](./2024/slides/EthereumIntroduction.pdf)
+  - [Ethereum Data Structures and Encoding](./2024/slides/EthereumDataEncoding.pdf)
+  - [Ethereum Transactions](./2024/slides/EthereumTransactions.pdf)
 
 ##### Course Content
   - Bitcoin
