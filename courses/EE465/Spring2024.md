@@ -20,6 +20,7 @@ title: EE 465 Spring 2024
   - [Ethereum Data Structures and Encoding](./2024/slides/EthereumDataEncoding.pdf)
   - [Ethereum Transactions](./2024/slides/EthereumTransactions.pdf)
   - [Ethereum Virtual Machine](./2024/slides/EVM.pdf)
+  - [Ethereum Blocks](./2024/slides/EthereumBlocks.pdf)
 
 ##### Course Content
   - Bitcoin
