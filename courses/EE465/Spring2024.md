@@ -22,6 +22,7 @@ title: EE 465 Spring 2024
   - [Ethereum Virtual Machine](./2024/slides/EVM.pdf)
   - [Ethereum Blocks](./2024/slides/EthereumBlocks.pdf)
   - [Solidity Tutorial](./2024/slides/SolidityTutorial.pdf)
+  - [JavaScript and Node.js Tutorial](./2024/slides/JavascriptTutorial.pdf)
 
 ##### Course Content
   - Bitcoin
