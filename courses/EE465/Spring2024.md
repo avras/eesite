@@ -23,6 +23,7 @@ title: EE 465 Spring 2024
   - [Ethereum Blocks](./2024/slides/EthereumBlocks.pdf)
   - [Solidity Tutorial](./2024/slides/SolidityTutorial.pdf)
   - [JavaScript and Node.js Tutorial](./2024/slides/JavascriptTutorial.pdf)
+  - [Consensus Protocols](./2024/slides/Consensus.pdf)
 
 ##### Course Content
   - Bitcoin
