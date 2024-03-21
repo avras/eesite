@@ -24,6 +24,7 @@ title: EE 465 Spring 2024
   - [Solidity Tutorial](./2024/slides/SolidityTutorial.pdf)
   - [JavaScript and Node.js Tutorial](./2024/slides/JavascriptTutorial.pdf)
   - [Consensus Protocols](./2024/slides/Consensus.pdf)
+  - [Tendermint Protocol](./2024/slides/Tendermint.pdf)
 
 ##### Course Content
   - Bitcoin
