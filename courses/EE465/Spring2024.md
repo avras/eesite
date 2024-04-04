@@ -27,6 +27,7 @@ title: EE 465 Spring 2024
   - [Tendermint Protocol](./2024/slides/Tendermint.pdf)
   - [Ethereum PoS Protocol](./2024/slides/EthereumConsensus.pdf)
   - [Tornado Cash](./2024/slides/TornadoCash.pdf)
+  - [circom](./2024/slides/circom.pdf)
 
 ##### Course Content
   - Bitcoin
