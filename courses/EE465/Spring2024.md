@@ -28,6 +28,7 @@ title: EE 465 Spring 2024
   - [Ethereum PoS Protocol](./2024/slides/EthereumConsensus.pdf)
   - [Tornado Cash](./2024/slides/TornadoCash.pdf)
   - [circom](./2024/slides/circom.pdf)
+  - [Ethereum Rollups](./2024/slides/Rollups.pdf)
 
 ##### Course Content
   - Bitcoin
