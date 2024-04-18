@@ -29,6 +29,7 @@ title: EE 465 Spring 2024
   - [Tornado Cash](./2024/slides/TornadoCash.pdf)
   - [circom](./2024/slides/circom.pdf)
   - [Ethereum Rollups](./2024/slides/Rollups.pdf)
+  - [Monero](./2024/slides/Monero.pdf)
 
 ##### Course Content
   - Bitcoin
