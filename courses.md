@@ -3,10 +3,19 @@ title: Courses
 ---
 
 #### Current Course
-  - [EE 465: Cryptocurrency and Blockchain Technologies](./courses/EE465/Spring2024.html)
+  - [EE 720: An Introduction to Number Theory and Cryptography](./courses/EE720/Autumn2024.html)
 
 #### Past Courses
 
+  - EE 465: Cryptocurrency and Blockchain Technologies
+    + [Spring 2024](./courses/EE465/Spring2024.html)
+    + [Autumn 2019](./courses/EE465/Autumn2019.html)
+    + [Autumn 2018](./courses/EE465/Autumn2018.html)
+  - EE 720: An Introduction to Number Theory and Cryptography
+    + [Autumn 2023](./courses/EE720/Autumn2023.html)
+    + [Spring 2020](./courses/EE720/Spring2020.html)
+    + [Spring 2019](./courses/EE720/Spring2019.html)
+    + [Spring 2018](./courses/EE720/Spring2018.html)
   - EE 703: Digital Message Transmission
     + [Autumn 2022](./courses/EE703/Autumn2022.html)
     + [Autumn 2021](./courses/EE703/Autumn2021.html)
@@ -18,14 +27,6 @@ title: Courses
     + [Spring 2023](https://ee337.github.io/)
     + [Spring 2022](https://ee337.github.io/archive/2022/index.html)
     + [Spring 2021](https://ee337.github.io/archive/2021/index.html)
-  - EE 720: An Introduction to Number Theory and Cryptography
-    + [Spring 2020](./courses/EE720/Spring2020.html)
-    + [Spring 2019](./courses/EE720/Spring2019.html)
-    + [Spring 2018](./courses/EE720/Spring2018.html)
-    + [Autumn 2023](./courses/EE720/Autumn2023.html)
-  - EE 465: Cryptocurrency and Blockchain Technologies
-    + [Autumn 2019](./courses/EE465/Autumn2019.html)
-    + [Autumn 2018](./courses/EE465/Autumn2018.html)
   - EE 754: Advanced Error Correcting Codes
     + Spring 2016
   - EE 605: Error Correcting Codes
