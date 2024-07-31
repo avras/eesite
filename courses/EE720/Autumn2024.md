@@ -6,7 +6,7 @@ title: EE 720 Spring 2024
 
 -   **Instructor:** [Saravanan Vijayakumaran](http://www.ee.iitb.ac.in/~sarva)
 -   **Schedule:** Slot 5, Wednesday and Friday (9:30am - 10:55am)
-  - **Location:** EEG 401 (Collaborative Classroom)
+  - **Location:** SIC 201 (KReSIT, 2nd floor)
 
 ##### Course Content
 
@@ -36,3 +36,7 @@ title: EE 720 Spring 2024
 ##### Note for CSE students
 
 EE720 has significant overlap with **CS 409 Introduction to Cryptography**. Please consult your faculty advisor before tagging EE720 as a department elective.
+
+##### Slides
+- [Course Overview](./2024/slides/course-overview.html){target="_blank"}
+- [Introduction](./2024/slides/introduction.html){target="_blank"}
