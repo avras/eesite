@@ -1,0 +1,1635 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="private-key-encryption_files/libs/clipboard/clipboard.min.js"></script>
+<script src="private-key-encryption_files/libs/quarto-html/tabby.min.js"></script>
+<script src="private-key-encryption_files/libs/quarto-html/popper.min.js"></script>
+<script src="private-key-encryption_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="private-key-encryption_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="private-key-encryption_files/libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="private-key-encryption_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
+<link href="private-key-encryption_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.5.55">
+
+  <meta name="author" content="Saravanan Vijayakumaran">
+  <meta name="dcterms.date" content="2024-08-09">
+  <title>Private-Key Encryption</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="private-key-encryption_files/libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="private-key-encryption_files/libs/revealjs/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="private-key-encryption_files/libs/revealjs/dist/theme/quarto.css">
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css">
+  <link href="private-key-encryption_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="private-key-encryption_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="private-key-encryption_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="private-key-encryption_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+
+  .callout {
+    margin-top: 1em;
+    margin-bottom: 1em;  
+    border-radius: .25rem;
+  }
+
+  .callout.callout-style-simple { 
+    padding: 0em 0.5em;
+    border-left: solid #acacac .3rem;
+    border-right: solid 1px silver;
+    border-top: solid 1px silver;
+    border-bottom: solid 1px silver;
+    display: flex;
+  }
+
+  .callout.callout-style-default {
+    border-left: solid #acacac .3rem;
+    border-right: solid 1px silver;
+    border-top: solid 1px silver;
+    border-bottom: solid 1px silver;
+  }
+
+  .callout .callout-body-container {
+    flex-grow: 1;
+  }
+
+  .callout.callout-style-simple .callout-body {
+    font-size: 1rem;
+    font-weight: 400;
+  }
+
+  .callout.callout-style-default .callout-body {
+    font-size: 0.9rem;
+    font-weight: 400;
+  }
+
+  .callout.callout-titled.callout-style-simple .callout-body {
+    margin-top: 0.2em;
+  }
+
+  .callout:not(.callout-titled) .callout-body {
+      display: flex;
+  }
+
+  .callout:not(.no-icon).callout-titled.callout-style-simple .callout-content {
+    padding-left: 1.6em;
+  }
+
+  .callout.callout-titled .callout-header {
+    padding-top: 0.2em;
+    margin-bottom: -0.2em;
+  }
+
+  .callout.callout-titled .callout-title  p {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+  }
+    
+  .callout.callout-titled.callout-style-simple .callout-content  p {
+    margin-top: 0;
+  }
+
+  .callout.callout-titled.callout-style-default .callout-content  p {
+    margin-top: 0.7em;
+  }
+
+  .callout.callout-style-simple div.callout-title {
+    border-bottom: none;
+    font-size: .9rem;
+    font-weight: 600;
+    opacity: 75%;
+  }
+
+  .callout.callout-style-default  div.callout-title {
+    border-bottom: none;
+    font-weight: 600;
+    opacity: 85%;
+    font-size: 0.9rem;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+
+  .callout.callout-style-default div.callout-content {
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+
+  .callout.callout-style-simple .callout-icon::before {
+    height: 1rem;
+    width: 1rem;
+    display: inline-block;
+    content: "";
+    background-repeat: no-repeat;
+    background-size: 1rem 1rem;
+  }
+
+  .callout.callout-style-default .callout-icon::before {
+    height: 0.9rem;
+    width: 0.9rem;
+    display: inline-block;
+    content: "";
+    background-repeat: no-repeat;
+    background-size: 0.9rem 0.9rem;
+  }
+
+  .callout-title {
+    display: flex
+  }
+    
+  .callout-icon::before {
+    margin-top: 1rem;
+    padding-right: .5rem;
+  }
+
+  .callout.no-icon::before {
+    display: none !important;
+  }
+
+  .callout.callout-titled .callout-body > .callout-content > :last-child {
+    padding-bottom: 0.5rem;
+    margin-bottom: 0;
+  }
+
+  .callout.callout-titled .callout-icon::before {
+    margin-top: .5rem;
+    padding-right: .5rem;
+  }
+
+  .callout:not(.callout-titled) .callout-icon::before {
+    margin-top: 1rem;
+    padding-right: .5rem;
+  }
+
+  /* Callout Types */
+
+  div.callout-note {
+    border-left-color: #4582ec !important;
+  }
+
+  div.callout-note .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAEU0lEQVRYCcVXTWhcVRQ+586kSUMMxkyaElstCto2SIhitS5Ek8xUKV2poatCcVHtUlFQk8mbaaziwpWgglJwVaquitBOfhQXFlqlzSJpFSpIYyXNjBNiTCck7x2/8/LeNDOZxDuEkgOXe++553zfefee+/OYLOXFk3+1LLrRdiO81yNqZ6K9cG0P3MeFaMIQjXssE8Z1JzLO9ls20MBZX7oG8w9GxB0goaPrW5aNMp1yOZIa7Wv6o2ykpLtmAPs/vrG14Z+6d4jpbSKuhdcSyq9wGMPXjonwmESXrriLzFGOdDBLB8Y6MNYBu0dRokSygMA/mrun8MGFN3behm6VVAwg4WR3i6FvYK1T7MHo9BK7ydH+1uurECoouk5MPRyVSBrBHMYwVobG2aOXM07sWrn5qgB60rc6mcwIDJtQrnrEr44kmy+UO9r0u9O5/YbkS9juQckLed3DyW2XV/qWBBB3ptvI8EUY3I9p/67OW+g967TNr3Sotn3IuVlfMLVnsBwH4fsnebJvyGm5GeIUA3jljERmrv49SizPYuq+z7c2H/jlGC+Ghhupn/hcapqmcudB9jwJ/3jvnvu6vu5lVzF1fXyZuZZ7U8nRmVzytvT+H3kilYvH09mLWrQdwFSsFEsxFVs5fK7A0g8gMZjbif4ACpKbjv7gNGaD8bUrlk8x+KRflttr22JEMRUbTUwwDQScyzPgedQHZT0xnx7ujw2jfVfExwYHwOsDTjLdJ2ebmeQIlJ7neo41s/DrsL3kl+W2lWvAga0tR3zueGr6GL78M3ifH0rGXrBC2aAR8uYcIA5gwV8zIE8onoh8u0Fca/ciF7j1uOzEnqcIm59sEXoGc0+z6+H45V1CvAvHcD7THztu669cnp+L0okAeIc6zjbM/24LgGM1gZk7jnRu1aQWoU9sfUOuhrmtaPIO3YY1KLLWZaEO5TKUbMY5zx8W9UJ6elpLwKXbsaZ4EFl7B4bMtDv0iRipKoDQT2sNQI9b1utXFdYisi+wzZ/ri/1m7QfDgEuvgUUEIJPq3DhX/5DWNqIXDOweC2wvIR90Oq3lDpdMIgD2r0dXvGdsEW5H6x6HLRJYU7C69VefO1x8Gde1ZFSJLfWS1jbCnhtOPxmpfv2LXOA2Xk2tvnwKKPFuZ/oRmwBwqRQDcKNeVQkYcOjtWVBuM/JuYw5b6isojIkYxyYAFn5K7ZBF10fea52y8QltAg6jnMqNHFBmGkQ1j+U43HMi2xMar1Nv0zGsf1s8nUsmUtPOOrbFIR8bHFDMB5zL13Gmr/kGlCkUzedTzzmzsaJXhYawnA3UmARpiYj5ooJZiUoxFRtK3X6pgNPv+IZVPcnwbOl6f+aBaO1CNvPW9n9LmCp01nuSaTRF2YxHqZ8DYQT6WsXT+RD6eUztwYLZ8rM+rcPxamv1VQzFUkzFXvkiVrySGQgJNvXHJAxiU3/NwiC03rSf05VBaPtu/Z7/B8Yn/w7eguloAAAAAElFTkSuQmCC');
+  }
+
+  div.callout-note.callout-style-default .callout-title {
+    background-color: #dae6fb
+  }
+
+  div.callout-important {
+    border-left-color: #d9534f !important;
+  }
+
+  div.callout-important .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAEKklEQVRYCcVXTWhcVRS+575MJym48A+hSRFr00ySRQhURRfd2HYjk2SSTokuBCkU2o0LoSKKraKIBTcuFCoidGFD08nkBzdREbpQ1EDNIv8qSGMFUboImMSZd4/f9zJv8ibJMC8xJQfO3HPPPef7zrvvvnvviIkpC9nsw0UttFunbUhpFzFtarSd6WJkStVMw5xyVqYTvkwfzuf/5FgtkVoB0729j1rjXwThS7Vio+Mo6DNnvLfahoZ+i/o32lULuJ3NNiz7q6+pyAUkJaFF6JwaM2lUJlV0MlnQn5aTRbEu0SEqHUa0A4AdiGuB1kFXRfVyg5d87+Dg4DL6m2TLAub60ilj7A1Ec4odSAc8X95sHh7+ZRPCFo6Fnp7HfU/fBng/hi10CjCnWnJjsxvDNxWw0NfV6Rv5GgP3I3jGWXumdTD/3cbEOP2ZbOZp69yniG3FQ9z1jD7bnBu9Fc2tKGC2q+uAJOQHBDRiZX1x36o7fWBs7J9ownbtO+n0/qWkvW7UPIfc37WgT6ZGR++EOJyeQDSb9UB+DZ1G6DdLDzyS+b/kBCYGsYgJbSQHuThGKRcw5xdeQf8YdNHsc6ePXrlSYMBuSIAFTGAtQo+VuALo4BX83N190NWZWbynBjhOHsmNfFWLeL6v+ynsA58zDvvAC8j5PkbOcXCMg2PZFk3q8MjI7WAG/Dp9AwP7jdGBOOQkAvlFUB+irtm16I1Zw9YBcpGTGXYmk3kQIC/Cds55l+iMI3jqhjAuaoe+am2Jw5GT3Nbz3CkE12NavmzN5+erJW7046n/CH1RO/RVa8lBLozXk9uqykkGAyRXLWlLv5jyp4RFsG5vGVzpDLnIjTWgnRy2Rr+tDKvRc7Y8AyZq10jj8DqXdnIRNtFZb+t/ZRtXcDiVnzpqx8mPcDWxgARUqx0W1QB9MeUZiNrV4qP+Ehc+BpNgATsTX8ozYKL2NtFYAHc84fG7ndxUPr+AR/iQSns7uSUufAymwDOb2+NjK27lEFocm/EE2WpyIy/Hi66MWuMKJn8RvxIcj87IM5Vh9663ziW36kR0HNenXuxmfaD8JC7tfKbrhFr7LiZCrMjrzTeGx+PmkosrkNzW94ObzwocJ7A1HokLolY+AvkTiD/q1H0cN48c5EL8Crkttsa/AXQVDmutfyku0E7jShx49XqV3MFK8IryDhYVbj7Sj2P2eBxwcXoe8T8idsKKPRcnZw1b+slFTubwUwhktrfnAt7J++jwQtLZcm3sr9LQrjRzz6cfMv9aLvgmnAGvpoaGLxM4mAEaLV7iAzQ3oU0IvD5x9ix3yF2RAAuYAOO2f7PEFWCXZ4C9Pb2UsgDeVnFSpbFK7/IWu7TPTvBqzbGdCHOJQSxiEjt6IyZmxQyEJHv6xyQsYk//moVFsN2zP6fRImjfq7/n/wFDguUQFNEwugAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-important.callout-style-default .callout-title {
+    background-color: #f7dddc
+  }
+
+  div.callout-warning {
+    border-left-color: #f0ad4e !important;
+  }
+
+  div.callout-warning .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAETklEQVRYCeVWW2gcVRg+58yaTUnizqbipZeX4uWhBEniBaoUX1Ioze52t7sRq6APio9V9MEaoWlVsFasRq0gltaAPuxms8lu0gcviE/FFOstVbSIxgcv6SU7EZqmdc7v9+9mJtNks51NTUH84ed889/PP+cmxP+d5FIbMJmNbpREu4WUkiTtCicKny0l1pIKmBzovF2S+hIJHX8iEu3hZJ5lNZGqyRrGSIQpq15AzF28jgpeY6yk6GVdrfFqdrD6Iw+QlB8g0YS2g7dyQmXM/IDhBhT0UCiRf59lfqmmDvzRt6kByV/m4JjtzuaujMUM2c5Z2d6JdKrRb3K2q6mA+oYVz8JnDdKPmmNthzkAk/lN63sYPgevrguc72aZX/L9C6x09GYyxBgCX4NlvyGUHOKELlm5rXeR1kchuChJt4SSwyddZRXgvwMGvYo4QSlk3/zkHD8UHxwVJA6zjZZqP8v8kK8OWLnIZtLyCAJagYC4rTGW/9Pqj92N/c+LUaAj27movwbi19tk/whRCIE7Q9vyI6yvRpftAKVTdUjOW40X3h5OXsKCdmFcx0xlLJoSuQngnrJe7Kcjm4OMq9FlC7CMmScQANuNvjfP3PjGXDBaUQmbp296S5L4DrpbrHN1T87ZVEZVCzg1FF0Ft+dKrlLukI+/c9ENo+TvlTDbYFvuKPtQ9+l052rXrgKoWkDAFnvh0wTOmYn8R5f4k/jN/fZiCM1tQx9jQQ4ANhqG4hiL0qIFTGViG9DKB7GYzgubnpofgYRwO+DFjh0Zin2m4b/97EDkXkc+f6xYAPX0KK2I/7fUQuwzuwo/L3AkcjugPNixC8cHf0FyPjWlItmLxWw4Ou9YsQCr5fijMGoD/zpdRy95HRysyXA74MWOnscpO4j2y3HAVisw85hX5+AFBRSHt4ShfLFkIMXTqyKFc46xdzQM6XbAi702a7sy04J0+feReMFKp5q9esYLCqAZYw/k14E/xcLLsFElaornTuJB0svMuJINy8xkIYuL+xPAlWRceH6+HX7THJ0djLUom46zREu7tTkxwmf/FdOZ/sh6Q8qvEAiHpm4PJ4a/doJe0gH1t+aHRgCzOvBvJedEK5OFE5jpm4AGP2a8Dxe3gGJ/pAutug9Gp6he92CsSsWBaEcxGx0FHytmIpuqGkOpldqNYQK8cSoXvd+xLxXADw0kf6UkJNFtdo5MOgaLjiQOQHcn+A6h5NuL2s0qsC2LOM75PcF3yr5STuBSAcGG+meA14K/CI21HcS4LBT6tv0QAh8Dr5l93AhZzG5ZJ4VxAqdZUEl9z7WJ4aN+svMvwHHL21UKTd1mqvChH7/Za5xzXBBKrUcB0TQ+Ulgkfbi/H/YT5EptrGzsEK7tR1B7ln9BBwckYfMiuSqklSznIuoIIOM42MQO+QnduCoFCI0bpkzjCjddHPN/F+2Yu+sd9bKNpVwHhbS3LluK/0zgfwD0xYI5dXuzlQAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-warning.callout-style-default .callout-title {
+    background-color: #fcefdc
+  }
+
+  div.callout-tip {
+    border-left-color: #02b875 !important;
+  }
+
+  div.callout-tip .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAADr0lEQVRYCe1XTWgTQRj9ZjZV8a9SPIkKgj8I1bMHsUWrqYLVg4Ue6v9BwZOxSYsIerFao7UiUryIqJcqgtpimhbBXoSCVxUFe9CTiogUrUp2Pt+3aUI2u5vdNh4dmMzOzHvvezuz8xNFM0mjnbXaNu1MvFWRXkXEyE6aYOYJpdW4IXuA4r0fo8qqSMDBU0v1HJUgVieAXxzCsdE/YJTdFcVIZQNMyhruOMJKXYFoLfIfIvVIMWdsrd+Rpd86ZmyzzjJmLStqRn0v8lzkb4rVIXvnpScOJuAn2ACC65FkPzEdEy4TPWRLJ2h7z4cArXzzaOdKlbOvKKX25Wl00jSnrwVxAg3o4dRxhO13RBSdNvH0xSARv3adTXbBdTf64IWO2vH0LT+cv4GR1DJt+DUItaQogeBX/chhbTBxEiZ6gftlDNXTrvT7co4ub5A6gp9HIcHvzTa46OS5fBeP87Qm0fQkr4FsYgVQ7Qg+ZayaDg9jhg1GkWj8RG6lkeSacrrHgDaxdoBiZPg+NXV/KifMuB6//JmYH4CntVEHy/keA6x4h4CU5oFy8GzrBS18cLJMXcljAKB6INjWsRcuZBWVaS3GDrqB7rdapVIeA+isQ57Eev9eCqzqOa81CY05VLd6SamW2wA2H3SiTbnbSxmzfp7WtKZkqy4mdyAlGx7ennghYf8voqp9cLSgKdqNfa6RdRsAAkPwRuJZNbpByn+RrJi1RXTwdi8RQF6ymDwGMAtZ6TVE+4uoKh+MYkcLsT0Hk8eAienbiGdjJHZTpmNjlbFJNKDVAp2fJlYju6IreQxQ08UJDNYdoLSl6AadO+fFuCQqVMB1NJwPm69T04Wv5WhfcWyfXQB+wXRs1pt+nCknRa0LVzSA/2B+a9+zQJadb7IyyV24YAxKp2Jqs3emZTuNnKxsah+uabKbMk7CbTgJx/zIgQYErIeTKRQ9yD9wxVof5YolPHqaWo7TD6tJlh7jQnK5z2n3+fGdggIOx2kaa2YI9QWarc5Ce1ipNWMKeSG4DysFF52KBmTNMmn5HqCFkwy34rDg05gDwgH3bBi+sgFhN/e8QvRn8kbamCOhgrZ9GJhFDgfcMHzFb6BAtjKpFhzTjwv1KCVuxHvCbsSiEz4CANnj84cwHdFXAbAOJ4LTSAawGWFn5tDhLMYz6nWeU2wJfIhmIJBefcd/A5FWQWGgrWzyORZ3Q6HuV+Jf0Bj+BTX69fm1zWgK7By1YTXchFDORywnfQ7GpzOo6S+qECrsx2ifVQAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-tip.callout-style-default .callout-title {
+    background-color: #ccf1e3
+  }
+
+  div.callout-caution {
+    border-left-color: #fd7e14 !important;
+  }
+
+  div.callout-caution .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAACV0lEQVRYCdVWzWoUQRCuqp2ICBLJXgITZL1EfQDBW/bkzUMUD7klD+ATSHBEfAIfQO+iXsWDxJsHL96EHAwhgzlkg8nBg25XWb0zIb0zs9muYYWkoKeru+vn664fBqElyZNuyh167NXJ8Ut8McjbmEraKHkd7uAnAFku+VWdb3reSmRV8PKSLfZ0Gjn3a6Xlcq9YGb6tADjn+lUfTXtVmaZ1KwBIvFI11rRXlWlatwIAAv2asaa9mlB9wwygiDX26qaw1yYPzFXg2N1GgG0FMF8Oj+VIx7E/03lHx8UhvYyNZLN7BwSPgekXXLribw7w5/c8EF+DBK5idvDVYtEEwMeYefjjLAdEyQ3M9nfOkgnPTEkYU+sxMq0BxNR6jExrAI31H1rzvLEfRIdgcv1XEdj6QTQAS2wtstEALLG1yEZ3QhH6oDX7ExBSFEkFINXH98NTrme5IOaaA7kIfiu2L8A3qhH9zRbukdCqdsA98TdElyeMe5BI8Rs2xHRIsoTSSVFfCFCWGPn9XHb4cdobRIWABNf0add9jakDjQJpJ1bTXOJXnnRXHRf+dNL1ZV1MBRCXhMbaHqGI1JkKIL7+i8uffuP6wVQAzO7+qVEbF6NbS0LJureYcWXUUhH66nLR5rYmva+2tjRFtojkM2aD76HEGAD3tPtKM309FJg5j/K682ywcWJ3PASCcycH/22u+Bh7Aa0ehM2Fu4z0SAE81HF9RkB21c5bEn4Dzw+/qNOyXr3DCTQDMBOdhi4nAgiFDGCinIa2owCEChUwD8qzd03PG+qdW/4fDzjUMcE1ZpIAAAAASUVORK5CYII=');
+  }
+
+  div.callout-caution.callout-style-default .callout-title {
+    background-color: #ffe5d0
+  }
+
+  </style>
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" class="quarto-title-block center">
+  <h1 class="title">Private-Key Encryption</h1>
+
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+Saravanan Vijayakumaran 
+</div>
+        <p class="quarto-title-affiliation">
+            Department of Electrical Engineering, IIT Bombay
+          </p>
+    </div>
+</div>
+
+  <p class="date">August 9, 2024</p>
+</section>
+<section id="computational-secrecy" class="slide level2">
+<h2>Computational Secrecy</h2>
+<ul>
+<li><p><strong>Computational Secrecy:</strong> Weaker notion of secrecy</p></li>
+<li><p>Perfect secrecy requirement</p>
+<ul>
+<li><strong>Absolutely no information</strong> about an encrypted message is leaked, even to an adversary with <strong>unlimited computational power</strong></li>
+</ul></li>
+<li><p>Computational secrecy requirement</p>
+<ul>
+<li>Information about the encrypted message is leaked with a <strong>tiny probability</strong> to eavesdroppers with <strong>bounded computational power</strong></li>
+</ul></li>
+</ul>
+</section>
+<section id="computational-security-definitions" class="slide level2">
+<h2>Computational Security Definitions</h2>
+<ul>
+<li><p>In general, computational security definitions incorporate two relaxations</p>
+<ul>
+<li><p>Security is only guaranteed against <strong>realistic</strong> adversaries that run for some feasible amount of time</p></li>
+<li><p>Adversaries can potentially succeed with some <strong>very small probability</strong></p></li>
+</ul></li>
+<li><p>Precise definitions of the above relaxations are needed</p></li>
+<li><p>Two approaches: <strong>concrete</strong> and <strong>asymptotic</strong></p></li>
+</ul>
+</section>
+<section id="the-concrete-approach" class="slide level2">
+<h2>The Concrete Approach</h2>
+<ul>
+<li><p>Upper bounds the success probability of an adversary running for some specified time</p></li>
+<li><p>A concrete definition of security takes the following form</p>
+<blockquote>
+<p><em>A scheme is</em> <span class="math inline">(t,\epsilon)\textsf{-secure}</span> if any adversary running for time at most <span class="math inline">t</span> succeeds in breaking the scheme with probability at most <span class="math inline">\epsilon</span>.</p>
+</blockquote></li>
+<li><p><strong>Example</strong>: A (200 years, <span class="math inline">2^{-60}</span>)-secure scheme would guarantee that no adversary running for at most 200 years can break the scheme with probability better than <span class="math inline">2^{-60}</span></p></li>
+<li><p>More convenient to measure running time in terms of CPU cycles, as in (<span class="math inline">2^{80}</span> cycles, <span class="math inline">2^{-60}</span>)</p></li>
+</ul>
+</section>
+<section id="values-for-t-and-epsilon" class="slide level2">
+<h2>Values for <span class="math inline">t</span> and <span class="math inline">\epsilon</span></h2>
+<ul>
+<li>How large can <span class="math inline">t</span> be? How small should <span class="math inline">\epsilon</span> be?</li>
+<li>Consider an private-key encryption scheme with a <span class="math inline">n</span>-bit key
+<ul>
+<li>Key space has size <span class="math inline">2^n</span></li>
+<li>Brute-force adversary succeeds in breaking scheme with probability at most <span class="math inline">\frac{ct}{2^n}</span> for some constant <span class="math inline">c</span></li>
+<li>For <span class="math inline">c=1</span> and <span class="math inline">n=64</span>, a 4 GHz processor with 16 cores requires at most 10 years</li>
+</ul></li>
+<li>Minimum recommended key length is <span class="math inline">n=128</span></li>
+<li>Estimates of time since Big Bang = <span class="math inline">2^{58}</span> seconds</li>
+<li>An event that occurs with probability <span class="math inline">2^{-60}</span> each second is expected to occur once every 10 billion years</li>
+<li>In general, precise concrete guarantees are difficult to provide</li>
+</ul>
+<aside class="notes">
+<p>Number of atoms in the universe is about <span class="math inline">10^{80}</span></p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="the-asymptotic-approach" class="slide level2">
+<h2>The Asymptotic Approach</h2>
+<ul>
+<li>Based on complexity theory</li>
+<li>Cryptographic schemes are parametrized by an integer-valued <strong>security parameter</strong> <span class="math inline">n</span> (typically the key length)</li>
+<li>Running time of the adversary and its success probability are viewed as functions of <span class="math inline">n</span></li>
+<li>This notion of security is <strong>asymptotic</strong> since it depends on a scheme’s behavior for sufficiently large values of <span class="math inline">n</span></li>
+</ul>
+</section>
+<section id="efficient-adversaries" class="slide level2">
+<h2>Efficient Adversaries</h2>
+<ul>
+<li><p>Realistic adversaries are modeled by probabilistic algorithms running in time <strong>polynomial in</strong> <span class="math inline">n</span></p></li>
+<li><p>An algorithm <span class="math inline">A</span> runs in polynomial time if there exists a polynomial <span class="math inline">p</span> such that, for every input <span class="math inline">x \in \{0,1\}^*</span>, the computation of <span class="math inline">A(x)</span> terminates within at most <span class="math inline">p(|x|)</span> steps where <span class="math inline">|x|</span> denotes the length of <span class="math inline">x</span></p></li>
+<li><p>An algorithm with polynomial running time is said to be <strong>efficient</strong></p></li>
+<li><p>Composition of efficient algorithms is efficient</p>
+<ul>
+<li>If <span class="math inline">p_1, p_2</span> are two polynomials, then <span class="math inline">p(n) = p_1(p_2(n))</span> is also a polynomial</li>
+</ul></li>
+</ul>
+</section>
+<section id="probabilistic-algorithm" class="slide level2">
+<h2>Probabilistic Algorithm</h2>
+<ul>
+<li><p>Algorithms having access to a sequence of unbiased, independent random bits</p></li>
+<li><p>Random bits can be represented as <span class="math inline">r \leftarrow \{0,1\}^*</span></p></li>
+<li><p>An algorithm <span class="math inline">A</span> runs in polynomial time if there exists a polynomial <span class="math inline">p</span> such that, for every input <span class="math inline">x \in \{0,1\}^*</span> and <span class="math inline">r \leftarrow \{0,1\}^*</span>, the computation of <span class="math inline">A(x,r)</span> terminates within at most <span class="math inline">p(|x| +|r|)</span> steps</p></li>
+</ul>
+</section>
+<section id="negligible-probabilities" class="slide level2">
+<h2>Negligible Probabilities</h2>
+<ul>
+<li><p>Small probabilities of success are modeled by probabilities <strong>smaller than any inverse polynomial in</strong> <span class="math inline">n</span></p>
+<ul>
+<li>Called <strong>negligible</strong> probabilities</li>
+</ul></li>
+<li><p><strong>Definition</strong>: A function <span class="math inline">f</span> from the natural numbers to the non-negative real numbers is <strong>negligible</strong> if for every positive polynomial <span class="math inline">p</span> there is an <span class="math inline">N</span> such that for all integers <span class="math inline">n &gt; N</span> it holds that <span class="math inline">f(n) &lt; \frac{1}{p(n)}</span>.</p></li>
+<li><p><strong>Examples:</strong> <span class="math inline">2^{-n}, 2^{-\sqrt{n}}, n^{-\log n}</span></p></li>
+<li><p>An arbitrary negligible function is denoted by <span class="math inline">\textsf{negl}</span></p></li>
+</ul>
+<aside class="notes">
+<p>Compare to <span class="math inline">\frac{1}{n^5}</span>. <span class="math inline">N</span> has to be at least 23, 3500, 33 respectively.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="properties-of-negligible-probabilities" class="slide level2">
+<h2>Properties of Negligible Probabilities</h2>
+<ul>
+<li>Let <span class="math inline">\textsf{negl}_1</span> and <span class="math inline">\textsf{negl}_2</span> be negligible functions.
+<ul>
+<li>The function <span class="math inline">\textsf{negl}_3</span> defined by <span class="math display">\textsf{negl}_3(n) = \textsf{negl}_1(n) + \textsf{negl}_2(n)</span> is negligible.</li>
+<li>For any positive polynomial <span class="math inline">p</span>, the function <span class="math inline">\textsf{negl}_4</span> defined by <span class="math display">\textsf{negl}_4(n) = p(n) \cdot \textsf{negl}_1(n)</span> is negligible.</li>
+</ul></li>
+</ul>
+</section>
+<section id="general-framework-for-asymptotic-security-definitions" class="slide level2">
+<h2>General Framework for Asymptotic Security Definitions</h2>
+<ul>
+<li>A scheme is <strong>secure</strong> if for every <strong>probabilistic polynomial-time</strong> adversary <span class="math inline">\mathcal{A}</span> carrying out an attack of a formally specified type, the probability that <span class="math inline">\mathcal{A}</span> succeeds in the attack (where success is also formally specified) is <strong>negligible</strong></li>
+<li>A scheme is <strong>secure</strong> if for every <strong>PPT</strong> adversary <span class="math inline">\mathcal{A}</span> carrying out an attack, and every polynomial <span class="math inline">p</span>, there is an integer <span class="math inline">N</span> such that when <span class="math inline">n &gt; N</span> the probability that <span class="math inline">\mathcal{A}</span> succeeds in the attack is less than <span class="math inline">\frac{1}{p(n)}</span></li>
+</ul>
+</section>
+<section id="asymptotic-security-example" class="slide level2">
+<h2>Asymptotic Security Example</h2>
+<ul>
+<li>Suppose that a scheme is asymptotically secure</li>
+<li>Suppose an adversary running for <span class="math inline">n^3</span> minutes can succeed in “breaking the scheme” with probability <span class="math inline">\le \frac{2^{40}}{2^n}</span></li>
+<li>For <span class="math inline">n \le 40</span>, this adversary can run for <span class="math inline">40^3</span> minutes (about 6 weeks) and break the scheme with probability <span class="math inline">1</span></li>
+<li>For <span class="math inline">n = 50</span>, this adversary can run for <span class="math inline">50^3</span> minutes (about 3 months) and break the scheme with probability <span class="math inline">\frac{1}{1000}</span></li>
+<li>For <span class="math inline">n = 500</span>, this adversary running for 200 years can break the scheme with probability <span class="math inline">\approx 2^{-500}</span></li>
+<li>Security parameter allows us to “tune” the security level of the scheme to a desired level</li>
+</ul>
+</section>
+<section id="choices-made-in-defining-asymptotic-security" class="slide level2">
+<h2>Choices Made in Defining Asymptotic Security</h2>
+<ul>
+<li>Probabilistic polynomial-time adversaries
+<ul>
+<li>Not unique to cryptography</li>
+<li>Frees us from specifying the model of computation precisely</li>
+<li><strong>Extended Church-Turing thesis:</strong> All “reasonable” models of computation are polynomially equivalent</li>
+<li>Closure property</li>
+</ul></li>
+<li>Negligible probabilities of success
+<ul>
+<li>Closure property</li>
+</ul></li>
+</ul>
+</section>
+<section id="necessity-of-the-relaxations" class="slide level2">
+<h2>Necessity of the Relaxations</h2>
+<ul>
+<li><p>Both PPT adversaries and negligible probabilities of success are needed to allow practical encryption schemes</p></li>
+<li><p>Consider private-key encryption where <span class="math inline">|\mathcal{K}| &lt; |\mathcal{M}|</span></p></li>
+<li><p>Two attacks are always applicable</p>
+<ul>
+<li>Given ciphertext <span class="math inline">c</span>, an adversary can decrypt <span class="math inline">c</span> using all keys <span class="math inline">k \in \mathcal{K}</span>.
+<ul>
+<li>As <span class="math inline">|\mathcal{K}| &lt; |\mathcal{M}|</span>, there is information leakage.</li>
+</ul></li>
+<li>Given ciphertexts <span class="math inline">c_1,c_2,\ldots,c_l</span> corresponding to <em>known</em> messages <span class="math inline">m_1, m_2,\ldots,m_l</span>, an adversary can <strong>guess</strong> a uniform key <span class="math inline">k \in \mathcal{K}</span> and check <span class="math inline">\textsf{Dec}_k(c_i) = m_i</span> for all <span class="math inline">i</span>.
+<ul>
+<li>If checks pass, adversary can use <span class="math inline">k</span> to decrypt subsequent ciphertexts</li>
+<li>Adversary runs in constant time and succeeds with probability <span class="math inline">\frac{1}{|\mathcal{K}|}</span></li>
+</ul></li>
+</ul></li>
+<li><p>Setting <span class="math inline">|\mathcal{K}|</span> large enough avoids these attacks</p></li>
+</ul>
+</section>
+<section>
+<section id="defining-computationally-secure-encryption" class="title-slide slide level1 center">
+<h1>Defining Computationally Secure Encryption</h1>
+<ul>
+<li>We need to introduce the security parameter <span class="math inline">n</span> in our syntax of private-key encryption.</li>
+<li>We assume <span class="math inline">\mathcal{M} = \{0,1\}^*</span></li>
+<li>We allow the decryption algorithm to output an error in case it is presented with an invalid ciphertext</li>
+</ul>
+</section>
+<section id="private-key-encryption" class="slide level2 scrollable">
+<h2>Private-key Encryption</h2>
+<ul>
+<li><p>A <strong>private-key encryption scheme</strong> is a triple of PPT algorithms <span class="math inline">(\textsf{Gen}, \textsf{Enc}, \textsf{Dec})</span> such that:</p>
+<ol type="1">
+<li><span class="math inline">k \leftarrow \textsf{Gen}(1^n)</span>.</li>
+<li>For <span class="math inline">m \in \left\{ 0,1 \right\}^*</span>, <span class="math inline">c \leftarrow \textsf{Enc}_k(m)</span>.</li>
+<li><span class="math inline">\textsf{Dec}_k(c) = m</span> or error indicator <span class="math inline">\perp</span>.</li>
+</ol></li>
+<li><p>For every <span class="math inline">m, c, k</span>, we have <span class="math inline">\textsf{Dec}_k\left( \textsf{Enc}_k\left( m \right) \right) = m</span></p></li>
+</ul>
+<aside class="notes">
+<ul>
+<li>Why is <span class="math inline">1^n</span> input to <span class="math inline">\textsf{Gen}</span> instead of <span class="math inline">n</span>?</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="indistinguishability-in-the-presence-of-an-eavesdropper" class="slide level2">
+<h2>Indistinguishability in the presence of an eavesdropper</h2>
+<ul>
+<li>We consider the ciphertext-only attack where the adversary observes a <strong>single</strong> ciphertext</li>
+<li>Our definition will resemble perfect indistinguishability definition except for two differences
+<ul>
+<li>The experiment is parametrized by <span class="math inline">n</span></li>
+<li>We require the adversary to output equal length messages <span class="math inline">m_0, m_1</span></li>
+</ul></li>
+</ul>
+</section>
+<section id="why-equal-length-messages" class="slide level2">
+<h2>Why equal length messages?</h2>
+<ul>
+<li>We require <span class="math inline">|m_0| = |m_1|</span> because it is <strong>impossible</strong> to support arbitrary length messages</li>
+<li>All commonly used encryption schemes reveal length of the plaintext</li>
+<li>Padding must be used if length of the message has sensitive information</li>
+</ul>
+</section>
+<section id="adversarial-indistinguishability-experiment" class="slide level2">
+<h2>Adversarial Indistinguishability Experiment</h2>
+<ul>
+<li>Consider the following experiment <span class="math inline">\textsf{PrivK}^{\textsf{eav}}_{\mathcal{A}, \Pi}(n)</span>:
+<ul>
+<li><span class="math inline">\mathcal{A}</span> is given <span class="math inline">1^n</span> and outputs arbitrary <span class="math inline">m_0, m_1 \in \mathcal{M}</span> with <span class="math inline">|m_0| = |m_1|</span></li>
+<li>A key <span class="math inline">k</span> is generated using <span class="math inline">\textsf{Gen}</span>, and a uniform bit <span class="math inline">b \in \{0,1\}</span> is chosen</li>
+<li>Ciphertext <span class="math inline">c \leftarrow \textsf{Enc}_k(m_b)</span> is computed and given to <span class="math inline">\mathcal{A}</span></li>
+<li>This ciphertext <span class="math inline">c</span> is called the <strong>challenge ciphertext</strong></li>
+<li><span class="math inline">\mathcal{A}</span> outputs a bit <span class="math inline">b'</span></li>
+<li>The output of the experiment is defined to be 1 if <span class="math inline">b' = b</span>, and 0 otherwise</li>
+</ul></li>
+<li>We write <span class="math inline">\textsf{PrivK}^{\textsf{eav}}_{\mathcal{A}, \Pi}(n) = 1</span> if the output of the experiment is 1 and say that <span class="math inline">\mathcal{A}</span> succeeds</li>
+</ul>
+</section>
+<section id="security-definition" class="slide level2">
+<h2>Security Definition</h2>
+<ul>
+<li><p>A private-key encryption scheme <span class="math inline">\Pi = (\textsf{Gen}, \textsf{Enc}, \textsf{Dec})</span> has <strong>indistinguishable encryptions in the presence of an eavesdropper</strong>, or is <strong>EAV-secure</strong>, if for all PPT adversaries <span class="math inline">\mathcal{A}</span> there is a negligible function <span class="math inline">\textsf{negl}</span> such that, for all <span class="math inline">n</span>, <span class="math display">
+\Pr\left[ \textsf{PrivK}^{\textsf{eav}}_{\mathcal{A},\Pi}(n) =  1\right] \le \frac{1}{2} + \textsf{negl}(n).</span></p></li>
+<li><p>An perfectly secure scheme is also EAV-secure</p></li>
+</ul>
+</section>
+<section id="alternative-definition-of-eav-security" class="slide level2">
+<h2>Alternative Definition of EAV-Security</h2>
+<ul>
+<li>Let <span class="math inline">\textsf{out}_{\mathcal{A}}\left( \textsf{PrivK}^{\textsf{eav}}_{\mathcal{A}, \Pi}(n,b)\right)</span> denote the output <span class="math inline">b'</span> of <span class="math inline">\mathcal{A}</span> when <span class="math inline">m_b</span> is encrypted</li>
+<li>A private-key encryption scheme <span class="math inline">\Pi = (\textsf{Gen}, \textsf{Enc}, \textsf{Dec})</span> is <strong>EAV-secure</strong>, if for all PPT adversaries <span class="math inline">\mathcal{A}</span> there is a negligible function <span class="math inline">\textsf{negl}</span> such that, for all <span class="math inline">n</span>, <span class="math display">\begin{align*}
+&amp; \left| \Pr\left[ \textsf{out}_{\mathcal{A}}\left( \textsf{PrivK}^{\textsf{eav}}_{\mathcal{A}, \Pi}(n,0)\right)= 1\right] \right. \\
+&amp; \quad\quad \left. - \Pr\left[ \textsf{out}_{\mathcal{A}}\left( \textsf{PrivK}^{\textsf{eav}}_{\mathcal{A}, \Pi}(n,1)\right)= 1\right]\right| \\
+&amp; \quad\quad\quad\quad \le \textsf{negl}(n).
+\end{align*}</span></li>
+<li>Adversary “behaves the same” irrespective of whether it observes an encryption of <span class="math inline">m_0</span> or of <span class="math inline">m_1</span></li>
+</ul>
+</section></section>
+<section>
+<section id="semantic-security" class="title-slide slide level1 center">
+<h1>Semantic Security</h1>
+<ul>
+<li>Can we define computationally secure encryption without an experiment?</li>
+<li>Definition needs to be the analog of perfect secrecy for computationally bounded adversaries</li>
+<li>Semantic security is that analog
+<ul>
+<li>First definition of computationally secure encryption to be proposed</li>
+<li>Difficult to work with</li>
+<li>EAV-security and semantic security are equivalent</li>
+</ul></li>
+</ul>
+</section>
+<section id="semantic-security-definition" class="slide level2">
+<h2>Semantic Security Definition</h2>
+<ul>
+<li>A private-key encryption scheme <span class="math inline">\Pi = (\textsf{Enc}, \textsf{Dec})</span> is <strong>semantically secure in the presence of an eavesdropper</strong> if for every PPT algorithm <span class="math inline">\mathcal{A}</span> there exists a PPT algorithm <span class="math inline">\mathcal{A}'</span> such that for any PPT algorithm <span class="math inline">\textsf{Samp}</span> and polynomial-time computable functions <span class="math inline">f</span> and <span class="math inline">h</span>, the following is negligible: <span class="math display">\begin{align*}
+&amp; \bigg| \Pr\left[ \mathcal{A}\left( 1^n, \textsf{Enc}_k(m), h(m)\right) =f(m) \right] \\
+&amp; \quad\quad - \Pr\left[ \mathcal{A}'\left( 1^n, |m|, h(m) \right) =f(m) \right] \bigg|
+\end{align*}</span></li>
+<li>where
+<ul>
+<li><span class="math inline">k</span> is chosen uniformly from <span class="math inline">\{0,1\}^n</span></li>
+<li><span class="math inline">m \leftarrow \textsf{Samp}(1^n)</span></li>
+<li><span class="math inline">h(m)</span> accounts for any external information about <span class="math inline">m</span></li>
+</ul></li>
+</ul>
+</section>
+<section id="semantic-security-and-eav-security-are-equivalent" class="slide level2">
+<h2>Semantic Security and EAV-Security are Equivalent</h2>
+<ul>
+<li>A private-key encryption scheme is EAV-secure if and only if it is semantically secure in the presence of an eavesdropper</li>
+<li>EAV-security is simpler and easier to work with</li>
+<li>We will follow a similar strategy for other definitions of secure encryption</li>
+</ul>
+</section></section>
+<section>
+<section id="constructing-an-eav-secure-encryption-scheme" class="title-slide slide level1 center">
+<h1>Constructing an EAV-Secure Encryption Scheme</h1>
+
+</section>
+<section id="strategy" class="slide level2 scrollable">
+<h2>Strategy</h2>
+<ol type="1">
+<li>Define pseudorandom generators</li>
+<li>Construct an encryption scheme using a pseudorandom generator</li>
+<li>Prove that the existence of an attacker that can “break” the encryption scheme implies that the generator is not pseudorandom</li>
+</ol>
+</section>
+<section id="pseudorandom-generators" class="slide level2">
+<h2>Pseudorandom Generators</h2>
+<ul>
+<li><p>A pseudorandom generator is a <strong>polynomial-time deterministic</strong> algorithm for transforming a short, uniform bitstring called the <strong>seed</strong> into a longer, “uniform-looking” output string.</p></li>
+<li><p>Pseudorandomness is a property of a <strong>distribution</strong> on strings</p></li>
+<li><p>Some desirable properties of a pseudorandom generator:</p>
+<ul>
+<li>Any bit of the output should be equal to 1 with probability close to <span class="math inline">\frac{1}{2}</span>.</li>
+<li>The parity of any subset of the output bits should be even with probability close to <span class="math inline">\frac{1}{2}</span>.</li>
+</ul></li>
+</ul>
+</section>
+<section id="good-pseudorandom-generators" class="slide level2">
+<h2>Good Pseudorandom Generators</h2>
+<ul>
+<li>A good pseudorandom generator should pass all efficient statistical tests</li>
+<li>For any efficient statistical test or <strong>distinguisher</strong> <span class="math inline">D</span>, the probability that <span class="math inline">D</span> returns 1 given the output of the pseudorandom generator should be close to the probability that <span class="math inline">D</span> returns 1 when given a uniform string of the same length.</li>
+</ul>
+</section>
+<section id="pseudorandom-generator-definition" class="slide level2 scrollable">
+<h2>Pseudorandom Generator Definition</h2>
+<ul>
+<li><p>Let <span class="math inline">l</span> be a polynomial and let <span class="math inline">G</span> be a deterministic polynomial-time algorithm such that for any <span class="math inline">n</span> and <span class="math inline">s \in \{0,1\}^n</span>, we have <span class="math inline">|G(s)| = l(n)</span></p></li>
+<li><p><span class="math inline">G</span> is a <strong>pseudorandom generator</strong> if the following conditions hold:</p>
+<ol type="1">
+<li><strong>Expansion:</strong> For every <span class="math inline">n</span> it holds that <span class="math inline">l(n) &gt; n</span>.</li>
+<li><strong>Pseudorandomness:</strong> For any PPT algorithm <span class="math inline">D</span>, there is a negligible function <span class="math inline">\textsf{negl}</span> such that <span class="math display">\begin{equation*}
+\left| \Pr\left[ D\left( G(s) \right) = 1 \right] - \Pr\left[ D(r) = 1 \right] \right| \le \textsf{negl}(n),
+\end{equation*}</span> where
+<ul>
+<li><p>the first probability is taken over uniform choice of <span class="math inline">s \in \{0,1\}^n</span> and the randomness of <span class="math inline">D</span></p></li>
+<li><p>the second probability is taken over uniform choice of <span class="math inline">r \in \{0,1\}^{l(n)}</span> and the randomness of <span class="math inline">D</span>.</p></li>
+</ul></li>
+</ol></li>
+<li><p>We call <span class="math inline">l</span> the <strong>expansion factor</strong> of <span class="math inline">G</span>.</p></li>
+</ul>
+</section>
+<section id="understanding-the-definition" class="slide level2">
+<h2>Understanding the Definition</h2>
+<ul>
+<li>Example of a <strong>non-pseudorandom generator</strong>
+<ul>
+<li>Define <span class="math inline">G : \{0,1\}^n \rightarrow \{0,1\}^{n+1}</span> as <span class="math display">G(s) = s \| \left(\oplus_{i=1}^{n} s_i \right)</span></li>
+<li>The <span class="math inline">\|</span> operator represents string concatenation</li>
+</ul></li>
+<li>What happens if remove the restriction that <span class="math inline">D</span> is polynomial time?</li>
+</ul>
+</section>
+<section id="stream-ciphers" class="slide level2">
+<h2>Stream Ciphers</h2>
+<ul>
+<li><p>Stream ciphers are practical systems which behave like pseudorandom generator</p></li>
+<li><p><strong>Example</strong>: A5/1</p>
+<p><img data-src="images/a51.png" class="center" width="800"></p></li>
+</ul>
+<aside class="notes">
+<ul>
+<li>Used to provide voice encryption in the GSM cellular system.</li>
+<li>Developed in 1987. Reverse engineered in 1999.</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="a-secure-fixed-length-encryption-scheme" class="slide level2">
+<h2>A Secure Fixed-Length Encryption Scheme</h2>
+<ul>
+<li>Let <span class="math inline">G</span> be a PG with expansion factor <span class="math inline">l</span></li>
+<li>Define a private-key encryption scheme for messages of length <span class="math inline">l</span> as follows:
+<ul>
+<li><span class="math inline">\textsf{Gen}</span>: On input <span class="math inline">1^n</span>, choose <span class="math inline">k</span> uniformly from <span class="math inline">\{0,1\}^n</span>.</li>
+<li><span class="math inline">\textsf{Enc}</span>: Given <span class="math inline">k \in \{0,1\}^n</span> and message <span class="math inline">m \in \{0,1\}^{l(n)}</span>, output the ciphertext <span class="math display">\begin{equation*}
+  c := G(k) \oplus m.
+\end{equation*}</span></li>
+<li><span class="math inline">\textsf{Dec}</span>: Given <span class="math inline">k \in \{0,1\}^n</span> and ciphertext <span class="math inline">c \in \{0,1\}^{l(n)}</span>, output the message <span class="math display">\begin{equation*}
+  m \coloneqq G(k) \oplus c.
+\end{equation*}</span></li>
+</ul></li>
+</ul>
+</section>
+<section id="security-of-construction" class="slide level2">
+<h2>Security of Construction</h2>
+<ul>
+<li>If <span class="math inline">G</span> is a pseudorandom generator, then the construction is <strong>EAV-secure</strong>, i.e.&nbsp;for any PPT adversary <span class="math inline">\mathcal{A}</span> there is a negligible function <span class="math inline">\textsf{negl}</span> such that <span class="math display">\begin{equation*}
+  \Pr\left[ \textsf{PrivK}^{\textsf{eav}}_{\mathcal{A},\Pi}(n) =  1\right] \le \frac{1}{2} + \textsf{negl}(n).
+\end{equation*}</span></li>
+</ul>
+</section>
+<section id="security-proof-overview" class="slide level2">
+<h2>Security Proof Overview</h2>
+<ul>
+<li><strong>Note</strong>: If a one-time pad is used instead of <span class="math inline">G(k)</span>, the system is EAV-secure</li>
+<li><strong>Key idea</strong>: If a PPT adversary <span class="math inline">\mathcal{A}</span> can distinguish between the encryptions of <span class="math inline">m_0</span> and <span class="math inline">m_1</span>, then it can distinguish between <span class="math inline">G(k)</span> and a uniformly random bitstring</li>
+<li>We will construct a distinguisher <span class="math inline">\mathcal{D}</span> that uses <span class="math inline">\mathcal{A}</span> as a subroutine</li>
+</ul>
+</section>
+<section id="distinguisher-definition" class="slide level2">
+<h2>Distinguisher Definition</h2>
+<ul>
+<li><p><span class="math inline">D</span> is given a string <span class="math inline">w \in \{0,1\}^{l(n)}</span></p>
+<ul>
+<li>Run <span class="math inline">\mathcal{A}(1^n)</span> to obtain a pair of messages <span class="math inline">m_0, m_1 \in \{0,1\}^{l(n)}</span></li>
+<li>Choose a uniform bit <span class="math inline">b \in \{0,1\}</span>. Set <span class="math inline">c:= w \oplus m_b</span>.</li>
+<li>Give <span class="math inline">c</span> to <span class="math inline">\mathcal{A}</span> and get <span class="math inline">b'</span>. If <span class="math inline">b = b'</span> output 1 and output 0 otherwise.</li>
+</ul></li>
+<li><p>If <span class="math inline">\mathcal{A}</span> succeeds, <span class="math inline">D</span> decides that <span class="math inline">w</span> is a pseudorandom string and if <span class="math inline">\mathcal{A}</span> fails <span class="math inline">D</span> decides <span class="math inline">w</span> is a random string.</p></li>
+</ul>
+</section>
+<section id="view-of-the-adversary" class="slide level2">
+<h2>View of the Adversary</h2>
+<ul>
+<li>Let <span class="math inline">\tilde{\Pi}</span> be the one-time pad scheme with length <span class="math inline">l(n)</span></li>
+<li>When <span class="math inline">w</span> is chosen uniformly from <span class="math inline">\{0,1\}^{l(n)}</span>, then the view of <span class="math inline">\mathcal{A}</span> is identical to the view of <span class="math inline">\mathcal{A}</span> in <span class="math inline">\textsf{PrivK}^{\textsf{eav}}_{\mathcal{A},\tilde{\Pi}}(n)</span></li>
+<li>When <span class="math inline">w</span> generated by choosing <span class="math inline">k</span> uniformly from <span class="math inline">\{0,1\}^{n}</span> and setting <span class="math inline">w \coloneqq G(k)</span>, then the view of <span class="math inline">\mathcal{A}</span> is identical to the view of <span class="math inline">\mathcal{A}</span> in <span class="math inline">\textsf{PrivK}^{\textsf{eav}}_{\mathcal{A},\Pi}(n)</span></li>
+</ul>
+</section></section>
+<section>
+<section id="stronger-security-notions" class="title-slide slide level1 center">
+<h1>Stronger Security Notions</h1>
+<ul>
+<li>Security for Multiple Encryptions</li>
+<li>CPA-Security</li>
+<li>CPA-Security for Multiple Encryptions</li>
+</ul>
+</section>
+<section id="multiple-message-eavesdropping-experiment" class="slide level2">
+<h2>Multiple-Message Eavesdropping Experiment</h2>
+<ul>
+<li>Consider the following experiment <span class="math inline">\textsf{PrivK}^{\textsf{mult}}_{\mathcal{A}, \Pi}(n)</span>:
+<ul>
+<li><span class="math inline">\mathcal{A}</span> is given <span class="math inline">1^n</span> and outputs a pair of equal-length lists of messages <span class="math inline">\vec{M}_0 = (m_{0,1},\ldots, m_{0,t})</span> and <span class="math inline">\vec{M}_1 = (m_{1,1},\ldots, m_{1,t})</span> with <span class="math inline">|m_{0,i}| = |m_{1,i}|</span> for all <span class="math inline">i</span></li>
+<li>A key <span class="math inline">k</span> is generated using <span class="math inline">\textsf{Gen}</span>, and a uniform bit <span class="math inline">b \in \{0,1\}</span> is chosen</li>
+<li>Ciphertext vector <span class="math inline">\vec{C} = (c_1,\ldots,c_t)</span> is given to <span class="math inline">\mathcal{A}</span> where <span class="math inline">c_i \leftarrow \textsf{Enc}_k(m_{b,i})</span></li>
+<li><span class="math inline">\mathcal{A}</span> outputs a bit <span class="math inline">b'</span></li>
+<li>The output of the experiment is defined to be 1 if <span class="math inline">b' = b</span>, and 0 otherwise</li>
+</ul></li>
+<li>We write <span class="math inline">\textsf{PrivK}^{\textsf{mult}}_{\mathcal{A}, \Pi}(n) = 1</span> if the output of the experiment is 1 and say that <span class="math inline">\mathcal{A}</span> succeeds</li>
+</ul>
+</section>
+<section id="security-definition-1" class="slide level2">
+<h2>Security Definition</h2>
+<ul>
+<li><p>A private-key encryption scheme <span class="math inline">\Pi = (\textsf{Gen}, \textsf{Enc}, \textsf{Dec})</span> has <strong>indistinguishable multiple encryptions in the presence of an eavesdropper</strong> if for all PPT adversaries <span class="math inline">\mathcal{A}</span> there is a negligible function <span class="math inline">\textsf{negl}</span> such that, <span class="math display">
+\Pr\left[ \textsf{PrivK}^{\textsf{mult}}_{\mathcal{A},\Pi}(n) =  1\right] \le \frac{1}{2} + \textsf{negl}(n).</span></p></li>
+<li><p>The one-time pad does not have indistinguishable multiple encryptions in the presence of an eavesdropper</p></li>
+</ul>
+</section>
+<section id="chosen-plaintext-attacks" class="slide level2">
+<h2>Chosen-Plaintext Attacks</h2>
+<ul>
+<li><p>Adversary can influence the honest parties sharing the key to encrypt messages of its choice and send it over the public channel</p></li>
+<li><p>Chosen-plaintext attacks in the real world</p>
+<ul>
+<li>In WW2, British placed mines knowing that the Germans would encrypt and transmit the mine locations</li>
+<li>Battle of Midway</li>
+</ul></li>
+<li><p>How can we model such an adversary?</p></li>
+</ul>
+</section>
+<section id="the-encryption-oracle" class="slide level2">
+<h2>The Encryption Oracle</h2>
+<ul>
+<li>Chosen-plaintext attacks are modeled by giving the adversary <span class="math inline">\mathcal{A}</span> access to an encryption oracle</li>
+<li><strong>Oracle</strong>: <em>a place where people could go to ask the gods for advice and information about the future</em></li>
+<li><span class="math inline">\mathcal{A}</span> has access to <span class="math inline">\textsf{Enc}_k(\cdot)</span> as a black box for an unknown <span class="math inline">k</span></li>
+<li>When <span class="math inline">\mathcal{A}</span> queries this oracle with a message <span class="math inline">m</span> as input, the oracle returns a ciphertext <span class="math inline">c \leftarrow \textsf{Enc}_k(m)</span></li>
+</ul>
+</section>
+<section id="cpa-indistinguishability-experiment" class="slide level2">
+<h2>CPA Indistinguishability Experiment</h2>
+<ul>
+<li>Consider the following experiment <span class="math inline">\textsf{PrivK}^{\textsf{cpa}}_{\mathcal{A}, \Pi}(n)</span>:
+<ul>
+<li>A key <span class="math inline">k</span> is generated using <span class="math inline">\textsf{Gen}(1^n)</span></li>
+<li><span class="math inline">\mathcal{A}</span> is given <span class="math inline">1^n</span> and oracle access to <span class="math inline">\textsf{Enc}_k(\cdot)</span>, and outputs pair of messages <span class="math inline">m_0, m_1</span> of the same length</li>
+<li>A uniform bit <span class="math inline">b \in \{0,1\}</span> is chosen</li>
+<li>Ciphertext <span class="math inline">c \leftarrow \textsf{Enc}_k(m_b)</span> is computed and given to <span class="math inline">\mathcal{A}</span></li>
+<li><span class="math inline">\mathcal{A}</span> continues to have oracle access to <span class="math inline">\textsf{Enc}_k(\cdot)</span>, and outputs a bit <span class="math inline">b'</span></li>
+<li>The output of the experiment is 1 if <span class="math inline">b' = b</span>, and 0 otherwise</li>
+</ul></li>
+</ul>
+</section>
+<section id="security-definition-2" class="slide level2">
+<h2>Security Definition</h2>
+<ul>
+<li>A private-key encryption scheme <span class="math inline">\Pi = (\textsf{Gen}, \textsf{Enc}, \textsf{Dec})</span> has <strong>indistinguishable encryptions under a chosen-plaintext attack</strong>, or is <strong>CPA-secure</strong>, if for all PPT adversaries <span class="math inline">\mathcal{A}</span> there is a negligible function <span class="math inline">\textsf{negl}</span> such that <span class="math display">
+\Pr\left[ \textsf{PrivK}^{\textsf{cpa}}_{\mathcal{A},\Pi}(n) =  1\right] \le \frac{1}{2} + \textsf{negl}(n).</span></li>
+</ul>
+</section>
+<section id="cpa-security-for-multiple-encryptions" class="slide level2">
+<h2>CPA-Security for Multiple Encryptions</h2>
+<ul>
+<li>We could extend the CPA indistinguishability experiment to multiple encryptions using lists of plaintexts</li>
+<li>We take a different approach that models attackers that can <strong>adaptively</strong> choose its input to the encryption oracle</li>
+<li>Instead of <span class="math inline">\textsf{Enc}_k(\cdot)</span> we give the adversary access to a <strong>left-or-right</strong> oracle <span class="math inline">\textsf{LR}_{k,b}</span></li>
+<li>On input <span class="math inline">m_0, m_1</span>, the oracle gives <span class="math inline">\textsf{LR}_{k,b}(m_0, m_1) = \textsf{Enc}_k(m_b)</span></li>
+</ul>
+</section>
+<section id="lr-oracle-experiment" class="slide level2">
+<h2>LR-Oracle Experiment</h2>
+<ul>
+<li>Consider the following experiment <span class="math inline">\textsf{PrivK}^{\textsf{LR-cpa}}_{\mathcal{A}, \Pi}(n)</span>:
+<ul>
+<li>A key <span class="math inline">k</span> is generated using <span class="math inline">\textsf{Gen}(1^n)</span></li>
+<li>A uniform bit <span class="math inline">b \in \{0,1\}</span> is chosen</li>
+<li><span class="math inline">\mathcal{A}</span> is given <span class="math inline">1^n</span> and oracle access to <span class="math inline">\textsf{LR}_{k,b}(\cdot,\cdot)</span></li>
+<li><span class="math inline">\mathcal{A}</span> outputs a bit <span class="math inline">b'</span></li>
+<li>The output of the experiment is 1 if <span class="math inline">b' = b</span>, and 0 otherwise</li>
+</ul></li>
+</ul>
+</section>
+<section id="security-definition-3" class="slide level2">
+<h2>Security Definition</h2>
+<ul>
+<li>A private-key encryption scheme <span class="math inline">\Pi = (\textsf{Gen}, \textsf{Enc}, \textsf{Dec})</span> has <strong>indistinguishable multiple encryptions under a chosen-plaintext attack</strong>, or is <strong>CPA-secure for multiple encryptions</strong>, if for all PPT adversaries <span class="math inline">\mathcal{A}</span> there is a negligible function <span class="math inline">\textsf{negl}</span> such that <span class="math display">
+\Pr\left[ \textsf{PrivK}^{\textsf{LR-cpa}}_{\mathcal{A},\Pi}(n) =  1\right] \le \frac{1}{2} + \textsf{negl}(n).</span></li>
+</ul>
+</section>
+<section id="equivalence-of-cpa-security-notions" class="slide level2">
+<h2>Equivalence of CPA-Security Notions</h2>
+<ul>
+<li>We have seen three security notions stronger than EAV-security
+<ul>
+<li>Security for Multiple Encryptions</li>
+<li>CPA-Security</li>
+<li>CPA-Security for Multiple Encryptions</li>
+</ul></li>
+<li>CPA-Security for Multiple Encryptions <span class="math inline">\implies</span> Security for Multiple Encryptions</li>
+<li><strong>Theorem</strong>: CPA-Security <span class="math inline">\implies</span> CPA-Security for Multiple Encryptions</li>
+</ul>
+</section></section>
+<section>
+<section id="constructing-a-cpa-secure-encryption-scheme" class="title-slide slide level1 center">
+<h1>Constructing a CPA-Secure Encryption Scheme</h1>
+
+</section>
+<section id="strategy-1" class="slide level2 scrollable">
+<h2>Strategy</h2>
+<ol type="1">
+<li>Define pseudorandom functions</li>
+<li>Construct an encryption scheme using a pseudorandom function</li>
+<li>Prove that the existence of an attacker that can “break” the encryption scheme implies that the function is not pseudorandom</li>
+</ol>
+</section>
+<section id="pseudorandom-functions" class="slide level2">
+<h2>Pseudorandom Functions</h2>
+<ul>
+<li>Pseudorandom functions are “random-looking” functions</li>
+<li>In this case, pseudorandomness will be a property of a <strong>distribution over functions</strong></li>
+<li>Given a security parameter <span class="math inline">n</span>, a keyed function <span class="math display">F : \{0,1\}^{l_{key}(n)} \times \{0,1\}^{l_{in}(n)} \rightarrow \{0,1\}^{l_{out}(n)}</span> is a two-input function, where the first input is called the key and is denoted by <span class="math inline">k</span></li>
+<li>We will only consider <strong>efficient</strong> keyed functions</li>
+<li>If the key <span class="math inline">k</span> is fixed, we get a single-input function <span class="math display">F_k: \{0,1\}^{l_{in}(n)} \rightarrow \{0,1\}^{l_{out}(n)}</span> defined by <span class="math inline">F_k(x) = F(k,x)</span>.</li>
+<li><span class="math inline">F</span> is said to be <strong>length-preserving</strong> when <span class="math inline">l_{key}(n) = l_{in}(n) = l_{out}(n) = n</span>.</li>
+<li>For simplicity, assume that <span class="math inline">F</span> is length-preserving</li>
+</ul>
+</section>
+<section id="uniformly-choosing-a-function" class="slide level2">
+<h2>Uniformly Choosing a Function</h2>
+<ul>
+<li>Let <span class="math inline">\textsf{Func}_n</span> be the set of all functions with domain and range equal to <span class="math inline">\{0,1\}^n</span></li>
+<li>A keyed function <span class="math inline">F</span> is said to be <strong>pseudorandom</strong> if the function <span class="math inline">F_k</span> (for a uniform key <span class="math inline">k</span>) is indistinguishable from a function chosen uniformly from <span class="math inline">\textsf{Func}_n</span></li>
+<li>Note that <span class="math inline">\left| \textsf{Func}_n\right| = 2^{n \cdot 2^n}</span></li>
+<li>For a length-preserving <span class="math inline">F_k</span>, choosing <span class="math inline">k \leftarrow \{0,1\}^n</span> induces a distribution over at most <span class="math inline">2^n</span> functions with domain and range equal <span class="math inline">\{0,1\}^n</span></li>
+</ul>
+</section>
+<section id="distinguisher-for-pseudorandom-functions" class="slide level2">
+<h2>Distinguisher for Pseudorandom Functions</h2>
+<ul>
+<li>The distinguisher should be allowed to query the function</li>
+<li><span class="math inline">D</span> is given access to an <strong>oracle</strong> <span class="math inline">\mathcal{O}</span> which is either equal to <span class="math inline">F_k</span> (for uniform <span class="math inline">k</span>) or <span class="math inline">f</span> (for uniform <span class="math inline">f</span> from <span class="math inline">\textsf{Func}_n</span>)</li>
+<li><span class="math inline">D</span> can query the oracle <span class="math inline">\mathcal{O}</span> at any point <span class="math inline">x \in \{0,1\}^n</span> and the oracle returns <span class="math inline">\mathcal{O}(x)</span></li>
+<li><span class="math inline">D</span> can adaptively query the oracle but can ask only polynomially many queries.</li>
+</ul>
+</section>
+<section id="pseudorandom-function-definition" class="slide level2">
+<h2>Pseudorandom Function Definition</h2>
+<ul>
+<li><p>Let <span class="math inline">F</span> be an efficient, length-preserving, keyed function. <span class="math inline">F</span> is a <strong>pseudorandom function</strong> if for all PPT distinguishers <span class="math inline">D</span>, there is a negligible function <span class="math inline">\textsf{negl}</span> such that: <span class="math display">\begin{align*}
+&amp; \bigg| \Pr\left[ D^{F_k(\cdot)}(1^n) = 1 \right] - \Pr\left[ D^{f(\cdot)}(1^n) = 1 \right]\bigg| \\
+&amp; \quad\quad\quad\quad \le \textsf{negl}(n),
+  \end{align*}</span> where</p>
+<ul>
+<li><p>the first probability is taken over uniform choice of <span class="math inline">k \in \{0,1\}^n</span> and the randomness of <span class="math inline">D</span>, and</p></li>
+<li><p>the second probability is taken over uniform choice of <span class="math inline">f \in \textsf{Func}_n</span> and the randomness of <span class="math inline">D</span></p></li>
+</ul></li>
+</ul>
+</section>
+<section id="distinguisher-does-not-know-the-key" class="slide level2">
+<h2>Distinguisher does not know the Key</h2>
+<ul>
+<li><span class="math inline">D</span> is <strong>not</strong> given access to the key <span class="math inline">k</span></li>
+<li>If <span class="math inline">k</span> is known, it is easy to construct a distinguisher which succeeds with non-negligible probability</li>
+</ul>
+</section>
+<section id="example-of-a-non-pseudorandom-function" class="slide level2">
+<h2>Example of a Non-Pseudorandom Function</h2>
+<ul>
+<li>Example of a non-pseudorandom, length-preserving, keyed function <span class="math display">F(k,x) = k \oplus x</span></li>
+</ul>
+</section>
+<section id="cpa-secure-encryption-from-pseudorandom-functions" class="slide level2">
+<h2>CPA-Secure Encryption from Pseudorandom Functions</h2>
+<ul>
+<li>Let <span class="math inline">F</span> be a pseudorandom function</li>
+<li>Define a private-key encryption scheme for messages of length <span class="math inline">n</span> as follows:
+<ul>
+<li><span class="math inline">\textsf{Gen}</span>: On input <span class="math inline">1^n</span>, choose <span class="math inline">k</span> uniformly from <span class="math inline">\{0,1\}^n</span>.</li>
+<li><span class="math inline">\textsf{Enc}</span>: Given <span class="math inline">k \in \{0,1\}^n</span> and message <span class="math inline">m \in \{0,1\}^{n}</span>, choose uniform <span class="math inline">r \in \{0,1\}^n</span> and output the ciphertext <span class="math display">\begin{equation*}
+c := \langle r, F_k(r) \oplus m \rangle.
+   \end{equation*}</span></li>
+<li><span class="math inline">\textsf{Dec}</span>: Given <span class="math inline">k \in \{0,1\}^n</span> and ciphertext <span class="math inline">c = \langle r, s \rangle</span>, output the plaintext message <span class="math display">\begin{equation*}
+m := F_k(r) \oplus s.
+   \end{equation*}</span></li>
+</ul></li>
+</ul>
+</section>
+<section id="security-claim" class="slide level2">
+<h2>Security Claim</h2>
+<ul>
+<li><p><strong>Theorem</strong>: If <span class="math inline">F</span> is a pseudorandom function, then the above construction is a CPA-secure private-key encryption scheme for messages of length <span class="math inline">n</span></p></li>
+<li><p>Security Proof Overview</p>
+<ul>
+<li><strong>Key idea</strong>: If a PPT adversary <span class="math inline">\mathcal{A}</span> can distinguish between message encryptions using <span class="math inline">f</span> and <span class="math inline">F_k</span>, then it can be used to distinguish between <span class="math inline">f</span> and <span class="math inline">F_k</span></li>
+<li>We will construct a distinguisher <span class="math inline">\mathcal{D}</span> that uses <span class="math inline">\mathcal{A}</span> as a subroutine</li>
+</ul></li>
+</ul>
+</section></section>
+<section>
+<section id="proof-of-security-for-cpa-secure-scheme" class="title-slide slide level1 center">
+<h1>Proof of Security for CPA-Secure Scheme</h1>
+
+</section>
+<section id="replacing-the-pseudorandom-function-with-a-random-function" class="slide level2">
+<h2>Replacing the Pseudorandom Function with a Random Function</h2>
+<ul>
+<li>Let <span class="math inline">\widetilde{\Pi} = (\widetilde{\textsf{Gen}}, \widetilde{\textsf{Enc}}, \widetilde{\textsf{Dec}})</span> be the same as <span class="math inline">\Pi = (\textsf{Gen}, \textsf{Enc}, \textsf{Dec})</span> with <span class="math inline">F_k</span> replaced with <span class="math inline">f \leftarrow \textsf{Func}_n</span></li>
+<li><span class="math inline">\widetilde{\textsf{Gen}}(1^n)</span> chooses a uniform <span class="math inline">f</span> from <span class="math inline">\textsf{Func}_n</span>
+<ul>
+<li>Not practical but can be defined for the sake of the proof</li>
+</ul></li>
+<li>Let <span class="math inline">\mathcal{A}</span> be any PPT adversary which uses at most <span class="math inline">q(n)</span> encryption oracle queries</li>
+<li>We will show that <span class="math display">\begin{align*}
+  &amp; \bigg| \Pr\left[ \textsf{PrivK}_{\mathcal{A}, \Pi}^{\textsf{cpa}}(n) = 1 \right] -  \Pr\left[ \textsf{PrivK}_{\mathcal{A}, \widetilde{\Pi}}^{\textsf{cpa}}(n) = 1 \right]\bigg| \\
+  &amp; \quad\quad\quad\quad \le \textsf{negl}(n),
+    \end{align*}</span></li>
+</ul>
+</section>
+<section id="distinguisher-definition-13" class="slide level2 scrollable">
+<h2>Distinguisher Definition (1/3)</h2>
+<p><span class="math inline">D</span> is given <span class="math inline">1^n</span> and access to an oracle <span class="math inline">\mathcal{O}: \{0,1\}^n \rightarrow \{0,1\}^n</span>. It uses <span class="math inline">\mathcal{A}</span> as a subroutine</p>
+<ol type="1">
+<li><p>Whenever <span class="math inline">\mathcal{A}</span> queries the encryption oracle on message <span class="math inline">m\in \{0,1\}^n</span>, answer as follows</p>
+<ol type="i">
+<li>Choose uniform <span class="math inline">r\in \{0,1\}^n</span></li>
+<li>Query <span class="math inline">\mathcal{O}(r)</span> and obtain response <span class="math inline">y</span></li>
+<li>Return the ciphertext <span class="math inline">\langle r, y \oplus m \rangle</span> to <span class="math inline">\mathcal{A}</span></li>
+</ol></li>
+</ol>
+</section>
+<section id="distinguisher-definition-23" class="slide level2 scrollable">
+<h2>Distinguisher Definition (2/3)</h2>
+<ol start="2" type="1">
+<li><p>When <span class="math inline">\mathcal{A}</span> outputs messages <span class="math inline">m_0, m_1 \in \{0,1\}^n</span>, choose a uniform bit <span class="math inline">b \in \{0,1\}</span> and then</p>
+<ol type="i">
+<li>Choose uniform <span class="math inline">r\in \{0,1\}^n</span></li>
+<li>Query <span class="math inline">\mathcal{O}(r)</span> and obtain response <span class="math inline">y</span></li>
+<li>Return the ciphertext <span class="math inline">\langle r, y \oplus m_b \rangle</span> to <span class="math inline">\mathcal{A}</span></li>
+</ol></li>
+</ol>
+</section>
+<section id="distinguisher-definition-33" class="slide level2 scrollable">
+<h2>Distinguisher Definition (3/3)</h2>
+<ol start="3" type="1">
+<li>Continue answering encryption oracle queries of <span class="math inline">\mathcal{A}</span></li>
+<li>Once <span class="math inline">\mathcal{A}</span> outputs a bit <span class="math inline">b'</span>, output <span class="math inline">1</span> if <span class="math inline">b=b'</span> and <span class="math inline">0</span> otherwise.</li>
+</ol>
+</section>
+<section id="finishing-the-proof" class="slide level2">
+<h2>Finishing the Proof</h2>
+<ul>
+<li>We have <span class="math display">\begin{align*}
+    &amp; \bigg| \Pr\left[ \textsf{PrivK}_{\mathcal{A}, \Pi}^{\textsf{cpa}}(n) = 1 \right] -  \Pr\left[ \textsf{PrivK}_{\mathcal{A}, \widetilde{\Pi}}^{\textsf{cpa}}(n) = 1 \right]\bigg| \\
+= &amp; \bigg| \Pr\left[ D^{F_k(\cdot)}(1^n) = 1 \right] - \Pr\left[ D^{f(\cdot)}(1^n) = 1 \right]\bigg| \\
+    &amp; \quad\quad\quad\quad \le \textsf{negl}(n),
+      \end{align*}</span></li>
+<li>We will show that <span class="math display"> \Pr\left[ \textsf{PrivK}_{\mathcal{A}, \widetilde{\Pi}}^{\textsf{cpa}}(n) = 1 \right] \le \frac{1}{2} + \frac{q(n)}{2^n}</span></li>
+</ul>
+</section>
+<section id="upperbound-on-the-adversarys-success-probability-12" class="slide level2">
+<h2>Upperbound on the Adversary’s Success Probability (1/2)</h2>
+<ul>
+<li>In <span class="math inline">\textsf{PrivK}_{\mathcal{A}, \widetilde{\Pi}}^{\textsf{cpa}}(n)</span> the ciphertext corresponding to <span class="math inline">m</span> is <span class="math inline">\langle r, f(r) \oplus m \rangle</span></li>
+<li>Let <span class="math inline">r^*</span> be the randomness used when generating the challenge ciphertext <span class="math inline">\langle r^*, f(r^*) \oplus m_b \rangle</span></li>
+<li>Two possibilities
+<ul>
+<li><span class="math inline">r^*</span> is <strong>never used</strong> when answering any of <span class="math inline">\mathcal{A}</span>’s encryption-oracle queries</li>
+<li><span class="math inline">r^*</span> is used when answering <strong>at least one</strong> of <span class="math inline">\mathcal{A}</span>’s encryption-oracle queries</li>
+</ul></li>
+</ul>
+</section>
+<section id="upperbound-on-the-adversarys-success-probability-22" class="slide level2">
+<h2>Upperbound on the Adversary’s Success Probability (2/2)</h2>
+<ul>
+<li><p>Let <span class="math inline">\textsf{repeat}</span> denote the event that <span class="math inline">r^*</span> was used by the oracle to answer at least one of <span class="math inline">\mathcal{A}</span>’s queries</p></li>
+<li><p>Let <span class="math inline">\textsf{repeat}^c</span> be the complement of <span class="math inline">\textsf{repeat}</span>. Then we have <span class="math display">\begin{align*}
+&amp; \Pr\left[ \textsf{PrivK}_{\mathcal{A}, \widetilde{\Pi}}^{\textsf{cpa}}(n) = 1 \right] \\     &amp; = \Pr\left[ \textsf{PrivK}_{\mathcal{A}, \widetilde{\Pi}}^{\textsf{cpa}}(n) = 1 \bigcap \textsf{repeat}\right] \\      &amp; \quad + \Pr\left[ \textsf{PrivK}_{\mathcal{A}, \widetilde{\Pi}}^{\textsf{cpa}}(n) = 1 \bigcap \textsf{repeat}^c\right] \\     &amp; \le \frac{q(n)}{2^n} + \frac{1}{2}.     
+\end{align*}</span></p></li>
+<li><p>Finally, we have <span class="math display"> \Pr\left[ \textsf{PrivK}_{\mathcal{A}, \Pi}^{\textsf{cpa}}(n) = 1 \right] \le \frac{1}{2} + \frac{q(n)}{2^n} + \textsf{negl}(n)</span></p></li>
+</ul>
+</section></section>
+<section>
+<section id="pseudorandom-permutations" class="title-slide slide level1 center">
+<h1>Pseudorandom Permutations</h1>
+<ul>
+<li>In practice, constructions of pseudorandom permutations are used instead of pseudorandom functions</li>
+<li>We will consider pseudorandom permutations abstractly for now</li>
+<li>Practical candidate constructions will be described later</li>
+</ul>
+</section>
+<section id="pseudorandom-permutations-1" class="slide level2">
+<h2>Pseudorandom Permutations</h2>
+<ul>
+<li>Let <span class="math inline">\texttt{Perm}_n</span> be the set of all permutations (bijections) on <span class="math inline">\{0,1\}^n</span></li>
+<li><span class="math inline">\left|\texttt{Perm}_n \right| = \left( 2^n \right)!</span></li>
+<li>A function <span class="math display">F : \{0,1\}^{l_{key}(n)} \times \{0,1\}^{l_{in}(n)} \rightarrow \{0,1\}^{l_{in}(n)}</span> is called a <strong>keyed permutation</strong> if for all <span class="math inline">k \in \{0,1\}^{l_{key}(n)}</span>, <span class="math inline">F_k</span> is a permutation.</li>
+<li><span class="math inline">F</span> is said to be <strong>efficient</strong> if both <span class="math inline">F_k(x)</span> and <span class="math inline">F_k^{-1}(y)</span> have polynomial-time algorithms for all <span class="math inline">k,x,y</span>.</li>
+<li><span class="math inline">l_{in}(n)</span> is called the <strong>block length</strong> of <span class="math inline">F</span>.</li>
+<li><span class="math inline">F</span> is <strong>length-preserving</strong> if <span class="math inline">l_{key}(n) = l_{in}(n) = n</span>.</li>
+</ul>
+<aside class="notes">
+<ul>
+<li>An <span class="math inline">f \in \texttt{Perm}_n</span> can be seen as a lookup table where any two distinct rows must be different</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="definition-of-pseudorandom-permutation" class="slide level2">
+<h2>Definition of Pseudorandom Permutation</h2>
+<ul>
+<li><p>A <strong>pseudorandom permutation</strong> is a permutation which cannot be efficiently distinguished from a random permutation</p></li>
+<li><p>Let <span class="math inline">F</span> be an efficient, length-preserving, keyed permutation. <span class="math inline">F</span> is a <strong>pseudorandom permutation</strong> if for all PPT distinguishers <span class="math inline">D</span>, there is a negligible function <span class="math inline">\textsf{negl}</span> such that: <span class="math display">\begin{align*}
+&amp; \bigg| \Pr\left[ D^{F_k(\cdot)}(1^n) = 1 \right] - \Pr\left[ D^{f(\cdot)}(1^n) = 1 \right]\bigg| \\
+&amp; \quad\quad\quad\quad \le \textsf{negl}(n),
+  \end{align*}</span> where</p>
+<ul>
+<li><p>the first probability is taken over uniform choice of <span class="math inline">k \in \{0,1\}^n</span> and the randomness of <span class="math inline">D</span>, and</p></li>
+<li><p>the second probability is taken over uniform choice of <span class="math inline">f \in \textsf{Perm}_n</span> and the randomness of <span class="math inline">D</span></p></li>
+</ul></li>
+</ul>
+</section>
+<section id="strong-pseudorandom-permutations" class="slide level2">
+<h2>Strong Pseudorandom Permutations</h2>
+<ul>
+<li><p>A <strong>strong pseudorandom permutation</strong> is a permutation which cannot be efficiently distinguished from a random permutation <strong>even if the distinguisher is given oracle access to the inverse of the permutation</strong></p></li>
+<li><p>In practice, constructions of strong pseudorandom permutations are called <strong>block ciphers</strong></p></li>
+</ul>
+</section>
+<section id="definition-of-strong-pseudorandom-permutation" class="slide level2">
+<h2>Definition of Strong Pseudorandom Permutation</h2>
+<ul>
+<li><p>Let <span class="math inline">F</span> be an efficient, length-preserving, keyed permutation. <span class="math inline">F</span> is a <strong>strong pseudorandom permutation</strong> if for all PPT distinguishers <span class="math inline">D</span>, there is a negligible function <span class="math inline">\textsf{negl}</span> such that: <span class="math display">\begin{align*}
+&amp; \bigg| \Pr\left[ D^{F_k(\cdot),F_k^{-1}(\cdot)}(1^n) = 1 \right] \\
+&amp;\quad\quad - \Pr\left[ D^{f(\cdot),f^{-1}(\cdot)}(1^n) = 1 \right]\bigg| \\
+&amp; \quad\quad\quad\quad \le \textsf{negl}(n),
+  \end{align*}</span> where</p>
+<ul>
+<li><p>the first probability is taken over uniform choice of <span class="math inline">k \in \{0,1\}^n</span> and the randomness of <span class="math inline">D</span>, and</p></li>
+<li><p>the second probability is taken over uniform choice of <span class="math inline">f \in \textsf{Perm}_n</span> and the randomness of <span class="math inline">D</span></p></li>
+</ul></li>
+</ul>
+</section></section>
+<section>
+<section id="block-cipher-modes-of-operation" class="title-slide slide level1 center">
+<h1>Block Cipher Modes of Operation</h1>
+<ul>
+<li>Our CPA-secure construction has ciphertext length which is double the plaintext length</li>
+<li>Fortunately, there exist secure constructions based on block ciphers that have lower overheads</li>
+</ul>
+</section>
+<section id="electronic-code-book-ecb-mode" class="slide level2">
+<h2>Electronic Code Book (ECB) Mode</h2>
+<ul>
+<li><p><strong>Insecure</strong>: Should not be used in practice!</p></li>
+<li><p>Let <span class="math inline">\vec{m} = \langle m_1,m_2,\ldots,m_l\rangle</span> where <span class="math inline">m_i \in \{0,1\}^n</span>.</p></li>
+<li><p>Let <span class="math inline">F</span> be a block cipher with block length <span class="math inline">n</span>.</p></li>
+<li><p><span class="math inline">\vec{c} \coloneqq \langle F_k(m_1), F_k(m_2),\ldots,F_k(m_l) \rangle</span><br>
+</p>
+<p><img data-src="images/ecb.svg" width="400"></p></li>
+<li><p>ECB is deterministic and cannot be CPA-secure.</p></li>
+</ul>
+</section>
+<section id="ecb-example" class="slide level2 scrollable">
+<h2>ECB Example</h2>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<p><img data-src="images/Tux.png" width="220" alt="Tux"> <img data-src="images/Tux_ECB.png" width="220" alt="Tux ECB"></p>
+</div>
+</div>
+</div>
+<p>Image encrypted using ECB mode<sup>1</sup></p>
+<aside><ol class="aside-footnotes"><li id="fn1"><p>Encrypted Image Attribution: Larry Ewing, lewing@isc.tamu.edu</p></li></ol></aside></section>
+<section id="cipher-block-chaining-cbc-mode" class="slide level2">
+<h2>Cipher Block Chaining (CBC) Mode</h2>
+<ul>
+<li><p>Let <span class="math inline">m = m_1,m_2,\ldots,m_l</span> where <span class="math inline">m_i \in \{0,1\}^n</span>.</p></li>
+<li><p>Let <span class="math inline">F</span> be a length-preserving block cipher with block length <span class="math inline">n</span>.</p></li>
+<li><p>A uniform <strong>initialization vector (IV)</strong> of length <span class="math inline">n</span> is chosen.</p></li>
+<li><p><span class="math inline">c_0 = IV</span>. For <span class="math inline">i = 1,\ldots,l</span>, <span class="math inline">c_i \coloneqq F_k(c_{i-1}\oplus m_i)</span></p>
+<p><img data-src="images/cbc.svg" width="600"></p></li>
+<li><p>For <span class="math inline">i = 1,2,\ldots,l</span>, <span class="math inline">m_i \coloneqq F_k^{-1}(c_i)\oplus c_{i-1}</span>.</p></li>
+<li><p>Ciphertext is larger than the plaintext by <span class="math inline">n</span> bits</p></li>
+<li><p>Decryption is faster than encryption</p></li>
+<li><p>If <span class="math inline">F</span> is a pseudorandom permutation, then the CBC-mode encryption is CPA-secure.</p></li>
+</ul>
+</section>
+<section id="counter-ctr-mode" class="slide level2">
+<h2>Counter (CTR) Mode</h2>
+<ul>
+<li><p>Let <span class="math inline">\vec{m} = m_1,m_2,\ldots,m_l</span> where <span class="math inline">m_i \in \{0,1\}^n</span></p></li>
+<li><p>Let <span class="math inline">F</span> be a length-preserving block cipher with length <span class="math inline">n</span></p></li>
+<li><p>To encrypt a message of length <span class="math inline">l &lt; 2^{n/4}</span> blocks, a uniform <span class="math inline">IV</span> of length <span class="math inline">3n/4</span> is chosen</p></li>
+<li><p><span class="math inline">c_0 = IV</span>. For <span class="math inline">i = 1,\ldots,l</span>, <span class="math inline">c_i \coloneqq F_k(IV \| i) \oplus m_i</span>.</p>
+<p><img data-src="images/ctr.svg" width="700"></p></li>
+<li><p>For <span class="math inline">i = 1,2,\ldots,l</span>, <span class="math inline">m_i \coloneqq F_k(IV \| i)\oplus c_{i}</span>.</p></li>
+<li><p>Ciphertext is larger than the plaintext by <span class="math inline">3n/4</span> bits</p></li>
+<li><p>Both encryption and decryption can be parallelized</p></li>
+<li><p>The generated stream can be truncated to exactly the plaintext length</p></li>
+<li><p><span class="math inline">F</span> does not need to be a permutation</p></li>
+<li><p>If <span class="math inline">F</span> is a pseudorandom function, then the CTR-mode encryption is CPA-secure.</p></li>
+</ul>
+</section></section>
+<section id="further-reading" class="title-slide slide level1 center">
+<h1>Further Reading</h1>
+<p>Chapter 3 from Katz &amp; Lindell</p>
+<div class="quarto-auto-generated-content">
+<div class="footer footer-default">
+
+</div>
+</div>
+</section>
+
+
+    </div>
+  </div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="private-key-encryption_files/libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="private-key-encryption_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="private-key-encryption_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="private-key-encryption_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="private-key-encryption_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="private-key-encryption_files/libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="private-key-encryption_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="private-key-encryption_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="private-key-encryption_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': false,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: true,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'none',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1050,
+
+        height: 700,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
+
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    <script id="quarto-html-after-body" type="application/javascript">
+    window.document.addEventListener("DOMContentLoaded", function (event) {
+      const toggleBodyColorMode = (bsSheetEl) => {
+        const mode = bsSheetEl.getAttribute("data-mode");
+        const bodyEl = window.document.querySelector("body");
+        if (mode === "dark") {
+          bodyEl.classList.add("quarto-dark");
+          bodyEl.classList.remove("quarto-light");
+        } else {
+          bodyEl.classList.add("quarto-light");
+          bodyEl.classList.remove("quarto-dark");
+        }
+      }
+      const toggleBodyColorPrimary = () => {
+        const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+        if (bsSheetEl) {
+          toggleBodyColorMode(bsSheetEl);
+        }
+      }
+      toggleBodyColorPrimary();  
+      const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+      tabsets.forEach(function(tabset) {
+        const tabby = new Tabby('#' + tabset.id);
+      });
+      const isCodeAnnotation = (el) => {
+        for (const clz of el.classList) {
+          if (clz.startsWith('code-annotation-')) {                     
+            return true;
+          }
+        }
+        return false;
+      }
+      const onCopySuccess = function(e) {
+        // button target
+        const button = e.trigger;
+        // don't keep focus
+        button.blur();
+        // flash "checked"
+        button.classList.add('code-copy-button-checked');
+        var currentTitle = button.getAttribute("title");
+        button.setAttribute("title", "Copied!");
+        let tooltip;
+        if (window.bootstrap) {
+          button.setAttribute("data-bs-toggle", "tooltip");
+          button.setAttribute("data-bs-placement", "left");
+          button.setAttribute("data-bs-title", "Copied!");
+          tooltip = new bootstrap.Tooltip(button, 
+            { trigger: "manual", 
+              customClass: "code-copy-button-tooltip",
+              offset: [0, -8]});
+          tooltip.show();    
+        }
+        setTimeout(function() {
+          if (tooltip) {
+            tooltip.hide();
+            button.removeAttribute("data-bs-title");
+            button.removeAttribute("data-bs-toggle");
+            button.removeAttribute("data-bs-placement");
+          }
+          button.setAttribute("title", currentTitle);
+          button.classList.remove('code-copy-button-checked');
+        }, 1000);
+        // clear code selection
+        e.clearSelection();
+      }
+      const getTextToCopy = function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+      }
+      const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+        text: getTextToCopy
+      });
+      clipboard.on('success', onCopySuccess);
+      if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+        // For code content inside modals, clipBoardJS needs to be initialized with a container option
+        // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+        const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+          text: getTextToCopy,
+          container: window.document.getElementById('quarto-embedded-source-code-modal')
+        });
+        clipboardModal.on('success', onCopySuccess);
+      }
+        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+        var mailtoRegex = new RegExp(/^mailto:/);
+          var filterRegex = new RegExp('/' + window.location.host + '/');
+        var isInternal = (href) => {
+            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+        }
+        // Inspect non-navigation links and adorn them if external
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+        for (var i=0; i<links.length; i++) {
+          const link = links[i];
+          if (!isInternal(link.href)) {
+            // undo the damage that might have been done by quarto-nav.js in the case of
+            // links that we want to consider external
+            if (link.dataset.originalHref !== undefined) {
+              link.href = link.dataset.originalHref;
+            }
+              // target, if specified
+              link.setAttribute("target", "_blank");
+              if (link.getAttribute("rel") === null) {
+                link.setAttribute("rel", "noopener");
+              }
+          }
+        }
+      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+        const config = {
+          allowHTML: true,
+          maxWidth: 500,
+          delay: 100,
+          arrow: false,
+          appendTo: function(el) {
+              return el.closest('section.slide') || el.parentElement;
+          },
+          interactive: true,
+          interactiveBorder: 10,
+          theme: 'light-border',
+          placement: 'bottom-start',
+        };
+        if (contentFn) {
+          config.content = contentFn;
+        }
+        if (onTriggerFn) {
+          config.onTrigger = onTriggerFn;
+        }
+        if (onUntriggerFn) {
+          config.onUntrigger = onUntriggerFn;
+        }
+          config['offset'] = [0,0];
+          config['maxWidth'] = 700;
+        window.tippy(el, config); 
+      }
+      const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+      for (var i=0; i<noterefs.length; i++) {
+        const ref = noterefs[i];
+        tippyHover(ref, function() {
+          // use id or data attribute instead here
+          let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+          try { href = new URL(href).hash; } catch {}
+          const id = href.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note) {
+            return note.innerHTML;
+          } else {
+            return "";
+          }
+        });
+      }
+      const findCites = (el) => {
+        const parentEl = el.parentElement;
+        if (parentEl) {
+          const cites = parentEl.dataset.cites;
+          if (cites) {
+            return {
+              el,
+              cites: cites.split(' ')
+            };
+          } else {
+            return findCites(el.parentElement)
+          }
+        } else {
+          return undefined;
+        }
+      };
+      var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+      for (var i=0; i<bibliorefs.length; i++) {
+        const ref = bibliorefs[i];
+        const citeInfo = findCites(ref);
+        if (citeInfo) {
+          tippyHover(citeInfo.el, function() {
+            var popup = window.document.createElement('div');
+            citeInfo.cites.forEach(function(cite) {
+              var citeDiv = window.document.createElement('div');
+              citeDiv.classList.add('hanging-indent');
+              citeDiv.classList.add('csl-entry');
+              var biblioDiv = window.document.getElementById('ref-' + cite);
+              if (biblioDiv) {
+                citeDiv.innerHTML = biblioDiv.innerHTML;
+              }
+              popup.appendChild(citeDiv);
+            });
+            return popup.innerHTML;
+          });
+        }
+      }
+    });
+    </script>
+    
+
+</body></html>
