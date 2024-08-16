@@ -560,7 +560,7 @@ Saravanan Vijayakumaran
 <ol type="1">
 <li><span class="math inline">k \leftarrow \textsf{Gen}(1^n)</span>.</li>
 <li>For <span class="math inline">m \in \left\{ 0,1 \right\}^*</span>, <span class="math inline">c \leftarrow \textsf{Enc}_k(m)</span>.</li>
-<li><span class="math inline">\textsf{Dec}_k(c) = m</span> or error indicator <span class="math inline">\perp</span>.</li>
+<li><span class="math inline">m \coloneqq \textsf{Dec}_k(c)</span> or error indicator <span class="math inline">\perp</span>.</li>
 </ol></li>
 <li><p>For every <span class="math inline">m, c, k</span>, we have <span class="math inline">\textsf{Dec}_k\left( \textsf{Enc}_k\left( m \right) \right) = m</span></p></li>
 </ul>
@@ -605,7 +605,7 @@ Saravanan Vijayakumaran
 <li>Consider the following experiment <span class="math inline">\textsf{PrivK}^{\textsf{eav}}_{\mathcal{A}, \Pi}(n)</span>:
 <ul>
 <li><span class="math inline">\mathcal{A}</span> is given <span class="math inline">1^n</span> and outputs arbitrary <span class="math inline">m_0, m_1 \in \mathcal{M}</span> with <span class="math inline">|m_0| = |m_1|</span></li>
-<li>A key <span class="math inline">k</span> is generated using <span class="math inline">\textsf{Gen}</span>, and a uniform bit <span class="math inline">b \in \{0,1\}</span> is chosen</li>
+<li>A key <span class="math inline">k</span> is generated using <span class="math inline">\textsf{Gen}(1^n)</span>, and a uniform bit <span class="math inline">b \in \{0,1\}</span> is chosen</li>
 <li>Ciphertext <span class="math inline">c \leftarrow \textsf{Enc}_k(m_b)</span> is computed and given to <span class="math inline">\mathcal{A}</span></li>
 <li>This ciphertext <span class="math inline">c</span> is called the <strong>challenge ciphertext</strong></li>
 <li><span class="math inline">\mathcal{A}</span> outputs a bit <span class="math inline">b'</span></li>
@@ -619,7 +619,7 @@ Saravanan Vijayakumaran
 <ul>
 <li><p>A private-key encryption scheme <span class="math inline">\Pi = (\textsf{Gen}, \textsf{Enc}, \textsf{Dec})</span> has <strong>indistinguishable encryptions in the presence of an eavesdropper</strong>, or is <strong>EAV-secure</strong>, if for all PPT adversaries <span class="math inline">\mathcal{A}</span> there is a negligible function <span class="math inline">\textsf{negl}</span> such that, for all <span class="math inline">n</span>, <span class="math display">
 \Pr\left[ \textsf{PrivK}^{\textsf{eav}}_{\mathcal{A},\Pi}(n) =  1\right] \le \frac{1}{2} + \textsf{negl}(n).</span></p></li>
-<li><p>An perfectly secure scheme is also EAV-secure</p></li>
+<li><p>Any perfectly secure scheme is also EAV-secure</p></li>
 </ul>
 </section>
 <section id="alternative-definition-of-eav-security" class="slide level2">
