@@ -47,3 +47,6 @@ EE720 has significant overlap with **CS 409 Introduction to Cryptography**. Plea
 ##### Supplementary Notes
 
 [Course Notes](./2023/notes/ee720-notes.pdf){target="_blank"}
+
+##### Assignments
+  - [Assignment 1](/courses/EE720/2024/assignments/assignment1.pdf)
