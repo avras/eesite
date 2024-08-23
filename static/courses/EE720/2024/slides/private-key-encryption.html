@@ -1008,6 +1008,17 @@ m := F_k(r) \oplus s.
 </ul></li>
 </ul>
 </section>
+<section id="some-observations" class="slide level2">
+<h2>Some Observations</h2>
+<ul>
+<li>Ciphertext is longer than the plaintext</li>
+<li>Every message <span class="math inline">m</span> has <span class="math inline">2^n</span> possible ciphertexts for same key
+<ul>
+<li>All of them decrypt to the same <span class="math inline">m</span></li>
+</ul></li>
+<li>Ciphertexts of different messages can be the same for different keys</li>
+</ul>
+</section>
 <section id="security-claim" class="slide level2">
 <h2>Security Claim</h2>
 <ul>
@@ -1209,21 +1220,21 @@ m := F_k(r) \oplus s.
 <section id="cipher-block-chaining-cbc-mode" class="slide level2">
 <h2>Cipher Block Chaining (CBC) Mode</h2>
 <ul>
-<li><p>Let <span class="math inline">m = m_1,m_2,\ldots,m_l</span> where <span class="math inline">m_i \in \{0,1\}^n</span>.</p></li>
+<li><p>Let <span class="math inline">\vec{m} = \langle m_1,m_2,\ldots,m_l\rangle</span> where <span class="math inline">m_i \in \{0,1\}^n</span>.</p></li>
 <li><p>Let <span class="math inline">F</span> be a length-preserving block cipher with block length <span class="math inline">n</span>.</p></li>
 <li><p>A uniform <strong>initialization vector (IV)</strong> of length <span class="math inline">n</span> is chosen.</p></li>
 <li><p><span class="math inline">c_0 = IV</span>. For <span class="math inline">i = 1,\ldots,l</span>, <span class="math inline">c_i \coloneqq F_k(c_{i-1}\oplus m_i)</span></p>
 <p><img data-src="images/cbc.svg" width="600"></p></li>
 <li><p>For <span class="math inline">i = 1,2,\ldots,l</span>, <span class="math inline">m_i \coloneqq F_k^{-1}(c_i)\oplus c_{i-1}</span>.</p></li>
 <li><p>Ciphertext is larger than the plaintext by <span class="math inline">n</span> bits</p></li>
-<li><p>Decryption is faster than encryption</p></li>
+<li><p>Decryption can be parallelized</p></li>
 <li><p>If <span class="math inline">F</span> is a pseudorandom permutation, then the CBC-mode encryption is CPA-secure.</p></li>
 </ul>
 </section>
 <section id="counter-ctr-mode" class="slide level2">
 <h2>Counter (CTR) Mode</h2>
 <ul>
-<li><p>Let <span class="math inline">\vec{m} = m_1,m_2,\ldots,m_l</span> where <span class="math inline">m_i \in \{0,1\}^n</span></p></li>
+<li><p>Let <span class="math inline">\vec{m} = \langle m_1,m_2,\ldots,m_l\rangle</span> where <span class="math inline">m_i \in \{0,1\}^n</span>.</p></li>
 <li><p>Let <span class="math inline">F</span> be a length-preserving block cipher with length <span class="math inline">n</span></p></li>
 <li><p>To encrypt a message of length <span class="math inline">l &lt; 2^{n/4}</span> blocks, a uniform <span class="math inline">IV</span> of length <span class="math inline">3n/4</span> is chosen</p></li>
 <li><p><span class="math inline">c_0 = IV</span>. For <span class="math inline">i = 1,\ldots,l</span>, <span class="math inline">c_i \coloneqq F_k(IV \| i) \oplus m_i</span>.</p>
