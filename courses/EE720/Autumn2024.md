@@ -44,6 +44,7 @@ EE720 has significant overlap with **CS 409 Introduction to Cryptography**. Plea
 - [Perfectly Secret Encryption](./2024/slides/perfectly-secret-encryption.html){target="_blank"}
 - [Private-Key Encryption](./2024/slides/private-key-encryption.html){target="_blank"}
 - [Message Authentication Codes](./2024/slides/message-authentication-codes.html){target="_blank"}
+- [CCA-Security and Authenticated Encryption](./2024/slides/cca-security.html){target="_blank"}
 
 ##### Supplementary Notes
 
