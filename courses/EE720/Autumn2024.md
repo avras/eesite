@@ -45,6 +45,8 @@ EE720 has significant overlap with **CS 409 Introduction to Cryptography**. Plea
 - [Private-Key Encryption](./2024/slides/private-key-encryption.html){target="_blank"}
 - [Message Authentication Codes](./2024/slides/message-authentication-codes.html){target="_blank"}
 - [CCA-Security and Authenticated Encryption](./2024/slides/cca-security.html){target="_blank"}
+- [Stream and Block Cipher Constructions](./2024/slides/cipher-constructions.html){target="_blank"}
+- [Hash Functions](./2024/slides/hash-functions.html){target="_blank"}
 
 ##### Supplementary Notes
 
