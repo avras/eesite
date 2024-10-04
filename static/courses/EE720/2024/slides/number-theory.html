@@ -880,13 +880,12 @@ s_{i+1} = s_{i-1} - s_iq_i, &amp;\quad t_{i+1} = t_{i-1} - t_i q_i
 <section id="going-from-mathbbz_p-times-mathbbz_q-to-mathbbz_n" class="slide level2">
 <h2>Going from <span class="math inline">\mathbb{Z}_p \times \mathbb{Z}_q</span> to <span class="math inline">\mathbb{Z}_N</span></h2>
 <ul>
-<li><p>How to go from <span class="math inline">(x_p, x_q) = (x \bmod p, x \bmod q)</span> to <span class="math inline">x \bmod N</span>?</p>
+<li><p>How to go from <span class="math inline">(a, b) \in \mathbb{Z}_p \times \mathbb{Z}_q</span> to an element in <span class="math inline">\mathbb{Z}_N</span>?</p>
 <ul>
 <li>Compute <span class="math inline">X,Y</span> such that <span class="math inline">Xp + Yq = 1</span>.</li>
-<li>Set <span class="math inline">1_p \coloneqq Yq \bmod N</span> and <span class="math inline">1_q \coloneqq Xp \bmod N</span>.</li>
-<li>Compute <span class="math inline">x \coloneqq x_p \cdot 1_p + x_q \cdot 1_q \bmod N</span>.</li>
+<li>Compute <span class="math inline">x \coloneqq aYq + bXp \bmod N</span>.</li>
 </ul></li>
-<li><p><strong>Lemma</strong>: Given integers <span class="math inline">x, p, q</span>, we have <span class="math inline">\gcd(x,pq) = 1</span> if and only if <span class="math inline">\gcd(x,p) = 1</span> and <span class="math inline">\gcd(x,q) =1</span>.</p></li>
+<li><p><strong>Proposition</strong>: If <span class="math inline">(a, b) \in \mathbb{Z}_p^* \times \mathbb{Z}_q^*</span> and <span class="math inline">\gcd(p,q) = 1</span>, then the <span class="math inline">x</span> obtained as described above belongs to <span class="math inline">\mathbb{Z}_N^*</span>.</p></li>
 </ul>
 </section>
 <section id="extension-of-crt" class="slide level2">
