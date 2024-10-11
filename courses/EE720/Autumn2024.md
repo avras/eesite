@@ -48,6 +48,7 @@ EE720 has significant overlap with **CS 409 Introduction to Cryptography**. Plea
 - [Stream and Block Cipher Constructions](./2024/slides/cipher-constructions.html){target="_blank"}
 - [Hash Functions](./2024/slides/hash-functions.html){target="_blank"}
 - [Number Theory](./2024/slides/number-theory.html){target="_blank"}
+- [Cryptographic Hardness Assumptions](./2024/slides/hardness-assumptions.html){target="_blank"}
 
 ##### Supplementary Notes
 
