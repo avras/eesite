@@ -49,6 +49,8 @@ EE720 has significant overlap with **CS 409 Introduction to Cryptography**. Plea
 - [Hash Functions](./2024/slides/hash-functions.html){target="_blank"}
 - [Number Theory](./2024/slides/number-theory.html){target="_blank"}
 - [Cryptographic Hardness Assumptions](./2024/slides/hardness-assumptions.html){target="_blank"}
+- [Key Exchange Protocols](./2024/slides/key-exchange.html){target="_blank"}
+- [Public-Key Encryption](./2024/slides/public-key-encryption.html){target="_blank"}
 
 ##### Supplementary Notes
 

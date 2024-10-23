@@ -1,0 +1,1206 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="public-key-encryption_files/libs/clipboard/clipboard.min.js"></script>
+<script src="public-key-encryption_files/libs/quarto-html/tabby.min.js"></script>
+<script src="public-key-encryption_files/libs/quarto-html/popper.min.js"></script>
+<script src="public-key-encryption_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="public-key-encryption_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="public-key-encryption_files/libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="public-key-encryption_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
+<link href="public-key-encryption_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.5.55">
+
+  <meta name="author" content="Saravanan Vijayakumaran">
+  <meta name="dcterms.date" content="2024-10-23">
+  <title>Public-Key Encryption</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="public-key-encryption_files/libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="public-key-encryption_files/libs/revealjs/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="public-key-encryption_files/libs/revealjs/dist/theme/quarto.css">
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css">
+  <link href="public-key-encryption_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="public-key-encryption_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="public-key-encryption_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="public-key-encryption_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+
+  .callout {
+    margin-top: 1em;
+    margin-bottom: 1em;  
+    border-radius: .25rem;
+  }
+
+  .callout.callout-style-simple { 
+    padding: 0em 0.5em;
+    border-left: solid #acacac .3rem;
+    border-right: solid 1px silver;
+    border-top: solid 1px silver;
+    border-bottom: solid 1px silver;
+    display: flex;
+  }
+
+  .callout.callout-style-default {
+    border-left: solid #acacac .3rem;
+    border-right: solid 1px silver;
+    border-top: solid 1px silver;
+    border-bottom: solid 1px silver;
+  }
+
+  .callout .callout-body-container {
+    flex-grow: 1;
+  }
+
+  .callout.callout-style-simple .callout-body {
+    font-size: 1rem;
+    font-weight: 400;
+  }
+
+  .callout.callout-style-default .callout-body {
+    font-size: 0.9rem;
+    font-weight: 400;
+  }
+
+  .callout.callout-titled.callout-style-simple .callout-body {
+    margin-top: 0.2em;
+  }
+
+  .callout:not(.callout-titled) .callout-body {
+      display: flex;
+  }
+
+  .callout:not(.no-icon).callout-titled.callout-style-simple .callout-content {
+    padding-left: 1.6em;
+  }
+
+  .callout.callout-titled .callout-header {
+    padding-top: 0.2em;
+    margin-bottom: -0.2em;
+  }
+
+  .callout.callout-titled .callout-title  p {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+  }
+    
+  .callout.callout-titled.callout-style-simple .callout-content  p {
+    margin-top: 0;
+  }
+
+  .callout.callout-titled.callout-style-default .callout-content  p {
+    margin-top: 0.7em;
+  }
+
+  .callout.callout-style-simple div.callout-title {
+    border-bottom: none;
+    font-size: .9rem;
+    font-weight: 600;
+    opacity: 75%;
+  }
+
+  .callout.callout-style-default  div.callout-title {
+    border-bottom: none;
+    font-weight: 600;
+    opacity: 85%;
+    font-size: 0.9rem;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+
+  .callout.callout-style-default div.callout-content {
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+
+  .callout.callout-style-simple .callout-icon::before {
+    height: 1rem;
+    width: 1rem;
+    display: inline-block;
+    content: "";
+    background-repeat: no-repeat;
+    background-size: 1rem 1rem;
+  }
+
+  .callout.callout-style-default .callout-icon::before {
+    height: 0.9rem;
+    width: 0.9rem;
+    display: inline-block;
+    content: "";
+    background-repeat: no-repeat;
+    background-size: 0.9rem 0.9rem;
+  }
+
+  .callout-title {
+    display: flex
+  }
+    
+  .callout-icon::before {
+    margin-top: 1rem;
+    padding-right: .5rem;
+  }
+
+  .callout.no-icon::before {
+    display: none !important;
+  }
+
+  .callout.callout-titled .callout-body > .callout-content > :last-child {
+    padding-bottom: 0.5rem;
+    margin-bottom: 0;
+  }
+
+  .callout.callout-titled .callout-icon::before {
+    margin-top: .5rem;
+    padding-right: .5rem;
+  }
+
+  .callout:not(.callout-titled) .callout-icon::before {
+    margin-top: 1rem;
+    padding-right: .5rem;
+  }
+
+  /* Callout Types */
+
+  div.callout-note {
+    border-left-color: #4582ec !important;
+  }
+
+  div.callout-note .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAEU0lEQVRYCcVXTWhcVRQ+586kSUMMxkyaElstCto2SIhitS5Ek8xUKV2poatCcVHtUlFQk8mbaaziwpWgglJwVaquitBOfhQXFlqlzSJpFSpIYyXNjBNiTCck7x2/8/LeNDOZxDuEkgOXe++553zfefee+/OYLOXFk3+1LLrRdiO81yNqZ6K9cG0P3MeFaMIQjXssE8Z1JzLO9ls20MBZX7oG8w9GxB0goaPrW5aNMp1yOZIa7Wv6o2ykpLtmAPs/vrG14Z+6d4jpbSKuhdcSyq9wGMPXjonwmESXrriLzFGOdDBLB8Y6MNYBu0dRokSygMA/mrun8MGFN3behm6VVAwg4WR3i6FvYK1T7MHo9BK7ydH+1uurECoouk5MPRyVSBrBHMYwVobG2aOXM07sWrn5qgB60rc6mcwIDJtQrnrEr44kmy+UO9r0u9O5/YbkS9juQckLed3DyW2XV/qWBBB3ptvI8EUY3I9p/67OW+g967TNr3Sotn3IuVlfMLVnsBwH4fsnebJvyGm5GeIUA3jljERmrv49SizPYuq+z7c2H/jlGC+Ghhupn/hcapqmcudB9jwJ/3jvnvu6vu5lVzF1fXyZuZZ7U8nRmVzytvT+H3kilYvH09mLWrQdwFSsFEsxFVs5fK7A0g8gMZjbif4ACpKbjv7gNGaD8bUrlk8x+KRflttr22JEMRUbTUwwDQScyzPgedQHZT0xnx7ujw2jfVfExwYHwOsDTjLdJ2ebmeQIlJ7neo41s/DrsL3kl+W2lWvAga0tR3zueGr6GL78M3ifH0rGXrBC2aAR8uYcIA5gwV8zIE8onoh8u0Fca/ciF7j1uOzEnqcIm59sEXoGc0+z6+H45V1CvAvHcD7THztu669cnp+L0okAeIc6zjbM/24LgGM1gZk7jnRu1aQWoU9sfUOuhrmtaPIO3YY1KLLWZaEO5TKUbMY5zx8W9UJ6elpLwKXbsaZ4EFl7B4bMtDv0iRipKoDQT2sNQI9b1utXFdYisi+wzZ/ri/1m7QfDgEuvgUUEIJPq3DhX/5DWNqIXDOweC2wvIR90Oq3lDpdMIgD2r0dXvGdsEW5H6x6HLRJYU7C69VefO1x8Gde1ZFSJLfWS1jbCnhtOPxmpfv2LXOA2Xk2tvnwKKPFuZ/oRmwBwqRQDcKNeVQkYcOjtWVBuM/JuYw5b6isojIkYxyYAFn5K7ZBF10fea52y8QltAg6jnMqNHFBmGkQ1j+U43HMi2xMar1Nv0zGsf1s8nUsmUtPOOrbFIR8bHFDMB5zL13Gmr/kGlCkUzedTzzmzsaJXhYawnA3UmARpiYj5ooJZiUoxFRtK3X6pgNPv+IZVPcnwbOl6f+aBaO1CNvPW9n9LmCp01nuSaTRF2YxHqZ8DYQT6WsXT+RD6eUztwYLZ8rM+rcPxamv1VQzFUkzFXvkiVrySGQgJNvXHJAxiU3/NwiC03rSf05VBaPtu/Z7/B8Yn/w7eguloAAAAAElFTkSuQmCC');
+  }
+
+  div.callout-note.callout-style-default .callout-title {
+    background-color: #dae6fb
+  }
+
+  div.callout-important {
+    border-left-color: #d9534f !important;
+  }
+
+  div.callout-important .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAEKklEQVRYCcVXTWhcVRS+575MJym48A+hSRFr00ySRQhURRfd2HYjk2SSTokuBCkU2o0LoSKKraKIBTcuFCoidGFD08nkBzdREbpQ1EDNIv8qSGMFUboImMSZd4/f9zJv8ibJMC8xJQfO3HPPPef7zrvvvnvviIkpC9nsw0UttFunbUhpFzFtarSd6WJkStVMw5xyVqYTvkwfzuf/5FgtkVoB0729j1rjXwThS7Vio+Mo6DNnvLfahoZ+i/o32lULuJ3NNiz7q6+pyAUkJaFF6JwaM2lUJlV0MlnQn5aTRbEu0SEqHUa0A4AdiGuB1kFXRfVyg5d87+Dg4DL6m2TLAub60ilj7A1Ec4odSAc8X95sHh7+ZRPCFo6Fnp7HfU/fBng/hi10CjCnWnJjsxvDNxWw0NfV6Rv5GgP3I3jGWXumdTD/3cbEOP2ZbOZp69yniG3FQ9z1jD7bnBu9Fc2tKGC2q+uAJOQHBDRiZX1x36o7fWBs7J9ownbtO+n0/qWkvW7UPIfc37WgT6ZGR++EOJyeQDSb9UB+DZ1G6DdLDzyS+b/kBCYGsYgJbSQHuThGKRcw5xdeQf8YdNHsc6ePXrlSYMBuSIAFTGAtQo+VuALo4BX83N190NWZWbynBjhOHsmNfFWLeL6v+ynsA58zDvvAC8j5PkbOcXCMg2PZFk3q8MjI7WAG/Dp9AwP7jdGBOOQkAvlFUB+irtm16I1Zw9YBcpGTGXYmk3kQIC/Cds55l+iMI3jqhjAuaoe+am2Jw5GT3Nbz3CkE12NavmzN5+erJW7046n/CH1RO/RVa8lBLozXk9uqykkGAyRXLWlLv5jyp4RFsG5vGVzpDLnIjTWgnRy2Rr+tDKvRc7Y8AyZq10jj8DqXdnIRNtFZb+t/ZRtXcDiVnzpqx8mPcDWxgARUqx0W1QB9MeUZiNrV4qP+Ehc+BpNgATsTX8ozYKL2NtFYAHc84fG7ndxUPr+AR/iQSns7uSUufAymwDOb2+NjK27lEFocm/EE2WpyIy/Hi66MWuMKJn8RvxIcj87IM5Vh9663ziW36kR0HNenXuxmfaD8JC7tfKbrhFr7LiZCrMjrzTeGx+PmkosrkNzW94ObzwocJ7A1HokLolY+AvkTiD/q1H0cN48c5EL8Crkttsa/AXQVDmutfyku0E7jShx49XqV3MFK8IryDhYVbj7Sj2P2eBxwcXoe8T8idsKKPRcnZw1b+slFTubwUwhktrfnAt7J++jwQtLZcm3sr9LQrjRzz6cfMv9aLvgmnAGvpoaGLxM4mAEaLV7iAzQ3oU0IvD5x9ix3yF2RAAuYAOO2f7PEFWCXZ4C9Pb2UsgDeVnFSpbFK7/IWu7TPTvBqzbGdCHOJQSxiEjt6IyZmxQyEJHv6xyQsYk//moVFsN2zP6fRImjfq7/n/wFDguUQFNEwugAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-important.callout-style-default .callout-title {
+    background-color: #f7dddc
+  }
+
+  div.callout-warning {
+    border-left-color: #f0ad4e !important;
+  }
+
+  div.callout-warning .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAETklEQVRYCeVWW2gcVRg+58yaTUnizqbipZeX4uWhBEniBaoUX1Ioze52t7sRq6APio9V9MEaoWlVsFasRq0gltaAPuxms8lu0gcviE/FFOstVbSIxgcv6SU7EZqmdc7v9+9mJtNks51NTUH84ed889/PP+cmxP+d5FIbMJmNbpREu4WUkiTtCicKny0l1pIKmBzovF2S+hIJHX8iEu3hZJ5lNZGqyRrGSIQpq15AzF28jgpeY6yk6GVdrfFqdrD6Iw+QlB8g0YS2g7dyQmXM/IDhBhT0UCiRf59lfqmmDvzRt6kByV/m4JjtzuaujMUM2c5Z2d6JdKrRb3K2q6mA+oYVz8JnDdKPmmNthzkAk/lN63sYPgevrguc72aZX/L9C6x09GYyxBgCX4NlvyGUHOKELlm5rXeR1kchuChJt4SSwyddZRXgvwMGvYo4QSlk3/zkHD8UHxwVJA6zjZZqP8v8kK8OWLnIZtLyCAJagYC4rTGW/9Pqj92N/c+LUaAj27movwbi19tk/whRCIE7Q9vyI6yvRpftAKVTdUjOW40X3h5OXsKCdmFcx0xlLJoSuQngnrJe7Kcjm4OMq9FlC7CMmScQANuNvjfP3PjGXDBaUQmbp296S5L4DrpbrHN1T87ZVEZVCzg1FF0Ft+dKrlLukI+/c9ENo+TvlTDbYFvuKPtQ9+l052rXrgKoWkDAFnvh0wTOmYn8R5f4k/jN/fZiCM1tQx9jQQ4ANhqG4hiL0qIFTGViG9DKB7GYzgubnpofgYRwO+DFjh0Zin2m4b/97EDkXkc+f6xYAPX0KK2I/7fUQuwzuwo/L3AkcjugPNixC8cHf0FyPjWlItmLxWw4Ou9YsQCr5fijMGoD/zpdRy95HRysyXA74MWOnscpO4j2y3HAVisw85hX5+AFBRSHt4ShfLFkIMXTqyKFc46xdzQM6XbAi702a7sy04J0+feReMFKp5q9esYLCqAZYw/k14E/xcLLsFElaornTuJB0svMuJINy8xkIYuL+xPAlWRceH6+HX7THJ0djLUom46zREu7tTkxwmf/FdOZ/sh6Q8qvEAiHpm4PJ4a/doJe0gH1t+aHRgCzOvBvJedEK5OFE5jpm4AGP2a8Dxe3gGJ/pAutug9Gp6he92CsSsWBaEcxGx0FHytmIpuqGkOpldqNYQK8cSoXvd+xLxXADw0kf6UkJNFtdo5MOgaLjiQOQHcn+A6h5NuL2s0qsC2LOM75PcF3yr5STuBSAcGG+meA14K/CI21HcS4LBT6tv0QAh8Dr5l93AhZzG5ZJ4VxAqdZUEl9z7WJ4aN+svMvwHHL21UKTd1mqvChH7/Za5xzXBBKrUcB0TQ+Ulgkfbi/H/YT5EptrGzsEK7tR1B7ln9BBwckYfMiuSqklSznIuoIIOM42MQO+QnduCoFCI0bpkzjCjddHPN/F+2Yu+sd9bKNpVwHhbS3LluK/0zgfwD0xYI5dXuzlQAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-warning.callout-style-default .callout-title {
+    background-color: #fcefdc
+  }
+
+  div.callout-tip {
+    border-left-color: #02b875 !important;
+  }
+
+  div.callout-tip .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAADr0lEQVRYCe1XTWgTQRj9ZjZV8a9SPIkKgj8I1bMHsUWrqYLVg4Ue6v9BwZOxSYsIerFao7UiUryIqJcqgtpimhbBXoSCVxUFe9CTiogUrUp2Pt+3aUI2u5vdNh4dmMzOzHvvezuz8xNFM0mjnbXaNu1MvFWRXkXEyE6aYOYJpdW4IXuA4r0fo8qqSMDBU0v1HJUgVieAXxzCsdE/YJTdFcVIZQNMyhruOMJKXYFoLfIfIvVIMWdsrd+Rpd86ZmyzzjJmLStqRn0v8lzkb4rVIXvnpScOJuAn2ACC65FkPzEdEy4TPWRLJ2h7z4cArXzzaOdKlbOvKKX25Wl00jSnrwVxAg3o4dRxhO13RBSdNvH0xSARv3adTXbBdTf64IWO2vH0LT+cv4GR1DJt+DUItaQogeBX/chhbTBxEiZ6gftlDNXTrvT7co4ub5A6gp9HIcHvzTa46OS5fBeP87Qm0fQkr4FsYgVQ7Qg+ZayaDg9jhg1GkWj8RG6lkeSacrrHgDaxdoBiZPg+NXV/KifMuB6//JmYH4CntVEHy/keA6x4h4CU5oFy8GzrBS18cLJMXcljAKB6INjWsRcuZBWVaS3GDrqB7rdapVIeA+isQ57Eev9eCqzqOa81CY05VLd6SamW2wA2H3SiTbnbSxmzfp7WtKZkqy4mdyAlGx7ennghYf8voqp9cLSgKdqNfa6RdRsAAkPwRuJZNbpByn+RrJi1RXTwdi8RQF6ymDwGMAtZ6TVE+4uoKh+MYkcLsT0Hk8eAienbiGdjJHZTpmNjlbFJNKDVAp2fJlYju6IreQxQ08UJDNYdoLSl6AadO+fFuCQqVMB1NJwPm69T04Wv5WhfcWyfXQB+wXRs1pt+nCknRa0LVzSA/2B+a9+zQJadb7IyyV24YAxKp2Jqs3emZTuNnKxsah+uabKbMk7CbTgJx/zIgQYErIeTKRQ9yD9wxVof5YolPHqaWo7TD6tJlh7jQnK5z2n3+fGdggIOx2kaa2YI9QWarc5Ce1ipNWMKeSG4DysFF52KBmTNMmn5HqCFkwy34rDg05gDwgH3bBi+sgFhN/e8QvRn8kbamCOhgrZ9GJhFDgfcMHzFb6BAtjKpFhzTjwv1KCVuxHvCbsSiEz4CANnj84cwHdFXAbAOJ4LTSAawGWFn5tDhLMYz6nWeU2wJfIhmIJBefcd/A5FWQWGgrWzyORZ3Q6HuV+Jf0Bj+BTX69fm1zWgK7By1YTXchFDORywnfQ7GpzOo6S+qECrsx2ifVQAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-tip.callout-style-default .callout-title {
+    background-color: #ccf1e3
+  }
+
+  div.callout-caution {
+    border-left-color: #fd7e14 !important;
+  }
+
+  div.callout-caution .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAACV0lEQVRYCdVWzWoUQRCuqp2ICBLJXgITZL1EfQDBW/bkzUMUD7klD+ATSHBEfAIfQO+iXsWDxJsHL96EHAwhgzlkg8nBg25XWb0zIb0zs9muYYWkoKeru+vn664fBqElyZNuyh167NXJ8Ut8McjbmEraKHkd7uAnAFku+VWdb3reSmRV8PKSLfZ0Gjn3a6Xlcq9YGb6tADjn+lUfTXtVmaZ1KwBIvFI11rRXlWlatwIAAv2asaa9mlB9wwygiDX26qaw1yYPzFXg2N1GgG0FMF8Oj+VIx7E/03lHx8UhvYyNZLN7BwSPgekXXLribw7w5/c8EF+DBK5idvDVYtEEwMeYefjjLAdEyQ3M9nfOkgnPTEkYU+sxMq0BxNR6jExrAI31H1rzvLEfRIdgcv1XEdj6QTQAS2wtstEALLG1yEZ3QhH6oDX7ExBSFEkFINXH98NTrme5IOaaA7kIfiu2L8A3qhH9zRbukdCqdsA98TdElyeMe5BI8Rs2xHRIsoTSSVFfCFCWGPn9XHb4cdobRIWABNf0add9jakDjQJpJ1bTXOJXnnRXHRf+dNL1ZV1MBRCXhMbaHqGI1JkKIL7+i8uffuP6wVQAzO7+qVEbF6NbS0LJureYcWXUUhH66nLR5rYmva+2tjRFtojkM2aD76HEGAD3tPtKM309FJg5j/K682ywcWJ3PASCcycH/22u+Bh7Aa0ehM2Fu4z0SAE81HF9RkB21c5bEn4Dzw+/qNOyXr3DCTQDMBOdhi4nAgiFDGCinIa2owCEChUwD8qzd03PG+qdW/4fDzjUMcE1ZpIAAAAASUVORK5CYII=');
+  }
+
+  div.callout-caution.callout-style-default .callout-title {
+    background-color: #ffe5d0
+  }
+
+  </style>
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" class="quarto-title-block center">
+  <h1 class="title">Public-Key Encryption</h1>
+
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+Saravanan Vijayakumaran 
+</div>
+        <p class="quarto-title-affiliation">
+            Department of Electrical Engineering, IIT Bombay
+          </p>
+    </div>
+</div>
+
+  <p class="date">October 23, 2024</p>
+</section>
+<section id="public-key-encryption-workflow" class="slide level2">
+<h2>Public-Key Encryption Workflow</h2>
+<ul>
+<li><p>Suppose Bob wants to send a message to Alice</p></li>
+<li><p>Alice will generate a public-private key-pair <span class="math inline">(pk_A, sk_A)</span></p>
+<ul>
+<li>The private key is also called the secret key</li>
+</ul></li>
+<li><p>Alice will share <span class="math inline">pk_A</span> with Bob over the public channel</p></li>
+<li><p>Bob will encrypt a message <span class="math inline">m</span> as <span class="math inline">c \leftarrow \textsf{Enc}_{pk_A}(m)</span> and send <span class="math inline">c</span> to Alice over the public channel</p></li>
+<li><p>Alice will decrypt <span class="math inline">c</span> using her private key <span class="math inline">sk_A</span></p></li>
+</ul>
+</section>
+<section id="why-bother-with-private-key-encryption" class="slide level2">
+<h2>Why bother with private-key encryption?</h2>
+<ul>
+<li><p>Public-key encryption is <strong>2-3 orders of magnitude slower</strong> than private-key encryption</p></li>
+<li><p>Hybrid encryption is often used in practice</p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/hybrid-enc.svg" class="quarto-figure quarto-figure-center" width="400"></p>
+</figure>
+</div></li>
+<li><p>Here <span class="math inline">\textsf{Enc}</span> is a public-key encryption scheme and <span class="math inline">\textsf{Enc}'</span> is a private-key encryption scheme</p></li>
+</ul>
+</section>
+<section id="public-key-encryption-schemes" class="slide level2 scrollable">
+<h2>Public-Key Encryption Schemes</h2>
+<ul>
+<li><p>A <strong>public-key encryption scheme</strong> is a triple of PPT algorithms <span class="math inline">(\textsf{Gen}, \textsf{Enc}, \textsf{Dec})</span> such that:</p>
+<ol type="1">
+<li><p><span class="math inline">(pk,sk) \leftarrow \textsf{Gen}(1^n)</span></p>
+<ul>
+<li><span class="math inline">pk</span> is the public key and <span class="math inline">sk</span> is the private key</li>
+<li>The public key defines a message space <span class="math inline">\mathcal{M}_{pk}</span></li>
+</ul></li>
+<li><p>For <span class="math inline">m \in \mathcal{M}_{pk}</span>, <span class="math inline">c \leftarrow \textsf{Enc}_{pk}(m)</span>.</p></li>
+<li><p><span class="math inline">m \coloneqq \textsf{Dec}_{sk}(c)</span>, where <span class="math inline">m \in \mathcal{M}_{pk} \cup \{\perp\}</span>.</p></li>
+</ol></li>
+<li><p>It is required that <span class="math inline">\textsf{Dec}_{sk}\left( \textsf{Enc}_{pk}\left( m \right) \right) = m</span> for any message <span class="math inline">m \in \mathcal{M}_{pk}</span>, except with negligible probability over the randomness of <span class="math inline">\textsf{Enc}</span> and <span class="math inline">\textsf{Dec}</span></p></li>
+</ul>
+</section>
+<section>
+<section id="cpa-security" class="title-slide slide level1 center">
+<h1>CPA Security</h1>
+
+</section>
+<section id="eavesdropping-indistinguishability-experiment" class="slide level2">
+<h2>Eavesdropping Indistinguishability Experiment</h2>
+<ul>
+<li>Consider the following experiment <span class="math inline">\textsf{PubK}^{\textsf{eav}}_{\mathcal{A}, \Pi}(n)</span>:
+<ul>
+<li><span class="math inline">\textsf{Gen}(1^n)</span> is run to obtain keys <span class="math inline">(pk, sk)</span></li>
+<li><span class="math inline">\mathcal{A}</span> is given <span class="math inline">pk</span> and outputs a pair of equal-length messages <span class="math inline">m_0, m_1 \in \mathcal{M}_{pk}</span></li>
+<li>A uniform bit <span class="math inline">b \in \{0,1\}</span> is chosen</li>
+<li>Challenge ciphertext <span class="math inline">c \leftarrow \textsf{Enc}_k(m_b)</span> is computed and given to <span class="math inline">\mathcal{A}</span></li>
+<li><span class="math inline">\mathcal{A}</span> outputs a bit <span class="math inline">b'</span></li>
+<li>The output of the experiment is defined to be 1 if <span class="math inline">b' = b</span>, and 0 otherwise</li>
+</ul></li>
+</ul>
+</section>
+<section id="security-definition" class="slide level2">
+<h2>Security Definition</h2>
+<ul>
+<li>A public-key encryption scheme <span class="math inline">\Pi = (\textsf{Gen}, \textsf{Enc}, \textsf{Dec})</span> has <strong>indistinguishable encryptions in the presence of an eavesdropper</strong>, or is <strong>EAV-secure</strong>, if for all PPT adversaries <span class="math inline">\mathcal{A}</span> there is a negligible function <span class="math inline">\textsf{negl}</span> such that, for all <span class="math inline">n</span>, <span class="math display">
+\Pr\left[ \textsf{PubK}^{\textsf{eav}}_{\mathcal{A},\Pi}(n) =  1\right] \le \frac{1}{2} + \textsf{negl}(n).</span></li>
+</ul>
+</section>
+<section id="cpa-security-for-public-key-encryption" class="slide level2">
+<h2>CPA-Security for Public-Key Encryption</h2>
+<ul>
+<li><p>In public-key encryption, the adversary always has access to an encryption oracle</p></li>
+<li><p><strong>Proposition</strong>: If a public-key encryption scheme has indistinguishable encryptions in the presence of an eavesdropper, it is CPA-secure</p></li>
+</ul>
+</section>
+<section id="el-gamal-encryption-12" class="slide level2">
+<h2>El Gamal Encryption (1/2)</h2>
+<ul>
+<li><p>In 1985, Taher El Gamal constructed a public-key encryption scheme based on the Diffie-Hellman protocol</p></li>
+<li><p><span class="math inline">\textsf{Gen}</span>:</p>
+<ul>
+<li>Run <span class="math inline">\mathcal{G}(1^n)</span> to get <span class="math inline">(G, q, g)</span>.</li>
+<li>Choose a uniform <span class="math inline">x \in \mathbb{Z}_q</span> and compute <span class="math inline">h \coloneqq g^x</span>.</li>
+<li>The public key is <span class="math inline">\langle G, q, g, h \rangle</span> and the private key is <span class="math inline">\langle G, q, g, x\rangle</span>.</li>
+<li>The message space is <span class="math inline">G</span></li>
+</ul></li>
+</ul>
+</section>
+<section id="el-gamal-encryption-22" class="slide level2">
+<h2>El Gamal Encryption (2/2)</h2>
+<ul>
+<li><p><span class="math inline">\textsf{Enc}</span>:</p>
+<ul>
+<li>For public key <span class="math inline">pk =\langle G, q, g, h \rangle</span> and message <span class="math inline">m \in G</span>, choose a uniform <span class="math inline">y \in \mathbb{Z}_q</span></li>
+<li>Output the ciphertext as <span class="math inline">\langle g^y, h^y \cdot m \rangle</span></li>
+</ul></li>
+<li><p><span class="math inline">\textsf{Dec}</span>:</p>
+<ul>
+<li>For public key <span class="math inline">pk =\langle G, q, g, h \rangle</span> and ciphertext <span class="math inline">\langle c_1, c_2 \rangle</span>, output <span class="math inline">\hat{m} = c_2 \cdot c_1^{-x}.</span></li>
+</ul></li>
+</ul>
+</section>
+<section id="cpa-security-of-el-gamal-encryption" class="slide level2">
+<h2>CPA-Security of El Gamal Encryption</h2>
+<ul>
+<li><p><strong>Theorem</strong>: If the DDH problem is hard relative to <span class="math inline">\mathcal{G}</span>, then the El Gamal encryption scheme is CPA-secure.</p></li>
+<li><p>Proof</p>
+<ul>
+<li>Consider a modified “encryption scheme” <span class="math inline">\widetilde{\Pi}</span> where the encryption of message <span class="math inline">m</span> wrt public key <span class="math inline">\langle G, q, g, h \rangle</span> is as follows</li>
+<li>Choose uniform <span class="math inline">y,z \in \mathbb{Z}_q</span> and output ciphertext <span class="math display">\langle g^y, g^z \cdot m \rangle.</span></li>
+</ul></li>
+</ul>
+</section>
+<section id="cpa-security-of-el-gamal-encryption-1" class="slide level2 scrollable">
+<h2>CPA-Security of El Gamal Encryption</h2>
+<ul>
+<li><p>Consider the following PPT algorithm <span class="math inline">D</span> that attempts to solve the DDH problem</p>
+<ol type="1">
+<li><span class="math inline">D</span> is given <span class="math inline">(G, q, g, h_1, h_2, h_3)</span> as input</li>
+<li>Set <span class="math inline">pk = \langle G, q, g, h_1 \rangle</span> and run <span class="math inline">\mathcal{A}(pk)</span> to obtain two messages <span class="math inline">m_0, m_1 \in G</span></li>
+<li>Choose a uniform bit <span class="math inline">b</span></li>
+<li>Set <span class="math inline">c_1 \coloneqq h_2</span> and <span class="math inline">c_2 \coloneqq h_3 \cdot m_b</span></li>
+<li>Give the ciphertext <span class="math inline">\langle c_1, c_2 \rangle</span> to <span class="math inline">\mathcal{A}</span> and obtain a bit <span class="math inline">b'</span>.</li>
+<li>If <span class="math inline">b' = b</span>, output 1; otherwise, output 0.</li>
+</ol></li>
+</ul>
+</section>
+<section id="cpa-security-of-el-gamal-encryption-2" class="slide level2">
+<h2>CPA-Security of El Gamal Encryption</h2>
+<ul>
+<li><p><strong>Case 1:</strong> <span class="math inline">h_3 = g^z</span> for uniform <span class="math inline">z \in \mathbb{Z}_q</span></p>
+<ul>
+<li><span class="math inline">\langle c_1, c_2 \rangle = \langle g^y, g^z \cdot m_b \rangle</span></li>
+<li><span class="math inline">\mathcal{A}</span> experiences the experiment <span class="math inline">\textsf{PubK}^{\textsf{eav}}_{\mathcal{A},\widetilde{\Pi}}(n)</span></li>
+<li>Since <span class="math inline">D</span> outputs 1 exactly when <span class="math inline">b' = b</span>, we have <span class="math display">\begin{align*}
+&amp; \Pr\left[ D(G, q, g, g^x, g^y, g^z) =1 \right] \\
+&amp;= \Pr \left[ \textsf{PubK}^{\textsf{eav}}_{\mathcal{A}, \widetilde{\Pi}}(n)=1\right]\\
+&amp;= \frac{1}{2}
+\end{align*}</span></li>
+</ul></li>
+</ul>
+</section>
+<section id="cpa-security-of-el-gamal-encryption-3" class="slide level2">
+<h2>CPA-Security of El Gamal Encryption</h2>
+<ul>
+<li><p><strong>Case 2:</strong> <span class="math inline">h_3 = g^{xy}</span></p>
+<ul>
+<li><span class="math inline">\langle c_1, c_2 \rangle = \langle g^y, g^{xy} \cdot m_b \rangle</span></li>
+<li><span class="math inline">\mathcal{A}</span> experiences the experiment <span class="math inline">\textsf{PubK}^{\textsf{eav}}_{\mathcal{A},\Pi}(n)</span></li>
+<li>Since <span class="math inline">D</span> outputs 1 exactly when <span class="math inline">b' = b</span>, we have <span class="math display">\begin{align*}&amp; \Pr\left[ D(G, q, g, g^x, g^y, g^{xy}) =1 \right] \\
+&amp;= \Pr \left[ \textsf{PubK}^{\textsf{eav}}_{\mathcal{A}, \Pi}(n)=1\right]
+\end{align*}</span></li>
+</ul></li>
+</ul>
+</section></section>
+<section>
+<section id="multiple-encryptions" class="title-slide slide level1 center">
+<h1>Multiple Encryptions</h1>
+<ul>
+<li>Can we guarantee security when the same key is used to encrypt multiple messages?</li>
+<li>Surprisingly, CPA-security for one message implies CPA-security for multiple messages</li>
+</ul>
+</section>
+<section id="defining-cpa-security-for-multiple-encryptions" class="slide level2">
+<h2>Defining CPA-Security for Multiple Encryptions</h2>
+<ul>
+<li><p>We would define an experiment as follows</p>
+<ul>
+<li>An adversary <span class="math inline">\mathcal{A}</span> picks two lists of messages <span class="math inline">\vec{m}_0 = \langle m_{0,1}, m_{0,2},\ldots,m_{0,l} \rangle</span> and <span class="math inline">\vec{m}_1 = \langle m_{1,1}, m_{1,2},\ldots,m_{1,l} \rangle</span></li>
+<li>A uniform bit <span class="math inline">b</span> is chosen</li>
+<li>The challenge ciphertext is the encryption of <span class="math inline">\vec{m}_b</span></li>
+</ul></li>
+<li><p>But this does not allow <span class="math inline">\mathcal{A}</span> to adaptively choose the messages</p></li>
+</ul>
+</section>
+<section id="the-left-or-right-oracle" class="slide level2">
+<h2>The Left-or-Right Oracle</h2>
+<ul>
+<li>On input a pair of equal-length messages <span class="math inline">m_0, m_1</span>, oracle <span class="math inline">\textsf{LR}_{pk,b}(\cdot, \cdot)</span> returns the ciphertext <span class="math inline">c \leftarrow \textsf{Enc}_{pk}(m_b)</span></li>
+<li>Access to this oracle allows <span class="math inline">\mathcal{A}</span> to adaptively choose the messages that are used to produce challenge ciphertext</li>
+</ul>
+</section>
+<section id="lr-oracle-experiment" class="slide level2">
+<h2>LR-Oracle Experiment</h2>
+<ul>
+<li>Consider the following experiment <span class="math inline">\textsf{PubK}^{\textsf{LR-cpa}}_{\mathcal{A}, \Pi}(n)</span>:
+<ul>
+<li>A keypair <span class="math inline">(pk,sk)</span> is generated using <span class="math inline">\textsf{Gen}(1^n)</span></li>
+<li>A uniform bit <span class="math inline">b \in \{0,1\}</span> is chosen</li>
+<li><span class="math inline">\mathcal{A}</span> is given <span class="math inline">1^n</span> and oracle access to <span class="math inline">\textsf{LR}_{pk,b}(\cdot,\cdot)</span></li>
+<li><span class="math inline">\mathcal{A}</span> outputs a bit <span class="math inline">b'</span></li>
+<li>The output of the experiment is 1 if <span class="math inline">b' = b</span>, and 0 otherwise</li>
+</ul></li>
+</ul>
+</section>
+<section id="security-definition-1" class="slide level2">
+<h2>Security Definition</h2>
+<ul>
+<li>A public-key encryption scheme <span class="math inline">\Pi = (\textsf{Gen}, \textsf{Enc}, \textsf{Dec})</span> has <strong>indistinguishable multiple encryptions</strong> if for all PPT adversaries <span class="math inline">\mathcal{A}</span> there is a negligible function <span class="math inline">\textsf{negl}</span> such that <span class="math display">
+\Pr\left[ \textsf{PubK}^{\textsf{LR-cpa}}_{\mathcal{A},\Pi}(n) =  1\right] \le \frac{1}{2} + \textsf{negl}(n).</span></li>
+</ul>
+</section>
+<section id="cpa-security-implies-indistinguishable-multiple-encryptions" class="slide level2 scrollable">
+<h2>CPA-Security <span class="math inline">\implies</span> Indistinguishable Multiple Encryptions</h2>
+<ul>
+<li><p><strong>Theorem</strong>: If public-key encryption scheme <span class="math inline">\Pi</span> is CPA-secure, then it also has indistinguishable multiple encryptions</p></li>
+<li><p>Consequently, all the following security definitions are equivalent</p>
+<ol type="1">
+<li>Indistinguishable encryptions in the presence of an eavesdropper</li>
+<li>CPA-security</li>
+<li>Indistinguishable multiple encryptions</li>
+</ol></li>
+</ul>
+</section>
+<section id="proof-17" class="slide level2">
+<h2>Proof (1/7)</h2>
+<ul>
+<li>Let <span class="math inline">\Pi</span> be a CPA-secure public-key encryption scheme</li>
+<li>Let <span class="math inline">\mathcal{A}</span> be an arbitrary PPT adversary in the <span class="math inline">\textsf{PubK}^{\textsf{LR-cpa}}_{\mathcal{A},\Pi}(n)</span> experiment</li>
+<li>We want to show that <span class="math display">\Pr\left[ \textsf{PubK}^{\textsf{LR-cpa}}_{\mathcal{A},\Pi}(n) =1\right] \le \frac{1}{2} + \textsf{negl}(n)</span></li>
+</ul>
+</section>
+<section id="proof-27" class="slide level2">
+<h2>Proof (2/7)</h2>
+<ul>
+<li><p>Let <span class="math inline">t = t(n)</span> be the number of oracle queries made by <span class="math inline">\mathcal{A}</span></p></li>
+<li><p>For <span class="math inline">0 \le i \le t</span>, let <span class="math inline">\textsf{LR}_{pk}^i</span> be the oracle that on input <span class="math inline">(m_0, m_1)</span></p>
+<ul>
+<li>Returns <span class="math inline">\textsf{Enc}_{pk}(m_0)</span> for the first <span class="math inline">i</span> queries</li>
+<li>Returns <span class="math inline">\textsf{Enc}_{pk}(m_1)</span> for the next <span class="math inline">t-i</span> queries</li>
+</ul></li>
+<li><p>Note that <span class="math display">\Pr\left[ \textsf{PubK}^{\textsf{LR-cpa}}_{\mathcal{A},\Pi}(n) =1\right] = \frac{1}{2} \Pr\left[\mathcal{A}^{\textsf{LR}_{pk}^t}(pk) = 0\right] \\+\frac{1}{2} \Pr\left[\mathcal{A}^{\textsf{LR}_{pk}^0}(pk) = 1\right]</span></p></li>
+<li><p>It is enough to show that <span class="math display">\bigg| \Pr\left[\mathcal{A}^{\textsf{LR}_{pk}^t}(pk) = 1\right] - \Pr\left[\mathcal{A}^{\textsf{LR}_{pk}^0}(pk) = 1\right]\bigg|\\ \le \textsf{negl}(n)</span></p></li>
+</ul>
+</section>
+<section id="proof-37" class="slide level2">
+<h2>Proof (3/7)</h2>
+<ul>
+<li><p>Consider an adversary <span class="math inline">\mathcal{A}'</span> that eavesdrops on the encryption of a <strong>single</strong> message</p></li>
+<li><p>It will use the adversary <span class="math inline">\mathcal{A}</span> of the <span class="math inline">\textsf{PubK}^{\textsf{LR-cpa}}_{\mathcal{A},\Pi}(n)</span> experiment as a subroutine</p></li>
+<li><p>Note the IO interfaces of the two adversaries</p>
+<ul>
+<li><span class="math inline">\mathcal{A}</span> queries the <span class="math inline">\textsf{LR}_{pk,b}(\cdot, \cdot)</span> oracle <span class="math inline">t</span> times. It then outputs a bit</li>
+<li><span class="math inline">\mathcal{A}'</span> outputs a pair of messages <span class="math inline">(m_0, m_1)</span> and receives the encryption of one of them as a challenge ciphertext. It then outputs a bit.</li>
+</ul></li>
+</ul>
+</section>
+<section id="proof-47" class="slide level2 scrollable">
+<h2>Proof (4/7)</h2>
+<ul>
+<li><p>Consider an adversary <span class="math inline">\mathcal{A}'</span> that does the following</p>
+<ol type="1">
+<li><p><span class="math inline">\mathcal{A}'</span>, given <span class="math inline">pk</span>, chooses a uniform index <span class="math inline">i \leftarrow \{1,\ldots,t\}</span></p></li>
+<li><p><span class="math inline">\mathcal{A}'</span> runs <span class="math inline">\mathcal{A}(pk)</span>, answering its <span class="math inline">j</span>th oracle query <span class="math inline">(m_{j,0}, m_{j,1})</span> as follows:</p>
+<ol type="a">
+<li>For <span class="math inline">j &lt;i</span>, adversary <span class="math inline">\mathcal{A}'</span> computes <span class="math inline">c_j \leftarrow \textsf{Enc}_{pk}(m_{j,0})</span> and returns <span class="math inline">c_j</span> to <span class="math inline">\mathcal{A}</span> as the response from its oracle</li>
+<li>For <span class="math inline">j =i</span>, adversary <span class="math inline">\mathcal{A}'</span> outputs <span class="math inline">(m_{j,0}, m_{j,1})</span> and receives a challenge ciphertext <span class="math inline">c_j</span>. This is returned to <span class="math inline">\mathcal{A}</span> as the response from its oracle</li>
+<li>For <span class="math inline">j &gt;i</span>, adversary <span class="math inline">\mathcal{A}'</span> computes <span class="math inline">c_j \leftarrow \textsf{Enc}_{pk}(m_{j,1})</span> and returns <span class="math inline">c_j</span> to <span class="math inline">\mathcal{A}</span> as the response from its oracle</li>
+</ol></li>
+<li><p><span class="math inline">\mathcal{A}'</span> outputs the bit <span class="math inline">b'</span> that is output by <span class="math inline">A</span></p></li>
+</ol></li>
+</ul>
+</section>
+<section id="proof-57" class="slide level2">
+<h2>Proof (5/7)</h2>
+<ul>
+<li><p>Consider the experiment <span class="math inline">\textsf{PubK}^{\textsf{eav}}_{\mathcal{A}',\Pi}</span></p></li>
+<li><p>Fixing some <span class="math inline">i=i^*</span>, not that if <span class="math inline">c_{i^*}</span> is the encryption of <span class="math inline">m_{i^*,0}</span> then <span class="math inline">\mathcal{A}</span> is interacting with <span class="math inline">\textsf{LR}_{pk}^{i^*}</span></p></li>
+<li><p>Then we have <span class="math display">\begin{align*}
+&amp; \Pr \left[ \mathcal{A}' \text{ outputs } 1 \mid b = 0\right] \\
+  &amp;  = \sum_{i^*=1}^t \Pr[i=i^*]\Pr \left[ \mathcal{A}' \text{ outputs } 1 \mid b = 0 \cap i = i^*\right] \\
+  &amp;  = \sum_{i^*=1}^t \frac{1}{t}\Pr \left[ \mathcal{A}^{\textsf{LR}_{pk}^{i^*}}(pk)=1\right] \\
+\end{align*}</span></p></li>
+</ul>
+</section>
+<section id="proof-67" class="slide level2">
+<h2>Proof (6/7)</h2>
+<ul>
+<li><p>If <span class="math inline">c_{i^*}</span> is the encryption of <span class="math inline">m_{i^*,1}</span> then <span class="math inline">\mathcal{A}</span> is interacting with <span class="math inline">\textsf{LR}_{pk}^{i^*-1}</span></p></li>
+<li><p>Then we have <span class="math display">\begin{align*}
+&amp; \Pr \left[ \mathcal{A}' \text{ outputs } 1 \mid b = 1\right] \\
+  &amp;  = \sum_{i^*=1}^t \Pr[i=i^*]\Pr \left[ \mathcal{A}' \text{ outputs } 1 \mid b = 1 \cap i = i^*\right] \\
+  &amp;  = \sum_{i^*=1}^t \frac{1}{t}\Pr \left[ \mathcal{A}^{\textsf{LR}_{pk}^{i^*-1}}(pk)=1\right] \\
+  &amp;  = \sum_{i^*=0}^{t-1} \frac{1}{t}\Pr \left[ \mathcal{A}^{\textsf{LR}_{pk}^{i^*}}(pk)=1\right] \\
+\end{align*}</span></p></li>
+</ul>
+</section>
+<section id="proof-77" class="slide level2">
+<h2>Proof (7/7)</h2>
+<ul>
+<li><p>Since <span class="math inline">\Pi</span> is CPA-secure, we have <span class="math display">\begin{align*}&amp;\bigg| \Pr\left[ \mathcal{A}' \text{ outputs } 1 \mid b=0\right] \\
+&amp;\quad - \Pr\left[ \mathcal{A}' \text{ outputs } 1 \mid b=1\right]\bigg| \le \textsf{negl}(n)\end{align*}</span></p></li>
+<li><p>This gives us <span class="math display">\bigg| \Pr\left[\mathcal{A}^{\textsf{LR}_{pk}^t}(pk) = 1\right] - \Pr\left[\mathcal{A}^{\textsf{LR}_{pk}^0}(pk) = 1\right]\bigg|\\ \le t \cdot \textsf{negl}(n)</span></p></li>
+</ul>
+</section></section>
+<section>
+<section id="plain-rsa" class="title-slide slide level1 center">
+<h1>Plain RSA</h1>
+
+</section>
+<section id="plain-rsa-key-generation" class="slide level2">
+<h2>Plain RSA Key Generation</h2>
+<ul>
+<li><p>Let <span class="math inline">\textsf{GenRSA}</span> be a PPT algorithm that on input <span class="math inline">1^n</span>, outputs a modulus <span class="math inline">N</span> that is the product of two <span class="math inline">n</span>-bit primes, along with integers <span class="math inline">e,d &gt; 1</span> satisfying <span class="math inline">ed = 1 \bmod \phi(N)</span></p></li>
+<li><p><span class="math inline">\textsf{Gen:}</span> On input <span class="math inline">1^n</span>, run <span class="math inline">\textsf{GenRSA}(1^n)</span> to obtain <span class="math inline">N</span>, <span class="math inline">e</span>, and <span class="math inline">d</span></p>
+<ul>
+<li>The public key is <span class="math inline">\langle N,e \rangle</span> and the private key is <span class="math inline">\langle N,d \rangle</span>.</li>
+</ul></li>
+</ul>
+</section>
+<section id="plain-rsa-encryption-and-decryption" class="slide level2">
+<h2>Plain RSA Encryption and Decryption</h2>
+<ul>
+<li><span class="math inline">\textsf{Enc:}</span> On input a public key <span class="math inline">pk = \langle N,e \rangle</span> and message <span class="math inline">m \in \mathbb{Z}_N^*</span>, compute the ciphertext <span class="math display">c = m^e \bmod N</span></li>
+<li><span class="math inline">\textsf{Dec:}</span> On input a private key <span class="math inline">sk = \langle N, d \rangle</span> and ciphertext <span class="math inline">c \in \mathbb{Z}_N^*</span>, output <span class="math display">\hat{m} = c^d \bmod N</span></li>
+</ul>
+</section>
+<section id="the-rsa-experiment" class="slide level2">
+<h2>The RSA Experiment</h2>
+<ul>
+<li><p><span class="math inline">\textsf{RSA-inv}_{\mathcal{A}, \textsf{GenRSA}}(n)</span>:</p>
+<ul>
+<li>Run <span class="math inline">\textsf{GenRSA}(1^n)</span> to obtain <span class="math inline">(N,e,d)</span></li>
+<li>Choose a uniform <span class="math inline">y \in \mathbb{Z}_N^*</span></li>
+<li><span class="math inline">\mathcal{A}</span> is given <span class="math inline">N,e,y</span>, and outputs <span class="math inline">x \in \mathbb{Z}_N^*</span></li>
+<li>The output of the experiment is <span class="math inline">1</span> if <span class="math inline">x^e = y \bmod N</span>, and <span class="math inline">0</span> otherwise.</li>
+</ul></li>
+</ul>
+</section>
+<section id="the-rsa-assumption" class="slide level2">
+<h2>The RSA Assumption</h2>
+<ul>
+<li><p><strong>Definition:</strong> The RSA problem is hard relative to <span class="math inline">\textsf{GenRSA}</span> if for all PPT algorithms <span class="math inline">\mathcal{A}</span> there exists a negligible function <span class="math inline">\textsf{negl}</span> such that <span class="math display">\Pr[\textsf{RSA-inv}_{\mathcal{A}, \textsf{GenRSA}}(n) = 1] \le \textsf{negl}(n).</span></p></li>
+<li><p>The <strong>RSA assumption</strong> states that there exists a <span class="math inline">\textsf{GenRSA}</span> relative to which RSA is hard.</p></li>
+</ul>
+</section></section>
+<section>
+<section id="attacks-on-plain-rsa" class="title-slide slide level1 center">
+<h1>Attacks on Plain RSA</h1>
+<ul>
+<li>Plain RSA is deterministic and hence not CPA-secure</li>
+<li>It is insecure even if used to encrypt “random messages”</li>
+</ul>
+</section>
+<section id="quadratic-improvement-in-recovering-message-12" class="slide level2">
+<h2>Quadratic Improvement in Recovering Message (1/2)</h2>
+<ul>
+<li><p>Suppose an attacker knows that <span class="math inline">m &lt; B</span></p></li>
+<li><p>Given ciphertext <span class="math inline">c</span>, the attacker can always determine <span class="math inline">m</span> in <span class="math inline">\mathcal{O}(B)</span> time</p></li>
+<li><p>There is a better attack that recovers <span class="math inline">m</span> in <span class="math inline">\mathcal{O}(\sqrt{B})</span> with high probability</p>
+<ul>
+<li>Can be the difference between <span class="math inline">2^{80}</span> and <span class="math inline">2^{40}</span></li>
+</ul></li>
+<li><p><strong>Lemma</strong>: For appropriate <span class="math inline">\alpha \approx \frac{1}{2}</span>, if <span class="math inline">m</span> is a uniform <span class="math inline">n</span>-bit integer then with high probability there exist <span class="math inline">r,s</span> with <span class="math inline">1 &lt; r \le s \le 2^{\alpha n}</span> for which <span class="math inline">m = r \cdot s</span></p></li>
+</ul>
+</section>
+<section id="quadratic-improvement-in-recovering-message-22" class="slide level2">
+<h2>Quadratic Improvement in Recovering Message (2/2)</h2>
+<ul>
+<li><strong>Input</strong>: Public key <span class="math inline">\langle N, e \rangle</span>; ciphertext <span class="math inline">c</span>; bound <span class="math inline">2^n</span></li>
+<li><strong>Output</strong>: <span class="math inline">m &lt; 2^n</span> such that <span class="math inline">m^e = c \bmod N</span> <span class="math display">\begin{align*}
+
+&amp;\textbf{set } T \coloneqq 2^{\alpha n}\\
+&amp;\textbf{for } r = 1 \text{ to } T:\\
+&amp;\quad x_r \coloneqq [c/r^e \bmod N]\\
+&amp;\textbf{sort } \text{the pairs } \{(r,x_r)\}_{r=1}^T \text{ by } x_r\\
+&amp;\textbf{for } s = 1 \text{ to } T:\\
+&amp;\quad \textbf{if } [s^e \bmod N] \overset{?}{=} x_r \text{ for some } r\\
+&amp;\quad \quad \textbf{return } [r \cdot s \bmod N]
+\end{align*}</span></li>
+</ul>
+</section>
+<section id="encrypting-short-messages-using-small-e" class="slide level2">
+<h2>Encrypting Short Messages Using Small <span class="math inline">e</span></h2>
+<ul>
+<li>Suppose <span class="math inline">m &lt; N^{1/e}</span></li>
+<li>Raising <span class="math inline">m</span> to the <span class="math inline">e</span>th power involves no modular reduction</li>
+<li>Give <span class="math inline">c</span>, message <span class="math inline">m = c^{1/e}</span> can be computed <strong>over the integers</strong> in <span class="math inline">\textsf{poly}(\| N \|)</span> time</li>
+<li>Suppose <span class="math inline">e = 3</span> and <span class="math inline">\| N \| = 2048</span> bits; then the attack works when <span class="math inline">m</span> is a 256-bit string</li>
+</ul>
+</section>
+<section id="encrypting-related-messages" class="slide level2">
+<h2>Encrypting Related Messages</h2>
+<ul>
+<li>Suppose a sender encrypts two related messages to the same receiver</li>
+<li>Suppose the messages are <span class="math inline">m</span> and <span class="math inline">m+\delta</span> where <span class="math inline">\delta</span> is known but <span class="math inline">m</span> is not</li>
+<li>Given two ciphertexts <span class="math inline">c_1 = [m^e \bmod N]</span> and <span class="math inline">c_2 = [(m+\delta)^e \bmod N]</span>, attacker defines two polynomials <span class="math display">\begin{align*} f_1(x) &amp; = x^e -c_1 \\
+f_2(x) &amp; = (x+\delta)^e -c_2\end{align*}</span></li>
+<li><span class="math inline">m</span> is root of both polynomials <span class="math inline">\implies x-m</span> is a factor of both polynomials</li>
+<li>If <span class="math inline">\textsf{gcd}(f_1(x), f_2(x))</span> is a linear polynomial, it reveals <span class="math inline">m</span></li>
+</ul>
+</section>
+<section id="sending-the-same-message-to-multiple-receivers-12" class="slide level2">
+<h2>Sending the Same Message to Multiple Receivers (1/2)</h2>
+<ul>
+<li>Suppose <span class="math inline">e = 3</span></li>
+<li>Suppose the same message <span class="math inline">m</span> is encrypted to three receivers having public keys <span class="math inline">pk_1 = \langle N_1, 3 \rangle</span>, <span class="math inline">pk_2 = \langle N_2, 3 \rangle</span>, <span class="math inline">pk_3 = \langle N_3, 3 \rangle</span></li>
+<li>Assume <span class="math inline">\gcd(N_i, N_j) = 1</span> for <span class="math inline">i \neq j</span></li>
+</ul>
+</section>
+<section id="sending-the-same-message-to-multiple-receivers-22" class="slide level2">
+<h2>Sending the Same Message to Multiple Receivers (2/2)</h2>
+<ul>
+<li>Eavesdropper observes <span class="math inline">c_1 = [m^3 \bmod N_1]</span>, <span class="math inline">c_2 = [m^3 \bmod N_2]</span>, <span class="math inline">c_3 = [m^3 \bmod N_3]</span></li>
+<li>For <span class="math inline">N^* = N_1N_2N_3</span>, by CRT there exists a unique <span class="math inline">\hat{c} &lt; N^*</span> such that <span class="math display">\hat{c} =c_1 \bmod N_1\\ \hat{c} = c_2 \bmod N_2\\\hat{c} = c_3 \bmod N_3</span></li>
+<li>As <span class="math inline">m &lt; \min\{N_1, N_2, N_3\}</span>, we have <span class="math inline">m^3 &lt; N^*</span></li>
+<li>Then <span class="math inline">\hat{c} = m^3</span> <strong>over the integers</strong></li>
+<li>Message <span class="math inline">m</span> can be recovered by computing the integer cube root of <span class="math inline">\hat{c}</span></li>
+</ul>
+</section></section>
+<section>
+<section id="rsa-oaep" class="title-slide slide level1 center">
+<h1>RSA-OAEP</h1>
+<ul>
+<li>OAEP = Optimal Asymmetric Encryption Padding</li>
+<li>CCA-secure encryption scheme from RSA</li>
+<li>RSA-OAEP has been standardized (see <a href="https://www.rfc-editor.org/rfc/rfc8017.html">RFC 8017</a>)</li>
+</ul>
+</section>
+<section id="rsa-oaep-1" class="slide level2">
+<h2>RSA-OAEP</h2>
+<ul>
+<li>Let <span class="math inline">l, k \in \mathbb{N}</span> such that <span class="math inline">2k+l &lt; \| N \|</span></li>
+<li>Suppose a message <span class="math inline">m \in \{0,1\}^l</span> is to be encrypted</li>
+<li>It is mapped to a message <span class="math inline">\hat{m} \in \{0,1\}^{2k+l}</span></li>
+<li><span class="math inline">\hat{m}</span> is encrypted using plain RSA</li>
+<li>Let <span class="math inline">G: \{0,1\}^k \mapsto \{0,1\}^{l+k}</span> and <span class="math inline">H: \{0,1\}^{l+k} \mapsto \{0,1\}^k</span> be hash functions</li>
+<li>Let <span class="math inline">m' = m \| 0^k</span></li>
+<li><span class="math inline">\hat{m} = s \| t</span> where <span class="math inline">t = m' \oplus G(r)</span> and <span class="math inline">s = r \oplus H(t)</span></li>
+</ul>
+</section>
+<section id="rsa-oaep-2" class="slide level2">
+<h2>RSA-OAEP</h2>
+
+<img data-src="images/rsa-oaep.png" class="quarto-figure quarto-figure-center r-stretch"><ul>
+<li><span class="math inline">\hat{m} = s \| t</span> where <span class="math inline">t = m' \oplus G(r)</span> and <span class="math inline">s = r \oplus H(t)</span></li>
+<li>To get <span class="math inline">m</span> from <span class="math inline">\hat{m}</span>, compute <span class="math display">r = H(t) \oplus s \text{ and } m'= G(r) \oplus t</span></li>
+</ul>
+</section>
+<section id="rsa-keys-should-be-chosen-carefully" class="slide level2">
+<h2>RSA Keys Should be Chosen Carefully</h2>
+<ul>
+<li>Suppose all employees in a company share the same RSA modulus <span class="math inline">N</span></li>
+<li>Suppose two employees have encryption exponents <span class="math inline">e_1, e_2</span> such that <span class="math inline">e_1 \neq e_2</span> and <span class="math inline">\gcd(e_1, e_2) = 1</span></li>
+<li>Suppose the same message <span class="math inline">m</span> is encrypted to give <span class="math display">c_1 = m^{e_1} \bmod N \text{ and } c_2 = m^{e_2} \bmod N</span></li>
+<li>Then <span class="math inline">m</span> can be recovered</li>
+</ul>
+</section>
+<section id="further-reading" class="slide level2">
+<h2>Further Reading</h2>
+<ul>
+<li>Section 12.1, 12.2.1, 12.2.2, 12.4.1, 12.5.1, 12.5.4 of Katz &amp; Lindell</li>
+</ul>
+<div class="quarto-auto-generated-content">
+<div class="footer footer-default">
+
+</div>
+</div>
+</section></section>
+    </div>
+  </div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="public-key-encryption_files/libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="public-key-encryption_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="public-key-encryption_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="public-key-encryption_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="public-key-encryption_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="public-key-encryption_files/libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="public-key-encryption_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="public-key-encryption_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="public-key-encryption_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': false,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: true,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'none',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1050,
+
+        height: 700,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
+
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    <script id="quarto-html-after-body" type="application/javascript">
+    window.document.addEventListener("DOMContentLoaded", function (event) {
+      const toggleBodyColorMode = (bsSheetEl) => {
+        const mode = bsSheetEl.getAttribute("data-mode");
+        const bodyEl = window.document.querySelector("body");
+        if (mode === "dark") {
+          bodyEl.classList.add("quarto-dark");
+          bodyEl.classList.remove("quarto-light");
+        } else {
+          bodyEl.classList.add("quarto-light");
+          bodyEl.classList.remove("quarto-dark");
+        }
+      }
+      const toggleBodyColorPrimary = () => {
+        const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+        if (bsSheetEl) {
+          toggleBodyColorMode(bsSheetEl);
+        }
+      }
+      toggleBodyColorPrimary();  
+      const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+      tabsets.forEach(function(tabset) {
+        const tabby = new Tabby('#' + tabset.id);
+      });
+      const isCodeAnnotation = (el) => {
+        for (const clz of el.classList) {
+          if (clz.startsWith('code-annotation-')) {                     
+            return true;
+          }
+        }
+        return false;
+      }
+      const onCopySuccess = function(e) {
+        // button target
+        const button = e.trigger;
+        // don't keep focus
+        button.blur();
+        // flash "checked"
+        button.classList.add('code-copy-button-checked');
+        var currentTitle = button.getAttribute("title");
+        button.setAttribute("title", "Copied!");
+        let tooltip;
+        if (window.bootstrap) {
+          button.setAttribute("data-bs-toggle", "tooltip");
+          button.setAttribute("data-bs-placement", "left");
+          button.setAttribute("data-bs-title", "Copied!");
+          tooltip = new bootstrap.Tooltip(button, 
+            { trigger: "manual", 
+              customClass: "code-copy-button-tooltip",
+              offset: [0, -8]});
+          tooltip.show();    
+        }
+        setTimeout(function() {
+          if (tooltip) {
+            tooltip.hide();
+            button.removeAttribute("data-bs-title");
+            button.removeAttribute("data-bs-toggle");
+            button.removeAttribute("data-bs-placement");
+          }
+          button.setAttribute("title", currentTitle);
+          button.classList.remove('code-copy-button-checked');
+        }, 1000);
+        // clear code selection
+        e.clearSelection();
+      }
+      const getTextToCopy = function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+      }
+      const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+        text: getTextToCopy
+      });
+      clipboard.on('success', onCopySuccess);
+      if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+        // For code content inside modals, clipBoardJS needs to be initialized with a container option
+        // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+        const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+          text: getTextToCopy,
+          container: window.document.getElementById('quarto-embedded-source-code-modal')
+        });
+        clipboardModal.on('success', onCopySuccess);
+      }
+        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+        var mailtoRegex = new RegExp(/^mailto:/);
+          var filterRegex = new RegExp('/' + window.location.host + '/');
+        var isInternal = (href) => {
+            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+        }
+        // Inspect non-navigation links and adorn them if external
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+        for (var i=0; i<links.length; i++) {
+          const link = links[i];
+          if (!isInternal(link.href)) {
+            // undo the damage that might have been done by quarto-nav.js in the case of
+            // links that we want to consider external
+            if (link.dataset.originalHref !== undefined) {
+              link.href = link.dataset.originalHref;
+            }
+              // target, if specified
+              link.setAttribute("target", "_blank");
+              if (link.getAttribute("rel") === null) {
+                link.setAttribute("rel", "noopener");
+              }
+          }
+        }
+      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+        const config = {
+          allowHTML: true,
+          maxWidth: 500,
+          delay: 100,
+          arrow: false,
+          appendTo: function(el) {
+              return el.closest('section.slide') || el.parentElement;
+          },
+          interactive: true,
+          interactiveBorder: 10,
+          theme: 'light-border',
+          placement: 'bottom-start',
+        };
+        if (contentFn) {
+          config.content = contentFn;
+        }
+        if (onTriggerFn) {
+          config.onTrigger = onTriggerFn;
+        }
+        if (onUntriggerFn) {
+          config.onUntrigger = onUntriggerFn;
+        }
+          config['offset'] = [0,0];
+          config['maxWidth'] = 700;
+        window.tippy(el, config); 
+      }
+      const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+      for (var i=0; i<noterefs.length; i++) {
+        const ref = noterefs[i];
+        tippyHover(ref, function() {
+          // use id or data attribute instead here
+          let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+          try { href = new URL(href).hash; } catch {}
+          const id = href.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note) {
+            return note.innerHTML;
+          } else {
+            return "";
+          }
+        });
+      }
+      const findCites = (el) => {
+        const parentEl = el.parentElement;
+        if (parentEl) {
+          const cites = parentEl.dataset.cites;
+          if (cites) {
+            return {
+              el,
+              cites: cites.split(' ')
+            };
+          } else {
+            return findCites(el.parentElement)
+          }
+        } else {
+          return undefined;
+        }
+      };
+      var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+      for (var i=0; i<bibliorefs.length; i++) {
+        const ref = bibliorefs[i];
+        const citeInfo = findCites(ref);
+        if (citeInfo) {
+          tippyHover(citeInfo.el, function() {
+            var popup = window.document.createElement('div');
+            citeInfo.cites.forEach(function(cite) {
+              var citeDiv = window.document.createElement('div');
+              citeDiv.classList.add('hanging-indent');
+              citeDiv.classList.add('csl-entry');
+              var biblioDiv = window.document.getElementById('ref-' + cite);
+              if (biblioDiv) {
+                citeDiv.innerHTML = biblioDiv.innerHTML;
+              }
+              popup.appendChild(citeDiv);
+            });
+            return popup.innerHTML;
+          });
+        }
+      }
+    });
+    </script>
+    
+
+</body></html>

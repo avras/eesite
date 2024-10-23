@@ -863,7 +863,7 @@ Saravanan Vijayakumaran
 </ul>
 <aside class="notes">
 <ul>
-<li>All elements of Zp^* are of the for g^0, …, g^(p-2)</li>
+<li>All elements of <span class="math inline">Zp^*</span> are of the for <span class="math inline">g^0, ..., g^{p-2}</span></li>
 <li>For j in {0,1,…,q-1}, f_r(g^i) for i in {j, j+q, …, j+ (r-1)q} give the same element</li>
 </ul>
 <style type="text/css">
@@ -884,7 +884,7 @@ Saravanan Vijayakumaran
 <li><p><span class="math inline">G = \{ h^r \bmod p \mid h \in \mathbb{Z}_p^*\}</span></p></li>
 <li><p>A generator of the subgroup <span class="math inline">G</span> can be found as follows</p>
 <ol type="1">
-<li>For <span class="math inline">p = rq+1</span>, choose a uniform <span class="math inline">h \in \mathbb{Z}_p^*</span></li>
+<li>For <span class="math inline">p = rq+1</span>, choose a uniform <span class="math inline">h \in \mathbb{Z}_p^* \setminus \{1\}</span></li>
 <li>If <span class="math inline">h^q = 1</span>, then <span class="math inline">h</span> is a generator of <span class="math inline">G</span></li>
 </ol></li>
 </ul>
@@ -895,7 +895,7 @@ Saravanan Vijayakumaran
 <li><p>Let <span class="math inline">n = \| q \|</span> and <span class="math inline">l = \|p\|</span></p></li>
 <li><p>Two types of algorithms are known for computing discrete logarithms in order-<span class="math inline">q</span> subgroups of <span class="math inline">\mathbb{Z}_p^*</span></p>
 <ul>
-<li>First type runs in time <span class="math inline">\mathcal{O}(\sqrt{p}) = \mathcal{O}(2^{n/2})</span></li>
+<li>First type runs in time <span class="math inline">\mathcal{O}(\sqrt{q}) = \mathcal{O}(2^{n/2})</span></li>
 <li>Second type runs in time <span class="math display">2^{\mathcal{O}\left((\log p)^{1/3}\cdot (\log\log p)^{2/3} \right)} = 2^{\mathcal{O}\left( l^{1/3} \cdot (\log l)^{2/3}\right)}</span></li>
 </ul></li>
 <li><p>For a fixed security level, say <span class="math inline">2^{128}</span> operations, <span class="math inline">n</span> and <span class="math inline">l</span> should be chosen as small as possible</p></li>
@@ -912,7 +912,7 @@ Saravanan Vijayakumaran
 <section id="recommended-key-lengths" class="slide level2">
 <h2>Recommended Key Lengths</h2>
 <ul>
-<li><p>Effective key length is a value <span class="math inline">n</span> such that the best known algorithm takes roughly <span class="math inline">2^n</span> time</p></li>
+<li><p>Effective key length is a value <span class="math inline">n</span> such that the best known attack takes <span class="math inline">\mathcal{O}(2^n)</span> time</p></li>
 <li><p>NIST recommended key lengths</p>
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -978,7 +978,7 @@ Saravanan Vijayakumaran
 <section id="point-addition-for-finite-field-curves" class="slide level2">
 <h2>Point Addition for Finite Field Curves</h2>
 <ul>
-<li><p>Point addition formulas derives from the reals are used</p></li>
+<li><p>Point addition formulas derived from the reals are used</p></li>
 <li><p><strong>Example</strong>: <span class="math inline">y^2 = x^3+10x+2</span> over <span class="math inline">\mathbb{F}_{11}</span></p>
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -1001,6 +1001,7 @@ Saravanan Vijayakumaran
 <li><p>Sections 9.2, 9.3 of Katz and Lindell</p></li>
 <li><p>Section 10.4 of Katz and Lindell</p></li>
 <li><p>Chapter 2 of my Bitcoin notes <a href="https://www.ee.iitb.ac.in/~sarva/bitcoin.html" class="uri">https://www.ee.iitb.ac.in/~sarva/bitcoin.html</a></p></li>
+<li><p>EE 465 <a href="https://www.ee.iitb.ac.in/~sarva/courses/EE465/2024/slides/ProjectiveGeometry.pdf">Projective Geometry</a> slides</p></li>
 </ul>
 <div class="quarto-auto-generated-content">
 <div class="footer footer-default">
