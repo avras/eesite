@@ -66,3 +66,4 @@ EE720 has significant overlap with **CS 409 Introduction to Cryptography**. Plea
 ##### Exams
   - [Quiz 1](/courses/EE720/2024/exams/quiz1.pdf)
   - [Midsem](/courses/EE720/2024/exams/midsem.pdf)
+  - [Quiz 2](/courses/EE720/2024/exams/quiz2.pdf)
