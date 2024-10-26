@@ -495,8 +495,7 @@ Saravanan Vijayakumaran
 <li><span class="math inline">\mathcal{A}</span> experiences the experiment <span class="math inline">\textsf{PubK}^{\textsf{eav}}_{\mathcal{A},\widetilde{\Pi}}(n)</span></li>
 <li>Since <span class="math inline">D</span> outputs 1 exactly when <span class="math inline">b' = b</span>, we have <span class="math display">\begin{align*}
 &amp; \Pr\left[ D(G, q, g, g^x, g^y, g^z) =1 \right] \\
-&amp;= \Pr \left[ \textsf{PubK}^{\textsf{eav}}_{\mathcal{A}, \widetilde{\Pi}}(n)=1\right]\\
-&amp;= \frac{1}{2}
+&amp;= \Pr \left[ \textsf{PubK}^{\textsf{eav}}_{\mathcal{A}, \widetilde{\Pi}}(n)=1\right]= \frac{1}{2}
 \end{align*}</span></li>
 </ul></li>
 </ul>
@@ -513,6 +512,19 @@ Saravanan Vijayakumaran
 \end{align*}</span></li>
 </ul></li>
 </ul>
+</section>
+<section id="cpa-security-of-el-gamal-encryption-4" class="slide level2">
+<h2>CPA-Security of El Gamal Encryption</h2>
+<ul>
+<li>For any PPT distinguisher <span class="math inline">D</span>, we have <span class="math display">\begin{align*}
+&amp;|\Pr\left[ D(G, q, g, g^x, g^y, g^{xy}) =1 \right]\\
+&amp;- \Pr\left[ D(G, q, g, g^x, g^y, g^{z}) =1 \right]| \le \textsf{negl}(n)
+\end{align*}</span></li>
+<li>This implies that <span class="math display">\begin{align*}
+&amp;\left|\Pr \left[ \textsf{PubK}^{\textsf{eav}}_{\mathcal{A}, \Pi}(n)=1\right] - \frac{1}{2}\right| \le \textsf{negl}(n)\\
+\implies &amp; \Pr \left[ \textsf{PubK}^{\textsf{eav}}_{\mathcal{A}, \Pi}(n)=1\right] \le  \frac{1}{2} + \textsf{negl}(n)
+\end{align*}</span></li>
+</ul>
 </section></section>
 <section>
 <section id="multiple-encryptions" class="title-slide slide level1 center">
@@ -525,9 +537,12 @@ Saravanan Vijayakumaran
 <section id="defining-cpa-security-for-multiple-encryptions" class="slide level2">
 <h2>Defining CPA-Security for Multiple Encryptions</h2>
 <ul>
-<li><p>We would define an experiment as follows</p>
+<li><p>We could define an experiment as follows</p>
 <ul>
-<li>An adversary <span class="math inline">\mathcal{A}</span> picks two lists of messages <span class="math inline">\vec{m}_0 = \langle m_{0,1}, m_{0,2},\ldots,m_{0,l} \rangle</span> and <span class="math inline">\vec{m}_1 = \langle m_{1,1}, m_{1,2},\ldots,m_{1,l} \rangle</span></li>
+<li>An adversary <span class="math inline">\mathcal{A}</span> picks two lists of messages <span class="math display">\begin{align*}
+\vec{m}_0 &amp;= \langle m_{0,1}, m_{0,2},\ldots,m_{0,l} \rangle\\
+\vec{m}_1 &amp;= \langle m_{1,1}, m_{1,2},\ldots,m_{1,l} \rangle
+\end{align*}</span></li>
 <li>A uniform bit <span class="math inline">b</span> is chosen</li>
 <li>The challenge ciphertext is the encryption of <span class="math inline">\vec{m}_b</span></li>
 </ul></li>
@@ -538,7 +553,7 @@ Saravanan Vijayakumaran
 <h2>The Left-or-Right Oracle</h2>
 <ul>
 <li>On input a pair of equal-length messages <span class="math inline">m_0, m_1</span>, oracle <span class="math inline">\textsf{LR}_{pk,b}(\cdot, \cdot)</span> returns the ciphertext <span class="math inline">c \leftarrow \textsf{Enc}_{pk}(m_b)</span></li>
-<li>Access to this oracle allows <span class="math inline">\mathcal{A}</span> to adaptively choose the messages that are used to produce challenge ciphertext</li>
+<li>Access to this oracle allows <span class="math inline">\mathcal{A}</span> to adaptively choose the messages used to produce the challenge ciphertext</li>
 </ul>
 </section>
 <section id="lr-oracle-experiment" class="slide level2">
@@ -626,7 +641,7 @@ Saravanan Vijayakumaran
 <h2>Proof (5/7)</h2>
 <ul>
 <li><p>Consider the experiment <span class="math inline">\textsf{PubK}^{\textsf{eav}}_{\mathcal{A}',\Pi}</span></p></li>
-<li><p>Fixing some <span class="math inline">i=i^*</span>, not that if <span class="math inline">c_{i^*}</span> is the encryption of <span class="math inline">m_{i^*,0}</span> then <span class="math inline">\mathcal{A}</span> is interacting with <span class="math inline">\textsf{LR}_{pk}^{i^*}</span></p></li>
+<li><p>Fixing some <span class="math inline">i=i^*</span>, note that if <span class="math inline">c_{i^*}</span> is the encryption of <span class="math inline">m_{i^*,0}</span> then <span class="math inline">\mathcal{A}</span> is interacting with <span class="math inline">\textsf{LR}_{pk}^{i^*}</span></p></li>
 <li><p>Then we have <span class="math display">\begin{align*}
 &amp; \Pr \left[ \mathcal{A}' \text{ outputs } 1 \mid b = 0\right] \\
   &amp;  = \sum_{i^*=1}^t \Pr[i=i^*]\Pr \left[ \mathcal{A}' \text{ outputs } 1 \mid b = 0 \cap i = i^*\right] \\
@@ -712,7 +727,10 @@ Saravanan Vijayakumaran
 <ul>
 <li>Can be the difference between <span class="math inline">2^{80}</span> and <span class="math inline">2^{40}</span></li>
 </ul></li>
-<li><p><strong>Lemma</strong>: For appropriate <span class="math inline">\alpha \approx \frac{1}{2}</span>, if <span class="math inline">m</span> is a uniform <span class="math inline">n</span>-bit integer then with high probability there exist <span class="math inline">r,s</span> with <span class="math inline">1 &lt; r \le s \le 2^{\alpha n}</span> for which <span class="math inline">m = r \cdot s</span></p></li>
+<li><p><strong>Lemma</strong>: For appropriate <span class="math inline">\alpha \approx \frac{1}{2}</span>, if <span class="math inline">m</span> is a uniform <span class="math inline">n</span>-bit integer then with high probability there exist <span class="math inline">r,s</span> with <span class="math inline">1 &lt; r \le s \le 2^{\alpha n}</span> for which <span class="math inline">m = r \cdot s</span></p>
+<ul>
+<li><strong>Example:</strong> For <span class="math inline">n=64</span>, with probability 0.35 there exist <span class="math inline">r,s</span> with length at most 34 bits such that <span class="math inline">m = r \cdot s</span></li>
+</ul></li>
 </ul>
 </section>
 <section id="quadratic-improvement-in-recovering-message-22" class="slide level2">
@@ -768,6 +786,15 @@ f_2(x) &amp; = (x+\delta)^e -c_2\end{align*}</span></li>
 <li>Then <span class="math inline">\hat{c} = m^3</span> <strong>over the integers</strong></li>
 <li>Message <span class="math inline">m</span> can be recovered by computing the integer cube root of <span class="math inline">\hat{c}</span></li>
 </ul>
+</section>
+<section id="rsa-keys-should-be-chosen-carefully" class="slide level2">
+<h2>RSA Keys Should be Chosen Carefully</h2>
+<ul>
+<li>Suppose all employees in a company share the same RSA modulus <span class="math inline">N</span></li>
+<li>Suppose two employees have encryption exponents <span class="math inline">e_1, e_2</span> such that <span class="math inline">e_1 \neq e_2</span> and <span class="math inline">\gcd(e_1, e_2) = 1</span></li>
+<li>Suppose the same message <span class="math inline">m</span> is encrypted to give <span class="math display">c_1 = m^{e_1} \bmod N \text{ and } c_2 = m^{e_2} \bmod N</span></li>
+<li>Then <span class="math inline">m</span> can be recovered</li>
+</ul>
 </section></section>
 <section>
 <section id="rsa-oaep" class="title-slide slide level1 center">
@@ -786,25 +813,17 @@ f_2(x) &amp; = (x+\delta)^e -c_2\end{align*}</span></li>
 <li>It is mapped to a message <span class="math inline">\hat{m} \in \{0,1\}^{2k+l}</span></li>
 <li><span class="math inline">\hat{m}</span> is encrypted using plain RSA</li>
 <li>Let <span class="math inline">G: \{0,1\}^k \mapsto \{0,1\}^{l+k}</span> and <span class="math inline">H: \{0,1\}^{l+k} \mapsto \{0,1\}^k</span> be hash functions</li>
-<li>Let <span class="math inline">m' = m \| 0^k</span></li>
+<li>Let <span class="math inline">m' = m \| 0^k</span> and choose <span class="math inline">r</span> uniformly from <span class="math inline">\{0,1\}^k</span></li>
 <li><span class="math inline">\hat{m} = s \| t</span> where <span class="math inline">t = m' \oplus G(r)</span> and <span class="math inline">s = r \oplus H(t)</span></li>
 </ul>
 </section>
 <section id="rsa-oaep-2" class="slide level2">
 <h2>RSA-OAEP</h2>
-
-<img data-src="images/rsa-oaep.png" class="quarto-figure quarto-figure-center r-stretch"><ul>
-<li><span class="math inline">\hat{m} = s \| t</span> where <span class="math inline">t = m' \oplus G(r)</span> and <span class="math inline">s = r \oplus H(t)</span></li>
-<li>To get <span class="math inline">m</span> from <span class="math inline">\hat{m}</span>, compute <span class="math display">r = H(t) \oplus s \text{ and } m'= G(r) \oplus t</span></li>
-</ul>
-</section>
-<section id="rsa-keys-should-be-chosen-carefully" class="slide level2">
-<h2>RSA Keys Should be Chosen Carefully</h2>
 <ul>
-<li>Suppose all employees in a company share the same RSA modulus <span class="math inline">N</span></li>
-<li>Suppose two employees have encryption exponents <span class="math inline">e_1, e_2</span> such that <span class="math inline">e_1 \neq e_2</span> and <span class="math inline">\gcd(e_1, e_2) = 1</span></li>
-<li>Suppose the same message <span class="math inline">m</span> is encrypted to give <span class="math display">c_1 = m^{e_1} \bmod N \text{ and } c_2 = m^{e_2} \bmod N</span></li>
-<li>Then <span class="math inline">m</span> can be recovered</li>
+<li><p><span class="math inline">\hat{m} = s \| t</span> where <span class="math inline">t = m' \oplus G(r)</span> and <span class="math inline">s = r \oplus H(t)</span> <img data-src="images/rsa-oaep.png" class="quarto-figure quarto-figure-center"></p></li>
+<li><p>RSA ciphertext is set to <span class="math inline">c = \hat{m}^e \bmod N</span></p></li>
+<li><p>To decrypt <span class="math inline">c</span>, first obtain <span class="math inline">\hat{m}</span> as <span class="math inline">c^d \bmod N</span></p></li>
+<li><p>To get <span class="math inline">m</span> from <span class="math inline">\hat{m}</span>, compute <span class="math display">r = H(t) \oplus s \text{ and } m'= G(r) \oplus t</span></p></li>
 </ul>
 </section>
 <section id="further-reading" class="slide level2">
