@@ -540,7 +540,7 @@ Saravanan Vijayakumaran
 <h2>The Goldwasser-Micali Encryption Scheme</h2>
 <ul>
 <li>To encrypt a 0 bit, send a uniform quadratic residue</li>
-<li>To encrypt a 1 bit, send a uniform quadratic non-residue with Jacobi symbol +1</li>
+<li>To encrypt a 1 bit, send a uniform quadratic non-residue with Jacobi symbol <span class="math inline">+1</span></li>
 <li>The receiver can decrypt the ciphertext by using the factorization of <span class="math inline">N</span></li>
 </ul>
 </section>
@@ -569,6 +569,19 @@ Saravanan Vijayakumaran
 <li>Picks a uniform <span class="math inline">x \in \mathbb{Z}_N^*</span></li>
 <li>Sets <span class="math inline">y = z \cdot x^2 \bmod N</span></li>
 </ul></li>
+</ul>
+</section>
+<section id="the-goldwasser-micali-encryption-scheme-2" class="slide level2">
+<h2>The Goldwasser-Micali Encryption Scheme</h2>
+<ul>
+<li><p>The public key is <span class="math inline">\langle N, z \rangle</span> where <span class="math inline">z \in \mathcal{QNR}_N^{+1}</span></p></li>
+<li><p>The private key is <span class="math inline">\langle p, q \rangle</span> where <span class="math inline">N=pq</span></p></li>
+<li><p>To send a message <span class="math inline">m = m_1m_2 \cdots m_l \in \{0,1\}^l</span></p>
+<ul>
+<li>Pick <span class="math inline">l</span> integers <span class="math inline">x_1, x_2, \ldots, x_l</span> uniformly from <span class="math inline">\mathbb{Z}_N^*</span></li>
+<li>Send <span class="math inline">c_i = z^{m_i} x_i^2</span> for <span class="math inline">i=1,2,\ldots,l</span></li>
+</ul></li>
+<li><p>Receiver decrypts message bits as <span class="math inline">\hat{m}_i = \frac{1-\mathcal{J}_N(y_i)}{2}</span></p></li>
 </ul>
 </section>
 <section id="gm-scheme-is-cpa-secure" class="slide level2">

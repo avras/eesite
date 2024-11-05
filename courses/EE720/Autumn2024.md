@@ -53,6 +53,7 @@ EE720 has significant overlap with **CS 409 Introduction to Cryptography**. Plea
 - [Public-Key Encryption](./2024/slides/public-key-encryption.html){target="_blank"}
 - [Digital Signatures](./2024/slides/digital-signatures.html){target="_blank"}
 - [Advanced Topics in PKC](./2024/slides/advanced-topics.html){target="_blank"}
+- [Zero-Knowledge Proofs](./2024/slides/zk-proofs.html){target="_blank"}
 
 ##### Supplementary Notes
 
