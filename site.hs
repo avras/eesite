@@ -37,6 +37,7 @@ main = hakyll $ do
             "static/rust/**" .||.
             "static/bellpepper/**" .||.
             "static/reports/**" .||.
+            "static/apps/**" .||.
             "static/ee1mtech/**"
           ) $ do
         route $ (gsubRoute "static/" (const ""))
