@@ -581,13 +581,13 @@ Saravanan Vijayakumaran
 <li>Pick <span class="math inline">l</span> integers <span class="math inline">x_1, x_2, \ldots, x_l</span> uniformly from <span class="math inline">\mathbb{Z}_N^*</span></li>
 <li>Send <span class="math inline">c_i = z^{m_i} x_i^2</span> for <span class="math inline">i=1,2,\ldots,l</span></li>
 </ul></li>
-<li><p>Receiver decrypts message bits as <span class="math inline">\hat{m}_i = \frac{1-\mathcal{J}_N(y_i)}{2}</span></p></li>
+<li><p>Receiver decrypts message bits as <span class="math inline">\hat{m}_i</span> as <span class="math inline">0</span> or <span class="math inline">1</span> depending on whether <span class="math inline">\left( c_i^{\frac{p-1}{2}} \bmod p, c_i^{\frac{q-1}{2}} \bmod q\right)</span> equals <span class="math inline">(1,1)</span> or <span class="math inline">(-1,-1)</span></p></li>
 </ul>
 </section>
 <section id="gm-scheme-is-cpa-secure" class="slide level2">
 <h2>GM Scheme is CPA-Secure</h2>
 <ul>
-<li><strong>Thereom</strong>: If the quadratic residuosity problem is hard relative to <span class="math inline">\textsf{GenModulus}</span>, then the Goldwasser-Micali encryption scheme is CPA-secure.</li>
+<li><strong>Theorem</strong>: If the quadratic residuosity problem is hard relative to <span class="math inline">\textsf{GenModulus}</span>, then the Goldwasser-Micali encryption scheme is CPA-secure.</li>
 </ul>
 </section></section>
 <section>
