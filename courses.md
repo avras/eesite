@@ -3,19 +3,21 @@ title: Courses
 ---
 
 #### Current Course
-  - [EE 720: An Introduction to Number Theory and Cryptography](./courses/EE720/Autumn2024.html)
+  - [EE 325: Probability and Random Processes](./courses/EE325/Spring2025.html)
+  - [MS 101: Makerspace](https://makerspace.iitb.ac.in/home)
 
 #### Past Courses
 
-  - EE 465: Cryptocurrency and Blockchain Technologies
-    + [Spring 2024](./courses/EE465/Spring2024.html)
-    + [Autumn 2019](./courses/EE465/Autumn2019.html)
-    + [Autumn 2018](./courses/EE465/Autumn2018.html)
   - EE 720: An Introduction to Number Theory and Cryptography
+    + [Autumn 2024](./courses/EE720/Autumn2024.html)
     + [Autumn 2023](./courses/EE720/Autumn2023.html)
     + [Spring 2020](./courses/EE720/Spring2020.html)
     + [Spring 2019](./courses/EE720/Spring2019.html)
     + [Spring 2018](./courses/EE720/Spring2018.html)
+  - EE 465: Cryptocurrency and Blockchain Technologies
+    + [Spring 2024](./courses/EE465/Spring2024.html)
+    + [Autumn 2019](./courses/EE465/Autumn2019.html)
+    + [Autumn 2018](./courses/EE465/Autumn2018.html)
   - EE 703: Digital Message Transmission
     + [Autumn 2022](./courses/EE703/Autumn2022.html)
     + [Autumn 2021](./courses/EE703/Autumn2021.html)
