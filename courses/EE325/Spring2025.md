@@ -8,7 +8,7 @@ title: EE 325 Spring 2025
   - **Location:** EEG 401 Collaborative Classroom
 
 
-##### Course Outline
+##### Syllabus
 
   - Probability Spaces
   - Random Variables
@@ -23,3 +23,4 @@ title: EE 325 Spring 2025
 
 ##### Slides
   - [Course Overview](./2025/slides/CourseOverview.pdf)
+  - [Probability Spaces](./2025/slides/ProbabilitySpaces.pdf)
