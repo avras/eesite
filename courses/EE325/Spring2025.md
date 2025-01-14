@@ -25,3 +25,7 @@ title: EE 325 Spring 2025
   - [Course Overview](./2025/slides/CourseOverview.pdf)
   - [Probability Spaces](./2025/slides/ProbabilitySpaces.pdf)
   - [Why is the Probability Space a Triple?](./2025/slides/WhyProbSpaceTriple.pdf)
+
+##### Assignments
+
+  - [Assignment 1](./2025/assignments/assignment1.pdf)
