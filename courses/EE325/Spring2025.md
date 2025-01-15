@@ -19,12 +19,14 @@ title: EE 325 Spring 2025
 ##### Grading Policy
   - 10% Assignments, 20% Quizzes, 30% Midsem, 40% Endsem
   - Relative grading
-  - DX grade if attendance is less than 80%
+  - DX grade if attendance is less than 80% (can miss at most 5 lectures)
 
 ##### Slides
   - [Course Overview](./2025/slides/CourseOverview.pdf)
   - [Probability Spaces](./2025/slides/ProbabilitySpaces.pdf)
   - [Why is the Probability Space a Triple?](./2025/slides/WhyProbSpaceTriple.pdf)
+  - [Properties of Probability Measures](./2025/slides/ProbabilityMeasureProperties.pdf)
+  - [Conditional Probability and Independence](./2025/slides/CondProbAndIndependence.pdf)
 
 ##### Assignments
 
