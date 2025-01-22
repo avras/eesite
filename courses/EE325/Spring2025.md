@@ -27,6 +27,8 @@ title: EE 325 Spring 2025
   - [Why is the Probability Space a Triple?](./2025/slides/WhyProbSpaceTriple.pdf)
   - [Properties of Probability Measures](./2025/slides/ProbabilityMeasureProperties.pdf)
   - [Conditional Probability and Independence](./2025/slides/CondProbAndIndependence.pdf)
+  - [Combinatorial Probability](./2025/slides/CombinatorialProbability.pdf)
+  - [Random Variables](./2025/slides/RandomVariables.pdf)
 
 ##### Assignments
 
