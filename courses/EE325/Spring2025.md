@@ -34,3 +34,4 @@ title: EE 325 Spring 2025
 
   - [Assignment 1](./2025/assignments/assignment1.pdf)
   - [Assignment 2](./2025/assignments/assignment2.pdf)
+  - [Assignment 3](./2025/assignments/assignment3.pdf)
