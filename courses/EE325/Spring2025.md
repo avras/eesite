@@ -29,6 +29,7 @@ title: EE 325 Spring 2025
   - [Conditional Probability and Independence](./2025/slides/CondProbAndIndependence.pdf)
   - [Combinatorial Probability](./2025/slides/CombinatorialProbability.pdf)
   - [Random Variables](./2025/slides/RandomVariables.pdf)
+  - [Expectation of Random Variables](./2025/slides/Expectation.pdf)
 
 ##### Assignments
 
