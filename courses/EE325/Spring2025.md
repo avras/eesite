@@ -30,9 +30,13 @@ title: EE 325 Spring 2025
   - [Combinatorial Probability](./2025/slides/CombinatorialProbability.pdf)
   - [Random Variables](./2025/slides/RandomVariables.pdf)
   - [Expectation of Random Variables](./2025/slides/Expectation.pdf)
+  - [Gaussian Random Variables](./2025/slides/GaussianRV.pdf)
 
 ##### Assignments
 
   - [Assignment 1](./2025/assignments/assignment1.pdf)
   - [Assignment 2](./2025/assignments/assignment2.pdf)
   - [Assignment 3](./2025/assignments/assignment3.pdf)
+
+##### Exams
+  - [Quiz 1](./2025/exams/quiz1.pdf)
