@@ -42,6 +42,10 @@ Indian Institute of Technology Bombay\
   - [Google Scholar](https://scholar.google.co.in/citations?user=Q_HoVqAAAAAJ&hl=en)
   - [ORCID](http://orcid.org/0000-0002-0203-0276)
 
+##### Preprints
+
+  1. **SV**, "Nova Aadhaar: Privacy-Preserving Aadhaar-based Age Proofs Suitable for Resource-Constrained Environments", Feb 2025, [[pdf]](./zk/aadhaar-age-proof.pdf)
+
 ##### Journal
 
   1. A. Dutta, S. Bagad, **SV**, "MProve+: Privacy Enhancing Proof of Reserves Protocol for Monero," *IEEE Transactions on Information Forensics and Security,* vol. 16, pp.  3900--3915, Jun. 2021. [[doi]](https://doi.org/10.1109/TIFS.2021.3088035)
