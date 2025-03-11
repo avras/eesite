@@ -31,6 +31,7 @@ title: EE 325 Spring 2025
   - [Random Variables](./2025/slides/RandomVariables.pdf)
   - [Expectation of Random Variables](./2025/slides/Expectation.pdf)
   - [Gaussian Random Variables](./2025/slides/GaussianRV.pdf)
+  - [Hypothesis Testing](./2025/slides/HypothesisTesting.pdf)
 
 ##### Assignments
 
@@ -40,3 +41,4 @@ title: EE 325 Spring 2025
 
 ##### Exams
   - [Quiz 1](./2025/exams/quiz1.pdf)
+  - [Midsem](./2025/exams/midsem.pdf)
