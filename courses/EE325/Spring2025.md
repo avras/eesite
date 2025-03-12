@@ -32,6 +32,7 @@ title: EE 325 Spring 2025
   - [Expectation of Random Variables](./2025/slides/Expectation.pdf)
   - [Gaussian Random Variables](./2025/slides/GaussianRV.pdf)
   - [Hypothesis Testing](./2025/slides/HypothesisTesting.pdf)
+  - [Parameter Estimation](./2025/slides/ParameterEstimation.pdf)
 
 ##### Assignments
 
