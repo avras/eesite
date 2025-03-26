@@ -34,12 +34,14 @@ title: EE 325 Spring 2025
   - [Hypothesis Testing](./2025/slides/HypothesisTesting.pdf)
   - [Parameter Estimation](./2025/slides/ParameterEstimation.pdf)
   - [Generating Random Variables](./2025/slides/GeneratingRVs.pdf)
+  - [Convergence of Random Variables](./2025/slides/ConvergenceOfRVs.pdf)
 
 ##### Assignments
 
   - [Assignment 1](./2025/assignments/assignment1.pdf)
   - [Assignment 2](./2025/assignments/assignment2.pdf)
   - [Assignment 3](./2025/assignments/assignment3.pdf)
+  - [Assignment 4](./2025/assignments/assignment4.pdf)
 
 ##### Exams
   - [Quiz 1](./2025/exams/quiz1.pdf)
