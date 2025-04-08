@@ -46,3 +46,4 @@ title: EE 325 Spring 2025
 ##### Exams
   - [Quiz 1](./2025/exams/quiz1.pdf)
   - [Midsem](./2025/exams/midsem.pdf)
+  - [Quiz 2](./2025/exams/quiz2.pdf)
