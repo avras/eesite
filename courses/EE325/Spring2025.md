@@ -35,6 +35,7 @@ title: EE 325 Spring 2025
   - [Parameter Estimation](./2025/slides/ParameterEstimation.pdf)
   - [Generating Random Variables](./2025/slides/GeneratingRVs.pdf)
   - [Convergence of Random Variables](./2025/slides/ConvergenceOfRVs.pdf)
+  - [Limit Theorems](./2025/slides/LimitTheorems.pdf)
 
 ##### Assignments
 
