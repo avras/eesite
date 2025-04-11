@@ -36,6 +36,7 @@ title: EE 325 Spring 2025
   - [Generating Random Variables](./2025/slides/GeneratingRVs.pdf)
   - [Convergence of Random Variables](./2025/slides/ConvergenceOfRVs.pdf)
   - [Limit Theorems](./2025/slides/LimitTheorems.pdf)
+  - [Random Processes](./2025/slides/RandomProcesses.pdf)
 
 ##### Assignments
 
